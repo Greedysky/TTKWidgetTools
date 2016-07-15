@@ -1,6 +1,7 @@
-#ifndef WIDGET1_H
-#define WIDGET1_H
+#ifndef ANIMATIONSTACKEDWIDGET_H
+#define ANIMATIONSTACKEDWIDGET_H
 
+#include <QPainter>
 #include <QVariant>
 #include <QStackedWidget>
 #include <QPropertyAnimation>
@@ -22,9 +23,9 @@ public:
 
     void start(int index);
     void setLength(int length, AnimationType type);
-    void setDuration(int duration);
 
-signals:
+    void setDuration(int duration);
+    int getDuration() const;
 
 private slots:
     void valueChanged(const QVariant &value);
@@ -32,13 +33,15 @@ private slots:
 
 protected:
     virtual void paintEvent(QPaintEvent *event);
+    void renderPreviousWidget(QPainter &painter, QTransform &transform);
+    void renderCurrentWidget(QPainter &painter, QTransform &transform);
 
-    float m_changeValue;
     bool m_isAnimating;
-    int m_curIndex;
+    float m_currentValue;
+    int m_currentIndex, m_previousIndex;
     AnimationType m_type;
     QPropertyAnimation *m_animation;
 
 };
 
-#endif // WIDGET1_H
+#endif // ANIMATIONSTACKEDWIDGET_H

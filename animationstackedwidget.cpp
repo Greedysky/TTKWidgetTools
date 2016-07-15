@@ -1,25 +1,23 @@
 #include "animationstackedwidget.h"
 
 #include <QPixmap>
-#include <QPainter>
 #include <QTransform>
-#include <QPropertyAnimation>
 
 AnimationStackedWidget::AnimationStackedWidget(QWidget *parent)
     : QStackedWidget(parent)
 {
-    m_changeValue = 0;
     m_isAnimating = false;
-    m_curIndex = 0;
+    m_currentValue = 0;
+    m_currentIndex = 0;
+    m_previousIndex = 0;
 
     m_animation = new QPropertyAnimation(this, QByteArray());
-    m_animation->setDuration(300);
+    m_animation->setDuration(500);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0);
     m_animation->setEndValue(0);
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(valueChanged(QVariant)));
     connect(m_animation, SIGNAL(finished()), SLOT(animationFinished()));
-
 }
 
 AnimationStackedWidget::~AnimationStackedWidget()
@@ -31,48 +29,87 @@ void AnimationStackedWidget::paintEvent(QPaintEvent * event)
 {
     if(m_isAnimating)
     {
-        QWidget *w = widget(m_curIndex);
-        QPixmap pixmap( w->size() );
-        w->render(&pixmap);
-
         QPainter painter(this);
         QTransform transform;
-        switch(m_type)
-        {
-            case BottomToTop :
-                    {
-                        transform.translate(0, m_changeValue);
-                        painter.setTransform(transform);
-                        painter.drawPixmap(0, -height()/2, pixmap);
-                        break;
-                    }
-            case TopToBottom :
-                    {
-                        transform.translate(0, m_changeValue);
-                        painter.setTransform(transform);
-                        painter.drawPixmap(0, height()/2, pixmap);
-                        break;
-                    }
-            case LeftToRight :
-                    {
-                        transform.translate(m_changeValue, 0);
-                        painter.setTransform(transform);
-                        painter.drawPixmap(-width()/2, 0, pixmap);
-                        break;
-                    }
-            case RightToLeft :
-                    {
-                        transform.translate(m_changeValue, 0);
-                        painter.setTransform(transform);
-                        painter.drawPixmap(width()/2, 0, pixmap);
-                        break;
-                    }
-            default: break;
-        }
+        renderCurrentWidget(painter, transform);
+        renderPreviousWidget(painter, transform);
     }
     else
     {
         QWidget::paintEvent(event);
+    }
+}
+
+void AnimationStackedWidget::renderPreviousWidget(QPainter &painter, QTransform &transform)
+{
+    QWidget *w = widget(m_previousIndex);
+    QPixmap pixmap( w->size() );
+    w->render(&pixmap);
+
+    Q_UNUSED(transform);
+    switch(m_type)
+    {
+        case BottomToTop :
+                {
+                    painter.drawPixmap(0, height()/2, pixmap);
+                    break;
+                }
+        case TopToBottom :
+                {
+                    painter.drawPixmap(0, -height()/2, pixmap);
+                    break;
+                }
+        case LeftToRight :
+                {
+                    painter.drawPixmap(width()/2, 0, pixmap);
+                    break;
+                }
+        case RightToLeft :
+                {
+                    painter.drawPixmap(-width()/2, 0, pixmap);
+                    break;
+                }
+        default: break;
+    }
+}
+
+void AnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransform &transform)
+{
+    QWidget *w = widget(m_currentIndex);
+    QPixmap pixmap( w->size() );
+    w->render(&pixmap);
+
+    switch(m_type)
+    {
+        case BottomToTop :
+                {
+                    transform.translate(0, m_currentValue);
+                    painter.setTransform(transform);
+                    painter.drawPixmap(0, -height()/2, pixmap);
+                    break;
+                }
+        case TopToBottom :
+                {
+                    transform.translate(0, m_currentValue);
+                    painter.setTransform(transform);
+                    painter.drawPixmap(0, height()/2, pixmap);
+                    break;
+                }
+        case LeftToRight :
+                {
+                    transform.translate(m_currentValue, 0);
+                    painter.setTransform(transform);
+                    painter.drawPixmap(-width()/2, 0, pixmap);
+                    break;
+                }
+        case RightToLeft :
+                {
+                    transform.translate(m_currentValue, 0);
+                    painter.setTransform(transform);
+                    painter.drawPixmap(width()/2, 0, pixmap);
+                    break;
+                }
+        default: break;
     }
 }
 
@@ -82,11 +119,12 @@ void AnimationStackedWidget::start(int index)
     {
         return;
     }
-    m_curIndex = index;
+    m_previousIndex = m_currentIndex;
+    m_currentIndex = index;
 
     int offsetx = frameRect().width();
     int offsety = frameRect().height();
-    widget(m_curIndex)->setGeometry(0, 0, offsetx, offsety);
+    widget(m_currentIndex)->setGeometry(0, 0, offsetx, offsety);
 
     currentWidget()->hide();
     m_isAnimating = true;
@@ -120,17 +158,22 @@ void AnimationStackedWidget::setDuration(int duration)
     m_animation->setDuration(duration);
 }
 
+int AnimationStackedWidget::getDuration() const
+{
+    return m_animation->duration();
+}
+
 void AnimationStackedWidget::valueChanged(const QVariant &value)
 {
-    m_changeValue = value.toFloat();
+    m_currentValue = value.toFloat();
     update();
 }
 
 void AnimationStackedWidget::animationFinished()
 {
-    m_changeValue = 0;
+    m_currentValue = 0;
     m_isAnimating = false;
-    QWidget *w = widget(m_curIndex);
+    QWidget *w = widget(m_currentIndex);
     w->show();
     w->raise();
     setCurrentWidget( w );

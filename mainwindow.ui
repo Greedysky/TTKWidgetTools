@@ -26,15 +26,44 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="page">
      <property name="styleSheet">
       <string notr="true">background:red</string>
      </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LeftToRight</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <property name="styleSheet">
       <string notr="true">background:yellow</string>
      </property>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LeftToRight</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="AnimationStackedWidget" name="stackedWidget_2">
@@ -56,11 +85,37 @@
      <property name="styleSheet">
       <string notr="true">background:red</string>
      </property>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RightToLeft</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_4">
      <property name="styleSheet">
       <string notr="true">background:yellow</string>
      </property>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RightToLeft</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="AnimationStackedWidget" name="stackedWidget_3">
@@ -79,11 +134,37 @@
      <property name="styleSheet">
       <string notr="true">background:red</string>
      </property>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BottomToTop</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_10">
      <property name="styleSheet">
       <string notr="true">background:yellow</string>
      </property>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BottomToTop</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="AnimationStackedWidget" name="stackedWidget_4">
@@ -102,11 +183,37 @@
      <property name="styleSheet">
       <string notr="true">background:red</string>
      </property>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TopToBottom</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_12">
      <property name="styleSheet">
       <string notr="true">background:yellow</string>
      </property>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TopToBottom</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -187,18 +294,6 @@
      <string>BottomToTop</string>
     </property>
    </widget>
-   <zorder>stackedWidget</zorder>
-   <zorder>stackedWidget_2</zorder>
-   <zorder>stackedWidget_4</zorder>
-   <zorder>stackedWidget_3</zorder>
-   <zorder>stackedWidget_3</zorder>
-   <zorder>stackedWidget_4</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
