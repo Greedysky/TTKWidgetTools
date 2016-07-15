@@ -1,0 +1,2 @@
+# QStackedWidget-Animation
+QStackedWidget切换widget时的动画
