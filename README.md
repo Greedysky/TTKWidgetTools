@@ -1,4 +1,4 @@
-# QStackedWidget-Animation
+# TTKStackedWidget
 QStackedWidget切换widget时的动画
 
 Screenshots
