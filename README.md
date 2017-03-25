@@ -1,5 +1,5 @@
 # TTKStackedWidget
-QStackedWidget切换widget时的动画
+TTKStackedWidget切换widget时的动画
 
 Usage
 ----

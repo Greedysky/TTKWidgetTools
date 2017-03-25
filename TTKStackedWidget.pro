@@ -1,5 +1,5 @@
 # =================================================
-# * This file is part of the TTK Weather project
+# * This file is part of the TTK StackedWidget project
 # * Copyright (c) 2015 - 2017 Greedysky Studio
 # * All rights reserved!
 # * Redistribution and use of the source code or any derivative
