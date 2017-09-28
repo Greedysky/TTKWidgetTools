@@ -12,10 +12,6 @@ The TTKStackedWidget forecast program, you can query the future weather conditio
  
 # For Developers
 
-License
----
-TTKStackedWidget is free software licensed under the term of GPL v2. If you use TTKStackedWidget or its constituent libraries, you must adhere to the terms of the license in question.
-
 Screenshots
 ----
 
@@ -24,7 +20,7 @@ Screenshots
 
 Copyright
 -------
- * This file is part of the TTK Weather project.
+ * This file is part of the TTK Stacked Widget project.
  * Copyright (c) 2015 - 2016 Greedysky Studio.
  * All rights reserved!
  * Redistribution and use of the source code or any derivative.
