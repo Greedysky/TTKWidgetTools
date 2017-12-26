@@ -1,9 +1,7 @@
 # TTKStackedWidget
 TTKStackedWidget切换widget时的动画
 
-Usage
-----
-The TTKStackedWidget forecast program, you can query the future weather conditions, based on Qt for windows and linux.
+## CI Status
  * Qt develop version be tested on Qt4.8.x for windows-mingw 32bit and 64bit
  * Qt develop version be tested on Qt4.8.x for ubuntu-linux-gcc 32bit and 64bit
  * Qt develop version be tested on Qt5.x for windows-mingw 32bit and 64bit
@@ -17,8 +15,6 @@ The TTKStackedWidget forecast program, you can query the future weather conditio
 | Windows  | 5.x MSVC       | ![Windows](https://img.shields.io/wercker/ci/wercker/docs.svg) |
 | OS X     | 5.x Clang     | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg?style=flat-square)                           |
 
-# For Developers
-
 Screenshots
 ----
 
@@ -28,7 +24,7 @@ Screenshots
 Copyright
 -------
  * This file is part of the TTK Stacked Widget project.
- * Copyright (c) 2015 - 2016 Greedysky Studio.
+ * Copyright (c) 2015 - 2018 Greedysky Studio.
  * mail: greedysky@163.com.
  
 How To Contribute

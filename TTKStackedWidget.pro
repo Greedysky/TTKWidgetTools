@@ -1,6 +1,6 @@
 # =================================================
 # * This file is part of the TTK StackedWidget project
-# * Copyright (C) 2016 - 2017 Greedysky Studio
+# * Copyright (C) 2015 - 2018 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
 # * it under the terms of the GNU General Public License as published by
@@ -24,11 +24,14 @@ TARGET = TTKStackedWidget
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-        animationstackedwidget.cpp
+SOURCES += \
+    main.cpp\
+    mainwindow.cpp \
+    animationstackedwidget.cpp
 
-HEADERS  += mainwindow.h \
-        animationstackedwidget.h
+HEADERS  += \
+    mainwindow.h \
+    animationstackedwidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    mainwindow.ui
