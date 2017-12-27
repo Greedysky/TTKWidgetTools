@@ -16,6 +16,7 @@
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "shiningSlider/ttkshiningsliderwindow.h"
 #include "splititemlabel/ttksplititemwindow.h"
+#include "grabItemWidget/ttkgrabitemwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -37,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_10, 10);
     group->addButton(ui->pushButton_11, 11);
     group->addButton(ui->pushButton_12, 12);
+    group->addButton(ui->pushButton_13, 13);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -74,6 +76,8 @@ void MainWindow::changed(int index)
         case 11:(new TTKShiningSliderWindow(this))->show();
             break;
         case 12:(new TTKSplitItemWindow(this))->show();
+            break;
+        case 13:(new TTKGrabItemWindow(this))->show();
             break;
         default:
             break;
