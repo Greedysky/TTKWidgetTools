@@ -1,5 +1,5 @@
 # TTKWidgetTools
-QWidget 自定义控件集合 
+QWidget 控件集合 
 
 ## CI Status
  * Qt develop version be tested on Qt4.8.x for windows-mingw 32bit and 64bit
@@ -23,32 +23,35 @@ Screenshots
 ### TransitionAnimationLabel (QLabel设置pixmap时过渡动画控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
 
-### GifLabelWidget (自定义进度条控件)
+### GifLabelWidget (进度条控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/gifLabelWidget/res/demo.gif?raw=true)
 
-### CodeAreaWidget (自定义验证码控件)
+### CodeAreaWidget (验证码控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/codeAreaWidget/res/demo.jpg?raw=true)
 
-### ToastLabelWidget (自定义弹出消息提示控件)
+### ToastLabelWidget (弹出消息提示控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toastLabel/res/demo.gif?raw=true)
 
-### MarqueeWidget (自定义跑马灯控件)
+### MarqueeWidget (跑马灯控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/marqueeWidget/res/demo.gif?raw=true)
 
-### RoundAnimationLabel (自定义旋转控件)
+### RoundAnimationLabel (旋转控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/roundAnimationLabel/res/demo.gif?raw=true)
 
-### MovingLabelSlider (自定义文本滑块控件)
+### MovingLabelSlider (文本滑块控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/movingLabelSlider/res/demo.gif?raw=true)
 
-### SlowMovingTableWidget (自定义滚动平滑表格控件)
+### SlowMovingTableWidget (滚动平滑表格控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/slowMovingTableWidget/res/demo.gif?raw=true)
 
-### ColorDialog (自定义调色盒控件)
+### ColorDialog (调色盒控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorDialog/res/demo.gif?raw=true)
 
-### LayoutAnimationWidget (自定义布局滚动控件)
+### LayoutAnimationWidget (布局滚动控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/layoutAnimationWidget/res/demo.gif?raw=true)
+
+### ShiningSlider (闪烁滑块控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/shiningSlider/res/demo.gif?raw=true)
 
 Copyright
 -------
