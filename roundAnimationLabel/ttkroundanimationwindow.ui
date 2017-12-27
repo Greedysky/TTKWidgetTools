@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKRoundAnimationWindow</class>
+ <widget class="QMainWindow" name="TTKRoundAnimationWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>362</width>
+    <height>305</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKRoundAnimationWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKRoundAnimationLabel" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKRoundAnimationLabel</class>
+   <extends>QWidget</extends>
+   <header>ttkroundanimationlabel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
