@@ -15,7 +15,7 @@
 #include "colorDialog/ttkcolorwindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "shiningSlider/ttkshiningsliderwindow.h"
-#include "splititemlabel/ttksplititemwindow.h"
+#include "splitItemLabel/ttksplititemwindow.h"
 #include "grabItemWidget/ttkgrabitemwindow.h"
 #include "funtionAnimationWidget/ttkfuntionanimationwindow.h"
 
