@@ -17,12 +17,11 @@ QWidget 自定义控件集合
 
 Screenshots
 ----
-StackedAnimationWidget
+### StackedAnimationWidget (QStackedWidget切换时动画)
 ![Index](https://github.com/Greedysky/Resource/blob/master/Screen/QStackedWidget-Animation/1.gif?raw=true)
 
-transitionAnimationLabel
+###  transitionAnimationLabel (QLabel设置pixmap时过渡动画)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
-
 
 Copyright
 -------
