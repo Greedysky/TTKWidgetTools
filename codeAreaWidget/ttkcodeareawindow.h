@@ -1,5 +1,5 @@
-#ifndef TTKGIFLABELWINDOW_H
-#define TTKGIFLABELWINDOW_H
+#ifndef TTKCODEAREAWINDOW_H
+#define TTKCODEAREAWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -22,19 +22,19 @@
 #include <QMainWindow>
 
 namespace Ui {
-class TTKGifLabelWindow;
+class TTKCodeAreaWindow;
 }
 
-class TTKGifLabelWindow : public QMainWindow
+class TTKCodeAreaWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKGifLabelWindow(QWidget *parent = 0);
-    ~TTKGifLabelWindow();
+    explicit TTKCodeAreaWindow(QWidget *parent = 0);
+    ~TTKCodeAreaWindow();
 
 private:
-    Ui::TTKGifLabelWindow *ui;
+    Ui::TTKCodeAreaWindow *ui;
 
 };
 
-#endif // TTKGIFLABELWINDOW_H
+#endif // TTKCODEAREAWINDOW_H

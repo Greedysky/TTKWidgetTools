@@ -33,7 +33,7 @@ public:
     explicit TTKAnimationStackedWindow(QWidget *parent = 0);
     ~TTKAnimationStackedWindow();
 
-public slots:
+public Q_SLOTS:
     void changeToFirst();
     void changeToSecond();
 

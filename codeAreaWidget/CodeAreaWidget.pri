@@ -16,30 +16,15 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = TTKWidgetTools
-TEMPLATE = app
-
-QMAKE_CXXFLAGS += -std=c++11
-win32:msvc{
-    CONFIG +=c++11
-}
+INCLUDEPATH += $$PWD
 
 SOURCES += \
-    main.cpp\
-    mainwindow.cpp
+    $$PWD/ttkcodeareawidget.cpp \
+    $$PWD/ttkcodeareawindow.cpp
 
 HEADERS  += \
-    mainwindow.h
+    $$PWD/ttkcodeareawidget.h \
+    $$PWD/ttkcodeareawindow.h
 
 FORMS    += \
-    mainwindow.ui
-    
-include(codeAreaWidget/CodeAreaWidget.pri)
-include(gifLabelWidget/GifLabelWidget.pri)
-include(stackedAnimationWidget/StackedAnimationWidget.pri)
-include(transitionAnimationLabel/TransitionAnimationLabel.pri)
-
+    $$PWD/ttkcodeareawindow.ui

@@ -17,14 +17,17 @@ QWidget 自定义控件集合
 
 Screenshots
 ----
-### StackedAnimationWidget (QStackedWidget切换时动画)
-![Index](https://github.com/Greedysky/Resource/blob/master/Screen/QStackedWidget-Animation/1.gif?raw=true)
+### StackedAnimationWidget (QStackedWidget切换时动画控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/stackedAnimationWidget/res/demo.gif?raw=true)
 
-###  transitionAnimationLabel (QLabel设置pixmap时过渡动画)
+### TransitionAnimationLabel (QLabel设置pixmap时过渡动画控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
 
-###  gifLabelWidget (QLabel自定义进度条)
+### GifLabelWidget (QLabel自定义进度条控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/gifLabelWidget/res/demo.gif?raw=true)
+
+### CodeAreaWidget (自定义验证码控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/codeAreaWidget/res/demo.jpg?raw=true)
 
 Copyright
 -------
