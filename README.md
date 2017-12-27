@@ -56,8 +56,11 @@ Screenshots
 ### Splititemlabel (字符串分割控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/splititemlabel/res/demo.gif?raw=true)
 
-### GrabItemWidget (验证码控件)
+### GrabItemWidget (拉伸控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/grabItemWidget/res/demo.jpg?raw=true)
+
+### FuntionAnimationWidget (标题控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/funtionAnimationWidget/res/demo.gif?raw=true)
 
 Copyright
 -------

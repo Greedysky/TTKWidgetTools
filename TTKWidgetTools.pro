@@ -40,6 +40,7 @@ FORMS    += \
     
 include(codeAreaWidget/CodeAreaWidget.pri)
 include(colorDialog/ColorDialog.pri)
+include(funtionAnimationWidget/FuntionAnimationWidget.pri)
 include(gifLabelWidget/GifLabelWidget.pri)
 include(grabItemWidget/GrabItemWidget.pri)
 include(layoutAnimationWidget/LayoutAnimationWidget.pri)
