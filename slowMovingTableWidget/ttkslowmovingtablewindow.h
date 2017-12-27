@@ -1,5 +1,5 @@
-#ifndef TTKTOASTLABEL_H
-#define TTKTOASTLABEL_H
+#ifndef TTKSLOWMOVINGTABLEWINDOW_H
+#define TTKSLOWMOVINGTABLEWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,42 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLabel>
-#include <QTimer>
+#include <QMainWindow>
 
-class TTKToastLabel : public QLabel
+namespace Ui {
+class TTKSlowMovingTableWindow;
+}
+
+class TTKSlowMovingTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKToastLabel(QWidget *parent = 0);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = 0);
-    ~TTKToastLabel();
+    explicit TTKSlowMovingTableWindow(QWidget *parent = 0);
+    ~TTKSlowMovingTableWindow();
 
-    void setFontMargin(int height, int width);
-    void setTimerInterval(int msecond);
-    int getTimerInterval() const;
-
-    void setFontSize(int size);
-    int getFontSize() const;
-
-    void setBold(bool bold);
-    bool bold() const;
-
-    void popup(QWidget *parent);
-
-public Q_SLOTS:
-    void setText(const QString &text);
-
-private Q_SLOTS:
-    void closeAnimation();
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-    QTimer m_timer;
-    QFont m_font;
-    QPoint m_margin;
+private:
+    Ui::TTKSlowMovingTableWindow *ui;
 
 };
 
-#endif // TTKTOASTLABEL_H
+#endif // TTKSLOWMOVINGTABLEWINDOW_H

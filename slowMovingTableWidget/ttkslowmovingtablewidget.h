@@ -1,5 +1,5 @@
-#ifndef TTKTOASTLABEL_H
-#define TTKTOASTLABEL_H
+#ifndef TTKSLOWMOVINGTABLEWIDGET_H
+#define TTKSLOWMOVINGTABLEWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,42 +19,32 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLabel>
-#include <QTimer>
+#include <QTableWidget>
 
-class TTKToastLabel : public QLabel
+class QPropertyAnimation;
+
+class TTKSlowMovingTableWidget : public QTableWidget
 {
     Q_OBJECT
 public:
-    explicit TTKToastLabel(QWidget *parent = 0);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = 0);
-    ~TTKToastLabel();
+    explicit TTKSlowMovingTableWidget(QWidget *parent = 0);
+    ~TTKSlowMovingTableWidget();
 
-    void setFontMargin(int height, int width);
-    void setTimerInterval(int msecond);
-    int getTimerInterval() const;
-
-    void setFontSize(int size);
-    int getFontSize() const;
-
-    void setBold(bool bold);
-    bool bold() const;
-
-    void popup(QWidget *parent);
+    void setMovedScrollBar(QScrollBar *bar);
 
 public Q_SLOTS:
-    void setText(const QString &text);
-
-private Q_SLOTS:
-    void closeAnimation();
+    void timeToAnimation();
+    void valueChanged(int value);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void wheelEvent(QWheelEvent *event) override;
 
-    QTimer m_timer;
-    QFont m_font;
-    QPoint m_margin;
+    bool m_isFirstInit;
+    int m_previousValue, m_deltaValue;
+    QScrollBar *m_scrollBar;
+    QTimer *m_animationTimer;
+    QPropertyAnimation *m_slowAnimation;
 
 };
 
-#endif // TTKTOASTLABEL_H
+#endif // TTKSLOWMOVINGTABLEWIDGET_H

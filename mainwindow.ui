@@ -36,24 +36,10 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>CodeAreaWidget</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
        <string>ToastLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>MarqueeWidget</string>
       </property>
      </widget>
     </item>
@@ -68,6 +54,27 @@
      <widget class="QPushButton" name="pushButton_7">
       <property name="text">
        <string>MovingLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>CodeAreaWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="text">
+       <string>MarqueeWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="text">
+       <string>SlowMovingTable</string>
       </property>
      </widget>
     </item>

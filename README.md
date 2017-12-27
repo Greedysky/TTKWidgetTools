@@ -41,6 +41,9 @@ Screenshots
 ### MovingLabelSlider (自定义文本滑块控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/movingLabelSlider/res/demo.gif?raw=true)
 
+### SlowMovingTableWidget (自定义滚动平滑表格控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/slowMovingTableWidget/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
