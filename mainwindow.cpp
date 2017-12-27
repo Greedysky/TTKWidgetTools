@@ -1,19 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+#include <QButtonGroup>
+
+#include "stackedAnimationWidget/ttkanimationstackedwindow.h"
+#include "transitionAnimationLabel/ttktransitionanimationwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->stackedWidget->setLength(200, AnimationStackedWidget::LeftToRight);
-    ui->stackedWidget_2->setLength(200, AnimationStackedWidget::RightToLeft);
-    ui->stackedWidget_3->setLength(100, AnimationStackedWidget::TopToBottom);
-    ui->stackedWidget_4->setLength(100, AnimationStackedWidget::BottomToTop);
-
-    connect(ui->pushButton, SIGNAL(clicked()), SLOT(changeToFirst()));
-    connect(ui->pushButton_2, SIGNAL(clicked()), SLOT(changeToSecond()));
+    QButtonGroup *group = new QButtonGroup(this);
+    group->addButton(ui->pushButton, 0);
+    group->addButton(ui->pushButton_2, 1);
+    connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
 MainWindow::~MainWindow()
@@ -21,18 +23,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::changeToFirst()
+void MainWindow::changed(int index)
 {
-    ui->stackedWidget->start(0);
-    ui->stackedWidget_2->start(0);
-    ui->stackedWidget_3->start(0);
-    ui->stackedWidget_4->start(0);
-}
-
-void MainWindow::changeToSecond()
-{
-    ui->stackedWidget->start(1);
-    ui->stackedWidget_2->start(1);
-    ui->stackedWidget_3->start(1);
-    ui->stackedWidget_4->start(1);
+    switch(index)
+    {
+        case 0: (new TTKAnimationStackedWindow(this))->show();
+            break;
+        case 1: (new TTKTransitionAnimationWindow(this))->show();
+            break;
+        default:
+            break;
+    }
 }

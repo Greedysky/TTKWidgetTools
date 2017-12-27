@@ -1,5 +1,5 @@
-# TTKStackedWidget
-TTKStackedWidget切换widget时的动画
+# TTKWidgetTools
+QWidget 自定义控件集合 
 
 ## CI Status
  * Qt develop version be tested on Qt4.8.x for windows-mingw 32bit and 64bit
@@ -17,13 +17,16 @@ TTKStackedWidget切换widget时的动画
 
 Screenshots
 ----
-
+StackedAnimationWidget
 ![Index](https://github.com/Greedysky/Resource/blob/master/Screen/QStackedWidget-Animation/1.gif?raw=true)
+
+transitionAnimationLabel
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
 
 
 Copyright
 -------
- * This file is part of the TTK Stacked Widget project.
+ * This file is part of the TTK Widget Tools project.
  * Copyright (c) 2015 - 2018 Greedysky Studio.
  * mail: greedysky@163.com.
  

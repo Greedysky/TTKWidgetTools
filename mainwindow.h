@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 /* =================================================
- * This file is part of the TTK StackedWidget project
+ * This file is part of the TTK WidgetTools project
  * Copyright (C) 2015 - 2018 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
@@ -34,8 +34,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void changeToFirst();
-    void changeToSecond();
+    void changed(int index);
 
 private:
     Ui::MainWindow *ui;
