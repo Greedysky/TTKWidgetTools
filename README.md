@@ -23,8 +23,8 @@ Screenshots
 ###  transitionAnimationLabel (QLabel设置pixmap时过渡动画)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
 
-###  giflabelwidget (QLabel自定义进度条)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/giflabelwidget/res/demo.gif?raw=true)
+###  gifLabelWidget (QLabel自定义进度条)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/gifLabelWidget/res/demo.gif?raw=true)
 
 Copyright
 -------

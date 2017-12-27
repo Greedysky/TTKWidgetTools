@@ -36,4 +36,4 @@ FORMS    += \
 
 include(stackedAnimationWidget/StackedAnimationWidget.pri)
 include(transitionAnimationLabel/TransitionAnimationLabel.pri)
-include(giflabelwidget/Giflabelwidget.pri)
+include(gifLabelWidget/gifLabelWidget.pri)
