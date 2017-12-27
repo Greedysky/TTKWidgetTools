@@ -23,7 +23,7 @@ Screenshots
 ### TransitionAnimationLabel (QLabel设置pixmap时过渡动画控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/transitionAnimationLabel/res/demo.gif?raw=true)
 
-### GifLabelWidget (QLabel自定义进度条控件)
+### GifLabelWidget (自定义进度条控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/gifLabelWidget/res/demo.gif?raw=true)
 
 ### CodeAreaWidget (自定义验证码控件)
@@ -31,6 +31,9 @@ Screenshots
 
 ### ToastLabelWidget (自定义弹出消息提示控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toastLabel/res/demo.gif?raw=true)
+
+### MarqueeWidget (自定义跑马灯控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/marqueeWidget/res/demo.gif?raw=true)
 
 Copyright
 -------
