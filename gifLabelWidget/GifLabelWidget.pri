@@ -30,4 +30,4 @@ FORMS    += \
     $$PWD/ttkgiflabelwindow.ui
     
 RESOURCES += \
-    $$PWD/Giflabelwidget.qrc
+    $$PWD/GifLabelWidget.qrc

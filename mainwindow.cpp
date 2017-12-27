@@ -5,7 +5,7 @@
 
 #include "stackedAnimationWidget/ttkanimationstackedwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
-#include "giflabelwidget/ttkgiflabelwindow.h"
+#include "gifLabelWidget/ttkgiflabelwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),

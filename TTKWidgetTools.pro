@@ -20,9 +20,13 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TTKStackedWidget
+TARGET = TTKWidgetTools
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += -std=c++11
+win32:msvc{
+    CONFIG +=c++11
+}
 
 SOURCES += \
     main.cpp\
@@ -36,4 +40,4 @@ FORMS    += \
 
 include(stackedAnimationWidget/StackedAnimationWidget.pri)
 include(transitionAnimationLabel/TransitionAnimationLabel.pri)
-include(gifLabelWidget/gifLabelWidget.pri)
+include(gifLabelWidget/GifLabelWidget.pri)

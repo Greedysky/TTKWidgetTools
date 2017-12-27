@@ -11,7 +11,7 @@ class TTKGifLabelWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKGifLabelWindow(QWidget *parent = nullptr);
+    explicit TTKGifLabelWindow(QWidget *parent = 0);
     ~TTKGifLabelWindow();
 
 private:
