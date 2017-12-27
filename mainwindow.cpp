@@ -7,6 +7,7 @@
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
 #include "gifLabelWidget/ttkgiflabelwindow.h"
 #include "codeAreaWidget/ttkcodeareawindow.h"
+#include "toastLabel/ttktoastwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_1, 1);
     group->addButton(ui->pushButton_2, 2);
     group->addButton(ui->pushButton_3, 3);
+    group->addButton(ui->pushButton_4, 4);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -38,6 +40,8 @@ void MainWindow::changed(int index)
         case 2: (new TTKGifLabelWindow(this))->show();
             break;
         case 3: (new TTKCodeAreaWindow(this))->show();
+            break;
+        case 4: (new TTKToastWindow(this))->show();
             break;
         default:
             break;

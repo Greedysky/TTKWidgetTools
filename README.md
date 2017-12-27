@@ -29,6 +29,9 @@ Screenshots
 ### CodeAreaWidget (自定义验证码控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/codeAreaWidget/res/demo.jpg?raw=true)
 
+### ToastLabelWidget (自定义弹出消息提示控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toastLabel/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
