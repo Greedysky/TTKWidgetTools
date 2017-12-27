@@ -13,6 +13,7 @@
 #include "movingLabelSlider/ttkmovinglabelwindow.h"
 #include "slowMovingTableWidget/ttkslowmovingtablewindow.h"
 #include "colorDialog/ttkcolorwindow.h"
+#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -31,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_7, 7);
     group->addButton(ui->pushButton_8, 8);
     group->addButton(ui->pushButton_9, 9);
+    group->addButton(ui->pushButton_10, 10);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -62,6 +64,8 @@ void MainWindow::changed(int index)
         case 8: (new TTKSlowMovingTableWindow(this))->show();
             break;
         case 9: (new TTKColorWindow(this))->show();
+            break;
+        case 10:(new TTKLayoutAnimationWindow(this))->show();
             break;
         default:
             break;

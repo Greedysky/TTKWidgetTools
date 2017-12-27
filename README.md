@@ -47,6 +47,9 @@ Screenshots
 ### ColorDialog (自定义调色盒控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorDialog/res/demo.gif?raw=true)
 
+### LayoutAnimationWidget (自定义布局滚动控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/layoutAnimationWidget/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
