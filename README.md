@@ -53,6 +53,9 @@ Screenshots
 ### ShiningSlider (闪烁滑块控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/shiningSlider/res/demo.gif?raw=true)
 
+### Splititemlabel (字符串分割控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/splititemlabel/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.

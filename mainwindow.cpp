@@ -15,6 +15,7 @@
 #include "colorDialog/ttkcolorwindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "shiningSlider/ttkshiningsliderwindow.h"
+#include "splititemlabel/ttksplititemwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -35,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_9, 9);
     group->addButton(ui->pushButton_10, 10);
     group->addButton(ui->pushButton_11, 11);
+    group->addButton(ui->pushButton_12, 12);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -70,6 +72,8 @@ void MainWindow::changed(int index)
         case 10:(new TTKLayoutAnimationWindow(this))->show();
             break;
         case 11:(new TTKShiningSliderWindow(this))->show();
+            break;
+        case 12:(new TTKSplitItemWindow(this))->show();
             break;
         default:
             break;
