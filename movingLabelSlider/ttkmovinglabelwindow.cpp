@@ -10,8 +10,8 @@ TTKMovingLabelWindow::TTKMovingLabelWindow(QWidget *parent)
     TTKMovingLabelSlider *v = new TTKMovingLabelSlider(Qt::Vertical, this);
     ui->verticalLayout->addWidget(v);
 
-    ui->horizontalSlider->setRange(0, 1000);
-    v->setRange(0, 1000);
+    ui->horizontalSlider->setRange(0, 1000000);
+    v->setRange(0, 1000000);
 }
 
 TTKMovingLabelWindow::~TTKMovingLabelWindow()

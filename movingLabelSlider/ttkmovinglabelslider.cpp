@@ -72,7 +72,7 @@ void TTKMovingLabelSlider::mouseMoveEvent(QMouseEvent *event)
         m_textLabel->move(changePos.x(), (glbPos - QPoint(0, m_textLabel->height())).y());
     }
 
-    m_textLabel->setText(QDateTime::fromSecsSinceEpoch(changePos.y()).toString("mm:ss"));
+    m_textLabel->setText(QDateTime::fromMSecsSinceEpoch(changePos.y()).toString("mm:ss"));
 }
 
 void TTKMovingLabelSlider::mouseReleaseEvent(QMouseEvent *event)
