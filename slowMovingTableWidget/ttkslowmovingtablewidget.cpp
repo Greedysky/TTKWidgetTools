@@ -16,8 +16,6 @@ TTKSlowMovingTableWidget::TTKSlowMovingTableWidget(QWidget *parent)
     m_animationTimer = new QTimer(this);
     m_animationTimer->setInterval(100);
 
-//    verticalScrollBar()->setStyleSheet(MusicUIObject::MScrollBarStyle03);
-
     connect(m_animationTimer, SIGNAL(timeout()), SLOT(timeToAnimation()));
 }
 

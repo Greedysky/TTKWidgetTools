@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKColorWindow</class>
+ <widget class="QMainWindow" name="TTKColorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>451</width>
+    <height>294</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKColorWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="TTKHlPalette" name="wgtPalette" native="true"/>
+    </item>
+    <item>
+     <widget class="TTKHlSaturationPalette" name="wgtSaturationIndicator" native="true"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKHlPalette</class>
+   <extends>QWidget</extends>
+   <header>ttkcolordialog.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKHlSaturationPalette</class>
+   <extends>QWidget</extends>
+   <header>ttkcolordialog.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

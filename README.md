@@ -44,6 +44,9 @@ Screenshots
 ### SlowMovingTableWidget (自定义滚动平滑表格控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/slowMovingTableWidget/res/demo.gif?raw=true)
 
+### ColorDialog (自定义调色盒控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorDialog/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
