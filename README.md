@@ -35,6 +35,12 @@ Screenshots
 ### MarqueeWidget (自定义跑马灯控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/marqueeWidget/res/demo.gif?raw=true)
 
+### RoundAnimationLabel (自定义旋转控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/roundAnimationLabel/res/demo.gif?raw=true)
+
+### MovingLabelSlider (自定义文本滑块控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/movingLabelSlider/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.

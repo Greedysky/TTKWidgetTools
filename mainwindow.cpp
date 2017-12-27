@@ -9,6 +9,8 @@
 #include "codeAreaWidget/ttkcodeareawindow.h"
 #include "toastLabel/ttktoastwindow.h"
 #include "marqueeWidget/ttkmarqueewindow.h"
+#include "roundAnimationLabel/ttkroundanimationwindow.h"
+#include "movingLabelSlider/ttkmovinglabelwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -23,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_3, 3);
     group->addButton(ui->pushButton_4, 4);
     group->addButton(ui->pushButton_5, 5);
+    group->addButton(ui->pushButton_6, 6);
+    group->addButton(ui->pushButton_7, 7);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -46,6 +50,10 @@ void MainWindow::changed(int index)
         case 4: (new TTKToastWindow(this))->show();
             break;
         case 5: (new TTKMarqueeWindow(this))->show();
+            break;
+        case 6: (new TTKRoundAnimationWindow(this))->show();
+            break;
+        case 7: (new TTKMovingLabelWindow(this))->show();
             break;
         default:
             break;
