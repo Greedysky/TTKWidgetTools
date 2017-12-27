@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/gif">
+        <file alias="lb_ballon_white">gif/lb_ballon_white.png</file>
+        <file alias="lb_cicle_blue">gif/lb_cicle_blue.png</file>
+        <file alias="lb_hourglass_white">gif/lb_hourglass_white.png</file>
+        <file alias="lb_radio_blue">gif/lb_radio_blue.png</file>
+        <file alias="lb_rice_font_black">gif/lb_rice_font_black.png</file>
+        <file alias="lb_rice_font_black_big">gif/lb_rice_font_black_big.png</file>
+        <file alias="lb_rice_font_white">gif/lb_rice_font_white.png</file>
+        <file alias="lb_check_blue">gif/lb_check_blue.png</file>
+        <file alias="lb_record_red">gif/lb_record_red.png</file>
+        <file alias="lb_close_white">gif/lb_close_white.png</file>
+    </qresource>
+</RCC>

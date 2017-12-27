@@ -5,6 +5,7 @@
 
 #include "stackedAnimationWidget/ttkanimationstackedwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
+#include "giflabelwidget/ttkgiflabelwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -14,7 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QButtonGroup *group = new QButtonGroup(this);
     group->addButton(ui->pushButton, 0);
-    group->addButton(ui->pushButton_2, 1);
+    group->addButton(ui->pushButton_1, 1);
+    group->addButton(ui->pushButton_2, 2);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -30,6 +32,8 @@ void MainWindow::changed(int index)
         case 0: (new TTKAnimationStackedWindow(this))->show();
             break;
         case 1: (new TTKTransitionAnimationWindow(this))->show();
+            break;
+        case 2: (new TTKGifLabelWindow(this))->show();
             break;
         default:
             break;

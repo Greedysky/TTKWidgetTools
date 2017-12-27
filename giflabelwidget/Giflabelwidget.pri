@@ -16,24 +16,18 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = TTKStackedWidget
-TEMPLATE = app
-
+INCLUDEPATH += $$PWD
 
 SOURCES += \
-    main.cpp\
-    mainwindow.cpp
+    $$PWD/ttkgiflabelwidget.cpp \
+    $$PWD/ttkgiflabelwindow.cpp
 
 HEADERS  += \
-    mainwindow.h
+    $$PWD/ttkgiflabelwidget.h \
+    $$PWD/ttkgiflabelwindow.h
 
 FORMS    += \
-    mainwindow.ui
-
-include(stackedAnimationWidget/StackedAnimationWidget.pri)
-include(transitionAnimationLabel/TransitionAnimationLabel.pri)
-include(giflabelwidget/Giflabelwidget.pri)
+    $$PWD/ttkgiflabelwindow.ui
+    
+RESOURCES += \
+    $$PWD/Giflabelwidget.qrc
