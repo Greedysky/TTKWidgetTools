@@ -52,5 +52,6 @@ include(slowMovingTableWidget/SlowMovingTableWidget.pri)
 include(splitItemLabel/SplitItemLabel.pri)
 include(stackedAnimationWidget/StackedAnimationWidget.pri)
 include(toastLabel/ToastLabel.pri)
+include(toolMenuWidget/ToolMenuWidget.pri)
 include(transitionAnimationLabel/TransitionAnimationLabel.pri)
 

@@ -29,16 +29,16 @@ class TTKGifLabelWidget : public QLabel
 public:
     enum Type
     {
-        Gif_Ballon_White,           /*!< gif ballon white*/
-        Gif_Cicle_Blue,             /*!< gif cicle blue*/
-        Gif_Rice_Font_White,        /*!< gif rice font white*/
-        Gif_Rice_Font_Black,        /*!< gif rice font black*/
-        Gif_Rice_Font_Black_Big,    /*!< gif rice font black big*/
-        Gif_Hourglass_White,        /*!< gif hourglass white*/
-        Gif_Radio_Blue,             /*!< gif radio blue*/
-        Gif_Check_Blue,             /*!< gif check blue*/
-        Gif_Record_red,             /*!< gif record red*/
-        Gif_Close_White             /*!< gif close white*/
+        Gif_Ballon_White,
+        Gif_Cicle_Blue,
+        Gif_Rice_Font_White,
+        Gif_Rice_Font_Black,
+        Gif_Rice_Font_Black_Big,
+        Gif_Hourglass_White,
+        Gif_Radio_Blue,
+        Gif_Check_Blue,
+        Gif_Record_red,
+        Gif_Close_White
     };
 
     explicit TTKGifLabelWidget(QWidget *parent = 0);

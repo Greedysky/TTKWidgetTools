@@ -18,6 +18,7 @@
 #include "splitItemLabel/ttksplititemwindow.h"
 #include "grabItemWidget/ttkgrabitemwindow.h"
 #include "funtionAnimationWidget/ttkfuntionanimationwindow.h"
+#include "toolMenuWidget/ttktoolmenuwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -41,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_12, 12);
     group->addButton(ui->pushButton_13, 13);
     group->addButton(ui->pushButton_14, 14);
+    group->addButton(ui->pushButton_15, 15);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -82,6 +84,8 @@ void MainWindow::changed(int index)
         case 13:(new TTKGrabItemWindow(this))->show();
             break;
         case 14:(new TTKFunctionAnimationWindow(this))->show();
+            break;
+        case 15:(new TTKToolMenuWindow(this))->show();
             break;
         default:
             break;

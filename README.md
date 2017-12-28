@@ -32,6 +32,9 @@ Screenshots
 ### ToastLabelWidget (弹出消息提示控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toastLabel/res/demo.gif?raw=true)
 
+### ToolMenuWidget (弹出按钮控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toolMenuWidget/res/demo.gif?raw=true)
+
 ### MarqueeWidget (跑马灯控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/marqueeWidget/res/demo.gif?raw=true)
 
@@ -54,7 +57,7 @@ Screenshots
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/shiningSlider/res/demo.gif?raw=true)
 
 ### Splititemlabel (字符串分割控件)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/splititemlabel/res/demo.gif?raw=true)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/splitItemLabel/res/demo.gif?raw=true)
 
 ### GrabItemWidget (拉伸控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/grabItemWidget/res/demo.jpg?raw=true)
