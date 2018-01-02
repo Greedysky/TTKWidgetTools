@@ -60,19 +60,10 @@ Screenshots
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/splitItemLabel/res/demo.gif?raw=true)
 
 ### GrabItemWidget (拉伸控件)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/grabItemWidget/res/demo.jpg?raw=true)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/grabItemWidget/res/demo.gif?raw=true)
 
 ### FuntionAnimationWidget (标题控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/funtionAnimationWidget/res/demo.gif?raw=true)
-
-### MoveDialog (可移动对话框)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/moveDialog/res/demo.gif?raw=true)
-
-### MoveWidget (可移动窗口)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/moveWidget/res/demo.jpg?raw=true)
-
-### MoveResizeWidget (可移动拉伸窗口)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/moveResizeWidget/res/demo.gif?raw=true)
 
 Copyright
 -------
