@@ -19,6 +19,9 @@
 #include "grabItemWidget/ttkgrabitemwindow.h"
 #include "funtionAnimationWidget/ttkfuntionanimationwindow.h"
 #include "toolMenuWidget/ttktoolmenuwindow.h"
+#include "moveDialog/ttkmovedialogwindow.h"
+#include "moveWidget/ttkmovewidgetwindow.h"
+#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -43,6 +46,9 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_13, 13);
     group->addButton(ui->pushButton_14, 14);
     group->addButton(ui->pushButton_15, 15);
+    group->addButton(ui->pushButton_16, 16);
+    group->addButton(ui->pushButton_17, 17);
+    group->addButton(ui->pushButton_18, 18);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -86,6 +92,12 @@ void MainWindow::changed(int index)
         case 14:(new TTKFunctionAnimationWindow(this))->show();
             break;
         case 15:(new TTKToolMenuWindow(this))->show();
+            break;
+        case 16:(new TTKMoveDialogWindow(this))->show();
+            break;
+        case 17:(new TTKMoveWidgetWindow(this))->show();
+            break;
+        case 18:(new TTKMoveResizeWidgetWindow(this))->show();
             break;
         default:
             break;
