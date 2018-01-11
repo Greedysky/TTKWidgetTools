@@ -37,7 +37,9 @@ HEADERS  += \
 
 FORMS    += \
     mainwindow.ui
-    
+
+
+include(circleClickPlane/CircleClickPlane.pri)
 include(codeAreaWidget/CodeAreaWidget.pri)
 include(colorDialog/ColorDialog.pri)
 include(funtionAnimationWidget/FuntionAnimationWidget.pri)

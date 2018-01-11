@@ -74,6 +74,9 @@ Screenshots
 ### MoveResizeWidget (可移动拉伸窗口)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/moveResizeWidget/res/demo.gif?raw=true)
 
+### CircleClickPlane (波纹状点击窗口)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/circleClickPlane/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.

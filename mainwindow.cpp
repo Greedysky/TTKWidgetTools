@@ -22,6 +22,7 @@
 #include "moveDialog/ttkmovedialogwindow.h"
 #include "moveWidget/ttkmovewidgetwindow.h"
 #include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
+#include "circleClickPlane/ttkcircleclickplanewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -49,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_16, 16);
     group->addButton(ui->pushButton_17, 17);
     group->addButton(ui->pushButton_18, 18);
+    group->addButton(ui->pushButton_19, 19);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -98,6 +100,8 @@ void MainWindow::changed(int index)
         case 17:(new TTKMoveWidgetWindow(this))->show();
             break;
         case 18:(new TTKMoveResizeWidgetWindow(this))->show();
+            break;
+        case 19:(new TTKCircleClickPlaneWindow(this))->show();
             break;
         default:
             break;

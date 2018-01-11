@@ -148,6 +148,13 @@
       </property>
      </widget>
     </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="text">
+       <string>TTKCircleClickPlane</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
