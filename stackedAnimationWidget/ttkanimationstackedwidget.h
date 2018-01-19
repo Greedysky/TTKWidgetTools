@@ -45,7 +45,7 @@ public:
     void setDuration(int duration);
     int getDuration() const;
 
-private slots:
+private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 

@@ -28,3 +28,6 @@ HEADERS  += \
 
 FORMS    += \
     $$PWD/ttkfuntionanimationwindow.ui
+
+RESOURCES += \
+    $$PWD/FuntionAnimationWidget.qrc

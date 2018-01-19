@@ -18,7 +18,17 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>80</y>
+      <width>391</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKSkinAnimationWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
       <width>391</width>
       <height>41</height>
      </rect>
@@ -30,6 +40,12 @@
  <customwidgets>
   <customwidget>
    <class>TTKOptionAnimationWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfuntionanimationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKSkinAnimationWidget</class>
    <extends>QWidget</extends>
    <header>ttkfuntionanimationwidget.h</header>
    <container>1</container>

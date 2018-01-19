@@ -95,7 +95,6 @@ TTKOptionAnimationWidget::TTKOptionAnimationWidget(QWidget *parent)
     m_pix = QPixmap(54, 2);
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
     m_showLine = false;
-    m_showState = true;
 
     QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
 
@@ -113,6 +112,34 @@ TTKOptionAnimationWidget::TTKOptionAnimationWidget(QWidget *parent)
 }
 
 void TTKOptionAnimationWidget::paintEvent(QPaintEvent *event)
+{
+    m_totalWidth = width();
+    TTKBaseAnimationWidget::paintEvent(event);
+}
+
+
+
+TTKSkinAnimationWidget::TTKSkinAnimationWidget(QWidget *parent)
+    : TTKBaseAnimationWidget(parent)
+{
+    m_pix = QPixmap(":/res/arrow");
+
+    QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
+
+    for(int i=0; i<6; ++i)
+    {
+        QToolButton *btn = new QToolButton(this);
+        btn->setText(QString::number(i));
+        btn->setFixedSize(54, 23);
+        ly->addWidget(btn);
+        m_group->addButton(btn, i);
+        m_container << btn;
+    }
+
+    switchToSelectedItemStyle(0);
+}
+
+void TTKSkinAnimationWidget::paintEvent(QPaintEvent *event)
 {
     m_totalWidth = width();
     TTKBaseAnimationWidget::paintEvent(event);

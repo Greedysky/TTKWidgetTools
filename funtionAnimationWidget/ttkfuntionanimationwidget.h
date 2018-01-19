@@ -66,4 +66,15 @@ protected:
 };
 
 
+class TTKSkinAnimationWidget : public TTKBaseAnimationWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKSkinAnimationWidget(QWidget *parent = 0);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+};
+
 #endif // TTKFUNTIONANIMATIONWIDGET_H
