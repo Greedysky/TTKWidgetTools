@@ -77,6 +77,9 @@ Screenshots
 ### CircleClickPlane (波纹状点击窗口)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/circleClickPlane/res/demo.gif?raw=true)
 
+### LineEditWidget (输入框控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/lineEditWidget/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.

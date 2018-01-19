@@ -23,9 +23,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = TTKWidgetTools
 TEMPLATE = app
 
-QMAKE_CXXFLAGS += -std=c++11
 win32:msvc{
     CONFIG +=c++11
+}else{
+    QMAKE_CXXFLAGS += -std=c++11
 }
 
 SOURCES += \
@@ -46,6 +47,7 @@ include(funtionAnimationWidget/FuntionAnimationWidget.pri)
 include(gifLabelWidget/GifLabelWidget.pri)
 include(grabItemWidget/GrabItemWidget.pri)
 include(layoutAnimationWidget/LayoutAnimationWidget.pri)
+include(lineEditWidget/LineEditWidget.pri)
 include(marqueeWidget/MarqueeWidget.pri)
 include(moveDialog/MoveDialog.pri)
 include(moveWidget/MoveWidget.pri)
