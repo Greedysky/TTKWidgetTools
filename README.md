@@ -44,8 +44,8 @@ Screenshots
 ### MovingLabelSlider (文本滑块控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/movingLabelSlider/res/demo.gif?raw=true)
 
-### SlowMovingTableWidget (滚动平滑表格控件)
-![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/slowMovingTableWidget/res/demo.gif?raw=true)
+### SmoothMovingTableWidget (滚动平滑表格控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/smoothMovingTableWidget/res/demo.gif?raw=true)
 
 ### ColorDialog (调色盒控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorDialog/res/demo.gif?raw=true)

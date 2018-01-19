@@ -81,7 +81,7 @@
     <item row="2" column="0">
      <widget class="QPushButton" name="pushButton_8">
       <property name="text">
-       <string>SlowMovingTable</string>
+       <string>SmoothMovingTableWindow</string>
       </property>
      </widget>
     </item>
@@ -151,7 +151,7 @@
     <item row="4" column="3">
      <widget class="QPushButton" name="pushButton_19">
       <property name="text">
-       <string>TTKCircleClickPlane</string>
+       <string>CircleClickPlane</string>
       </property>
      </widget>
     </item>

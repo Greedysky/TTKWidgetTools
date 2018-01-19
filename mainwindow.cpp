@@ -11,7 +11,7 @@
 #include "marqueeWidget/ttkmarqueewindow.h"
 #include "roundAnimationLabel/ttkroundanimationwindow.h"
 #include "movingLabelSlider/ttkmovinglabelwindow.h"
-#include "slowMovingTableWidget/ttkslowmovingtablewindow.h"
+#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
 #include "colorDialog/ttkcolorwindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "shiningSlider/ttkshiningsliderwindow.h"
@@ -79,7 +79,7 @@ void MainWindow::changed(int index)
             break;
         case 7: (new TTKMovingLabelWindow(this))->show();
             break;
-        case 8: (new TTKSlowMovingTableWindow(this))->show();
+        case 8: (new TTKSmoothMovingTableWindow(this))->show();
             break;
         case 9: (new TTKColorWindow(this))->show();
             break;

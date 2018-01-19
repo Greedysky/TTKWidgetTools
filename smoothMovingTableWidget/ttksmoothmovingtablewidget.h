@@ -1,5 +1,5 @@
-#ifndef TTKSLOWMOVINGTABLEWIDGET_H
-#define TTKSLOWMOVINGTABLEWIDGET_H
+#ifndef TTKSMOOTHMOVINGTABLEWIDGET_H
+#define TTKSMOOTHMOVINGTABLEWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -23,12 +23,12 @@
 
 class QPropertyAnimation;
 
-class TTKSlowMovingTableWidget : public QTableWidget
+class TTKSmoothMovingTableWidget : public QTableWidget
 {
     Q_OBJECT
 public:
-    explicit TTKSlowMovingTableWidget(QWidget *parent = 0);
-    ~TTKSlowMovingTableWidget();
+    explicit TTKSmoothMovingTableWidget(QWidget *parent = 0);
+    ~TTKSmoothMovingTableWidget();
 
     void setMovedScrollBar(QScrollBar *bar);
 
@@ -47,4 +47,4 @@ protected:
 
 };
 
-#endif // TTKSLOWMOVINGTABLEWIDGET_H
+#endif // TTKSMOOTHMOVINGTABLEWIDGET_H

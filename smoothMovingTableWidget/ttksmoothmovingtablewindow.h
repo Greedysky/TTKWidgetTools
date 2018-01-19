@@ -1,5 +1,5 @@
-#ifndef TTKSLOWMOVINGTABLEWINDOW_H
-#define TTKSLOWMOVINGTABLEWINDOW_H
+#ifndef TTKSMOOTHMOVINGTABLEWINDOW_H
+#define TTKSMOOTHMOVINGTABLEWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -22,19 +22,19 @@
 #include <QMainWindow>
 
 namespace Ui {
-class TTKSlowMovingTableWindow;
+class TTKSmoothMovingTableWindow;
 }
 
-class TTKSlowMovingTableWindow : public QMainWindow
+class TTKSmoothMovingTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKSlowMovingTableWindow(QWidget *parent = 0);
-    ~TTKSlowMovingTableWindow();
+    explicit TTKSmoothMovingTableWindow(QWidget *parent = 0);
+    ~TTKSmoothMovingTableWindow();
 
 private:
-    Ui::TTKSlowMovingTableWindow *ui;
+    Ui::TTKSmoothMovingTableWindow *ui;
 
 };
 
-#endif // TTKSLOWMOVINGTABLEWINDOW_H
+#endif // TTKSMOOTHMOVINGTABLEWINDOW_H

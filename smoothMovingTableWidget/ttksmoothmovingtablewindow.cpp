@@ -1,9 +1,9 @@
-#include "ttkslowmovingtablewindow.h"
-#include "ui_ttkslowmovingtablewindow.h"
+#include "ttksmoothmovingtablewindow.h"
+#include "ui_ttksmoothmovingtablewindow.h"
 
-TTKSlowMovingTableWindow::TTKSlowMovingTableWindow(QWidget *parent)
+TTKSmoothMovingTableWindow::TTKSmoothMovingTableWindow(QWidget *parent)
     : QMainWindow(parent),
-    ui(new Ui::TTKSlowMovingTableWindow)
+    ui(new Ui::TTKSmoothMovingTableWindow)
 {
     ui->setupUi(this);
 
@@ -17,7 +17,7 @@ TTKSlowMovingTableWindow::TTKSlowMovingTableWindow(QWidget *parent)
     ui->tableWidget->setMovedScrollBar(ui->tableWidget->verticalScrollBar());
 }
 
-TTKSlowMovingTableWindow::~TTKSlowMovingTableWindow()
+TTKSmoothMovingTableWindow::~TTKSmoothMovingTableWindow()
 {
     delete ui;
 }

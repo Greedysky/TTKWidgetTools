@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TTKSlowMovingTableWindow</class>
- <widget class="QMainWindow" name="TTKSlowMovingTableWindow">
+ <class>TTKSmoothMovingTableWindow</class>
+ <widget class="QMainWindow" name="TTKSmoothMovingTableWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,12 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKSlowMovingTableWindow</string>
+   <string>TTKSmoothMovingTableWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="TTKSlowMovingTableWidget" name="tableWidget"/>
+     <widget class="TTKSmoothMovingTableWidget" name="tableWidget"/>
     </item>
    </layout>
   </widget>
@@ -24,9 +24,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>TTKSlowMovingTableWidget</class>
+   <class>TTKSmoothMovingTableWidget</class>
    <extends>QTableWidget</extends>
-   <header>ttkslowmovingtablewidget.h</header>
+   <header>ttksmoothmovingtablewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

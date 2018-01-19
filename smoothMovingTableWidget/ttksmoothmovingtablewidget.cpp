@@ -1,11 +1,11 @@
-#include "ttkslowmovingtablewidget.h"
+#include "ttksmoothmovingtablewidget.h"
 
 #include <QTimer>
 #include <QScrollBar>
 #include <QWheelEvent>
 #include <QPropertyAnimation>
 
-TTKSlowMovingTableWidget::TTKSlowMovingTableWidget(QWidget *parent)
+TTKSmoothMovingTableWidget::TTKSmoothMovingTableWidget(QWidget *parent)
     : QTableWidget(parent)
 {
     m_deltaValue = 0;
@@ -19,14 +19,14 @@ TTKSlowMovingTableWidget::TTKSlowMovingTableWidget(QWidget *parent)
     connect(m_animationTimer, SIGNAL(timeout()), SLOT(timeToAnimation()));
 }
 
-TTKSlowMovingTableWidget::~TTKSlowMovingTableWidget()
+TTKSmoothMovingTableWidget::~TTKSmoothMovingTableWidget()
 {
     m_animationTimer->stop();
     delete m_animationTimer;
     delete m_slowAnimation;
 }
 
-void TTKSlowMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
+void TTKSmoothMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
 {
     m_scrollBar = bar;
     delete m_slowAnimation;
@@ -35,7 +35,7 @@ void TTKSlowMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
     connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(valueChanged(int)));
 }
 
-void TTKSlowMovingTableWidget::timeToAnimation()
+void TTKSmoothMovingTableWidget::timeToAnimation()
 {
     m_isFirstInit = true;
     m_animationTimer->stop();
@@ -48,12 +48,12 @@ void TTKSlowMovingTableWidget::timeToAnimation()
     m_slowAnimation->start();
 }
 
-void TTKSlowMovingTableWidget::valueChanged(int value)
+void TTKSmoothMovingTableWidget::valueChanged(int value)
 {
     m_previousValue = value;
 }
 
-void TTKSlowMovingTableWidget::wheelEvent(QWheelEvent *event)
+void TTKSmoothMovingTableWidget::wheelEvent(QWheelEvent *event)
 {
     QTableWidget::wheelEvent(event);
 

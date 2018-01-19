@@ -19,12 +19,12 @@
 INCLUDEPATH += $$PWD
 
 SOURCES += \
-    $$PWD/ttkslowmovingtablewidget.cpp \
-    $$PWD/ttkslowmovingtablewindow.cpp
+    $$PWD/ttksmoothmovingtablewidget.cpp \
+    $$PWD/ttksmoothmovingtablewindow.cpp
 
 HEADERS  += \
-    $$PWD/ttkslowmovingtablewidget.h \
-    $$PWD/ttkslowmovingtablewindow.h
+    $$PWD/ttksmoothmovingtablewidget.h \
+    $$PWD/ttksmoothmovingtablewindow.h
 
 FORMS    += \
-    $$PWD/ttkslowmovingtablewindow.ui
+    $$PWD/ttksmoothmovingtablewindow.ui
