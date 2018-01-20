@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKToggleWindow</class>
+ <widget class="QMainWindow" name="TTKToggleWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>321</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKToggleWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKToggleWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>120</width>
+      <height>60</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKToggleWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>60</y>
+      <width>120</width>
+      <height>60</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKToggleWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>150</y>
+      <width>60</width>
+      <height>120</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKToggleWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>150</y>
+      <width>60</width>
+      <height>120</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKToggleWidget</class>
+   <extends>QWidget</extends>
+   <header>ttktogglewidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

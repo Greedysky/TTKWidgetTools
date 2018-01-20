@@ -80,6 +80,9 @@ Screenshots
 ### LineEditWidget (输入框控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/lineEditWidget/res/demo.gif?raw=true)
 
+### ToggleWidget (Toggle控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/toggleWidget/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
