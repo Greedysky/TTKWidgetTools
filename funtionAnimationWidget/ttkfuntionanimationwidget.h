@@ -20,11 +20,12 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
 class QButtonGroup;
 class QPropertyAnimation;
 
-class TTKBaseAnimationWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKBaseAnimationWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -54,7 +55,7 @@ protected:
 };
 
 
-class TTKOptionAnimationWidget : public TTKBaseAnimationWidget
+class TTK_EXTRAS_EXPORT TTKOptionAnimationWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:
@@ -66,7 +67,7 @@ protected:
 };
 
 
-class TTKSkinAnimationWidget : public TTKBaseAnimationWidget
+class TTK_EXTRAS_EXPORT TTKSkinAnimationWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:

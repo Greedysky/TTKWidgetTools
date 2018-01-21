@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKToggleWindow;

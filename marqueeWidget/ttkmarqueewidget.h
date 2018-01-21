@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-class TTKMarqueeWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKMarqueeWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -21,8 +21,9 @@
 
 #include <QMenu>
 #include <QToolButton>
+#include "ttkglobaldefine.h"
 
-class TTKToolMenu : public QMenu
+class TTK_EXTRAS_EXPORT TTKToolMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -38,7 +39,7 @@ protected:
 };
 
 
-class TTKToolMenuWidget : public QToolButton
+class TTK_EXTRAS_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
 public:

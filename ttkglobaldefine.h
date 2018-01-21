@@ -1,5 +1,5 @@
-#ifndef TTKSMOOTHMOVINGTABLEWIDGET_H
-#define TTKSMOOTHMOVINGTABLEWIDGET_H
+#ifndef TTKGLOBALDEFINE_H
+#define TTKGLOBALDEFINE_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,33 +19,18 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QTableWidget>
-#include "ttkglobaldefine.h"
+#include <QObject>
 
-class QPropertyAnimation;
+//////////////////////////////////////
+///exoprt
+///
+///
+#define TTK_EXPORT
 
-class TTK_EXTRAS_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
-{
-    Q_OBJECT
-public:
-    explicit TTKSmoothMovingTableWidget(QWidget *parent = 0);
-    ~TTKSmoothMovingTableWidget();
+#ifdef TTK_EXPORT
+#  define TTK_EXTRAS_EXPORT Q_DECL_EXPORT
+#else
+#  define TTK_EXTRAS_IMPORT Q_DECL_IMPORT
+#endif
 
-    void setMovedScrollBar(QScrollBar *bar);
-
-public Q_SLOTS:
-    void timeToAnimation();
-    void valueChanged(int value);
-
-protected:
-    virtual void wheelEvent(QWheelEvent *event) override;
-
-    bool m_isFirstInit;
-    int m_previousValue, m_deltaValue;
-    QScrollBar *m_scrollBar;
-    QTimer *m_animationTimer;
-    QPropertyAnimation *m_slowAnimation;
-
-};
-
-#endif // TTKSMOOTHMOVINGTABLEWIDGET_H
+#endif // TTKGLOBALDEFINE_H

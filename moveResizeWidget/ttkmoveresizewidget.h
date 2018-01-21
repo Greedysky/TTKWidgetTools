@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-struct MoveResizeStruct
+struct TTK_EXTRAS_EXPORT MoveResizeStruct
 {
     bool m_mouseLeftPress;
     bool m_isPressBorder;
@@ -30,7 +31,7 @@ struct MoveResizeStruct
     QSize m_pressedSize;
 };
 
-class TTKMoveResizeWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKMoveResizeWidget : public QWidget
 {
     Q_OBJECT
 public:

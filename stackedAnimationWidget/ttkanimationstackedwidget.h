@@ -23,8 +23,9 @@
 #include <QVariant>
 #include <QStackedWidget>
 #include <QPropertyAnimation>
+#include "ttkglobaldefine.h"
 
-class TTKAnimationStackedWidget : public QStackedWidget
+class TTK_EXTRAS_EXPORT TTKAnimationStackedWidget : public QStackedWidget
 {
     Q_OBJECT
 public:

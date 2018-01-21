@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKAnimationStackedWindow;
 }
 
-class TTKAnimationStackedWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKAnimationStackedWindow : public QMainWindow
 {
     Q_OBJECT
 

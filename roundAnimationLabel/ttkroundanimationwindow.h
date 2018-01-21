@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKRoundAnimationWindow;
 }
 
-class TTKRoundAnimationWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKRoundAnimationWindow : public QMainWindow
 {
     Q_OBJECT
 public:

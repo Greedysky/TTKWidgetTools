@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKMoveResizeWidgetWindow;
 }
 
-class TTKMoveResizeWidgetWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKMoveResizeWidgetWindow : public QMainWindow
 {
     Q_OBJECT
 public:

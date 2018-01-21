@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKGrabItemWindow;
 }
 
-class TTKGrabItemWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKGrabItemWindow : public QMainWindow
 {
     Q_OBJECT
 public:

@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKShiningSliderWindow;
 }
 
-class TTKShiningSliderWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKShiningSliderWindow : public QMainWindow
 {
     Q_OBJECT
 public:

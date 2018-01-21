@@ -21,8 +21,9 @@
 
 #include <QTimer>
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-class TTKRoundAnimationLabel : public QWidget
+class TTK_EXTRAS_EXPORT TTKRoundAnimationLabel : public QWidget
 {
     Q_OBJECT
 public:
@@ -30,7 +31,6 @@ public:
     ~TTKRoundAnimationLabel();
 
     void setPixmap(const QPixmap &pix);
-
     void setInterval(int value);
 
 public Q_SLOTS:

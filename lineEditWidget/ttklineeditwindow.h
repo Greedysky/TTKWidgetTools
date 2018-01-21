@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKLineEditWindow;
 }
 
-class TTKLineEditWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKLineEditWindow : public QMainWindow
 {
     Q_OBJECT
 public:

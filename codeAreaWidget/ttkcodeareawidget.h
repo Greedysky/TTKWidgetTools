@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobaldefine.h"
 
-class TTKCodeAreaWidget : public QLabel
+class TTK_EXTRAS_EXPORT TTKCodeAreaWidget : public QLabel
 {
     Q_OBJECT
 public:

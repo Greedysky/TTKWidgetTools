@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QAbstractButton>
+#include "ttkglobaldefine.h"
 
 class QState;
 class QStateMachine;
@@ -27,7 +28,7 @@ class QSignalTransition;
 
 class TTKCheckable;
 
-class TTKCheckableIcon : public QWidget
+class TTK_EXTRAS_EXPORT TTKCheckableIcon : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor color READ color WRITE setColor)
@@ -61,7 +62,7 @@ protected:
 };
 
 
-class TTKCheckable : public QAbstractButton
+class TTK_EXTRAS_EXPORT TTKCheckable : public QAbstractButton
 {
     Q_OBJECT
 public:

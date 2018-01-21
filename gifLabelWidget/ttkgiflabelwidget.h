@@ -20,10 +20,11 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobaldefine.h"
 
 class QTimer;
 
-class TTKGifLabelWidget : public QLabel
+class TTK_EXTRAS_EXPORT TTKGifLabelWidget : public QLabel
 {
     Q_OBJECT
 public:

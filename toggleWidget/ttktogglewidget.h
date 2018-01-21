@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QAbstractButton>
+#include "ttkglobaldefine.h"
 
 class QState;
 class QStateMachine;
 class TTKToggleWidget;
 
-class TTKToggleThumb : public QWidget
+class TTK_EXTRAS_EXPORT TTKToggleThumb : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(qreal shift WRITE setShift READ shift)
@@ -54,7 +55,7 @@ protected:
 };
 
 
-class TTKToggleTrack : public QWidget
+class TTK_EXTRAS_EXPORT TTKToggleTrack : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor trackColor WRITE setTrackColor READ trackColor)
@@ -74,7 +75,7 @@ protected:
 };
 
 
-class TTKToggleWidget : public QAbstractButton
+class TTK_EXTRAS_EXPORT TTKToggleWidget : public QAbstractButton
 {
     Q_OBJECT
 public:

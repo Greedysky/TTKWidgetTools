@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKRadioButtonWindow;
 }
 
-class TTKRadioButtonWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKRadioButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:

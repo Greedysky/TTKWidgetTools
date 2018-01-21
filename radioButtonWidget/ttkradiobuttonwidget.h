@@ -21,7 +21,7 @@
 
 #include "ttkcheckable.h"
 
-class TTKRadioButtonWidget : public TTKCheckable
+class TTK_EXTRAS_EXPORT TTKRadioButtonWidget : public TTKCheckable
 {
     Q_OBJECT
 public:

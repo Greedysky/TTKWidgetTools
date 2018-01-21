@@ -20,10 +20,11 @@
  ================================================= */
 
 #include <QProgressBar>
+#include "ttkglobaldefine.h"
 
 class TTKProgressWidget;
 
-class TTKlProgressDelegate : public QObject
+class TTK_EXTRAS_EXPORT TTKlProgressDelegate : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qreal offset WRITE setOffset READ offset)
@@ -40,7 +41,7 @@ private:
 };
 
 
-class TTKProgressWidget : public QProgressBar
+class TTK_EXTRAS_EXPORT TTKProgressWidget : public QProgressBar
 {
     Q_OBJECT
     Q_PROPERTY(QColor progressColor WRITE setProgressColor READ progressColor)

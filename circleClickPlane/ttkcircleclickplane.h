@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-class TTKCircleClickPlane : public QWidget
+class TTK_EXTRAS_EXPORT TTKCircleClickPlane : public QWidget
 {
     Q_OBJECT
 public:

@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKCheckButtonWindow;
 }
 
-class TTKCheckButtonWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKCheckButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:

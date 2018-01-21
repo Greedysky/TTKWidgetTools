@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobaldefine.h"
 
-class TTKSplitItemLabel : public QLabel
+class TTK_EXTRAS_EXPORT TTKSplitItemLabel : public QLabel
 {
     Q_OBJECT
 public:

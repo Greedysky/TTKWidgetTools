@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-class TTKGrabItemWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKGrabItemWidget : public QWidget
 {
     Q_OBJECT
 public:

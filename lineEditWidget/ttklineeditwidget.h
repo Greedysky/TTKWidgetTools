@@ -20,10 +20,11 @@
  ================================================= */
 
 #include <QLineEdit>
+#include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
 
-class TTKLineEditWidget : public QLineEdit
+class TTK_EXTRAS_EXPORT TTKLineEditWidget : public QLineEdit
 {
     Q_OBJECT
 public:

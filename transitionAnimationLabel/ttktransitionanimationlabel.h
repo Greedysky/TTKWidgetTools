@@ -20,10 +20,11 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
 
-class TTKTransitionAnimationLabel : public QLabel
+class TTK_EXTRAS_EXPORT TTKTransitionAnimationLabel : public QLabel
 {
     Q_OBJECT
 public:

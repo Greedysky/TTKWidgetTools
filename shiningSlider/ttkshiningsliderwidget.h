@@ -21,10 +21,11 @@
 
 #include <QSlider>
 #include <QMouseEvent>
+#include "ttkglobaldefine.h"
 
 class TTKGifLabelWidget;
 
-class TTKShiningSliderWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKShiningSliderWidget : public QWidget
 {
     Q_OBJECT
 public:

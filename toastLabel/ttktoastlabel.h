@@ -21,8 +21,9 @@
 
 #include <QLabel>
 #include <QTimer>
+#include "ttkglobaldefine.h"
 
-class TTKToastLabel : public QLabel
+class TTK_EXTRAS_EXPORT TTKToastLabel : public QLabel
 {
     Q_OBJECT
 public:

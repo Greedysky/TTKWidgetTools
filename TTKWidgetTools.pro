@@ -34,6 +34,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS  += \
+    ttkglobaldefine.h \
     mainwindow.h
 
 FORMS    += \

@@ -22,7 +22,7 @@
 #include <QLabel>
 #include "ttkclickedslider.h"
 
-class TTKMovingLabelSlider : public TTKClickedSlider
+class TTK_EXTRAS_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
 {
     Q_OBJECT
 public:

@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKSmoothMovingTableWindow;
 }
 
-class TTKSmoothMovingTableWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKSmoothMovingTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:

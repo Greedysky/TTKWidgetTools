@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKProgressWindow;
 }
 
-class TTKProgressWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:

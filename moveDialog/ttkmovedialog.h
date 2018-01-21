@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QDialog>
+#include "ttkglobaldefine.h"
 
-class TTKMoveDialog : public QDialog
+class TTK_EXTRAS_EXPORT TTKMoveDialog : public QDialog
 {
     Q_OBJECT
 public:

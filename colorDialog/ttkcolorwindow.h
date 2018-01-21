@@ -20,12 +20,13 @@
  ================================================= */
 
 #include <QMainWindow>
+#include "ttkglobaldefine.h"
 
 namespace Ui {
 class TTKColorWindow;
 }
 
-class TTKColorWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKColorWindow : public QMainWindow
 {
     Q_OBJECT
 public:

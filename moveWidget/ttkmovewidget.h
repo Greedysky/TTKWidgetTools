@@ -21,8 +21,9 @@
 
 #include <QLabel>
 #include <QMouseEvent>
+#include "ttkglobaldefine.h"
 
-class TTKMoveWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKMoveWidget : public QWidget
 {
     Q_OBJECT
 public:

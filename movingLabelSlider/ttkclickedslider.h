@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QSlider>
+#include "ttkglobaldefine.h"
 
-class TTKClickedSlider : public QSlider
+class TTK_EXTRAS_EXPORT TTKClickedSlider : public QSlider
 {
     Q_OBJECT
 public:

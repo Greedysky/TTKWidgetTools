@@ -20,8 +20,9 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
-class TTKHlPalette : public QWidget
+class TTK_EXTRAS_EXPORT TTKHlPalette : public QWidget
 {
     Q_OBJECT
 public:
@@ -53,7 +54,7 @@ protected:
 };
 
 
-class TTKHlSaturationPalette : public QWidget
+class TTK_EXTRAS_EXPORT TTKHlSaturationPalette : public QWidget
 {
     Q_OBJECT
 public:

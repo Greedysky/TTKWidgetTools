@@ -20,11 +20,12 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobaldefine.h"
 
 class QVBoxLayout;
 class QPropertyAnimation;
 
-class TTKLayoutAnimationWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKLayoutAnimationWidget : public QWidget
 {
     Q_OBJECT
 public:
