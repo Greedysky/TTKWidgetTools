@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="check_box">res/check_box.svg</file>
+        <file alias="check_box_outline">res/check_box_outline.svg</file>
+        <file alias="radio_button_checked">res/radio_button_checked.svg</file>
+        <file alias="radio_button_unchecked">res/radio_button_unchecked.svg</file>
+    </qresource>
+</RCC>

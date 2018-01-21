@@ -25,6 +25,7 @@
 #include "circleClickPlane/ttkcircleclickplanewindow.h"
 #include "lineEditWidget/ttklineeditwindow.h"
 #include "toggleWidget/ttktogglewindow.h"
+#include "radioButtonWidget/ttkradiobuttonwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -55,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_19, 19);
     group->addButton(ui->pushButton_20, 20);
     group->addButton(ui->pushButton_21, 21);
+    group->addButton(ui->pushButton_22, 22);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -110,6 +112,8 @@ void MainWindow::changed(int index)
         case 20:(new TTKLineEditWindow(this))->show();
             break;
         case 21:(new TTKToggleWindow(this))->show();
+            break;
+        case 22:(new TTKRadioButtonWindow(this))->show();
             break;
         default:
             break;
