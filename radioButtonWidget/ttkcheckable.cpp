@@ -163,6 +163,19 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     QCoreApplication::processEvents();
 }
 
+TTKCheckable::~TTKCheckable()
+{
+    delete m_checkedIcon;
+    delete m_uncheckedIcon;
+    delete m_uncheckedTransition;
+    delete m_checkedTransition;
+    delete m_uncheckedState;
+    delete m_checkedState;
+    delete m_disabledUncheckedState;
+    delete m_disabledCheckedState;
+    delete m_stateMachine;
+}
+
 void TTKCheckable::setLabelPosition(LabelPosition placement)
 {
     m_labelPosition = placement;

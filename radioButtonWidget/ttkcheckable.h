@@ -73,6 +73,7 @@ public:
     };
 
     explicit TTKCheckable(QWidget *parent = 0);
+    virtual ~TTKCheckable();
 
     void setLabelPosition(LabelPosition placement);
     LabelPosition labelPosition() const;
