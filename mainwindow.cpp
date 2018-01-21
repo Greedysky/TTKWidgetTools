@@ -26,6 +26,7 @@
 #include "lineEditWidget/ttklineeditwindow.h"
 #include "toggleWidget/ttktogglewindow.h"
 #include "radioButtonWidget/ttkradiobuttonwindow.h"
+#include "checkButtonWidget/ttkcheckbuttonwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -57,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_20, 20);
     group->addButton(ui->pushButton_21, 21);
     group->addButton(ui->pushButton_22, 22);
+    group->addButton(ui->pushButton_23, 23);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -114,6 +116,8 @@ void MainWindow::changed(int index)
         case 21:(new TTKToggleWindow(this))->show();
             break;
         case 22:(new TTKRadioButtonWindow(this))->show();
+            break;
+        case 23:(new TTKCheckButtonWindow(this))->show();
             break;
         default:
             break;

@@ -39,7 +39,7 @@ HEADERS  += \
 FORMS    += \
     mainwindow.ui
 
-
+include(checkButtonWidget/CheckButtonWidget.pri)
 include(circleClickPlane/CircleClickPlane.pri)
 include(codeAreaWidget/CodeAreaWidget.pri)
 include(colorDialog/ColorDialog.pri)
