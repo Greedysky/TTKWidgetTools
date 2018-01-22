@@ -30,7 +30,7 @@
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_0">
       <property name="text">
        <string>StackedAnimationWidget</string>
       </property>
@@ -194,6 +194,13 @@
      <widget class="QPushButton" name="pushButton_25">
       <property name="text">
        <string>FlatButtonWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="pushButton_26">
+      <property name="text">
+       <string>CircularProgressWidget</string>
       </property>
      </widget>
     </item>

@@ -1,34 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ttkwidgettools.h"
 
 #include <QButtonGroup>
-
-#include "stackedAnimationWidget/ttkanimationstackedwindow.h"
-#include "transitionAnimationLabel/ttktransitionanimationwindow.h"
-#include "gifLabelWidget/ttkgiflabelwindow.h"
-#include "codeAreaWidget/ttkcodeareawindow.h"
-#include "toastLabel/ttktoastwindow.h"
-#include "marqueeWidget/ttkmarqueewindow.h"
-#include "roundAnimationLabel/ttkroundanimationwindow.h"
-#include "movingLabelSlider/ttkmovinglabelwindow.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
-#include "colorDialog/ttkcolorwindow.h"
-#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
-#include "shiningSlider/ttkshiningsliderwindow.h"
-#include "splitItemLabel/ttksplititemwindow.h"
-#include "grabItemWidget/ttkgrabitemwindow.h"
-#include "funtionAnimationWidget/ttkfuntionanimationwindow.h"
-#include "toolMenuWidget/ttktoolmenuwindow.h"
-#include "moveDialog/ttkmovedialogwindow.h"
-#include "moveWidget/ttkmovewidgetwindow.h"
-#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
-#include "circleClickPlane/ttkcircleclickplanewindow.h"
-#include "lineEditWidget/ttklineeditwindow.h"
-#include "toggleWidget/ttktogglewindow.h"
-#include "radioButtonWidget/ttkradiobuttonwindow.h"
-#include "checkButtonWidget/ttkcheckbuttonwindow.h"
-#include "progressWidget/ttkprogresswindow.h"
-#include "flatButtonWidget/ttkflatbuttonwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -37,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QButtonGroup *group = new QButtonGroup(this);
-    group->addButton(ui->pushButton, 0);
+    group->addButton(ui->pushButton_0, 0);
     group->addButton(ui->pushButton_1, 1);
     group->addButton(ui->pushButton_2, 2);
     group->addButton(ui->pushButton_3, 3);
@@ -63,7 +37,10 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_23, 23);
     group->addButton(ui->pushButton_24, 24);
     group->addButton(ui->pushButton_25, 25);
+    group->addButton(ui->pushButton_26, 26);
+
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
+
 }
 
 MainWindow::~MainWindow()
@@ -126,6 +103,8 @@ void MainWindow::changed(int index)
         case 24:(new TTKProgressWindow(this))->show();
             break;
         case 25:(new TTKFlatButtonWindow(this))->show();
+            break;
+        case 26:(new TTKCircularProgressWindow(this))->show();
             break;
         default:
             break;

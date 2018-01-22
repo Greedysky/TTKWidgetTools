@@ -89,6 +89,15 @@ Screenshots
 ### CheckButtonWidget (CheckButton控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/checkButtonWidget/res/demo.gif?raw=true)
 
+### ProgressWidget (Progress控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/progressWidget/res/demo.gif?raw=true)
+
+### FlatButtonWidget (FlatButton控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/flatButtonWidget/res/demo.gif?raw=true)
+
+### CircularProgressWidget (CircularProgress控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/circularProgressWidget/res/demo.gif?raw=true)
+
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.

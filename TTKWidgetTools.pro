@@ -35,6 +35,7 @@ SOURCES += \
 
 HEADERS  += \
     ttkglobaldefine.h \
+    ttkwidgettools.h \
     mainwindow.h
 
 FORMS    += \
@@ -42,6 +43,7 @@ FORMS    += \
 
 include(checkButtonWidget/CheckButtonWidget.pri)
 include(circleClickPlane/CircleClickPlane.pri)
+include(circularProgressWidget/CircularProgressWidget.pri)
 include(codeAreaWidget/CodeAreaWidget.pri)
 include(colorDialog/ColorDialog.pri)
 include(flatButtonWidget/FlatButtonWidget.pri)
