@@ -3,7 +3,7 @@
 #include <QPainter>
 #include <QPropertyAnimation>
 
-TTKlProgressDelegate::TTKlProgressDelegate(TTKProgressWidget *parent)
+TTKProgressDelegate::TTKProgressDelegate(TTKProgressWidget *parent)
     : QObject(parent),
       m_progress(parent),
       m_offset(0)
@@ -11,7 +11,7 @@ TTKlProgressDelegate::TTKlProgressDelegate(TTKProgressWidget *parent)
 
 }
 
-void TTKlProgressDelegate::setOffset(qreal offset)
+void TTKProgressDelegate::setOffset(qreal offset)
 {
     m_offset = offset;
     m_progress->update();
@@ -22,7 +22,7 @@ void TTKlProgressDelegate::setOffset(qreal offset)
 TTKProgressWidget::TTKProgressWidget(QWidget *parent)
     : QProgressBar(parent)
 {
-    m_delegate = new TTKlProgressDelegate(this);
+    m_delegate = new TTKProgressDelegate(this);
 
     QPropertyAnimation *animation;
     animation = new QPropertyAnimation(this);

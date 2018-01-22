@@ -28,6 +28,7 @@
 #include "radioButtonWidget/ttkradiobuttonwindow.h"
 #include "checkButtonWidget/ttkcheckbuttonwindow.h"
 #include "progressWidget/ttkprogresswindow.h"
+#include "flatButtonWidget/ttkflatbuttonwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -61,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_22, 22);
     group->addButton(ui->pushButton_23, 23);
     group->addButton(ui->pushButton_24, 24);
+    group->addButton(ui->pushButton_25, 25);
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 }
 
@@ -122,6 +124,8 @@ void MainWindow::changed(int index)
         case 23:(new TTKCheckButtonWindow(this))->show();
             break;
         case 24:(new TTKProgressWindow(this))->show();
+            break;
+        case 25:(new TTKFlatButtonWindow(this))->show();
             break;
         default:
             break;

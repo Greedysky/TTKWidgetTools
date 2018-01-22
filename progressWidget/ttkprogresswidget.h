@@ -24,12 +24,12 @@
 
 class TTKProgressWidget;
 
-class TTK_EXTRAS_EXPORT TTKlProgressDelegate : public QObject
+class TTK_EXTRAS_EXPORT TTKProgressDelegate : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qreal offset WRITE setOffset READ offset)
 public:
-    TTKlProgressDelegate(TTKProgressWidget *parent);
+    TTKProgressDelegate(TTKProgressWidget *parent);
 
     void setOffset(qreal offset);
     inline qreal offset() const { return m_offset; }
@@ -59,7 +59,7 @@ public:
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
 
-    TTKlProgressDelegate *m_delegate;
+    TTKProgressDelegate *m_delegate;
     QColor m_progressColor, m_backgroundColor;
 
 };

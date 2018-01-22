@@ -1,0 +1,4 @@
+#ifndef TTKWIDGETTOOLS_H
+#define TTKWIDGETTOOLS_H
+
+#endif // TTKWIDGETTOOLS_H

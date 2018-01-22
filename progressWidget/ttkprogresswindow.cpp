@@ -7,8 +7,8 @@ TTKProgressWindow::TTKProgressWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->widget->setProgressColor(QColor(0, 0, 0));
-    ui->widget->setBackgroundColor(QColor(255, 0, 0));
+    ui->widget->setProgressColor(QColor(255, 255, 0));
+    ui->widget->setBackgroundColor(QColor(200, 200, 200));
 
 }
 

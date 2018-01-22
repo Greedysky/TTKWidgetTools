@@ -38,6 +38,7 @@ public:
         Direction_RightTop = Direction_Right + Direction_Top,
         Direction_RightBottom = Direction_Right + Direction_Bottom
     };
+
     explicit TTKGrabItemWidget(QWidget *parent = 0);
 
     virtual void setBorderRect(const QRect &rect);

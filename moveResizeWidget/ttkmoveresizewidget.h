@@ -47,6 +47,7 @@ public:
         Direction_RightTop = Direction_Right + Direction_Top,
         Direction_RightBottom = Direction_Right + Direction_Bottom
     };
+
     explicit TTKMoveResizeWidget(QWidget *parent = 0);
 
 protected:
