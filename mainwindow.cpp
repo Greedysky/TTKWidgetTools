@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_25, 25);
     group->addButton(ui->pushButton_26, 26);
     group->addButton(ui->pushButton_27, 27);
+    group->addButton(ui->pushButton_28, 28);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -108,6 +109,8 @@ void MainWindow::changed(int index)
         case 26:(new TTKCircularProgressWindow(this))->show();
             break;
         case 27:(new TTKSliderWindow(this))->show();
+            break;
+        case 28:(new TTKColorTablePlaneWindow(this))->show();
             break;
         default:
             break;

@@ -15,34 +15,6 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="3">
-     <widget class="QPushButton" name="pushButton_15">
-      <property name="text">
-       <string>ToolMenuWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="text">
-       <string>ShiningSlider</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>StackedAnimationWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_12">
-      <property name="text">
-       <string>SplitItemLabel</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="pushButton_9">
       <property name="text">
@@ -127,10 +99,10 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="pushButton_18">
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pushButton_17">
       <property name="text">
-       <string>MoveResizeWidget</string>
+       <string>MoveWidget</string>
       </property>
      </widget>
     </item>
@@ -138,13 +110,6 @@
      <widget class="QPushButton" name="pushButton_19">
       <property name="text">
        <string>CircleClickPlane</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="pushButton_17">
-      <property name="text">
-       <string>MoveWidget</string>
       </property>
      </widget>
     </item>
@@ -162,31 +127,17 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_8">
-      <property name="text">
-       <string>SmoothMovingTableWindow</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>MarqueeWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>CodeAreaWidget</string>
-      </property>
-     </widget>
-    </item>
     <item row="6" column="0">
      <widget class="QPushButton" name="pushButton_24">
       <property name="text">
        <string>ProgressWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="text">
+       <string>SmoothMovingTableWindow</string>
       </property>
      </widget>
     </item>
@@ -197,6 +148,13 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>CodeAreaWidget</string>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="2">
      <widget class="QPushButton" name="pushButton_26">
       <property name="text">
@@ -204,10 +162,59 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="text">
+       <string>MarqueeWidget</string>
+      </property>
+     </widget>
+    </item>
     <item row="6" column="3">
      <widget class="QPushButton" name="pushButton_27">
       <property name="text">
        <string>SliderWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="text">
+       <string>MoveResizeWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>StackedAnimationWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="text">
+       <string>ToolMenuWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="text">
+       <string>ShiningSlider</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="text">
+       <string>SplitItemLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="pushButton_28">
+      <property name="text">
+       <string>ColorTablePlane</string>
       </property>
      </widget>
     </item>

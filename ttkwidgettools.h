@@ -29,5 +29,6 @@
 #include "flatButtonWidget/ttkflatbuttonwindow.h"
 #include "circularProgressWidget/ttkcircularprogresswindow.h"
 #include "sliderWidget/ttksliderwindow.h"
+#include "colorTablePlane/ttkcolortableplanewindow.h"
 
 #endif // TTKWIDGETTOOLS_H
