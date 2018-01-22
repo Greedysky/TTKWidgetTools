@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QButtonGroup *group = new QButtonGroup(this);
-    group->addButton(ui->pushButton_0, 0);
+    group->addButton(ui->pushButton, 0);
     group->addButton(ui->pushButton_1, 1);
     group->addButton(ui->pushButton_2, 2);
     group->addButton(ui->pushButton_3, 3);
@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_24, 24);
     group->addButton(ui->pushButton_25, 25);
     group->addButton(ui->pushButton_26, 26);
+    group->addButton(ui->pushButton_27, 27);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -105,6 +106,8 @@ void MainWindow::changed(int index)
         case 25:(new TTKFlatButtonWindow(this))->show();
             break;
         case 26:(new TTKCircularProgressWindow(this))->show();
+            break;
+        case 27:(new TTKSliderWindow(this))->show();
             break;
         default:
             break;

@@ -28,5 +28,6 @@
 #include "progressWidget/ttkprogresswindow.h"
 #include "flatButtonWidget/ttkflatbuttonwindow.h"
 #include "circularProgressWidget/ttkcircularprogresswindow.h"
+#include "sliderWidget/ttksliderwindow.h"
 
 #endif // TTKWIDGETTOOLS_H

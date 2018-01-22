@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKSliderWindow</class>
+ <widget class="QMainWindow" name="TTKSliderWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>451</width>
+    <height>294</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKSliderWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#TTKSliderWindow{background:rgba(50, 50, 50, 50);}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKSliderWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>300</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKSliderWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>40</y>
+      <width>30</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKSliderWidget</class>
+   <extends>QWidget</extends>
+   <header>ttksliderwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

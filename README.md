@@ -53,6 +53,9 @@ Screenshots
 ### LayoutAnimationWidget (布局滚动控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/layoutAnimationWidget/res/demo.gif?raw=true)
 
+### SliderWidget (SliderWidget滑块控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/sliderWidget/res/demo.gif?raw=true)
+
 ### ShiningSlider (闪烁滑块控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/shiningSlider/res/demo.gif?raw=true)
 
