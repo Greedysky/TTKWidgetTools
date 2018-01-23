@@ -7,38 +7,68 @@
     <x>0</x>
     <y>0</y>
     <width>451</width>
-    <height>294</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>TTKFunctionAnimationWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="TTKOptionAnimationWidget" name="widget" native="true">
+   <widget class="TTKOptionAnimationHWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
+      <y>20</y>
       <width>405</width>
       <height>41</height>
      </rect>
     </property>
    </widget>
-   <widget class="TTKSkinAnimationWidget" name="widget_2" native="true">
+   <widget class="TTKSkinAnimationHWidget" name="widget_2" native="true">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>80</y>
       <width>405</width>
       <height>41</height>
      </rect>
     </property>
    </widget>
-   <widget class="TTKTableAnimationWidget" name="widget_3" native="true">
+   <widget class="TTKTableAnimationHWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>405</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKOptionAnimationHWidget" name="widget_4" native="true">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>200</y>
+      <width>405</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKTableAnimationHWidget" name="widget_5" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>405</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKSkinAnimationHWidget" name="widget_6" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
       <width>405</width>
       <height>41</height>
      </rect>
@@ -49,19 +79,19 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>TTKOptionAnimationWidget</class>
+   <class>TTKOptionAnimationHWidget</class>
    <extends>QWidget</extends>
    <header>ttkfuntionanimationwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TTKSkinAnimationWidget</class>
+   <class>TTKSkinAnimationHWidget</class>
    <extends>QWidget</extends>
    <header>ttkfuntionanimationwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TTKTableAnimationWidget</class>
+   <class>TTKTableAnimationHWidget</class>
    <extends>QWidget</extends>
    <header>ttkfuntionanimationwidget.h</header>
    <container>1</container>

@@ -8,17 +8,16 @@
 #include <QButtonGroup>
 #include <QPropertyAnimation>
 
-TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
+TTKBaseAnimationHWidget::TTKBaseAnimationHWidget(QWidget *parent)
     : QWidget(parent)
 {
     m_curIndex = 0;
     m_preIndex = 0;
     m_x = 0;
-    m_perWidth = 0.0f;
-    m_totalWidth = 0.0f;
+    m_perWidth = 0;
     m_isAnimation = true;
-    m_showState = true;
     m_showLine = true;
+    m_alignment = Bottom;
 
     m_animation = new QPropertyAnimation(this, "");
     m_animation->setDuration(100);
@@ -35,37 +34,53 @@ TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
     connect(m_group, SIGNAL(buttonClicked(int)), SLOT(switchToSelectedItemStyle(int)));
 }
 
-TTKBaseAnimationWidget::~TTKBaseAnimationWidget()
+TTKBaseAnimationHWidget::~TTKBaseAnimationHWidget()
 {
     qDeleteAll(m_container);
     delete m_animation;
     delete m_group;
 }
 
-void TTKBaseAnimationWidget::paintEvent(QPaintEvent *event)
+void TTKBaseAnimationHWidget::setAlignment(Alignment alignment)
+{
+    m_alignment = alignment;
+}
+
+void TTKBaseAnimationHWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 
-    if(m_showState)
+    m_perWidth = m_container[0]->width() + m_container[0]->x();
+
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
+
+    if(m_alignment == Bottom)
     {
-        m_perWidth = m_container[0]->width() + m_container[0]->x();
-
-        QPainter painter(this);
-        painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-        painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
-
         int offset =  m_perWidth - (m_container[0]->width() + m_pix.width()) / 2;
         offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perWidth);
         if(m_showLine)
         {
             painter.drawLine(0, height(), offset, height());
-            painter.drawLine(offset + m_pix.width(), height(), m_totalWidth, height());
+            painter.drawLine(offset + m_pix.width(), height(), width(), height());
         }
         painter.drawPixmap(offset, height() - m_pix.height(), m_pix);
     }
+    else
+    {
+        int offset =  m_perWidth - (m_container[0]->width() + m_pix.width()) / 2;
+        offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perWidth);
+        if(m_showLine)
+        {
+            painter.drawLine(0, 0, offset, 0);
+            painter.drawLine(offset + m_pix.width(), 0, width(), 0);
+        }
+        painter.drawPixmap(offset, 0, m_pix);
+    }
 }
 
-void TTKBaseAnimationWidget::switchToSelectedItemStyle(int index)
+void TTKBaseAnimationHWidget::switchToSelectedItemStyle(int index)
 {
     m_isAnimation = true;
     m_preIndex = m_curIndex;
@@ -77,20 +92,21 @@ void TTKBaseAnimationWidget::switchToSelectedItemStyle(int index)
     emit buttonClicked(index);
 }
 
-void TTKBaseAnimationWidget::animationChanged(const QVariant &value)
+void TTKBaseAnimationHWidget::animationChanged(const QVariant &value)
 {
     m_x = value.toInt();
     update();
 }
 
-void TTKBaseAnimationWidget::finished()
+void TTKBaseAnimationHWidget::finished()
 {
     m_isAnimation = false;
 }
 
 
-TTKOptionAnimationWidget::TTKOptionAnimationWidget(QWidget *parent)
-    : TTKBaseAnimationWidget(parent)
+
+TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
+    : TTKBaseAnimationHWidget(parent)
 {
     m_pix = QPixmap(54, 2);
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
@@ -111,16 +127,10 @@ TTKOptionAnimationWidget::TTKOptionAnimationWidget(QWidget *parent)
     switchToSelectedItemStyle(0);
 }
 
-void TTKOptionAnimationWidget::paintEvent(QPaintEvent *event)
-{
-    m_totalWidth = width();
-    TTKBaseAnimationWidget::paintEvent(event);
-}
 
 
-
-TTKTableAnimationWidget::TTKTableAnimationWidget(QWidget *parent)
-    : TTKBaseAnimationWidget(parent)
+TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
+    : TTKBaseAnimationHWidget(parent)
 {
     m_pix = QPixmap(54, 2);
     m_pix.fill(QColor(255, 64, 129));
@@ -141,23 +151,21 @@ TTKTableAnimationWidget::TTKTableAnimationWidget(QWidget *parent)
     switchToSelectedItemStyle(0);
 }
 
-void TTKTableAnimationWidget::paintEvent(QPaintEvent *event)
+void TTKTableAnimationHWidget::paintEvent(QPaintEvent *event)
 {
-    m_totalWidth = width();
-
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(0, 188, 212));
 
-    TTKBaseAnimationWidget::paintEvent(event);
+    TTKBaseAnimationHWidget::paintEvent(event);
 }
 
 
 
-TTKSkinAnimationWidget::TTKSkinAnimationWidget(QWidget *parent)
-    : TTKBaseAnimationWidget(parent)
+TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
+    : TTKBaseAnimationHWidget(parent)
 {
-    m_pix = QPixmap(":/res/arrow");
+    m_pix = QPixmap(":/res/bottom");
 
     QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
 
@@ -174,8 +182,8 @@ TTKSkinAnimationWidget::TTKSkinAnimationWidget(QWidget *parent)
     switchToSelectedItemStyle(0);
 }
 
-void TTKSkinAnimationWidget::paintEvent(QPaintEvent *event)
+void TTKSkinAnimationHWidget::setAlignment(Alignment alignment)
 {
-    m_totalWidth = width();
-    TTKBaseAnimationWidget::paintEvent(event);
+    TTKBaseAnimationHWidget::setAlignment(alignment);
+    m_pix = QPixmap(m_alignment == Bottom ? ":/res/bottom" : ":/res/top");
 }

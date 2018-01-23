@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/res">
-        <file alias="arrow">res/arrow.png</file>
+        <file alias="top">res/arrow_top.png</file>
+        <file alias="bottom">res/arrow_bottom.png</file>
     </qresource>
 </RCC>
