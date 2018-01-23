@@ -119,6 +119,41 @@ void TTKOptionAnimationWidget::paintEvent(QPaintEvent *event)
 
 
 
+TTKTableAnimationWidget::TTKTableAnimationWidget(QWidget *parent)
+    : TTKBaseAnimationWidget(parent)
+{
+    m_pix = QPixmap(54, 2);
+    m_pix.fill(QColor(255, 64, 129));
+    m_showLine = false;
+
+    QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
+
+    for(int i=0; i<6; ++i)
+    {
+        QToolButton *btn = new QToolButton(this);
+        btn->setText(QString::number(i));
+        btn->setFixedSize(54, 23);
+        ly->addWidget(btn);
+        m_group->addButton(btn, i);
+        m_container << btn;
+    }
+
+    switchToSelectedItemStyle(0);
+}
+
+void TTKTableAnimationWidget::paintEvent(QPaintEvent *event)
+{
+    m_totalWidth = width();
+
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing);
+    painter.fillRect(rect(), QColor(0, 188, 212));
+
+    TTKBaseAnimationWidget::paintEvent(event);
+}
+
+
+
 TTKSkinAnimationWidget::TTKSkinAnimationWidget(QWidget *parent)
     : TTKBaseAnimationWidget(parent)
 {

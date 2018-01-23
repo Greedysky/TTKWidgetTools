@@ -67,6 +67,18 @@ protected:
 };
 
 
+class TTK_EXTRAS_EXPORT TTKTableAnimationWidget : public TTKBaseAnimationWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKTableAnimationWidget(QWidget *parent = 0);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+};
+
+
 class TTK_EXTRAS_EXPORT TTKSkinAnimationWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT

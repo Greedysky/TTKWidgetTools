@@ -50,6 +50,9 @@ Screenshots
 ### ColorDialog (调色盒控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorDialog/res/demo.gif?raw=true)
 
+### ColorTablePlane (调色版控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/colorTablePlane/res/demo.gif?raw=true)
+
 ### LayoutAnimationWidget (布局滚动控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/layoutAnimationWidget/res/demo.gif?raw=true)
 
