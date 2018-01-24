@@ -20,14 +20,17 @@ INCLUDEPATH += $$PWD
 
 SOURCES += \
     $$PWD/ttkfuntionanimationwidget.cpp \
-    $$PWD/ttkfuntionanimationwindow.cpp
+    $$PWD/ttkfuntionanimationhwindow.cpp \
+    $$PWD/ttkfuntionanimationvwindow.cpp
 
 HEADERS  += \
     $$PWD/ttkfuntionanimationwidget.h \
-    $$PWD/ttkfuntionanimationwindow.h
+    $$PWD/ttkfuntionanimationhwindow.h \
+    $$PWD/ttkfuntionanimationvwindow.h
 
 FORMS    += \
-    $$PWD/ttkfuntionanimationwindow.ui
+    $$PWD/ttkfuntionanimationhwindow.ui \
+    $$PWD/ttkfuntionanimationvwindow.ui
 
 RESOURCES += \
     $$PWD/FuntionAnimationWidget.qrc

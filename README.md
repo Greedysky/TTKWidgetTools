@@ -68,8 +68,11 @@ Screenshots
 ### GrabItemWidget (拉伸控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/grabItemWidget/res/demo.jpg?raw=true)
 
-### FuntionAnimationWidget (标题控件)
+### FuntionAnimationHWidget (标题控件)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/funtionAnimationWidget/res/demo.gif?raw=true)
+
+### FuntionAnimationVWidget (标题控件)
+![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/funtionAnimationWidget/res/demo2.gif?raw=true)
 
 ### MoveDialog (可移动对话框)
 ![Index](https://github.com/Greedysky/TTKWidgetTools/blob/master/moveDialog/res/demo.gif?raw=true)

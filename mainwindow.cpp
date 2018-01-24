@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_26, 26);
     group->addButton(ui->pushButton_27, 27);
     group->addButton(ui->pushButton_28, 28);
+    group->addButton(ui->pushButton_29, 29);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -82,7 +83,7 @@ void MainWindow::changed(int index)
             break;
         case 13:(new TTKGrabItemWindow(this))->show();
             break;
-        case 14:(new TTKFunctionAnimationWindow(this))->show();
+        case 14:(new TTKFunctionAnimationHWindow(this))->show();
             break;
         case 15:(new TTKToolMenuWindow(this))->show();
             break;
@@ -111,6 +112,8 @@ void MainWindow::changed(int index)
         case 27:(new TTKSliderWindow(this))->show();
             break;
         case 28:(new TTKColorTablePlaneWindow(this))->show();
+            break;
+        case 29:(new TTKFunctionAnimationVWindow(this))->show();
             break;
         default:
             break;

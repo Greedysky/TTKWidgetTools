@@ -15,153 +15,6 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="1">
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="text">
-       <string>ColorDialog</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton_1">
-      <property name="text">
-       <string>TransitionAnimationLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="pushButton_7">
-      <property name="text">
-       <string>MovingLabelSlider</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="pushButton_21">
-      <property name="text">
-       <string>ToggleWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>ToastLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="text">
-       <string>RoundAnimationLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="pushButton_20">
-      <property name="text">
-       <string>LineEditWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="text">
-       <string>RadioButtonWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="3">
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="text">
-       <string>CheckButtonWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="pushButton_14">
-      <property name="text">
-       <string>FunctionAnimationWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pushButton_13">
-      <property name="text">
-       <string>GrabItemWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>GifLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="pushButton_17">
-      <property name="text">
-       <string>MoveWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QPushButton" name="pushButton_19">
-      <property name="text">
-       <string>CircleClickPlane</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_16">
-      <property name="text">
-       <string>MoveDialog</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_10">
-      <property name="text">
-       <string>LayoutAnimationWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="pushButton_24">
-      <property name="text">
-       <string>ProgressWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_8">
-      <property name="text">
-       <string>SmoothMovingTableWindow</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="pushButton_25">
-      <property name="text">
-       <string>FlatButtonWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>CodeAreaWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="pushButton_26">
-      <property name="text">
-       <string>CircularProgressWidget</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QPushButton" name="pushButton_5">
       <property name="text">
@@ -169,31 +22,10 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="3">
-     <widget class="QPushButton" name="pushButton_27">
-      <property name="text">
-       <string>SliderWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="pushButton_18">
-      <property name="text">
-       <string>MoveResizeWidget</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>StackedAnimationWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QPushButton" name="pushButton_15">
-      <property name="text">
-       <string>ToolMenuWidget</string>
       </property>
      </widget>
     </item>
@@ -211,10 +43,185 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="text">
+       <string>ColorDialog</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="text">
+       <string>MovingLabelSlider</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="pushButton_1">
+      <property name="text">
+       <string>TransitionAnimationLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="text">
+       <string>RoundAnimationLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>ToastLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="text">
+       <string>FunctionAnimationHWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButton_13">
+      <property name="text">
+       <string>GrabItemWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>GifLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>CodeAreaWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="text">
+       <string>SmoothMovingTableWindow</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="text">
+       <string>LayoutAnimationWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
      <widget class="QPushButton" name="pushButton_28">
       <property name="text">
        <string>ColorTablePlane</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="pushButton_27">
+      <property name="text">
+       <string>SliderWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QPushButton" name="pushButton_26">
+      <property name="text">
+       <string>CircularProgressWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="pushButton_25">
+      <property name="text">
+       <string>FlatButtonWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="pushButton_24">
+      <property name="text">
+       <string>ProgressWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="pushButton_23">
+      <property name="text">
+       <string>CheckButtonWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="pushButton_22">
+      <property name="text">
+       <string>RadioButtonWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="text">
+       <string>ToggleWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="text">
+       <string>LineEditWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="text">
+       <string>CircleClickPlane</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="text">
+       <string>MoveResizeWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="text">
+       <string>MoveWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="text">
+       <string>MoveDialog</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="text">
+       <string>ToolMenuWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton_29">
+      <property name="text">
+       <string>FunctionAnimationVWidget</string>
       </property>
      </widget>
     </item>

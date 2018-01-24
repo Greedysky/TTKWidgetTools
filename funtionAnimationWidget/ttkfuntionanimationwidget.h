@@ -25,17 +25,19 @@
 class QButtonGroup;
 class QPropertyAnimation;
 
-class TTK_EXTRAS_EXPORT TTKBaseAnimationHWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKBaseAnimationWidget : public QWidget
 {
     Q_OBJECT
 public:
     enum Alignment
     {
         Top,
-        Bottom
+        Bottom,
+        Left,
+        Right
     };
-    explicit TTKBaseAnimationHWidget(QWidget *parent = 0);
-    ~TTKBaseAnimationHWidget();
+    explicit TTKBaseAnimationWidget(QWidget *parent = 0);
+    ~TTKBaseAnimationWidget();
 
     void setAlignment(Alignment alignment);
 
@@ -51,13 +53,28 @@ protected:
     virtual void paintEvent(QPaintEvent *event) override;
 
     QPixmap m_pix;
-    int m_curIndex, m_preIndex, m_x, m_perWidth;
+    int m_curIndex, m_preIndex, m_x, m_perValue;
     bool m_isAnimation, m_showLine;
 
     Alignment m_alignment;
     QPropertyAnimation *m_animation;
     QList<QWidget*> m_container;
     QButtonGroup *m_group;
+
+};
+
+
+
+
+
+class TTK_EXTRAS_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKBaseAnimationHWidget(QWidget *parent = 0);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
 
 };
 
@@ -88,6 +105,54 @@ class TTK_EXTRAS_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
     Q_OBJECT
 public:
     explicit TTKSkinAnimationHWidget(QWidget *parent = 0);
+
+    void setAlignment(Alignment alignment);
+
+};
+
+
+
+
+
+
+class TTK_EXTRAS_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKBaseAnimationVWidget(QWidget *parent = 0);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+};
+
+
+class TTK_EXTRAS_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKOptionAnimationVWidget(QWidget *parent = 0);
+
+};
+
+
+class TTK_EXTRAS_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKTableAnimationVWidget(QWidget *parent = 0);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+};
+
+
+class TTK_EXTRAS_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKSkinAnimationVWidget(QWidget *parent = 0);
 
     void setAlignment(Alignment alignment);
 
