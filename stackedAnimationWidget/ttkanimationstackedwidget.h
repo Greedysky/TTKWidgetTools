@@ -28,13 +28,27 @@
 class TTK_EXTRAS_EXPORT TTKAnimationStackedWidget : public QStackedWidget
 {
     Q_OBJECT
+	Q_PROPERTY(float afValue READ GetValue WRITE SetValue)
+
 public:
     enum AnimationType
     {
         TopToBottom,
         BottomToTop,
         LeftToRight,
-        RightToLeft
+        RightToLeft,
+		RollInOut,
+		FadeInOut,
+		BlackInOut,
+		SlideInOut,
+		CoverInOutLeft,
+		CoverInOutRight,
+		FadeExchange,
+		VerticalFlipRotate,
+		VerticalFlipRotateOut,
+		VerticalCubeRotateT2B,
+		VerticalCubeRotateB2T,
+		HorizontalFlipRotate
     };
 
     explicit TTKAnimationStackedWidget(QWidget *parent = 0);
@@ -43,11 +57,29 @@ public:
     void start(int index);
     void setLength(int length, AnimationType type);
 
+	void setCurve(QEasingCurve::Type aeCurve);
+	void setRevert(bool abRevert);
+
     void setDuration(int duration);
     int getDuration() const;
 
-private Q_SLOTS:
-    void valueChanged(const QVariant &value);
+	void setFadeEnable(bool abEnabled);
+	void setAnimatEnable(bool abEnabled);
+
+	void addWidget(QWidget *widget);
+
+	bool isAnimating();
+
+	float GetValue() const;
+	void SetValue(const float &afValue);
+
+signals:
+	void page_changed(int aiIndex);
+
+public slots:
+	void setCurrentIndex(int index);
+
+private slots:
     void animationFinished();
 
 protected:
@@ -57,9 +89,22 @@ protected:
 
     bool m_isAnimating;
     float m_currentValue;
+	float m_fRangeValue;
+	float m_fStartValue;
+	float m_fEndValue;
+
+	bool m_bFade;
+	bool m_bAnimat;
+	QEasingCurve::Type	m_eCurve;
     int m_currentIndex, m_previousIndex;
     AnimationType m_type;
     QPropertyAnimation *m_animation;
+
+	bool m_bRevert;
+
+	QPixmap m_PrivPixmap;
+	QPixmap m_CurrentPixmap;
+	QPixmap	*m_pCoverPixmap;
 
 };
 
