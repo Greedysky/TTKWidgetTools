@@ -6,33 +6,33 @@
 TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
     : QStackedWidget(parent)
 {
-	this->setAttribute(Qt::WA_TranslucentBackground);
+    this->setAttribute(Qt::WA_TranslucentBackground);
 
-	m_bRevert = false;
-	m_eCurve = QEasingCurve::Linear;
+    m_bRevert = false;
+    m_eCurve = QEasingCurve::Linear;
     m_isAnimating = false;
     m_currentValue = 0;
     m_currentIndex = 0;
     m_previousIndex = 0;
-	m_type = FadeExchange;
+    m_type = FadeExchange;
 
-	m_bFade = true;
-	m_bAnimat = true;
+    m_bFade = true;
+    m_bAnimat = true;
 
 
-	m_pCoverPixmap = 0;
-	m_pCoverPixmap = 0;
+    m_pCoverPixmap = 0;
+    m_pCoverPixmap = 0;
 
     m_animation = new QPropertyAnimation(this, "afValue", this);
-	m_animation->setPropertyName("afValue");
+    m_animation->setPropertyName("afValue");
     m_animation->setDuration(200);
     m_animation->setEasingCurve(m_eCurve);
     m_animation->setStartValue(0);
     m_animation->setEndValue(0);
- 
+
     connect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
 
-	setLength(500, m_type);
+    setLength(500, m_type);
 }
 
 TTKAnimationStackedWidget::~TTKAnimationStackedWidget()
@@ -47,9 +47,8 @@ void TTKAnimationStackedWidget::paintEvent(QPaintEvent * event)
         QPainter painter(this);
         QTransform transform;
 
-		renderPreviousWidget(painter, transform);
+        renderPreviousWidget(painter, transform);
         renderCurrentWidget(painter, transform);
-        
     }
     else
     {
@@ -63,214 +62,214 @@ void TTKAnimationStackedWidget::renderPreviousWidget(QPainter &painter, QTransfo
     //QPixmap pixmap( w->size() );
     //w->render(&pixmap);
 
-	painter.save();
+    painter.save();
 
     Q_UNUSED(transform);
     switch(m_type)
     {
         case BottomToTop :
                 {
-					painter.translate(0, m_currentValue);
+                    painter.translate(0, m_currentValue);
                     painter.drawPixmap(0, -height()/2, m_PrivPixmap);
                     break;
                 }
         case TopToBottom :
                 {
-					painter.translate(0, m_currentValue);
+                    painter.translate(0, m_currentValue);
                     painter.drawPixmap(0, height()/2, m_PrivPixmap);
                     break;
                 }
         case LeftToRight :
                 {
-					if(m_previousIndex > m_currentIndex && m_bRevert == true)
-					{
-						transform.translate(0 - m_currentValue, 0);
-						painter.setTransform(transform);
+                    if(m_previousIndex > m_currentIndex && m_bRevert == true)
+                    {
+                        transform.translate(0 - m_currentValue, 0);
+                        painter.setTransform(transform);
 
-						if(m_bFade)
-							painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
+                        if(m_bFade)
+                            painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(-width()/2, 0, m_PrivPixmap);		
-					}
-					else
-					{
-						painter.translate(m_currentValue, 0);
-						if(m_bFade)
-							painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
+                        painter.drawPixmap(-width()/2, 0, m_PrivPixmap);
+                    }
+                    else
+                    {
+                        painter.translate(m_currentValue, 0);
+                        if(m_bFade)
+                            painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(width()/2, 0, m_PrivPixmap);					
-					}
-					
+                        painter.drawPixmap(width()/2, 0, m_PrivPixmap);
+                    }
+
                     break;
                 }
         case RightToLeft :
                 {
-					if(m_previousIndex > m_currentIndex && m_bRevert == true)
-					{
-						painter.translate(-m_currentValue, 0);
-						if(m_bFade)
-							painter.setOpacity((m_fEndValue - m_currentValue) / m_fRangeValue);
+                    if(m_previousIndex > m_currentIndex && m_bRevert == true)
+                    {
+                        painter.translate(-m_currentValue, 0);
+                        if(m_bFade)
+                            painter.setOpacity((m_fEndValue - m_currentValue) / m_fRangeValue);
 
-						painter.drawPixmap(width()/2, 0, m_PrivPixmap);							
-					}
-					else
-					{
-						painter.translate(m_currentValue, 0);
+                        painter.drawPixmap(width()/2, 0, m_PrivPixmap);
+                    }
+                    else
+                    {
+                        painter.translate(m_currentValue, 0);
 
-						if(m_bFade)
-							painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
+                        if(m_bFade)
+                            painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(-width()/2, 0, m_PrivPixmap);					
-					}
+                        painter.drawPixmap(-width()/2, 0, m_PrivPixmap);
+                    }
 
                     break;
                 }
-		case RollInOut:
-				{
-					if(m_bFade)
-						painter.setOpacity((float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue));
+        case RollInOut:
+                {
+                    if(m_bFade)
+                        painter.setOpacity((float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue));
 
                    //painter.drawPixmap(m_currentValue - m_fStartValue , 0, m_PrivPixmap);
-					painter.drawPixmap(0 , m_fStartValue - m_currentValue, m_PrivPixmap);
-				
-					break;
-				}
-		case FadeInOut:
-				{
-					float fOpt = (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue) /2.5;
-	
-					if(m_bFade)
-						painter.setOpacity(fOpt);
-                
-					painter.drawPixmap(0 , 0, m_PrivPixmap);	
-				
-					break;
-				}
-		case FadeExchange:
-			{
-					float fOpt = (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);//(m_currentValue - (float)::abs(m_fRangeValue) / 2.0) / (float)((float)::abs(m_fRangeValue) / 2.0);
-	
-					if(m_bFade)
-						painter.setOpacity(fOpt);
-                
-					painter.drawPixmap(0 , 0, m_PrivPixmap);			
+                    painter.drawPixmap(0 , m_fStartValue - m_currentValue, m_PrivPixmap);
 
-				break;
-			}
-		case BlackInOut:
-				{
+                    break;
+                }
+        case FadeInOut:
+                {
+                    float fOpt = (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue) /2.5;
 
-					painter.restore();
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
 
-					return;
+                    painter.drawPixmap(0 , 0, m_PrivPixmap);
 
+                    break;
+                }
+        case FadeExchange:
+            {
+                    float fOpt = (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);//(m_currentValue - (float)::abs(m_fRangeValue) / 2.0) / (float)((float)::abs(m_fRangeValue) / 2.0);
 
-					float fOpt = (m_currentValue - (float)::abs(m_fRangeValue) / 2.0) / (float)((float)::abs(m_fRangeValue) / 2.0);//(float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
-	
-					if(m_bFade)
-						painter.setOpacity(fOpt);
-					painter.drawPixmap(0 , 0, m_PrivPixmap);
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
 
-				
-					//painter.fillRect(QRect(0, 0, width(), height()), QColor(128, 128, 128, 128 * (1 - fOpt)));
+                    painter.drawPixmap(0 , 0, m_PrivPixmap);
 
-					fOpt = fOpt < 0 ? 0 : (float)(1.0 - fOpt);
+                break;
+            }
+        case BlackInOut:
+                {
 
-					if(m_bFade)
-						painter.setOpacity(fOpt);
-					painter.drawPixmap(0 , 0, *m_pCoverPixmap);
+                    painter.restore();
+
+                    return;
 
 
-					break;
-				}
-		case CoverInOutRight:
-				{
+                    float fOpt = (m_currentValue - (float)::abs(m_fRangeValue) / 2.0) / (float)((float)::abs(m_fRangeValue) / 2.0);//(float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
 
-					if(m_bFade)
-						painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
-
-					painter.drawPixmap(0 , 0, m_PrivPixmap);			
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
+                    painter.drawPixmap(0 , 0, m_PrivPixmap);
 
 
-					break;
-				}
-		case CoverInOutLeft:
-				{
-					if(m_bFade)
-						painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
+                    //painter.fillRect(QRect(0, 0, width(), height()), QColor(128, 128, 128, 128 * (1 - fOpt)));
+
+                    fOpt = fOpt < 0 ? 0 : (float)(1.0 - fOpt);
+
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
+                    painter.drawPixmap(0 , 0, *m_pCoverPixmap);
+
+
+                    break;
+                }
+        case CoverInOutRight:
+                {
+
+                    if(m_bFade)
+                        painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
+
+                    painter.drawPixmap(0 , 0, m_PrivPixmap);
+
+
+                    break;
+                }
+        case CoverInOutLeft:
+                {
+                    if(m_bFade)
+                        painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
 
                     painter.drawPixmap(0, 0, m_CurrentPixmap);
 
-					break;
-				}
-		case VerticalFlipRotate:
-			{
-				float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
-				if(lfDegree <= 90)
-				{
-					if(m_bFade)
-						painter.setOpacity((90 - lfDegree) / 90);
+                    break;
+                }
+        case VerticalFlipRotate:
+            {
+                float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
+                if(lfDegree <= 90)
+                {
+                    if(m_bFade)
+                        painter.setOpacity((90 - lfDegree) / 90);
 
-					painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_PrivPixmap);
-				}
-				
-				break;
-			}
-		case VerticalFlipRotateOut:
-			{
-				break;
-			}
-		case VerticalCubeRotateT2B:
-			{
-				float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;//sin((m_currentValue - m_fStartValue)/ m_fRangeValue * 90 * 3.14 / 180);
-				float lfDegree = lfPercent * 90;
-				float lfPos = lfPercent * height();
+                    painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_PrivPixmap);
+                }
 
-				//qDebug() << QString::fromLocal8Bit("Previous") << lfReal << lfDeg << lfPercent << lfDegree << lfPos;
+                break;
+            }
+        case VerticalFlipRotateOut:
+            {
+                break;
+            }
+        case VerticalCubeRotateT2B:
+            {
+                float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;//sin((m_currentValue - m_fStartValue)/ m_fRangeValue * 90 * 3.14 / 180);
+                float lfDegree = lfPercent * 90;
+                float lfPos = lfPercent * height();
 
-				//if(lfDegree <= 90)
-				{
-					//if(m_bFade)
-					//	painter.setOpacity((90 - lfDegree) / 90);
+                //qDebug() << QString::fromLocal8Bit("Previous") << lfReal << lfDeg << lfPercent << lfDegree << lfPos;
 
-					painter.setTransform(QTransform().translate(0, lfPos/2).translate(width() / 2, height() /2).rotate(-lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_PrivPixmap);
-				}
-							
-			
-				break;
-			}
+                //if(lfDegree <= 90)
+                {
+                    //if(m_bFade)
+                    //	painter.setOpacity((90 - lfDegree) / 90);
 
-		case VerticalCubeRotateB2T:
-			{
-				float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;//sin((m_currentValue - m_fStartValue)/ m_fRangeValue * 90 * 3.14 / 180);
-				float lfDegree = lfPercent * 90;
-				float lfPos = lfPercent * height();
+                    painter.setTransform(QTransform().translate(0, lfPos/2).translate(width() / 2, height() /2).rotate(-lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_PrivPixmap);
+                }
 
-				painter.setTransform(QTransform().translate(0, -lfPos/2).translate(width() / 2, height() /2).rotate(lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-				painter.drawPixmap(0, 0, m_PrivPixmap);
-										
-				break;
-			}
-		case HorizontalFlipRotate:
-			{
-				float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
-				if(lfDegree <= qAbs(90))
-				{
-					if(m_bFade)
-						painter.setOpacity((90 - lfDegree) / 90);
 
-					painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_PrivPixmap);
-				}
-				
-				break;			
-			}
+                break;
+            }
+
+        case VerticalCubeRotateB2T:
+            {
+                float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;//sin((m_currentValue - m_fStartValue)/ m_fRangeValue * 90 * 3.14 / 180);
+                float lfDegree = lfPercent * 90;
+                float lfPos = lfPercent * height();
+
+                painter.setTransform(QTransform().translate(0, -lfPos/2).translate(width() / 2, height() /2).rotate(lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                painter.drawPixmap(0, 0, m_PrivPixmap);
+
+                break;
+            }
+        case HorizontalFlipRotate:
+            {
+                float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
+                if(lfDegree <= qAbs(90))
+                {
+                    if(m_bFade)
+                        painter.setOpacity((90 - lfDegree) / 90);
+
+                    painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_PrivPixmap);
+                }
+
+                break;
+            }
         default: break;
     }
 
-	painter.restore();
+    painter.restore();
 }
 
 void TTKAnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransform &transform)
@@ -279,7 +278,7 @@ void TTKAnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransfor
     //QPixmap pixmap( w->size() );
     //w->render(&pixmap);
 
-	painter.save();
+    painter.save();
 
     switch(m_type)
     {
@@ -299,353 +298,353 @@ void TTKAnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransfor
                 }
         case LeftToRight :
                 {
-					if(m_previousIndex > m_currentIndex && m_bRevert == true)
-					{
-						painter.translate(-m_currentValue, 0);
-						if(m_bFade)
-							painter.setOpacity(1 - (m_fEndValue - m_currentValue) / m_fRangeValue);
+                    if(m_previousIndex > m_currentIndex && m_bRevert == true)
+                    {
+                        painter.translate(-m_currentValue, 0);
+                        if(m_bFade)
+                            painter.setOpacity(1 - (m_fEndValue - m_currentValue) / m_fRangeValue);
 
-						painter.drawPixmap(width()/2, 0, m_CurrentPixmap);					
-					}
-					else
-					{
-						transform.translate(m_currentValue, 0);
-						painter.setTransform(transform);
+                        painter.drawPixmap(width()/2, 0, m_CurrentPixmap);
+                    }
+                    else
+                    {
+                        transform.translate(m_currentValue, 0);
+                        painter.setTransform(transform);
 
-						if(m_bFade)
-							painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
+                        if(m_bFade)
+                            painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(-width()/2, 0, m_CurrentPixmap);					
-					}
+                        painter.drawPixmap(-width()/2, 0, m_CurrentPixmap);
+                    }
 
                     break;
                 }
         case RightToLeft :
                 {
-					if(m_previousIndex > m_currentIndex && m_bRevert == true)		
-					{
-						transform.translate(0 - m_currentValue, 0);
-						painter.setTransform(transform);
+                    if(m_previousIndex > m_currentIndex && m_bRevert == true)
+                    {
+                        transform.translate(0 - m_currentValue, 0);
+                        painter.setTransform(transform);
 
-						if(m_bFade)
-							painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
+                        if(m_bFade)
+                            painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(-width()/2, 0, m_CurrentPixmap);							
-					}
-					else
-					{
-						painter.translate(m_currentValue, 0);
+                        painter.drawPixmap(-width()/2, 0, m_CurrentPixmap);
+                    }
+                    else
+                    {
+                        painter.translate(m_currentValue, 0);
 
-						if(m_bFade)
-							painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
+                        if(m_bFade)
+                            painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
 
-						painter.drawPixmap(width()/2, 0, m_CurrentPixmap);					
-					}
+                        painter.drawPixmap(width()/2, 0, m_CurrentPixmap);
+                    }
 
                     break;
                 }
-		case RollInOut:
-				{
-					painter.translate(m_currentValue, 0);
+        case RollInOut:
+                {
+                    painter.translate(m_currentValue, 0);
 
-					if(m_bFade)
-						painter.setOpacity((m_fStartValue - m_currentValue) / (float)::abs(m_fRangeValue));
+                    if(m_bFade)
+                        painter.setOpacity((m_fStartValue - m_currentValue) / (float)::abs(m_fRangeValue));
+
+                    painter.drawPixmap(0, 0, m_CurrentPixmap);
+
+
+                    break;
+                }
+        case FadeInOut:
+                {
+                    //float fOpt = ((float)::abs(m_fRangeValue) / 2.0 - m_currentValue) / ((float)::abs(m_fRangeValue) / 2.0);
+
+                    float fOpt =  1.0 - (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
+
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
 
                     painter.drawPixmap(0, 0, m_CurrentPixmap);
 
-			
-					break;
-				}
-		case FadeInOut:
-				{			
-					//float fOpt = ((float)::abs(m_fRangeValue) / 2.0 - m_currentValue) / ((float)::abs(m_fRangeValue) / 2.0);
+                    break;
+                }
+        case FadeExchange:
+            {
+                    float fOpt =  1.0 - (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
 
-					float fOpt =  1.0 - (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
-
-					if(m_bFade)
-						painter.setOpacity(fOpt);
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
 
                     painter.drawPixmap(0, 0, m_CurrentPixmap);
-			
-					break;
-				}
-		case FadeExchange:
-			{
-					float fOpt =  1.0 - (float)(m_currentValue - m_fEndValue) / (float)::abs(m_fRangeValue);
 
-					if(m_bFade)
-						painter.setOpacity(fOpt);
+                break;
+            }
+        case BlackInOut:
+                {
+                    float fOpt = ((float)::abs(m_fRangeValue) / 2.0 - m_currentValue) / ((float)::abs(m_fRangeValue) / 2.0);
 
-                    painter.drawPixmap(0, 0, m_CurrentPixmap);
-		
-				break;
-			}
-		case BlackInOut:
-				{					
-					float fOpt = ((float)::abs(m_fRangeValue) / 2.0 - m_currentValue) / ((float)::abs(m_fRangeValue) / 2.0);
-
-					if(m_bFade)
-						painter.setOpacity(fOpt);
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
                     painter.drawPixmap(0, 0, m_CurrentPixmap);
 
-					//painter.fillRect(QRect(0, 0, width(), height()), QColor(128, 128, 128, 128 * (1.0 - fOpt)));
+                    //painter.fillRect(QRect(0, 0, width(), height()), QColor(128, 128, 128, 128 * (1.0 - fOpt)));
 
-					fOpt = fOpt > 0 ? (float)(1.0 - fOpt) : 0;
+                    fOpt = fOpt > 0 ? (float)(1.0 - fOpt) : 0;
 
-					if(m_bFade)
-						painter.setOpacity(fOpt);
+                    if(m_bFade)
+                        painter.setOpacity(fOpt);
 
                     painter.drawPixmap(0, 0, *m_pCoverPixmap);
-			
-					break;
-				}
-			case CoverInOutRight:
-				{
-					painter.translate(m_currentValue, 0);
 
-					if(m_bFade)
-						painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
+                    break;
+                }
+            case CoverInOutRight:
+                {
+                    painter.translate(m_currentValue, 0);
 
-                    painter.drawPixmap(width()/2, 0, m_CurrentPixmap);				
-				
-					break;
-				}
-			case CoverInOutLeft:
-				{
-					painter.translate(m_currentValue, 0);
-					if(m_bFade)
-						painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
+                    if(m_bFade)
+                        painter.setOpacity((m_currentValue - m_fStartValue) / m_fRangeValue);
 
-                    painter.drawPixmap(width()/2, 0, m_PrivPixmap);	
-				
-					break;
-				}
-		case VerticalFlipRotate:
-			{
-				float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
-				if(lfDegree > 90)
-				{
-					if(m_bFade)
-						painter.setOpacity((lfDegree - 90) / 90);
+                    painter.drawPixmap(width()/2, 0, m_CurrentPixmap);
 
+                    break;
+                }
+            case CoverInOutLeft:
+                {
+                    painter.translate(m_currentValue, 0);
+                    if(m_bFade)
+                        painter.setOpacity(1 - (m_currentValue - m_fStartValue) / m_fRangeValue);
 
-					painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(180- lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_CurrentPixmap);				
-				}
+                    painter.drawPixmap(width()/2, 0, m_PrivPixmap);
 
-				break;
-			}
-
-		case VerticalFlipRotateOut:
-			{
-				float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 90;
-				if(m_bFade)
-					painter.setOpacity((lfDegree) / 90);
-
-				painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(90- lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-				painter.drawPixmap(0, 0, m_CurrentPixmap);				
-			
-				break;
-			}
-
-		case VerticalCubeRotateT2B:
-			{
-				float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;
-				float lfDegree = lfPercent * 90;
-				float lfPos = (1 - lfPercent) * height();
-				
-				//qDebug() << lfPercent << lfDegree << lfPos;
-
-				//if(lfDegree <= 90)
-				{
-					//if(m_bFade)
-					//	painter.setOpacity((90 - lfDegree) / 90);
-
-					painter.setTransform(QTransform().translate(0, -lfPos / 2 ).translate(width() / 2, height() /2).rotate(90 - lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_CurrentPixmap);
-				}
-							
-			
-				break;
-			}
-
-		case VerticalCubeRotateB2T:
-			{
-				float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;
-				float lfDegree = lfPercent * 90;
-				float lfPos = (1 - lfPercent) * height();
-				
-				//qDebug() << lfPercent << lfDegree << lfPos;
-
-				//if(lfDegree <= 90)
-				{
-					//if(m_bFade)
-					//	painter.setOpacity((90 - lfDegree) / 90);
-
-					painter.setTransform(QTransform().translate(0, lfPos / 2 ).translate(width() / 2, height() /2).rotate(lfDegree - 90, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_CurrentPixmap);
-				}
-							
-			
-				break;
-			}
-		case HorizontalFlipRotate:
-			{
-				float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
-				if(lfDegree > qAbs(90))
-				{
-					if(m_bFade)
-						painter.setOpacity((lfDegree - 90) / 90);
+                    break;
+                }
+        case VerticalFlipRotate:
+            {
+                float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
+                if(lfDegree > 90)
+                {
+                    if(m_bFade)
+                        painter.setOpacity((lfDegree - 90) / 90);
 
 
-					painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree - 180, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
-					painter.drawPixmap(0, 0, m_CurrentPixmap);
-				}
+                    painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(180- lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_CurrentPixmap);
+                }
 
-				break;			
-			}
+                break;
+            }
+
+        case VerticalFlipRotateOut:
+            {
+                float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 90;
+                if(m_bFade)
+                    painter.setOpacity((lfDegree) / 90);
+
+                painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(90- lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                painter.drawPixmap(0, 0, m_CurrentPixmap);
+
+                break;
+            }
+
+        case VerticalCubeRotateT2B:
+            {
+                float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;
+                float lfDegree = lfPercent * 90;
+                float lfPos = (1 - lfPercent) * height();
+
+                //qDebug() << lfPercent << lfDegree << lfPos;
+
+                //if(lfDegree <= 90)
+                {
+                    //if(m_bFade)
+                    //	painter.setOpacity((90 - lfDegree) / 90);
+
+                    painter.setTransform(QTransform().translate(0, -lfPos / 2 ).translate(width() / 2, height() /2).rotate(90 - lfDegree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_CurrentPixmap);
+                }
+
+
+                break;
+            }
+
+        case VerticalCubeRotateB2T:
+            {
+                float lfPercent = (m_currentValue - m_fStartValue)/ m_fRangeValue;
+                float lfDegree = lfPercent * 90;
+                float lfPos = (1 - lfPercent) * height();
+
+                //qDebug() << lfPercent << lfDegree << lfPos;
+
+                //if(lfDegree <= 90)
+                {
+                    //if(m_bFade)
+                    //	painter.setOpacity((90 - lfDegree) / 90);
+
+                    painter.setTransform(QTransform().translate(0, lfPos / 2 ).translate(width() / 2, height() /2).rotate(lfDegree - 90, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_CurrentPixmap);
+                }
+
+
+                break;
+            }
+        case HorizontalFlipRotate:
+            {
+                float lfDegree = ((m_currentValue - m_fStartValue)/ m_fRangeValue) * 180;
+                if(lfDegree > qAbs(90))
+                {
+                    if(m_bFade)
+                        painter.setOpacity((lfDegree - 90) / 90);
+
+
+                    painter.setTransform(QTransform().translate(width() / 2, height() /2).rotate(lfDegree - 180, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
+                    painter.drawPixmap(0, 0, m_CurrentPixmap);
+                }
+
+                break;
+            }
 
         default: break;
     }
 
-	painter.restore();
+    painter.restore();
 }
 
 void TTKAnimationStackedWidget::start(int index)
 {
-	if(index >= this->count())
-		return;
+    if(index >= this->count())
+        return;
 
     //m_previousIndex = m_currentIndex;
-	m_previousIndex = this->currentIndex();
-    
-	m_currentIndex = index;
+    m_previousIndex = this->currentIndex();
+
+    m_currentIndex = index;
 
     if(m_isAnimating)
     {
-		disconnect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
-		m_animation->stop();
-		animationFinished();
-		connect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
+        disconnect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
+        m_animation->stop();
+        animationFinished();
+        connect(m_animation, SIGNAL(finished()), this, SLOT(animationFinished()));
     }
 
-	switch(m_type)
-	{
-		case LeftToRight:
-		case RightToLeft:
-		case SlideInOut:
-		case CoverInOutLeft:
-		case CoverInOutRight:
-		{
-			m_fStartValue = width() / 2;
-			break;
-		}
-		case TopToBottom:
-		case BottomToTop:
-		{
-			m_fStartValue = height() / 2;
-			break;
-		}
-		case VerticalCubeRotateT2B:
-		{
-			m_fStartValue = 0;
-			m_fEndValue = height();
-			break;
-		}
-		case VerticalCubeRotateB2T:
-		{
-			m_fStartValue = 0;
-			m_fEndValue = height();
-			break;
-		}
-		default:
-		{
-			break;
-		}
-	}
+    switch(m_type)
+    {
+        case LeftToRight:
+        case RightToLeft:
+        case SlideInOut:
+        case CoverInOutLeft:
+        case CoverInOutRight:
+        {
+            m_fStartValue = width() / 2;
+            break;
+        }
+        case TopToBottom:
+        case BottomToTop:
+        {
+            m_fStartValue = height() / 2;
+            break;
+        }
+        case VerticalCubeRotateT2B:
+        {
+            m_fStartValue = 0;
+            m_fEndValue = height();
+            break;
+        }
+        case VerticalCubeRotateB2T:
+        {
+            m_fStartValue = 0;
+            m_fEndValue = height();
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
 
-	if(m_type == RightToLeft || m_type == LeftToRight)
-	{
-		//if(m_previousIndex < m_currentIndex)
-		//{
-		//	if(m_bRevert == true)
-		//		setLength(abs(m_fStartValue*2), LeftToRight);
-		//	else
-		//		setLength(abs(m_fStartValue*2), RightToLeft);
-		//}
-		//else if(m_previousIndex > m_currentIndex)
-		//{
-		//	if(m_bRevert == true)
-		//		setLength(abs(m_fStartValue*2), RightToLeft);
-		//	else
-		//		setLength(abs(m_fStartValue*2), LeftToRight);
-		//}
+    if(m_type == RightToLeft || m_type == LeftToRight)
+    {
+        //if(m_previousIndex < m_currentIndex)
+        //{
+        //	if(m_bRevert == true)
+        //		setLength(abs(m_fStartValue*2), LeftToRight);
+        //	else
+        //		setLength(abs(m_fStartValue*2), RightToLeft);
+        //}
+        //else if(m_previousIndex > m_currentIndex)
+        //{
+        //	if(m_bRevert == true)
+        //		setLength(abs(m_fStartValue*2), RightToLeft);
+        //	else
+        //		setLength(abs(m_fStartValue*2), LeftToRight);
+        //}
 
-		setLength(abs(m_fStartValue*2), m_type);
-	}
-	else if(m_type == CoverInOutLeft || m_type == CoverInOutRight)
-	{
-		if(m_previousIndex < m_currentIndex)
-		{
-			setLength(abs(m_fStartValue*2), CoverInOutRight);
-		}
-		else if(m_previousIndex > m_currentIndex)
-		{
-			setLength(abs(m_fStartValue*2), CoverInOutLeft);
-		}
-	}
-	else if(m_type == VerticalCubeRotateT2B || m_type == VerticalCubeRotateB2T)
-	{
-		if(m_previousIndex < m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(abs(m_fEndValue), VerticalCubeRotateT2B);
-			else
-				setLength(abs(m_fEndValue), m_type);
-		}
-		else if(m_previousIndex > m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(abs(m_fEndValue), VerticalCubeRotateB2T);
-			else
-				setLength(abs(m_fEndValue), m_type);
-		}
-	}
-	else if(m_type == TopToBottom || m_type == BottomToTop)
-	{
-		//setLength(abs(m_fEndValue*2), m_type);
-		if(m_previousIndex < m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(abs(m_fStartValue*2), TopToBottom);
-			else
-				setLength(abs(m_fStartValue*2), BottomToTop);
-		}
-		else if(m_previousIndex > m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(abs(m_fEndValue*2), BottomToTop);
-			else
-				setLength(abs(m_fEndValue*2), TopToBottom);
-		}
-	}
-	else if(m_type == HorizontalFlipRotate)
-	{
-		if(m_previousIndex < m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(0 - abs(m_fStartValue), HorizontalFlipRotate);
-			else
-				setLength(abs(m_fStartValue), HorizontalFlipRotate);
-		}
-		else if(m_previousIndex > m_currentIndex)
-		{
-			if(m_bRevert == true)
-				setLength(abs(m_fStartValue), HorizontalFlipRotate);
-			else
-				setLength(0 - abs(m_fStartValue), HorizontalFlipRotate);
-		}
-	}
+        setLength(abs(m_fStartValue*2), m_type);
+    }
+    else if(m_type == CoverInOutLeft || m_type == CoverInOutRight)
+    {
+        if(m_previousIndex < m_currentIndex)
+        {
+            setLength(abs(m_fStartValue*2), CoverInOutRight);
+        }
+        else if(m_previousIndex > m_currentIndex)
+        {
+            setLength(abs(m_fStartValue*2), CoverInOutLeft);
+        }
+    }
+    else if(m_type == VerticalCubeRotateT2B || m_type == VerticalCubeRotateB2T)
+    {
+        if(m_previousIndex < m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(abs(m_fEndValue), VerticalCubeRotateT2B);
+            else
+                setLength(abs(m_fEndValue), m_type);
+        }
+        else if(m_previousIndex > m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(abs(m_fEndValue), VerticalCubeRotateB2T);
+            else
+                setLength(abs(m_fEndValue), m_type);
+        }
+    }
+    else if(m_type == TopToBottom || m_type == BottomToTop)
+    {
+        //setLength(abs(m_fEndValue*2), m_type);
+        if(m_previousIndex < m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(abs(m_fStartValue*2), TopToBottom);
+            else
+                setLength(abs(m_fStartValue*2), BottomToTop);
+        }
+        else if(m_previousIndex > m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(abs(m_fEndValue*2), BottomToTop);
+            else
+                setLength(abs(m_fEndValue*2), TopToBottom);
+        }
+    }
+    else if(m_type == HorizontalFlipRotate)
+    {
+        if(m_previousIndex < m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(0 - abs(m_fStartValue), HorizontalFlipRotate);
+            else
+                setLength(abs(m_fStartValue), HorizontalFlipRotate);
+        }
+        else if(m_previousIndex > m_currentIndex)
+        {
+            if(m_bRevert == true)
+                setLength(abs(m_fStartValue), HorizontalFlipRotate);
+            else
+                setLength(0 - abs(m_fStartValue), HorizontalFlipRotate);
+        }
+    }
 
     int offsetx = frameRect().width();
     int offsety = frameRect().height();
@@ -654,17 +653,24 @@ void TTKAnimationStackedWidget::start(int index)
     currentWidget()->hide();
     m_isAnimating = true;
 
-	QWidget *w = widget(m_currentIndex);
-	w->hide();
-	QStackedWidget::setCurrentWidget( w );	
-	w->hide();
+    QWidget *w = widget(m_currentIndex);
+    w->hide();
+    QStackedWidget::setCurrentWidget( w );
+    w->hide();
 
-
-	QWidget *lpWidget = widget(m_previousIndex);
-    m_PrivPixmap = QPixmap(QPixmap::grabWidget(lpWidget));
+    QWidget *lpWidget = widget(m_previousIndex);
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+    m_PrivPixmap = lpWidget->grab(lpWidget->rect());
+#else
+    m_PrivPixmap = QPixmap::grabWidget(lpWidget);
+#endif
 
     lpWidget = widget(m_currentIndex);
-    m_CurrentPixmap = QPixmap(QPixmap::grabWidget(lpWidget));
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+    m_PrivPixmap = lpWidget->grab(lpWidget->rect());
+#else
+    m_PrivPixmap = QPixmap::grabWidget(lpWidget);
+#endif
 
     m_animation->start();
 }
@@ -674,11 +680,11 @@ void TTKAnimationStackedWidget::setLength(int length, AnimationType type)
     switch(m_type = type)
     {
         case BottomToTop :
-		{
-			m_animation->setStartValue(length/2);
-            m_animation->setEndValue(-length/2);		
-			break;
-		}
+                {
+                    m_animation->setStartValue(length/2);
+                    m_animation->setEndValue(-length/2);
+                    break;
+                }
         case LeftToRight :
                 {
                     m_animation->setStartValue(-length/2);
@@ -686,90 +692,86 @@ void TTKAnimationStackedWidget::setLength(int length, AnimationType type)
                     break;
                 }
         case TopToBottom :
-		{
-			m_animation->setStartValue(-length/2);
-            m_animation->setEndValue(length/2);		
-			break;
-		}
+                {
+                    m_animation->setStartValue(-length/2);
+                    m_animation->setEndValue(length/2);
+                    break;
+                }
         case RightToLeft :
                 {
                     m_animation->setStartValue(length/2);
                     m_animation->setEndValue(-length/2);
                     break;
                 }
-		case RollInOut:
-				{
+        case RollInOut:
+                {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);
-		
-					break;
-				}
-		case FadeInOut:
-		case BlackInOut:
-		case FadeExchange:
-				{
+                    break;
+                }
+        case FadeInOut:
+        case BlackInOut:
+        case FadeExchange:
+                {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);
-		
-					break;
-				}
-		case SlideInOut:
-		{
+                    break;
+                }
+        case SlideInOut:
+                {
                     m_animation->setStartValue(-length/2);
                     m_animation->setEndValue(length/2);
-			break;
-		}
-		case CoverInOutRight:
-			{
-                m_animation->setStartValue(length/2);
-                m_animation->setEndValue(-length/2);			
-			
-				break;
-			}
-		case CoverInOutLeft:
-			{
-                m_animation->setStartValue(-length/2);
-                m_animation->setEndValue(length/2);		
-			
-				break;
-			}
-		case VerticalFlipRotate:
-			{
+                    break;
+                }
+        case CoverInOutRight:
+                {
+                    m_animation->setStartValue(length/2);
+                    m_animation->setEndValue(-length/2);
+                    break;
+                }
+        case CoverInOutLeft:
+                {
+                    m_animation->setStartValue(-length/2);
+                    m_animation->setEndValue(length/2);
+                    break;
+                }
+        case VerticalFlipRotate:
+            {
                     m_animation->setStartValue(length);
-                    m_animation->setEndValue(0);		
-					break;
-			}
-		case VerticalFlipRotateOut:
-			{
+                    m_animation->setEndValue(0);
+                    break;
+            }
+        case VerticalFlipRotateOut:
+            {
                     m_animation->setStartValue(0);
-                    m_animation->setEndValue(length);		
-					break;			
-			}
-		case VerticalCubeRotateT2B:
-			{
+                    m_animation->setEndValue(length);
+                    break;
+            }
+        case VerticalCubeRotateT2B:
+            {
                     m_animation->setStartValue(0);
-                    m_animation->setEndValue(length);		
-					break;								
-			}
-		case VerticalCubeRotateB2T:
-			{
+                    m_animation->setEndValue(length);
+                    break;
+            }
+        case VerticalCubeRotateB2T:
+            {
                     m_animation->setStartValue(0);
-                    m_animation->setEndValue(length);		
-					break;			
-			}
-		case HorizontalFlipRotate:
-			{
+                    m_animation->setEndValue(length);
+                    break;
+            }
+        case HorizontalFlipRotate:
+            {
                     m_animation->setStartValue(length);
-                    m_animation->setEndValue(0);		
-					break;
-			}
+                    m_animation->setEndValue(0);
+                    break;
+            }
 
         default: break;
     }
 
-	m_fRangeValue = m_animation->endValue().toFloat() - m_animation->startValue().toFloat();
-	m_fStartValue = m_animation->startValue().toFloat();
-	m_fEndValue = m_animation->endValue().toFloat();
+    m_fRangeValue = m_animation->endValue().toFloat() - m_animation->startValue().toFloat();
+    m_fStartValue = m_animation->startValue().toFloat();
+    m_fEndValue = m_animation->endValue().toFloat();
 }
 
 void TTKAnimationStackedWidget::setDuration(int duration)
@@ -784,53 +786,53 @@ int TTKAnimationStackedWidget::getDuration() const
 
 void TTKAnimationStackedWidget::setCurve(QEasingCurve::Type aeCurve)
 {
-	m_eCurve = aeCurve;
-	m_animation->setEasingCurve(m_eCurve);
+    m_eCurve = aeCurve;
+    m_animation->setEasingCurve(m_eCurve);
 }
 
 void TTKAnimationStackedWidget::setRevert(bool abRevert)
 {
-	m_bRevert = abRevert;
+    m_bRevert = abRevert;
 }
 
 void TTKAnimationStackedWidget::setFadeEnable(bool abEnabled)
 {
-	m_bFade = abEnabled;
+    m_bFade = abEnabled;
 }
 
 void TTKAnimationStackedWidget::setAnimatEnable(bool abEnabled)
 {
-	m_bAnimat = abEnabled;
+    m_bAnimat = abEnabled;
 }
 
 bool TTKAnimationStackedWidget::isAnimating()
 {
-	return (m_animation->state() == QAbstractAnimation::Running);
+    return (m_animation->state() == QAbstractAnimation::Running);
 }
 
 void TTKAnimationStackedWidget::addWidget(QWidget *widget)
 {
-	widget->setAttribute(Qt::WA_TranslucentBackground);
-	QStackedWidget::addWidget(widget);
+    widget->setAttribute(Qt::WA_TranslucentBackground);
+    QStackedWidget::addWidget(widget);
 }
 
 void TTKAnimationStackedWidget::setCurrentIndex(int index)
 {
-	if(m_bAnimat == true && this->isVisible() == true && index != m_currentIndex)
-		start(index);
-	else
-		QStackedWidget::setCurrentIndex(index);
+    if(m_bAnimat == true && this->isVisible() == true && index != m_currentIndex)
+        start(index);
+    else
+        QStackedWidget::setCurrentIndex(index);
 }
 
 float TTKAnimationStackedWidget::GetValue() const
 {
-	return m_currentValue;
+    return m_currentValue;
 }
 
 void TTKAnimationStackedWidget::SetValue(const float &afValue)
 {
-	m_currentValue = afValue;
-	update();
+    m_currentValue = afValue;
+    update();
 }
 
 void TTKAnimationStackedWidget::animationFinished()
@@ -838,14 +840,14 @@ void TTKAnimationStackedWidget::animationFinished()
     m_currentValue = 0;
     m_isAnimating = false;
     QWidget *w = widget(m_currentIndex);
-	if(w != NULL)
-	{
-		w->show();
-		w->raise();
-		QStackedWidget::setCurrentWidget( w );	
-	}
+    if(w != NULL)
+    {
+        w->show();
+        w->raise();
+        QStackedWidget::setCurrentWidget( w );
+    }
 
     update();
 
-	emit page_changed(m_currentIndex);
+    emit page_changed(m_currentIndex);
 }

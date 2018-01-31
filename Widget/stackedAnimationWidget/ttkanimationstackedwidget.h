@@ -29,7 +29,6 @@ class TTK_EXTRAS_EXPORT TTKAnimationStackedWidget : public QStackedWidget
 {
     Q_OBJECT
 	Q_PROPERTY(float afValue READ GetValue WRITE SetValue)
-
 public:
     enum AnimationType
     {
