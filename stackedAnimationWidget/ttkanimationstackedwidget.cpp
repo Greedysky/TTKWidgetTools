@@ -1,9 +1,9 @@
-#include "ttkTTKAnimationStackedWidget.h"
+#include "ttkanimationstackedwidget.h"
 
 #include <QPixmap>
 #include <QTransform>
 
-TTKTTKAnimationStackedWidget::TTKTTKAnimationStackedWidget(QWidget *parent)
+TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
     : QStackedWidget(parent)
 {
 	this->setAttribute(Qt::WA_TranslucentBackground);
@@ -35,7 +35,7 @@ TTKTTKAnimationStackedWidget::TTKTTKAnimationStackedWidget(QWidget *parent)
 	setLength(500, m_type);
 }
 
-TTKTTKAnimationStackedWidget::~TTKTTKAnimationStackedWidget()
+TTKAnimationStackedWidget::~TTKAnimationStackedWidget()
 {
     delete m_animation;
 }
