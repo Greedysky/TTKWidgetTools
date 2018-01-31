@@ -16,42 +16,18 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = TTKWidgetTools
-TEMPLATE = app
-
-UI_DIR = ./.build/ui
-MOC_DIR = ./.build/moc
-OBJECTS_DIR = ./.build/obj
-RCC_DIR = ./.build/rcc
-
-win32:msvc{
-    CONFIG +=c++11
-}else{
-    QMAKE_CXXFLAGS += -std=c++11
-}
-
-SOURCES += \
-    main.cpp\
-    mainwindow.cpp
-
-HEADERS  += \
-    ttkglobaldefine.h \
-    ttkwidgettools.h \
-    mainwindow.h
-
-FORMS    += \
-    mainwindow.ui
-
 INCLUDEPATH += $$PWD
 
-include(Button/Button.pri)
-include(Label/Label.pri)
-include(Progress/Progress.pri)
-include(Slider/Slider.pri)
-include(Title/Title.pri)
-include(Widget/Widget.pri)
-include(Window/Window.pri)
+SOURCES += \
+    $$PWD/ttkfuntionanimationwidget.cpp \
+    $$PWD/ttkfuntionanimationhwindow.cpp
+
+HEADERS  += \
+    $$PWD/ttkfuntionanimationwidget.h \
+    $$PWD/ttkfuntionanimationhwindow.h
+
+FORMS    += \
+    $$PWD/ttkfuntionanimationhwindow.ui
+
+RESOURCES += \
+    $$PWD/FuntionAnimationWidget.qrc

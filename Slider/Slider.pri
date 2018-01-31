@@ -18,19 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-SOURCES += \
-    $$PWD/ttkfuntionanimationwidget.cpp \
-    $$PWD/ttkfuntionanimationhwindow.cpp \
-    $$PWD/ttkfuntionanimationvwindow.cpp
-
-HEADERS  += \
-    $$PWD/ttkfuntionanimationwidget.h \
-    $$PWD/ttkfuntionanimationhwindow.h \
-    $$PWD/ttkfuntionanimationvwindow.h
-
-FORMS    += \
-    $$PWD/ttkfuntionanimationhwindow.ui \
-    $$PWD/ttkfuntionanimationvwindow.ui
-
-RESOURCES += \
-    $$PWD/FuntionAnimationWidget.qrc
+include($$PWD/movingLabelSlider/MovingLabelSlider.pri)
+include($$PWD/shiningSlider/ShiningSlider.pri)
+include($$PWD/sliderWidget/SliderWidget.pri)
