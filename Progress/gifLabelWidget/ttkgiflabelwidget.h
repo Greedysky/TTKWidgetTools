@@ -56,6 +56,8 @@ public:
     void setInfinited(bool s);
     bool getInfinited() const;
 
+    void run(bool run);
+
     void start();
     void stop();
 
@@ -65,11 +67,13 @@ public Q_SLOTS:
     void timeout();
 
 protected:
+    virtual void paintEvent(QPaintEvent *event) override;
     bool infinitedModeCheck();
 
     int m_index;
     Type m_type;
     QTimer *m_timer;
+    QPixmap m_renderer;
     bool m_isRunning, m_infinited;
 
 };
