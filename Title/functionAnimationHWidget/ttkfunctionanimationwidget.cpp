@@ -1,4 +1,4 @@
-#include "ttkfuntionanimationwidget.h"
+#include "ttkfunctionanimationwidget.h"
 
 #include "qmath.h"
 

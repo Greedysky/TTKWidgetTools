@@ -81,19 +81,19 @@
   <customwidget>
    <class>TTKOptionAnimationHWidget</class>
    <extends>QWidget</extends>
-   <header>ttkfuntionanimationwidget.h</header>
+   <header>ttkfunctionanimationwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>TTKSkinAnimationHWidget</class>
    <extends>QWidget</extends>
-   <header>ttkfuntionanimationwidget.h</header>
+   <header>ttkfunctionanimationwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>TTKTableAnimationHWidget</class>
    <extends>QWidget</extends>
-   <header>ttkfuntionanimationwidget.h</header>
+   <header>ttkfunctionanimationwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

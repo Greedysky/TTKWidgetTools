@@ -1,5 +1,5 @@
-#ifndef TTKFUNTIONANIMATIONWIDGET_H
-#define TTKFUNTIONANIMATIONWIDGET_H
+#ifndef TTKFUNCTIONANIMATIONWIDGET_H
+#define TTKFUNCTIONANIMATIONWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -158,4 +158,4 @@ public:
 
 };
 
-#endif // TTKFUNTIONANIMATIONWIDGET_H
+#endif // TTKFUNCTIONANIMATIONWIDGET_H

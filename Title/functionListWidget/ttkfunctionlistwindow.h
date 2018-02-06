@@ -1,5 +1,5 @@
-#ifndef TTKFUNTIONANIMATIONVWINDOW_H
-#define TTKFUNTIONANIMATIONVWINDOW_H
+#ifndef TTKFUNCTIONLISTWINDOW_H
+#define TTKFUNCTIONLISTWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -23,19 +23,19 @@
 #include "ttkglobaldefine.h"
 
 namespace Ui {
-class TTKFunctionAnimationVWindow;
+class TTKFunctionListWindow;
 }
 
-class TTK_EXTRAS_EXPORT TTKFunctionAnimationVWindow : public QMainWindow
+class TTK_EXTRAS_EXPORT TTKFunctionListWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionAnimationVWindow(QWidget *parent = 0);
-    ~TTKFunctionAnimationVWindow();
+    explicit TTKFunctionListWindow(QWidget *parent = 0);
+    ~TTKFunctionListWindow();
 
 private:
-    Ui::TTKFunctionAnimationVWindow *ui;
+    Ui::TTKFunctionListWindow *ui;
 
 };
 
-#endif // TTKFUNTIONANIMATIONVWINDOW_H
+#endif // TTKFUNCTIONLISTWINDOW_H

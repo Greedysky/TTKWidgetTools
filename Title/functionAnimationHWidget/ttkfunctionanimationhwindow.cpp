@@ -1,5 +1,5 @@
-#include "ttkfuntionanimationhwindow.h"
-#include "ui_ttkfuntionanimationhwindow.h"
+#include "ttkfunctionanimationhwindow.h"
+#include "ui_ttkfunctionanimationhwindow.h"
 
 TTKFunctionAnimationHWindow::TTKFunctionAnimationHWindow(QWidget *parent)
     : QMainWindow(parent),

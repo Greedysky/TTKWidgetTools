@@ -31,5 +31,6 @@
 #include "circularProgressWidget/ttkcircularprogresswindow.h"
 #include "sliderWidget/ttksliderwindow.h"
 #include "colorTablePlane/ttkcolortableplanewindow.h"
+#include "funtionListWidget/ttkfuntionlistwindow.h"
 
 #endif // TTKWIDGETTOOLS_H
