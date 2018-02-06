@@ -1,5 +1,5 @@
-#ifndef TTKFUNCTIONLISTWIDGET_H
-#define TTKFUNCTIONLISTWIDGET_H
+#ifndef TTKFUNCTIONLISTHWIDGET_H
+#define TTKFUNCTIONLISTHWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -49,12 +49,12 @@ protected:
 };
 
 
-class TTK_EXTRAS_EXPORT TTKFunctionListWidget : public QWidget
+class TTK_EXTRAS_EXPORT TTKFunctionListHWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionListWidget(QWidget *parent = 0);
-    ~TTKFunctionListWidget();
+    explicit TTKFunctionListHWidget(QWidget *parent = 0);
+    ~TTKFunctionListHWidget();
 
     void resizeMode(bool mode);
 
@@ -71,4 +71,4 @@ protected:
 
 };
 
-#endif // TTKFUNCTIONLISTWIDGET_H
+#endif // TTKFUNCTIONLISTHWIDGET_H

@@ -19,12 +19,12 @@
 INCLUDEPATH += $$PWD
 
 SOURCES += \
-    $$PWD/ttkfunctionlistwidget.cpp \
-    $$PWD/ttkfunctionlistwindow.cpp
+    $$PWD/ttkfunctionlistvwidget.cpp \
+    $$PWD/ttkfunctionlistvwindow.cpp
 
 HEADERS  += \
-    $$PWD/ttkfunctionlistwidget.h \
-    $$PWD/ttkfunctionlistwindow.h
+    $$PWD/ttkfunctionlistvwidget.h \
+    $$PWD/ttkfunctionlistvwindow.h
 
 FORMS    += \
-    $$PWD/ttkfunctionlistwindow.ui
+    $$PWD/ttkfunctionlistvwindow.ui

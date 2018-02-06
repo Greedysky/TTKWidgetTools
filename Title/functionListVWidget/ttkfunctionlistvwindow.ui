@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TTKFunctionListWindow</class>
- <widget class="QMainWindow" name="TTKFunctionListWindow">
+ <class>TTKFunctionListVWindow</class>
+ <widget class="QMainWindow" name="TTKFunctionListVWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKFunctionListWindow</string>
+   <string>TTKFunctionListVWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKFunctionListWindow{background:rgb(79, 200, 255);}</string>
+   <string notr="true">#TTKFunctionListVWindow{background:rgb(79, 200, 255);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="TTKFunctionListWidget" name="widget" native="true">
+   <widget class="TTKFunctionListVWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -32,9 +32,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>TTKFunctionListWidget</class>
+   <class>TTKFunctionListVWidget</class>
    <extends>QWidget</extends>
-   <header>ttkfunctionlistwidget.h</header>
+   <header>ttkfunctionlistvwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

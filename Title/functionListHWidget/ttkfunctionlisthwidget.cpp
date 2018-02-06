@@ -1,4 +1,4 @@
-#include "ttkfunctionlistwidget.h"
+#include "ttkfunctionlisthwidget.h"
 
 #include <QPainter>
 #include <QBoxLayout>
@@ -96,14 +96,14 @@ void TTKFunctionItemWidget::paintEvent(QPaintEvent *event)
 
 
 
-TTKFunctionListWidget::TTKFunctionListWidget(QWidget *parent)
+TTKFunctionListHWidget::TTKFunctionListHWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 18, 0, 0);
     layout->setSpacing(0);
 
-    for(int i=0; i<5; ++i)
+    for(int i=0; i<3; ++i)
     {
         TTKFunctionItemWidget *item = new TTKFunctionItemWidget(this);
         item->setLabelText("Hello World");
@@ -119,12 +119,12 @@ TTKFunctionListWidget::TTKFunctionListWidget(QWidget *parent)
     setLayout(layout);
 }
 
-TTKFunctionListWidget::~TTKFunctionListWidget()
+TTKFunctionListHWidget::~TTKFunctionListHWidget()
 {
     qDeleteAll(m_items);
 }
 
-void TTKFunctionListWidget::resizeMode(bool mode)
+void TTKFunctionListHWidget::resizeMode(bool mode)
 {
     foreach(TTKFunctionItemWidget *it, m_items)
     {
@@ -132,7 +132,7 @@ void TTKFunctionListWidget::resizeMode(bool mode)
     }
 }
 
-void TTKFunctionListWidget::selectedChanged(TTKFunctionItemWidget *item)
+void TTKFunctionListHWidget::selectedChanged(TTKFunctionItemWidget *item)
 {
     int index = m_items.indexOf(item);
     if(index == -1)
@@ -149,7 +149,7 @@ void TTKFunctionListWidget::selectedChanged(TTKFunctionItemWidget *item)
     m_items[index]->setSelectedMode(true);
 }
 
-void TTKFunctionListWidget::mousePressEvent(QMouseEvent *event)
+void TTKFunctionListHWidget::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
 }

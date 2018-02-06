@@ -15,8 +15,8 @@
 #include "shiningSlider/ttkshiningsliderwindow.h"
 #include "splitItemLabel/ttksplititemwindow.h"
 #include "grabItemWidget/ttkgrabitemwindow.h"
-#include "funtionAnimationHWidget/ttkfuntionanimationhwindow.h"
-#include "funtionAnimationVWidget/ttkfuntionanimationvwindow.h"
+#include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
+#include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
 #include "toolMenuWidget/ttktoolmenuwindow.h"
 #include "moveDialog/ttkmovedialogwindow.h"
 #include "moveWidget/ttkmovewidgetwindow.h"
@@ -31,6 +31,7 @@
 #include "circularProgressWidget/ttkcircularprogresswindow.h"
 #include "sliderWidget/ttksliderwindow.h"
 #include "colorTablePlane/ttkcolortableplanewindow.h"
-#include "funtionListWidget/ttkfuntionlistwindow.h"
+#include "functionListHWidget/ttkfunctionlisthwindow.h"
+#include "functionListVWidget/ttkfunctionlistvwindow.h"
 
 #endif // TTKWIDGETTOOLS_H
