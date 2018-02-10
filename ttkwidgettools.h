@@ -33,5 +33,6 @@
 #include "colorTablePlane/ttkcolortableplanewindow.h"
 #include "functionListHWidget/ttkfunctionlisthwindow.h"
 #include "functionListVWidget/ttkfunctionlistvwindow.h"
+#include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
 
 #endif // TTKWIDGETTOOLS_H
