@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKPictureFlowWindow</class>
+ <widget class="QMainWindow" name="TTKPictureFlowWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>503</width>
+    <height>349</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKPictureFlowWindow</string>
+  </property>
+  <widget class="TTKPictureFlowWidget" name="widget">
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKPictureFlowWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkpictureflowwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

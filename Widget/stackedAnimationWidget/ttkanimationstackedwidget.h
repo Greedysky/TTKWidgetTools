@@ -72,13 +72,13 @@ public:
 	float GetValue() const;
 	void SetValue(const float &afValue);
 
-signals:
+Q_SIGNALS:
 	void page_changed(int aiIndex);
 
-public slots:
+public Q_SLOTS:
 	void setCurrentIndex(int index);
 
-private slots:
+private Q_SLOTS:
     void animationFinished();
 
 protected:

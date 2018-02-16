@@ -34,5 +34,6 @@
 #include "functionListHWidget/ttkfunctionlisthwindow.h"
 #include "functionListVWidget/ttkfunctionlistvwindow.h"
 #include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
+#include "pictureFlowWidget/ttkpictureflowwindow.h"
 
 #endif // TTKWIDGETTOOLS_H

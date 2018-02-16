@@ -18,9 +18,13 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/colorTablePlane/ColorTablePlane.pri)
-include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
-include($$PWD/lineEditWidget/LineEditWidget.pri)
-include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)
-include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
-include($$PWD/stackedAnimationWidget/StackedAnimationWidget.pri)
+SOURCES += \
+    $$PWD/ttkpictureflowwidget.cpp \
+    $$PWD/ttkpictureflowwindow.cpp
+
+HEADERS  += \
+    $$PWD/ttkpictureflowwidget.h \
+    $$PWD/ttkpictureflowwindow.h
+
+FORMS    += \
+    $$PWD/ttkpictureflowwindow.ui
