@@ -18,5 +18,14 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/speedMeterWidget/SpeedMeterWidget.pri)
-include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
+SOURCES += \
+    $$PWD/ttktimemeterwidget.cpp \
+    $$PWD/ttktimemeterwindow.cpp
+
+HEADERS  += \
+    $$PWD/ttktimemeterwidget.h \
+    $$PWD/ttktimemeterwindow.h
+
+FORMS    += \
+    $$PWD/ttktimemeterwindow.ui
+    
