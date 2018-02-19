@@ -14,32 +14,21 @@
    <string>TTKSpeedMeterWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="TTKSpeedMeterWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>20</y>
-      <width>250</width>
-      <height>250</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>280</y>
-      <width>361</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>100</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="TTKSpeedMeterWidget" name="widget" native="true"/>
+    </item>
+    <item>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

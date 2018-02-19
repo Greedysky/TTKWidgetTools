@@ -7,7 +7,6 @@
 #define S_SPAOK     7
 #define S_SHORT     5
 #define S_SPACE     3
-#define S_ANGLE     10
 
 TTKSpeedMeterWidget::TTKSpeedMeterWidget(QWidget *parent)
     : QWidget(parent)
@@ -97,6 +96,7 @@ void TTKSpeedMeterWidget::initVariables()
     m_value = 0;
     m_currentValue = 0;
     m_ratio = 1;
+    m_units = "km/h";
 
     m_updateTimer = new QTimer(this);
     m_updateTimer->setInterval(10);
@@ -218,14 +218,9 @@ void TTKSpeedMeterWidget::drawTextRect(QPainter *painter)
     painter->save();
     qreal rectWidth = m_coverCircleRadius/5;
 
-    QPointF topLeftPot(m_center.x() -1.5*rectWidth, m_center.y()+rectWidth*2);
-    QPointF bottomRightPot(topLeftPot.x()+3*rectWidth, topLeftPot.y()+rectWidth*2);
+    QPointF topLeftPot(m_center.x() -2.5*rectWidth, m_center.y()+rectWidth*2);
+    QPointF bottomRightPot(topLeftPot.x()+5*rectWidth, topLeftPot.y()+rectWidth*2);
     QRectF textRect(topLeftPot, bottomRightPot);
-
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(QColor(0, 170, 255));
-    painter->setOpacity(0.6);
-    painter->drawRoundRect(textRect, S_ANGLE, S_ANGLE);
 
     qreal fontSize = textRect.height()/2;
     QFont font;
@@ -234,7 +229,7 @@ void TTKSpeedMeterWidget::drawTextRect(QPainter *painter)
 
     painter->setOpacity(1.0);
     painter->setPen(Qt::black);
-    painter->drawText(textRect, Qt::AlignHCenter | Qt::AlignVCenter, QString::number(m_value*m_ratio));
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1 %2").arg(m_value*m_ratio).arg(m_units));
     painter->restore();
 }
 

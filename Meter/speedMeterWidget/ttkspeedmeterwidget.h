@@ -61,6 +61,7 @@ private:
     qreal m_coverCircleRadius, m_colorCircleRadius;
     qreal m_coverBallRadius;
     QPointF m_center;
+    QString m_units;
     QRectF m_colorCircleRect;
     qreal m_value, m_ratio, m_currentValue;
     QTimer *m_updateTimer, *m_singleTimer;
