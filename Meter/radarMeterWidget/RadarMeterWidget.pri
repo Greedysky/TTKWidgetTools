@@ -18,7 +18,14 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/speedMeterWidget/SpeedMeterWidget.pri)
-include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
-include($$PWD/paintMeterWidget/PaintMeterWidget.pri)
-include($$PWD/radarMeterWidget/RadarMeterWidget.pri)
+SOURCES += \
+    $$PWD/ttkradarmeterwidget.cpp \
+    $$PWD/ttkradarmeterwindow.cpp
+
+HEADERS  += \
+    $$PWD/ttkradarmeterwidget.h \
+    $$PWD/ttkradarmeterwindow.h
+
+FORMS    += \
+    $$PWD/ttkradarmeterwindow.ui
+    

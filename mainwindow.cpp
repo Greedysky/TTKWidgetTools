@@ -48,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_34, 34);
     group->addButton(ui->pushButton_35, 35);
     group->addButton(ui->pushButton_36, 36);
+    group->addButton(ui->pushButton_37, 37);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -135,6 +136,8 @@ void MainWindow::changed(int index)
         case 35:(new TTKTimeMeterWindow(this))->show();
             break;
         case 36:(new TTKPaintMeterWindow(this))->show();
+            break;
+        case 37:(new TTKRadarMeterWindow(this))->show();
             break;
         default:
             break;

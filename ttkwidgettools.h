@@ -38,5 +38,6 @@
 #include "speedMeterWidget/ttkspeedmeterwindow.h"
 #include "timeMeterWidget/ttktimemeterwindow.h"
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
+#include "radarMeterWidget/ttkradarmeterwindow.h"
 
 #endif // TTKWIDGETTOOLS_H
