@@ -37,5 +37,6 @@
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
 #include "speedMeterWidget/ttkspeedmeterwindow.h"
 #include "timeMeterWidget/ttktimemeterwindow.h"
+#include "paintMeterWidget/ttkpaintmeterwindow.h"
 
 #endif // TTKWIDGETTOOLS_H
