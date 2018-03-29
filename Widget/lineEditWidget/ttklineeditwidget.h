@@ -24,6 +24,9 @@
 
 class QPropertyAnimation;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKLineEditWidget : public QLineEdit
 {
     Q_OBJECT

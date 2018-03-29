@@ -28,6 +28,10 @@ class QSignalTransition;
 
 class TTKCheckable;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKCheckableIcon : public QWidget
 {
     Q_OBJECT
@@ -61,7 +65,10 @@ protected:
 
 };
 
-
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKCheckable : public QAbstractButton
 {
     Q_OBJECT

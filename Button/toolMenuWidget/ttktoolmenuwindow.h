@@ -26,6 +26,9 @@ namespace Ui {
 class TTKToolMenuWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTKToolMenuWindow : public QMainWindow
 {
     Q_OBJECT

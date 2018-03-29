@@ -6,6 +6,9 @@
 #include <QWidget>
 #include "ttkglobaldefine.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 enum ReflectionEffect
 {
     NoReflection,
@@ -13,6 +16,9 @@ enum ReflectionEffect
     BlurredReflection
 };
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 struct TTK_EXTRAS_EXPORT TTKSlideInfo
 {
     int m_slideIndex;
@@ -23,6 +29,9 @@ struct TTK_EXTRAS_EXPORT TTKSlideInfo
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetState
 {
 public:
@@ -46,6 +55,9 @@ public:
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetAnimator
 {
 public:
@@ -62,6 +74,9 @@ public:
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetSoftwareRenderer
 {
 public:
@@ -92,6 +107,10 @@ private:
 
 };
 
+
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKPictureFlowWidget : public QWidget
 {
     Q_OBJECT

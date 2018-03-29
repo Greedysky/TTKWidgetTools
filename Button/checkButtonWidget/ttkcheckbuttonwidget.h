@@ -21,6 +21,10 @@
 
 #include "ttkcheckable.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKCheckButtonWidget : public TTKCheckable
 {
     Q_OBJECT

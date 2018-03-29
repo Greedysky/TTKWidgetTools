@@ -22,6 +22,10 @@
 #include <QPushButton>
 #include "ttkglobaldefine.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFlatButtonWidget : public QPushButton
 {
     Q_OBJECT

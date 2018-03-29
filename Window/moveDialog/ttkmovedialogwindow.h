@@ -26,6 +26,9 @@ namespace Ui {
 class TTKMoveDialogWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKMoveDialogWindow : public QMainWindow
 {
     Q_OBJECT

@@ -26,6 +26,9 @@ namespace Ui {
 class TTKFunctionListHWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFunctionListHWindow : public QMainWindow
 {
     Q_OBJECT

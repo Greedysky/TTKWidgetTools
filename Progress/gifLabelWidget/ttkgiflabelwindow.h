@@ -26,6 +26,9 @@ namespace Ui {
 class TTKGifLabelWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKGifLabelWindow : public QMainWindow
 {
     Q_OBJECT

@@ -26,6 +26,9 @@ namespace Ui {
 class TTKSplitItemWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKSplitItemWindow : public QMainWindow
 {
     Q_OBJECT

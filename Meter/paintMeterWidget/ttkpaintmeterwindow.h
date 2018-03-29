@@ -26,6 +26,9 @@ namespace Ui {
 class TTKPaintMeterWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKPaintMeterWindow : public QMainWindow
 {
     Q_OBJECT

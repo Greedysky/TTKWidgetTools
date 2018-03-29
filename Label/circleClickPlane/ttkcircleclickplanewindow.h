@@ -26,6 +26,9 @@ namespace Ui {
 class TTKCircleClickPlaneWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKCircleClickPlaneWindow : public QMainWindow
 {
     Q_OBJECT

@@ -25,6 +25,9 @@
 
 class TTKGifLabelWidget;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKShiningSliderWidget : public QWidget
 {
     Q_OBJECT

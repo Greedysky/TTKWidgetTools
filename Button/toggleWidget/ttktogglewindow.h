@@ -26,6 +26,9 @@ namespace Ui {
 class TTKToggleWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTKToggleWindow : public QMainWindow
 {
     Q_OBJECT

@@ -23,6 +23,9 @@
 #include <QBoxLayout>
 #include "ttkglobaldefine.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFunctionToolBoxTopWidget : public QWidget
 {
     Q_OBJECT
@@ -66,6 +69,9 @@ protected:
 
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWidgetItem : public QWidget
 {
     Q_OBJECT
@@ -102,6 +108,9 @@ protected:
 
 class QScrollArea;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 typedef struct TTK_EXTRAS_EXPORT TTKFunctionToolBoxUnionItem
 {
     int m_itemIndex;
@@ -115,6 +124,9 @@ typedef struct TTK_EXTRAS_EXPORT TTKFunctionToolBoxUnionItem
 }TTKFunctionToolBoxUnionItem;
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWidget : public QWidget
 {
     Q_OBJECT

@@ -24,6 +24,9 @@
 
 class QTimer;
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKGifLabelWidget : public QLabel
 {
     Q_OBJECT

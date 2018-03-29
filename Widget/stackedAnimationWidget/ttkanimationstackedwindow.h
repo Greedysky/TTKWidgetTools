@@ -26,6 +26,9 @@ namespace Ui {
 class TTKAnimationStackedWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKAnimationStackedWindow : public QMainWindow
 {
     Q_OBJECT

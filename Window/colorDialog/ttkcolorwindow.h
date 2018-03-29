@@ -26,6 +26,9 @@ namespace Ui {
 class TTKColorWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKColorWindow : public QMainWindow
 {
     Q_OBJECT

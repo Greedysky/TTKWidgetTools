@@ -26,6 +26,9 @@ namespace Ui {
 class TTKMoveResizeWidgetWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKMoveResizeWidgetWindow : public QMainWindow
 {
     Q_OBJECT

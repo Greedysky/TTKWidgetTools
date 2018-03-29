@@ -26,6 +26,9 @@ namespace Ui {
 class TTKSliderWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKSliderWindow : public QMainWindow
 {
     Q_OBJECT

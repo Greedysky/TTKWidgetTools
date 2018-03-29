@@ -26,6 +26,9 @@ namespace Ui {
 class TTKLayoutAnimationWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKLayoutAnimationWindow : public QMainWindow
 {
     Q_OBJECT

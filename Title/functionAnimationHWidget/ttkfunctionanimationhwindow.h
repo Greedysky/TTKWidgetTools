@@ -26,6 +26,9 @@ namespace Ui {
 class TTKFunctionAnimationHWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKFunctionAnimationHWindow : public QMainWindow
 {
     Q_OBJECT

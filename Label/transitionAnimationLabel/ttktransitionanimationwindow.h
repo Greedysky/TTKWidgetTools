@@ -26,6 +26,9 @@ namespace Ui {
 class TTKTransitionAnimationWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTKTransitionAnimationWindow : public QMainWindow
 {
     Q_OBJECT

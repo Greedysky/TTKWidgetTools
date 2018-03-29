@@ -26,6 +26,9 @@ namespace Ui {
 class TTKRadarMeterWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKRadarMeterWindow : public QMainWindow
 {
     Q_OBJECT

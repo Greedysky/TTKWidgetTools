@@ -24,6 +24,10 @@
 
 class TTKCircularProgressWidget;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKCircularProgressDelegate : public QObject
 {
     Q_OBJECT
@@ -50,6 +54,10 @@ private:
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKCircularProgressWidget : public QProgressBar
 {
     Q_OBJECT

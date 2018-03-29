@@ -26,6 +26,9 @@ namespace Ui {
 class TTKSpeedMeterWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKSpeedMeterWindow : public QMainWindow
 {
     Q_OBJECT

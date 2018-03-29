@@ -26,6 +26,10 @@ class QState;
 class QStateMachine;
 class TTKToggleWidget;
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKToggleThumb : public QWidget
 {
     Q_OBJECT
@@ -55,6 +59,10 @@ protected:
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKToggleTrack : public QWidget
 {
     Q_OBJECT
@@ -75,6 +83,10 @@ protected:
 };
 
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ *   Heikki Johannes <hildenjohannes@gmail.com>
+ */
 class TTK_EXTRAS_EXPORT TTKToggleWidget : public QAbstractButton
 {
     Q_OBJECT

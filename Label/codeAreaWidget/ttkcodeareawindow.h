@@ -26,6 +26,9 @@ namespace Ui {
 class TTKCodeAreaWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKCodeAreaWindow : public QMainWindow
 {
     Q_OBJECT

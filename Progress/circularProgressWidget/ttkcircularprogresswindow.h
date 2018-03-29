@@ -26,6 +26,9 @@ namespace Ui {
 class TTKCircularProgressWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKCircularProgressWindow : public QMainWindow
 {
     Q_OBJECT

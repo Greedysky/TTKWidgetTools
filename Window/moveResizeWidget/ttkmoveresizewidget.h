@@ -22,6 +22,9 @@
 #include <QWidget>
 #include "ttkglobaldefine.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 struct TTK_EXTRAS_EXPORT MoveResizeStruct
 {
     bool m_mouseLeftPress;
@@ -31,6 +34,9 @@ struct TTK_EXTRAS_EXPORT MoveResizeStruct
     QSize m_pressedSize;
 };
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKMoveResizeWidget : public QWidget
 {
     Q_OBJECT

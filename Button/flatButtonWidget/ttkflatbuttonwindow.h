@@ -26,6 +26,9 @@ namespace Ui {
 class TTKFlatButtonWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKFlatButtonWindow : public QMainWindow
 {
     Q_OBJECT

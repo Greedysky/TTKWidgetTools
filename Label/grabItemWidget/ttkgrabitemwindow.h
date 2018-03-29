@@ -26,6 +26,9 @@ namespace Ui {
 class TTKGrabItemWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKGrabItemWindow : public QMainWindow
 {
     Q_OBJECT

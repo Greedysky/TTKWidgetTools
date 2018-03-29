@@ -26,6 +26,9 @@ namespace Ui {
 class TTKCheckButtonWindow;
 }
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKCheckButtonWindow : public QMainWindow
 {
     Q_OBJECT

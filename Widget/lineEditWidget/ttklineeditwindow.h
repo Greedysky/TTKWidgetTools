@@ -26,6 +26,9 @@ namespace Ui {
 class TTKLineEditWindow;
 }
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_EXTRAS_EXPORT TTKLineEditWindow : public QMainWindow
 {
     Q_OBJECT

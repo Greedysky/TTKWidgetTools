@@ -22,6 +22,9 @@
 #include <QWidget>
 #include "ttkglobaldefine.h"
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKSpeedMeterWidget : public QWidget
 {
     Q_OBJECT

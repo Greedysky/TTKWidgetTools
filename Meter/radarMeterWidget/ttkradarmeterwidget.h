@@ -22,6 +22,10 @@
 #include <QWidget>
 #include "ttkglobaldefine.h"
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*          fearlazy <fearlazy@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKRadarMeterWidget : public QWidget
 {
     Q_OBJECT

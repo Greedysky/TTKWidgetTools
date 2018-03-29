@@ -23,6 +23,9 @@
 #include <QToolButton>
 #include "ttkglobaldefine.h"
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKToolMenu : public QMenu
 {
     Q_OBJECT
@@ -39,6 +42,9 @@ protected:
 };
 
 
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
 class TTK_EXTRAS_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
