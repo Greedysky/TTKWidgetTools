@@ -15,6 +15,27 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="7" column="2">
+     <widget class="QPushButton" name="pushButton_28">
+      <property name="text">
+       <string>ColorTablePlane</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="text">
+       <string>ColorDialog</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="text">
+       <string>ShiningSlider</string>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="0">
      <widget class="QPushButton" name="pushButton_12">
       <property name="text">
@@ -29,31 +50,24 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item row="1" column="2">
      <widget class="QPushButton" name="pushButton_5">
       <property name="text">
        <string>MarqueeWidget</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="pushButton_9">
+    <item row="1" column="5">
+     <widget class="QPushButton" name="pushButton_7">
       <property name="text">
-       <string>ColorDialog</string>
+       <string>MovingLabelSlider</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="3">
-     <widget class="QPushButton" name="pushButton_11">
+    <item row="0" column="2">
+     <widget class="QPushButton" name="pushButton_1">
       <property name="text">
-       <string>ShiningSlider</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="pushButton_14">
-      <property name="text">
-       <string>FunctionAnimationHWidget</string>
+       <string>TransitionAnimationLabel</string>
       </property>
      </widget>
     </item>
@@ -64,21 +78,14 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="pushButton_7">
+    <item row="3" column="4">
+     <widget class="QPushButton" name="pushButton_14">
       <property name="text">
-       <string>MovingLabelSlider</string>
+       <string>FunctionAnimationHWidget</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton_1">
-      <property name="text">
-       <string>TransitionAnimationLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
+    <item row="3" column="2">
      <widget class="QPushButton" name="pushButton_13">
       <property name="text">
        <string>GrabItemWidget</string>
@@ -92,45 +99,31 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
+    <item row="0" column="4">
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
        <string>GifLabel</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_10">
-      <property name="text">
-       <string>LayoutAnimationWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="3">
+    <item row="0" column="5">
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
        <string>CodeAreaWidget</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="1" column="4">
      <widget class="QPushButton" name="pushButton_6">
       <property name="text">
        <string>RoundAnimationLabel</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="pushButton_25">
+    <item row="2" column="4">
+     <widget class="QPushButton" name="pushButton_10">
       <property name="text">
-       <string>FlatButtonWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QPushButton" name="pushButton_28">
-      <property name="text">
-       <string>ColorTablePlane</string>
+       <string>LayoutAnimationWidget</string>
       </property>
      </widget>
     </item>
@@ -141,24 +134,31 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="3">
+    <item row="5" column="2">
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="text">
+       <string>LineEditWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
      <widget class="QPushButton" name="pushButton_18">
       <property name="text">
        <string>MoveResizeWidget</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="3">
-     <widget class="QPushButton" name="pushButton_22">
+    <item row="6" column="4">
+     <widget class="QPushButton" name="pushButton_25">
       <property name="text">
-       <string>RadioButtonWidget</string>
+       <string>FlatButtonWidget</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="pushButton_20">
+    <item row="5" column="5">
+     <widget class="QPushButton" name="pushButton_22">
       <property name="text">
-       <string>LineEditWidget</string>
+       <string>RadioButtonWidget</string>
       </property>
      </widget>
     </item>
@@ -169,38 +169,31 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="pushButton_24">
-      <property name="text">
-       <string>ProgressWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="3">
-     <widget class="QPushButton" name="pushButton_26">
-      <property name="text">
-       <string>CircularProgressWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="pushButton_21">
-      <property name="text">
-       <string>ToggleWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
+    <item row="4" column="2">
      <widget class="QPushButton" name="pushButton_16">
       <property name="text">
        <string>MoveDialog</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="2">
-     <widget class="QPushButton" name="pushButton_30">
+    <item row="6" column="5">
+     <widget class="QPushButton" name="pushButton_26">
       <property name="text">
-       <string>FunctionListHWidget</string>
+       <string>CircularProgressWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="pushButton_24">
+      <property name="text">
+       <string>ProgressWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="text">
+       <string>ToggleWidget</string>
       </property>
      </widget>
     </item>
@@ -211,10 +204,17 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="3">
-     <widget class="QPushButton" name="pushButton_29">
+    <item row="7" column="4">
+     <widget class="QPushButton" name="pushButton_30">
       <property name="text">
-       <string>FunctionAnimationVWidget</string>
+       <string>FunctionListHWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="text">
+       <string>MoveWidget</string>
       </property>
      </widget>
     </item>
@@ -225,38 +225,24 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="pushButton_17">
-      <property name="text">
-       <string>MoveWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
+    <item row="8" column="2">
      <widget class="QPushButton" name="pushButton_33">
       <property name="text">
        <string>PictureFlowWidget</string>
       </property>
      </widget>
     </item>
-    <item row="8" column="2">
-     <widget class="QPushButton" name="pushButton_34">
+    <item row="3" column="5">
+     <widget class="QPushButton" name="pushButton_29">
       <property name="text">
-       <string>SpeedMeterWidget</string>
+       <string>FunctionAnimationVWidget</string>
       </property>
      </widget>
     </item>
-    <item row="7" column="3">
+    <item row="7" column="5">
      <widget class="QPushButton" name="pushButton_31">
       <property name="text">
        <string>FunctionListVWidget</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="3">
-     <widget class="QPushButton" name="pushButton_35">
-      <property name="text">
-       <string>TimeMeterWidget</string>
       </property>
      </widget>
     </item>
@@ -274,10 +260,31 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="1">
+    <item row="9" column="2">
      <widget class="QPushButton" name="pushButton_37">
       <property name="text">
        <string>RadarMeterWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QPushButton" name="pushButton_34">
+      <property name="text">
+       <string>SpeedMeterWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="4">
+     <widget class="QPushButton" name="pushButton_38">
+      <property name="text">
+       <string>PictureBannerWidget</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="5">
+     <widget class="QPushButton" name="pushButton_35">
+      <property name="text">
+       <string>TimeMeterWidget</string>
       </property>
      </widget>
     </item>

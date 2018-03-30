@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKPictureBannerWindow</class>
+ <widget class="QMainWindow" name="TTKPictureBannerWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>503</width>
+    <height>349</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKPictureBannerWindow</string>
+  </property>
+  <widget class="TTKPictureBannerWidget" name="widget">
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKPictureBannerWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkpicturebannerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

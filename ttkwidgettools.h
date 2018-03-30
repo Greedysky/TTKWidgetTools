@@ -35,6 +35,7 @@
 #include "functionListVWidget/ttkfunctionlistvwindow.h"
 #include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
+#include "pictureBannerWidget/ttkpicturebannerwindow.h"
 #include "speedMeterWidget/ttkspeedmeterwindow.h"
 #include "timeMeterWidget/ttktimemeterwindow.h"
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
