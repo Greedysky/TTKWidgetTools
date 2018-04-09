@@ -50,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_36, 36);
     group->addButton(ui->pushButton_37, 37);
     group->addButton(ui->pushButton_38, 38);
+    group->addButton(ui->pushButton_39, 39);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -141,6 +142,8 @@ void MainWindow::changed(int index)
         case 37:(new TTKRadarMeterWindow(this))->show();
             break;
         case 38:(new TTKPictureBannerWindow(this))->show();
+            break;
+        case 39:(new TTKProgressCircleWindow(this))->show();
             break;
         default:
             break;

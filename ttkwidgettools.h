@@ -40,5 +40,6 @@
 #include "timeMeterWidget/ttktimemeterwindow.h"
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
 #include "radarMeterWidget/ttkradarmeterwindow.h"
+#include "progressCircleWidget/ttkprogresscirclewindow.h"
 
 #endif // TTKWIDGETTOOLS_H
