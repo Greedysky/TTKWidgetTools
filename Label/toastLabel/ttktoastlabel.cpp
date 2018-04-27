@@ -13,7 +13,7 @@ TTKToastLabel::TTKToastLabel(QWidget *parent)
 
     m_font = font();
     connect(&m_timer, SIGNAL(timeout()), SLOT(closeAnimation()));
-    m_timer.setInterval(1000);
+    m_timer.setInterval(1500);
     m_timer.start();
 }
 
@@ -74,6 +74,12 @@ void TTKToastLabel::popup(QWidget *parent)
     move( globalPoint.x() + (parent->width() - width())/2,
           globalPoint.y() + (parent->height() - height())/2);
     show();
+
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);
+    animation->setDuration(500);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->start();
 }
 
 void TTKToastLabel::setText(const QString &text)
