@@ -22,7 +22,7 @@ Reference wik **<u>https://github.com/Greedysky/TTKWidgetTools/wiki</u>**
 Copyright
 -------
  * This file is part of the TTK Widget Tools project.
- * Copyright (c) 2015 - 2018 Greedysky Studio.
+ * Copyright (c) 2015 - 2019 Greedysky Studio.
  * mail: greedysky@163.com.
  
 How To Contribute

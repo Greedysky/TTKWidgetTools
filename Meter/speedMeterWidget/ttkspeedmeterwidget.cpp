@@ -175,7 +175,7 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
             painter->translate(textPot);
             painter->rotate(180);
             painter->drawText(QPointF(-textWidth, textHeight/2), strValue);
-            painter->restore();            
+            painter->restore();
         }
         else if(i%5 == 0)
         {
