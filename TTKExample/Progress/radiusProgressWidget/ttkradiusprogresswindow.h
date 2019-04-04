@@ -1,5 +1,5 @@
-#ifndef TTKTRANSITIONANIMATIONLABEL_H
-#define TTKTRANSITIONANIMATIONLABEL_H
+#ifndef TTKRADIUSPROGRESSWINDOW_H
+#define TTKRADIUSPROGRESSWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,46 +19,31 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLabel>
+#include <QMainWindow>
 #include "ttkglobaldefine.h"
 
-class QPropertyAnimation;
+namespace Ui {
+class TTKRadiusProgressWindow;
+}
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKTransitionAnimationLabel : public QLabel
+class TTK_EXTRAS_EXPORT TTKRadiusProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKTransitionAnimationLabel(QWidget *parent = 0);
-
-    ~TTKTransitionAnimationLabel();
-
-    inline void setNoAnimation(bool on) { m_noAnimationSet = on; }
-    inline bool getNoAnimation() const { return m_noAnimationSet; }
-
-    QPixmap getRendererPixmap() const;
-
-    void stop();
+    explicit TTKRadiusProgressWindow(QWidget *parent = 0);
+    ~TTKRadiusProgressWindow();
 
 public Q_SLOTS:
-    void setPixmap(const QPixmap &pix);
+    void updateProgressbar();
 
-private Q_SLOTS:
-    void valueChanged(const QVariant &value);
-    void animationFinished();
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-    bool m_isAnimating;
-    int m_currentValue;
-    bool m_noAnimationSet;
-    QPixmap m_rendererPixmap;
-    QPixmap m_currentPixmap, m_previousPixmap;
-    QPropertyAnimation *m_animation;
+private:
+    Ui::TTKRadiusProgressWindow *ui;
+    int m_value;
+    QTimer *m_timer;
 
 };
 
-#endif // TTKTRANSITIONANIMATIONLABEL_H
+#endif // TTKRADIUSPROGRESSWINDOW_H

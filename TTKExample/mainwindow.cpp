@@ -42,7 +42,10 @@
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
 #include "radarMeterWidget/ttkradarmeterwindow.h"
 #include "progressCircleWidget/ttkprogresscirclewindow.h"
-
+#include "animationProgressWidget/ttkanimationprogresswindow.h"
+#include "radiusProgressWidget/ttkradiusprogresswindow.h"
+#include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
+#include "ringsProgressWidget/ttkringsprogresswindow.h"
 
 #include <QButtonGroup>
 
@@ -93,6 +96,10 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_37, 37);
     group->addButton(ui->pushButton_38, 38);
     group->addButton(ui->pushButton_39, 39);
+    group->addButton(ui->pushButton_40, 40);
+    group->addButton(ui->pushButton_41, 41);
+    group->addButton(ui->pushButton_42, 42);
+    group->addButton(ui->pushButton_43, 43);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -186,6 +193,14 @@ void MainWindow::changed(int index)
         case 38:(new TTKPictureBannerWindow(this))->show();
             break;
         case 39:(new TTKProgressCircleWindow(this))->show();
+            break;
+        case 40:(new TTKAnimationProgressWindow(this))->show();
+            break;
+        case 41:(new TTKRadiusProgressWindow(this))->show();
+            break;
+        case 42:(new TTKRingsMapProgressWindow(this))->show();
+            break;
+        case 43:(new TTKRingsProgressWindow(this))->show();
             break;
         default:
             break;

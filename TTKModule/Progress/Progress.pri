@@ -18,7 +18,11 @@
 
 INCLUDEPATH += $$PWD
 
+include($$PWD/animationProgressWidget/AnimationProgressWidget.pri)
 include($$PWD/circularProgressWidget/CircularProgressWidget.pri)
 include($$PWD/gifLabelWidget/GifLabelWidget.pri)
 include($$PWD/progressCircleWidget/ProgressCircleWidget.pri)
 include($$PWD/progressWidget/ProgressWidget.pri)
+include($$PWD/radiusProgressWidget/RadiusProgressWidget.pri)
+include($$PWD/ringsMapProgressWidget/RingsMapProgressWidget.pri)
+include($$PWD/ringsProgressWidget/RingsProgressWidget.pri)

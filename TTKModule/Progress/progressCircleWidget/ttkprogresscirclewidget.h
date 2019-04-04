@@ -67,7 +67,7 @@ private Q_SLOTS:
     void setVisibleValue(int value);
 
 protected:
-    void paintEvent(QPaintEvent *event);
+    virtual void paintEvent(QPaintEvent *event) override;
 
     QString key() const;
     QPixmap generatePixmap() const;

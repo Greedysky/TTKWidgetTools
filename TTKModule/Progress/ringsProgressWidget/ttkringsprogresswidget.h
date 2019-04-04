@@ -1,5 +1,5 @@
-#ifndef TTKTRANSITIONANIMATIONLABEL_H
-#define TTKTRANSITIONANIMATIONLABEL_H
+#ifndef TTKRINGSPROGRESSWIDGET_H
+#define TTKRINGSPROGRESSWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,46 +19,27 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLabel>
+#include <QWidget>
 #include "ttkglobaldefine.h"
 
-class QPropertyAnimation;
-
 /*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_EXTRAS_EXPORT TTKTransitionAnimationLabel : public QLabel
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_EXTRAS_EXPORT TTKRingsProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKTransitionAnimationLabel(QWidget *parent = 0);
+    explicit TTKRingsProgressWidget(QWidget *parent = 0);
 
-    ~TTKTransitionAnimationLabel();
-
-    inline void setNoAnimation(bool on) { m_noAnimationSet = on; }
-    inline bool getNoAnimation() const { return m_noAnimationSet; }
-
-    QPixmap getRendererPixmap() const;
-
-    void stop();
-
-public Q_SLOTS:
-    void setPixmap(const QPixmap &pix);
-
-private Q_SLOTS:
-    void valueChanged(const QVariant &value);
-    void animationFinished();
+    void setRotateDelta(int delta);
+    void setValue(int value);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
 
-    bool m_isAnimating;
-    int m_currentValue;
-    bool m_noAnimationSet;
-    QPixmap m_rendererPixmap;
-    QPixmap m_currentPixmap, m_previousPixmap;
-    QPropertyAnimation *m_animation;
+private:
+    int m_angle, m_value;
 
 };
 
-#endif // TTKTRANSITIONANIMATIONLABEL_H
+#endif // TTKRINGSPROGRESSWIDGET_H

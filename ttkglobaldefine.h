@@ -25,7 +25,9 @@
 ///exoprt
 ///
 ///
-#define TTK_EXPORT
+#ifdef TTK_LIBRARY
+#  define TTK_EXPORT
+#endif
 
 #ifdef TTK_EXPORT
 #  define TTK_EXTRAS_EXPORT Q_DECL_EXPORT

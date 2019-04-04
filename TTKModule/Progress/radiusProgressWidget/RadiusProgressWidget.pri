@@ -16,37 +16,16 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = app
+INCLUDEPATH += $$PWD
+
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkradiusprogresswidget.h
+
+}
 
 contains(CONFIG, TTK_BUILD_LIB){
-    CONFIG -= TTK_BUILD_LIB
+SOURCES += $$PWD/ttkradiusprogresswidget.cpp
+
+RESOURCES += $$PWD/RadiusProgressWidget.qrc
+
 }
-
-CONFIG += TTK_NO_MSVC_LINK_NEED
-win32{
-    msvc{
-        CONFIG -= TTK_NO_MSVC_LINK_NEED
-    }
-}
-include(TTKExample.pri)
-include(../TTKWidgetTools.pri)
-
-win32{
-    TARGET = ../../bin/TTKWidgetTools
-    LIBS += -L../bin -lTTKCore
-}
-unix{
-    TARGET = ../lib/TTKWidgetTools
-    LIBS += -L../lib -lTTKCore
-}
-
-SOURCES += \
-    $$PWD/mainwindow.cpp \
-    main.cpp
-
-HEADERS += \
-    $$PWD/mainwindow.h \
-    ../ttkglobaldefine.h
-
-FORMS   += $$PWD/mainwindow.ui
-

@@ -63,6 +63,8 @@ unix:!mac{
     QMAKE_CXXFLAGS += -Wswitch
 }
 
+DEFINES += TTK_LIBRARY
+
 #########################################
 HEADERS += $$PWD/ttkglobaldefine.h
 INCLUDEPATH += $$PWD
