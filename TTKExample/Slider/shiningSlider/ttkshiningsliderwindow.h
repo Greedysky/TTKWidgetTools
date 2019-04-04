@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKShiningSliderWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKShiningSliderWindow(QWidget *parent = 0);
+    explicit TTKShiningSliderWindow(QWidget *parent = nullptr);
     ~TTKShiningSliderWindow();
 
 private:

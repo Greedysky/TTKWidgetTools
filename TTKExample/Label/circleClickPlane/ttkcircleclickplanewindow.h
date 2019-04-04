@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKCircleClickPlaneWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKCircleClickPlaneWindow(QWidget *parent = 0);
+    explicit TTKCircleClickPlaneWindow(QWidget *parent = nullptr);
     ~TTKCircleClickPlaneWindow();
 
 private:

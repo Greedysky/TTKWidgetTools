@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKPaintMeterWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKPaintMeterWindow(QWidget *parent = 0);
+    explicit TTKPaintMeterWindow(QWidget *parent = nullptr);
     ~TTKPaintMeterWindow();
 
 private Q_SLOTS:

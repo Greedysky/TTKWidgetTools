@@ -30,7 +30,7 @@ class TTK_EXTRAS_EXPORT TTKRoundAnimationLabel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKRoundAnimationLabel(QWidget *parent = 0);
+    explicit TTKRoundAnimationLabel(QWidget *parent = nullptr);
     ~TTKRoundAnimationLabel();
 
     void setPixmap(const QPixmap &pix);

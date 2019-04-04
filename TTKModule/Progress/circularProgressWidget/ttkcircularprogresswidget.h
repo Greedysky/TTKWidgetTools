@@ -65,7 +65,7 @@ class TTK_EXTRAS_EXPORT TTKCircularProgressWidget : public QProgressBar
     Q_PROPERTY(qreal size WRITE setSize READ size)
     Q_PROPERTY(QColor color WRITE setColor READ color)
 public:
-    explicit TTKCircularProgressWidget(QWidget *parent = 0);
+    explicit TTKCircularProgressWidget(QWidget *parent = nullptr);
     ~TTKCircularProgressWidget();
 
     void setLineWidth(qreal width);

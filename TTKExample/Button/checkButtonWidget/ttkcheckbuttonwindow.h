@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKCheckButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKCheckButtonWindow(QWidget *parent = 0);
+    explicit TTKCheckButtonWindow(QWidget *parent = nullptr);
     ~TTKCheckButtonWindow();
 
 private:

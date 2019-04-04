@@ -34,7 +34,7 @@ class TTK_EXTRAS_EXPORT TTKAnimationStackedWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit TTKAnimationStackedWindow(QWidget *parent = 0);
+    explicit TTKAnimationStackedWindow(QWidget *parent = nullptr);
     ~TTKAnimationStackedWindow();
 
 public Q_SLOTS:

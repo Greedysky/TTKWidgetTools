@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKMoveResizeWidgetWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKMoveResizeWidgetWindow(QWidget *parent = 0);
+    explicit TTKMoveResizeWidgetWindow(QWidget *parent = nullptr);
     ~TTKMoveResizeWidgetWindow();
 
 private Q_SLOTS:

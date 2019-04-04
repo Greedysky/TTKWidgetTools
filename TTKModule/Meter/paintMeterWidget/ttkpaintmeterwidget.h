@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKPaintMeterWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKPaintMeterWidget(QWidget *parent = 0);
+    explicit TTKPaintMeterWidget(QWidget *parent = nullptr);
 
     void setThreshold(double value);
     void setValue(double value);

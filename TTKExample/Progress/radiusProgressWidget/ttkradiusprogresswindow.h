@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKRadiusProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKRadiusProgressWindow(QWidget *parent = 0);
+    explicit TTKRadiusProgressWindow(QWidget *parent = nullptr);
     ~TTKRadiusProgressWindow();
 
 public Q_SLOTS:

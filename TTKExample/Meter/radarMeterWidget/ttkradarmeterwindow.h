@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKRadarMeterWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKRadarMeterWindow(QWidget *parent = 0);
+    explicit TTKRadarMeterWindow(QWidget *parent = nullptr);
     ~TTKRadarMeterWindow();
 
 private:

@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKRadiusProgressWidget : public QProgressBar
 {
     Q_OBJECT
 public:
-    explicit TTKRadiusProgressWidget(QWidget *parent = 0);
+    explicit TTKRadiusProgressWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

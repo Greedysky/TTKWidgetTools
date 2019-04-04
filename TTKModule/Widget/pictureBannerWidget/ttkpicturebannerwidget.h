@@ -38,7 +38,7 @@ public:
         Left,
         Right
     };
-    explicit TTKPictureBannerArrowWidget(ArrowType type, QWidget *parent = 0);
+    explicit TTKPictureBannerArrowWidget(ArrowType type, QWidget *parent = nullptr);
 
 Q_SIGNALS:
     void clicked();
@@ -66,7 +66,7 @@ class TTK_EXTRAS_EXPORT TTKPictureBannerIndicator : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerIndicator(QWidget *parent = 0);
+    explicit TTKPictureBannerIndicator(QWidget *parent = nullptr);
 
     void select(bool selected);
 
@@ -92,7 +92,7 @@ class TTK_EXTRAS_EXPORT TTKPictureBannerPage : public QLabel
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerPage(QWidget *parent = 0);
+    explicit TTKPictureBannerPage(QWidget *parent = nullptr);
 
     void setActive(bool active);
 
@@ -118,7 +118,7 @@ class TTK_EXTRAS_EXPORT TTKPictureBannerView : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerView(QWidget *parent = 0);
+    explicit TTKPictureBannerView(QWidget *parent = nullptr);
     ~TTKPictureBannerView();
 
     void setLeftPixmap(const QPixmap &pixmap);
@@ -159,7 +159,7 @@ class TTK_EXTRAS_EXPORT TTKPictureBannerWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerWidget(QWidget *parent = 0);
+    explicit TTKPictureBannerWidget(QWidget *parent = nullptr);
 
     void addPage(const QPixmap &pixmap);
     void addPages(const QList<QPixmap> &pixmaps);

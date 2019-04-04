@@ -14,7 +14,7 @@
    <string>TTKRingsMapProgressWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKRingsMapProgressWindow{background:rgba(50, 50, 50, 50);}</string>
+   <string notr="true">#TTKRingsMapProgressWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">

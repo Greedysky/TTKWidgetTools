@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKPictureFlowWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKPictureFlowWindow(QWidget *parent = 0);
+    explicit TTKPictureFlowWindow(QWidget *parent = nullptr);
     ~TTKPictureFlowWindow();
 
 private:

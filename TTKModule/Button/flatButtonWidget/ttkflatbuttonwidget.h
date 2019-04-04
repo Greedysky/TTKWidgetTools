@@ -36,7 +36,7 @@ public:
         RightIcon
     };
 
-    explicit TTKFlatButtonWidget(QWidget *parent = 0);
+    explicit TTKFlatButtonWidget(QWidget *parent = nullptr);
 
     void setForegroundColor(const QColor &color);
     inline QColor foregroundColor() const { return m_foregroundColor; }

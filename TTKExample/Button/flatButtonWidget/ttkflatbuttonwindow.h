@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKFlatButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFlatButtonWindow(QWidget *parent = 0);
+    explicit TTKFlatButtonWindow(QWidget *parent = nullptr);
     ~TTKFlatButtonWindow();
 
 private:

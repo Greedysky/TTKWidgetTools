@@ -30,7 +30,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionToolBoxWindow(QWidget *parent = 0);
+    explicit TTKFunctionToolBoxWindow(QWidget *parent = nullptr);
     ~TTKFunctionToolBoxWindow();
 
 private:

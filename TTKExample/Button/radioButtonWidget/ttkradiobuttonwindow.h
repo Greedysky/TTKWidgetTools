@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKRadioButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKRadioButtonWindow(QWidget *parent = 0);
+    explicit TTKRadioButtonWindow(QWidget *parent = nullptr);
     ~TTKRadioButtonWindow();
 
 private:

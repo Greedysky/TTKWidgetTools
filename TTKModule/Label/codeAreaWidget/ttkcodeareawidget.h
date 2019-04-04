@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKCodeAreaWidget : public QLabel
 {
     Q_OBJECT
 public:
-    explicit TTKCodeAreaWidget(QWidget *parent = 0);
+    explicit TTKCodeAreaWidget(QWidget *parent = nullptr);
 
     void renderPicture();
     inline QString getCheckCode() const { return m_sCode; }

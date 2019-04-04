@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKColorTablePlaneWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKColorTablePlaneWindow(QWidget *parent = 0);
+    explicit TTKColorTablePlaneWindow(QWidget *parent = nullptr);
     ~TTKColorTablePlaneWindow();
 
 private:

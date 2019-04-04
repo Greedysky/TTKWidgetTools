@@ -14,7 +14,7 @@
    <string>TTKGifLabelWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKGifLabelWindow{background:rgba(50, 50, 50, 50);}</string>
+   <string notr="true">#TTKGifLabelWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">

@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionAnimationVWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionAnimationVWindow(QWidget *parent = 0);
+    explicit TTKFunctionAnimationVWindow(QWidget *parent = nullptr);
     ~TTKFunctionAnimationVWindow();
 
 private:

@@ -23,8 +23,8 @@ void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
     const int x = (int)(rect.width() * k);
     const QRect fillRect = rect.adjusted(0, 0, x - rect.width(), 0);
 
-    painter.drawPixmap(rect, QPixmap(":/res/lb_back"));
-    painter.drawPixmap(fillRect, QPixmap(":/res/lb_front"), fillRect);
+    painter.drawPixmap(rect, QPixmap(":/res/lb_rp_back"));
+    painter.drawPixmap(fillRect, QPixmap(":/res/lb_rp_front"), fillRect);
 
     painter.setFont(QFont("Microsoft YaHei", 15, QFont::Bold));
     painter.setPen(QColor("#555555"));

@@ -30,7 +30,7 @@ class TTK_EXTRAS_EXPORT TTKToolMenu : public QMenu
 {
     Q_OBJECT
 public:
-    explicit TTKToolMenu(QWidget *parent = 0);
+    explicit TTKToolMenu(QWidget *parent = nullptr);
 
 Q_SIGNALS:
     void windowStateChanged(bool state);
@@ -49,7 +49,7 @@ class TTK_EXTRAS_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
 public:
-    explicit TTKToolMenuWidget(QWidget *parent = 0);
+    explicit TTKToolMenuWidget(QWidget *parent = nullptr);
     ~TTKToolMenuWidget();
 
     void setTranslucentBackground();

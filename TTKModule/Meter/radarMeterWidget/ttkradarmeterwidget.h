@@ -30,7 +30,7 @@ class TTK_EXTRAS_EXPORT TTKRadarMeterWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKRadarMeterWidget(QWidget *parent = 0);
+    explicit TTKRadarMeterWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

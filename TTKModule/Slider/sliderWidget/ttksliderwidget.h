@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKSliderWidget : public QSlider
 {
     Q_OBJECT
 public:
-    explicit TTKSliderWidget(QWidget *parent = 0);
+    explicit TTKSliderWidget(QWidget *parent = nullptr);
 
     void setHandleColor(const QColor &color);
     inline QColor handleColor() const { return m_handleColor; }

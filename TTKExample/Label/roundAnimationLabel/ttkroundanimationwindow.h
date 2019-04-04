@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKRoundAnimationWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKRoundAnimationWindow(QWidget *parent = 0);
+    explicit TTKRoundAnimationWindow(QWidget *parent = nullptr);
     ~TTKRoundAnimationWindow();
 
 private:

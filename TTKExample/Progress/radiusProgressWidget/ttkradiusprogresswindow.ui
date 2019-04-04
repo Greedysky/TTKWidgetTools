@@ -14,7 +14,7 @@
    <string>TTKRadiusProgressWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKRadiusProgressWindow{background:rgba(50, 50, 50, 50);}</string>
+   <string notr="true">#TTKRadiusProgressWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">

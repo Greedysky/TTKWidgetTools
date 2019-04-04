@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKSliderWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKSliderWindow(QWidget *parent = 0);
+    explicit TTKSliderWindow(QWidget *parent = nullptr);
     ~TTKSliderWindow();
 
 private:

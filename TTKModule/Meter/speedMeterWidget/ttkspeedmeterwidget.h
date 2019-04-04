@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKSpeedMeterWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKSpeedMeterWidget(QWidget *parent = 0);
+    explicit TTKSpeedMeterWidget(QWidget *parent = nullptr);
 
     void setValue(qreal value);
     qreal value() const { return m_value;}

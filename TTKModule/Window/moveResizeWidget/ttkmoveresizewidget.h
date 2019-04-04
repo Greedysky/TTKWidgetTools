@@ -54,7 +54,7 @@ public:
         Direction_RightBottom = Direction_Right + Direction_Bottom
     };
 
-    explicit TTKMoveResizeWidget(QWidget *parent = 0);
+    explicit TTKMoveResizeWidget(QWidget *parent = nullptr);
 
 protected:
     virtual bool eventFilter(QObject *object, QEvent *event) override;

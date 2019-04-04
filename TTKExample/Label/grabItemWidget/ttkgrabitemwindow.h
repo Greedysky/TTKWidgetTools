@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKGrabItemWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKGrabItemWindow(QWidget *parent = 0);
+    explicit TTKGrabItemWindow(QWidget *parent = nullptr);
     ~TTKGrabItemWindow();
 
 private:

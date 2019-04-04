@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKRingsMapProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKRingsMapProgressWidget(QWidget *parent = 0);
+    explicit TTKRingsMapProgressWidget(QWidget *parent = nullptr);
 
     void setValue(int value);
 

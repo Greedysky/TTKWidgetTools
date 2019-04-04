@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKMoveWidgetWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKMoveWidgetWindow(QWidget *parent = 0);
+    explicit TTKMoveWidgetWindow(QWidget *parent = nullptr);
     ~TTKMoveWidgetWindow();
 
 private Q_SLOTS:

@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKCircleClickPlane : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKCircleClickPlane(QWidget *parent = 0);
+    explicit TTKCircleClickPlane(QWidget *parent = nullptr);
     ~TTKCircleClickPlane();
 
 protected Q_SLOTS:

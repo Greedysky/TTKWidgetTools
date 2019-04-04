@@ -14,7 +14,7 @@
    <string>TTKSliderWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKSliderWindow{background:rgba(50, 50, 50, 50);}</string>
+   <string notr="true">#TTKSliderWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKSliderWidget" name="widget" native="true">

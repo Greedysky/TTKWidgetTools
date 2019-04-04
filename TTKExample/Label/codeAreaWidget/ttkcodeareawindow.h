@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKCodeAreaWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKCodeAreaWindow(QWidget *parent = 0);
+    explicit TTKCodeAreaWindow(QWidget *parent = nullptr);
     ~TTKCodeAreaWindow();
 
 private:

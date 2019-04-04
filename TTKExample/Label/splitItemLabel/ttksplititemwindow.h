@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKSplitItemWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKSplitItemWindow(QWidget *parent = 0);
+    explicit TTKSplitItemWindow(QWidget *parent = nullptr);
     ~TTKSplitItemWindow();
 
 private Q_SLOTS:

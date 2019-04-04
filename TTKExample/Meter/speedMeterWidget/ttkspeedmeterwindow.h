@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKSpeedMeterWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKSpeedMeterWindow(QWidget *parent = 0);
+    explicit TTKSpeedMeterWindow(QWidget *parent = nullptr);
     ~TTKSpeedMeterWindow();
 
 private Q_SLOTS:

@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKSplitItemLabel : public QLabel
 {
     Q_OBJECT
 public:
-    explicit TTKSplitItemLabel(QWidget *parent = 0);
+    explicit TTKSplitItemLabel(QWidget *parent = nullptr);
 
 Q_SIGNALS:
     void changed(const QString &value);

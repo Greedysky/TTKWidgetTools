@@ -29,8 +29,8 @@ class TTK_EXTRAS_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
 {
     Q_OBJECT
 public:
-    explicit TTKMovingLabelSlider(QWidget *parent = 0);
-    explicit TTKMovingLabelSlider(Qt::Orientation orientation, QWidget *parent = 0);
+    explicit TTKMovingLabelSlider(QWidget *parent = nullptr);
+    explicit TTKMovingLabelSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
     ~TTKMovingLabelSlider();
 
     inline bool isMoving() const { return m_isMoving;}

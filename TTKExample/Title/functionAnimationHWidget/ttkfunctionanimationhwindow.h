@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionAnimationHWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionAnimationHWindow(QWidget *parent = 0);
+    explicit TTKFunctionAnimationHWindow(QWidget *parent = nullptr);
     ~TTKFunctionAnimationHWindow();
 
 private:

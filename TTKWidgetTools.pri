@@ -19,7 +19,6 @@
 QT       += core gui
 equals(QT_MAJOR_VERSION, 4){
 CONFIG   += gcc
-include(TTKExtra/Qt4/qmmp.pri)
 }
 equals(QT_MAJOR_VERSION, 5){
 QT       += widgets

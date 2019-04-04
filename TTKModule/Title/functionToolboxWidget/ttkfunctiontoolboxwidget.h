@@ -30,7 +30,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionToolBoxTopWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent = 0);
+    explicit TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent = nullptr);
     ~TTKFunctionToolBoxTopWidget();
 
     inline void setItemIndex(int index) { m_index = index; }
@@ -76,7 +76,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWidgetItem : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionToolBoxWidgetItem(int index, const QString &text, QWidget *parent = 0);
+    explicit TTKFunctionToolBoxWidgetItem(int index, const QString &text, QWidget *parent = nullptr);
     ~TTKFunctionToolBoxWidgetItem();
 
     QWidget *item(int index);
@@ -131,7 +131,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionToolBoxWidget(QWidget *parent = 0);
+    explicit TTKFunctionToolBoxWidget(QWidget *parent = nullptr);
     ~TTKFunctionToolBoxWidget();
 
     void addItem(QWidget *item, const QString &text);

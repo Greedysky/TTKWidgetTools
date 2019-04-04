@@ -33,7 +33,7 @@ class TTKTransitionAnimationWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKTransitionAnimationWindow(QWidget *parent = 0);
+    explicit TTKTransitionAnimationWindow(QWidget *parent = nullptr);
     ~TTKTransitionAnimationWindow();
 
 private Q_SLOTS:

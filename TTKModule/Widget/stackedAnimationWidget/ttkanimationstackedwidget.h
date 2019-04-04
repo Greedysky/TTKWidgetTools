@@ -53,7 +53,7 @@ public:
 		HorizontalFlipRotate
     };
 
-    explicit TTKAnimationStackedWidget(QWidget *parent = 0);
+    explicit TTKAnimationStackedWidget(QWidget *parent = nullptr);
     virtual ~TTKAnimationStackedWidget();
 
     void start(int index);

@@ -39,7 +39,7 @@ public:
         Left,
         Right
     };
-    explicit TTKBaseAnimationWidget(QWidget *parent = 0);
+    explicit TTKBaseAnimationWidget(QWidget *parent = nullptr);
     ~TTKBaseAnimationWidget();
 
     void setAlignment(Alignment alignment);
@@ -74,7 +74,7 @@ class TTK_EXTRAS_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:
-    explicit TTKBaseAnimationHWidget(QWidget *parent = 0);
+    explicit TTKBaseAnimationHWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -89,7 +89,7 @@ class TTK_EXTRAS_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidg
 {
     Q_OBJECT
 public:
-    explicit TTKOptionAnimationHWidget(QWidget *parent = 0);
+    explicit TTKOptionAnimationHWidget(QWidget *parent = nullptr);
 
 };
 
@@ -101,7 +101,7 @@ class TTK_EXTRAS_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidge
 {
     Q_OBJECT
 public:
-    explicit TTKTableAnimationHWidget(QWidget *parent = 0);
+    explicit TTKTableAnimationHWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -116,7 +116,7 @@ class TTK_EXTRAS_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
 public:
-    explicit TTKSkinAnimationHWidget(QWidget *parent = 0);
+    explicit TTKSkinAnimationHWidget(QWidget *parent = nullptr);
 
     void setAlignment(Alignment alignment);
 
@@ -130,7 +130,7 @@ class TTK_EXTRAS_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:
-    explicit TTKBaseAnimationVWidget(QWidget *parent = 0);
+    explicit TTKBaseAnimationVWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -145,7 +145,7 @@ class TTK_EXTRAS_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidg
 {
     Q_OBJECT
 public:
-    explicit TTKOptionAnimationVWidget(QWidget *parent = 0);
+    explicit TTKOptionAnimationVWidget(QWidget *parent = nullptr);
 
 };
 
@@ -157,7 +157,7 @@ class TTK_EXTRAS_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidge
 {
     Q_OBJECT
 public:
-    explicit TTKTableAnimationVWidget(QWidget *parent = 0);
+    explicit TTKTableAnimationVWidget(QWidget *parent = nullptr);
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -172,7 +172,7 @@ class TTK_EXTRAS_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
 public:
-    explicit TTKSkinAnimationVWidget(QWidget *parent = 0);
+    explicit TTKSkinAnimationVWidget(QWidget *parent = nullptr);
 
     void setAlignment(Alignment alignment);
 

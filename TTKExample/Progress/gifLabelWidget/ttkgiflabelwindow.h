@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKGifLabelWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKGifLabelWindow(QWidget *parent = 0);
+    explicit TTKGifLabelWindow(QWidget *parent = nullptr);
     ~TTKGifLabelWindow();
 
 private:

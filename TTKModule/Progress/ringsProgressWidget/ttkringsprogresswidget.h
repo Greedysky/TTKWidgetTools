@@ -29,9 +29,8 @@ class TTK_EXTRAS_EXPORT TTKRingsProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKRingsProgressWidget(QWidget *parent = 0);
+    explicit TTKRingsProgressWidget(QWidget *parent = nullptr);
 
-    void setRotateDelta(int delta);
     void setValue(int value);
 
 protected:

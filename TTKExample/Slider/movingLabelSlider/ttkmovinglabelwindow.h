@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKMovingLabelWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKMovingLabelWindow(QWidget *parent = 0);
+    explicit TTKMovingLabelWindow(QWidget *parent = nullptr);
     ~TTKMovingLabelWindow();
 
 private:

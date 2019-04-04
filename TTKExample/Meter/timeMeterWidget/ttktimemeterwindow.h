@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKTimeMeterWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKTimeMeterWindow(QWidget *parent = 0);
+    explicit TTKTimeMeterWindow(QWidget *parent = nullptr);
     ~TTKTimeMeterWindow();
 
 private Q_SLOTS:

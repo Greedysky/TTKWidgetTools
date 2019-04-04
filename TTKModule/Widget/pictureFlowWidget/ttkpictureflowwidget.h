@@ -119,7 +119,7 @@ class TTK_EXTRAS_EXPORT TTKPictureFlowWidget : public QWidget
     Q_PROPERTY(int slideCount READ slideCount)
     Q_PROPERTY(int centerIndex READ centerIndex WRITE setCenterIndex)
 public:
-    explicit TTKPictureFlowWidget(QWidget *parent = 0);
+    explicit TTKPictureFlowWidget(QWidget *parent = nullptr);
     ~TTKPictureFlowWidget();
 
     QColor backgroundColor() const;

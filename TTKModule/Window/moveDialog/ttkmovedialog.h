@@ -29,8 +29,8 @@ class TTK_EXTRAS_EXPORT TTKMoveDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit TTKMoveDialog(QWidget *parent = 0);
-    explicit TTKMoveDialog(bool transparent, QWidget *parent = 0);
+    explicit TTKMoveDialog(QWidget *parent = nullptr);
+    explicit TTKMoveDialog(bool transparent, QWidget *parent = nullptr);
 
     inline void drawWindowShadow(bool show) { m_showShadow = show;}
     inline void blockMoveOption(bool block) { m_moveOption = block;}

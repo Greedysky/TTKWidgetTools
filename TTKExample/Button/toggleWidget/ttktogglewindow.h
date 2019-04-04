@@ -33,7 +33,7 @@ class TTKToggleWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKToggleWindow(QWidget *parent = 0);
+    explicit TTKToggleWindow(QWidget *parent = nullptr);
     ~TTKToggleWindow();
 
 private:

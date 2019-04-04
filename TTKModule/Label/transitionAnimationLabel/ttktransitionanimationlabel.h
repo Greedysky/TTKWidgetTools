@@ -31,7 +31,7 @@ class TTK_EXTRAS_EXPORT TTKTransitionAnimationLabel : public QLabel
 {
     Q_OBJECT
 public:
-    explicit TTKTransitionAnimationLabel(QWidget *parent = 0);
+    explicit TTKTransitionAnimationLabel(QWidget *parent = nullptr);
 
     ~TTKTransitionAnimationLabel();
 

@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKCircularProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKCircularProgressWindow(QWidget *parent = 0);
+    explicit TTKCircularProgressWindow(QWidget *parent = nullptr);
     ~TTKCircularProgressWindow();
 
 private:

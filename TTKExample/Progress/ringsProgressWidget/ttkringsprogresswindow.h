@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKRingsProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKRingsProgressWindow(QWidget *parent = 0);
+    explicit TTKRingsProgressWindow(QWidget *parent = nullptr);
     ~TTKRingsProgressWindow();
 
 public Q_SLOTS:

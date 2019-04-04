@@ -31,7 +31,7 @@ class TTK_EXTRAS_EXPORT TTKLineEditWidget : public QLineEdit
 {
     Q_OBJECT
 public:
-    explicit TTKLineEditWidget(QWidget *parent = 0);
+    explicit TTKLineEditWidget(QWidget *parent = nullptr);
     ~TTKLineEditWidget();
 
     void setColor(const QColor &color);

@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKAnimationProgressWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKAnimationProgressWindow(QWidget *parent = 0);
+    explicit TTKAnimationProgressWindow(QWidget *parent = nullptr);
     ~TTKAnimationProgressWindow();
 
 private:

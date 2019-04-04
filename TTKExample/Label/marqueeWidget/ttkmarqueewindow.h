@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKMarqueeWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKMarqueeWindow(QWidget *parent = 0);
+    explicit TTKMarqueeWindow(QWidget *parent = nullptr);
     ~TTKMarqueeWindow();
 
 private:

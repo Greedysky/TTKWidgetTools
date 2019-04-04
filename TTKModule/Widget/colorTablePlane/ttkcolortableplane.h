@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKColorTablePlane : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit TTKColorTablePlane(QWidget *parent = 0);
+    explicit TTKColorTablePlane(QWidget *parent = nullptr);
 
     void init();
 

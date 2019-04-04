@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKColorWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKColorWindow(QWidget *parent = 0);
+    explicit TTKColorWindow(QWidget *parent = nullptr);
     ~TTKColorWindow();
 
 private:

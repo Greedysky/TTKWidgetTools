@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKLayoutAnimationWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKLayoutAnimationWindow(QWidget *parent = 0);
+    explicit TTKLayoutAnimationWindow(QWidget *parent = nullptr);
     ~TTKLayoutAnimationWindow();
 
 private:

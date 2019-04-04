@@ -32,7 +32,7 @@ class TTK_EXTRAS_EXPORT TTKShiningSliderWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKShiningSliderWidget(QWidget *parent = 0);
+    explicit TTKShiningSliderWidget(QWidget *parent = nullptr);
     ~TTKShiningSliderWidget();
 
     void setPlayState(bool state);

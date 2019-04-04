@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKTimeMeterWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKTimeMeterWidget(QWidget *parent = 0);
+    explicit TTKTimeMeterWidget(QWidget *parent = nullptr);
 
     void setValue(qreal value);
     qreal value() const { return m_value;}

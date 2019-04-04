@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 #include "stackedAnimationWidget/ttkanimationstackedwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
 #include "gifLabelWidget/ttkgiflabelwindow.h"

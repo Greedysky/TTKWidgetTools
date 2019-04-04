@@ -42,7 +42,7 @@ public:
         Direction_RightBottom = Direction_Right + Direction_Bottom
     };
 
-    explicit TTKGrabItemWidget(QWidget *parent = 0);
+    explicit TTKGrabItemWidget(QWidget *parent = nullptr);
 
     virtual void setBorderRect(const QRect &rect);
     inline void setGeometricStretch(bool g) { m_geometricStretch = g;}

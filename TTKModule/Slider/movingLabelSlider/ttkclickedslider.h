@@ -29,8 +29,8 @@ class TTK_EXTRAS_EXPORT TTKClickedSlider : public QSlider
 {
     Q_OBJECT
 public:
-    explicit TTKClickedSlider(QWidget *parent = 0);
-    explicit TTKClickedSlider(Qt::Orientation orientation, QWidget *parent = 0);
+    explicit TTKClickedSlider(QWidget *parent = nullptr);
+    explicit TTKClickedSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
 
 protected:
     virtual bool event(QEvent *event) override;

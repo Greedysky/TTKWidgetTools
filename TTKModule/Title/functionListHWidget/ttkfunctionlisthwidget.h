@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionItemWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionItemWidget(QWidget *parent = 0);
+    explicit TTKFunctionItemWidget(QWidget *parent = nullptr);
 
     void setLabelText(const QString &text);
     void setLabelIcon(const QString &iconf, const QString &iconb);
@@ -59,7 +59,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionListHWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionListHWidget(QWidget *parent = 0);
+    explicit TTKFunctionListHWidget(QWidget *parent = nullptr);
     ~TTKFunctionListHWidget();
 
     void resizeMode(bool mode);

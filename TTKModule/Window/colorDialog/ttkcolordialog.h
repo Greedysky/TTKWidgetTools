@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKHlPalette : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKHlPalette(QWidget *parent = 0);
+    explicit TTKHlPalette(QWidget *parent = nullptr);
 
     QColor color() const;
 
@@ -64,7 +64,7 @@ class TTK_EXTRAS_EXPORT TTKHlSaturationPalette : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKHlSaturationPalette(QWidget *parent = 0);
+    explicit TTKHlSaturationPalette(QWidget *parent = nullptr);
 
     double saturation() const;
 

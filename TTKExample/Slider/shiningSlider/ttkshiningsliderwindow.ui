@@ -14,7 +14,7 @@
    <string>TTKShiningSliderWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#TTKShiningSliderWindow{background:rgba(50, 50, 50, 50);}</string>
+   <string notr="true">#TTKShiningSliderWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKShiningSliderWidget" name="widget" native="true">

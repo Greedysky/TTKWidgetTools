@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKFunctionListHWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionListHWindow(QWidget *parent = 0);
+    explicit TTKFunctionListHWindow(QWidget *parent = nullptr);
     ~TTKFunctionListHWindow();
 
 private:

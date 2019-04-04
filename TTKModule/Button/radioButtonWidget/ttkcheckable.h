@@ -79,7 +79,7 @@ public:
         LabelPositionRight,
     };
 
-    explicit TTKCheckable(QWidget *parent = 0);
+    explicit TTKCheckable(QWidget *parent = nullptr);
     virtual ~TTKCheckable();
 
     void setLabelPosition(LabelPosition placement);

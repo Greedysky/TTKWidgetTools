@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKCheckButtonWidget : public TTKCheckable
 {
     Q_OBJECT
 public:
-    explicit TTKCheckButtonWidget(QWidget *parent = 0);
+    explicit TTKCheckButtonWidget(QWidget *parent = nullptr);
 
 };
 

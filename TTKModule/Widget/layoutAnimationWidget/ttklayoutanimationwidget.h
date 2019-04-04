@@ -32,7 +32,7 @@ class TTK_EXTRAS_EXPORT TTKLayoutAnimationWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKLayoutAnimationWidget(QWidget *parent = 0);
+    explicit TTKLayoutAnimationWidget(QWidget *parent = nullptr);
     ~TTKLayoutAnimationWidget();
 
     void start();

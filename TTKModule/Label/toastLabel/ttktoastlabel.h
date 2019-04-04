@@ -30,8 +30,8 @@ class TTK_EXTRAS_EXPORT TTKToastLabel : public QLabel
 {
     Q_OBJECT
 public:
-    explicit TTKToastLabel(QWidget *parent = 0);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = 0);
+    explicit TTKToastLabel(QWidget *parent = nullptr);
+    explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
     ~TTKToastLabel();
 
     void setFontMargin(int height, int width);

@@ -31,7 +31,7 @@ class TTK_EXTRAS_EXPORT TTKAnimationProgressWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKAnimationProgressWidget(QWidget *parent = 0);
+    explicit TTKAnimationProgressWidget(QWidget *parent = nullptr);
 
     void start();
 

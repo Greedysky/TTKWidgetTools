@@ -29,7 +29,7 @@ class TTK_EXTRAS_EXPORT TTKMarqueeWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKMarqueeWidget(QWidget *parent = 0);
+    explicit TTKMarqueeWidget(QWidget *parent = nullptr);
 
     void setText(const QString &newText);
     inline QString text() const { return m_myText.trimmed(); }

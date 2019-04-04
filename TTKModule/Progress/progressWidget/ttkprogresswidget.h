@@ -55,7 +55,7 @@ class TTK_EXTRAS_EXPORT TTKProgressWidget : public QProgressBar
     Q_PROPERTY(QColor progressColor WRITE setProgressColor READ progressColor)
     Q_PROPERTY(QColor backgroundColor WRITE setProgressColor READ backgroundColor)
 public:
-    explicit TTKProgressWidget(QWidget *parent = 0);
+    explicit TTKProgressWidget(QWidget *parent = nullptr);
     ~TTKProgressWidget();
 
     void setProgressColor(const QColor &color);

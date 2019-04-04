@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKPictureBannerWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerWindow(QWidget *parent = 0);
+    explicit TTKPictureBannerWindow(QWidget *parent = nullptr);
     ~TTKPictureBannerWindow();
 
 private:

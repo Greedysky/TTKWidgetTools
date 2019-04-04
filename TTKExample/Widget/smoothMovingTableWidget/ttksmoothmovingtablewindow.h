@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKSmoothMovingTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKSmoothMovingTableWindow(QWidget *parent = 0);
+    explicit TTKSmoothMovingTableWindow(QWidget *parent = nullptr);
     ~TTKSmoothMovingTableWindow();
 
 private:

@@ -33,7 +33,7 @@ class TTKToolMenuWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKToolMenuWindow(QWidget *parent = 0);
+    explicit TTKToolMenuWindow(QWidget *parent = nullptr);
     ~TTKToolMenuWindow();
 
 private:

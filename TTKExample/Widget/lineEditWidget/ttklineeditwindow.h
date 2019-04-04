@@ -33,7 +33,7 @@ class TTK_EXTRAS_EXPORT TTKLineEditWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKLineEditWindow(QWidget *parent = 0);
+    explicit TTKLineEditWindow(QWidget *parent = nullptr);
     ~TTKLineEditWindow();
 
 private:

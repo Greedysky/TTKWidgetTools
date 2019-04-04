@@ -30,8 +30,8 @@ class TTK_EXTRAS_EXPORT TTKMoveWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKMoveWidget(QWidget *parent = 0);
-    explicit TTKMoveWidget(bool transparent, QWidget *parent = 0);
+    explicit TTKMoveWidget(QWidget *parent = nullptr);
+    explicit TTKMoveWidget(bool transparent, QWidget *parent = nullptr);
 
     inline void drawWindowShadow(bool show) { m_showShadow = show;}
     inline void blockMoveOption(bool block) { m_moveOption = block;}

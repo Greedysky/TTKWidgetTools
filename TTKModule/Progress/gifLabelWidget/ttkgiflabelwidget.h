@@ -45,8 +45,8 @@ public:
         Gif_Close_White
     };
 
-    explicit TTKGifLabelWidget(QWidget *parent = 0);
-    explicit TTKGifLabelWidget(Type type, QWidget *parent = 0);
+    explicit TTKGifLabelWidget(QWidget *parent = nullptr);
+    explicit TTKGifLabelWidget(Type type, QWidget *parent = nullptr);
 
     ~TTKGifLabelWidget();
 
