@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttktogglewindow.cpp
+
+HEADERS += $$PWD/ttktogglewindow.h
+
+FORMS   += $$PWD/ttktogglewindow.ui

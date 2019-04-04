@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkspeedmeterwindow.cpp
+
+HEADERS += $$PWD/ttkspeedmeterwindow.h
+
+FORMS   += $$PWD/ttkspeedmeterwindow.ui

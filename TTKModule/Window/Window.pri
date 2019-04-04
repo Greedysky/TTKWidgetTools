@@ -16,5 +16,9 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+include($$PWD/colorDialog/ColorDialog.pri)
+include($$PWD/moveDialog/MoveDialog.pri)
+include($$PWD/moveWidget/MoveWidget.pri)
+include($$PWD/moveResizeWidget/MoveResizeWidget.pri)

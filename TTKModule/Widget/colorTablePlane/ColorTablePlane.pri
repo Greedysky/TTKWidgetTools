@@ -16,5 +16,16 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkcolortableplane.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkcolortableplane.cpp
+
+RESOURCES += $$PWD/ColorTablePlane.qrc
+
+}

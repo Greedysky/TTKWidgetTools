@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="lb_bottom">res/lb_bottom.png</file>
+        <file alias="lb_left">res/lb_left.png</file>
+        <file alias="lb_right">res/lb_right.png</file>
+        <file alias="lb_top">res/lb_top.png</file>
+        <file alias="lb_left_top">res/lb_left_top.png</file>
+        <file alias="lb_right_top">res/lb_right_top.png</file>
+        <file alias="lb_left_bottom">res/lb_left_bottom.png</file>
+        <file alias="lb_right_bottom">res/lb_right_bottom.png</file>
+    </qresource>
+</RCC>

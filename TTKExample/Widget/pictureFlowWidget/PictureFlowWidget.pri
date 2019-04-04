@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkpictureflowwindow.cpp
+
+HEADERS += $$PWD/ttkpictureflowwindow.h
+
+FORMS   += $$PWD/ttkpictureflowwindow.ui

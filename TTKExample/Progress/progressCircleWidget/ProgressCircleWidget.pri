@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkprogresscirclewindow.cpp
+
+HEADERS += $$PWD/ttkprogresscirclewindow.h
+
+FORMS   += $$PWD/ttkprogresscirclewindow.ui

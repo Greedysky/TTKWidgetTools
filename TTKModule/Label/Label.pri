@@ -16,5 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+include($$PWD/circleClickPlane/CircleClickPlane.pri)
+include($$PWD/codeAreaWidget/CodeAreaWidget.pri)
+include($$PWD/grabItemWidget/GrabItemWidget.pri)
+include($$PWD/marqueeWidget/MarqueeWidget.pri)
+include($$PWD/roundAnimationLabel/RoundAnimationLabel.pri)
+include($$PWD/splitItemLabel/SplitItemLabel.pri)
+include($$PWD/toastLabel/ToastLabel.pri)
+include($$PWD/transitionAnimationLabel/TransitionAnimationLabel.pri)
+

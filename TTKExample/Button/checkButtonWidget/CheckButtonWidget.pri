@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkcheckbuttonwindow.cpp
+
+HEADERS += $$PWD/ttkcheckbuttonwindow.h
+
+FORMS   += $$PWD/ttkcheckbuttonwindow.ui

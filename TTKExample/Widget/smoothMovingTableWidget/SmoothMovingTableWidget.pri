@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttksmoothmovingtablewindow.cpp
+
+HEADERS += $$PWD/ttksmoothmovingtablewindow.h
+
+FORMS   += $$PWD/ttksmoothmovingtablewindow.ui

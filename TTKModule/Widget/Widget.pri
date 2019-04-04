@@ -16,5 +16,12 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+include($$PWD/colorTablePlane/ColorTablePlane.pri)
+include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
+include($$PWD/lineEditWidget/LineEditWidget.pri)
+include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)
+include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)
+include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
+include($$PWD/stackedAnimationWidget/StackedAnimationWidget.pri)

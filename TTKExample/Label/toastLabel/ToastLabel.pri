@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttktoastwindow.cpp
+
+HEADERS += $$PWD/ttktoastwindow.h
+
+FORMS   += $$PWD/ttktoastwindow.ui

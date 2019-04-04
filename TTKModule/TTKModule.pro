@@ -16,5 +16,11 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+TEMPLATE = lib
+CONFIG += TTK_BUILD_LIB
+
+include(../TTKWidgetTools.pri)
+
+win32:TARGET = ../../bin/TTKCore
+unix:TARGET = ../lib/TTKCore
+

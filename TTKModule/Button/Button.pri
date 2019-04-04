@@ -16,5 +16,10 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+include($$PWD/checkButtonWidget/CheckButtonWidget.pri)
+include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
+include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
+include($$PWD/toggleWidget/ToggleWidget.pri)
+include($$PWD/toolMenuWidget/ToolMenuWidget.pri)

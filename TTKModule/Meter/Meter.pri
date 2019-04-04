@@ -16,5 +16,9 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+include($$PWD/speedMeterWidget/SpeedMeterWidget.pri)
+include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
+include($$PWD/paintMeterWidget/PaintMeterWidget.pri)
+include($$PWD/radarMeterWidget/RadarMeterWidget.pri)

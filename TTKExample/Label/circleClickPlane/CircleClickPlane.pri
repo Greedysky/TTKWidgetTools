@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkcircleclickplanewindow.cpp
+
+HEADERS += $$PWD/ttkcircleclickplanewindow.h
+
+FORMS   += $$PWD/ttkcircleclickplanewindow.ui

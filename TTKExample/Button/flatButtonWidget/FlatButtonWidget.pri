@@ -16,5 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+SOURCES += $$PWD/ttkflatbuttonwindow.cpp
+
+HEADERS += $$PWD/ttkflatbuttonwindow.h
+
+FORMS   += $$PWD/ttkflatbuttonwindow.ui

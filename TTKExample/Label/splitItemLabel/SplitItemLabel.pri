@@ -16,5 +16,10 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-TEMPLATE = subdirs
-SUBDIRS = TTKModule TTKExample
+INCLUDEPATH += $$PWD
+
+SOURCES += $$PWD/ttksplititemwindow.cpp
+
+HEADERS += $$PWD/ttksplititemwindow.h
+
+FORMS   += $$PWD/ttksplititemwindow.ui
