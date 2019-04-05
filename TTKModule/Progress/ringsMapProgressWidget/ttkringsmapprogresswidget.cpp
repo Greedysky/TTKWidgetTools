@@ -39,7 +39,7 @@ void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
     painter.setBrush(QBrush(QPixmap(":/res/lb_front")));
     painter.drawPie(outRect, (90 - m_angle) * 16, m_angle * 16);
 
-    painter.setFont(QFont("Microsoft YaHei", 15, QFont::Bold));
+    painter.setFont(QFont("Roboto", 15, QFont::Bold));
     painter.setPen(QColor("#DDDDDD"));
-    painter.drawText(inRect, Qt::AlignCenter, QString("%1%").arg(QString::number(m_value)));
+    painter.drawText(inRect, Qt::AlignCenter, QString("%1%").arg(m_value));
 }

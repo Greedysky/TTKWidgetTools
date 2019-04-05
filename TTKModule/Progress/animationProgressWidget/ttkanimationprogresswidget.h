@@ -43,7 +43,7 @@ private Q_SLOTS:
 
 private:
     int m_index;
-    int m_persent;
+    int m_value;
     QList<QPixmap> m_ranges;
     QPropertyAnimation *m_animation;
 

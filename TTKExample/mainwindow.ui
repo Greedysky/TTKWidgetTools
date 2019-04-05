@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>TTKWidgetTools</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../TTKQrc/WidgetTools.qrc">
+    <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="3">
@@ -327,6 +331,8 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../TTKQrc/WidgetTools.qrc"/>
+ </resources>
  <connections/>
 </ui>

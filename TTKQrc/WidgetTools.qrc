@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/image">
+        <file alias="lb_app_logo">../TTKResource/lb_app_logo.ico</file>
+    </qresource>
+</RCC>
