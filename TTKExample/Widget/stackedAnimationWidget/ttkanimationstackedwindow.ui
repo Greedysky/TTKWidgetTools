@@ -36,14 +36,17 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>LeftToRight</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -54,14 +57,17 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>LeftToRight</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -88,14 +94,17 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>RightToLeft</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -106,14 +115,17 @@
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>RightToLeft</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -137,14 +149,17 @@
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>BottomToTop</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -155,14 +170,17 @@
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>BottomToTop</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -186,14 +204,17 @@
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>TopToBottom</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -204,14 +225,17 @@
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>81</width>
-        <height>16</height>
+        <x>0</x>
+        <y>0</y>
+        <width>200</width>
+        <height>100</height>
        </rect>
       </property>
       <property name="text">
        <string>TopToBottom</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
