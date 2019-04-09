@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKRadiusProgressWidget : public QProgressBar
+class TTK_CORE_EXPORT TTKRadiusProgressWidget : public QProgressBar
 {
     Q_OBJECT
 public:

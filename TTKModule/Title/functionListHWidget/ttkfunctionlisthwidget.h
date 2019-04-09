@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKFunctionItemWidget : public QWidget
+class TTK_CORE_EXPORT TTKFunctionItemWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -55,7 +55,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKFunctionListHWidget : public QWidget
+class TTK_CORE_EXPORT TTKFunctionListHWidget : public QWidget
 {
     Q_OBJECT
 public:

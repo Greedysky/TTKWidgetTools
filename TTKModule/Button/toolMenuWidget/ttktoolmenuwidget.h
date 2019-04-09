@@ -26,7 +26,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKToolMenu : public QMenu
+class TTK_CORE_EXPORT TTKToolMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -45,7 +45,7 @@ protected:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKToolMenuWidget : public QToolButton
+class TTK_CORE_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
 public:

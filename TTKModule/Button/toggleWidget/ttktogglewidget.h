@@ -30,7 +30,7 @@ class TTKToggleWidget;
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKToggleThumb : public QWidget
+class TTK_CORE_EXPORT TTKToggleThumb : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(qreal shift WRITE setShift READ shift)
@@ -63,7 +63,7 @@ protected:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKToggleTrack : public QWidget
+class TTK_CORE_EXPORT TTKToggleTrack : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor trackColor WRITE setTrackColor READ trackColor)
@@ -87,7 +87,7 @@ protected:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKToggleWidget : public QAbstractButton
+class TTK_CORE_EXPORT TTKToggleWidget : public QAbstractButton
 {
     Q_OBJECT
 public:

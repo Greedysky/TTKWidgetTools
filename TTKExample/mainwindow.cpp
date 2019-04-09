@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "stackedAnimationWidget/ttkanimationstackedwindow.h"
+#include "animationStackedWidget/ttkanimationstackedwindow.h"
+#include "animation2StackedWidget/ttkanimation2stackedwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
 #include "gifLabelWidget/ttkgiflabelwindow.h"
 #include "codeAreaWidget/ttkcodeareawindow.h"
@@ -99,6 +100,7 @@ MainWindow::MainWindow(QWidget *parent)
     group->addButton(ui->pushButton_41, 41);
     group->addButton(ui->pushButton_42, 42);
     group->addButton(ui->pushButton_43, 43);
+    group->addButton(ui->pushButton_44, 44);
 
     connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
 
@@ -200,6 +202,8 @@ void MainWindow::changed(int index)
         case 42:(new TTKRingsMapProgressWindow(this))->show();
             break;
         case 43:(new TTKRingsProgressWindow(this))->show();
+            break;
+        case 44:(new TTKAnimation2StackedWindow(this))->show();
             break;
         default:
             break;

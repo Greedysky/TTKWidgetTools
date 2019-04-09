@@ -27,7 +27,7 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
+class TTK_CORE_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
 {
     Q_OBJECT
 public:

@@ -29,7 +29,7 @@ class TTKColorTablePlaneWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKColorTablePlaneWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKColorTablePlaneWindow : public QMainWindow
 {
     Q_OBJECT
 public:

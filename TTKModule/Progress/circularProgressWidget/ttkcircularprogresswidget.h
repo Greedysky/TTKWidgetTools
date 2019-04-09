@@ -28,7 +28,7 @@ class TTKCircularProgressWidget;
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKCircularProgressDelegate : public QObject
+class TTK_CORE_EXPORT TTKCircularProgressDelegate : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qreal dashOffset WRITE setDashOffset READ dashOffset)
@@ -58,7 +58,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKCircularProgressWidget : public QProgressBar
+class TTK_CORE_EXPORT TTKCircularProgressWidget : public QProgressBar
 {
     Q_OBJECT
     Q_PROPERTY(qreal lineWidth WRITE setLineWidth READ lineWidth)

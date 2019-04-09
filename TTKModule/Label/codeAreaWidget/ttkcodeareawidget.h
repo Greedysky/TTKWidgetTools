@@ -25,7 +25,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKCodeAreaWidget : public QLabel
+class TTK_CORE_EXPORT TTKCodeAreaWidget : public QLabel
 {
     Q_OBJECT
 public:

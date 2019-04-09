@@ -26,7 +26,7 @@
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_EXTRAS_EXPORT TTKFlatButtonWidget : public QPushButton
+class TTK_CORE_EXPORT TTKFlatButtonWidget : public QPushButton
 {
     Q_OBJECT
 public:

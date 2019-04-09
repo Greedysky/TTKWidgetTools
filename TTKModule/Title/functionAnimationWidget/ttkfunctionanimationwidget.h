@@ -28,7 +28,7 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKBaseAnimationWidget : public QWidget
+class TTK_CORE_EXPORT TTKBaseAnimationWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -70,7 +70,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
+class TTK_CORE_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:
@@ -85,7 +85,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_CORE_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
 public:
@@ -97,7 +97,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_CORE_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
 public:
@@ -112,7 +112,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_CORE_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
 public:
@@ -126,7 +126,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
+class TTK_CORE_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
 public:
@@ -141,7 +141,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_CORE_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
 public:
@@ -153,7 +153,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_CORE_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
 public:
@@ -168,7 +168,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_CORE_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
 public:

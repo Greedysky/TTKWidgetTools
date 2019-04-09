@@ -24,7 +24,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKFunctionListVWidget : public QWidget
+class TTK_CORE_EXPORT TTKFunctionListVWidget : public QWidget
 {
     Q_OBJECT
 public:

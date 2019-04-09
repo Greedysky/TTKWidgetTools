@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKHlPalette : public QWidget
+class TTK_CORE_EXPORT TTKHlPalette : public QWidget
 {
     Q_OBJECT
 public:
@@ -60,7 +60,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKHlSaturationPalette : public QWidget
+class TTK_CORE_EXPORT TTKHlSaturationPalette : public QWidget
 {
     Q_OBJECT
 public:

@@ -29,7 +29,7 @@ class TTKRadioButtonWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKRadioButtonWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKRadioButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:

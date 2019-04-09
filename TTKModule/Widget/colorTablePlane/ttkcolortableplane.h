@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKColorTablePlane : public QListWidget
+class TTK_CORE_EXPORT TTKColorTablePlane : public QListWidget
 {
     Q_OBJECT
 public:

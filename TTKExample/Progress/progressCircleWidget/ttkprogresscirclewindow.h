@@ -29,7 +29,7 @@ class TTKProgressCircleWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKProgressCircleWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKProgressCircleWindow : public QMainWindow
 {
     Q_OBJECT
 public:

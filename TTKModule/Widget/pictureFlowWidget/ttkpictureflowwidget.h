@@ -19,7 +19,7 @@ enum ReflectionEffect
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_EXTRAS_EXPORT TTKSlideInfo
+struct TTK_CORE_EXPORT TTKSlideInfo
 {
     int m_slideIndex;
     int m_angle;
@@ -32,7 +32,7 @@ struct TTK_EXTRAS_EXPORT TTKSlideInfo
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetState
+class TTK_CORE_EXPORT TTKTTKPictureFlowWidgetState
 {
 public:
     TTKTTKPictureFlowWidgetState();
@@ -58,7 +58,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetAnimator
+class TTK_CORE_EXPORT TTKTTKPictureFlowWidgetAnimator
 {
 public:
     TTKTTKPictureFlowWidgetAnimator();
@@ -77,7 +77,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKTTKPictureFlowWidgetSoftwareRenderer
+class TTK_CORE_EXPORT TTKTTKPictureFlowWidgetSoftwareRenderer
 {
 public:
     TTKTTKPictureFlowWidgetSoftwareRenderer();
@@ -111,7 +111,7 @@ private:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKPictureFlowWidget : public QWidget
+class TTK_CORE_EXPORT TTKPictureFlowWidget : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor)

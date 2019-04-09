@@ -26,7 +26,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKToastLabel : public QLabel
+class TTK_CORE_EXPORT TTKToastLabel : public QLabel
 {
     Q_OBJECT
 public:

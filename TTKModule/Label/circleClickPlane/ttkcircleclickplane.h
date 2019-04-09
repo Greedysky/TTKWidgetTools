@@ -25,7 +25,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKCircleClickPlane : public QWidget
+class TTK_CORE_EXPORT TTKCircleClickPlane : public QWidget
 {
     Q_OBJECT
 public:

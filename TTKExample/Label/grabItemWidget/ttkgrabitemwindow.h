@@ -29,7 +29,7 @@ class TTKGrabItemWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKGrabItemWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKGrabItemWindow : public QMainWindow
 {
     Q_OBJECT
 public:

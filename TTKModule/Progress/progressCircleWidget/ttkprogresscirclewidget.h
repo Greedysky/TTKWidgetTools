@@ -28,7 +28,7 @@ class QPropertyAnimation;
 * @author Greedysky <greedysky@163.com>
 *         mofr
 */
-class TTK_EXTRAS_EXPORT TTKProgressCircleWidget : public QWidget
+class TTK_CORE_EXPORT TTKProgressCircleWidget : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(int value READ value WRITE setValue NOTIFY valueChanged)

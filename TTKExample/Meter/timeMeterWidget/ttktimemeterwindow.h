@@ -29,7 +29,7 @@ class TTKTimeMeterWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKTimeMeterWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKTimeMeterWindow : public QMainWindow
 {
     Q_OBJECT
 public:

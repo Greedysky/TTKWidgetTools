@@ -27,7 +27,7 @@ class QPropertyAnimation;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKTransitionAnimationLabel : public QLabel
+class TTK_CORE_EXPORT TTKTransitionAnimationLabel : public QLabel
 {
     Q_OBJECT
 public:

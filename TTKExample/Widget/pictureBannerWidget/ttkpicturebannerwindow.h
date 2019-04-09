@@ -29,7 +29,7 @@ class TTKPictureBannerWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKPictureBannerWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKPictureBannerWindow : public QMainWindow
 {
     Q_OBJECT
 public:

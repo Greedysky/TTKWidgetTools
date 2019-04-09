@@ -29,7 +29,7 @@ class TTKSmoothMovingTableWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKSmoothMovingTableWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKSmoothMovingTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:

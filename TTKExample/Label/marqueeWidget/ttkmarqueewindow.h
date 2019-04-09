@@ -29,7 +29,7 @@ class TTKMarqueeWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKMarqueeWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKMarqueeWindow : public QMainWindow
 {
     Q_OBJECT
 public:

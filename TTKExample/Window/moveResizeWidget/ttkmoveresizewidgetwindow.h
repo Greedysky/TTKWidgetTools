@@ -29,7 +29,7 @@ class TTKMoveResizeWidgetWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKMoveResizeWidgetWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKMoveResizeWidgetWindow : public QMainWindow
 {
     Q_OBJECT
 public:

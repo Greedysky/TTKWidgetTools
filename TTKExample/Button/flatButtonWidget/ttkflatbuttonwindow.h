@@ -29,7 +29,7 @@ class TTKFlatButtonWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKFlatButtonWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKFlatButtonWindow : public QMainWindow
 {
     Q_OBJECT
 public:

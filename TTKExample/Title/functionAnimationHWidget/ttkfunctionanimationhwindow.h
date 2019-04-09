@@ -29,7 +29,7 @@ class TTKFunctionAnimationHWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKFunctionAnimationHWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKFunctionAnimationHWindow : public QMainWindow
 {
     Q_OBJECT
 public:

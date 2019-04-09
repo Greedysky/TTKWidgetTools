@@ -26,7 +26,7 @@ namespace Ui {
 class TTKFunctionToolBoxWindow;
 }
 
-class TTK_EXTRAS_EXPORT TTKFunctionToolBoxWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKFunctionToolBoxWindow : public QMainWindow
 {
     Q_OBJECT
 public:

@@ -26,7 +26,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKMoveWidget : public QWidget
+class TTK_CORE_EXPORT TTKMoveWidget : public QWidget
 {
     Q_OBJECT
 public:

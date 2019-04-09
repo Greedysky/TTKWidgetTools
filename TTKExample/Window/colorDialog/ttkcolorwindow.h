@@ -29,7 +29,7 @@ class TTKColorWindow;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_EXTRAS_EXPORT TTKColorWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKColorWindow : public QMainWindow
 {
     Q_OBJECT
 public:

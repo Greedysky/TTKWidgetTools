@@ -29,7 +29,7 @@ class TTKToastWindow;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKToastWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKToastWindow : public QMainWindow
 {
     Q_OBJECT
 public:

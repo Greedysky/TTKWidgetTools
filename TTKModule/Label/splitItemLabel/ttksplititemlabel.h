@@ -25,7 +25,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_EXTRAS_EXPORT TTKSplitItemLabel : public QLabel
+class TTK_CORE_EXPORT TTKSplitItemLabel : public QLabel
 {
     Q_OBJECT
 public:
