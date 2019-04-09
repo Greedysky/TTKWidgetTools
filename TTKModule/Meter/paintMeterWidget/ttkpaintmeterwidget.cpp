@@ -82,7 +82,7 @@ void TTKPaintMeterWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 	QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    int side = qMin(width(), height());
+    const int side = qMin(width(), height());
 
     painter.setViewport((width() - side) / 2, (height() - side) / 2,side, side);
     painter.setWindow(-50, -50, 100, 100);
@@ -105,9 +105,8 @@ void TTKPaintMeterWidget::drawCrown(QPainter *painter)
 {
     painter->save();
 
-    QRectF rectangle(-47, -47, 94, 94);
-    int startAngle = 30 * 16;
-    int spanAngle = 390 * 16;
+    const int startAngle = 30 * 16;
+    const int spanAngle = 390 * 16;
 
     QLinearGradient linearGrad(QPointF(-47, -47), QPointF(94, 94));
     linearGrad.setColorAt(0, Qt::white);
@@ -118,7 +117,7 @@ void TTKPaintMeterWidget::drawCrown(QPainter *painter)
     pen.setBrush(brush);
     pen.setWidth(3);
     painter->setPen(pen);
-    painter->drawArc(rectangle, startAngle, spanAngle);
+    painter->drawArc(QRectF(-47, -47, 94, 94), startAngle, spanAngle);
     painter->restore();
 }
 
@@ -137,7 +136,7 @@ void TTKPaintMeterWidget::drawTicks(QPainter *painter)
     painter->setPen(pen);
 
     painter->rotate(-m_startAngle);
-    double angleStep = (-m_endAngle + m_startAngle) / m_steps;
+    const double angleStep = (-m_endAngle + m_startAngle) / m_steps;
     for(int i=0; i<=m_steps; i++)
     {
         painter->drawLine(28, 0, 30, 0);
@@ -147,8 +146,8 @@ void TTKPaintMeterWidget::drawTicks(QPainter *painter)
 
     pen.setWidth(0);
     painter->setPen(pen);
-    double spanAngle = m_endAngle - m_startAngle;
-    painter->drawArc(-28, -28, 56, 56, m_startAngle*16, spanAngle*16);
+    const double spanAngle = m_endAngle - m_startAngle;
+    painter->drawArc(-28, -28, 56, 56, m_startAngle * 16, spanAngle * 16);
 }
 
 void TTKPaintMeterWidget::drawScale(QPainter *painter)
@@ -156,20 +155,21 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
     painter->save();
     painter->setPen(m_foreground);
 
-    double startRad = m_startAngle*PI/180.0 + PI/2;
-    double deltaRad = (m_endAngle-m_startAngle)/(m_steps)*(PI/180);
-    double sina,cosa;
-    for(int i=0; i<=m_steps; i++)
+    const double startRad = m_startAngle*PI/180.0 + PI/2;
+    const double deltaRad = (m_endAngle-m_startAngle) / (m_steps) * (PI/180);
+    double sina, cosa;
+    for(int i=0; i <= m_steps; i++)
     {
-        sina = sin((double)(startRad + i*deltaRad));
-        cosa = cos((double)(startRad + i*deltaRad));
-        double v = i*((m_maxValue - m_minValue)/m_steps) + m_minValue;
-        QString str = QString("%1").arg(v, 0, 'f', m_precision);
+        sina = sin((double)(startRad + i * deltaRad));
+        cosa = cos((double)(startRad + i * deltaRad));
+        const double v = i * ((m_maxValue - m_minValue) / m_steps) + m_minValue;
+
+        const QString& str = QString("%1").arg(v, 0, 'f', m_precision);
         QFontMetricsF fm(font());
-        double w = fm.size(Qt::TextSingleLine, str).width();
-        double h = fm.size(Qt::TextSingleLine, str).height();
-        int x = (int)((38*sina) - (w/2));
-        int y = (int)((38*cosa) + (h/4));
+        const double w = fm.size(Qt::TextSingleLine, str).width();
+        const double h = fm.size(Qt::TextSingleLine, str).height();
+        const int x = (int)((38 * sina) - (w / 2));
+        const int y = (int)((38 * cosa) + (h / 4));
         painter->drawText(x, y, str);
     }
     painter->restore();
@@ -180,8 +180,8 @@ void TTKPaintMeterWidget::drawUnits(QPainter *painter)
     painter->setPen(m_foreground);
     painter->setBrush(m_foreground);
     painter->setPen(m_foreground);
-    QRectF labelRect(-15, -20, 30, 10);
-    painter->drawText(labelRect,Qt::AlignCenter, m_units);
+
+    painter->drawText(QRectF(-15, -20, 30, 10), Qt::AlignCenter, m_units);
 }
 
 void TTKPaintMeterWidget::drawNumericValue(QPainter *painter)
@@ -192,14 +192,12 @@ void TTKPaintMeterWidget::drawNumericValue(QPainter *painter)
     }
     painter->save();
 
-    QString str = QString("%1").arg(m_value, 0, 'f', m_precisionNumeric);
-    QColor color = !m_thresholdFlag ? Qt::white : Qt::red;
-    QRectF labelRect(-15, 25, 30, 10);
-    painter->setPen(color);
+    const QString& str = QString("%1").arg(m_value, 0, 'f', m_precisionNumeric);
+    painter->setPen(!m_thresholdFlag ? Qt::white : Qt::red);
     QFont font = painter->font();
     font.setBold(true);
     painter->setFont(font);
-    painter->drawText(labelRect, Qt::AlignCenter, str);
+    painter->drawText(QRectF(-15, 25, 30, 10), Qt::AlignCenter, str);
 
     painter->restore();
 }
@@ -213,12 +211,14 @@ void TTKPaintMeterWidget::drawNeedle(QPainter *painter)
     pts.setPoints(3, -2, 0, 2, 0, 0, 30);
     QPolygon shadow;
     shadow.setPoints(3, -1, 0, 1, 0, 0, 29);
-    int degRotate = (int)(m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_value - m_minValue));
+
+    const int degRotate = (int)(m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue));
     painter->rotate(-degRotate);
 
     QRadialGradient haloGradient(0, 0, 20, 0, 0);
     haloGradient.setColorAt(0.0, QColor(255, 120, 120));
     haloGradient.setColorAt(1.0, QColor(200, 20, 20));
+
     QColor color(Qt::darkRed);
     color.setAlpha(90);
     painter->setPen(color);
@@ -246,16 +246,17 @@ void TTKPaintMeterWidget::drawThresholdLine(QPainter *painter)
     }
 
     painter->save();
+    const double threshold = (m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_threshold - m_minValue));
+
     QPen pen;
-    double thresholdAngle = (m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_threshold - m_minValue));
     pen.setWidth(3);
     pen.setColor(Qt::green);
     painter->setPen(pen);
-    painter->drawArc(-25, -25, 50, 50, (int)m_startAngle*16, (int)(thresholdAngle - m_startAngle)*16);
+    painter->drawArc(-25, -25, 50, 50, (int)m_startAngle * 16, (int)(threshold - m_startAngle) * 16);
 
     pen.setColor(Qt::red);
     painter->setPen(pen);
-    painter->drawArc(-25, -25, 50, 50, (int)thresholdAngle*16, (int)(-thresholdAngle + m_endAngle)*16);
+    painter->drawArc(-25, -25, 50, 50, (int)threshold * 16, (int)(-threshold + m_endAngle) * 16);
     painter->restore();
 }
 
@@ -284,9 +285,9 @@ void TTKPaintMeterWidget::drawLabel(QPainter *painter)
     painter->setPen(m_foreground);
 
     QFontMetricsF fm(font());
-    double w = fm.size(Qt::TextSingleLine, m_label).width();
-    QRectF labelRect(-20, 15, 40, 10);
+    const double w = fm.size(Qt::TextSingleLine, m_label).width();
 
+    QRectF labelRect(-20, 15, 40, 10);
     if(w > labelRect.width())
     {
         QFont font = painter->font();
@@ -303,15 +304,15 @@ void TTKPaintMeterWidget::drawWarningWindow(QPainter *painter)
     if(m_enableWarningWindow)
     {
         QPen pen;
-        double beginAngle = (m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_beginWarningValue - m_minValue));
-        double endAngle = (m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_endWarningValue - m_minValue));
+        const double beginAngle = (m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_beginWarningValue - m_minValue));
+        const double endAngle = (m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_endWarningValue - m_minValue));
 
         pen.setWidth(2);
         pen.setColor(Qt::yellow);
         painter->setPen(pen);
         painter->drawArc(-25, -25, 50, 50,
-                         beginAngle > endAngle ? endAngle*16 : beginAngle*16,
-                         beginAngle > endAngle ? (beginAngle - endAngle)*16 : (endAngle - beginAngle)*16);
+                         beginAngle > endAngle ? endAngle * 16 : beginAngle * 16,
+                         beginAngle > endAngle ? (beginAngle - endAngle) * 16 : (endAngle - beginAngle) * 16);
     }
 }
 
@@ -320,15 +321,14 @@ void TTKPaintMeterWidget::drawValidWindow(QPainter *painter)
     if(m_enableValidWindow)
     {
         QPen pen;
-        double beginAngle = (m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_beginValidValue - m_minValue));
-        double endAngle = (m_startAngle + (m_endAngle - m_startAngle)/(m_maxValue - m_minValue)*(m_endValidValue - m_minValue));
+        const double beginAngle = (m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_beginValidValue - m_minValue));
+        const double endAngle = (m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_endValidValue - m_minValue));
 
         pen.setWidth(2);
         pen.setColor(Qt::green);
         painter->setPen(pen);
         painter->drawArc(-25, -25, 50, 50,
-                         beginAngle > endAngle ? endAngle*16 : beginAngle*16,
-                         beginAngle > endAngle ? (beginAngle - endAngle)*16 : (endAngle - beginAngle)*16);
+                         beginAngle > endAngle ? endAngle * 16 : beginAngle * 16,
+                         beginAngle > endAngle ? (beginAngle - endAngle) * 16 : (endAngle - beginAngle) * 16);
     }
 }
-
