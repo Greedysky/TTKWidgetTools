@@ -65,14 +65,14 @@ void TTKPictureBannerArrowWidget::paintEvent(QPaintEvent *event)
     {
         case Right:
         {
-            painter.drawLine(QPointF(margin, margin), QPointF(this->width()-margin, this->height()/2));
-            painter.drawLine(QPointF(margin, this->height()-margin), QPointF(this->width()-margin, this->height()/2));
+            painter.drawLine(QPointF(margin, margin), QPointF(width()-margin, height()/2));
+            painter.drawLine(QPointF(margin, height()-margin), QPointF(width()-margin, height()/2));
             break;
         }
         case Left:
         {
-            painter.drawLine(QPointF(this->width()-margin, margin), QPointF(margin, this->height()/2));
-            painter.drawLine(QPointF(this->width()-margin, this->height()-margin), QPointF(margin, this->height()/2));
+            painter.drawLine(QPointF(width()-margin, margin), QPointF(margin, height()/2));
+            painter.drawLine(QPointF(width()-margin, height()-margin), QPointF(margin, height()/2));
             break;
         }
         default: break;

@@ -32,7 +32,7 @@ TTKRoundProgressWindow::TTKRoundProgressWindow(QWidget *parent)
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
 
-    m_timer->start(1500);
+    m_timer->start(1000);
 }
 
 TTKRoundProgressWindow::~TTKRoundProgressWindow()

@@ -48,7 +48,7 @@ public:
         ValueAndMax = 0x00000004
     };
 
-    explicit TTKRoundProgressWidget(QWidget *parent = 0);
+    explicit TTKRoundProgressWidget(QWidget *parent = nullptr);
 
     void setdefault(int startAngle, bool clockWise);
     void setOutterBarWidth(float width);
@@ -57,11 +57,11 @@ public:
     void setRange(float min, float max);
     void setText(float value);
 
-    void setOutterColor(const QColor& outterColor);
-    void setInnerColor(const QColor& startColor, const QColor& endColor);
-    void setInnerColor(const QColor& startColor);
+    void setOutterColor(const QColor &outterColor);
+    void setInnerColor(const QColor &startColor, const QColor &endColor);
+    void setInnerColor(const QColor &startColor);
 
-    void setDefaultTextColor(const QColor& textColor);
+    void setDefaultTextColor(const QColor &textColor);
 
     void setControlFlags(int flags);
     void setPrecision(int precision);
@@ -79,7 +79,6 @@ private:
     void paintText(QPainter &painter);
 
 private:
-    void caculateSquare();
     void setValue(float value);
     inline float getValue() const { return m_value; }
 

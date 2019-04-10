@@ -783,7 +783,7 @@ QColor TTKPictureFlowWidget::backgroundColor() const
     return QColor(m_state->m_backgroundColor);
 }
 
-void TTKPictureFlowWidget::setBackgroundColor(const QColor& c)
+void TTKPictureFlowWidget::setBackgroundColor(const QColor &c)
 {
     m_state->m_backgroundColor = c.rgb();
     triggerRender();

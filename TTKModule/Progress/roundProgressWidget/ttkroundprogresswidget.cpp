@@ -69,23 +69,23 @@ void TTKRoundProgressWidget::setValue(float value)
     update();
 }
 
-void TTKRoundProgressWidget::setOutterColor(const QColor& outterColor)
+void TTKRoundProgressWidget::setOutterColor(const QColor &outterColor)
 {
     m_outterColor = outterColor;
 }
 
-void TTKRoundProgressWidget::setInnerColor(const QColor& startColor, const QColor& endColor)
+void TTKRoundProgressWidget::setInnerColor(const QColor &startColor, const QColor &endColor)
 {
     m_startColor = startColor;
     m_endColor = endColor;
 }
 
-void TTKRoundProgressWidget::setInnerColor(const QColor& startColor)
+void TTKRoundProgressWidget::setInnerColor(const QColor &startColor)
 {
     m_startColor = startColor;
 }
 
-void TTKRoundProgressWidget::setDefaultTextColor(const QColor& textColor)
+void TTKRoundProgressWidget::setDefaultTextColor(const QColor &textColor)
 {
     m_textColor=textColor;
 }
@@ -112,7 +112,12 @@ void TTKRoundProgressWidget::resizeEvent(QResizeEvent *event)
         setMinimumSize(m_innerBarWidth * 8, m_innerBarWidth * 8);
     }
 
-    caculateSquare();
+    const int minWidth = qMin(width(), height());
+    const float barWidth = qMax(m_outterBarWidth, m_innerBarWidth);
+    m_squareWidth = minWidth - barWidth - 2;
+    m_squareStart = barWidth / 2 + 1;
+    m_dotX = m_squareStart + m_squareWidth / 2;
+    m_dotY = m_squareStart;
 }
 
 void TTKRoundProgressWidget::paintEvent(QPaintEvent *event)
@@ -125,16 +130,6 @@ void TTKRoundProgressWidget::paintEvent(QPaintEvent *event)
     paintInnerBar(painter);
     paintDot(painter);
     paintText(painter);
-}
-
-void TTKRoundProgressWidget::caculateSquare()
-{
-    const int minWidth = qMin(width(), height());
-    const float barWidth = qMax(m_outterBarWidth, m_innerBarWidth);
-    m_squareWidth = minWidth - barWidth - 2;
-    m_squareStart = barWidth / 2 + 1;
-    m_dotX = m_squareStart + m_squareWidth / 2;
-    m_dotY = m_squareStart;
 }
 
 void TTKRoundProgressWidget::paintOutterBar(QPainter &painter)

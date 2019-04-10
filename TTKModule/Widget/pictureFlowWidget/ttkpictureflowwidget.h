@@ -123,7 +123,7 @@ public:
     ~TTKPictureFlowWidget();
 
     QColor backgroundColor() const;
-    void setBackgroundColor(const QColor& c);
+    void setBackgroundColor(const QColor &c);
 
     QSize slideSize() const;
     void setSlideSize(QSize size);

@@ -1,52 +1,62 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "animationStackedWidget/ttkanimationstackedwindow.h"
-#include "animation2StackedWidget/ttkanimation2stackedwindow.h"
-#include "transitionAnimationLabel/ttktransitionanimationwindow.h"
-#include "gifLabelWidget/ttkgiflabelwindow.h"
+//
+#include "checkButtonWidget/ttkcheckbuttonwindow.h"
+#include "flatButtonWidget/ttkflatbuttonwindow.h"
+#include "radioButtonWidget/ttkradiobuttonwindow.h"
+#include "toggleWidget/ttktogglewindow.h"
+#include "toolMenuWidget/ttktoolmenuwindow.h"
+//
+#include "circleClickPlane/ttkcircleclickplanewindow.h"
 #include "codeAreaWidget/ttkcodeareawindow.h"
-#include "toastLabel/ttktoastwindow.h"
+#include "grabItemWidget/ttkgrabitemwindow.h"
 #include "marqueeWidget/ttkmarqueewindow.h"
 #include "roundAnimationLabel/ttkroundanimationwindow.h"
-#include "movingLabelSlider/ttkmovinglabelwindow.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
-#include "colorDialog/ttkcolorwindow.h"
-#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
-#include "shiningSlider/ttkshiningsliderwindow.h"
 #include "splitItemLabel/ttksplititemwindow.h"
-#include "grabItemWidget/ttkgrabitemwindow.h"
-#include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
-#include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
-#include "toolMenuWidget/ttktoolmenuwindow.h"
-#include "moveDialog/ttkmovedialogwindow.h"
-#include "moveWidget/ttkmovewidgetwindow.h"
-#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
-#include "circleClickPlane/ttkcircleclickplanewindow.h"
-#include "lineEditWidget/ttklineeditwindow.h"
-#include "toggleWidget/ttktogglewindow.h"
-#include "radioButtonWidget/ttkradiobuttonwindow.h"
-#include "checkButtonWidget/ttkcheckbuttonwindow.h"
-#include "progressWidget/ttkprogresswindow.h"
-#include "flatButtonWidget/ttkflatbuttonwindow.h"
-#include "circularProgressWidget/ttkcircularprogresswindow.h"
-#include "sliderWidget/ttksliderwindow.h"
-#include "colorTablePlane/ttkcolortableplanewindow.h"
-#include "functionListHWidget/ttkfunctionlisthwindow.h"
-#include "functionListVWidget/ttkfunctionlistvwindow.h"
-#include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
-#include "pictureFlowWidget/ttkpictureflowwindow.h"
-#include "pictureBannerWidget/ttkpicturebannerwindow.h"
-#include "speedMeterWidget/ttkspeedmeterwindow.h"
-#include "timeMeterWidget/ttktimemeterwindow.h"
+#include "toastLabel/ttktoastwindow.h"
+#include "transitionAnimationLabel/ttktransitionanimationwindow.h"
+//
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
 #include "radarMeterWidget/ttkradarmeterwindow.h"
-#include "progressCircleWidget/ttkprogresscirclewindow.h"
+#include "speedMeterWidget/ttkspeedmeterwindow.h"
+#include "timeMeterWidget/ttktimemeterwindow.h"
+//
 #include "animationProgressWidget/ttkanimationprogresswindow.h"
+#include "circularProgressWidget/ttkcircularprogresswindow.h"
+#include "gifLabelWidget/ttkgiflabelwindow.h"
+#include "progressCircleWidget/ttkprogresscirclewindow.h"
+#include "progressWidget/ttkprogresswindow.h"
 #include "radiusProgressWidget/ttkradiusprogresswindow.h"
 #include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
 #include "ringsProgressWidget/ttkringsprogresswindow.h"
 #include "roundProgressWidget/ttkroundprogresswindow.h"
+#include "loadingWidget/ttkloadingwindow.h"
+//
+#include "movingLabelSlider/ttkmovinglabelwindow.h"
+#include "shiningSlider/ttkshiningsliderwindow.h"
+#include "sliderWidget/ttksliderwindow.h"
+//
+#include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
+#include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
+#include "functionListHWidget/ttkfunctionlisthwindow.h"
+#include "functionListVWidget/ttkfunctionlistvwindow.h"
+#include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
+//
+#include "animationStackedWidget/ttkanimationstackedwindow.h"
+#include "animation2StackedWidget/ttkanimation2stackedwindow.h"
+#include "colorTablePlane/ttkcolortableplanewindow.h"
+#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
+#include "lineEditWidget/ttklineeditwindow.h"
+#include "pictureBannerWidget/ttkpicturebannerwindow.h"
+#include "pictureFlowWidget/ttkpictureflowwindow.h"
+#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
+//
+#include "colorDialog/ttkcolorwindow.h"
+#include "moveDialog/ttkmovedialogwindow.h"
+#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
+#include "moveWidget/ttkmovewidgetwindow.h"
+
 
 #include <QButtonGroup>
 
@@ -103,6 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
     progressGroup->addButton(ui->ringsMapProgressWidget, 6);
     progressGroup->addButton(ui->ringsProgressWidget, 7);
     progressGroup->addButton(ui->roundProgressWidget, 8);
+    progressGroup->addButton(ui->loadingWidget, 9);
     connect(progressGroup, SIGNAL(buttonClicked(int)), SLOT(progressModuleChanged(int)));
     //
     QButtonGroup *slidersGroup = new QButtonGroup(this);
@@ -225,6 +236,8 @@ void MainWindow::progressModuleChanged(int index)
         case 7: (new TTKRingsProgressWindow(this))->show();
             break;
         case 8: (new TTKRoundProgressWindow(this))->show();
+            break;
+        case 9: (new TTKLoadingWindow(this))->show();
             break;
         default:
             break;
