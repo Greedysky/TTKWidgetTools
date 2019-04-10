@@ -54,56 +54,86 @@ MainWindow::MainWindow(QWidget *parent)
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    QButtonGroup *group = new QButtonGroup(this);
-    group->addButton(ui->pushButton, 0);
-    group->addButton(ui->pushButton_1, 1);
-    group->addButton(ui->pushButton_2, 2);
-    group->addButton(ui->pushButton_3, 3);
-    group->addButton(ui->pushButton_4, 4);
-    group->addButton(ui->pushButton_5, 5);
-    group->addButton(ui->pushButton_6, 6);
-    group->addButton(ui->pushButton_7, 7);
-    group->addButton(ui->pushButton_8, 8);
-    group->addButton(ui->pushButton_9, 9);
-    group->addButton(ui->pushButton_10, 10);
-    group->addButton(ui->pushButton_11, 11);
-    group->addButton(ui->pushButton_12, 12);
-    group->addButton(ui->pushButton_13, 13);
-    group->addButton(ui->pushButton_14, 14);
-    group->addButton(ui->pushButton_15, 15);
-    group->addButton(ui->pushButton_16, 16);
-    group->addButton(ui->pushButton_17, 17);
-    group->addButton(ui->pushButton_18, 18);
-    group->addButton(ui->pushButton_19, 19);
-    group->addButton(ui->pushButton_20, 20);
-    group->addButton(ui->pushButton_21, 21);
-    group->addButton(ui->pushButton_22, 22);
-    group->addButton(ui->pushButton_23, 23);
-    group->addButton(ui->pushButton_24, 24);
-    group->addButton(ui->pushButton_25, 25);
-    group->addButton(ui->pushButton_26, 26);
-    group->addButton(ui->pushButton_27, 27);
-    group->addButton(ui->pushButton_28, 28);
-    group->addButton(ui->pushButton_29, 29);
-    group->addButton(ui->pushButton_30, 30);
-    group->addButton(ui->pushButton_31, 31);
-    group->addButton(ui->pushButton_32, 32);
-    group->addButton(ui->pushButton_33, 33);
-    group->addButton(ui->pushButton_34, 34);
-    group->addButton(ui->pushButton_35, 35);
-    group->addButton(ui->pushButton_36, 36);
-    group->addButton(ui->pushButton_37, 37);
-    group->addButton(ui->pushButton_38, 38);
-    group->addButton(ui->pushButton_39, 39);
-    group->addButton(ui->pushButton_40, 40);
-    group->addButton(ui->pushButton_41, 41);
-    group->addButton(ui->pushButton_42, 42);
-    group->addButton(ui->pushButton_43, 43);
-    group->addButton(ui->pushButton_44, 44);
-
-    connect(group, SIGNAL(buttonClicked(int)), SLOT(changed(int)));
-
+    //
+    QButtonGroup *listGroup = new QButtonGroup(this);
+    listGroup->addButton(ui->ButtonType, 0);
+    listGroup->addButton(ui->LabelType, 1);
+    listGroup->addButton(ui->MeterType, 2);
+    listGroup->addButton(ui->ProgressType, 3);
+    listGroup->addButton(ui->SliderType, 4);
+    listGroup->addButton(ui->TitleType, 5);
+    listGroup->addButton(ui->WidgetType, 6);
+    listGroup->addButton(ui->WindowType, 7);
+    connect(listGroup, SIGNAL(buttonClicked(int)), ui->containerWidget, SLOT(setCurrentIndex(int)));
+    //
+    QButtonGroup *buttonsGroup = new QButtonGroup(this);
+    buttonsGroup->addButton(ui->checkButtonWidget, 0);
+    buttonsGroup->addButton(ui->flatButtonWidget, 1);
+    buttonsGroup->addButton(ui->radioButtonWidget, 2);
+    buttonsGroup->addButton(ui->toggleWidget, 3);
+    buttonsGroup->addButton(ui->toolMenuWidget, 4);
+    connect(buttonsGroup, SIGNAL(buttonClicked(int)), SLOT(buttonModuleChanged(int)));
+    //
+    QButtonGroup *labelsGroup = new QButtonGroup(this);
+    labelsGroup->addButton(ui->circleClickPlane, 0);
+    labelsGroup->addButton(ui->codeAreaWidget, 1);
+    labelsGroup->addButton(ui->grabItemWidget, 2);
+    labelsGroup->addButton(ui->marqueeWidget, 3);
+    labelsGroup->addButton(ui->roundAnimationLabel, 4);
+    labelsGroup->addButton(ui->splitItemLabel, 5);
+    labelsGroup->addButton(ui->toastLabel, 6);
+    labelsGroup->addButton(ui->transitionAnimationLabel, 7);
+    connect(labelsGroup, SIGNAL(buttonClicked(int)), SLOT(labelModuleChanged(int)));
+    //
+    QButtonGroup *metersGroup = new QButtonGroup(this);
+    metersGroup->addButton(ui->paintMeterWidget, 0);
+    metersGroup->addButton(ui->radarMeterWidget, 1);
+    metersGroup->addButton(ui->speedMeterWidget, 2);
+    metersGroup->addButton(ui->timeMeterWidget, 3);
+    connect(metersGroup, SIGNAL(buttonClicked(int)), SLOT(meterModuleChanged(int)));
+    //
+    QButtonGroup *progressGroup = new QButtonGroup(this);
+    progressGroup->addButton(ui->animationProgressWidget, 0);
+    progressGroup->addButton(ui->circularProgressWidget, 1);
+    progressGroup->addButton(ui->gifLabelWidget, 2);
+    progressGroup->addButton(ui->progressCircleWidget, 3);
+    progressGroup->addButton(ui->progressWidget, 4);
+    progressGroup->addButton(ui->radiusProgressWidget, 5);
+    progressGroup->addButton(ui->ringsMapProgressWidget, 6);
+    progressGroup->addButton(ui->ringsProgressWidget, 7);
+    connect(progressGroup, SIGNAL(buttonClicked(int)), SLOT(progressModuleChanged(int)));
+    //
+    QButtonGroup *slidersGroup = new QButtonGroup(this);
+    slidersGroup->addButton(ui->movingLabelSlider, 0);
+    slidersGroup->addButton(ui->shiningSlider, 1);
+    slidersGroup->addButton(ui->sliderWidget, 2);
+    connect(slidersGroup, SIGNAL(buttonClicked(int)), SLOT(slidersModuleChanged(int)));
+    //
+    QButtonGroup *titlesGroup = new QButtonGroup(this);
+    titlesGroup->addButton(ui->functionAnimationHWidget, 0);
+    titlesGroup->addButton(ui->functionAnimationVWidget, 1);
+    titlesGroup->addButton(ui->functionListHWidget, 2);
+    titlesGroup->addButton(ui->functionListVWidget, 3);
+    titlesGroup->addButton(ui->functionToolboxWidget, 4);
+    connect(titlesGroup, SIGNAL(buttonClicked(int)), SLOT(titlesModuleChanged(int)));
+    //
+    QButtonGroup *widgetsGroup = new QButtonGroup(this);
+    widgetsGroup->addButton(ui->animationStackedWidget, 0);
+    widgetsGroup->addButton(ui->animation2StackedWidget, 1);
+    widgetsGroup->addButton(ui->colorTablePlane, 2);
+    widgetsGroup->addButton(ui->layoutAnimationWidget, 3);
+    widgetsGroup->addButton(ui->lineEditWidget, 4);
+    widgetsGroup->addButton(ui->pictureBannerWidget, 5);
+    widgetsGroup->addButton(ui->pictureFlowWidget, 6);
+    widgetsGroup->addButton(ui->smoothMovingTableWidget, 7);
+    connect(widgetsGroup, SIGNAL(buttonClicked(int)), SLOT(widgetsModuleChanged(int)));
+    //
+    QButtonGroup *windowsGroup = new QButtonGroup(this);
+    windowsGroup->addButton(ui->colorDialog, 0);
+    windowsGroup->addButton(ui->moveDialog, 1);
+    windowsGroup->addButton(ui->moveResizeWidget, 2);
+    windowsGroup->addButton(ui->moveWidget, 3);
+    connect(windowsGroup, SIGNAL(buttonClicked(int)), SLOT(windowsModuleChanged(int)));
 }
 
 MainWindow::~MainWindow()
@@ -111,99 +141,163 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::changed(int index)
+void MainWindow::buttonModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKCheckButtonWindow(this))->show();
+            break;
+        case 1: (new TTKFlatButtonWindow(this))->show();
+            break;
+        case 2: (new TTKRadioButtonWindow(this))->show();
+            break;
+        case 3: (new TTKToggleWindow(this))->show();
+            break;
+        case 4: (new TTKToolMenuWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::labelModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKCircleClickPlaneWindow(this))->show();
+            break;
+        case 1: (new TTKCodeAreaWindow(this))->show();
+            break;
+        case 2: (new TTKGrabItemWindow(this))->show();
+            break;
+        case 3: (new TTKMarqueeWindow(this))->show();
+            break;
+        case 4: (new TTKRoundAnimationWindow(this))->show();
+            break;
+        case 5: (new TTKSplitItemWindow(this))->show();
+            break;
+        case 6: (new TTKToastWindow(this))->show();
+            break;
+        case 7: (new TTKTransitionAnimationWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::meterModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKPaintMeterWindow(this))->show();
+            break;
+        case 1: (new TTKRadarMeterWindow(this))->show();
+            break;
+        case 2: (new TTKSpeedMeterWindow(this))->show();
+            break;
+        case 3: (new TTKTimeMeterWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::progressModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKAnimationProgressWindow(this))->show();
+            break;
+        case 1: (new TTKCircularProgressWindow(this))->show();
+            break;
+        case 2: (new TTKGifLabelWindow(this))->show();
+            break;
+        case 3: (new TTKProgressCircleWindow(this))->show();
+            break;
+        case 4: (new TTKProgressWindow(this))->show();
+            break;
+        case 5: (new TTKRadiusProgressWindow(this))->show();
+            break;
+        case 6: (new TTKRingsMapProgressWindow(this))->show();
+            break;
+        case 7: (new TTKRingsProgressWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::slidersModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKMovingLabelWindow(this))->show();
+            break;
+        case 1: (new TTKShiningSliderWindow(this))->show();
+            break;
+        case 2: (new TTKSliderWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::titlesModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKFunctionAnimationHWindow(this))->show();
+            break;
+        case 1: (new TTKFunctionAnimationVWindow(this))->show();
+            break;
+        case 2: (new TTKFunctionListHWindow(this))->show();
+            break;
+        case 3: (new TTKFunctionListVWindow(this))->show();
+            break;
+        case 4: (new TTKFunctionToolBoxWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::widgetsModuleChanged(int index)
 {
     switch(index)
     {
         case 0: (new TTKAnimationStackedWindow(this))->show();
             break;
-        case 1: (new TTKTransitionAnimationWindow(this))->show();
+        case 1: (new TTKAnimation2StackedWindow(this))->show();
             break;
-        case 2: (new TTKGifLabelWindow(this))->show();
+        case 2: (new TTKColorTablePlaneWindow(this))->show();
             break;
-        case 3: (new TTKCodeAreaWindow(this))->show();
+        case 3: (new TTKLayoutAnimationWindow(this))->show();
             break;
-        case 4: (new TTKToastWindow(this))->show();
+        case 4: (new TTKLineEditWindow(this))->show();
             break;
-        case 5: (new TTKMarqueeWindow(this))->show();
+        case 5: (new TTKPictureBannerWindow(this))->show();
             break;
-        case 6: (new TTKRoundAnimationWindow(this))->show();
+        case 6: (new TTKPictureFlowWindow(this))->show();
             break;
-        case 7: (new TTKMovingLabelWindow(this))->show();
+        case 7: (new TTKSmoothMovingTableWindow(this))->show();
             break;
-        case 8: (new TTKSmoothMovingTableWindow(this))->show();
+        default:
             break;
-        case 9: (new TTKColorWindow(this))->show();
+    }
+}
+
+
+void MainWindow::windowsModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKColorWindow(this))->show();
             break;
-        case 10:(new TTKLayoutAnimationWindow(this))->show();
+        case 1: (new TTKMoveDialogWindow(this))->show();
             break;
-        case 11:(new TTKShiningSliderWindow(this))->show();
+        case 2: (new TTKMoveResizeWidgetWindow(this))->show();
             break;
-        case 12:(new TTKSplitItemWindow(this))->show();
-            break;
-        case 13:(new TTKGrabItemWindow(this))->show();
-            break;
-        case 14:(new TTKFunctionAnimationHWindow(this))->show();
-            break;
-        case 15:(new TTKToolMenuWindow(this))->show();
-            break;
-        case 16:(new TTKMoveDialogWindow(this))->show();
-            break;
-        case 17:(new TTKMoveWidgetWindow(this))->show();
-            break;
-        case 18:(new TTKMoveResizeWidgetWindow(this))->show();
-            break;
-        case 19:(new TTKCircleClickPlaneWindow(this))->show();
-            break;
-        case 20:(new TTKLineEditWindow(this))->show();
-            break;
-        case 21:(new TTKToggleWindow(this))->show();
-            break;
-        case 22:(new TTKRadioButtonWindow(this))->show();
-            break;
-        case 23:(new TTKCheckButtonWindow(this))->show();
-            break;
-        case 24:(new TTKProgressWindow(this))->show();
-            break;
-        case 25:(new TTKFlatButtonWindow(this))->show();
-            break;
-        case 26:(new TTKCircularProgressWindow(this))->show();
-            break;
-        case 27:(new TTKSliderWindow(this))->show();
-            break;
-        case 28:(new TTKColorTablePlaneWindow(this))->show();
-            break;
-        case 29:(new TTKFunctionAnimationVWindow(this))->show();
-            break;
-        case 30:(new TTKFunctionListHWindow(this))->show();
-            break;
-        case 31:(new TTKFunctionListVWindow(this))->show();
-            break;
-        case 32:(new TTKFunctionToolBoxWindow(this))->show();
-            break;
-        case 33:(new TTKPictureFlowWindow(this))->show();
-            break;
-        case 34:(new TTKSpeedMeterWindow(this))->show();
-            break;
-        case 35:(new TTKTimeMeterWindow(this))->show();
-            break;
-        case 36:(new TTKPaintMeterWindow(this))->show();
-            break;
-        case 37:(new TTKRadarMeterWindow(this))->show();
-            break;
-        case 38:(new TTKPictureBannerWindow(this))->show();
-            break;
-        case 39:(new TTKProgressCircleWindow(this))->show();
-            break;
-        case 40:(new TTKAnimationProgressWindow(this))->show();
-            break;
-        case 41:(new TTKRadiusProgressWindow(this))->show();
-            break;
-        case 42:(new TTKRingsMapProgressWindow(this))->show();
-            break;
-        case 43:(new TTKRingsProgressWindow(this))->show();
-            break;
-        case 44:(new TTKAnimation2StackedWindow(this))->show();
+        case 3: (new TTKMoveWidgetWindow(this))->show();
             break;
         default:
             break;

@@ -36,8 +36,15 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public Q_SLOTS:
-    void changed(int index);
+private Q_SLOTS:
+    void buttonModuleChanged(int index);
+    void labelModuleChanged(int index);
+    void meterModuleChanged(int index);
+    void progressModuleChanged(int index);
+    void slidersModuleChanged(int index);
+    void titlesModuleChanged(int index);
+    void widgetsModuleChanged(int index);
+    void windowsModuleChanged(int index);
 
 private:
     Ui::MainWindow *ui;
