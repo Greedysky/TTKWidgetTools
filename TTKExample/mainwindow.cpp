@@ -46,6 +46,7 @@
 #include "radiusProgressWidget/ttkradiusprogresswindow.h"
 #include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
 #include "ringsProgressWidget/ttkringsprogresswindow.h"
+#include "roundProgressWidget/ttkroundprogresswindow.h"
 
 #include <QButtonGroup>
 
@@ -101,6 +102,7 @@ MainWindow::MainWindow(QWidget *parent)
     progressGroup->addButton(ui->radiusProgressWidget, 5);
     progressGroup->addButton(ui->ringsMapProgressWidget, 6);
     progressGroup->addButton(ui->ringsProgressWidget, 7);
+    progressGroup->addButton(ui->roundProgressWidget, 8);
     connect(progressGroup, SIGNAL(buttonClicked(int)), SLOT(progressModuleChanged(int)));
     //
     QButtonGroup *slidersGroup = new QButtonGroup(this);
@@ -221,6 +223,8 @@ void MainWindow::progressModuleChanged(int index)
         case 6: (new TTKRingsMapProgressWindow(this))->show();
             break;
         case 7: (new TTKRingsProgressWindow(this))->show();
+            break;
+        case 8: (new TTKRoundProgressWindow(this))->show();
             break;
         default:
             break;

@@ -18,12 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/animationProgressWidget/AnimationProgressWidget.pri)
-include($$PWD/circularProgressWidget/CircularProgressWidget.pri)
-include($$PWD/gifLabelWidget/GifLabelWidget.pri)
-include($$PWD/progressCircleWidget/ProgressCircleWidget.pri)
-include($$PWD/progressWidget/ProgressWidget.pri)
-include($$PWD/radiusProgressWidget/RadiusProgressWidget.pri)
-include($$PWD/ringsMapProgressWidget/RingsMapProgressWidget.pri)
-include($$PWD/ringsProgressWidget/RingsProgressWidget.pri)
-include($$PWD/roundProgressWidget/RoundProgressWidget.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkroundprogresswidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkroundprogresswidget.cpp
+
+}
