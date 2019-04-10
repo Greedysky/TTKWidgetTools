@@ -59,7 +59,7 @@ void TTKLoadingWidget::resizeEvent(QResizeEvent *event)
     for(int i=0; i<m_count; i++)
     {
         m_ranges << m_maxDiameter / 2 - i * gap;
-        const float radian = qDegreesToRadians(-angleGap*i);
+        const float radian = -angleGap * i * M_PI / 180.0;
         m_dots.append({half + centerDistance * qCos(radian), half - centerDistance * qSin(radian)});
     }
 }
