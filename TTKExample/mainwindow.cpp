@@ -107,7 +107,7 @@ MainWindow::MainWindow(QWidget *parent)
     slidersGroup->addButton(ui->movingLabelSlider, 0);
     slidersGroup->addButton(ui->shiningSlider, 1);
     slidersGroup->addButton(ui->sliderWidget, 2);
-    connect(slidersGroup, SIGNAL(buttonClicked(int)), SLOT(slidersModuleChanged(int)));
+    connect(slidersGroup, SIGNAL(buttonClicked(int)), SLOT(sliderModuleChanged(int)));
     //
     QButtonGroup *titlesGroup = new QButtonGroup(this);
     titlesGroup->addButton(ui->functionAnimationHWidget, 0);
@@ -115,7 +115,7 @@ MainWindow::MainWindow(QWidget *parent)
     titlesGroup->addButton(ui->functionListHWidget, 2);
     titlesGroup->addButton(ui->functionListVWidget, 3);
     titlesGroup->addButton(ui->functionToolboxWidget, 4);
-    connect(titlesGroup, SIGNAL(buttonClicked(int)), SLOT(titlesModuleChanged(int)));
+    connect(titlesGroup, SIGNAL(buttonClicked(int)), SLOT(titleModuleChanged(int)));
     //
     QButtonGroup *widgetsGroup = new QButtonGroup(this);
     widgetsGroup->addButton(ui->animationStackedWidget, 0);
@@ -126,14 +126,14 @@ MainWindow::MainWindow(QWidget *parent)
     widgetsGroup->addButton(ui->pictureBannerWidget, 5);
     widgetsGroup->addButton(ui->pictureFlowWidget, 6);
     widgetsGroup->addButton(ui->smoothMovingTableWidget, 7);
-    connect(widgetsGroup, SIGNAL(buttonClicked(int)), SLOT(widgetsModuleChanged(int)));
+    connect(widgetsGroup, SIGNAL(buttonClicked(int)), SLOT(widgetModuleChanged(int)));
     //
     QButtonGroup *windowsGroup = new QButtonGroup(this);
     windowsGroup->addButton(ui->colorDialog, 0);
     windowsGroup->addButton(ui->moveDialog, 1);
     windowsGroup->addButton(ui->moveResizeWidget, 2);
     windowsGroup->addButton(ui->moveWidget, 3);
-    connect(windowsGroup, SIGNAL(buttonClicked(int)), SLOT(windowsModuleChanged(int)));
+    connect(windowsGroup, SIGNAL(buttonClicked(int)), SLOT(windowModuleChanged(int)));
 }
 
 MainWindow::~MainWindow()
@@ -227,7 +227,7 @@ void MainWindow::progressModuleChanged(int index)
     }
 }
 
-void MainWindow::slidersModuleChanged(int index)
+void MainWindow::sliderModuleChanged(int index)
 {
     switch(index)
     {
@@ -242,7 +242,7 @@ void MainWindow::slidersModuleChanged(int index)
     }
 }
 
-void MainWindow::titlesModuleChanged(int index)
+void MainWindow::titleModuleChanged(int index)
 {
     switch(index)
     {
@@ -261,7 +261,7 @@ void MainWindow::titlesModuleChanged(int index)
     }
 }
 
-void MainWindow::widgetsModuleChanged(int index)
+void MainWindow::widgetModuleChanged(int index)
 {
     switch(index)
     {
@@ -287,7 +287,7 @@ void MainWindow::widgetsModuleChanged(int index)
 }
 
 
-void MainWindow::windowsModuleChanged(int index)
+void MainWindow::windowModuleChanged(int index)
 {
     switch(index)
     {

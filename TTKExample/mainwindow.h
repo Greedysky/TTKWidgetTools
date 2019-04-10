@@ -41,10 +41,10 @@ private Q_SLOTS:
     void labelModuleChanged(int index);
     void meterModuleChanged(int index);
     void progressModuleChanged(int index);
-    void slidersModuleChanged(int index);
-    void titlesModuleChanged(int index);
-    void widgetsModuleChanged(int index);
-    void windowsModuleChanged(int index);
+    void sliderModuleChanged(int index);
+    void titleModuleChanged(int index);
+    void widgetModuleChanged(int index);
+    void windowModuleChanged(int index);
 
 private:
     Ui::MainWindow *ui;
