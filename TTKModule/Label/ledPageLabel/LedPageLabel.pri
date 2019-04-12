@@ -18,13 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/circleClickPlane/CircleClickPlane.pri)
-include($$PWD/codeAreaWidget/CodeAreaWidget.pri)
-include($$PWD/grabItemWidget/GrabItemWidget.pri)
-include($$PWD/ledPageLabel/LedPageLabel.pri)
-include($$PWD/marqueeWidget/MarqueeWidget.pri)
-include($$PWD/roundAnimationLabel/RoundAnimationLabel.pri)
-include($$PWD/splitItemLabel/SplitItemLabel.pri)
-include($$PWD/toastLabel/ToastLabel.pri)
-include($$PWD/transitionAnimationLabel/TransitionAnimationLabel.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkledpagelabel.h
 
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkledpagelabel.cpp
+
+}
