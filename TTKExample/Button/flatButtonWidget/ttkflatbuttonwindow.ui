@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKFlatButtonWindow</class>
+ <widget class="QMainWindow" name="TTKFlatButtonWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>321</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKFlatButtonWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKFlatButtonWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>30</y>
+      <width>220</width>
+      <height>40</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKFlatButtonWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>100</y>
+      <width>220</width>
+      <height>40</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKFlatButtonWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>170</y>
+      <width>220</width>
+      <height>40</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKFlatButtonWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>240</y>
+      <width>220</width>
+      <height>40</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKFlatButtonWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkflatbuttonwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

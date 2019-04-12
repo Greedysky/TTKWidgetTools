@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKFunctionToolBoxWindow</class>
+ <widget class="QMainWindow" name="TTKFunctionToolBoxWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>453</width>
+    <height>317</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKFunctionToolBoxWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#TTKFunctionToolBoxWindow{background:rgb(79, 200, 255);}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKFunctionToolBoxWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>30</y>
+      <width>350</width>
+      <height>250</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKFunctionToolBoxWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctiontoolboxwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

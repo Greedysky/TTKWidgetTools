@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="lb_ballon_white">res/lb_ballon_white.png</file>
+        <file alias="lb_cicle_blue">res/lb_cicle_blue.png</file>
+        <file alias="lb_hourglass_white">res/lb_hourglass_white.png</file>
+        <file alias="lb_radio_blue">res/lb_radio_blue.png</file>
+        <file alias="lb_rice_font_black">res/lb_rice_font_black.png</file>
+        <file alias="lb_rice_font_black_big">res/lb_rice_font_black_big.png</file>
+        <file alias="lb_rice_font_white">res/lb_rice_font_white.png</file>
+        <file alias="lb_check_blue">res/lb_check_blue.png</file>
+        <file alias="lb_record_red">res/lb_record_red.png</file>
+        <file alias="lb_close_white">res/lb_close_white.png</file>
+    </qresource>
+</RCC>

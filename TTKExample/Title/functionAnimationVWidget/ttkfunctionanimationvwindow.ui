@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKFunctionAnimationVWindow</class>
+ <widget class="QMainWindow" name="TTKFunctionAnimationVWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>382</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKFunctionAnimationVWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKOptionAnimationVWidget" name="widget_1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKSkinAnimationVWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKTableAnimationVWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKOptionAnimationVWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKSkinAnimationVWidget" name="widget_5" native="true">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="TTKTableAnimationVWidget" name="widget_6" native="true">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>75</width>
+      <height>340</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKOptionAnimationVWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctionanimationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKSkinAnimationVWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctionanimationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKTableAnimationVWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctionanimationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

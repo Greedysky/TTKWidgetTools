@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKFunctionListHWindow</class>
+ <widget class="QMainWindow" name="TTKFunctionListHWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>702</width>
+    <height>317</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKFunctionListHWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#TTKFunctionListHWindow{background:rgb(79, 200, 255);}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="TTKFunctionListHWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>621</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKFunctionListHWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctionlisthwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

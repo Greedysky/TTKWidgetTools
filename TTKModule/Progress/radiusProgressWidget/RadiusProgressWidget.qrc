@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="lb_rp_back">res/lb_back.png</file>
+        <file alias="lb_rp_front">res/lb_front.png</file>
+    </qresource>
+</RCC>
