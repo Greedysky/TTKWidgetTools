@@ -17,6 +17,8 @@
 #include "toastLabel/ttktoastwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
 //
+#include "lineEditWidget/ttklineeditwindow.h"
+//
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
 #include "radarMeterWidget/ttkradarmeterwindow.h"
 #include "speedMeterWidget/ttkspeedmeterwindow.h"
@@ -47,7 +49,6 @@
 #include "animation2StackedWidget/ttkanimation2stackedwindow.h"
 #include "colorTablePlane/ttkcolortableplanewindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
-#include "lineEditWidget/ttklineeditwindow.h"
 #include "pictureBannerWidget/ttkpicturebannerwindow.h"
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
 #include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
@@ -96,6 +97,10 @@ MainWindow::MainWindow(QWidget *parent)
     labelsGroup->addButton(ui->transitionAnimationLabel, 7);
     connect(labelsGroup, SIGNAL(buttonClicked(int)), SLOT(labelModuleChanged(int)));
     //
+    QButtonGroup *lineEditsGroup = new QButtonGroup(this);
+    lineEditsGroup->addButton(ui->lineEditWidget, 0);
+    connect(lineEditsGroup, SIGNAL(buttonClicked(int)), SLOT(lineEditModuleChanged(int)));
+    //
     QButtonGroup *metersGroup = new QButtonGroup(this);
     metersGroup->addButton(ui->paintMeterWidget, 0);
     metersGroup->addButton(ui->radarMeterWidget, 1);
@@ -135,10 +140,9 @@ MainWindow::MainWindow(QWidget *parent)
     widgetsGroup->addButton(ui->animation2StackedWidget, 1);
     widgetsGroup->addButton(ui->colorTablePlane, 2);
     widgetsGroup->addButton(ui->layoutAnimationWidget, 3);
-    widgetsGroup->addButton(ui->lineEditWidget, 4);
-    widgetsGroup->addButton(ui->pictureBannerWidget, 5);
-    widgetsGroup->addButton(ui->pictureFlowWidget, 6);
-    widgetsGroup->addButton(ui->smoothMovingTableWidget, 7);
+    widgetsGroup->addButton(ui->pictureBannerWidget, 4);
+    widgetsGroup->addButton(ui->pictureFlowWidget, 5);
+    widgetsGroup->addButton(ui->smoothMovingTableWidget, 6);
     connect(widgetsGroup, SIGNAL(buttonClicked(int)), SLOT(widgetModuleChanged(int)));
     //
     QButtonGroup *windowsGroup = new QButtonGroup(this);
@@ -192,6 +196,17 @@ void MainWindow::labelModuleChanged(int index)
         case 6: (new TTKToastWindow(this))->show();
             break;
         case 7: (new TTKTransitionAnimationWindow(this))->show();
+            break;
+        default:
+            break;
+    }
+}
+
+void MainWindow::lineEditModuleChanged(int index)
+{
+    switch(index)
+    {
+        case 0: (new TTKLineEditWindow(this))->show();
             break;
         default:
             break;
@@ -290,13 +305,11 @@ void MainWindow::widgetModuleChanged(int index)
             break;
         case 3: (new TTKLayoutAnimationWindow(this))->show();
             break;
-        case 4: (new TTKLineEditWindow(this))->show();
+        case 4: (new TTKPictureBannerWindow(this))->show();
             break;
-        case 5: (new TTKPictureBannerWindow(this))->show();
+        case 5: (new TTKPictureFlowWindow(this))->show();
             break;
-        case 6: (new TTKPictureFlowWindow(this))->show();
-            break;
-        case 7: (new TTKSmoothMovingTableWindow(this))->show();
+        case 6: (new TTKSmoothMovingTableWindow(this))->show();
             break;
         default:
             break;

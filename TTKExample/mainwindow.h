@@ -39,6 +39,7 @@ public:
 private Q_SLOTS:
     void buttonModuleChanged(int index);
     void labelModuleChanged(int index);
+    void lineEditModuleChanged(int index);
     void meterModuleChanged(int index);
     void progressModuleChanged(int index);
     void sliderModuleChanged(int index);

@@ -18,6 +18,7 @@
 
 include($$PWD/Button/Button.pri)
 include($$PWD/Label/Label.pri)
+include($$PWD/LineEdit/LineEdit.pri)
 include($$PWD/Meter/Meter.pri)
 include($$PWD/Progress/Progress.pri)
 include($$PWD/Slider/Slider.pri)

@@ -18,10 +18,4 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/colorTablePlane/ColorTablePlane.pri)
-include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
-include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)
-include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)
-include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
-include($$PWD/animationStackedWidget/AnimationStackedWidget.pri)
-include($$PWD/animation2StackedWidget/Animation2StackedWidget.pri)
+include($$PWD/lineEditWidget/LineEditWidget.pri)
