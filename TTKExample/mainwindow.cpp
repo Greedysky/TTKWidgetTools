@@ -17,6 +17,7 @@
 #include "toastLabel/ttktoastwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
 //
+#include "ipEditWidget/ttkipeditwindow.h"
 #include "lineEditWidget/ttklineeditwindow.h"
 //
 #include "paintMeterWidget/ttkpaintmeterwindow.h"
@@ -70,12 +71,13 @@ MainWindow::MainWindow(QWidget *parent)
     QButtonGroup *listGroup = new QButtonGroup(this);
     listGroup->addButton(ui->ButtonType, 0);
     listGroup->addButton(ui->LabelType, 1);
-    listGroup->addButton(ui->MeterType, 2);
-    listGroup->addButton(ui->ProgressType, 3);
-    listGroup->addButton(ui->SliderType, 4);
-    listGroup->addButton(ui->TitleType, 5);
-    listGroup->addButton(ui->WidgetType, 6);
-    listGroup->addButton(ui->WindowType, 7);
+    listGroup->addButton(ui->LineEditType, 2);
+    listGroup->addButton(ui->MeterType, 3);
+    listGroup->addButton(ui->ProgressType, 4);
+    listGroup->addButton(ui->SliderType, 5);
+    listGroup->addButton(ui->TitleType, 6);
+    listGroup->addButton(ui->WidgetType, 7);
+    listGroup->addButton(ui->WindowType, 8);
     connect(listGroup, SIGNAL(buttonClicked(int)), ui->containerWidget, SLOT(setCurrentIndex(int)));
     //
     QButtonGroup *buttonsGroup = new QButtonGroup(this);
@@ -98,7 +100,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(labelsGroup, SIGNAL(buttonClicked(int)), SLOT(labelModuleChanged(int)));
     //
     QButtonGroup *lineEditsGroup = new QButtonGroup(this);
-    lineEditsGroup->addButton(ui->lineEditWidget, 0);
+    lineEditsGroup->addButton(ui->ipEditWidget, 0);
+    lineEditsGroup->addButton(ui->lineEditWidget, 1);
     connect(lineEditsGroup, SIGNAL(buttonClicked(int)), SLOT(lineEditModuleChanged(int)));
     //
     QButtonGroup *metersGroup = new QButtonGroup(this);
@@ -206,7 +209,9 @@ void MainWindow::lineEditModuleChanged(int index)
 {
     switch(index)
     {
-        case 0: (new TTKLineEditWindow(this))->show();
+        case 0: (new TTKIpEditWindow(this))->show();
+            break;
+        case 1: (new TTKLineEditWindow(this))->show();
             break;
         default:
             break;

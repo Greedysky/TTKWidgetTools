@@ -54,7 +54,7 @@
        <item>
         <widget class="QPushButton" name="LineEditType">
          <property name="styleSheet">
-          <string notr="true">background:#FF7D00</string>
+          <string notr="true">background:#FFFF00</string>
          </property>
          <property name="text">
           <string>LineEdit</string>
@@ -64,7 +64,7 @@
        <item>
         <widget class="QPushButton" name="MeterType">
          <property name="styleSheet">
-          <string notr="true">background:#FFFF00</string>
+          <string notr="true">background:#00FF00</string>
          </property>
          <property name="text">
           <string>Meter</string>
@@ -74,7 +74,7 @@
        <item>
         <widget class="QPushButton" name="ProgressType">
          <property name="styleSheet">
-          <string notr="true">background:#00FF00</string>
+          <string notr="true">background:#0000FF</string>
          </property>
          <property name="text">
           <string>Progress</string>
@@ -84,7 +84,7 @@
        <item>
         <widget class="QPushButton" name="SliderType">
          <property name="styleSheet">
-          <string notr="true">background:#0000FF</string>
+          <string notr="true">background:#00FFFF</string>
          </property>
          <property name="text">
           <string>Slider</string>
@@ -94,7 +94,7 @@
        <item>
         <widget class="QPushButton" name="TitleType">
          <property name="styleSheet">
-          <string notr="true">background:#00FFFF</string>
+          <string notr="true">background:#FF00FF</string>
          </property>
          <property name="text">
           <string>Title</string>
@@ -104,7 +104,7 @@
        <item>
         <widget class="QPushButton" name="WidgetType">
          <property name="styleSheet">
-          <string notr="true">background:#FF00FF</string>
+          <string notr="true">background:#122334</string>
          </property>
          <property name="text">
           <string>Widget</string>
@@ -288,10 +288,17 @@
       </widget>
       <widget class="QWidget" name="LineEditPage">
        <property name="styleSheet">
-        <string notr="true">background:#FF7D00</string>
+        <string notr="true">background:#FFFF00</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
+         <widget class="QPushButton" name="ipEditWidget">
+          <property name="text">
+           <string>IpEditWidget</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
          <widget class="QPushButton" name="lineEditWidget">
           <property name="text">
            <string>LineEditWidget</string>
@@ -315,7 +322,7 @@
       </widget>
       <widget class="QWidget" name="MeterPage">
        <property name="styleSheet">
-        <string notr="true">background:#FFFF00</string>
+        <string notr="true">background:#00FF00</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
@@ -363,7 +370,7 @@
       </widget>
       <widget class="QWidget" name="ProgressPage">
        <property name="styleSheet">
-        <string notr="true">background:#00FF00</string>
+        <string notr="true">background:#0000FF</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
@@ -453,7 +460,7 @@
       </widget>
       <widget class="QWidget" name="SliderPage">
        <property name="styleSheet">
-        <string notr="true">background:#0000FF</string>
+        <string notr="true">background:#00FFFF</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_6">
         <item row="0" column="0">
@@ -494,7 +501,7 @@
       </widget>
       <widget class="QWidget" name="TitlePage">
        <property name="styleSheet">
-        <string notr="true">background:#00FFFF</string>
+        <string notr="true">background:#FF00FF</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_7">
         <item row="0" column="0">
@@ -549,7 +556,7 @@
       </widget>
       <widget class="QWidget" name="WidgetPage">
        <property name="styleSheet">
-        <string notr="true">background:#FF00FF</string>
+        <string notr="true">background:#122334</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_8">
         <item row="0" column="0">

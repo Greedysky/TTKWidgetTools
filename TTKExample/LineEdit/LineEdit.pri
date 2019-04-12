@@ -19,3 +19,4 @@
 INCLUDEPATH += $$PWD
 
 include($$PWD/lineEditWidget/LineEditWidget.pri)
+include($$PWD/ipEditWidget/IpEditWidget.pri)

@@ -16,12 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include($$PWD/Button/Button.pri)
-include($$PWD/Label/Label.pri)
-include($$PWD/LineEdit/LineEdit.pri)
-include($$PWD/Meter/Meter.pri)
-include($$PWD/Progress/Progress.pri)
-include($$PWD/Slider/Slider.pri)
-include($$PWD/Title/Title.pri)
-include($$PWD/Widget/Widget.pri)
-include($$PWD/Window/Window.pri)
+SOURCES += $$PWD/ttkipeditwindow.cpp
+
+HEADERS += $$PWD/ttkipeditwindow.h
+
+FORMS   += $$PWD/ttkipeditwindow.ui
