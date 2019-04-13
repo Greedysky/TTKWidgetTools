@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKIpEditWindow</string>
+   <string>TTKIpEditWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKIpEditWidget" name="widget" native="true">

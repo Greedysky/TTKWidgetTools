@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKSplitItemWindow</string>
+   <string>TTKSplitItemLabel</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKSplitItemLabel" name="label">

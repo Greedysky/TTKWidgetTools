@@ -1,5 +1,5 @@
-#ifndef TTKCOLORTABLEPLANEWINDOW_H
-#define TTKCOLORTABLEPLANEWINDOW_H
+#ifndef TTKCOLORTABLEWINDOW_H
+#define TTKCOLORTABLEWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -23,22 +23,22 @@
 #include "ttkglobaldefine.h"
 
 namespace Ui {
-class TTKColorTablePlaneWindow;
+class TTKColorTableWindow;
 }
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKColorTablePlaneWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKColorTableWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKColorTablePlaneWindow(QWidget *parent = nullptr);
-    ~TTKColorTablePlaneWindow();
+    explicit TTKColorTableWindow(QWidget *parent = nullptr);
+    ~TTKColorTableWindow();
 
 private:
-    Ui::TTKColorTablePlaneWindow *ui;
+    Ui::TTKColorTableWindow *ui;
 
 };
 
-#endif // TTKCOLORTABLEPLANEWINDOW_H
+#endif // TTKCOLORTABLEWINDOW_H

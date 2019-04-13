@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKFunctionAnimationHWindow</string>
+   <string>TTKOptionAnimationHWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKOptionAnimationHWidget" name="widget" native="true">

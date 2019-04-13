@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TTKColorTablePlaneWindow</class>
- <widget class="QMainWindow" name="TTKColorTablePlaneWindow">
+ <class>TTKColorTableWindow</class>
+ <widget class="QMainWindow" name="TTKColorTableWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,12 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKColorTablePlaneWindow</string>
+   <string>TTKColorTableWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="TTKColorTablePlane" name="widget" native="true"/>
+     <widget class="TTKColorTableWidget" name="widget" native="true"/>
     </item>
    </layout>
   </widget>
@@ -24,9 +24,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>TTKColorTablePlane</class>
+   <class>TTKColorTableWidget</class>
    <extends>QWidget</extends>
-   <header>ttkcolortableplane.h</header>
+   <header>ttkcolortablewidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

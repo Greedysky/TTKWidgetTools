@@ -1,14 +1,14 @@
-#include "ttkcolortableplane.h"
+#include "ttkcolortablewidget.h"
 
 #include <QFile>
 
-TTKColorTablePlane::TTKColorTablePlane(QWidget *parent)
+TTKColorTableWidget::TTKColorTableWidget(QWidget *parent)
     : QListWidget(parent)
 {
 
 }
 
-void TTKColorTablePlane::init()
+void TTKColorTableWidget::init()
 {
     QFile file(":/res/rgb");
     if(file.open(QFile::ReadOnly))

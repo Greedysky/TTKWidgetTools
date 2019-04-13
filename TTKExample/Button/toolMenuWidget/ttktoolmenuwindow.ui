@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKToolMenuWindow</string>
+   <string>TTKToolMenuWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKToolMenuWidget" name="toolButton">

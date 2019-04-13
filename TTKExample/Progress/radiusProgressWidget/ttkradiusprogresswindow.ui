@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKRadiusProgressWindow</string>
+   <string>TTKRadiusProgressWidget</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKRadiusProgressWindow{background:rgb(50, 50, 50);}</string>

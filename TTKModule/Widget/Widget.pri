@@ -18,7 +18,7 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/colorTablePlane/ColorTablePlane.pri)
+include($$PWD/colorTableWidget/ColorTableWidget.pri)
 include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
 include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)
 include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)

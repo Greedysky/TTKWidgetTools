@@ -16,8 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkcolortableplanewindow.cpp
+SOURCES += $$PWD/ttkcolortablewindow.cpp
 
-HEADERS += $$PWD/ttkcolortableplanewindow.h
+HEADERS += $$PWD/ttkcolortablewindow.h
 
-FORMS   += $$PWD/ttkcolortableplanewindow.ui
+FORMS   += $$PWD/ttkcolortablewindow.ui

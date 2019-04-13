@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKLoadingWindow</string>
+   <string>TTKLoadingWidget</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKLoadingWindow{background:rgb(50, 50, 50);}</string>

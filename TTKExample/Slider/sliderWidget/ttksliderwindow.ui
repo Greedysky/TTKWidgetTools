@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKSliderWindow</string>
+   <string>TTKSliderWidget</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKSliderWindow{background:rgb(50, 50, 50);}</string>

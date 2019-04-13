@@ -19,13 +19,13 @@
 INCLUDEPATH += $$PWD
 
 !contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
-HEADERS += $$PWD/ttkcolortableplane.h
+HEADERS += $$PWD/ttkcolortablewidget.h
 
 }
 
 contains(CONFIG, TTK_BUILD_LIB){
-SOURCES += $$PWD/ttkcolortableplane.cpp
+SOURCES += $$PWD/ttkcolortablewidget.cpp
 
-RESOURCES += $$PWD/ColorTablePlane.qrc
+RESOURCES += $$PWD/ColorTableWidget.qrc
 
 }

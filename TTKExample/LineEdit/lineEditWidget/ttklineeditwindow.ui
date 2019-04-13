@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKLineEditWindow</string>
+   <string>TTKLineEditWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKLineEditWidget" name="widget" native="true">

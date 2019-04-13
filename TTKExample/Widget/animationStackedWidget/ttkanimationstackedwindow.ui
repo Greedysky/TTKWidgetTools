@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKStackedWidget</string>
+   <string>TTKAnimationStackedWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKAnimationStackedWidget" name="stackedWidget">

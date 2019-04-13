@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKLedPageWindow</string>
+   <string>TTKLedPageLabel</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKLedPageLabel" name="widget" native="true">

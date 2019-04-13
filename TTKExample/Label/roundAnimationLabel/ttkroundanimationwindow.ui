@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKRoundAnimationWindow</string>
+   <string>TTKRoundAnimationLabel</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKRoundAnimationLabel" name="widget" native="true">

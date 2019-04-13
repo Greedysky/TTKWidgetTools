@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKPictureBannerWindow</string>
+   <string>TTKPictureBannerWidget</string>
   </property>
   <widget class="TTKPictureBannerWidget" name="widget">
   </widget>

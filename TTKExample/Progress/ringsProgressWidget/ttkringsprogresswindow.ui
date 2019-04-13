@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKRingsProgressWindow</string>
+   <string>TTKRingsProgressWidget</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKRingsProgressWindow{background:rgb(50, 50, 50);}</string>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKCircularProgressWindow</string>
+   <string>TTKCircularProgressWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKCircularProgressWidget" name="widget" native="true">

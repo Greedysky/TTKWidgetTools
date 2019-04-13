@@ -49,7 +49,7 @@
 //
 #include "animationStackedWidget/ttkanimationstackedwindow.h"
 #include "animation2StackedWidget/ttkanimation2stackedwindow.h"
-#include "colorTablePlane/ttkcolortableplanewindow.h"
+#include "colorTableWidget/ttkcolortablewindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "pictureBannerWidget/ttkpicturebannerwindow.h"
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
@@ -143,7 +143,7 @@ MainWindow::MainWindow(QWidget *parent)
     QButtonGroup *widgetsGroup = new QButtonGroup(this);
     widgetsGroup->addButton(ui->animationStackedWidget, 0);
     widgetsGroup->addButton(ui->animation2StackedWidget, 1);
-    widgetsGroup->addButton(ui->colorTablePlane, 2);
+    widgetsGroup->addButton(ui->colorTableWidget, 2);
     widgetsGroup->addButton(ui->layoutAnimationWidget, 3);
     widgetsGroup->addButton(ui->pictureBannerWidget, 4);
     widgetsGroup->addButton(ui->pictureFlowWidget, 5);
@@ -310,7 +310,7 @@ void MainWindow::widgetModuleChanged(int index)
             break;
         case 1: (new TTKAnimation2StackedWindow(this))->show();
             break;
-        case 2: (new TTKColorTablePlaneWindow(this))->show();
+        case 2: (new TTKColorTableWindow(this))->show();
             break;
         case 3: (new TTKLayoutAnimationWindow(this))->show();
             break;

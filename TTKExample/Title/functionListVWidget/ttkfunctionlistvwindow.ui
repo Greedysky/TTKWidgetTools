@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKFunctionListVWindow</string>
+   <string>TTKFunctionListVWidget</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKFunctionListVWindow{background:rgb(79, 200, 255);}</string>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKMarqueeWindow</string>
+   <string>TTKMarqueeWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="TTKMarqueeWidget" name="widget" native="true">
