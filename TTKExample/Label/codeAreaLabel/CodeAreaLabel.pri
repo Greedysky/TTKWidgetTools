@@ -16,14 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkcodearealabelwindow.cpp
 
-include($$PWD/circleClickLabel/CircleClickLabel.pri)
-include($$PWD/codeAreaLabel/CodeAreaLabel.pri)
-include($$PWD/ledPageLabel/LedPageLabel.pri)
-include($$PWD/marqueeLabel/MarqueeLabel.pri)
-include($$PWD/roundAnimationLabel/RoundAnimationLabel.pri)
-include($$PWD/splitItemLabel/SplitItemLabel.pri)
-include($$PWD/toastLabel/ToastLabel.pri)
-include($$PWD/transitionAnimationLabel/TransitionAnimationLabel.pri)
+HEADERS += $$PWD/ttkcodearealabelwindow.h
 
+FORMS   += $$PWD/ttkcodearealabelwindow.ui

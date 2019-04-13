@@ -8,10 +8,9 @@
 #include "toggleWidget/ttktogglewindow.h"
 #include "toolMenuWidget/ttktoolmenuwindow.h"
 //
-#include "circleClickPlane/ttkcircleclickplanewindow.h"
-#include "codeAreaWidget/ttkcodeareawindow.h"
-#include "grabItemWidget/ttkgrabitemwindow.h"
-#include "marqueeWidget/ttkmarqueewindow.h"
+#include "circleClickLabel/ttkcircleclicklabelwindow.h"
+#include "codeAreaLabel/ttkcodearealabelwindow.h"
+#include "marqueeLabel/ttkmarqueelabelwindow.h"
 #include "roundAnimationLabel/ttkroundanimationwindow.h"
 #include "splitItemLabel/ttksplititemwindow.h"
 #include "toastLabel/ttktoastwindow.h"
@@ -29,7 +28,7 @@
 #include "animationProgressWidget/ttkanimationprogresswindow.h"
 #include "circularProgressWidget/ttkcircularprogresswindow.h"
 #include "gifLabelWidget/ttkgiflabelwindow.h"
-#include "progressCircleWidget/ttkprogresscirclewindow.h"
+#include "circleProgressWidget/ttkcircleprogresswindow.h"
 #include "progressWidget/ttkprogresswindow.h"
 #include "radiusProgressWidget/ttkradiusprogresswindow.h"
 #include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
@@ -39,7 +38,7 @@
 //
 #include "movingLabelSlider/ttkmovinglabelwindow.h"
 #include "shiningSlider/ttkshiningsliderwindow.h"
-#include "sliderWidget/ttksliderwindow.h"
+#include "styleSlider/ttkstylesliderwindow.h"
 //
 #include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
 #include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
@@ -50,6 +49,7 @@
 #include "animationStackedWidget/ttkanimationstackedwindow.h"
 #include "animation2StackedWidget/ttkanimation2stackedwindow.h"
 #include "colorTableWidget/ttkcolortablewindow.h"
+#include "grabItemWidget/ttkgrabitemwindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"
 #include "pictureBannerWidget/ttkpicturebannerwindow.h"
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
@@ -90,15 +90,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(buttonsGroup, SIGNAL(buttonClicked(int)), SLOT(buttonModuleChanged(int)));
     //
     QButtonGroup *labelsGroup = new QButtonGroup(this);
-    labelsGroup->addButton(ui->circleClickPlane, 0);
-    labelsGroup->addButton(ui->codeAreaWidget, 1);
-    labelsGroup->addButton(ui->grabItemWidget, 2);
-    labelsGroup->addButton(ui->marqueeWidget, 3);
-    labelsGroup->addButton(ui->roundAnimationLabel, 4);
-    labelsGroup->addButton(ui->splitItemLabel, 5);
-    labelsGroup->addButton(ui->toastLabel, 6);
-    labelsGroup->addButton(ui->transitionAnimationLabel, 7);
-    labelsGroup->addButton(ui->ledPageLabel, 8);
+    labelsGroup->addButton(ui->circleClickLabel, 0);
+    labelsGroup->addButton(ui->codeAreaLabel, 1);
+    labelsGroup->addButton(ui->marqueeLabel, 2);
+    labelsGroup->addButton(ui->roundAnimationLabel, 3);
+    labelsGroup->addButton(ui->splitItemLabel, 4);
+    labelsGroup->addButton(ui->toastLabel, 5);
+    labelsGroup->addButton(ui->transitionAnimationLabel, 6);
+    labelsGroup->addButton(ui->ledPageLabel, 7);
     connect(labelsGroup, SIGNAL(buttonClicked(int)), SLOT(labelModuleChanged(int)));
     //
     QButtonGroup *lineEditsGroup = new QButtonGroup(this);
@@ -117,7 +116,7 @@ MainWindow::MainWindow(QWidget *parent)
     progressGroup->addButton(ui->animationProgressWidget, 0);
     progressGroup->addButton(ui->circularProgressWidget, 1);
     progressGroup->addButton(ui->gifLabelWidget, 2);
-    progressGroup->addButton(ui->progressCircleWidget, 3);
+    progressGroup->addButton(ui->circleProgressWidget, 3);
     progressGroup->addButton(ui->progressWidget, 4);
     progressGroup->addButton(ui->radiusProgressWidget, 5);
     progressGroup->addButton(ui->ringsMapProgressWidget, 6);
@@ -129,7 +128,7 @@ MainWindow::MainWindow(QWidget *parent)
     QButtonGroup *slidersGroup = new QButtonGroup(this);
     slidersGroup->addButton(ui->movingLabelSlider, 0);
     slidersGroup->addButton(ui->shiningSlider, 1);
-    slidersGroup->addButton(ui->sliderWidget, 2);
+    slidersGroup->addButton(ui->styleSlider, 2);
     connect(slidersGroup, SIGNAL(buttonClicked(int)), SLOT(sliderModuleChanged(int)));
     //
     QButtonGroup *titlesGroup = new QButtonGroup(this);
@@ -144,10 +143,11 @@ MainWindow::MainWindow(QWidget *parent)
     widgetsGroup->addButton(ui->animationStackedWidget, 0);
     widgetsGroup->addButton(ui->animation2StackedWidget, 1);
     widgetsGroup->addButton(ui->colorTableWidget, 2);
-    widgetsGroup->addButton(ui->layoutAnimationWidget, 3);
-    widgetsGroup->addButton(ui->pictureBannerWidget, 4);
-    widgetsGroup->addButton(ui->pictureFlowWidget, 5);
-    widgetsGroup->addButton(ui->smoothMovingTableWidget, 6);
+    widgetsGroup->addButton(ui->grabItemWidget, 3);
+    widgetsGroup->addButton(ui->layoutAnimationWidget, 4);
+    widgetsGroup->addButton(ui->pictureBannerWidget, 5);
+    widgetsGroup->addButton(ui->pictureFlowWidget, 6);
+    widgetsGroup->addButton(ui->smoothMovingTableWidget, 7);
     connect(widgetsGroup, SIGNAL(buttonClicked(int)), SLOT(widgetModuleChanged(int)));
     //
     QButtonGroup *windowsGroup = new QButtonGroup(this);
@@ -186,23 +186,21 @@ void MainWindow::labelModuleChanged(int index)
 {
     switch(index)
     {
-        case 0: (new TTKCircleClickPlaneWindow(this))->show();
+        case 0: (new TTKCircleClickLabelWindow(this))->show();
             break;
-        case 1: (new TTKCodeAreaWindow(this))->show();
+        case 1: (new TTKCodeAreaLabelWindow(this))->show();
             break;
-        case 2: (new TTKGrabItemWindow(this))->show();
+        case 2: (new TTKMarqueeLabelWindow(this))->show();
             break;
-        case 3: (new TTKMarqueeWindow(this))->show();
+        case 3: (new TTKRoundAnimationWindow(this))->show();
             break;
-        case 4: (new TTKRoundAnimationWindow(this))->show();
+        case 4: (new TTKSplitItemWindow(this))->show();
             break;
-        case 5: (new TTKSplitItemWindow(this))->show();
+        case 5: (new TTKToastWindow(this))->show();
             break;
-        case 6: (new TTKToastWindow(this))->show();
+        case 6: (new TTKTransitionAnimationWindow(this))->show();
             break;
-        case 7: (new TTKTransitionAnimationWindow(this))->show();
-            break;
-        case 8: (new TTKLedPageWindow(this))->show();
+        case 7: (new TTKLedPageWindow(this))->show();
             break;
         default:
             break;
@@ -249,7 +247,7 @@ void MainWindow::progressModuleChanged(int index)
             break;
         case 2: (new TTKGifLabelWindow(this))->show();
             break;
-        case 3: (new TTKProgressCircleWindow(this))->show();
+        case 3: (new TTKCircleProgressWindow(this))->show();
             break;
         case 4: (new TTKProgressWindow(this))->show();
             break;
@@ -276,7 +274,7 @@ void MainWindow::sliderModuleChanged(int index)
             break;
         case 1: (new TTKShiningSliderWindow(this))->show();
             break;
-        case 2: (new TTKSliderWindow(this))->show();
+        case 2: (new TTKStyleSliderWindow(this))->show();
             break;
         default:
             break;
@@ -312,13 +310,15 @@ void MainWindow::widgetModuleChanged(int index)
             break;
         case 2: (new TTKColorTableWindow(this))->show();
             break;
-        case 3: (new TTKLayoutAnimationWindow(this))->show();
+        case 3: (new TTKGrabItemWindow(this))->show();
             break;
-        case 4: (new TTKPictureBannerWindow(this))->show();
+        case 4: (new TTKLayoutAnimationWindow(this))->show();
             break;
-        case 5: (new TTKPictureFlowWindow(this))->show();
+        case 5: (new TTKPictureBannerWindow(this))->show();
             break;
-        case 6: (new TTKSmoothMovingTableWindow(this))->show();
+        case 6: (new TTKPictureFlowWindow(this))->show();
+            break;
+        case 7: (new TTKSmoothMovingTableWindow(this))->show();
             break;
         default:
             break;

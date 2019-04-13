@@ -18,11 +18,10 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/circleClickPlane/CircleClickPlane.pri)
-include($$PWD/codeAreaWidget/CodeAreaWidget.pri)
-include($$PWD/grabItemWidget/GrabItemWidget.pri)
+include($$PWD/circleClickLabel/CircleClickLabel.pri)
+include($$PWD/codeAreaLabel/CodeAreaLabel.pri)
 include($$PWD/ledPageLabel/LedPageLabel.pri)
-include($$PWD/marqueeWidget/MarqueeWidget.pri)
+include($$PWD/marqueeLabel/MarqueeLabel.pri)
 include($$PWD/roundAnimationLabel/RoundAnimationLabel.pri)
 include($$PWD/splitItemLabel/SplitItemLabel.pri)
 include($$PWD/toastLabel/ToastLabel.pri)

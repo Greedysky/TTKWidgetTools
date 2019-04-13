@@ -16,14 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkcircleprogresswindow.cpp
 
-include($$PWD/circleClickLabel/CircleClickLabel.pri)
-include($$PWD/codeAreaLabel/CodeAreaLabel.pri)
-include($$PWD/ledPageLabel/LedPageLabel.pri)
-include($$PWD/marqueeLabel/MarqueeLabel.pri)
-include($$PWD/roundAnimationLabel/RoundAnimationLabel.pri)
-include($$PWD/splitItemLabel/SplitItemLabel.pri)
-include($$PWD/toastLabel/ToastLabel.pri)
-include($$PWD/transitionAnimationLabel/TransitionAnimationLabel.pri)
+HEADERS += $$PWD/ttkcircleprogresswindow.h
 
+FORMS   += $$PWD/ttkcircleprogresswindow.ui
