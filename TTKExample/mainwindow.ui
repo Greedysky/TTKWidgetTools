@@ -271,6 +271,13 @@
           </property>
          </widget>
         </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="ledPageLabel">
+          <property name="text">
+           <string>LedPageLabel</string>
+          </property>
+         </widget>
+        </item>
         <item row="3" column="0">
          <spacer name="verticalSpacer_2">
           <property name="orientation">

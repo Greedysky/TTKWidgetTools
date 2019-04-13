@@ -2,13 +2,10 @@
 
 #include <QPainter>
 
-//  setBackColor(QColor(255,85,85));
-//  setLineColor(QColor(250,250,250));
-//  setFrontColor(QColor(50,50,50));
 TTKLedPageLabel::TTKLedPageLabel(QWidget *parent)
     : QWidget(parent)
 {
-    setScale((float)0.6);
+    setScale(0.6);
     setBackColor(QColor(85,85,85));
     setFrontColor(QColor(255,255,255));
     setLineColor(QColor(60,60,60));
@@ -41,6 +38,7 @@ void TTKLedPageLabel::setScale(float scale)
 void TTKLedPageLabel::setText(const QString &text)
 {
     m_text = text;
+    update();
 }
 
 void TTKLedPageLabel::setFontSize(int size)

@@ -16,6 +16,7 @@
 #include "splitItemLabel/ttksplititemwindow.h"
 #include "toastLabel/ttktoastwindow.h"
 #include "transitionAnimationLabel/ttktransitionanimationwindow.h"
+#include "ledPageLabel/ttkledpagewindow.h"
 //
 #include "ipEditWidget/ttkipeditwindow.h"
 #include "lineEditWidget/ttklineeditwindow.h"
@@ -97,6 +98,7 @@ MainWindow::MainWindow(QWidget *parent)
     labelsGroup->addButton(ui->splitItemLabel, 5);
     labelsGroup->addButton(ui->toastLabel, 6);
     labelsGroup->addButton(ui->transitionAnimationLabel, 7);
+    labelsGroup->addButton(ui->ledPageLabel, 8);
     connect(labelsGroup, SIGNAL(buttonClicked(int)), SLOT(labelModuleChanged(int)));
     //
     QButtonGroup *lineEditsGroup = new QButtonGroup(this);
@@ -199,6 +201,8 @@ void MainWindow::labelModuleChanged(int index)
         case 6: (new TTKToastWindow(this))->show();
             break;
         case 7: (new TTKTransitionAnimationWindow(this))->show();
+            break;
+        case 8: (new TTKLedPageWindow(this))->show();
             break;
         default:
             break;
