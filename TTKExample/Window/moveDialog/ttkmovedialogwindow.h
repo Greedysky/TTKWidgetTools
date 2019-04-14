@@ -26,6 +26,7 @@ namespace Ui {
 class TTKMoveDialogWindow;
 }
 
+class TTKMoveDialog;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
@@ -38,9 +39,11 @@ public:
 
 private Q_SLOTS:
     void changed();
+    void closeWidget();
 
 private:
     Ui::TTKMoveDialogWindow *ui;
+    TTKMoveDialog *m_widget;
 
 };
 

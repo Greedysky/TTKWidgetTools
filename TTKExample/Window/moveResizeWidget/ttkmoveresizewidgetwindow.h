@@ -26,6 +26,7 @@ namespace Ui {
 class TTKMoveResizeWidgetWindow;
 }
 
+class TTKMoveResizeWidget;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
@@ -38,9 +39,11 @@ public:
 
 private Q_SLOTS:
     void changed();
+    void closeWidget();
 
 private:
     Ui::TTKMoveResizeWidgetWindow *ui;
+    TTKMoveResizeWidget *m_widget;
 
 };
 
