@@ -29,6 +29,8 @@ MOC_DIR = ./.build/moc
 OBJECTS_DIR = ./.build/obj
 RCC_DIR = ./.build/rcc
 
+include(TTKVersion.pri)
+
 win32{
     equals(QT_MAJOR_VERSION, 5){
         msvc{
