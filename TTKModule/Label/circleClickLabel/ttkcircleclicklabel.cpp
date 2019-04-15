@@ -12,7 +12,7 @@ TTKCircleClickLabel::TTKCircleClickLabel(QWidget *parent)
 
     m_circleTimer = new QTimer(this);
     m_circleTimer->setInterval(20);
-    connect(m_circleTimer, SIGNAL(timeout()), SLOT(updateValue()));
+    connect(m_circleTimer, SIGNAL(timeout()), SLOT(updateRender()));
 }
 
 TTKCircleClickLabel::~TTKCircleClickLabel()
@@ -20,7 +20,7 @@ TTKCircleClickLabel::~TTKCircleClickLabel()
     delete m_circleTimer;
 }
 
-void TTKCircleClickLabel::updateValue()
+void TTKCircleClickLabel::updateRender()
 {
     m_crValue += 2;
     if(m_crValue >= 40)

@@ -16,7 +16,7 @@ TTKSmoothMovingTableWidget::TTKSmoothMovingTableWidget(QWidget *parent)
     m_animationTimer = new QTimer(this);
     m_animationTimer->setInterval(100);
 
-    connect(m_animationTimer, SIGNAL(timeout()), SLOT(timeToAnimation()));
+    connect(m_animationTimer, SIGNAL(timeout()), SLOT(updateRender()));
 }
 
 TTKSmoothMovingTableWidget::~TTKSmoothMovingTableWidget()
@@ -35,7 +35,7 @@ void TTKSmoothMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
     connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(valueChanged(int)));
 }
 
-void TTKSmoothMovingTableWidget::timeToAnimation()
+void TTKSmoothMovingTableWidget::updateRender()
 {
     m_isFirstInit = true;
     m_animationTimer->stop();

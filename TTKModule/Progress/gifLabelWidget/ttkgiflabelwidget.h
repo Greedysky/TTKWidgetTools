@@ -67,7 +67,7 @@ public:
     inline bool isRunning() const { return m_isRunning; }
 
 public Q_SLOTS:
-    void timeout();
+    void updateRender();
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

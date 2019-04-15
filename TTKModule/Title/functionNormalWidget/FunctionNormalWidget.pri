@@ -18,8 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/functionAnimationWidget/FunctionAnimationWidget.pri)
-include($$PWD/functionListHWidget/FunctionListHWidget.pri)
-include($$PWD/functionListVWidget/FunctionListVWidget.pri)
-include($$PWD/functionNormalWidget/FunctionNormalWidget.pri)
-include($$PWD/functionToolboxWidget/FunctionToolboxWidget.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkfunctionnormalwidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkfunctionnormalwidget.cpp
+
+}

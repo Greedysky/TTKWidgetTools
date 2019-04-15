@@ -14,7 +14,7 @@ TTKLedPageWindow::TTKLedPageWindow(QWidget *parent)
     ui->widget_2->setFrontColor(QColor(50, 50, 50));
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
     m_timer->start(1000);
 }
@@ -24,7 +24,7 @@ TTKLedPageWindow::~TTKLedPageWindow()
     delete ui;
 }
 
-void TTKLedPageWindow::updateProgressbar()
+void TTKLedPageWindow::updateRender()
 {
     ui->widget->setText(QString::number(qrand() % 100 + 1));
     ui->widget_2->setText(QString::number(qrand() % 100 + 1));

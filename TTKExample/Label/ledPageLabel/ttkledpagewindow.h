@@ -37,7 +37,7 @@ public:
     ~TTKLedPageWindow();
 
 public Q_SLOTS:
-    void updateProgressbar();
+    void updateRender();
 
 private:
     Ui::TTKLedPageWindow *ui;

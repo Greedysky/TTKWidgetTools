@@ -12,7 +12,7 @@ TTKToastLabel::TTKToastLabel(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
 
     m_font = font();
-    connect(&m_timer, SIGNAL(timeout()), SLOT(closeAnimation()));
+    connect(&m_timer, SIGNAL(timeout()), SLOT(updateRender()));
     m_timer.setInterval(1500);
     m_timer.start();
 }
@@ -89,7 +89,7 @@ void TTKToastLabel::setText(const QString &text)
     QLabel::setText(text);
 }
 
-void TTKToastLabel::closeAnimation()
+void TTKToastLabel::updateRender()
 {
     m_timer.stop();
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);

@@ -37,7 +37,7 @@ public:
     void setMovedScrollBar(QScrollBar *bar);
 
 public Q_SLOTS:
-    void timeToAnimation();
+    void updateRender();
     void valueChanged(int value);
 
 protected:

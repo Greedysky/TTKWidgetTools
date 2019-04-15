@@ -11,7 +11,7 @@ TTKRingsMapProgressWindow::TTKRingsMapProgressWindow(QWidget *parent)
     ui->setupUi(this);
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
     m_timer->start(100);
 }
@@ -21,7 +21,7 @@ TTKRingsMapProgressWindow::~TTKRingsMapProgressWindow()
     delete ui;
 }
 
-void TTKRingsMapProgressWindow::updateProgressbar()
+void TTKRingsMapProgressWindow::updateRender()
 {
     if(m_value >= 100)
     {

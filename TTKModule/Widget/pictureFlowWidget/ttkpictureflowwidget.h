@@ -151,7 +151,7 @@ public Q_SLOTS:
     void triggerRender();
 
 private Q_SLOTS:
-    void updateAnimation();
+    void updateRender();
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

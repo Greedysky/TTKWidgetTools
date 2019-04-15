@@ -474,7 +474,7 @@ void TTKPictureBannerWidget::switchPage(int flag)
     m_view->startAnimation(flag);
 }
 
-void TTKPictureBannerWidget::slotTimeOut()
+void TTKPictureBannerWidget::updateRender()
 {
     switchPage(1);
 }
@@ -492,7 +492,7 @@ void TTKPictureBannerWidget::init()
     connect(m_view, SIGNAL(clicked(int)), this, SLOT(switchPage(int)));
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimeOut()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
     QHBoxLayout *bottomLayout = new QHBoxLayout();
     bottomLayout->setSpacing(0);

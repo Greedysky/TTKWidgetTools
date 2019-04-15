@@ -37,7 +37,7 @@ public:
     ~TTKRadiusProgressWindow();
 
 public Q_SLOTS:
-    void updateProgressbar();
+    void updateRender();
 
 private:
     Ui::TTKRadiusProgressWindow *ui;

@@ -30,7 +30,7 @@ TTKRoundProgressWindow::TTKRoundProgressWindow(QWidget *parent)
     ui->label3->setControlFlags(TTKRoundProgressWidget::All);
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
     m_timer->start(1000);
 }
@@ -40,7 +40,7 @@ TTKRoundProgressWindow::~TTKRoundProgressWindow()
     delete ui;
 }
 
-void TTKRoundProgressWindow::updateProgressbar()
+void TTKRoundProgressWindow::updateRender()
 {
     ui->label->setText(qrand() % 100 + 1);
     ui->label2->setText(qrand() % 100 + 1);

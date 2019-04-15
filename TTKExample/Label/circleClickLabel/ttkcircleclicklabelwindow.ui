@@ -27,7 +27,7 @@
   <customwidget>
    <class>TTKCircleClickLabel</class>
    <extends>QWidget</extends>
-   <header>ttkcircleclickLabel.h</header>
+   <header>ttkcircleclicklabel.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

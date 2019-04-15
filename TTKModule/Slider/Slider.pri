@@ -20,4 +20,4 @@ INCLUDEPATH += $$PWD
 
 include($$PWD/movingLabelSlider/MovingLabelSlider.pri)
 include($$PWD/shiningSlider/ShiningSlider.pri)
-include($$PWD/styleSlider/styleSlider.pri)
+include($$PWD/styleSlider/StyleSlider.pri)

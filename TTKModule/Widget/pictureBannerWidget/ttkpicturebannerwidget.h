@@ -175,7 +175,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void switchIndicator();
     void switchPage(int flag);
-    void slotTimeOut();
+    void updateRender();
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

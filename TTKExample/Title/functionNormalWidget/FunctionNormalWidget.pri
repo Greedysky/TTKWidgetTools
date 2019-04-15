@@ -16,10 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkfunctionnormalwindow.cpp
 
-include($$PWD/functionAnimationWidget/FunctionAnimationWidget.pri)
-include($$PWD/functionListHWidget/FunctionListHWidget.pri)
-include($$PWD/functionListVWidget/FunctionListVWidget.pri)
-include($$PWD/functionNormalWidget/FunctionNormalWidget.pri)
-include($$PWD/functionToolboxWidget/FunctionToolboxWidget.pri)
+HEADERS += $$PWD/ttkfunctionnormalwindow.h
+
+FORMS   += $$PWD/ttkfunctionnormalwindow.ui

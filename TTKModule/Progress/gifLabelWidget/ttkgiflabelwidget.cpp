@@ -26,7 +26,7 @@ TTKGifLabelWidget::TTKGifLabelWidget(QWidget *parent)
 
     m_timer = new QTimer(this);
     m_timer->setInterval(100);
-    connect(m_timer, SIGNAL(timeout()), SLOT(timeout()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 }
 
 TTKGifLabelWidget::TTKGifLabelWidget(Type type, QWidget *parent)
@@ -109,7 +109,7 @@ void TTKGifLabelWidget::stop()
     m_isRunning = false;
 }
 
-void TTKGifLabelWidget::timeout()
+void TTKGifLabelWidget::updateRender()
 {
     ++m_index;
     switch(m_type)

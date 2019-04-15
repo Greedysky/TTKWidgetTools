@@ -762,7 +762,7 @@ TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
 
     m_useResize = false;
 
-    connect(&m_animator->m_animateTimer, SIGNAL(timeout()), SLOT(updateAnimation()));
+    connect(&m_animator->m_animateTimer, SIGNAL(timeout()), SLOT(updateRender()));
     connect(&m_triggerTimer, SIGNAL(timeout()), SLOT(render()));
 }
 
@@ -995,7 +995,7 @@ void TTKPictureFlowWidget::resizeEvent(QResizeEvent *event)
     }
 }
 
-void TTKPictureFlowWidget::updateAnimation()
+void TTKPictureFlowWidget::updateRender()
 {
     int center = m_state->m_centerIndex;
     m_animator->update();

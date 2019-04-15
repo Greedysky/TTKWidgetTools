@@ -41,7 +41,7 @@ void TTKSpeedMeterWidget::setAnimating(bool enable)
     update();
 }
 
-void TTKSpeedMeterWidget::updateGraph()
+void TTKSpeedMeterWidget::updateRender()
 {
     if(m_bReverse)
     {
@@ -100,7 +100,7 @@ void TTKSpeedMeterWidget::initVariables()
 
     m_updateTimer = new QTimer(this);
     m_updateTimer->setInterval(10);
-    connect(m_updateTimer, SIGNAL(timeout()), SLOT(updateGraph()));
+    connect(m_updateTimer, SIGNAL(timeout()), SLOT(updateRender()));
     m_singleTimer = new QTimer(this);
     m_singleTimer->setInterval(100);
     connect(m_singleTimer, SIGNAL(timeout()), SLOT(update()));

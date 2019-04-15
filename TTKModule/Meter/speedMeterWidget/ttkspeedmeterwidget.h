@@ -41,7 +41,7 @@ public:
     bool isAnimating() const { return m_bAnimating;}
 
 private Q_SLOTS:
-    void updateGraph();
+    void updateRender();
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

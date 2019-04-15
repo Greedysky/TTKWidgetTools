@@ -1,5 +1,5 @@
-#ifndef TTKTOASTLABEL_H
-#define TTKTOASTLABEL_H
+#ifndef TTKFUNCTIONNORMALWIDGET_H
+#define TTKFUNCTIONNORMALWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -20,45 +20,43 @@
  ================================================= */
 
 #include <QLabel>
-#include <QTimer>
 #include "ttkglobaldefine.h"
 
+class QTimer;
+
 /*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_CORE_EXPORT TTKToastLabel : public QLabel
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_CORE_EXPORT TTKFunctionNormalWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKToastLabel(QWidget *parent = nullptr);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
-    ~TTKToastLabel();
+    explicit TTKFunctionNormalWidget(QWidget *parent = nullptr);
 
-    void setFontMargin(int height, int width);
-    void setTimerInterval(int msecond);
-    int getTimerInterval() const;
+    void setSize(qreal w, qreal h);
+    void addItem(const QString &text);
 
-    void setFontSize(int size);
-    int getFontSize() const;
-
-    void setBold(bool bold);
-    bool bold() const;
-
-    void popup(QWidget *parent);
-
-public Q_SLOTS:
-    void setText(const QString &text);
-
-private Q_SLOTS:
+protected Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
 
-    QTimer m_timer;
-    QFont m_font;
-    QPoint m_margin;
+    void drawItem(QPainter *painter);
+    void drawChooseItem(QPainter* painter);
+    void drawListWidget(QPainter* painter);
+
+    int m_height, m_width;
+    int m_backGroundColor, m_oldChooseBackGround, m_newChooseBackGround;
+
+    int m_itemOffset;
+    int m_chooseIndex;
+
+    QTimer* m_timer;
+    QVector<QString> m_items;
 
 };
 
-#endif // TTKTOASTLABEL_H
+#endif // TTKFUNCTIONNORMALWIDGET_H

@@ -33,7 +33,7 @@ public:
     ~TTKCircleClickLabel();
 
 protected Q_SLOTS:
-    void updateValue();
+    void updateRender();
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;

@@ -37,7 +37,7 @@ public:
     ~TTKRoundProgressWindow();
 
 public Q_SLOTS:
-    void updateProgressbar();
+    void updateRender();
 
 private:
     Ui::TTKRoundProgressWindow *ui;

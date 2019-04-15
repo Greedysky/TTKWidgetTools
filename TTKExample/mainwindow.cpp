@@ -45,6 +45,7 @@
 #include "functionListHWidget/ttkfunctionlisthwindow.h"
 #include "functionListVWidget/ttkfunctionlistvwindow.h"
 #include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
+#include "functionNormalWidget/ttkfunctionnormalwindow.h"
 //
 #include "animationStackedWidget/ttkanimationstackedwindow.h"
 #include "animation2StackedWidget/ttkanimation2stackedwindow.h"
@@ -137,6 +138,7 @@ MainWindow::MainWindow(QWidget *parent)
     titlesGroup->addButton(ui->functionListHWidget, 2);
     titlesGroup->addButton(ui->functionListVWidget, 3);
     titlesGroup->addButton(ui->functionToolboxWidget, 4);
+    titlesGroup->addButton(ui->functionNormalWidget, 5);
     connect(titlesGroup, SIGNAL(buttonClicked(int)), SLOT(titleModuleChanged(int)));
     //
     QButtonGroup *widgetsGroup = new QButtonGroup(this);
@@ -294,6 +296,8 @@ void MainWindow::titleModuleChanged(int index)
         case 3: (new TTKFunctionListVWindow(this))->show();
             break;
         case 4: (new TTKFunctionToolBoxWindow(this))->show();
+            break;
+        case 5: (new TTKFunctionNormalWindow(this))->show();
             break;
         default:
             break;

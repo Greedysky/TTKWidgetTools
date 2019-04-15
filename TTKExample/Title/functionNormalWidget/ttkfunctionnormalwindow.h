@@ -1,5 +1,5 @@
-#ifndef TTKTOASTLABEL_H
-#define TTKTOASTLABEL_H
+#ifndef TTKFUNCTIONNORMALWINDOW_H
+#define TTKFUNCTIONNORMALWINDOW_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,46 +19,26 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLabel>
-#include <QTimer>
+#include <QMainWindow>
 #include "ttkglobaldefine.h"
 
+namespace Ui {
+class TTKFunctionNormalWindow;
+}
+
 /*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_CORE_EXPORT TTKToastLabel : public QLabel
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_CORE_EXPORT TTKFunctionNormalWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit TTKToastLabel(QWidget *parent = nullptr);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
-    ~TTKToastLabel();
+    explicit TTKFunctionNormalWindow(QWidget *parent = nullptr);
+    ~TTKFunctionNormalWindow();
 
-    void setFontMargin(int height, int width);
-    void setTimerInterval(int msecond);
-    int getTimerInterval() const;
-
-    void setFontSize(int size);
-    int getFontSize() const;
-
-    void setBold(bool bold);
-    bool bold() const;
-
-    void popup(QWidget *parent);
-
-public Q_SLOTS:
-    void setText(const QString &text);
-
-private Q_SLOTS:
-    void updateRender();
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-    QTimer m_timer;
-    QFont m_font;
-    QPoint m_margin;
+private:
+    Ui::TTKFunctionNormalWindow *ui;
 
 };
 
-#endif // TTKTOASTLABEL_H
+#endif // TTKFUNCTIONNORMALWINDOW_H

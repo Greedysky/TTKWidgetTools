@@ -11,7 +11,7 @@ TTKRadiusProgressWindow::TTKRadiusProgressWindow(QWidget *parent)
     ui->setupUi(this);
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateProgressbar()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
     m_timer->start(100);
 }
@@ -21,7 +21,7 @@ TTKRadiusProgressWindow::~TTKRadiusProgressWindow()
     delete ui;
 }
 
-void TTKRadiusProgressWindow::updateProgressbar()
+void TTKRadiusProgressWindow::updateRender()
 {
     if(m_value >= 100)
     {
