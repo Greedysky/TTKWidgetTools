@@ -26,6 +26,4 @@ HEADERS += $$PWD/ttkringsprogresswidget.h
 contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkringsprogresswidget.cpp
 
-RESOURCES += $$PWD/RingsProgressWidget.qrc
-
 }
