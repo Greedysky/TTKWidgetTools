@@ -20,19 +20,37 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobaldefine.h"
+#include "ttkgrabitemwidget.h"
+
+class TTK_CORE_EXPORT TTKbackgroundContainerItem : public TTKGrabItemWidget
+{
+    Q_OBJECT
+public:
+    explicit TTKbackgroundContainerItem(QWidget *parent = nullptr);
+    ~TTKbackgroundContainerItem();
+
+    void addItem(QWidget *item);
+
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+    QWidget *m_item;
+};
+
 
 class TTK_CORE_EXPORT TTKbackgroundContainer : public QWidget
 {
     Q_OBJECT
 public:
     explicit TTKbackgroundContainer(QWidget *parent = nullptr);
+    ~TTKbackgroundContainer();
+
+    void addItem(QWidget *item);
 
 private:
-//    virtual void mousePressEvent(QMouseEvent *event) override;
-//    virtual void mouseReleaseEvent(QMouseEvent *event) override;
-//    virtual void mouseMoveEvent(QMouseEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
+
+    TTKbackgroundContainerItem *m_item;
 };
 
 #endif // TTKBACKGROUNDCONTAINER_H

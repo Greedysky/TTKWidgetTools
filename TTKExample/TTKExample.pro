@@ -41,6 +41,8 @@ unix{
     LIBS += -L../lib -lTTKCore
 }
 
+INCLUDEPATH += $$PWD
+
 SOURCES += \
     $$PWD/ttkfunctionitem.cpp \
     $$PWD/ttkbackgroundcontainer.cpp \

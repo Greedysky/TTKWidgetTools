@@ -11,15 +11,9 @@ TTKGrabItemWidget::TTKGrabItemWidget(QWidget *parent)
 {
     m_direction = Direction_No;
     m_isPressed = false;
-    m_geometricStretch = false;
-    m_crossStretch = false;
+    m_crossStretch = true;
 
     setMouseTracking(true);
-}
-
-void TTKGrabItemWidget::setBorderRect(const QRect &rect)
-{
-    m_borderRect = rect - QMargins(1, 1, 1, 1);
 }
 
 void TTKGrabItemWidget::onMouseChange(int x, int y)
@@ -29,34 +23,10 @@ void TTKGrabItemWidget::onMouseChange(int x, int y)
         return;
     }
 
-    int rx = (x >= m_originPoint.x()) ? m_originPoint.x() : x;
-    int ry = (y >= m_originPoint.y()) ? m_originPoint.y() : y;
-    int rw = abs(x - m_originPoint.x());
-    int rh = abs(y - m_originPoint.y());
-
-    if(!m_borderRect.contains(QRect(rx, ry, rw, rh)))
-    {
-        return;
-    }
-
-    if(m_geometricStretch && m_direction != Direction_No)
-    {
-        switch(m_direction)
-        {
-            case Direction_Left:
-            case Direction_Right:
-            case Direction_LeftTop:
-            case Direction_LeftBottom:
-                rh = rw; break;
-            case Direction_Top:
-            case Direction_Bottom:
-            case Direction_RightTop:
-            case Direction_RightBottom:
-                rw = rh; break;
-            default:
-                break;
-        }
-    }
+    const int rx = (x >= m_originPoint.x()) ? m_originPoint.x() : x;
+    const int ry = (y >= m_originPoint.y()) ? m_originPoint.y() : y;
+    const int rw = abs(x - m_originPoint.x());
+    const int rh = abs(y - m_originPoint.y());
 
     m_currentRect = QRect(rx, ry, rw, rh);
     setGeometry(m_currentRect);
@@ -64,7 +34,6 @@ void TTKGrabItemWidget::onMouseChange(int x, int y)
 
 void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
 {
-//    QWidget::mousePressEvent(event);
     if(event->button() == Qt::LeftButton)
     {
         m_isPressed = true;
@@ -78,7 +47,6 @@ void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
 
 void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
 {
-//    QWidget::mouseReleaseEvent(event);
     if(event->button() == Qt::LeftButton)
     {
         m_isPressed = false;
@@ -93,16 +61,12 @@ void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
 
 void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
 {
-//    QWidget::mouseMoveEvent(event);
-    QPoint gloPoint = mapToParent(event->pos());
-    // left upper
-    QPoint pt_lu = mapToParent(rect().topLeft());
-    // left lower
-    QPoint pt_ll = mapToParent(rect().bottomLeft());
-    // right lower
-    QPoint pt_rl = mapToParent(rect().bottomRight());
-    // right upper
-    QPoint pt_ru = mapToParent(rect().topRight());
+    const QPoint &gloPoint = mapToParent(event->pos());
+
+    const QPoint &pt_lu = mapToParent(rect().topLeft());
+    const QPoint &pt_ll = mapToParent(rect().bottomLeft());
+    const QPoint &pt_rl = mapToParent(rect().bottomRight());
+    const QPoint &pt_ru = mapToParent(rect().topRight());
 
     if(!m_isPressed)
     {
@@ -149,19 +113,18 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
                 case Direction_LeftBottom:
                 case Direction_RightBottom:
                     if(m_crossStretch)
+                    {
                         return onMouseChange(gloPoint.x(), gloPoint.y());
-                    else break;
-                default:
-                    break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                default: break;
             }
         }
         else
         {
-            if(!m_borderRect.contains(QRect(event->globalPos() - m_movePos, size())))
-            {
-                return;
-            }
-
             move(event->globalPos() - m_movePos);
             m_movePos = event->globalPos() - pos();
         }
@@ -203,34 +166,29 @@ void TTKGrabItemWidget::paintEvent(QPaintEvent *event)
 TTKGrabItemWidget::Direction TTKGrabItemWidget::getRegion(const QPoint &cursor)
 {
     Direction ret_dir = Direction_No;
-    // left upper
-    QPoint pt_lu = mapToParent(rect().topLeft());
-    // right lower
-    QPoint pt_rl = mapToParent(rect().bottomRight());
 
-    int x = cursor.x();
-    int y = cursor.y();
+    const QPoint &pt_lu = mapToParent(rect().topLeft());
+    const QPoint &pt_rl = mapToParent(rect().bottomRight());
 
-    if(pt_lu.x() + PADDING >= x && pt_lu.x() <= x &&
-       pt_lu.y() + PADDING >= y && pt_lu.y() <= y)
+    const int x = cursor.x();
+    const int y = cursor.y();
+
+    if(pt_lu.x() + PADDING >= x && pt_lu.x() <= x && pt_lu.y() + PADDING >= y && pt_lu.y() <= y)
     {
         ret_dir = Direction_LeftTop;
         setCursor(QCursor(Qt::SizeFDiagCursor));
     }
-    else if(x >= pt_rl.x() - PADDING && x <= pt_rl.x() &&
-            y >= pt_rl.y() - PADDING && y <= pt_rl.y())
+    else if(x >= pt_rl.x() - PADDING && x <= pt_rl.x() && y >= pt_rl.y() - PADDING && y <= pt_rl.y())
     {
         ret_dir = Direction_RightBottom;
         setCursor(QCursor(Qt::SizeFDiagCursor));
     }
-    else if(x <= pt_lu.x() + PADDING && x >= pt_lu.x() &&
-            y >= pt_rl.y() - PADDING && y <= pt_rl.y())
+    else if(x <= pt_lu.x() + PADDING && x >= pt_lu.x() && y >= pt_rl.y() - PADDING && y <= pt_rl.y())
     {
         ret_dir = Direction_LeftBottom;
         setCursor(QCursor(Qt::SizeBDiagCursor));
     }
-    else if(x <= pt_rl.x() && x >= pt_rl.x() - PADDING &&
-            y >= pt_lu.y() && y <= pt_lu.y() + PADDING)
+    else if(x <= pt_rl.x() && x >= pt_rl.x() - PADDING && y >= pt_lu.y() && y <= pt_lu.y() + PADDING)
     {
         ret_dir = Direction_RightTop;
         setCursor(QCursor(Qt::SizeBDiagCursor));
@@ -263,11 +221,3 @@ TTKGrabItemWidget::Direction TTKGrabItemWidget::getRegion(const QPoint &cursor)
 
     return ret_dir;
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(5,3,0)
-QRect operator-(const QRect &rect, const QMargins &margins)
-{
-    return QRect(QPoint(rect.left() + margins.left(), rect.top() + margins.top()),
-                 QPoint(rect.right() - margins.right(), rect.bottom() - margins.bottom()));
-}
-#endif

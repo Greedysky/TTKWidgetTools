@@ -3,11 +3,11 @@
 #include "ttkfunctionitem.h"
 
 //
-#include "checkButtonWidget/ttkcheckbuttonwindow.h"
-#include "flatButtonWidget/ttkflatbuttonwindow.h"
-#include "radioButtonWidget/ttkradiobuttonwindow.h"
-#include "toggleWidget/ttktogglewindow.h"
-#include "toolMenuWidget/ttktoolmenuwindow.h"
+#include "checkButtonWidget/ttkcheckbuttonwidget.h"
+#include "flatButtonWidget/ttkflatbuttonwidget.h"
+#include "radioButtonWidget/ttkradiobuttonwidget.h"
+#include "toggleWidget/ttktogglewidget.h"
+#include "toolMenuWidget/ttktoolmenuwidget.h"
 //
 #include "circleClickLabel/ttkcircleclicklabelwindow.h"
 #include "codeAreaLabel/ttkcodearealabelwindow.h"
@@ -62,15 +62,25 @@
 #include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
 #include "moveWidget/ttkmovewidgetwindow.h"
 
-#define ITEM_ROW_HEIGHT     40
+
 #include <QButtonGroup>
-#include "ttkgrabitemwidget.h"
+
+const QString MBtnMinimum = " \
+        QToolButton{ border:none; \
+        background-image: url(:/image/btn_min_normal);} \
+        QToolButton:hover{ background-image: url(:/image/btn_min_hover);}";
+
+const QString MBtnTClose = " \
+        QToolButton{ border:none; \
+        background-image: url(:/image/btn_close_hover);} \
+        QToolButton:hover{ background-image: url(:/image/btn_close_hover);}";
 
 TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     : TTKMoveResizeWidget(parent),
     ui(new Ui::TTKToolsApplication)
 {
     ui->setupUi(this);
+
     //
     createButtonModule();
     //
@@ -90,9 +100,16 @@ TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     //
     createWindowModule();
 
-    TTKGrabItemWidget *ww = new TTKGrabItemWidget(ui->functionContainerWidget);
-    ww->setGeometry(QRect(1, 170, 200, 200));
-    ww->setStyleSheet("background:red");
+    ui->background->installEventFilter(this);
+    ui->background->setMouseTracking(true);
+
+    ui->minimization->setStyleSheet(MBtnMinimum);
+    ui->minimization->setCursor(QCursor(Qt::PointingHandCursor));
+    connect(ui->minimization, SIGNAL(clicked()), SLOT(showMinimized()));
+
+    ui->windowClose->setStyleSheet(MBtnTClose);
+    ui->windowClose->setCursor(QCursor(Qt::PointingHandCursor));
+    connect(ui->windowClose, SIGNAL(clicked()), SLOT(close()));
 }
 
 TTKToolsApplication::~TTKToolsApplication()
@@ -102,21 +119,23 @@ TTKToolsApplication::~TTKToolsApplication()
 
 void TTKToolsApplication::buttonModuleChanged(int index)
 {
+    QWidget *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKCheckButtonWindow(this))->show();
+        case 0: w = new TTKCheckButtonWidget;
             break;
-        case 1: (new TTKFlatButtonWindow(this))->show();
+        case 1: w = new TTKFlatButtonWidget;
             break;
-        case 2: (new TTKRadioButtonWindow(this))->show();
+        case 2: w = new TTKRadioButtonWidget;
             break;
-        case 3: (new TTKToggleWindow(this))->show();
+        case 3: w = new TTKToggleWidget;
             break;
-        case 4: (new TTKToolMenuWindow(this))->show();
+        case 4: w = new TTKToolMenuWidget;
             break;
         default:
             break;
     }
+    ui->functionContainerWidget->addItem(w);
 }
 
 void TTKToolsApplication::labelModuleChanged(int index)
@@ -264,7 +283,6 @@ void TTKToolsApplication::widgetModuleChanged(int index)
     }
 }
 
-
 void TTKToolsApplication::windowModuleChanged(int index)
 {
     switch(index)
@@ -284,180 +302,146 @@ void TTKToolsApplication::windowModuleChanged(int index)
 
 void TTKToolsApplication::createButtonModule()
 {
-    QWidget *widget = new QWidget(ui->functionListWidget);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKCheckButtonWidget");
+    widget->addItem("red", "TTKFlatButtonWidget");
+    widget->addItem("red", "TTKRadioButtonWidget");
+    widget->addItem("red", "TTKToggleWidget");
+    widget->addItem("red", "TTKToolMenuWidget");
+
     widget->setObjectName("buttonRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKCheckButtonWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKFlatButtonWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRadioButtonWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKToggleWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKToolMenuWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#buttonRow{background-color:rgba(255, 0, 0, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(buttonModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Button");
 }
 
 void TTKToolsApplication::createLabelModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKCircleClickLabel");
+    widget->addItem("red", "TTKCodeAreaLabel");
+    widget->addItem("red", "TTKLedPageLabel");
+    widget->addItem("red", "TTKMarqueeLabel");
+    widget->addItem("red", "TTKRoundAnimationLabel");
+    widget->addItem("red", "TTKSplitItemLabel");
+    widget->addItem("red", "TTKToastLabel");
+    widget->addItem("red", "TTKTransitionAnimationLabel");
+
     widget->setObjectName("labelRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKCircleClickLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKCodeAreaLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKLedPageLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKMarqueeLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRoundAnimationLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKSplitItemLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKToastLabel", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKTransitionAnimationLabel", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Label");
 }
 
 void TTKToolsApplication::createLineEditModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKIpEditWidget");
+    widget->addItem("red", "TTKLineEditWidget");
+
     widget->setObjectName("lineEidtRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKIpEditWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKLineEditWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#lineEidtRow{background-color:rgba(255, 255, 0, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "LineEdit");
 }
 
 void TTKToolsApplication::createMeterModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKPaintMeterWidget");
+    widget->addItem("red", "TTKRadarMeterWidget");
+    widget->addItem("red", "TTKSpeedMeterWidget");
+    widget->addItem("red", "TTKTimeMeterWidget");
+
     widget->setObjectName("meterRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKPaintMeterWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRadarMeterWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKSpeedMeterWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKTimeMeterWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Meter");
 }
 
 void TTKToolsApplication::createProgressModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKAnimationProgressWidget");
+    widget->addItem("red", "TTKCircleProgressWidget");
+    widget->addItem("red", "TTKCircularProgressWidget");
+    widget->addItem("red", "TTKGifLabelWidget");
+    widget->addItem("red", "TTKLoadingWidget");
+    widget->addItem("red", "TTKProgressWidget");
+    widget->addItem("red", "TTKRadiusProgressWidget");
+    widget->addItem("red", "TTKRingsMapProgressWidget");
+    widget->addItem("red", "TTKRingsProgressWidget");
+    widget->addItem("red", "TTKRoundProgressWidget");
+
     widget->setObjectName("progressRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKAnimationProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKCircleProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKCircularProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKGifLabelWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKLoadingWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRadiusProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRingsMapProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRingsProgressWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKRoundProgressWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Progress");
 }
 
 void TTKToolsApplication::createSliderModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKMovingLabelSlider");
+    widget->addItem("red", "TTKShiningSlider");
+    widget->addItem("red", "TTKStyleSlider");
+
     widget->setObjectName("sliderRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKMovingLabelSlider", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKShiningSlider", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKStyleSlider", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#sliderRow{background-color:rgba(0, 255, 255, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Silder");
 }
 
 void TTKToolsApplication::createTitleModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKOptionAnimationHWidget");
+    widget->addItem("red", "TTKSkinAnimationHWidget");
+    widget->addItem("red", "TTKTableAnimationHWidget");
+    widget->addItem("red", "TTKOptionAnimationVWidget");
+    widget->addItem("red", "TTKSkinAnimationVWidget");
+    widget->addItem("red", "TTKTableAnimationVWidget");
+    widget->addItem("red", "TTKFunctionListHWidget");
+    widget->addItem("red", "TTKFunctionListVWidget");
+    widget->addItem("red", "TTKFunctionNormalWidget");
+    widget->addItem("red", "TTKFunctionToolBoxWidget");
+
     widget->setObjectName("titleRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKOptionAnimationHWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKSkinAnimationHWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKTableAnimationHWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKOptionAnimationVWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKSkinAnimationVWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKTableAnimationVWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKFunctionListHWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKFunctionListVWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKFunctionNormalWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKFunctionToolBoxWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#titleRow{background-color:rgba(255, 0, 255, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Title");
 }
 
 void TTKToolsApplication::createWidgetModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKAnimationStackedWidget");
+    widget->addItem("red", "TTKAnimation2StackedWidget");
+    widget->addItem("red", "TTKColorTableWidget");
+    widget->addItem("red", "TTKGrabItemWidget");
+    widget->addItem("red", "TTKLayoutAnimationWidget");
+    widget->addItem("red", "TTKPictureBannerWidget");
+    widget->addItem("red", "TTKPictureFlowWidget");
+    widget->addItem("red", "TTKSmoothMovingTableWidget");
+
     widget->setObjectName("widgetRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKAnimationStackedWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKAnimation2StackedWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKColorTableWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKGrabItemWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKLayoutAnimationWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKPictureBannerWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKPictureFlowWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKSmoothMovingTableWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Widget");
 }
 
 void TTKToolsApplication::createWindowModule()
 {
-    QWidget *widget = new QWidget(this);
+    TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
+
+    widget->addItem("red", "TTKHlSaturationPalette");
+    widget->addItem("red", "TTKMoveDialog");
+    widget->addItem("red", "TTKMoveResizeWidget");
+    widget->addItem("red", "TTKMoveWidget");
+
     widget->setObjectName("windowRow");
-
-    QVBoxLayout *widgetayout = new QVBoxLayout(widget);
-    widgetayout->setContentsMargins(0, 0, 0, 0);
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKHlSaturationPalette", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKMoveDialog", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKMoveResizeWidget", widget));
-    widgetayout->addWidget(new TTKFunctionItem("red", "TTKMoveWidget", widget));
-
-    widget->setLayout(widgetayout);
     widget->setStyleSheet("#windowRow{background-color:rgba(255, 255, 255, 50)}");
-    widget->setFixedHeight(widgetayout->count() * ITEM_ROW_HEIGHT);
     ui->functionListWidget->addItem(widget, "Window");
 }

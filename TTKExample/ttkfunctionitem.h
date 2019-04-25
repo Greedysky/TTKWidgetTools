@@ -26,15 +26,38 @@ class TTK_CORE_EXPORT TTKFunctionItem : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionItem(const QString &path, const QString &text, QWidget *parent = nullptr);
+    explicit TTKFunctionItem(int index, const QString &path, const QString &text, QWidget *parent = nullptr);
     ~TTKFunctionItem();
 
     void setIcon(const QString &path);
     void setText(const QString &text);
 
+Q_SIGNALS:
+    void clicked(int index);
+
 private:
+    virtual void mousePressEvent(QMouseEvent *event) override;
+
+    int m_index;
     QLabel *m_iconLabel, *m_textLabel;
 
+};
+
+
+class TTK_CORE_EXPORT TTKFunctionItemRow : public QLabel
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionItemRow(QWidget *parent = nullptr);
+    ~TTKFunctionItemRow();
+
+    void addItem(const QString &path, const QString &text);
+
+Q_SIGNALS:
+    void rowClicked(int index);
+
+private:
+    QList<TTKFunctionItem*> m_items;
 };
 
 #endif // TTKFUNCTIONITEM_H

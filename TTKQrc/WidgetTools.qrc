@@ -2,5 +2,10 @@
     <qresource prefix="/image">
         <file alias="lb_app_logo">../TTKResource/lb_app_logo.ico</file>
         <file alias="lb_transparent">../TTKResource/lb_transparent.png</file>
+        <file alias="lb_background">../TTKResource/lb_background.png</file>
+        <file alias="btn_close_hover">../TTKResource/btn_close_hover.png</file>
+        <file alias="btn_close_normal">../TTKResource/btn_close_normal.png</file>
+        <file alias="btn_min_hover">../TTKResource/btn_min_hover.png</file>
+        <file alias="btn_min_normal">../TTKResource/btn_min_normal.png</file>
     </qresource>
 </RCC>

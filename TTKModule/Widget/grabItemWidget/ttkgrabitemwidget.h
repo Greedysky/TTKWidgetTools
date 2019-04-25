@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
+#include <QLabel>
 #include "ttkglobaldefine.h"
 
 /*!
@@ -44,9 +44,6 @@ public:
 
     explicit TTKGrabItemWidget(QWidget *parent = nullptr);
 
-    virtual void setBorderRect(const QRect &rect);
-    inline void setGeometricStretch(bool g) { m_geometricStretch = g;}
-    inline bool getGeometricStretch() const { return m_geometricStretch;}
     inline void setCrossStretch(bool c) { m_crossStretch = c;}
     inline bool gettCrossStretch() const { return m_crossStretch;}
 
@@ -66,18 +63,12 @@ protected:
     Direction getRegion(const QPoint &cursor);
 
     bool m_isPressed;
-    bool m_crossStretch, m_geometricStretch;
+    bool m_crossStretch;
     Direction m_direction;
     QPoint m_originPoint, m_movePos;
     QPolygon m_listMarker;
-    QRect m_currentRect, m_borderRect;
+    QRect m_currentRect;
 
 };
-
-
-#if QT_VERSION < QT_VERSION_CHECK(5,3,0)
-inline QRect operator-(const QRect &rect, const QMargins &margins);
-#endif
-
 
 #endif // TTKGRABITEMWIDGET_H
