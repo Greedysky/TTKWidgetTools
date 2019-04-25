@@ -19,11 +19,11 @@
 INCLUDEPATH += $$PWD
 
 !contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
-HEADERS += $$PWD/ttkshiningsliderwidget.h
+HEADERS += $$PWD/ttkshiningslider.h
 
 }
 
 contains(CONFIG, TTK_BUILD_LIB){
-SOURCES += $$PWD/ttkshiningsliderwidget.cpp
+SOURCES += $$PWD/ttkshiningslider.cpp
 
 }

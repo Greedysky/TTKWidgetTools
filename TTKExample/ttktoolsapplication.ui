@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTKToolsApplication</class>
+ <widget class="TTKToolsApplication" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>959</width>
+    <height>532</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TTKWidgetTools</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../TTKQrc/WidgetTools.qrc">
+    <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="mainWidgetLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="topWidget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>80</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="centerWidget" native="true">
+     <layout class="QHBoxLayout" name="centerWidgetLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="TTKFunctionToolBoxWidget" name="functionListWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>280</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="TTKbackgroundContainer" name="functionContainerWidget" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TTKFunctionToolBoxWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkfunctiontoolboxwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKToolsApplication</class>
+   <extends>QWidget</extends>
+   <header>ttktoolsapplication.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKbackgroundContainer</class>
+   <extends>QWidget</extends>
+   <header>ttkbackgroundcontainer.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../TTKQrc/WidgetTools.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TTKShiningSliderWidget</string>
+   <string>TTKShiningSlider</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#TTKShiningSliderWindow{background:rgb(50, 50, 50);}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="TTKShiningSliderWidget" name="widget" native="true">
+   <widget class="TTKShiningSlider" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -32,9 +32,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>TTKShiningSliderWidget</class>
+   <class>TTKShiningSlider</class>
    <extends>QWidget</extends>
-   <header>ttkshiningsliderwidget.h</header>
+   <header>ttkshiningslider.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

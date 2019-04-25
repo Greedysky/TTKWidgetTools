@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
+#include <QLabel>
 #include "ttkglobaldefine.h"
 
 /*!
@@ -58,15 +58,12 @@ public:
 
 protected:
     virtual bool eventFilter(QObject *object, QEvent *event) override;
-    virtual void mouseDoubleClickEvent(QMouseEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual void mouseReleaseEvent(QMouseEvent *event) override;
     virtual void mouseMoveEvent(QMouseEvent *event) override;
 
     void sizeDirection();
     void moveDirection();
-
-    QObjectList foreachWidget(QObject *object);
 
     MoveResizeStruct m_struct;
     Direction m_direction;

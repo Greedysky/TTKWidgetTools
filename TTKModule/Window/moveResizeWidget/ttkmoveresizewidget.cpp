@@ -13,7 +13,6 @@ TTKMoveResizeWidget::TTKMoveResizeWidget(QWidget *parent)
     m_direction = Direction_No;
 
     setWindowFlags(Qt::FramelessWindowHint);
-//    setAttribute(Qt::WA_TranslucentBackground);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setMouseTracking(true);
 }
@@ -27,22 +26,6 @@ bool TTKMoveResizeWidget::eventFilter(QObject *object, QEvent *event)
         QApplication::sendEvent(this, mouseEvent);
     }
     return false;
-}
-
-void TTKMoveResizeWidget::mouseDoubleClickEvent(QMouseEvent *event)
-{
-    QWidget::mouseDoubleClickEvent(event);
-    if(event->buttons() == Qt::LeftButton)
-    {
-        if(isMaximized())
-        {
-            showNormal();
-        }
-        else
-        {
-            showMaximized();
-        }
-    }
 }
 
 void TTKMoveResizeWidget::mousePressEvent(QMouseEvent *event)
@@ -261,18 +244,4 @@ void TTKMoveResizeWidget::moveDirection()
         }
         default: break;
     }
-}
-
-QObjectList TTKMoveResizeWidget::foreachWidget(QObject *object)
-{
-    QObjectList result;
-    foreach(QObject *obj, object->children())
-    {
-        if("QWidget" == QString(obj->metaObject()->className()))
-        {
-            result.append(obj);
-        }
-        result += foreachWidget(obj);
-    }
-    return result;
 }

@@ -42,12 +42,16 @@ unix{
 }
 
 SOURCES += \
-    $$PWD/mainwindow.cpp \
+    $$PWD/ttkfunctionitem.cpp \
+    $$PWD/ttkbackgroundcontainer.cpp \
+    $$PWD/ttktoolsapplication.cpp \
     main.cpp
 
 HEADERS += \
-    $$PWD/mainwindow.h \
+    $$PWD/ttkfunctionitem.h \
+    $$PWD/ttkbackgroundcontainer.h \
+    $$PWD/ttktoolsapplication.h \
     ../ttkglobaldefine.h
 
-FORMS   += $$PWD/mainwindow.ui
+FORMS   += $$PWD/ttktoolsapplication.ui
 

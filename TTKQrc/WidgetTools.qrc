@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/image">
         <file alias="lb_app_logo">../TTKResource/lb_app_logo.ico</file>
+        <file alias="lb_transparent">../TTKResource/lb_transparent.png</file>
     </qresource>
 </RCC>

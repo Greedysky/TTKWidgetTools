@@ -1,5 +1,5 @@
-#ifndef TTKSHININGSLIDERWIDGET_H
-#define TTKSHININGSLIDERWIDGET_H
+#ifndef TTKFUNCTIONITEM_H
+#define TTKFUNCTIONITEM_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,35 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QSlider>
-#include <QMouseEvent>
+#include <QLabel>
 #include "ttkglobaldefine.h"
 
-class TTKGifLabelWidget;
-
-/*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKShiningSliderWidget : public QWidget
+class TTK_CORE_EXPORT TTKFunctionItem : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKShiningSliderWidget(QWidget *parent = nullptr);
-    ~TTKShiningSliderWidget();
+    explicit TTKFunctionItem(const QString &path, const QString &text, QWidget *parent = nullptr);
+    ~TTKFunctionItem();
 
-    void setPlayState(bool state);
-    void setValue(qint64 value) const;
-    void setRange(int min, int max);
+    void setIcon(const QString &path);
+    void setText(const QString &text);
 
-public Q_SLOTS:
-    void sliderMovedAt(int pos) const;
-
-protected:
-    virtual void resizeEvent(QResizeEvent *event) override;
-
-    QSlider *m_slider;
-    TTKGifLabelWidget *m_label;
+private:
+    QLabel *m_iconLabel, *m_textLabel;
 
 };
 
-#endif // TTKSHININGSLIDERWIDGET_H
+#endif // TTKFUNCTIONITEM_H

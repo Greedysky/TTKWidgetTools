@@ -1,9 +1,9 @@
-#include "ttkshiningsliderwidget.h"
+#include "ttkshiningslider.h"
 #include "ttkgiflabelwidget.h"
 
 #include <qmath.h>
 
-TTKShiningSliderWidget::TTKShiningSliderWidget(QWidget *parent)
+TTKShiningSlider::TTKShiningSlider(QWidget *parent)
     : QWidget(parent)
 {
     m_label = new TTKGifLabelWidget(this);
@@ -19,13 +19,13 @@ TTKShiningSliderWidget::TTKShiningSliderWidget(QWidget *parent)
     connect(m_slider, SIGNAL(sliderMoved(int)), SLOT(sliderMovedAt(int)));
 }
 
-TTKShiningSliderWidget::~TTKShiningSliderWidget()
+TTKShiningSlider::~TTKShiningSlider()
 {
     delete m_label;
     delete m_slider;
 }
 
-void TTKShiningSliderWidget::setPlayState(bool state)
+void TTKShiningSlider::setPlayState(bool state)
 {
     if(state)
     {
@@ -40,18 +40,18 @@ void TTKShiningSliderWidget::setPlayState(bool state)
     }
 }
 
-void TTKShiningSliderWidget::setValue(qint64 value) const
+void TTKShiningSlider::setValue(qint64 value) const
 {
     sliderMovedAt(value);
     m_slider->setValue(value);
 }
 
-void TTKShiningSliderWidget::setRange(int min, int max)
+void TTKShiningSlider::setRange(int min, int max)
 {
     m_slider->setRange(min, max);
 }
 
-void TTKShiningSliderWidget::sliderMovedAt(int pos) const
+void TTKShiningSlider::sliderMovedAt(int pos) const
 {
     int max = m_slider->maximum();
     if(max > 0)
@@ -61,7 +61,7 @@ void TTKShiningSliderWidget::sliderMovedAt(int pos) const
     }
 }
 
-void TTKShiningSliderWidget::resizeEvent(QResizeEvent *event)
+void TTKShiningSlider::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     m_slider->setFixedWidth(width() - m_label->width());

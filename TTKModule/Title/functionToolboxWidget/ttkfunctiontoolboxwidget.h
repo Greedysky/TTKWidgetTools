@@ -44,26 +44,16 @@ public:
 
 Q_SIGNALS:
     void mousePressAt(int index);
-    void swapDragItemIndex(int before, int after);
 
 protected:
     bool isItemEnable() const;
 
-    virtual void dragLeaveEvent(QDragLeaveEvent *event) override;
-    virtual void dragMoveEvent(QDragMoveEvent *event) override;
-    virtual void dragEnterEvent(QDragEnterEvent *event) override;
-    virtual void dropEvent(QDropEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
 
     int m_index;
     QString m_suffixString;
     QLabel *m_labelIcon, *m_labelText;
-
-    bool m_isDrawTopState, m_isDrawMoveState;
-    bool m_isBlockMoveExpand;
-    QPoint m_pressPosAt;
 
 };
 
@@ -91,9 +81,6 @@ public:
     bool itemExpand() const;
 
     int count() const;
-
-Q_SIGNALS:
-    void swapDragItemIndex(int before, int after);
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
@@ -148,6 +135,9 @@ public:
 
     int count() const;
 
+    void setSingleExpand(bool single);
+    bool getSingleExpand() const;
+
 public Q_SLOTS:
     void setCurrentIndex(int index);
     void mousePressAt(int index);
@@ -159,6 +149,7 @@ protected:
 
     int foundMappingIndex(int index);
 
+    bool m_singleExpand;
     int m_currentIndex, m_itemIndexRaise;
     QVBoxLayout *m_layout;
     QScrollArea *m_scrollArea;

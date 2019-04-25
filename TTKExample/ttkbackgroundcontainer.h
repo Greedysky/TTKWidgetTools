@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef TTKBACKGROUNDCONTAINER_H
+#define TTKBACKGROUNDCONTAINER_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,37 +19,20 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
+#include <QLabel>
 #include "ttkglobaldefine.h"
 
-namespace Ui {
-class MainWindow;
-}
-
-/*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT MainWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKbackgroundContainer : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private Q_SLOTS:
-    void buttonModuleChanged(int index);
-    void labelModuleChanged(int index);
-    void lineEditModuleChanged(int index);
-    void meterModuleChanged(int index);
-    void progressModuleChanged(int index);
-    void sliderModuleChanged(int index);
-    void titleModuleChanged(int index);
-    void widgetModuleChanged(int index);
-    void windowModuleChanged(int index);
+    explicit TTKbackgroundContainer(QWidget *parent = nullptr);
 
 private:
-    Ui::MainWindow *ui;
-
+//    virtual void mousePressEvent(QMouseEvent *event) override;
+//    virtual void mouseReleaseEvent(QMouseEvent *event) override;
+//    virtual void mouseMoveEvent(QMouseEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override;
 };
 
-#endif // MAINWINDOW_H
+#endif // TTKBACKGROUNDCONTAINER_H

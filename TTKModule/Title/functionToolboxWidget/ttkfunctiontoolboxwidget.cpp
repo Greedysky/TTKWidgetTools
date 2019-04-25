@@ -7,16 +7,12 @@
 #include <QDrag>
 #include <QMimeData>
 
-#define DRAG_FORMAT     "Swap Item"
 #define RENAME_WIDTH    220
 
 TTKFunctionToolBoxTopWidget::TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent)
     : QWidget(parent)
 {
     m_index = index;
-    m_isDrawTopState = false;
-    m_isDrawMoveState = false;
-    m_isBlockMoveExpand = false;
 
     setAcceptDrops(true);
     setFixedHeight(40);
@@ -76,82 +72,12 @@ bool TTKFunctionToolBoxTopWidget::isItemEnable() const
     return true;
 }
 
-void TTKFunctionToolBoxTopWidget::dragLeaveEvent(QDragLeaveEvent *event)
-{
-    Q_UNUSED(event);
-    m_isDrawTopState = false;
-    m_isDrawMoveState = false;
-    update();
-}
-
-void TTKFunctionToolBoxTopWidget::dragMoveEvent(QDragMoveEvent *event)
-{
-    if(event->mimeData()->hasFormat(DRAG_FORMAT) && isItemEnable())
-    {
-        m_isDrawMoveState = true;
-        m_isDrawTopState = event->pos().y() < height()/2;
-        update();
-    }
-}
-
-void TTKFunctionToolBoxTopWidget::dragEnterEvent(QDragEnterEvent *event)
-{
-    if(event->mimeData()->hasFormat(DRAG_FORMAT))
-    {
-        event->setDropAction(Qt::MoveAction);
-        event->accept();
-    }
-    else
-    {
-        event->ignore();
-    }
-}
-
-void TTKFunctionToolBoxTopWidget::dropEvent(QDropEvent *event)
-{
-    m_isDrawMoveState = false;
-    update();
-
-    if(event->mimeData()->hasFormat(DRAG_FORMAT) && isItemEnable())
-    {
-        emit swapDragItemIndex(event->mimeData()->data(DRAG_FORMAT).toInt(), m_index);
-    }
-}
-
 void TTKFunctionToolBoxTopWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
     if(event->button() == Qt::LeftButton)
     {
         emit mousePressAt(m_index);
-        m_pressPosAt = event->pos();
-    }
-}
-
-void TTKFunctionToolBoxTopWidget::mouseMoveEvent(QMouseEvent *event)
-{
-    QWidget::mouseMoveEvent(event);
-    QRect itemRect(m_pressPosAt.x() - 2, m_pressPosAt.y() - 2, m_pressPosAt.x() + 2, m_pressPosAt.y() + 2);
-    if(!itemRect.contains(event->pos()) && isItemEnable())
-    {
-        if(!m_isBlockMoveExpand && isItemExpand())
-        {
-            emit mousePressAt(m_index);
-        }
-
-        QMimeData *mimeData = new QMimeData;
-        mimeData->setData(DRAG_FORMAT, QByteArray::number(m_index));
-        mimeData->setText( getTitle(true) );
-
-        QDrag *drag = new QDrag(this);
-        drag->setMimeData(mimeData);
-        drag->setHotSpot(QPoint(0, height()/2));
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-        drag->setPixmap( grab(rect()) );
-#else
-        drag->setPixmap( QPixmap::grabWidget(this, rect()) );
-#endif
-        drag->exec(Qt::MoveAction);
     }
 }
 
@@ -162,19 +88,6 @@ void TTKFunctionToolBoxTopWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
     painter.drawLine(0, height(), width(), height());
-
-    if(m_isDrawMoveState)
-    {
-        painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 1, Qt::SolidLine));
-        if(m_isDrawTopState)
-        {
-            painter.drawLine(0, 0, width(), 0);
-        }
-        else
-        {
-            painter.drawLine(0, height() - 1, width(), height() - 1);
-        }
-    }
 }
 
 
@@ -184,7 +97,6 @@ TTKFunctionToolBoxWidgetItem::TTKFunctionToolBoxWidgetItem(int index, const QStr
 {
     m_topWidget = new TTKFunctionToolBoxTopWidget(index, text, this);
     connect(m_topWidget, SIGNAL(mousePressAt(int)), parent, SLOT(mousePressAt(int)));
-    connect(m_topWidget, SIGNAL(swapDragItemIndex(int,int)), SIGNAL(swapDragItemIndex(int,int)));
 
     m_layout = new QVBoxLayout(this);
     m_layout->setContentsMargins(0, 0, 0, 0);
@@ -269,6 +181,7 @@ TTKFunctionToolBoxWidget::TTKFunctionToolBoxWidget(QWidget *parent)
 {
     setAttribute(Qt::WA_TranslucentBackground);
 
+    m_singleExpand = false;
     m_currentIndex = -1;
     m_itemIndexRaise = 0;
 
@@ -422,6 +335,15 @@ int TTKFunctionToolBoxWidget::count() const
     return m_itemList.count();
 }
 
+void TTKFunctionToolBoxWidget::setSingleExpand(bool single)
+{
+    m_singleExpand = single;
+}
+
+bool TTKFunctionToolBoxWidget::getSingleExpand() const
+{
+    return m_singleExpand;
+}
 
 void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
 {
@@ -435,10 +357,19 @@ void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
 void TTKFunctionToolBoxWidget::mousePressAt(int index)
 {
     m_currentIndex = foundMappingIndex(index);
-    for(int i=0; i<m_itemList.count(); ++i)
+
+    if(m_singleExpand)
     {
-        bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->itemExpand() : false;
-        m_itemList[i].m_widgetItem->setItemExpand(hide);
+        for(int i=0; i<m_itemList.count(); ++i)
+        {
+            const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->itemExpand() : false;
+            m_itemList[i].m_widgetItem->setItemExpand(hide);
+        }
+    }
+    else
+    {
+        const bool hide = !m_itemList[m_currentIndex].m_widgetItem->itemExpand();
+        m_itemList[m_currentIndex].m_widgetItem->setItemExpand(hide);
     }
 }
 
