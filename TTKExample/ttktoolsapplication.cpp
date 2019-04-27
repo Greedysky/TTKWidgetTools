@@ -3,20 +3,20 @@
 #include "ttkfunctionitem.h"
 
 //
-#include "checkButtonWidget/ttkcheckbuttonwidget.h"
+#include "checkButtonWidget/ttkcheckbuttonpropertywidget.h"
 #include "flatButtonWidget/ttkflatbuttonwidget.h"
 #include "radioButtonWidget/ttkradiobuttonwidget.h"
 #include "toggleWidget/ttktogglewidget.h"
 #include "toolMenuWidget/ttktoolmenuwidget.h"
 //
-#include "circleClickLabel/ttkcircleclicklabelwindow.h"
-#include "codeAreaLabel/ttkcodearealabelwindow.h"
-#include "marqueeLabel/ttkmarqueelabelwindow.h"
-#include "roundAnimationLabel/ttkroundanimationwindow.h"
-#include "splitItemLabel/ttksplititemwindow.h"
-#include "toastLabel/ttktoastwindow.h"
-#include "transitionAnimationLabel/ttktransitionanimationwindow.h"
-#include "ledPageLabel/ttkledpagewindow.h"
+#include "circleClickLabel/ttkcircleclicklabel.h"
+#include "codeAreaLabel/ttkcodearealabel.h"
+#include "marqueeLabel/ttkmarqueelabel.h"
+#include "roundAnimationLabel/ttkroundanimationlabel.h"
+#include "splitItemLabel/ttksplititemlabel.h"
+#include "toastLabel/ttktoastlabel.h"
+#include "transitionAnimationLabel/ttktransitionanimationlabel.h"
+#include "ledPageLabel/ttkledpagelabel.h"
 //
 #include "ipEditWidget/ttkipeditwindow.h"
 #include "lineEditWidget/ttklineeditwindow.h"
@@ -119,48 +119,50 @@ TTKToolsApplication::~TTKToolsApplication()
 
 void TTKToolsApplication::buttonModuleChanged(int index)
 {
-    QWidget *w = nullptr;
+    TTKPropertyWidget *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKCheckButtonWidget;
+        case 0: w = new TTKCheckButtonPropertyWidget;
             break;
-        case 1: w = new TTKFlatButtonWidget;
-            break;
-        case 2: w = new TTKRadioButtonWidget;
-            break;
-        case 3: w = new TTKToggleWidget;
-            break;
-        case 4: w = new TTKToolMenuWidget;
-            break;
+//        case 1: w = new TTKFlatButtonWidget;
+//            break;
+//        case 2: w = new TTKRadioButtonWidget;
+//            break;
+//        case 3: w = new TTKToggleWidget;
+//            break;
+//        case 4: w = new TTKToolMenuWidget;
+//            break;
         default:
             break;
     }
-    ui->functionContainerWidget->addItem(w);
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
 }
 
 void TTKToolsApplication::labelModuleChanged(int index)
 {
-    switch(index)
-    {
-        case 0: (new TTKCircleClickLabelWindow(this))->show();
-            break;
-        case 1: (new TTKCodeAreaLabelWindow(this))->show();
-            break;
-        case 2: (new TTKMarqueeLabelWindow(this))->show();
-            break;
-        case 3: (new TTKRoundAnimationWindow(this))->show();
-            break;
-        case 4: (new TTKSplitItemWindow(this))->show();
-            break;
-        case 5: (new TTKToastWindow(this))->show();
-            break;
-        case 6: (new TTKTransitionAnimationWindow(this))->show();
-            break;
-        case 7: (new TTKLedPageWindow(this))->show();
-            break;
-        default:
-            break;
-    }
+//    switch(index)
+//    {
+//        case 0: (new TTKCircleClickLabelWindow(this))->show();
+//            break;
+//        case 1: (new TTKCodeAreaLabelWindow(this))->show();
+//            break;
+//        case 2: (new TTKMarqueeLabelWindow(this))->show();
+//            break;
+//        case 3: (new TTKRoundAnimationWindow(this))->show();
+//            break;
+//        case 4: (new TTKSplitItemWindow(this))->show();
+//            break;
+//        case 5: (new TTKToastWindow(this))->show();
+//            break;
+//        case 6: (new TTKTransitionAnimationWindow(this))->show();
+//            break;
+//        case 7: (new TTKLedPageWindow(this))->show();
+//            break;
+//        default:
+//            break;
+//    }
 }
 
 void TTKToolsApplication::lineEditModuleChanged(int index)

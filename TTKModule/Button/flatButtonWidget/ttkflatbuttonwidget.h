@@ -29,6 +29,7 @@
 class TTK_CORE_EXPORT TTKFlatButtonWidget : public QPushButton
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFlatButtonWidget)
 public:
     enum IconAlignment
     {

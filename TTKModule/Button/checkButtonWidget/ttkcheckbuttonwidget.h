@@ -28,6 +28,7 @@
 class TTK_CORE_EXPORT TTKCheckButtonWidget : public TTKCheckable
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCheckButtonWidget)
 public:
     explicit TTKCheckButtonWidget(QWidget *parent = nullptr);
 

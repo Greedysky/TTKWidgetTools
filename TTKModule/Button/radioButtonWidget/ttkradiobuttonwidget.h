@@ -24,6 +24,7 @@
 class TTK_CORE_EXPORT TTKRadioButtonWidget : public TTKCheckable
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKRadioButtonWidget)
 public:
     explicit TTKRadioButtonWidget(QWidget *parent = nullptr);
 

@@ -44,12 +44,16 @@ unix{
 INCLUDEPATH += $$PWD
 
 SOURCES += \
+    $$PWD/ttkpropertywidget.cpp \
+    $$PWD/ttkpropertycontainwidget.cpp \
     $$PWD/ttkfunctionitem.cpp \
     $$PWD/ttkbackgroundcontainer.cpp \
     $$PWD/ttktoolsapplication.cpp \
     main.cpp
 
 HEADERS += \
+    $$PWD/ttkpropertywidget.h \
+    $$PWD/ttkpropertycontainwidget.h \
     $$PWD/ttkfunctionitem.h \
     $$PWD/ttkbackgroundcontainer.h \
     $$PWD/ttktoolsapplication.h \

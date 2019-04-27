@@ -166,6 +166,9 @@
       <item>
        <widget class="QWidget" name="centerWidget" native="true">
         <layout class="QHBoxLayout" name="centerWidgetLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="leftMargin">
           <number>5</number>
          </property>
@@ -195,7 +198,23 @@
           </widget>
          </item>
          <item>
-          <widget class="TTKbackgroundContainer" name="functionContainerWidget" native="true"/>
+          <widget class="TTKBackgroundContainer" name="containerWidget" native="true"/>
+         </item>
+         <item>
+          <widget class="TTKPropertyContainWidget" name="propertyWidget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>280</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>280</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -214,9 +233,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TTKbackgroundContainer</class>
+   <class>TTKBackgroundContainer</class>
    <extends>QWidget</extends>
    <header>ttkbackgroundcontainer.h</header>
+   <container>1</container>
+  </customwidget>
+    <customwidget>
+   <class>TTKPropertyContainWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkpropertycontainwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -35,4 +35,23 @@
 #  define TTK_CORE_IMPORT Q_DECL_IMPORT
 #endif
 
+///
+#define TTK_DECLARE_PTR(Class)              \
+public:                                     \
+    using Class##Ptr = Class *;             \
+    using Class##CPtr = const Class *;
+
+#define TTK_DECLARE_GCN(Class)              \
+public:                                     \
+    inline static QString getClassName()    \
+    {                                       \
+        return #Class;                      \
+    }
+
+#define TTK_DECLARE_MODULE(Class)           \
+public:                                     \
+    TTK_DECLARE_PTR(Class)                  \
+    TTK_DECLARE_GCN(Class)
+
+
 #endif // TTKGLOBALDEFINE_H

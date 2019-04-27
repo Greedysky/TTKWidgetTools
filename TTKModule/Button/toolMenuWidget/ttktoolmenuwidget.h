@@ -48,6 +48,7 @@ protected:
 class TTK_CORE_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKToolMenuWidget)
 public:
     explicit TTKToolMenuWidget(QWidget *parent = nullptr);
     ~TTKToolMenuWidget();

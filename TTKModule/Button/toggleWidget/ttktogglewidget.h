@@ -90,6 +90,7 @@ protected:
 class TTK_CORE_EXPORT TTKToggleWidget : public QAbstractButton
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKToggleWidget)
 public:
     explicit TTKToggleWidget(QWidget *parent = nullptr);
     ~TTKToggleWidget();

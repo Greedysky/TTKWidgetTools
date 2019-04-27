@@ -22,12 +22,12 @@
 #include <QLabel>
 #include "ttkgrabitemwidget.h"
 
-class TTK_CORE_EXPORT TTKbackgroundContainerItem : public TTKGrabItemWidget
+class TTK_CORE_EXPORT TTKBackgroundContainerItem : public TTKGrabItemWidget
 {
     Q_OBJECT
 public:
-    explicit TTKbackgroundContainerItem(QWidget *parent = nullptr);
-    ~TTKbackgroundContainerItem();
+    explicit TTKBackgroundContainerItem(QWidget *parent = nullptr);
+    ~TTKBackgroundContainerItem();
 
     void addItem(QWidget *item);
 
@@ -38,19 +38,19 @@ protected:
 };
 
 
-class TTK_CORE_EXPORT TTKbackgroundContainer : public QWidget
+class TTK_CORE_EXPORT TTKBackgroundContainer : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKbackgroundContainer(QWidget *parent = nullptr);
-    ~TTKbackgroundContainer();
+    explicit TTKBackgroundContainer(QWidget *parent = nullptr);
+    ~TTKBackgroundContainer();
 
     void addItem(QWidget *item);
 
 private:
     virtual void paintEvent(QPaintEvent *event) override;
 
-    TTKbackgroundContainerItem *m_item;
+    TTKBackgroundContainerItem *m_item;
 };
 
 #endif // TTKBACKGROUNDCONTAINER_H

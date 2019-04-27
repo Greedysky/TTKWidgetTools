@@ -8,27 +8,29 @@
 #define PIX_WIDTH           16
 #define ITEM_ICON_SZIE      25
 
-TTKbackgroundContainerItem::TTKbackgroundContainerItem(QWidget *parent)
+TTKBackgroundContainerItem::TTKBackgroundContainerItem(QWidget *parent)
     : TTKGrabItemWidget(parent),
       m_item(nullptr)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
     setLayout(layout);
 }
 
-TTKbackgroundContainerItem::~TTKbackgroundContainerItem()
+TTKBackgroundContainerItem::~TTKBackgroundContainerItem()
 {
     delete m_item;
 }
 
-void TTKbackgroundContainerItem::addItem(QWidget *item)
+void TTKBackgroundContainerItem::addItem(QWidget *item)
 {
     delete m_item;
     m_item = item;
     layout()->addWidget(item);
 }
 
-void TTKbackgroundContainerItem::paintEvent(QPaintEvent *event)
+void TTKBackgroundContainerItem::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 
@@ -40,26 +42,26 @@ void TTKbackgroundContainerItem::paintEvent(QPaintEvent *event)
 
 
 
-TTKbackgroundContainer::TTKbackgroundContainer(QWidget *parent)
+TTKBackgroundContainer::TTKBackgroundContainer(QWidget *parent)
     : QWidget(parent)
 {
-    m_item = new TTKbackgroundContainerItem(this);
+    m_item = new TTKBackgroundContainerItem(this);
     m_item->setGeometry(QRect(100, 170, 200, 200));
     m_item->setVisible(false);
 }
 
-TTKbackgroundContainer::~TTKbackgroundContainer()
+TTKBackgroundContainer::~TTKBackgroundContainer()
 {
     delete m_item;
 }
 
-void TTKbackgroundContainer::addItem(QWidget *item)
+void TTKBackgroundContainer::addItem(QWidget *item)
 {
-     m_item->setVisible(true);
+    m_item->setVisible(true);
     m_item->addItem(item);
 }
 
-void TTKbackgroundContainer::paintEvent(QPaintEvent *event)
+void TTKBackgroundContainer::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
     QPainter painter(this);

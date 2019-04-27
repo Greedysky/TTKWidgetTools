@@ -1,5 +1,5 @@
-#ifndef TTKCHECKBUTTONWINDOW_H
-#define TTKCHECKBUTTONWINDOW_H
+#ifndef TTKCHECKBUTTONPROPERTYWIDGET_H
+#define TTKCHECKBUTTONPROPERTYWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,26 +19,18 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKCheckButtonWindow;
-}
+#include "ttkpropertywidget.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKCheckButtonWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKCheckButtonPropertyWidget : public TTKPropertyWidget
 {
     Q_OBJECT
 public:
-    explicit TTKCheckButtonWindow(QWidget *parent = nullptr);
-    ~TTKCheckButtonWindow();
-
-private:
-    Ui::TTKCheckButtonWindow *ui;
+    explicit TTKCheckButtonPropertyWidget(QWidget *parent = nullptr);
+    ~TTKCheckButtonPropertyWidget();
 
 };
 
-#endif // TTKCHECKBUTTONWINDOW_H
+#endif // TTKCHECKBUTTONPROPERTYWIDGET_H
