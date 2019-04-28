@@ -1,5 +1,5 @@
-#ifndef TTKFLATBUTTONWINDOW_H
-#define TTKFLATBUTTONWINDOW_H
+#ifndef TTKFLATBUTTONPROPERTYWIDGET_H
+#define TTKFLATBUTTONPROPERTYWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,26 +19,25 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKFlatButtonWindow;
-}
+#include "ttkpropertywidget.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFlatButtonWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKFlatButtonPropertyWidget : public TTKPropertyWidget
 {
     Q_OBJECT
 public:
-    explicit TTKFlatButtonWindow(QWidget *parent = nullptr);
-    ~TTKFlatButtonWindow();
+    explicit TTKFlatButtonPropertyWidget(QWidget *parent = nullptr);
+    ~TTKFlatButtonPropertyWidget();
 
-private:
-    Ui::TTKFlatButtonWindow *ui;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 };
 
-#endif // TTKFLATBUTTONWINDOW_H
+#endif // TTKFLATBUTTONPROPERTYWIDGET_H

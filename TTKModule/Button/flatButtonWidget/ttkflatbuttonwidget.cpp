@@ -12,37 +12,36 @@ TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
     m_backgroundColor = QColor(255, 0, 0);
     m_foregroundColor = QColor(0, 0, 0);
     m_cornerRadius = 5;
-    m_fontSize = 10;
 }
 
 void TTKFlatButtonWidget::setForegroundColor(const QColor &color)
 {
     m_foregroundColor = color;
+    update();
 }
 
 void TTKFlatButtonWidget::setBackgroundColor(const QColor &color)
 {
     m_backgroundColor = color;
-}
-
-void TTKFlatButtonWidget::setFontSize(qreal size)
-{
-    m_backgroundColor = size;
+    update();
 }
 
 void TTKFlatButtonWidget::setIconAlignment(IconAlignment alignment)
 {
     m_iconAlignment = alignment;
+    update();
 }
 
 void TTKFlatButtonWidget::setCornerRadius(qreal radius)
 {
     m_cornerRadius = radius;
+    update();
 }
 
 void TTKFlatButtonWidget::setTextAlignment(Qt::Alignment alignment)
 {
     m_textAlignment = alignment;
+    update();
 }
 
 void TTKFlatButtonWidget::paintEvent(QPaintEvent *event)
@@ -118,8 +117,5 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
     painter->drawText(textGeometry, Qt::AlignCenter, text());
 
     QPixmap pixmap = icon().pixmap(iconSize());
-    QPainter icon(&pixmap);
-    icon.setCompositionMode(QPainter::CompositionMode_SourceIn);
-    icon.fillRect(pixmap.rect(), painter->pen().color());
     painter->drawPixmap(iconGeometry, pixmap);
 }

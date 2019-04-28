@@ -20,6 +20,7 @@
  ================================================= */
 
 #include "ttkcheckable.h"
+#include "ttkglobal.h"
 
 class TTK_CORE_EXPORT TTKRadioButtonWidget : public TTKCheckable
 {

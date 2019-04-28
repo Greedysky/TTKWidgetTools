@@ -4,9 +4,9 @@
 
 //
 #include "checkButtonWidget/ttkcheckbuttonpropertywidget.h"
-#include "flatButtonWidget/ttkflatbuttonwidget.h"
-#include "radioButtonWidget/ttkradiobuttonwidget.h"
-#include "toggleWidget/ttktogglewidget.h"
+#include "flatButtonWidget/ttkflatbuttonpropertywidget.h"
+#include "radioButtonWidget/ttkradiobuttonpropertywidget.h"
+#include "toggleWidget/ttktogglepropertywidget.h"
 #include "toolMenuWidget/ttktoolmenuwidget.h"
 //
 #include "circleClickLabel/ttkcircleclicklabel.h"
@@ -75,6 +75,7 @@ const QString MBtnTClose = " \
         background-image: url(:/image/btn_close_hover);} \
         QToolButton:hover{ background-image: url(:/image/btn_close_hover);}";
 
+
 TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     : TTKMoveResizeWidget(parent),
     ui(new Ui::TTKToolsApplication)
@@ -124,11 +125,11 @@ void TTKToolsApplication::buttonModuleChanged(int index)
     {
         case 0: w = new TTKCheckButtonPropertyWidget;
             break;
-//        case 1: w = new TTKFlatButtonWidget;
-//            break;
-//        case 2: w = new TTKRadioButtonWidget;
-//            break;
-//        case 3: w = new TTKToggleWidget;
+        case 1: w = new TTKFlatButtonPropertyWidget;
+            break;
+        case 2: w = new TTKRadioButtonPropertyWidget;
+            break;
+        case 3: w = new TTKTogglePropertyWidget;
 //            break;
 //        case 4: w = new TTKToolMenuWidget;
 //            break;
@@ -136,8 +137,14 @@ void TTKToolsApplication::buttonModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::labelModuleChanged(int index)

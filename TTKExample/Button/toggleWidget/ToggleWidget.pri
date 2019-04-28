@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttktogglewindow.cpp
+SOURCES += $$PWD/ttktogglepropertywidget.cpp
 
-HEADERS += $$PWD/ttktogglewindow.h
-
-FORMS   += $$PWD/ttktogglewindow.ui
+HEADERS += $$PWD/ttktogglepropertywidget.h

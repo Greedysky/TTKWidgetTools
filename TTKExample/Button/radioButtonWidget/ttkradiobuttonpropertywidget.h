@@ -1,5 +1,5 @@
-#ifndef TTKBACKGROUNDCONTAINER_H
-#define TTKBACKGROUNDCONTAINER_H
+#ifndef TTKRADIOBUTTONPROPERTYWIDGET_H
+#define TTKRADIOBUTTONPROPERTYWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,37 +19,24 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "ttkgrabitemwidget.h"
+#include "ttkpropertywidget.h"
 
-class TTK_CORE_EXPORT TTKBackgroundContainerItem : public TTKGrabItemWidget
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKRadioButtonPropertyWidget : public TTKPropertyWidget
 {
     Q_OBJECT
 public:
-    explicit TTKBackgroundContainerItem(QWidget *parent = nullptr);
-    ~TTKBackgroundContainerItem();
+    explicit TTKRadioButtonPropertyWidget(QWidget *parent = nullptr);
+    ~TTKRadioButtonPropertyWidget();
 
-    void addItem(QWidget *item);
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-    QWidget *m_item;
 };
 
-
-class TTK_CORE_EXPORT TTKBackgroundContainer : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit TTKBackgroundContainer(QWidget *parent = nullptr);
-    ~TTKBackgroundContainer();
-
-    void addItem(QWidget *item);
-
-private:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-    TTKBackgroundContainerItem *m_item;
-};
-
-#endif // TTKBACKGROUNDCONTAINER_H
+#endif // TTKRADIOBUTTONPROPERTYWIDGET_H

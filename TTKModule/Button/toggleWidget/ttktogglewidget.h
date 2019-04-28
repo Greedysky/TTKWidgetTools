@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QAbstractButton>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QState;

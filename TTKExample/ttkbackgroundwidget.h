@@ -1,5 +1,5 @@
-#ifndef TTKRADIOBUTTONWINDOW_H
-#define TTKRADIOBUTTONWINDOW_H
+#ifndef TTKBACKGROUNDWIDGET_H
+#define TTKBACKGROUNDWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,26 +19,19 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
+#include <QWidget>
+#include "ttkgrabitemwidget.h"
 
-namespace Ui {
-class TTKRadioButtonWindow;
-}
-
-/*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_CORE_EXPORT TTKRadioButtonWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKBackgroundWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TTKRadioButtonWindow(QWidget *parent = nullptr);
-    ~TTKRadioButtonWindow();
+    explicit TTKBackgroundWidget(QWidget *parent = nullptr);
+    ~TTKBackgroundWidget();
 
 private:
-    Ui::TTKRadioButtonWindow *ui;
+    virtual void paintEvent(QPaintEvent *event) override;
 
 };
 
-#endif // TTKRADIOBUTTONWINDOW_H
+#endif // TTKBACKGROUNDWIDGET_H

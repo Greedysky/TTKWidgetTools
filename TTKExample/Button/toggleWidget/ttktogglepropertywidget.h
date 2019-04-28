@@ -1,5 +1,5 @@
-#ifndef TTKTOGGLEWINDOW_H
-#define TTKTOGGLEWINDOW_H
+#ifndef TTKTOGGLEPROPERTYWIDGET_H
+#define TTKTOGGLEPROPERTYWIDGET_H
 
 /* =================================================
  * This file is part of the TTK WidgetTools project
@@ -19,26 +19,24 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKToggleWindow;
-}
+#include "ttkpropertywidget.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTKToggleWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKTogglePropertyWidget : public TTKPropertyWidget
 {
     Q_OBJECT
 public:
-    explicit TTKToggleWindow(QWidget *parent = nullptr);
-    ~TTKToggleWindow();
+    explicit TTKTogglePropertyWidget(QWidget *parent = nullptr);
+    ~TTKTogglePropertyWidget();
 
-private:
-    Ui::TTKToggleWindow *ui;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 };
 
-#endif // TTKTOGGLEWINDOW_H
+#endif // TTKTOGGLEPROPERTYWIDGET_H

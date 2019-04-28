@@ -164,7 +164,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="centerWidget" native="true">
+       <widget class="TTKBackgroundWidget" name="centerWidget" native="true">
         <layout class="QHBoxLayout" name="centerWidgetLayout">
          <property name="spacing">
           <number>0</number>
@@ -242,6 +242,12 @@
    <class>TTKPropertyContainWidget</class>
    <extends>QWidget</extends>
    <header>ttkpropertycontainwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TTKBackgroundWidget</class>
+   <extends>QWidget</extends>
+   <header>ttkbackgroundwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -200,7 +200,7 @@ void QtGroupBoxPropertyBrowserPrivate::propertyInserted(QtBrowserItem *index, Qt
 
     if (!parentItem) {
         layout = m_mainLayout;
-        parentWidget = q_ptr;;
+        parentWidget = q_ptr;
     } else {
         if (!parentItem->groupBox) {
             m_recreateQueue.removeAll(parentItem);

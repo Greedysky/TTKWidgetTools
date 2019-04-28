@@ -67,6 +67,7 @@ unix:!mac{
 DEFINES += TTK_LIBRARY
 
 #########################################
+HEADERS += $$PWD/ttkglobal.h
 HEADERS += $$PWD/ttkglobaldefine.h
 INCLUDEPATH += $$PWD
 #########################################

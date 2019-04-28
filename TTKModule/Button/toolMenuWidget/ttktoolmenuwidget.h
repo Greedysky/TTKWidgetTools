@@ -21,6 +21,7 @@
 
 #include <QMenu>
 #include <QToolButton>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!

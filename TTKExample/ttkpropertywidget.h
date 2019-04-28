@@ -19,6 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
+#include "ttkglobal.h"
 #include "ttkgrabitemwidget.h"
 //
 #include "qtpropertymanager.h"
@@ -34,10 +35,24 @@ public:
     explicit TTKPropertyWidget(QWidget *parent = nullptr);
     ~TTKPropertyWidget();
 
+    virtual void init();
     QWidget* widget() const;
 
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value);
+    virtual void intPropertyChanged(QtProperty *property, int value);
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value);
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value);
+    virtual void rectPropertyChanged(QtProperty *property, const QRect &value);
+    virtual void sizePolicyPropertyChanged(QtProperty *property, const QSizePolicy &value);
+    virtual void enumPropertyChanged(QtProperty *property, int value);
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value);
+
+public Q_SLOTS:
+    void geometryChanged();
+
 protected:
-    QWidget *m_item;
+    QWidget *m_item, *m_containItem;
     //
     QtBoolPropertyManager *m_boolManager;
     QtIntPropertyManager *m_intManager;
@@ -54,6 +69,7 @@ protected:
     QtSpinBoxFactory *m_spinBoxFactory;
     QtLineEditFactory *m_lineEditFactory;
     QtEnumEditorFactory *m_comboBoxFactory;
+    QtColorEditorFactory *m_colorEditorFactory;
     //
     QtAbstractPropertyBrowser *m_browser;
 };

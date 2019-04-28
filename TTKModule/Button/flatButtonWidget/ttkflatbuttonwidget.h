@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QPushButton>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -45,9 +46,6 @@ public:
     void setBackgroundColor(const QColor &color);
     inline QColor backgroundColor() const { return m_backgroundColor; }
 
-    void setFontSize(qreal size);
-    inline qreal fontSize() const { return m_fontSize; }
-
     void setIconAlignment(IconAlignment alignment);
     inline IconAlignment iconAlignment() const { return m_iconAlignment; }
 
@@ -65,7 +63,7 @@ protected:
     Qt::Alignment m_textAlignment;
     IconAlignment m_iconAlignment;
     QColor m_backgroundColor, m_foregroundColor;
-    qreal m_cornerRadius, m_fontSize;
+    qreal m_cornerRadius;
 
 };
 

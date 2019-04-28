@@ -20,6 +20,7 @@
  ================================================= */
 
 #include "ttkcheckable.h"
+#include "ttkglobal.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>

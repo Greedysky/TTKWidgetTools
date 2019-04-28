@@ -48,6 +48,7 @@ SOURCES += \
     $$PWD/ttkpropertycontainwidget.cpp \
     $$PWD/ttkfunctionitem.cpp \
     $$PWD/ttkbackgroundcontainer.cpp \
+    $$PWD/ttkbackgroundwidget.cpp \
     $$PWD/ttktoolsapplication.cpp \
     main.cpp
 
@@ -56,6 +57,7 @@ HEADERS += \
     $$PWD/ttkpropertycontainwidget.h \
     $$PWD/ttkfunctionitem.h \
     $$PWD/ttkbackgroundcontainer.h \
+    $$PWD/ttkbackgroundwidget.h \
     $$PWD/ttktoolsapplication.h \
     ../ttkglobaldefine.h
 

@@ -1,16 +1,16 @@
-#include "ttkcheckbuttonpropertywidget.h"
-#include "ttkcheckbuttonwidget.h"
+#include "ttkradiobuttonpropertywidget.h"
+#include "ttkradiobuttonwidget.h"
 
-TTKCheckButtonPropertyWidget::TTKCheckButtonPropertyWidget(QWidget *parent)
+TTKRadioButtonPropertyWidget::TTKRadioButtonPropertyWidget(QWidget *parent)
     : TTKPropertyWidget(parent)
 {
-    m_item = new TTKCheckButtonWidget(this);
+    m_item = new TTKRadioButtonWidget(this);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCheckButtonWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRadioButtonWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -44,7 +44,7 @@ TTKCheckButtonPropertyWidget::TTKCheckButtonPropertyWidget(QWidget *parent)
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";
     m_enumManager->setEnumNames(directionItem, enumNames);
-    m_enumManager->setValue(directionItem, TTKCheckButtonWidget::LabelPositionRight);
+    m_enumManager->setValue(directionItem, TTKRadioButtonWidget::LabelPositionRight);
     objectItem->addSubProperty(directionItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");
@@ -54,14 +54,14 @@ TTKCheckButtonPropertyWidget::TTKCheckButtonPropertyWidget(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCheckButtonPropertyWidget::~TTKCheckButtonPropertyWidget()
+TTKRadioButtonPropertyWidget::~TTKRadioButtonPropertyWidget()
 {
 
 }
 
-void TTKCheckButtonPropertyWidget::boolPropertyChanged(QtProperty *property, bool value)
+void TTKRadioButtonPropertyWidget::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCheckButtonWidget *widget = MStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -72,27 +72,27 @@ void TTKCheckButtonPropertyWidget::boolPropertyChanged(QtProperty *property, boo
     }
 }
 
-void TTKCheckButtonPropertyWidget::stringPropertyChanged(QtProperty *property, const QString &value)
+void TTKRadioButtonPropertyWidget::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKCheckButtonWidget *widget = MStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
     }
 }
 
-void TTKCheckButtonPropertyWidget::enumPropertyChanged(QtProperty *property, int value)
+void TTKRadioButtonPropertyWidget::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCheckButtonWidget *widget = MStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLabelPosition(MStatic_cast(TTKCheckButtonWidget::LabelPosition, value));
+        widget->setLabelPosition(MStatic_cast(TTKRadioButtonWidget::LabelPosition, value));
     }
 }
 
-void TTKCheckButtonPropertyWidget::colorPropertyChanged(QtProperty *property, const QColor &value)
+void TTKRadioButtonPropertyWidget::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCheckButtonWidget *widget = MStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "DisabledColor")
     {
         widget->setDisabledColor(value);
