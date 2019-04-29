@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttktoolmenuwindow.cpp
+SOURCES += $$PWD/ttktoolmenupropertywidget.cpp
 
-HEADERS += $$PWD/ttktoolmenuwindow.h
-
-FORMS   += $$PWD/ttktoolmenuwindow.ui
+HEADERS += $$PWD/ttktoolmenupropertywidget.h

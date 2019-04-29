@@ -1,5 +1,5 @@
-#ifndef TTKTOOLMENUWINDOW_H
-#define TTKTOOLMENUWINDOW_H
+#ifndef TTKBUTTONINCLUDE_H
+#define TTKBUTTONINCLUDE_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,10 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
+#include "checkButtonWidget/ttkcheckbuttonpropertywidget.h"
+#include "flatButtonWidget/ttkflatbuttonpropertywidget.h"
+#include "radioButtonWidget/ttkradiobuttonpropertywidget.h"
+#include "toggleWidget/ttktogglepropertywidget.h"
+#include "toolMenuWidget/ttktoolmenupropertywidget.h"
 
-namespace Ui {
-class TTKToolMenuWindow;
-}
-
-/*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTKToolMenuWindow : public QMainWindow
-{
-    Q_OBJECT
-public:
-    explicit TTKToolMenuWindow(QWidget *parent = nullptr);
-    ~TTKToolMenuWindow();
-
-private:
-    Ui::TTKToolMenuWindow *ui;
-
-};
-
-#endif // TTKTOOLMENUWINDOW_H
+#endif // TTKBUTTONINCLUDE_H

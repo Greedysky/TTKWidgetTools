@@ -1,67 +1,17 @@
 #include "ttktoolsapplication.h"
 #include "ui_ttktoolsapplication.h"
 #include "ttkfunctionitem.h"
-
 //
-#include "checkButtonWidget/ttkcheckbuttonpropertywidget.h"
-#include "flatButtonWidget/ttkflatbuttonpropertywidget.h"
-#include "radioButtonWidget/ttkradiobuttonpropertywidget.h"
-#include "toggleWidget/ttktogglepropertywidget.h"
-#include "toolMenuWidget/ttktoolmenuwidget.h"
-//
-#include "circleClickLabel/ttkcircleclicklabel.h"
-#include "codeAreaLabel/ttkcodearealabel.h"
-#include "marqueeLabel/ttkmarqueelabel.h"
-#include "roundAnimationLabel/ttkroundanimationlabel.h"
-#include "splitItemLabel/ttksplititemlabel.h"
-#include "toastLabel/ttktoastlabel.h"
-#include "transitionAnimationLabel/ttktransitionanimationlabel.h"
-#include "ledPageLabel/ttkledpagelabel.h"
-//
-#include "ipEditWidget/ttkipeditwindow.h"
-#include "lineEditWidget/ttklineeditwindow.h"
-//
-#include "paintMeterWidget/ttkpaintmeterwindow.h"
-#include "radarMeterWidget/ttkradarmeterwindow.h"
-#include "speedMeterWidget/ttkspeedmeterwindow.h"
-#include "timeMeterWidget/ttktimemeterwindow.h"
-//
-#include "animationProgressWidget/ttkanimationprogresswindow.h"
-#include "circularProgressWidget/ttkcircularprogresswindow.h"
-#include "gifLabelWidget/ttkgiflabelwindow.h"
-#include "circleProgressWidget/ttkcircleprogresswindow.h"
-#include "progressWidget/ttkprogresswindow.h"
-#include "radiusProgressWidget/ttkradiusprogresswindow.h"
-#include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
-#include "ringsProgressWidget/ttkringsprogresswindow.h"
-#include "roundProgressWidget/ttkroundprogresswindow.h"
-#include "loadingWidget/ttkloadingwindow.h"
-//
-#include "movingLabelSlider/ttkmovinglabelwindow.h"
-#include "shiningSlider/ttkshiningsliderwindow.h"
-#include "styleSlider/ttkstylesliderwindow.h"
-//
-#include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
-#include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
-#include "functionListHWidget/ttkfunctionlisthwindow.h"
-#include "functionListVWidget/ttkfunctionlistvwindow.h"
-#include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
-#include "functionNormalWidget/ttkfunctionnormalwindow.h"
-//
-#include "animationStackedWidget/ttkanimationstackedwindow.h"
-#include "animation2StackedWidget/ttkanimation2stackedwindow.h"
-#include "colorTableWidget/ttkcolortablewindow.h"
-#include "grabItemWidget/ttkgrabitemwindow.h"
-#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
-#include "pictureBannerWidget/ttkpicturebannerwindow.h"
-#include "pictureFlowWidget/ttkpictureflowwindow.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
-//
-#include "colorDialog/ttkcolorwindow.h"
-#include "moveDialog/ttkmovedialogwindow.h"
-#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
-#include "moveWidget/ttkmovewidgetwindow.h"
-
+#include "ttkbuttoninclude.h"
+#include "ttklabelinclude.h"
+#include "ttklineeditinclude.h"
+#include "ttkmeterinclude.h"
+#include "ttkprogressinclude.h"
+#include "ttksliderinclude.h"
+#include "ttksliderinclude.h"
+#include "ttktitleinclude.h"
+#include "ttkwidgetinclude.h"
+#include "ttkwindowinclude.h"
 
 #include <QButtonGroup>
 
@@ -84,23 +34,15 @@ TTKToolsApplication::TTKToolsApplication(QWidget *parent)
 
     //
     createButtonModule();
-    //
     createLabelModule();
-    //
     createLineEditModule();
-    //
     createMeterModule();
-    //
     createProgressModule();
-    //
     createSliderModule();
-    //
     createTitleModule();
-    //
     createWidgetModule();
-    //
     createWindowModule();
-
+    //
     ui->background->installEventFilter(this);
     ui->background->setMouseTracking(true);
 
@@ -130,9 +72,9 @@ void TTKToolsApplication::buttonModuleChanged(int index)
         case 2: w = new TTKRadioButtonPropertyWidget;
             break;
         case 3: w = new TTKTogglePropertyWidget;
-//            break;
-//        case 4: w = new TTKToolMenuWidget;
-//            break;
+            break;
+        case 4: w = new TTKToolMenuPropertyWidget;
+            break;
         default:
             break;
     }
