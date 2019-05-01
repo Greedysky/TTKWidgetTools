@@ -30,6 +30,61 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
     layout()->addWidget(item);
 }
 
+void TTKBackgroundContainerItem::onMouseChange(int x, int y)
+{
+    QSize ss(100, 50);
+    switch(m_direction)
+    {
+        case Direction_No:
+        case Direction_Right:
+        case Direction_RightBottom:
+            if(x - m_originPoint.x() <= ss.width())
+            {
+                m_currentRect = QRect(m_originPoint,
+                                      QSize(ss.width(), y - m_originPoint.y() <= ss.height() ? ss.height() : abs(y - m_originPoint.y())));
+                setGeometry(m_currentRect);
+                return;
+            }
+            else if(y - m_originPoint.y() <= ss.height())
+            {
+                m_currentRect = QRect(m_originPoint,
+                                      QSize(x - m_originPoint.x() <= ss.width() ? ss.width() : abs(x - m_originPoint.x()), ss.height()));
+                setGeometry(m_currentRect);
+                return;
+            }
+            break;
+        case Direction_RightTop:
+            if(x - m_originPoint.x() <= ss.width())
+            {
+                m_currentRect = QRect(QPoint(m_originPoint.x(), m_originPoint.y() - y <= ss.height() ? m_originPoint.y() - ss.height() : y),
+                                      QSize(ss.width(), m_originPoint.y() - y <= ss.height() ? ss.height() : abs(y - m_originPoint.y())));
+                setGeometry(m_currentRect);
+                return;
+            }
+            else if(m_originPoint.y() - y <= ss.height())
+            {
+                m_currentRect = QRect(QPoint(m_originPoint.x(), m_originPoint.y() - y <= ss.height() ? m_originPoint.y() - ss.height() : y),
+                                      QSize((x - m_originPoint.x() <= ss.width() ? ss.width() : abs(x - m_originPoint.x())), ss.height()));
+                setGeometry(m_currentRect);
+                return;
+            }
+            break;
+        case Direction_Left:
+        case Direction_LeftBottom:
+//            m_originPoint = pt_ru;
+            break;
+        case Direction_LeftTop:
+        case Direction_Top:
+//            m_originPoint = pt_rl;
+            break;
+        case Direction_Bottom:
+//            m_originPoint = pt_lu;
+            break;
+    }
+
+    TTKGrabItemWidget::onMouseChange(x, y);
+}
+
 void TTKBackgroundContainerItem::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);

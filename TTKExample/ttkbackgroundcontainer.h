@@ -30,6 +30,9 @@ public:
 
     void addItem(QWidget *item);
 
+protected Q_SLOTS:
+    virtual void onMouseChange(int x,int y);
+
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
 

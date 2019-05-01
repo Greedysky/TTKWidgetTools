@@ -50,8 +50,8 @@ public:
 Q_SIGNALS:
     void rectChanged();
 
-private Q_SLOTS:
-    void onMouseChange(int x,int y);
+protected Q_SLOTS:
+    virtual void onMouseChange(int x,int y);
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
