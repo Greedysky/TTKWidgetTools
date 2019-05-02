@@ -65,9 +65,9 @@ protected:
     bool m_isPressed;
     bool m_crossStretch;
     Direction m_direction;
-    QPoint m_originPoint, m_movePos;
+    QPoint m_movePos;
     QPolygon m_listMarker;
-    QRect m_currentRect;
+    QRect m_originRect, m_currentRect;
 
 };
 

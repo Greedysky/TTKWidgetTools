@@ -23,10 +23,32 @@ void TTKGrabItemWidget::onMouseChange(int x, int y)
         return;
     }
 
-    const int rx = (x >= m_originPoint.x()) ? m_originPoint.x() : x;
-    const int ry = (y >= m_originPoint.y()) ? m_originPoint.y() : y;
-    const int rw = abs(x - m_originPoint.x());
-    const int rh = abs(y - m_originPoint.y());
+    QPoint pt;
+    switch(m_direction)
+    {
+        case Direction_No:
+        case Direction_Right:
+        case Direction_Bottom:
+        case Direction_RightBottom:
+            pt = m_originRect.topLeft();
+            break;
+        case Direction_RightTop:
+            pt = m_originRect.bottomLeft();
+            break;
+        case Direction_Left:
+        case Direction_LeftBottom:
+            pt = m_originRect.topRight();
+            break;
+        case Direction_LeftTop:
+        case Direction_Top:
+            pt = m_originRect.bottomRight();
+            break;
+    }
+
+    const int rx = (x >= pt.x()) ? pt.x() : x;
+    const int ry = (y >= pt.y()) ? pt.y() : y;
+    const int rw = abs(x - pt.x());
+    const int rh = abs(y - pt.y());
 
     m_currentRect = QRect(rx, ry, rw, rh);
     setGeometry(m_currentRect);
@@ -66,33 +88,11 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
     const QPoint &pt_lu = mapToParent(rect().topLeft());
     const QPoint &pt_ll = mapToParent(rect().bottomLeft());
     const QPoint &pt_rl = mapToParent(rect().bottomRight());
-    const QPoint &pt_ru = mapToParent(rect().topRight());
 
     if(!m_isPressed)
     {
         m_direction = getRegion(gloPoint);
-        switch(m_direction)
-        {
-            case Direction_No:
-            case Direction_Right:
-            case Direction_RightBottom:
-                m_originPoint = pt_lu;
-                break;
-            case Direction_RightTop:
-                m_originPoint = pt_ll;
-                break;
-            case Direction_Left:
-            case Direction_LeftBottom:
-                m_originPoint = pt_ru;
-                break;
-            case Direction_LeftTop:
-            case Direction_Top:
-                m_originPoint = pt_rl;
-                break;
-            case Direction_Bottom:
-                m_originPoint = pt_lu;
-                break;
-        }
+        m_originRect = QRect(pt_lu, pt_rl);
     }
     else
     {

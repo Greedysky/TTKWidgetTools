@@ -43,14 +43,10 @@ TTKTogglePropertyWidget::TTKTogglePropertyWidget(QWidget *parent)
     //
     QtProperty *orientationItem = m_enumManager->addProperty("Orientation");
     QStringList enumNames;
-    enumNames << "Horizontal" << "Vertical";
+    enumNames << "Vertical" << "Horizontal";
     m_enumManager->setEnumNames(orientationItem, enumNames);
     m_enumManager->setValue(orientationItem, Qt::Horizontal);
     objectItem->addSubProperty(orientationItem);
-    //
-    QtProperty *textItem = m_stringManager->addProperty("Text");
-    m_stringManager->setValue(textItem, "Hello word");
-    objectItem->addSubProperty(textItem);
     //
     m_browser->addProperty(objectItem);
 }
@@ -70,15 +66,6 @@ void TTKTogglePropertyWidget::boolPropertyChanged(QtProperty *property, bool val
     else if(property->propertyName() == "Checked")
     {
         widget->setChecked(value);
-    }
-}
-
-void TTKTogglePropertyWidget::stringPropertyChanged(QtProperty *property, const QString &value)
-{
-    TTKToggleWidget *widget = MStatic_cast(TTKToggleWidget*, m_item);
-    if(property->propertyName() == "Text")
-    {
-        widget->setText(value);
     }
 }
 

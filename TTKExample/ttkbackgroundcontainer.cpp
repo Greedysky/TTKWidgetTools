@@ -1,4 +1,4 @@
-#include "ttkbackgroundcontainer.h"
+﻿#include "ttkbackgroundcontainer.h"
 
 #include <qmath.h>
 #include <QPainter>
@@ -32,54 +32,91 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
 
 void TTKBackgroundContainerItem::onMouseChange(int x, int y)
 {
-    QSize ss(100, 50);
+    const QSize &hint = m_item->sizeHint();
+
     switch(m_direction)
     {
         case Direction_No:
         case Direction_Right:
+        case Direction_Bottom:
         case Direction_RightBottom:
-            if(x - m_originPoint.x() <= ss.width())
             {
-                m_currentRect = QRect(m_originPoint,
-                                      QSize(ss.width(), y - m_originPoint.y() <= ss.height() ? ss.height() : abs(y - m_originPoint.y())));
-                setGeometry(m_currentRect);
-                return;
+                const QPoint &topLeft = m_originRect.topLeft();
+                if(x - topLeft.x() <= hint.width())
+                {
+                    m_currentRect = QRect(topLeft,
+                                          QSize(hint.width(), y - topLeft.y() <= hint.height() ? hint.height() : y - topLeft.y()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                else if(y - topLeft.y() <= hint.height())
+                {
+                    m_currentRect = QRect(topLeft,
+                                          QSize(x - topLeft.x() <= hint.width() ? hint.width() : x - topLeft.x(), hint.height()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                break;
             }
-            else if(y - m_originPoint.y() <= ss.height())
-            {
-                m_currentRect = QRect(m_originPoint,
-                                      QSize(x - m_originPoint.x() <= ss.width() ? ss.width() : abs(x - m_originPoint.x()), ss.height()));
-                setGeometry(m_currentRect);
-                return;
-            }
-            break;
         case Direction_RightTop:
-            if(x - m_originPoint.x() <= ss.width())
             {
-                m_currentRect = QRect(QPoint(m_originPoint.x(), m_originPoint.y() - y <= ss.height() ? m_originPoint.y() - ss.height() : y),
-                                      QSize(ss.width(), m_originPoint.y() - y <= ss.height() ? ss.height() : abs(y - m_originPoint.y())));
-                setGeometry(m_currentRect);
-                return;
+                const QPoint &bottomLeft = m_originRect.bottomLeft();
+                if(x - bottomLeft.x() <= hint.width())
+                {
+                    m_currentRect = QRect(QPoint(bottomLeft.x(), bottomLeft.y() - y <= hint.height() ? bottomLeft.y() - hint.height() : y),
+                                          QSize(hint.width(), bottomLeft.y() - y <= hint.height() ? hint.height() : bottomLeft.y() - y));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                else if(bottomLeft.y() - y <= hint.height())
+                {
+                    m_currentRect = QRect(QPoint(bottomLeft.x(), bottomLeft.y() - y <= hint.height() ? bottomLeft.y() - hint.height() : y),
+                                          QSize((x - bottomLeft.x() <= hint.width() ? hint.width() : x - bottomLeft.x()), hint.height()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                break;
             }
-            else if(m_originPoint.y() - y <= ss.height())
-            {
-                m_currentRect = QRect(QPoint(m_originPoint.x(), m_originPoint.y() - y <= ss.height() ? m_originPoint.y() - ss.height() : y),
-                                      QSize((x - m_originPoint.x() <= ss.width() ? ss.width() : abs(x - m_originPoint.x())), ss.height()));
-                setGeometry(m_currentRect);
-                return;
-            }
-            break;
         case Direction_Left:
         case Direction_LeftBottom:
-//            m_originPoint = pt_ru;
-            break;
+            {
+                const QPoint &topRight = m_originRect.topRight();
+                if(topRight.x() - x <= hint.width())
+                {
+                    m_currentRect = QRect(QPoint(topRight.x() - hint.width(), topRight.y()),
+                                          QSize(hint.width(), y - topRight.y() <= hint.height() ? hint.height() : y - topRight.y()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                else if(y - topRight.y() <= hint.height())
+                {
+                    m_currentRect = QRect(QPoint(x, topRight.y()),
+                                          QSize(topRight.x() - x <= hint.width() ? hint.width() : topRight.x() - x, hint.height()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                break;
+            }
         case Direction_LeftTop:
         case Direction_Top:
-//            m_originPoint = pt_rl;
-            break;
-        case Direction_Bottom:
-//            m_originPoint = pt_lu;
-            break;
+            {
+                const QPoint &bottomRight = m_originRect.bottomRight();
+                if(bottomRight.x() - x <= hint.width())
+                {
+                    m_currentRect = QRect(QPoint(bottomRight.x() - hint.width(), bottomRight.y() - y <= hint.height() ? bottomRight.y() - hint.height() : y),
+                                          QSize(hint.width(), bottomRight.y() - y <= hint.height() ? hint.height() : bottomRight.y() - y));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                else if(bottomRight.y() - y <= hint.height())
+                {
+                    m_currentRect = QRect(QPoint(x, bottomRight.y() - hint.height()),
+                                          QSize(bottomRight.x() - x <= hint.width() ? hint.width() : bottomRight.x() - x, hint.height()));
+                    setGeometry(m_currentRect);
+                    return;
+                }
+                break;
+            }
     }
 
     TTKGrabItemWidget::onMouseChange(x, y);
@@ -101,7 +138,6 @@ TTKBackgroundContainer::TTKBackgroundContainer(QWidget *parent)
     : QWidget(parent)
 {
     m_item = new TTKBackgroundContainerItem(this);
-    m_item->setGeometry(QRect(100, 170, 200, 200));
     m_item->setVisible(false);
 }
 
@@ -113,6 +149,7 @@ TTKBackgroundContainer::~TTKBackgroundContainer()
 void TTKBackgroundContainer::addItem(QWidget *item)
 {
     m_item->setVisible(true);
+    m_item->setGeometry(QRect(100, 170, 200, 200));
     m_item->addItem(item);
 }
 

@@ -108,7 +108,14 @@ void TTKPropertyWidget::rectPropertyChanged(QtProperty *property, const QRect &v
 
     if(property->propertyName() == "Geometry")
     {
-        m_containItem->setGeometry(value);
+        if(m_item->sizeHint().width() <= value.width() && m_item->sizeHint().height() <= value.height())
+        {
+            m_containItem->setGeometry(value);
+        }
+        else
+        {
+            m_rectManager->setValue(property, m_containItem->geometry());
+        }
     }
 }
 
