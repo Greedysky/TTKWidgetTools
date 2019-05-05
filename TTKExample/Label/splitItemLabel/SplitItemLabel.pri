@@ -18,8 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-SOURCES += $$PWD/ttksplititemwindow.cpp
+SOURCES += $$PWD/ttksplititemlabelproperty.cpp
 
-HEADERS += $$PWD/ttksplititemwindow.h
-
-FORMS   += $$PWD/ttksplititemwindow.ui
+HEADERS += $$PWD/ttksplititemlabelproperty.h

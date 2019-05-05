@@ -42,7 +42,7 @@ class TTK_CORE_EXPORT TTKCircleProgressWidget : public QWidget
 
 public:
     explicit TTKCircleProgressWidget(QWidget *parent = nullptr);
-    ~TTKCircleProgressWidget();
+    virtual ~TTKCircleProgressWidget();
 
     int value() const;
     int maximum() const;

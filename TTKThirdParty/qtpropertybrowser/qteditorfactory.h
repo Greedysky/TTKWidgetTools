@@ -377,6 +377,28 @@ private:
     Q_PRIVATE_SLOT(d_func(), void slotSetValue(const QColor &))
 };
 
+class QtPixmapEditorFactoryPrivate;
+
+class QT_QTPROPERTYBROWSER_EXPORT QtPixmapEditorFactory : public QtAbstractEditorFactory<QtPixmapPropertyManager>
+{
+    Q_OBJECT
+public:
+    QtPixmapEditorFactory(QObject *parent = 0);
+    ~QtPixmapEditorFactory();
+protected:
+    void connectPropertyManager(QtPixmapPropertyManager *manager);
+    QWidget *createEditor(QtPixmapPropertyManager *manager, QtProperty *property,
+                QWidget *parent);
+    void disconnectPropertyManager(QtPixmapPropertyManager *manager);
+private:
+    QtPixmapEditorFactoryPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(QtPixmapEditorFactory)
+    Q_DISABLE_COPY(QtPixmapEditorFactory)
+    Q_PRIVATE_SLOT(d_func(), void slotPropertyChanged(QtProperty *, const QString &))
+    Q_PRIVATE_SLOT(d_func(), void slotEditorDestroyed(QObject *))
+    Q_PRIVATE_SLOT(d_func(), void slotSetValue(const QString &))
+};
+
 class QtFontEditorFactoryPrivate;
 
 class QT_QTPROPERTYBROWSER_EXPORT QtFontEditorFactory : public QtAbstractEditorFactory<QtFontPropertyManager>

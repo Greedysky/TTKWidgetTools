@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,8 +29,11 @@
 class TTK_CORE_EXPORT TTKSplitItemLabel : public QLabel
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKSplitItemLabel)
 public:
     explicit TTKSplitItemLabel(QWidget *parent = nullptr);
+
+    void setSplitString(const QString &str);
 
 Q_SIGNALS:
     void changed(const QString &value);
@@ -42,7 +46,7 @@ private:
     virtual void paintEvent(QPaintEvent *event) override;
 
     QRectF m_lineGeometry;
-    QString m_currentString;
+    QString m_splitString, m_currentString;
 
 };
 

@@ -29,7 +29,7 @@ class TTK_CORE_EXPORT TTKFunctionListVWidget : public QWidget
     Q_OBJECT
 public:
     explicit TTKFunctionListVWidget(QWidget *parent = nullptr);
-    ~TTKFunctionListVWidget();
+    virtual ~TTKFunctionListVWidget();
 
     void resizeMode(bool mode);
 

@@ -6486,6 +6486,123 @@ void QtColorPropertyManager::uninitializeProperty(QtProperty *property)
     d_ptr->m_values.remove(property);
 }
 
+
+// QtPixmapPropertyManager
+
+class QtPixmapPropertyManagerPrivate
+{
+    QtPixmapPropertyManager *q_ptr;
+    Q_DECLARE_PUBLIC(QtPixmapPropertyManager)
+public:
+
+    typedef QMap<const QtProperty *, QString> PropertyValueMap;
+    PropertyValueMap m_values;
+};
+
+/*! \class QtPixmapPropertyManager
+
+    \brief The QtPixmapPropertyManager provides and manages QPixmap properties.
+
+    A date and time property has a current value which can be
+    retrieved using the value() function, and set using the setValue()
+    slot. In addition, QtPixmapPropertyManager provides the
+    valueChanged() signal which is emitted whenever a property created
+    by this manager changes.
+
+    \sa QtAbstractPropertyManager, QtDateTimeEditFactory, QtDatePropertyManager
+*/
+
+/*!
+    \fn void QtPixmapPropertyManager::valueChanged(QtProperty *property, const QString &value)
+
+    This signal is emitted whenever a property created by this manager
+    changes its value, passing a pointer to the \a property and the new
+    \a value as parameters.
+*/
+
+/*!
+    Creates a manager with the given \a parent.
+*/
+QtPixmapPropertyManager::QtPixmapPropertyManager(QObject *parent)
+    : QtAbstractPropertyManager(parent)
+{
+    d_ptr = new QtPixmapPropertyManagerPrivate;
+    d_ptr->q_ptr = this;
+}
+
+/*!
+    Destroys this manager, and all the properties it has created.
+*/
+QtPixmapPropertyManager::~QtPixmapPropertyManager()
+{
+    clear();
+    delete d_ptr;
+}
+
+/*!
+    Returns the given \a property's value.
+
+    If the given \a property is not managed by this manager, this
+    function returns an invalid QPixmap object.
+
+    \sa setValue()
+*/
+QString QtPixmapPropertyManager::value(const QtProperty *property) const
+{
+    return d_ptr->m_values.value(property, QString());
+}
+
+/*!
+    \reimp
+*/
+QString QtPixmapPropertyManager::valueText(const QtProperty *property) const
+{
+    const QtPixmapPropertyManagerPrivate::PropertyValueMap::const_iterator it = d_ptr->m_values.constFind(property);
+    if (it == d_ptr->m_values.constEnd())
+        return QString();
+
+    return it.value().isEmpty() ? QString() : "[pixmap]";
+}
+
+/*!
+    \fn void QtPixmapPropertyManager::setValue(QtProperty *property, const QString &value)
+
+    Sets the value of the given \a property to \a value.
+
+    \sa value(), valueChanged()
+*/
+void QtPixmapPropertyManager::setValue(QtProperty *property, const QString &val)
+{
+    const QtPixmapPropertyManagerPrivate::PropertyValueMap::iterator it = d_ptr->m_values.find(property);
+    if (it == d_ptr->m_values.end())
+        return;
+
+    if (it.value() == val)
+        return;
+
+    it.value() = val;
+
+    emit propertyChanged(property);
+    emit valueChanged(property, val);
+}
+
+/*!
+    \reimp
+*/
+void QtPixmapPropertyManager::initializeProperty(QtProperty *property)
+{
+    d_ptr->m_values[property] = QString();
+}
+
+/*!
+    \reimp
+*/
+void QtPixmapPropertyManager::uninitializeProperty(QtProperty *property)
+{
+    d_ptr->m_values.remove(property);
+}
+
+
 // QtCursorPropertyManager
 
 // Make sure icons are removed as soon as QApplication is destroyed, otherwise,

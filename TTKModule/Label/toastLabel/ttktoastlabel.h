@@ -21,6 +21,7 @@
 
 #include <QLabel>
 #include <QTimer>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,12 +30,14 @@
 class TTK_CORE_EXPORT TTKToastLabel : public QLabel
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKToastLabel)
 public:
     explicit TTKToastLabel(QWidget *parent = nullptr);
     explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
-    ~TTKToastLabel();
+    virtual ~TTKToastLabel();
 
     void setFontMargin(int height, int width);
+
     void setTimerInterval(int msecond);
     int getTimerInterval() const;
 

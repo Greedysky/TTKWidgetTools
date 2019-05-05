@@ -58,11 +58,13 @@ void TTKCodeAreaLabel::renderPicture()
 void TTKCodeAreaLabel::setCodeCount(int nCount)
 {
     m_nCodeCount = nCount;
+    renderPicture();
 }
 
 void TTKCodeAreaLabel::setNoisyPointCount(int nCount)
 {
     m_nNoisyPointCount = nCount;
+    renderPicture();
 }
 
 void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)

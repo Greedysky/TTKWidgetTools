@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,9 +29,10 @@
 class TTK_CORE_EXPORT TTKCircleClickLabel : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCircleClickLabel)
 public:
     explicit TTKCircleClickLabel(QWidget *parent = nullptr);
-    ~TTKCircleClickLabel();
+    virtual ~TTKCircleClickLabel();
 
 protected Q_SLOTS:
     void updateRender();

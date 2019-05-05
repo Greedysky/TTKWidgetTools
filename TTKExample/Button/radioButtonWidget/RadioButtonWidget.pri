@@ -16,6 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkradiobuttonpropertywidget.cpp
+SOURCES += $$PWD/ttkradiobuttonwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkradiobuttonpropertywidget.h
+HEADERS += $$PWD/ttkradiobuttonwidgetproperty.h

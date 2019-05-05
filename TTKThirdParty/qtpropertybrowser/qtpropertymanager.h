@@ -734,6 +734,31 @@ private:
     Q_PRIVATE_SLOT(d_func(), void slotPropertyDestroyed(QtProperty *))
 };
 
+class QtPixmapPropertyManagerPrivate;
+
+class QT_QTPROPERTYBROWSER_EXPORT QtPixmapPropertyManager : public QtAbstractPropertyManager
+{
+    Q_OBJECT
+public:
+    QtPixmapPropertyManager(QObject *parent = 0);
+    ~QtPixmapPropertyManager();
+
+    QString value(const QtProperty *property) const;
+
+public Q_SLOTS:
+    void setValue(QtProperty *property, const QString &val);
+Q_SIGNALS:
+    void valueChanged(QtProperty *property, const QString &val);
+protected:
+    QString valueText(const QtProperty *property) const;
+    virtual void initializeProperty(QtProperty *property);
+    virtual void uninitializeProperty(QtProperty *property);
+private:
+    QtPixmapPropertyManagerPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(QtPixmapPropertyManager)
+    Q_DISABLE_COPY(QtPixmapPropertyManager)
+};
+
 class QtCursorPropertyManagerPrivate;
 
 class QT_QTPROPERTYBROWSER_EXPORT QtCursorPropertyManager : public QtAbstractPropertyManager

@@ -62,18 +62,18 @@ TTKToolsApplication::~TTKToolsApplication()
 
 void TTKToolsApplication::buttonModuleChanged(int index)
 {
-    TTKPropertyWidget *w = nullptr;
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKCheckButtonPropertyWidget;
+        case 0: w = new TTKCheckButtonWidgetProperty;
             break;
-        case 1: w = new TTKFlatButtonPropertyWidget;
+        case 1: w = new TTKFlatButtonWidgetProperty;
             break;
-        case 2: w = new TTKRadioButtonPropertyWidget;
+        case 2: w = new TTKRadioButtonWidgetProperty;
             break;
-        case 3: w = new TTKTogglePropertyWidget;
+        case 3: w = new TTKToggleWidgetProperty;
             break;
-        case 4: w = new TTKToolMenuPropertyWidget;
+        case 4: w = new TTKToolMenuWidgetProperty;
             break;
         default:
             break;
@@ -91,27 +91,32 @@ void TTKToolsApplication::buttonModuleChanged(int index)
 
 void TTKToolsApplication::labelModuleChanged(int index)
 {
-//    switch(index)
-//    {
-//        case 0: (new TTKCircleClickLabelWindow(this))->show();
-//            break;
-//        case 1: (new TTKCodeAreaLabelWindow(this))->show();
-//            break;
-//        case 2: (new TTKMarqueeLabelWindow(this))->show();
-//            break;
-//        case 3: (new TTKRoundAnimationWindow(this))->show();
-//            break;
-//        case 4: (new TTKSplitItemWindow(this))->show();
-//            break;
-//        case 5: (new TTKToastWindow(this))->show();
-//            break;
-//        case 6: (new TTKTransitionAnimationWindow(this))->show();
-//            break;
-//        case 7: (new TTKLedPageWindow(this))->show();
-//            break;
-//        default:
-//            break;
-//    }
+    TTKWidgetProperty *w = nullptr;
+    switch(index)
+    {
+        case 0: w = new TTKCircleClickLabelProperty;
+            break;
+        case 1: w = new TTKCodeAreaLabelProperty;
+            break;
+        case 2: w = new TTKLedPageLabelProperty;
+            break;
+        case 3: w = new TTKMarqueeLabelProperty;
+            break;
+        case 4: w = new TTKRoundAnimationLabelProperty;
+            break;
+        case 5: w = new TTKSplitItemLabelProperty;
+            break;
+        case 6: w = new TTKToastLabelProperty;
+            break;
+        case 7: w = new TTKTransitionAnimationLabelProperty;
+            break;
+        default:
+            break;
+    }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::lineEditModuleChanged(int index)
@@ -283,6 +288,8 @@ void TTKToolsApplication::createLabelModule()
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(labelModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Label");
 }
 

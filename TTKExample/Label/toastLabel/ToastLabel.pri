@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttktoastwindow.cpp
+SOURCES += $$PWD/ttktoastlabelproperty.cpp
 
-HEADERS += $$PWD/ttktoastwindow.h
-
-FORMS   += $$PWD/ttktoastwindow.ui
+HEADERS += $$PWD/ttktoastlabelproperty.h

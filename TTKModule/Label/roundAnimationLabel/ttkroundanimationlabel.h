@@ -21,6 +21,7 @@
 
 #include <QTimer>
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,9 +30,10 @@
 class TTK_CORE_EXPORT TTKRoundAnimationLabel : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKRoundAnimationLabel)
 public:
     explicit TTKRoundAnimationLabel(QWidget *parent = nullptr);
-    ~TTKRoundAnimationLabel();
+    virtual ~TTKRoundAnimationLabel();
 
     void setPixmap(const QPixmap &pix);
     void setInterval(int value);

@@ -120,7 +120,7 @@ class TTK_CORE_EXPORT TTKPictureFlowWidget : public QWidget
     Q_PROPERTY(int centerIndex READ centerIndex WRITE setCenterIndex)
 public:
     explicit TTKPictureFlowWidget(QWidget *parent = nullptr);
-    ~TTKPictureFlowWidget();
+    virtual ~TTKPictureFlowWidget();
 
     QColor backgroundColor() const;
     void setBackgroundColor(const QColor &c);

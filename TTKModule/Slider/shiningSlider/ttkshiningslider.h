@@ -33,7 +33,7 @@ class TTK_CORE_EXPORT TTKShiningSlider : public QWidget
     Q_OBJECT
 public:
     explicit TTKShiningSlider(QWidget *parent = nullptr);
-    ~TTKShiningSlider();
+    virtual ~TTKShiningSlider();
 
     void setPlayState(bool state);
     void setValue(qint64 value) const;

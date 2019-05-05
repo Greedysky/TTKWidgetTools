@@ -27,7 +27,7 @@ class TTK_CORE_EXPORT TTKFunctionItem : public QWidget
     Q_OBJECT
 public:
     explicit TTKFunctionItem(int index, const QString &path, const QString &text, QWidget *parent = nullptr);
-    ~TTKFunctionItem();
+    virtual ~TTKFunctionItem();
 
     void setIcon(const QString &path);
     void setText(const QString &text);

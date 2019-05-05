@@ -48,7 +48,7 @@ public:
     explicit TTKGifLabelWidget(QWidget *parent = nullptr);
     explicit TTKGifLabelWidget(Type type, QWidget *parent = nullptr);
 
-    ~TTKGifLabelWidget();
+    virtual ~TTKGifLabelWidget();
 
     void setType(Type type);
     Type getType() const;

@@ -55,6 +55,7 @@
 #include <QToolButton>
 #include <QColorDialog>
 #include <QFontDialog>
+#include <QFileDialog>
 #include <QSpacerItem>
 #include <QStyleOption>
 #include <QPainter>
@@ -2473,6 +2474,218 @@ void QtColorEditorFactory::disconnectPropertyManager(QtColorPropertyManager *man
 {
     disconnect(manager, SIGNAL(valueChanged(QtProperty*,QColor)), this, SLOT(slotPropertyChanged(QtProperty*,QColor)));
 }
+
+// QtPixmapEditWidget
+
+class QtPixmapEditWidget : public QWidget {
+    Q_OBJECT
+
+public:
+    QtPixmapEditWidget(QWidget *parent);
+
+    bool eventFilter(QObject *obj, QEvent *ev);
+
+public Q_SLOTS:
+    void setValue(const QString &value);
+
+Q_SIGNALS:
+    void valueChanged(const QString &value);
+
+protected:
+    void paintEvent(QPaintEvent *);
+
+private Q_SLOTS:
+    void buttonClicked();
+
+private:
+    QString m_path;
+    QLabel *m_pixmapLabel;
+    QLineEdit *m_label;
+    QToolButton *m_button;
+};
+
+QtPixmapEditWidget::QtPixmapEditWidget(QWidget *parent) :
+    QWidget(parent),
+    m_pixmapLabel(new QLabel),
+    m_label(new QLineEdit),
+    m_button(new QToolButton)
+{
+    QHBoxLayout *lt = new QHBoxLayout(this);
+    setupTreeViewEditorMargin(lt);
+    lt->setSpacing(0);
+    m_pixmapLabel->setScaledContents(true);
+    m_pixmapLabel->setFixedSize(18, 18);
+    lt->addWidget(m_pixmapLabel);
+    connect(m_label, SIGNAL(textChanged(QString)), SLOT(setValue(QString)));
+    lt->addWidget(m_label);
+    lt->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Ignored));
+
+    m_button->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
+    m_button->setFixedWidth(18);
+    setFocusProxy(m_button);
+    setFocusPolicy(m_button->focusPolicy());
+    m_button->setText(tr("..."));
+    m_button->installEventFilter(this);
+    connect(m_button, SIGNAL(clicked()), this, SLOT(buttonClicked()));
+    lt->addWidget(m_button);
+}
+
+void QtPixmapEditWidget::setValue(const QString &value)
+{
+    if (m_path != value) {
+        m_path = value;
+        m_pixmapLabel->setPixmap(QPixmap(m_path));
+        m_label->setText(m_path);
+        emit valueChanged(m_path);
+    }
+}
+
+void QtPixmapEditWidget::buttonClicked()
+{
+    const QString &path = QFileDialog::getOpenFileName(this);
+    if (!path.isEmpty()) {
+        setValue(path);
+    }
+}
+
+bool QtPixmapEditWidget::eventFilter(QObject *obj, QEvent *ev)
+{
+    if (obj == m_button) {
+        switch (ev->type()) {
+        case QEvent::KeyPress:
+        case QEvent::KeyRelease: {
+            switch (static_cast<const QKeyEvent*>(ev)->key()) {
+            case Qt::Key_Escape:
+            case Qt::Key_Enter:
+            case Qt::Key_Return:
+                ev->ignore();
+                return true;
+            default:
+                break;
+            }
+        }
+            break;
+        default:
+            break;
+        }
+    }
+    return QWidget::eventFilter(obj, ev);
+}
+
+void QtPixmapEditWidget::paintEvent(QPaintEvent *)
+{
+    QStyleOption opt;
+    opt.init(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+}
+
+// QtPixmapEditorFactory
+
+class QtPixmapEditorFactoryPrivate : public EditorFactoryPrivate<QtPixmapEditWidget>
+{
+    QtPixmapEditorFactory *q_ptr;
+    Q_DECLARE_PUBLIC(QtPixmapEditorFactory)
+public:
+
+    void slotPropertyChanged(QtProperty *property, const QString &value);
+    void slotSetValue(const QString &value);
+};
+
+void QtPixmapEditorFactoryPrivate::slotPropertyChanged(QtProperty *property, const QString &value)
+{
+    if (!m_createdEditors.contains(property))
+        return;
+    QListIterator<QtPixmapEditWidget *> itEditor(m_createdEditors[property]);
+    while (itEditor.hasNext()) {
+        QtPixmapEditWidget *editor = itEditor.next();
+        editor->blockSignals(true);
+        editor->setValue(value);
+        editor->blockSignals(false);
+    }
+}
+
+void QtPixmapEditorFactoryPrivate::slotSetValue(const QString &value)
+{
+    QObject *object = q_ptr->sender();
+    const  QMap<QtPixmapEditWidget *, QtProperty *>::ConstIterator ecend = m_editorToProperty.constEnd();
+    for (QMap<QtPixmapEditWidget *, QtProperty *>::ConstIterator itEditor = m_editorToProperty.constBegin(); itEditor != ecend; ++itEditor)
+        if (itEditor.key() == object) {
+            QtProperty *property = itEditor.value();
+            QtPixmapPropertyManager *manager = q_ptr->propertyManager(property);
+            if (!manager)
+                return;
+            manager->setValue(property, value);
+            return;
+        }
+}
+
+/*!
+    \class QtPixmapEditorFactory
+
+    \brief The QtPixmapEditorFactory class provides QtPixmapEdit widgets for
+    properties created by QtPixmapPropertyManager objects.
+
+    \sa QtAbstractEditorFactory, QtPixmapPropertyManager
+*/
+
+/*!
+    Creates a factory with the given \a parent.
+*/
+QtPixmapEditorFactory::QtPixmapEditorFactory(QObject *parent)
+    : QtAbstractEditorFactory<QtPixmapPropertyManager>(parent)
+{
+    d_ptr = new QtPixmapEditorFactoryPrivate();
+    d_ptr->q_ptr = this;
+
+}
+
+/*!
+    Destroys this factory, and all the widgets it has created.
+*/
+QtPixmapEditorFactory::~QtPixmapEditorFactory()
+{
+    qDeleteAll(d_ptr->m_editorToProperty.keys());
+    delete d_ptr;
+}
+
+/*!
+    \internal
+
+    Reimplemented from the QtAbstractEditorFactory class.
+*/
+void QtPixmapEditorFactory::connectPropertyManager(QtPixmapPropertyManager *manager)
+{
+    connect(manager, SIGNAL(valueChanged(QtProperty *, const QString &)),
+                this, SLOT(slotPropertyChanged(QtProperty *, const QString &)));
+}
+
+/*!
+    \internal
+
+    Reimplemented from the QtAbstractEditorFactory class.
+*/
+QWidget *QtPixmapEditorFactory::createEditor(QtPixmapPropertyManager *manager, QtProperty *property,
+        QWidget *parent)
+{
+    QtPixmapEditWidget *editor = d_ptr->createEditor(property, parent);
+    editor->setValue(manager->value(property));
+    connect(editor, SIGNAL(valueChanged(QString)), this, SLOT(slotSetValue(QString)));
+    connect(editor, SIGNAL(destroyed(QObject *)), this, SLOT(slotEditorDestroyed(QObject *)));
+    return editor;
+}
+
+/*!
+    \internal
+
+    Reimplemented from the QtAbstractEditorFactory class.
+*/
+void QtPixmapEditorFactory::disconnectPropertyManager(QtPixmapPropertyManager *manager)
+{
+    disconnect(manager, SIGNAL(valueChanged(QtProperty *, const QPixmap &)),
+                this, SLOT(slotPropertyChanged(QtProperty *, const QPixmap &)));
+}
+
 
 // QtFontEditWidget
 

@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKMarqueeLabel : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKMarqueeLabel)
 public:
     explicit TTKMarqueeLabel(QWidget *parent = nullptr);
 

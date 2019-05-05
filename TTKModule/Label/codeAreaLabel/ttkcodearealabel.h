@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKCodeAreaLabel : public QLabel
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCodeAreaLabel)
 public:
     explicit TTKCodeAreaLabel(QWidget *parent = nullptr);
 

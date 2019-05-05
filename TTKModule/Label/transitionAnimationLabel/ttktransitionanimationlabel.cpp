@@ -29,6 +29,13 @@ QPixmap TTKTransitionAnimationLabel::getRendererPixmap() const
     return m_rendererPixmap;
 }
 
+void TTKTransitionAnimationLabel::start()
+{
+    stop();
+    m_isAnimating = true;
+    m_animation->start();
+}
+
 void TTKTransitionAnimationLabel::stop()
 {
     if(m_animation->state() == QPropertyAnimation::Running)
@@ -48,8 +55,6 @@ void TTKTransitionAnimationLabel::setPixmap(const QPixmap &pix)
 
     m_previousPixmap = *pixmap();
     m_currentPixmap = pix;
-    m_isAnimating = true;
-    m_animation->start();
 }
 
 void TTKTransitionAnimationLabel::valueChanged(const QVariant &value)

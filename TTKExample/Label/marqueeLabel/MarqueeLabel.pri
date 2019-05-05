@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkmarqueelabelwindow.cpp
+SOURCES += $$PWD/ttkmarqueelabelproperty.cpp
 
-HEADERS += $$PWD/ttkmarqueelabelwindow.h
-
-FORMS   += $$PWD/ttkmarqueelabelwindow.ui
+HEADERS += $$PWD/ttkmarqueelabelproperty.h

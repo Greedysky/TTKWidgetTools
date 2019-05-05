@@ -16,6 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkflatbuttonpropertywidget.cpp
+SOURCES += $$PWD/ttkflatbuttonwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkflatbuttonpropertywidget.h
+HEADERS += $$PWD/ttkflatbuttonwidgetproperty.h

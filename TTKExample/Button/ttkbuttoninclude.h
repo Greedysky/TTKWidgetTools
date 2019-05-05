@@ -19,10 +19,10 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "checkButtonWidget/ttkcheckbuttonpropertywidget.h"
-#include "flatButtonWidget/ttkflatbuttonpropertywidget.h"
-#include "radioButtonWidget/ttkradiobuttonpropertywidget.h"
-#include "toggleWidget/ttktogglepropertywidget.h"
-#include "toolMenuWidget/ttktoolmenupropertywidget.h"
+#include "checkButtonWidget/ttkcheckbuttonwidgetproperty.h"
+#include "flatButtonWidget/ttkflatbuttonwidgetproperty.h"
+#include "radioButtonWidget/ttkradiobuttonwidgetproperty.h"
+#include "toggleWidget/ttktogglewidgetproperty.h"
+#include "toolMenuWidget/ttktoolmenuwidgetproperty.h"
 
 #endif // TTKBUTTONINCLUDE_H

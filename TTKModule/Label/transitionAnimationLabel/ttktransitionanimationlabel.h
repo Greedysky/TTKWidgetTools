@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -30,16 +31,17 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKTransitionAnimationLabel : public QLabel
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKTransitionAnimationLabel)
 public:
     explicit TTKTransitionAnimationLabel(QWidget *parent = nullptr);
-
-    ~TTKTransitionAnimationLabel();
+    virtual ~TTKTransitionAnimationLabel();
 
     inline void setNoAnimation(bool on) { m_noAnimationSet = on; }
     inline bool getNoAnimation() const { return m_noAnimationSet; }
 
     QPixmap getRendererPixmap() const;
 
+    void start();
     void stop();
 
 public Q_SLOTS:

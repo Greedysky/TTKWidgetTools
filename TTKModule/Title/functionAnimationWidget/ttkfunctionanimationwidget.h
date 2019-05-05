@@ -40,7 +40,7 @@ public:
         Right
     };
     explicit TTKBaseAnimationWidget(QWidget *parent = nullptr);
-    ~TTKBaseAnimationWidget();
+    virtual ~TTKBaseAnimationWidget();
 
     void setAlignment(Alignment alignment);
 

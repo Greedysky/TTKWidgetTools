@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttktransitionanimationwindow.cpp
+SOURCES += $$PWD/ttktransitionanimationlabelproperty.cpp
 
-HEADERS += $$PWD/ttktransitionanimationwindow.h
-
-FORMS   += $$PWD/ttktransitionanimationwindow.ui
+HEADERS += $$PWD/ttktransitionanimationlabelproperty.h

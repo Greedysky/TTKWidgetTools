@@ -11,6 +11,11 @@ TTKSplitItemLabel::TTKSplitItemLabel(QWidget *parent)
     setMouseTracking(true);
 }
 
+void TTKSplitItemLabel::setSplitString(const QString &str)
+{
+    m_splitString = str;
+}
+
 void TTKSplitItemLabel::enterEvent(QEvent *event)
 {
     QLabel::enterEvent(event);

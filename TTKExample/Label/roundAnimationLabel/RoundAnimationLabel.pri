@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkroundanimationwindow.cpp
+SOURCES += $$PWD/ttkroundanimationlabelproperty.cpp
 
-HEADERS += $$PWD/ttkroundanimationwindow.h
-
-FORMS   += $$PWD/ttkroundanimationwindow.ui
+HEADERS += $$PWD/ttkroundanimationlabelproperty.h

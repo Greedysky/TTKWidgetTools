@@ -19,13 +19,13 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "circleClickLabel/ttkcircleclicklabel.h"
-#include "codeAreaLabel/ttkcodearealabel.h"
-#include "marqueeLabel/ttkmarqueelabel.h"
-#include "roundAnimationLabel/ttkroundanimationlabel.h"
-#include "splitItemLabel/ttksplititemlabel.h"
-#include "toastLabel/ttktoastlabel.h"
-#include "transitionAnimationLabel/ttktransitionanimationlabel.h"
-#include "ledPageLabel/ttkledpagelabel.h"
+#include "circleClickLabel/ttkcircleclicklabelproperty.h"
+#include "codeAreaLabel/ttkcodearealabelproperty.h"
+#include "marqueeLabel/ttkmarqueelabelproperty.h"
+#include "roundAnimationLabel/ttkroundanimationlabelproperty.h"
+#include "splitItemLabel/ttksplititemlabelproperty.h"
+#include "toastLabel/ttktoastlabelproperty.h"
+#include "transitionAnimationLabel/ttktransitionanimationlabelproperty.h"
+#include "ledPageLabel/ttkledpagelabelproperty.h"
 
 #endif // TTKLABELINCLUDE_H

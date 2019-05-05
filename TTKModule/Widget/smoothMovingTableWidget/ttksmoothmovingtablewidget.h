@@ -32,7 +32,7 @@ class TTK_CORE_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
     Q_OBJECT
 public:
     explicit TTKSmoothMovingTableWidget(QWidget *parent = nullptr);
-    ~TTKSmoothMovingTableWidget();
+    virtual ~TTKSmoothMovingTableWidget();
 
     void setMovedScrollBar(QScrollBar *bar);
 

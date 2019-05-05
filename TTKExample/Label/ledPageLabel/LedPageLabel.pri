@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkledpagewindow.cpp
+SOURCES += $$PWD/ttkledpagelabelproperty.cpp
 
-HEADERS += $$PWD/ttkledpagewindow.h
-
-FORMS   += $$PWD/ttkledpagewindow.ui
+HEADERS += $$PWD/ttkledpagelabelproperty.h

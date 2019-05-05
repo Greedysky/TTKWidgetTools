@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkcodearealabelwindow.cpp
+SOURCES += $$PWD/ttkcodearealabelproperty.cpp
 
-HEADERS += $$PWD/ttkcodearealabelwindow.h
-
-FORMS   += $$PWD/ttkcodearealabelwindow.ui
+HEADERS += $$PWD/ttkcodearealabelproperty.h
