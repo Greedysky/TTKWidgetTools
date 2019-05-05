@@ -41,6 +41,8 @@ public:
     void setText(const QString &text);
     void setFontSize(int size);
 
+    virtual QSize sizeHint() const override;
+
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
     virtual void resizeEvent(QResizeEvent *event) override;

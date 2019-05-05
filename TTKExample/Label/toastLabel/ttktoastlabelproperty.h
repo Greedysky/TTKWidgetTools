@@ -37,6 +37,12 @@ private Q_SLOTS:
     virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
     virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
 
+private Q_SLOTS:
+    void showToast();
+
+private:
+    QWidget *m_label;
+
 };
 
 #endif // TTKTOASTLABELPROPERTY_H

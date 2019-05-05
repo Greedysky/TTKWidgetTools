@@ -44,6 +44,8 @@ public:
     void start();
     void stop();
 
+    virtual QSize sizeHint() const override;
+
 public Q_SLOTS:
     void setPixmap(const QPixmap &pix);
 

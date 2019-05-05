@@ -32,7 +32,6 @@ public:
     virtual ~TTKTransitionAnimationLabelProperty();
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
     virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;
 
 };

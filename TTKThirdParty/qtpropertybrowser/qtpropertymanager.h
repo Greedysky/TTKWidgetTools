@@ -743,6 +743,8 @@ public:
     QtPixmapPropertyManager(QObject *parent = 0);
     ~QtPixmapPropertyManager();
 
+    QtStringPropertyManager *subStirngPropertyManager() const;
+
     QString value(const QtProperty *property) const;
 
 public Q_SLOTS:
@@ -757,6 +759,8 @@ private:
     QtPixmapPropertyManagerPrivate *d_ptr;
     Q_DECLARE_PRIVATE(QtPixmapPropertyManager)
     Q_DISABLE_COPY(QtPixmapPropertyManager)
+    Q_PRIVATE_SLOT(d_func(), void slotStringChanged(QtProperty *, QString))
+    Q_PRIVATE_SLOT(d_func(), void slotPropertyDestroyed(QtProperty *))
 };
 
 class QtCursorPropertyManagerPrivate;

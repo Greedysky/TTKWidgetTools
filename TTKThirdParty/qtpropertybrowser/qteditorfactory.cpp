@@ -2500,14 +2500,14 @@ private Q_SLOTS:
 private:
     QString m_path;
     QLabel *m_pixmapLabel;
-    QLineEdit *m_label;
+    QLabel *m_label;
     QToolButton *m_button;
 };
 
 QtPixmapEditWidget::QtPixmapEditWidget(QWidget *parent) :
     QWidget(parent),
     m_pixmapLabel(new QLabel),
-    m_label(new QLineEdit),
+    m_label(new QLabel),
     m_button(new QToolButton)
 {
     QHBoxLayout *lt = new QHBoxLayout(this);
@@ -2516,7 +2516,6 @@ QtPixmapEditWidget::QtPixmapEditWidget(QWidget *parent) :
     m_pixmapLabel->setScaledContents(true);
     m_pixmapLabel->setFixedSize(18, 18);
     lt->addWidget(m_pixmapLabel);
-    connect(m_label, SIGNAL(textChanged(QString)), SLOT(setValue(QString)));
     lt->addWidget(m_label);
     lt->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Ignored));
 
@@ -2535,7 +2534,7 @@ void QtPixmapEditWidget::setValue(const QString &value)
     if (m_path != value) {
         m_path = value;
         m_pixmapLabel->setPixmap(QPixmap(m_path));
-        m_label->setText(m_path);
+        m_label->setText(QFileInfo(m_path).baseName());
         emit valueChanged(m_path);
     }
 }

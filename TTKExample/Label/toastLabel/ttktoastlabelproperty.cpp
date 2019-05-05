@@ -1,16 +1,21 @@
 #include "ttktoastlabelproperty.h"
 #include "ttktoastlabel.h"
 
+#include <QToolButton>
+
 TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
-    m_item = new TTKToastLabel(this);
+    m_item = new QToolButton(this);
+    connect(m_item, SIGNAL(clicked()), SLOT(showToast()));
+    //
+    m_label = new TTKToastLabel(this);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKToastLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, MStatic_cast(TTKToastLabel*, m_label)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -52,20 +57,16 @@ TTKToastLabelProperty::~TTKToastLabelProperty()
 
 void TTKToastLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_item);
+    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "Bold")
     {
         widget->setBold(value);
-    }
-    else if(property->propertyName() == "Activity")
-    {
-        widget->popup(this);
     }
 }
 
 void TTKToastLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_item);
+    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "FontSize")
     {
         widget->setFontSize(value);
@@ -78,7 +79,7 @@ void TTKToastLabelProperty::intPropertyChanged(QtProperty *property, int value)
 
 void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_item);
+    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -87,9 +88,15 @@ void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QS
 
 void TTKToastLabelProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_item);
+    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "FontMargin")
     {
         widget->setFontMargin(value.width(), value.height());
     }
+}
+
+void TTKToastLabelProperty::showToast()
+{
+    TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
+    widget->popup(m_containItem);
 }

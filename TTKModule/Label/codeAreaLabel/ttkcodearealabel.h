@@ -42,6 +42,8 @@ public:
     void setNoisyPointCount(int nCount);
     inline int getNoisyPointCount() const { return m_nNoisyPointCount; }
 
+    virtual QSize sizeHint() const override;
+
 protected:
     void drawOutline(QPainter &painter);
     void drawNoisyPoint(QPainter &painter);

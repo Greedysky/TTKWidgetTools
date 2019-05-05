@@ -44,17 +44,24 @@ void TTKTransitionAnimationLabel::stop()
     }
 }
 
+QSize TTKTransitionAnimationLabel::sizeHint() const
+{
+    return QSize(200, 200);
+}
+
 void TTKTransitionAnimationLabel::setPixmap(const QPixmap &pix)
 {
     if(m_noAnimationSet || !pixmap())
     {
-        m_rendererPixmap = pix;
-        QLabel::setPixmap(pix);
+        m_rendererPixmap = pix.scaled(sizeHint());
+        QLabel::setPixmap(m_rendererPixmap);
         return;
     }
 
     m_previousPixmap = *pixmap();
-    m_currentPixmap = pix;
+    m_currentPixmap = pix.scaled(sizeHint());
+
+    start();
 }
 
 void TTKTransitionAnimationLabel::valueChanged(const QVariant &value)

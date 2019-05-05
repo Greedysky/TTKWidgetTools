@@ -38,6 +38,8 @@ public:
     void setPixmap(const QPixmap &pix);
     void setInterval(int value);
 
+    virtual QSize sizeHint() const override;
+
 public Q_SLOTS:
     void start();
     void stop();

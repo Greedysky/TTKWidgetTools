@@ -49,6 +49,7 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     m_browser->setFactoryForManager(m_enumManager, m_comboBoxFactory);
     m_browser->setFactoryForManager(m_colorManager, m_colorEditorFactory);
     m_browser->setFactoryForManager(m_pixmapManager, m_pixmapEditorFactory);
+    m_browser->setFactoryForManager(m_pixmapManager->subStirngPropertyManager(), m_lineEditFactory);
 
     //
     connect(m_boolManager, SIGNAL(valueChanged(QtProperty*,bool)), SLOT(boolPropertyChanged(QtProperty*,bool)));

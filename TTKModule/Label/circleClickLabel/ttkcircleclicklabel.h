@@ -34,6 +34,8 @@ public:
     explicit TTKCircleClickLabel(QWidget *parent = nullptr);
     virtual ~TTKCircleClickLabel();
 
+    virtual QSize sizeHint() const override;
+
 protected Q_SLOTS:
     void updateRender();
 

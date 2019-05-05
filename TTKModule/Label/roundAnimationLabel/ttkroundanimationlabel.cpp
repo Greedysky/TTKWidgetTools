@@ -36,6 +36,11 @@ void TTKRoundAnimationLabel::stop()
     m_timer.stop();
 }
 
+QSize TTKRoundAnimationLabel::sizeHint() const
+{
+    return QSize(150, 150);
+}
+
 void TTKRoundAnimationLabel::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);

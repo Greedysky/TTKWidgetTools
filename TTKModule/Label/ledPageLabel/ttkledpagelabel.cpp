@@ -6,13 +6,11 @@ TTKLedPageLabel::TTKLedPageLabel(QWidget *parent)
     : QWidget(parent)
 {
     setScale(0.6);
-    setBackColor(QColor(85,85,85));
-    setFrontColor(QColor(255,255,255));
-    setLineColor(QColor(60,60,60));
+    setBackColor(QColor(85, 85, 85));
+    setFrontColor(QColor(255, 255, 255));
+    setLineColor(QColor(60, 60, 60));
     setText("2");
     setFontSize(40);
-
-    setMinimumSize(100, 100);
 }
 
 void TTKLedPageLabel::setFrontColor(const QColor &color)
@@ -44,6 +42,11 @@ void TTKLedPageLabel::setText(const QString &text)
 void TTKLedPageLabel::setFontSize(int size)
 {
     m_fontSize = size;
+}
+
+QSize TTKLedPageLabel::sizeHint() const
+{
+    return QSize(100 * m_scale, 100);
 }
 
 void TTKLedPageLabel::resizeEvent(QResizeEvent *event)

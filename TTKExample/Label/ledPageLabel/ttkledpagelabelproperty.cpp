@@ -6,6 +6,11 @@
 TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
+    m_timer = new QTimer(this);
+    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
+
+    m_timer->setInterval(1000);
+    //
     m_item = new TTKLedPageLabel(this);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -16,6 +21,7 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
+    m_boolManager->setValue(activityItem, true);
     objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -34,11 +40,6 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     objectItem->addSubProperty(frontColorItem);
     //
     m_browser->addProperty(objectItem);
-
-    m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
-
-    m_timer->start(1000);
 }
 
 TTKLedPageLabelProperty::~TTKLedPageLabelProperty()

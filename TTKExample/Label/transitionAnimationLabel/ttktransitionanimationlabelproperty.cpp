@@ -20,6 +20,7 @@ TTKTransitionAnimationLabelProperty::TTKTransitionAnimationLabelProperty(QWidget
     objectItem->addSubProperty(geometryItem);
     //
     QtProperty *pixmapItem = m_pixmapManager->addProperty("Pixmap");
+    m_pixmapManager->setValue(pixmapItem, ":/res/1");
     objectItem->addSubProperty(pixmapItem);
     //
     m_browser->addProperty(objectItem);
@@ -28,22 +29,6 @@ TTKTransitionAnimationLabelProperty::TTKTransitionAnimationLabelProperty(QWidget
 TTKTransitionAnimationLabelProperty::~TTKTransitionAnimationLabelProperty()
 {
 
-}
-
-void TTKTransitionAnimationLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
-{
-    TTKTransitionAnimationLabel *widget = MStatic_cast(TTKTransitionAnimationLabel*, m_item);
-    if(property->propertyName() == "Activity")
-    {
-        if(value)
-        {
-            widget->start();
-        }
-        else
-        {
-            widget->stop();
-        }
-    }
 }
 
 void TTKTransitionAnimationLabelProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)

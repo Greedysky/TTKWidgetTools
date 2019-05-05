@@ -55,6 +55,7 @@
 #include <QLabel>
 #include <QCheckBox>
 #include <QLineEdit>
+#include <QFileInfo>
 
 #include <limits.h>
 #include <float.h>
@@ -6495,9 +6496,43 @@ class QtPixmapPropertyManagerPrivate
     Q_DECLARE_PUBLIC(QtPixmapPropertyManager)
 public:
 
+    void slotStringChanged(QtProperty *property, const QString &value);
+    void slotPropertyDestroyed(QtProperty *property);
+
     typedef QMap<const QtProperty *, QString> PropertyValueMap;
     PropertyValueMap m_values;
+
+    QtStringPropertyManager *m_stringPropertyManager;
+
+    QMap<const QtProperty *, QtProperty *> m_propertyToSize;
+    QMap<const QtProperty *, QtProperty *> m_propertyToName;
+    QMap<const QtProperty *, QtProperty *> m_propertyToPath;
+
+    QMap<const QtProperty *, QtProperty *> m_sizeToProperty;
+    QMap<const QtProperty *, QtProperty *> m_nameToProperty;
+    QMap<const QtProperty *, QtProperty *> m_pathToProperty;
 };
+
+void QtPixmapPropertyManagerPrivate::slotStringChanged(QtProperty *property, const QString &value)
+{
+    if (QtProperty *prop = m_pathToProperty.value(property, 0)) {
+        q_ptr->setValue(prop, value);
+    }
+}
+
+void QtPixmapPropertyManagerPrivate::slotPropertyDestroyed(QtProperty *property)
+{
+    if (QtProperty *pointProp = m_sizeToProperty.value(property, 0)) {
+        m_propertyToSize[pointProp] = 0;
+        m_sizeToProperty.remove(property);
+    } else if (QtProperty *pointProp = m_nameToProperty.value(property, 0)) {
+        m_propertyToName[pointProp] = 0;
+        m_nameToProperty.remove(property);
+    } else if (QtProperty *pointProp = m_pathToProperty.value(property, 0)) {
+        m_propertyToPath[pointProp] = 0;
+        m_pathToProperty.remove(property);
+    }
+}
 
 /*! \class QtPixmapPropertyManager
 
@@ -6509,7 +6544,7 @@ public:
     valueChanged() signal which is emitted whenever a property created
     by this manager changes.
 
-    \sa QtAbstractPropertyManager, QtDateTimeEditFactory, QtDatePropertyManager
+    \sa QtAbstractPropertyManager, QtPixmapEditFactory, QtPixmapPropertyManager
 */
 
 /*!
@@ -6528,6 +6563,13 @@ QtPixmapPropertyManager::QtPixmapPropertyManager(QObject *parent)
 {
     d_ptr = new QtPixmapPropertyManagerPrivate;
     d_ptr->q_ptr = this;
+
+    d_ptr->m_stringPropertyManager = new QtStringPropertyManager(this);
+    connect(d_ptr->m_stringPropertyManager, SIGNAL(valueChanged(QtProperty *, QString)),
+                this, SLOT(slotStringChanged(QtProperty *, QString)));
+
+    connect(d_ptr->m_stringPropertyManager, SIGNAL(propertyDestroyed(QtProperty *)),
+                this, SLOT(slotPropertyDestroyed(QtProperty *)));
 }
 
 /*!
@@ -6537,6 +6579,21 @@ QtPixmapPropertyManager::~QtPixmapPropertyManager()
 {
     clear();
     delete d_ptr;
+}
+
+/*!
+    Returns the manager that produces the nested \e red, \e green and
+    \e blue subproperties.
+
+    In order to provide editing widgets for the subproperties in a
+    property browser widget, this manager must be associated with an
+    editor factory.
+
+    \sa QtAbstractPropertyBrowser::setFactoryForManager()
+*/
+QtStringPropertyManager *QtPixmapPropertyManager::subStirngPropertyManager() const
+{
+    return d_ptr->m_stringPropertyManager;
 }
 
 /*!
@@ -6582,6 +6639,11 @@ void QtPixmapPropertyManager::setValue(QtProperty *property, const QString &val)
 
     it.value() = val;
 
+    QPixmap pix(val);
+    d_ptr->m_stringPropertyManager->setValue(d_ptr->m_propertyToSize[property], QString("%1 X %2").arg(pix.width()).arg(pix.height()));
+    d_ptr->m_stringPropertyManager->setValue(d_ptr->m_propertyToName[property], QFileInfo(val).fileName());
+    d_ptr->m_stringPropertyManager->setValue(d_ptr->m_propertyToPath[property], val);
+
     emit propertyChanged(property);
     emit valueChanged(property, val);
 }
@@ -6592,6 +6654,29 @@ void QtPixmapPropertyManager::setValue(QtProperty *property, const QString &val)
 void QtPixmapPropertyManager::initializeProperty(QtProperty *property)
 {
     d_ptr->m_values[property] = QString();
+
+    QtProperty *sizeProp = d_ptr->m_stringPropertyManager->addProperty();
+    sizeProp->setPropertyName(tr("Size"));
+    d_ptr->m_stringPropertyManager->setValue(sizeProp, QString());
+    d_ptr->m_stringPropertyManager->setReadOnly(sizeProp, true);
+    d_ptr->m_propertyToSize[property] = sizeProp;
+    d_ptr->m_sizeToProperty[sizeProp] = property;
+    property->addSubProperty(sizeProp);
+
+    QtProperty *nameProp = d_ptr->m_stringPropertyManager->addProperty();
+    nameProp->setPropertyName(tr("Name"));
+    d_ptr->m_stringPropertyManager->setValue(nameProp, QString());
+    d_ptr->m_stringPropertyManager->setReadOnly(nameProp, true);
+    d_ptr->m_propertyToName[property] = nameProp;
+    d_ptr->m_nameToProperty[nameProp] = property;
+    property->addSubProperty(nameProp);
+
+    QtProperty *pathProp = d_ptr->m_stringPropertyManager->addProperty();
+    pathProp->setPropertyName(tr("Path"));
+    d_ptr->m_stringPropertyManager->setValue(pathProp, QString());
+    d_ptr->m_propertyToPath[property] = pathProp;
+    d_ptr->m_pathToProperty[pathProp] = property;
+    property->addSubProperty(pathProp);
 }
 
 /*!
@@ -6599,6 +6684,27 @@ void QtPixmapPropertyManager::initializeProperty(QtProperty *property)
 */
 void QtPixmapPropertyManager::uninitializeProperty(QtProperty *property)
 {
+    QtProperty *sizeProp = d_ptr->m_propertyToSize[property];
+    if (sizeProp) {
+        d_ptr->m_sizeToProperty.remove(sizeProp);
+        delete sizeProp;
+    }
+    d_ptr->m_propertyToSize.remove(property);
+
+    QtProperty *nameProp = d_ptr->m_propertyToName[property];
+    if (nameProp) {
+        d_ptr->m_nameToProperty.remove(nameProp);
+        delete nameProp;
+    }
+    d_ptr->m_propertyToName.remove(property);
+
+    QtProperty *pathProp = d_ptr->m_propertyToPath[property];
+    if (pathProp) {
+        d_ptr->m_pathToProperty.remove(pathProp);
+        delete pathProp;
+    }
+    d_ptr->m_propertyToPath.remove(property);
+
     d_ptr->m_values.remove(property);
 }
 

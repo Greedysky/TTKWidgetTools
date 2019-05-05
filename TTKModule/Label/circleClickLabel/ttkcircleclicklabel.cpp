@@ -20,6 +20,11 @@ TTKCircleClickLabel::~TTKCircleClickLabel()
     delete m_circleTimer;
 }
 
+QSize TTKCircleClickLabel::sizeHint() const
+{
+    return QSize(200, 200);
+}
+
 void TTKCircleClickLabel::updateRender()
 {
     m_crValue += 2;

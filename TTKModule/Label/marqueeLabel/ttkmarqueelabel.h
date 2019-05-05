@@ -36,7 +36,7 @@ public:
     void setText(const QString &newText);
     inline QString text() const { return m_myText.trimmed(); }
 
-    QSize sizeHint() const;
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

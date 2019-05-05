@@ -8,8 +8,11 @@ TTKToastLabel::TTKToastLabel(QWidget *parent)
 {
     setWindowFlags( Qt::Window | Qt::FramelessWindowHint );
     setAttribute(Qt::WA_TranslucentBackground);
+
+#ifndef TTK_BUILD_EXAMPLE
     setAttribute(Qt::WA_QuitOnClose);
     setAttribute(Qt::WA_DeleteOnClose);
+#endif
 
     m_font = font();
     connect(&m_timer, SIGNAL(timeout()), SLOT(updateRender()));
@@ -32,6 +35,7 @@ void TTKToastLabel::setFontMargin(int height, int width)
 {
     m_margin.setX(height);
     m_margin.setY(width);
+    update();
 }
 
 void TTKToastLabel::setTimerInterval(int msecond)

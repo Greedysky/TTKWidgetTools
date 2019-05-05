@@ -1,4 +1,5 @@
 ﻿#include "ttkbackgroundcontainer.h"
+#include "ttkglobal.h"
 
 #include <qmath.h>
 #include <QPainter>
@@ -27,7 +28,7 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
 {
     delete m_item;
     m_item = item;
-    layout()->addWidget(item);
+    MStatic_cast(QVBoxLayout*, layout())->addWidget(item, 0, Qt::AlignCenter);
 }
 
 void TTKBackgroundContainerItem::onMouseChange(int x, int y)
