@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLineEdit>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -30,11 +31,14 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKLineEditWidget : public QLineEdit
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKLineEditWidget)
 public:
     explicit TTKLineEditWidget(QWidget *parent = nullptr);
     virtual ~TTKLineEditWidget();
 
     void setColor(const QColor &color);
+
+    virtual QSize sizeHint() const override;
 
 private Q_SLOTS:
     void valueChanged(const QVariant &value);

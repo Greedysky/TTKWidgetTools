@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkipeditwindow.cpp
+SOURCES += $$PWD/ttkipeditwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkipeditwindow.h
-
-FORMS   += $$PWD/ttkipeditwindow.ui
+HEADERS += $$PWD/ttkipeditwidgetproperty.h

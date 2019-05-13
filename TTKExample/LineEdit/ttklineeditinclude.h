@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "ipEditWidget/ttkipeditwindow.h"
-#include "lineEditWidget/ttklineeditwindow.h"
+#include "ipEditWidget/ttkipeditwidgetproperty.h"
+#include "lineEditWidget/ttklineeditwidgetproperty.h"
 
 #endif // TTKLINEEDITINCLUDE_H

@@ -121,15 +121,20 @@ void TTKToolsApplication::labelModuleChanged(int index)
 
 void TTKToolsApplication::lineEditModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKIpEditWindow(this))->show();
+        case 0: w = new TTKIpEditWidgetProperty;
             break;
-        case 1: (new TTKLineEditWindow(this))->show();
+        case 1: w = new TTKLineEditWidgetProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::meterModuleChanged(int index)
@@ -302,6 +307,8 @@ void TTKToolsApplication::createLineEditModule()
 
     widget->setObjectName("lineEidtRow");
     widget->setStyleSheet("#lineEidtRow{background-color:rgba(255, 255, 0, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(lineEditModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "LineEdit");
 }
 

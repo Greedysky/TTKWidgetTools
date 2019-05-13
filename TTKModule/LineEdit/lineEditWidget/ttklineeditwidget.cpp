@@ -32,6 +32,11 @@ void TTKLineEditWidget::setColor(const QColor &color)
     m_color = color;
 }
 
+QSize TTKLineEditWidget::sizeHint() const
+{
+    return QSize(165, 25);
+}
+
 void TTKLineEditWidget::valueChanged(const QVariant &value)
 {
     m_currentValue = value.toFloat();

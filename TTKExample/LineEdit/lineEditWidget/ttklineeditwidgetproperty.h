@@ -1,5 +1,5 @@
-#ifndef TTKLINEEDITWINDOW_H
-#define TTKLINEEDITWINDOW_H
+#ifndef TTKLINEEDITWIDGETPROPERTY_H
+#define TTKLINEEDITWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKLineEditWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKLineEditWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKLineEditWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKLineEditWindow(QWidget *parent = nullptr);
-    ~TTKLineEditWindow();
+    explicit TTKLineEditWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKLineEditWidgetProperty();
 
-private:
-    Ui::TTKLineEditWindow *ui;
+private Q_SLOTS:
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 };
 
-#endif // TTKLINEEDITWINDOW_H
+#endif // TTKLINEEDITWIDGETPROPERTY_H

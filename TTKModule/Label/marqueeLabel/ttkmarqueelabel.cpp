@@ -60,7 +60,7 @@ void TTKMarqueeLabel::timerEvent(QTimerEvent *event)
     if(event->timerId() == m_myTimerId)
     {
         ++m_offset;
-        if (m_offset >= fontMetrics().width(m_myText))
+        if(m_offset >= fontMetrics().width(m_myText))
         {
             m_offset = 0;
         }

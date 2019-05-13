@@ -317,7 +317,7 @@ void TTKCheckable::setupProperties()
 
     if(isEnabled())
     {
-        if (isChecked())
+        if(isChecked())
         {
             m_checkedIcon->setColor(checkedColor());
         }
