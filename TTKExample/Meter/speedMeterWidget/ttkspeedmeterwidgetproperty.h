@@ -1,5 +1,5 @@
-#ifndef TTKTIMEMETERWINDOW_H
-#define TTKTIMEMETERWINDOW_H
+#ifndef TTKSPEEDMETERWIDGETPROPERTY_H
+#define TTKSPEEDMETERWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,29 +19,21 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKTimeMeterWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKTimeMeterWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKSpeedMeterWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKTimeMeterWindow(QWidget *parent = nullptr);
-    ~TTKTimeMeterWindow();
+    explicit TTKSpeedMeterWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKSpeedMeterWidgetProperty();
 
 private Q_SLOTS:
-    void update(int value);
-
-private:
-    Ui::TTKTimeMeterWindow *ui;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
 
 };
 
-#endif // TTKTIMEMETERWINDOW_H
+#endif // TTKSPEEDMETERWIDGETPROPERTY_H

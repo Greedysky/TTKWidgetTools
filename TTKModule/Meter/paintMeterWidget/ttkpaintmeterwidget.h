@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,11 +29,14 @@
 class TTK_CORE_EXPORT TTKPaintMeterWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKPaintMeterWidget)
 public:
     explicit TTKPaintMeterWidget(QWidget *parent = nullptr);
 
     void setThreshold(double value);
     void setValue(double value);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     void thresholdManager();

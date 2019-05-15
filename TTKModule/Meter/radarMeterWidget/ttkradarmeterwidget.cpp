@@ -21,6 +21,11 @@ TTKRadarMeterWidget::TTKRadarMeterWidget(QWidget *parent)
     m_pointTimerId = startTimer(1200);
 }
 
+QSize TTKRadarMeterWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
@@ -29,7 +34,7 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(15, 45, 188));
 
-    int len = m_drawArea.width();
+    const int len = m_drawArea.width();
     painter.setPen(QPen(Qt::white));
     painter.drawLine(m_drawArea.topLeft() + QPoint(0, len/2), m_drawArea.topRight() + QPoint(0, len/2));
     painter.drawLine(m_drawArea.topLeft() + QPoint(len/2, 0), m_drawArea.bottomLeft() + QPoint(len/2, 0));
@@ -37,8 +42,8 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
     painter.drawEllipse(m_drawArea.center(), len/3, len/3);
     painter.drawEllipse(m_drawArea.center(), len/6, len/6);
 
-    qreal x = m_drawArea.center().x() + (qreal)len/2 * cos(-m_pieRotate*3.14159/180);
-    qreal y = m_drawArea.center().y() + (qreal)len/2 * sin(-m_pieRotate*3.14159/180);
+    const qreal x = m_drawArea.center().x() + (qreal)len/2 * cos(-m_pieRotate*3.14159/180);
+    const qreal y = m_drawArea.center().y() + (qreal)len/2 * sin(-m_pieRotate*3.14159/180);
     painter.setPen(QPen(Qt::white));
     painter.drawLine(m_drawArea.center(),QPointF(x,y));
 
@@ -53,7 +58,7 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
 
     for(int i=0; i<m_points.count(); ++i)
     {
-        int colorAlaph = m_pointsAlapha.at(i);
+        const int colorAlaph = m_pointsAlapha.at(i);
         painter.setPen(QPen(QColor(255, 255, 255, colorAlaph), 3));
         painter.drawPoint(m_points.at(i));
     }

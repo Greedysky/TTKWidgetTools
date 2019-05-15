@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkradarmeterwindow.cpp
+SOURCES += $$PWD/ttkradarmeterwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkradarmeterwindow.h
-
-FORMS   += $$PWD/ttkradarmeterwindow.ui
+HEADERS += $$PWD/ttkradarmeterwidgetproperty.h

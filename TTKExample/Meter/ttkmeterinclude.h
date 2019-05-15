@@ -19,9 +19,9 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "paintMeterWidget/ttkpaintmeterwindow.h"
-#include "radarMeterWidget/ttkradarmeterwindow.h"
-#include "speedMeterWidget/ttkspeedmeterwindow.h"
-#include "timeMeterWidget/ttktimemeterwindow.h"
+#include "paintMeterWidget/ttkpaintmeterwidgetproperty.h"
+#include "radarMeterWidget/ttkradarmeterwidgetproperty.h"
+#include "speedMeterWidget/ttkspeedmeterwidgetproperty.h"
+#include "timeMeterWidget/ttktimemeterwidgetproperty.h"
 
 #endif // TTKMETERINCLUDE_H

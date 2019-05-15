@@ -1,5 +1,5 @@
-#ifndef TTKRADARMETERWINDOW_H
-#define TTKRADARMETERWINDOW_H
+#ifndef TTKPAINTMETERWIDGETPROPERTY_H
+#define TTKPAINTMETERWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,21 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKRadarMeterWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKRadarMeterWindow : public QMainWindow
+class TTK_CORE_EXPORT TTKPaintMeterWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKRadarMeterWindow(QWidget *parent = nullptr);
-    ~TTKRadarMeterWindow();
+    explicit TTKPaintMeterWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKPaintMeterWidgetProperty();
 
-private:
-    Ui::TTKRadarMeterWindow *ui;
+private Q_SLOTS:
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
 
 };
 
-#endif // TTKRADARMETERWINDOW_H
+#endif // TTKPAINTMETERWIDGETPROPERTY_H

@@ -139,19 +139,24 @@ void TTKToolsApplication::lineEditModuleChanged(int index)
 
 void TTKToolsApplication::meterModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKPaintMeterWindow(this))->show();
+        case 0: w = new TTKPaintMeterWidgetProperty;
             break;
-        case 1: (new TTKRadarMeterWindow(this))->show();
+        case 1: w = new TTKRadarMeterWidgetProperty;
             break;
-        case 2: (new TTKSpeedMeterWindow(this))->show();
+        case 2: w = new TTKSpeedMeterWidgetProperty;
             break;
-        case 3: (new TTKTimeMeterWindow(this))->show();
+        case 3: w = new TTKTimeMeterWidgetProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::progressModuleChanged(int index)
@@ -323,6 +328,8 @@ void TTKToolsApplication::createMeterModule()
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(meterModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Meter");
 }
 
