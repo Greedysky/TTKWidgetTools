@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -31,6 +32,7 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKCircleProgressWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCircleProgressWidget)
     Q_PROPERTY(int value READ value WRITE setValue NOTIFY valueChanged)
     Q_PROPERTY(int maximum READ maximum WRITE setMaximum NOTIFY maximumChanged)
     Q_PROPERTY(qreal innerRadius READ innerRadius WRITE setInnerRadius)
@@ -50,6 +52,8 @@ public:
     qreal innerRadius() const;
     qreal outerRadius() const;
     QColor color() const;
+
+    virtual QSize sizeHint() const override;
 
 Q_SIGNALS:
     void valueChanged(int);

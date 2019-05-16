@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkprogresswindow.cpp
+SOURCES += $$PWD/ttkprogresswidgetproperty.cpp
 
-HEADERS += $$PWD/ttkprogresswindow.h
-
-FORMS   += $$PWD/ttkprogresswindow.ui
+HEADERS += $$PWD/ttkprogresswidgetproperty.h

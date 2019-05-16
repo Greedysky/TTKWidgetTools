@@ -27,8 +27,19 @@ TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
 
 void TTKAnimationProgressWidget::start()
 {
-    update();
     m_animation->start();
+    update();
+}
+
+void TTKAnimationProgressWidget::stop()
+{
+    m_animation->stop();
+    update();
+}
+
+QSize TTKAnimationProgressWidget::sizeHint() const
+{
+    return QSize(180, 180);
 }
 
 void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)

@@ -1,5 +1,5 @@
-#ifndef TTKRINGSPROGRESSWIDGET_H
-#define TTKRINGSPROGRESSWIDGET_H
+#ifndef TTKANIMATIONPROGRESSWIDGETPROPERTY_H
+#define TTKANIMATIONPROGRESSWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,30 +19,21 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
-#include "ttkglobal.h"
-#include "ttkglobaldefine.h"
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKRingsProgressWidget : public QWidget
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKAnimationProgressWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKRingsProgressWidget)
 public:
-    explicit TTKRingsProgressWidget(QWidget *parent = nullptr);
+    explicit TTKAnimationProgressWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKAnimationProgressWidgetProperty();
 
-    void setValue(int value);
-
-    virtual QSize sizeHint() const override;
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-private:
-    int m_angle, m_value;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
 
 };
 
-#endif // TTKRINGSPROGRESSWIDGET_H
+#endif // TTKANIMATIONPROGRESSWIDGETPROPERTY_H

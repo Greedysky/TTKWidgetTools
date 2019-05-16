@@ -18,8 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-HEADERS += $$PWD/ttkringsmapprogresswindow.h
+HEADERS += $$PWD/ttkringsmapprogresswidgetproperty.h
 
-SOURCES += $$PWD/ttkringsmapprogresswindow.cpp
-
-FORMS   += $$PWD/ttkringsmapprogresswindow.ui
+SOURCES += $$PWD/ttkringsmapprogresswidgetproperty.cpp

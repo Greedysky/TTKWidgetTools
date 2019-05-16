@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QProgressBar>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,8 +29,11 @@
 class TTK_CORE_EXPORT TTKRadiusProgressWidget : public QProgressBar
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKRadiusProgressWidget)
 public:
     explicit TTKRadiusProgressWidget(QWidget *parent = nullptr);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

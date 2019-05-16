@@ -1,5 +1,5 @@
-#ifndef TTKRINGSPROGRESSWIDGET_H
-#define TTKRINGSPROGRESSWIDGET_H
+#ifndef TTKCIRCLEPROCESSWIDGETPROPERTY_H
+#define TTKCIRCLEPROCESSWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,30 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
-#include "ttkglobal.h"
-#include "ttkglobaldefine.h"
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKRingsProgressWidget : public QWidget
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKCircleProgressWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKRingsProgressWidget)
 public:
-    explicit TTKRingsProgressWidget(QWidget *parent = nullptr);
+    explicit TTKCircleProgressWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKCircleProgressWidgetProperty();
 
-    void setValue(int value);
-
-    virtual QSize sizeHint() const override;
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
-private:
-    int m_angle, m_value;
+private Q_SLOTS:
+    virtual void doublePropertyChanged(QtProperty *property, double value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 };
 
-#endif // TTKRINGSPROGRESSWIDGET_H
+#endif // TTKCIRCLEPROCESSWIDGETPROPERTY_H

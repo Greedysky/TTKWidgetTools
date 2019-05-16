@@ -18,8 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-SOURCES += $$PWD/ttkanimationprogresswindow.cpp
+SOURCES += $$PWD/ttkanimationprogresswidgetproperty.cpp
 
-HEADERS += $$PWD/ttkanimationprogresswindow.h
-
-FORMS   += $$PWD/ttkanimationprogresswindow.ui  
+HEADERS += $$PWD/ttkanimationprogresswidgetproperty.h

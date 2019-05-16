@@ -161,31 +161,36 @@ void TTKToolsApplication::meterModuleChanged(int index)
 
 void TTKToolsApplication::progressModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKAnimationProgressWindow(this))->show();
+        case 0: w = new TTKAnimationProgressWidgetProperty;
             break;
-        case 1: (new TTKCircularProgressWindow(this))->show();
+        case 1: w = new TTKCircleProgressWidgetProperty;
             break;
-        case 2: (new TTKGifLabelWindow(this))->show();
+        case 2: w = new TTKCircularProgressWidgetProperty;
             break;
-        case 3: (new TTKCircleProgressWindow(this))->show();
+        case 3: w = new TTKGifProgressWidgetProperty;
             break;
-        case 4: (new TTKProgressWindow(this))->show();
+        case 4: w = new TTKLoadingProgressWidgetProperty;
             break;
-        case 5: (new TTKRadiusProgressWindow(this))->show();
+        case 5: w = new TTKProgressWidgetProperty;
             break;
-        case 6: (new TTKRingsMapProgressWindow(this))->show();
+        case 6: w = new TTKRadiusProgressWidgetProperty;
             break;
-        case 7: (new TTKRingsProgressWindow(this))->show();
+        case 7: w = new TTKRingsMapProgressWidgetProperty;
             break;
-        case 8: (new TTKRoundProgressWindow(this))->show();
+        case 8: w = new TTKRingsProgressWidgetProperty;
             break;
-        case 9: (new TTKLoadingWindow(this))->show();
+        case 9: w = new TTKRoundProgressWidgetProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::sliderModuleChanged(int index)
@@ -340,8 +345,8 @@ void TTKToolsApplication::createProgressModule()
     widget->addItem("red", "TTKAnimationProgressWidget");
     widget->addItem("red", "TTKCircleProgressWidget");
     widget->addItem("red", "TTKCircularProgressWidget");
-    widget->addItem("red", "TTKGifLabelWidget");
-    widget->addItem("red", "TTKLoadingWidget");
+    widget->addItem("red", "TTKGifProgressWidget");
+    widget->addItem("red", "TTKLoadingProgressWidget");
     widget->addItem("red", "TTKProgressWidget");
     widget->addItem("red", "TTKRadiusProgressWidget");
     widget->addItem("red", "TTKRingsMapProgressWidget");
@@ -350,6 +355,8 @@ void TTKToolsApplication::createProgressModule()
 
     widget->setObjectName("progressRow");
     widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(progressModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Progress");
 }
 
@@ -363,6 +370,8 @@ void TTKToolsApplication::createSliderModule()
 
     widget->setObjectName("sliderRow");
     widget->setStyleSheet("#sliderRow{background-color:rgba(0, 255, 255, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(sliderModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Silder");
 }
 
@@ -383,6 +392,8 @@ void TTKToolsApplication::createTitleModule()
 
     widget->setObjectName("titleRow");
     widget->setStyleSheet("#titleRow{background-color:rgba(255, 0, 255, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(titleModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Title");
 }
 
@@ -401,6 +412,8 @@ void TTKToolsApplication::createWidgetModule()
 
     widget->setObjectName("widgetRow");
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(widgetModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Widget");
 }
 
@@ -415,5 +428,7 @@ void TTKToolsApplication::createWindowModule()
 
     widget->setObjectName("windowRow");
     widget->setStyleSheet("#windowRow{background-color:rgba(255, 255, 255, 50)}");
+
+    connect(widget, SIGNAL(rowClicked(int)), SLOT(windowModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Window");
 }

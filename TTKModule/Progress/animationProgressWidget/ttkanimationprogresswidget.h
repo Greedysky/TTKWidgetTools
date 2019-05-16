@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -30,10 +31,14 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKAnimationProgressWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKAnimationProgressWidget)
 public:
     explicit TTKAnimationProgressWidget(QWidget *parent = nullptr);
 
     void start();
+    void stop();
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

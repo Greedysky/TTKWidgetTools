@@ -1,5 +1,5 @@
 #include "ttkshiningslider.h"
-#include "ttkgiflabelwidget.h"
+#include "ttkgifprogresswidget.h"
 
 #include <qmath.h>
 

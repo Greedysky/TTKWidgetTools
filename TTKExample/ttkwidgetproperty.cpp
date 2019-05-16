@@ -11,6 +11,7 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     //
     m_boolManager = new QtBoolPropertyManager(this);
     m_intManager = new QtIntPropertyManager(this);
+    m_doubleManager = new QtDoublePropertyManager(this);
     m_stringManager = new QtStringPropertyManager(this);
     m_sizeManager = new QtSizePropertyManager(this);
     m_rectManager = new  QtRectPropertyManager(this);
@@ -24,6 +25,7 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     //
     m_checkBoxFactory = new QtCheckBoxFactory(this);
     m_spinBoxFactory = new QtSpinBoxFactory(this);
+    m_doubleSpinBoxFactory = new QtDoubleSpinBoxFactory(this);
     m_lineEditFactory = new QtLineEditFactory(this);
     m_comboBoxFactory = new QtEnumEditorFactory(this);
     m_colorEditorFactory = new QtColorEditorFactory(this);
@@ -41,6 +43,7 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     //
     m_browser->setFactoryForManager(m_boolManager, m_checkBoxFactory);
     m_browser->setFactoryForManager(m_intManager, m_spinBoxFactory);
+    m_browser->setFactoryForManager(m_doubleManager, m_doubleSpinBoxFactory);
     m_browser->setFactoryForManager(m_stringManager, m_lineEditFactory);
     m_browser->setFactoryForManager(m_sizeManager->subIntPropertyManager(), m_spinBoxFactory);
     m_browser->setFactoryForManager(m_rectManager->subIntPropertyManager(), m_spinBoxFactory);
@@ -54,6 +57,7 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     //
     connect(m_boolManager, SIGNAL(valueChanged(QtProperty*,bool)), SLOT(boolPropertyChanged(QtProperty*,bool)));
     connect(m_intManager, SIGNAL(valueChanged(QtProperty*,int)), SLOT(intPropertyChanged(QtProperty*,int)));
+    connect(m_doubleManager, SIGNAL(valueChanged(QtProperty*,double)), SLOT(doublePropertyChanged(QtProperty*,double)));
     connect(m_stringManager, SIGNAL(valueChanged(QtProperty*,QString)), SLOT(stringPropertyChanged(QtProperty*,QString)));
     connect(m_sizeManager, SIGNAL(valueChanged(QtProperty*,QSize)), SLOT(sizePropertyChanged(QtProperty*,QSize)));
     connect(m_rectManager, SIGNAL(valueChanged(QtProperty*,QRect)), SLOT(rectPropertyChanged(QtProperty*,QRect)));
@@ -88,6 +92,12 @@ void TTKWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 }
 
 void TTKWidgetProperty::intPropertyChanged(QtProperty *property, int value)
+{
+    Q_UNUSED(property);
+    Q_UNUSED(value);
+}
+
+void TTKWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
     Q_UNUSED(property);
     Q_UNUSED(value);

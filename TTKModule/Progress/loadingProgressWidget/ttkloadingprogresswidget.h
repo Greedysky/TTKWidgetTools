@@ -1,5 +1,5 @@
-#ifndef TTKRINGSPROGRESSWIDGET_H
-#define TTKRINGSPROGRESSWIDGET_H
+#ifndef TTKLOADINGWIDGET_H
+#define TTKLOADINGWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,30 +19,54 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
+#include <QTimer>
 #include <QWidget>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
+struct TTK_CORE_EXPORT Position
+{
+    double x;
+    double y;
+};
+
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKRingsProgressWidget : public QWidget
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKLoadingWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKRingsProgressWidget)
+    TTK_DECLARE_MODULE(TTKLoadingWidget)
 public:
-    explicit TTKRingsProgressWidget(QWidget *parent = nullptr);
+    explicit TTKLoadingWidget(QWidget *parent = nullptr);
 
-    void setValue(int value);
+    void setDotCount(int count);
+    void setDotColor(const QColor &color);
+
+    void setMaxDiameter(float max);
+    void setMinDiameter(float min);
+
+    void start();
+    void stop();
 
     virtual QSize sizeHint() const override;
 
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-
 private:
-    int m_angle, m_value;
+    int m_index, m_count;
+    QColor m_dotColor;
+    float m_minDiameter, m_maxDiameter;
+
+    int m_interval;
+    QTimer m_timer;
+
+    QList<float> m_ranges;
+    QList<Position> m_dots;
+
+protected:
+    void paintDot(QPainter &painter);
+    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void resizeEvent(QResizeEvent *event) override;
 
 };
 
-#endif // TTKRINGSPROGRESSWIDGET_H
+#endif // TTKLOADINGWIDGET_H

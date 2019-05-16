@@ -19,6 +19,10 @@ void TTKRingsMapProgressWidget::setValue(int value)
     }
 }
 
+QSize TTKRingsMapProgressWidget::sizeHint() const
+{
+    return QSize(200, 200);
+}
 
 void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
 {

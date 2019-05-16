@@ -16,6 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkcircleprogresswidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
-HEADERS += $$PWD/ttkcircleprogresswidgetproperty.h
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkloadingprogresswidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkloadingprogresswidget.cpp
+
+}

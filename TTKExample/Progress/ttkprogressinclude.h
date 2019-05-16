@@ -19,15 +19,15 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "animationProgressWidget/ttkanimationprogresswindow.h"
-#include "circularProgressWidget/ttkcircularprogresswindow.h"
-#include "gifLabelWidget/ttkgiflabelwindow.h"
-#include "circleProgressWidget/ttkcircleprogresswindow.h"
-#include "progressWidget/ttkprogresswindow.h"
-#include "radiusProgressWidget/ttkradiusprogresswindow.h"
-#include "ringsMapProgressWidget/ttkringsmapprogresswindow.h"
-#include "ringsProgressWidget/ttkringsprogresswindow.h"
-#include "roundProgressWidget/ttkroundprogresswindow.h"
-#include "loadingWidget/ttkloadingwindow.h"
+#include "animationProgressWidget/ttkanimationprogresswidgetproperty.h"
+#include "circularProgressWidget/ttkcircularprogresswidgetproperty.h"
+#include "gifProgressWidget/ttkgifprogresswidgetproperty.h"
+#include "circleProgressWidget/ttkcircleprogresswidgetproperty.h"
+#include "progressWidget/ttkprogresswidgetproperty.h"
+#include "radiusProgressWidget/ttkradiusprogresswidgetproperty.h"
+#include "ringsMapProgressWidget/ttkringsmapprogresswidgetproperty.h"
+#include "ringsProgressWidget/ttkringsprogresswidgetproperty.h"
+#include "roundProgressWidget/ttkroundprogresswidgetproperty.h"
+#include "loadingProgressWidget/ttkloadingprogresswidgetproperty.h"
 
 #endif // TTKPROGRESSINCLUDE_H

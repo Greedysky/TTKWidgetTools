@@ -1,5 +1,5 @@
-#ifndef TTKRINGSPROGRESSWIDGET_H
-#define TTKRINGSPROGRESSWIDGET_H
+#ifndef TTKRINGSMAPPROGRESSWIDGETPROPERTY_H
+#define TTKRINGSMAPPROGRESSWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,30 +19,27 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
-#include "ttkglobal.h"
-#include "ttkglobaldefine.h"
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKRingsProgressWidget : public QWidget
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKRingsMapProgressWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKRingsProgressWidget)
 public:
-    explicit TTKRingsProgressWidget(QWidget *parent = nullptr);
+    explicit TTKRingsMapProgressWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKRingsMapProgressWidgetProperty();
 
-    void setValue(int value);
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
 
-    virtual QSize sizeHint() const override;
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+private Q_SLOTS:
+    void updateRender();
 
 private:
-    int m_angle, m_value;
+    QTimer *m_timer;
 
 };
 
-#endif // TTKRINGSPROGRESSWIDGET_H
+#endif // TTKRINGSMAPPROGRESSWIDGETPROPERTY_H
