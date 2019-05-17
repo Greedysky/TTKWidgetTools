@@ -4,13 +4,13 @@
 TTKGifProgressWidgetProperty::TTKGifProgressWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
-    m_item = new TTKGifLabelWidget(this);
+    m_item = new TTKGifProgressWidget(this);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKGifLabelWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, MStatic_cast(TTKGifProgressWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -32,11 +32,11 @@ TTKGifProgressWidgetProperty::TTKGifProgressWidgetProperty(QWidget *parent)
 
 TTKGifProgressWidgetProperty::~TTKGifProgressWidgetProperty()
 {
-
+}
 
 void TTKGifProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKGifLabelWidget *widget = MStatic_cast(TTKGifLabelWidget*, m_item);
+    TTKGifProgressWidget *widget = MStatic_cast(TTKGifProgressWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         if(value)
@@ -52,9 +52,9 @@ void TTKGifProgressWidgetProperty::boolPropertyChanged(QtProperty *property, boo
 
 void TTKGifProgressWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKGifLabelWidget *widget = MStatic_cast(TTKGifLabelWidget*, m_item);
+    TTKGifProgressWidget *widget = MStatic_cast(TTKGifProgressWidget*, m_item);
     if(property->propertyName() == "Type")
     {
-        widget->setType((TTKGifLabelWidget::Type)value);
+        widget->setType(MStatic_cast(TTKGifProgressWidget::Type, value));
     }
 }

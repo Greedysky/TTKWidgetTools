@@ -15,7 +15,7 @@
 #define GIF_CLOSE_WHITE_WIDTH   350
 #define GIF_CLOSE_WHITE_HEIGHT  50
 
-TTKGifLabelWidget::TTKGifLabelWidget(QWidget *parent)
+TTKGifProgressWidget::TTKGifProgressWidget(QWidget *parent)
     : QLabel(parent)
 {
     m_index = -1;
@@ -29,19 +29,20 @@ TTKGifLabelWidget::TTKGifLabelWidget(QWidget *parent)
     connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 }
 
-TTKGifLabelWidget::TTKGifLabelWidget(Type type, QWidget *parent)
-    : TTKGifLabelWidget(parent)
+TTKGifProgressWidget::TTKGifProgressWidget(Type type, QWidget *parent)
+    : TTKGifProgressWidget(parent)
 {
     setType(type);
 }
 
-TTKGifLabelWidget::~TTKGifLabelWidget()
+TTKGifProgressWidget::~TTKGifProgressWidget()
 {
     delete m_timer;
 }
 
-void TTKGifLabelWidget::setType(Type type)
+void TTKGifProgressWidget::setType(Type type)
 {
+    m_index = 0;
     switch(m_type = type)
     {
         case Gif_Ballon_White: setFixedSize(GIF_BALLON_WHITE, GIF_BALLON_WHITE); break;
@@ -58,32 +59,32 @@ void TTKGifLabelWidget::setType(Type type)
     }
 }
 
-TTKGifLabelWidget::Type TTKGifLabelWidget::getType() const
+TTKGifProgressWidget::Type TTKGifProgressWidget::getType() const
 {
     return m_type;
 }
 
-void TTKGifLabelWidget::setInterval(int value)
+void TTKGifProgressWidget::setInterval(int value)
 {
     m_timer->setInterval(value);
 }
 
-int TTKGifLabelWidget::getInterval() const
+int TTKGifProgressWidget::getInterval() const
 {
     return m_timer->interval();
 }
 
-void TTKGifLabelWidget::setInfinited(bool s)
+void TTKGifProgressWidget::setInfinited(bool s)
 {
     m_infinited = s;
 }
 
-bool TTKGifLabelWidget::getInfinited() const
+bool TTKGifProgressWidget::getInfinited() const
 {
     return m_infinited;
 }
 
-void TTKGifLabelWidget::run(bool run)
+void TTKGifProgressWidget::run(bool run)
 {
     if(run)
     {
@@ -97,19 +98,19 @@ void TTKGifLabelWidget::run(bool run)
     }
 }
 
-void TTKGifLabelWidget::start()
+void TTKGifProgressWidget::start()
 {
     m_timer->start();
     m_isRunning = true;
 }
 
-void TTKGifLabelWidget::stop()
+void TTKGifProgressWidget::stop()
 {
     m_timer->stop();
     m_isRunning = false;
 }
 
-void TTKGifLabelWidget::updateRender()
+void TTKGifProgressWidget::updateRender()
 {
     ++m_index;
     switch(m_type)
@@ -228,7 +229,7 @@ void TTKGifLabelWidget::updateRender()
     }
 }
 
-void TTKGifLabelWidget::paintEvent(QPaintEvent *event)
+void TTKGifProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
 
@@ -236,7 +237,7 @@ void TTKGifLabelWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(0, 0, m_renderer);
 }
 
-bool TTKGifLabelWidget::infinitedModeCheck()
+bool TTKGifProgressWidget::infinitedModeCheck()
 {
     m_index = 0;
     if(!m_infinited)

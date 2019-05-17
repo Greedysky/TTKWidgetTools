@@ -1,5 +1,5 @@
-#ifndef TTKLOADINGWIDGET_H
-#define TTKLOADINGWIDGET_H
+#ifndef TTKLOADINGPROGRESSWIDGET_H
+#define TTKLOADINGPROGRESSWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -33,12 +33,12 @@ struct TTK_CORE_EXPORT Position
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKLoadingWidget : public QWidget
+class TTK_CORE_EXPORT TTKLoadingProgressWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKLoadingWidget)
+    TTK_DECLARE_MODULE(TTKLoadingProgressWidget)
 public:
-    explicit TTKLoadingWidget(QWidget *parent = nullptr);
+    explicit TTKLoadingProgressWidget(QWidget *parent = nullptr);
 
     void setDotCount(int count);
     void setDotColor(const QColor &color);
@@ -69,4 +69,4 @@ protected:
 
 };
 
-#endif // TTKLOADINGWIDGET_H
+#endif // TTKLOADINGPROGRESSWIDGET_H

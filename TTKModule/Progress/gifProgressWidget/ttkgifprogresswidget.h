@@ -1,5 +1,5 @@
-#ifndef TTKGifLabelWidget_H
-#define TTKGifLabelWidget_H
+#ifndef TTKGIFPROGRESSWIDGET_H
+#define TTKGIFPROGRESSWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -28,10 +28,10 @@ class QTimer;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKGifLabelWidget : public QLabel
+class TTK_CORE_EXPORT TTKGifProgressWidget : public QLabel
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKGifLabelWidget)
+    TTK_DECLARE_MODULE(TTKGifProgressWidget)
 public:
     enum Type
     {
@@ -47,10 +47,10 @@ public:
         Gif_Close_White
     };
 
-    explicit TTKGifLabelWidget(QWidget *parent = nullptr);
-    explicit TTKGifLabelWidget(Type type, QWidget *parent = nullptr);
+    explicit TTKGifProgressWidget(QWidget *parent = nullptr);
+    explicit TTKGifProgressWidget(Type type, QWidget *parent = nullptr);
 
-    virtual ~TTKGifLabelWidget();
+    virtual ~TTKGifProgressWidget();
 
     void setType(Type type);
     Type getType() const;
@@ -83,4 +83,4 @@ protected:
 
 };
 
-#endif // TTKGifLabelWidget_H
+#endif // TTKGIFPROGRESSWIDGET_H

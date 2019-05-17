@@ -3,7 +3,7 @@
 #include <qmath.h>
 #include <QPainter>
 
-TTKLoadingWidget::TTKLoadingWidget(QWidget *parent)
+TTKLoadingProgressWidget::TTKLoadingProgressWidget(QWidget *parent)
     : QWidget(parent)
 {
     setDotColor(QColor(49, 177, 190));
@@ -17,43 +17,43 @@ TTKLoadingWidget::TTKLoadingWidget(QWidget *parent)
     connect(&m_timer, SIGNAL(timeout()), SLOT(update()));
 }
 
-void TTKLoadingWidget::setDotCount(int count)
+void TTKLoadingProgressWidget::setDotCount(int count)
 {
     m_count = count;
 }
 
-void TTKLoadingWidget::setDotColor(const QColor &color)
+void TTKLoadingProgressWidget::setDotColor(const QColor &color)
 {
     m_dotColor = color;
 }
 
-void TTKLoadingWidget::start()
+void TTKLoadingProgressWidget::start()
 {
     m_timer.setInterval(m_interval);
     m_timer.start();
 }
 
-void TTKLoadingWidget::stop()
+void TTKLoadingProgressWidget::stop()
 {
     m_timer.stop();
 }
 
-QSize TTKLoadingWidget::sizeHint() const
+QSize TTKLoadingProgressWidget::sizeHint() const
 {
     return QSize(150, 150);
 }
 
-void TTKLoadingWidget::setMaxDiameter(float max)
+void TTKLoadingProgressWidget::setMaxDiameter(float max)
 {
     m_maxDiameter = max;
 }
 
-void TTKLoadingWidget::setMinDiameter(float min)
+void TTKLoadingProgressWidget::setMinDiameter(float min)
 {
     m_minDiameter = min;
 }
 
-void TTKLoadingWidget::resizeEvent(QResizeEvent *event)
+void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
 
@@ -74,7 +74,7 @@ void TTKLoadingWidget::resizeEvent(QResizeEvent *event)
     }
 }
 
-void TTKLoadingWidget::paintEvent(QPaintEvent *event)
+void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
@@ -86,7 +86,7 @@ void TTKLoadingWidget::paintEvent(QPaintEvent *event)
     paintDot(painter);
 }
 
-void TTKLoadingWidget::paintDot(QPainter &painter)
+void TTKLoadingProgressWidget::paintDot(QPainter &painter)
 {
     for(int i=0; i<m_count; i++)
     {

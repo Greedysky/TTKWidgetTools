@@ -6,8 +6,8 @@
 TTKShiningSlider::TTKShiningSlider(QWidget *parent)
     : QWidget(parent)
 {
-    m_label = new TTKGifLabelWidget(this);
-    m_label->setType(TTKGifLabelWidget::Gif_Ballon_White);
+    m_label = new TTKGifProgressWidget(this);
+    m_label->setType(TTKGifProgressWidget::Gif_Ballon_White);
     m_label->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     m_label->move(15, 5);
     m_label->hide();
