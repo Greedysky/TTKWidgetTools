@@ -41,6 +41,11 @@ void TTKSpeedMeterWidget::setAnimating(bool enable)
     update();
 }
 
+QSize TTKSpeedMeterWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKSpeedMeterWidget::updateRender()
 {
     if(m_bReverse)
@@ -77,16 +82,6 @@ void TTKSpeedMeterWidget::paintEvent(QPaintEvent *event)
     drawCoverBall(&painter);
     drawTextRect(&painter);
     painter.end();
-}
-
-QSize TTKSpeedMeterWidget::sizeHint() const
-{
-    return QSize(300, 300);
-}
-
-QSize TTKSpeedMeterWidget::minimumSizeHint() const
-{
-    return QSize(200, 200);
 }
 
 void TTKSpeedMeterWidget::initVariables()

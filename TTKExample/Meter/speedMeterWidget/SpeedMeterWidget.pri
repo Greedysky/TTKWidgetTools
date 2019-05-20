@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkspeedmeterwindow.cpp
+SOURCES += $$PWD/ttkspeedmeterwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkspeedmeterwindow.h
-
-FORMS   += $$PWD/ttkspeedmeterwindow.ui
+HEADERS += $$PWD/ttkspeedmeterwidgetproperty.h

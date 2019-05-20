@@ -18,8 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-HEADERS += $$PWD/ttkradiusprogresswindow.h
+HEADERS += $$PWD/ttkradiusprogresswidgetproperty.h
 
-SOURCES += $$PWD/ttkradiusprogresswindow.cpp
-
-FORMS   += $$PWD/ttkradiusprogresswindow.ui
+SOURCES += $$PWD/ttkradiusprogresswidgetproperty.cpp

@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKRoundProgressWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKRoundProgressWidget)
     Q_PROPERTY(float m_value READ getValue WRITE setValue)
 public:
     enum SwitchFlags
@@ -67,6 +69,8 @@ public:
     void setPrecision(int precision);
 
     inline void setInnerDefaultTextStyle(InnerDefaultTextStyle style) { m_innerDefaultTextStyle = style; }
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

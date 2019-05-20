@@ -100,6 +100,11 @@ void TTKRoundProgressWidget::setPrecision(int precision)
     m_precision = precision;
 }
 
+QSize TTKRoundProgressWidget::sizeHint() const
+{
+    return QSize(150, 150);
+}
+
 void TTKRoundProgressWidget::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event);

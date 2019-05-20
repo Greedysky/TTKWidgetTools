@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,8 +30,11 @@
 class TTK_CORE_EXPORT TTKRadarMeterWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKRadarMeterWidget)
 public:
     explicit TTKRadarMeterWidget(QWidget *parent = nullptr);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

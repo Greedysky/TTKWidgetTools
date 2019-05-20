@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QProgressBar>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class TTKCircularProgressWidget;
@@ -61,6 +62,7 @@ private:
 class TTK_CORE_EXPORT TTKCircularProgressWidget : public QProgressBar
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCircularProgressWidget)
     Q_PROPERTY(qreal lineWidth WRITE setLineWidth READ lineWidth)
     Q_PROPERTY(qreal size WRITE setSize READ size)
     Q_PROPERTY(QColor color WRITE setColor READ color)

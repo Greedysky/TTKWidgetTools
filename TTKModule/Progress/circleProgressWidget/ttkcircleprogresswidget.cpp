@@ -56,6 +56,11 @@ QColor TTKCircleProgressWidget::color() const
     return m_color;
 }
 
+QSize TTKCircleProgressWidget::sizeHint() const
+{
+
+    return QSize(180, 180);
+}
 void TTKCircleProgressWidget::setValue(int value)
 {
     if(value < 0)

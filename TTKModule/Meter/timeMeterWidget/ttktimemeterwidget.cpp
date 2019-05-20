@@ -28,11 +28,16 @@ void TTKTimeMeterWidget::setValue(qreal value)
     update();
 }
 
+QSize TTKTimeMeterWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKTimeMeterWidget::drawCrown(QPainter *painter)
 {
     painter->save();
 
-    int radius = 100;
+    const int radius = 100;
     QLinearGradient linearGradient(0, -radius, 0, radius);
     linearGradient.setColorAt(0, Qt::white);
     linearGradient.setColorAt(1, Qt::gray);
@@ -50,8 +55,8 @@ void TTKTimeMeterWidget::drawScale(QPainter *painter)
     painter->save();
     painter->rotate(m_startAngle);
 
-    int steps = (m_scaleMajor * m_scaleMinor);
-    double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
+    const int steps = (m_scaleMajor * m_scaleMinor);
+    const double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
 
     QPen pen ;
     pen.setColor(Qt::green);

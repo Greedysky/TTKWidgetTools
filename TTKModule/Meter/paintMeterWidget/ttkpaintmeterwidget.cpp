@@ -51,7 +51,7 @@ void TTKPaintMeterWidget::setValue(double value)
     }
     else if(value < m_minValue)
     {
-        m_value=m_minValue;
+        m_value = m_minValue;
     }
     else
     {
@@ -63,6 +63,11 @@ void TTKPaintMeterWidget::setValue(double value)
         thresholdManager();
     }
     update();
+}
+
+QSize TTKPaintMeterWidget::sizeHint() const
+{
+    return QSize(180, 180);
 }
 
 void TTKPaintMeterWidget::thresholdManager()

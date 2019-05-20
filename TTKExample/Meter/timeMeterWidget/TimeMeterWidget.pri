@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttktimemeterwindow.cpp
+SOURCES += $$PWD/ttktimemeterwidgetproperty.cpp
 
-HEADERS += $$PWD/ttktimemeterwindow.h
-
-FORMS   += $$PWD/ttktimemeterwindow.ui
+HEADERS += $$PWD/ttktimemeterwidgetproperty.h

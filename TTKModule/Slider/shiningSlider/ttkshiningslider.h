@@ -23,7 +23,7 @@
 #include <QMouseEvent>
 #include "ttkglobaldefine.h"
 
-class TTKGifLabelWidget;
+class TTKGifProgressWidget;
 
 /*!
  * @author Greedysky <greedysky@163.com>
@@ -46,7 +46,7 @@ protected:
     virtual void resizeEvent(QResizeEvent *event) override;
 
     QSlider *m_slider;
-    TTKGifLabelWidget *m_label;
+    TTKGifProgressWidget *m_label;
 
 };
 

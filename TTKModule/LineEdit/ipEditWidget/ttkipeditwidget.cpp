@@ -57,11 +57,11 @@ QLineEdit *TTKIpEditWidget::nextEdit(QLineEdit *edit)
     {
         return m_input_s;
     }
-    else if (edit == m_input_s)
+    else if(edit == m_input_s)
     {
         return m_input_t;
     }
-    else if (edit == m_input_t)
+    else if(edit == m_input_t)
     {
         return m_input_l;
     }
@@ -98,6 +98,11 @@ void TTKIpEditWidget::setText(const QString &text)
     m_input_s->setText(value.at(1));
     m_input_t->setText(value.at(2));
     m_input_l->setText(value.at(3));
+}
+
+QSize TTKIpEditWidget::sizeHint() const
+{
+    return QSize(165, 25);
 }
 
 void TTKIpEditWidget::paintEvent(QPaintEvent *event)
@@ -146,10 +151,10 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
 void TTKIpEditWidget::editTextChanged(const QString& text)
 {
     QLineEdit* curEdit = qobject_cast<QLineEdit*>(sender());
-    if (text.size() == 3)
+    if(text.size() == 3)
     {
         QLineEdit* next = nextEdit(curEdit);
-        if (next)
+        if(next)
         {
             next->setFocus();
             next->selectAll();

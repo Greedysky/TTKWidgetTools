@@ -39,6 +39,7 @@ public:
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value);
     virtual void intPropertyChanged(QtProperty *property, int value);
+    virtual void doublePropertyChanged(QtProperty *property, double value);
     virtual void stringPropertyChanged(QtProperty *property, const QString &value);
     virtual void sizePropertyChanged(QtProperty *property, const QSize &value);
     virtual void rectPropertyChanged(QtProperty *property, const QRect &value);
@@ -55,6 +56,7 @@ protected:
     //
     QtBoolPropertyManager *m_boolManager;
     QtIntPropertyManager *m_intManager;
+    QtDoublePropertyManager *m_doubleManager;
     QtStringPropertyManager *m_stringManager;
     QtSizePropertyManager *m_sizeManager;
     QtRectPropertyManager *m_rectManager;
@@ -67,6 +69,7 @@ protected:
     //
     QtCheckBoxFactory *m_checkBoxFactory;
     QtSpinBoxFactory *m_spinBoxFactory;
+    QtDoubleSpinBoxFactory *m_doubleSpinBoxFactory;
     QtLineEditFactory *m_lineEditFactory;
     QtEnumEditorFactory *m_comboBoxFactory;
     QtColorEditorFactory *m_colorEditorFactory;

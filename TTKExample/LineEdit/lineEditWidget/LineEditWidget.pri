@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttklineeditwindow.cpp
+SOURCES += $$PWD/ttklineeditwidgetproperty.cpp
 
-HEADERS += $$PWD/ttklineeditwindow.h
-
-FORMS   += $$PWD/ttklineeditwindow.ui
+HEADERS += $$PWD/ttklineeditwidgetproperty.h

@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,11 +29,14 @@
 class TTK_CORE_EXPORT TTKTimeMeterWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKTimeMeterWidget)
 public:
     explicit TTKTimeMeterWidget(QWidget *parent = nullptr);
 
     void setValue(qreal value);
     qreal value() const { return m_value;}
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;

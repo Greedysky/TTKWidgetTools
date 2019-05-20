@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKSpeedMeterWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKSpeedMeterWidget)
 public:
     explicit TTKSpeedMeterWidget(QWidget *parent = nullptr);
 
@@ -40,13 +42,13 @@ public:
     void setAnimating(bool enable);
     bool isAnimating() const { return m_bAnimating;}
 
+    virtual QSize sizeHint() const override;
+
 private Q_SLOTS:
     void updateRender();
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
-    QSize sizeHint() const;
-    QSize minimumSizeHint() const;
 
 private:
     void initVariables();

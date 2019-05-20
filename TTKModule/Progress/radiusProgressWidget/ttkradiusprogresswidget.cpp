@@ -10,6 +10,11 @@ TTKRadiusProgressWidget::TTKRadiusProgressWidget(QWidget *parent)
     setValue(0);
 }
 
+QSize TTKRadiusProgressWidget::sizeHint() const
+{
+    return QSize(150, 40);
+}
+
 void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);

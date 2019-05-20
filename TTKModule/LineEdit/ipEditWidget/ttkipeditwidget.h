@@ -22,6 +22,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QBoxLayout>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -30,11 +31,14 @@
 class TTK_CORE_EXPORT TTKIpEditWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKIpEditWidget)
 public:
     explicit TTKIpEditWidget(QWidget *parent = nullptr);
 
     QString text() const;
     void setText(const QString &text);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     void initEdit(QLineEdit *edit);
