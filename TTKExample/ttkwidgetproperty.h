@@ -25,8 +25,6 @@
 #include "qtpropertymanager.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"
-#include "qtbuttonpropertybrowser.h"
-#include "qtgroupboxpropertybrowser.h"
 
 class TTK_CORE_EXPORT TTKWidgetProperty : public QWidget
 {

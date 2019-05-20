@@ -77,6 +77,7 @@ void TTKToastLabel::popup(QWidget *parent)
     QPoint globalPoint = parent->mapToGlobal(QPoint(0, 0));
     move( globalPoint.x() + (parent->width() - width())/2,
           globalPoint.y() + (parent->height() - height())/2);
+    raise();
     show();
 
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);
