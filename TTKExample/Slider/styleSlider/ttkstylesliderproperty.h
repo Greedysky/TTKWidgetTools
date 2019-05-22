@@ -1,5 +1,5 @@
-#ifndef TTKMOVINGLABELWINDOW_H
-#define TTKMOVINGLABELWINDOW_H
+#ifndef TTKSTYLESLIDERPROPERTY_H
+#define TTKSTYLESLIDERPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKMovingLabelWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKMovingLabelWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKStyleSliderProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKMovingLabelWindow(QWidget *parent = nullptr);
-    ~TTKMovingLabelWindow();
+    explicit TTKStyleSliderProperty(QWidget *parent = nullptr);
+    virtual ~TTKStyleSliderProperty();
 
-private:
-    Ui::TTKMovingLabelWindow *ui;
+private Q_SLOTS:
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 };
 
-#endif // TTKMOVINGLABELWINDOW_H
+#endif // TTKSTYLESLIDERPROPERTY_H

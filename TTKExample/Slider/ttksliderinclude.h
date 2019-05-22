@@ -19,8 +19,8 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "movingLabelSlider/ttkmovinglabelwindow.h"
-#include "shiningSlider/ttkshiningsliderwindow.h"
-#include "styleSlider/ttkstylesliderwindow.h"
+#include "movingLabelSlider/ttkmovinglabelsliderproperty.h"
+#include "shiningSlider/ttkshiningsliderproperty.h"
+#include "styleSlider/ttkstylesliderproperty.h"
 
 #endif // TTKSLIDERINCLUDE_H

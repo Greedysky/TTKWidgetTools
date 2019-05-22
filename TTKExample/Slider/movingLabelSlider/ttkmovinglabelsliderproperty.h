@@ -1,5 +1,5 @@
-#ifndef TTKSHININGSLIDERWINDOW_H
-#define TTKSHININGSLIDERWINDOW_H
+#ifndef TTKMOVINGLABELSLIDERPROPERTY_H
+#define TTKMOVINGLABELSLIDERPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKShiningSliderWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKShiningSliderWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKMovingLabelSliderProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKShiningSliderWindow(QWidget *parent = nullptr);
-    ~TTKShiningSliderWindow();
+    explicit TTKMovingLabelSliderProperty(QWidget *parent = nullptr);
+    virtual ~TTKMovingLabelSliderProperty();
 
-private:
-    Ui::TTKShiningSliderWindow *ui;
+private Q_SLOTS:
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
 
 };
 
-#endif // TTKSHININGSLIDERWINDOW_H
+#endif // TTKMOVINGLABELSLIDERPROPERTY_H

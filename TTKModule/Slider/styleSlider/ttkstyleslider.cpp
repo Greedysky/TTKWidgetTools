@@ -21,7 +21,7 @@ TTKStyleSlider::TTKStyleSlider(QWidget *parent)
 {
     m_handleColor = QColor("#FFFEA1");
     m_backgroundColor = QColor("#4E4F4F");
-    m_foregroundColor = QColor("#FFFEA1;");
+    m_foregroundColor = QColor("#FFFEA1");
 
     setupProperties();
 }
@@ -42,6 +42,11 @@ void TTKStyleSlider::setBackgroundColor(const QColor &color)
 {
     m_backgroundColor = color;
     setupProperties();
+}
+
+QSize TTKStyleSlider::sizeHint() const
+{
+    return QSize(180, 180);
 }
 
 void TTKStyleSlider::setOrientation(Qt::Orientation orientation)

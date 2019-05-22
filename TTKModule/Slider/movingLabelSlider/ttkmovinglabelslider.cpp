@@ -14,7 +14,6 @@ TTKMovingLabelSlider::TTKMovingLabelSlider(Qt::Orientation orientation, QWidget 
     setMouseTracking(true);
 
     m_isMoving = false;
-    m_orientation = orientation;
     m_textLabel = new QLabel(this);
     m_textLabel->setWindowFlags( Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
     m_textLabel->setGeometry(0, 0, 40, 20);
@@ -56,12 +55,12 @@ void TTKMovingLabelSlider::mouseMoveEvent(QMouseEvent *event)
         emit sliderMoved( m_value );
     }
 
-    QPoint curPos = mapFromGlobal(QCursor::pos());
-    QPoint glbPos = mapToGlobal(QPoint(0, 0));
-    QSize sizePos = size();
+    const QPoint &curPos = mapFromGlobal(QCursor::pos());
+    const QPoint &glbPos = mapToGlobal(QPoint(0, 0));
+    const QSize &sizePos = size();
     QPoint changePos;
 
-    if(m_orientation == Qt::Vertical)
+    if(orientation() == Qt::Vertical)
     {
         changePos = limitLableGeometry(curPos.y(), glbPos.y(), sizePos.height());
         m_textLabel->move((glbPos + QPoint(sizePos.width(), 0)).x(), changePos.x());

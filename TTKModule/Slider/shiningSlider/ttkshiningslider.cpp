@@ -51,6 +51,21 @@ void TTKShiningSlider::setRange(int min, int max)
     m_slider->setRange(min, max);
 }
 
+void TTKShiningSlider::setMinimum(int min)
+{
+    m_slider->setMinimum(min);
+}
+
+void TTKShiningSlider::setMaximum(int max)
+{
+    m_slider->setMaximum(max);
+}
+
+QSize TTKShiningSlider::sizeHint() const
+{
+    return QSize(180, 40);
+}
+
 void TTKShiningSlider::sliderMovedAt(int pos) const
 {
     int max = m_slider->maximum();

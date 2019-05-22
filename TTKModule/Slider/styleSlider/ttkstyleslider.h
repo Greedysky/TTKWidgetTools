@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QSlider>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKStyleSlider : public QSlider
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKStyleSlider)
 public:
     explicit TTKStyleSlider(QWidget *parent = nullptr);
 
@@ -39,6 +41,8 @@ public:
 
     void setBackgroundColor(const QColor &color);
     inline QColor backgroundColor() const { return m_backgroundColor; }
+
+    virtual QSize sizeHint() const override;
 
 public Q_SLOTS:
     void setOrientation(Qt::Orientation orientation);

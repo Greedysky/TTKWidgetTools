@@ -8,7 +8,6 @@
 #include "ttkmeterinclude.h"
 #include "ttkprogressinclude.h"
 #include "ttksliderinclude.h"
-#include "ttksliderinclude.h"
 #include "ttktitleinclude.h"
 #include "ttkwidgetinclude.h"
 #include "ttkwindowinclude.h"
@@ -195,17 +194,22 @@ void TTKToolsApplication::progressModuleChanged(int index)
 
 void TTKToolsApplication::sliderModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKMovingLabelWindow(this))->show();
+        case 0: w = new TTKMovingLabelSliderProperty;
             break;
-        case 1: (new TTKShiningSliderWindow(this))->show();
+        case 1: w = new TTKShiningSliderProperty;
             break;
-        case 2: (new TTKStyleSliderWindow(this))->show();
+        case 2: w = new TTKStyleSliderProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::titleModuleChanged(int index)

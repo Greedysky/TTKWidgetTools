@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkclickedslider.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKMovingLabelSlider)
 public:
     explicit TTKMovingLabelSlider(QWidget *parent = nullptr);
     explicit TTKMovingLabelSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
@@ -54,7 +56,6 @@ protected:
 
     bool m_isMoving;
     QLabel *m_textLabel;
-    Qt::Orientation m_orientation;
 
 };
 

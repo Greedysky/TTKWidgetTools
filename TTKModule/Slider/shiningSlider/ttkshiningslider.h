@@ -21,6 +21,7 @@
 
 #include <QSlider>
 #include <QMouseEvent>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class TTKGifProgressWidget;
@@ -31,13 +32,19 @@ class TTKGifProgressWidget;
 class TTK_CORE_EXPORT TTKShiningSlider : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKShiningSlider)
 public:
     explicit TTKShiningSlider(QWidget *parent = nullptr);
     virtual ~TTKShiningSlider();
 
     void setPlayState(bool state);
     void setValue(qint64 value) const;
+
     void setRange(int min, int max);
+    void setMinimum(int min);
+    void setMaximum(int max);
+
+    virtual QSize sizeHint() const override;
 
 public Q_SLOTS:
     void sliderMovedAt(int pos) const;

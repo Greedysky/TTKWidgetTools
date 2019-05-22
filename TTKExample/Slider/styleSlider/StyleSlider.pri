@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkstylesliderwindow.cpp
+SOURCES += $$PWD/ttkstylesliderproperty.cpp
 
-HEADERS += $$PWD/ttkstylesliderwindow.h
-
-FORMS   += $$PWD/ttkstylesliderwindow.ui
+HEADERS += $$PWD/ttkstylesliderproperty.h
