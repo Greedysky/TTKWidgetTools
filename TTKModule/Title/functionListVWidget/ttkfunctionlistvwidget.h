@@ -27,6 +27,7 @@
 class TTK_CORE_EXPORT TTKFunctionListVWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionListVWidget)
 public:
     explicit TTKFunctionListVWidget(QWidget *parent = nullptr);
     virtual ~TTKFunctionListVWidget();

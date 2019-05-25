@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkfunctionlisthwindow.cpp
+SOURCES += $$PWD/ttkfunctionlisthwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkfunctionlisthwindow.h
-
-FORMS   += $$PWD/ttkfunctionlisthwindow.ui
+HEADERS += $$PWD/ttkfunctionlisthwidgetproperty.h

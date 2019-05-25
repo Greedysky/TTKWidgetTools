@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkfunctionnormalwindow.cpp
+SOURCES += $$PWD/ttkfunctionnormalwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkfunctionnormalwindow.h
-
-FORMS   += $$PWD/ttkfunctionnormalwindow.ui
+HEADERS += $$PWD/ttkfunctionnormalwidgetproperty.h

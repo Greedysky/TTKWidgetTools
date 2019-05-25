@@ -1,5 +1,5 @@
-#ifndef TTKFUNCTIONANIMATIONVWINDOW_H
-#define TTKFUNCTIONANIMATIONVWINDOW_H
+#ifndef TTKFUNCTIONLISTHWIDGETPROPERTY_H
+#define TTKFUNCTIONLISTHWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,18 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKFunctionAnimationVWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKFunctionAnimationVWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionListHWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionAnimationVWindow(QWidget *parent = nullptr);
-    ~TTKFunctionAnimationVWindow();
-
-private:
-    Ui::TTKFunctionAnimationVWindow *ui;
+    explicit TTKFunctionListHWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionListHWidgetProperty();
 
 };
 
-#endif // TTKFUNCTIONANIMATIONVWINDOW_H
+#endif // TTKFUNCTIONLISTHWIDGETPROPERTY_H

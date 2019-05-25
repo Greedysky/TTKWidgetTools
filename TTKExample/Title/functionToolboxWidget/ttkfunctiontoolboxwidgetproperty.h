@@ -1,5 +1,5 @@
-#ifndef TTKFUNCTIONNORMALWINDOW_H
-#define TTKFUNCTIONNORMALWINDOW_H
+#ifndef TTKFUNCTIONTOOLBOXWINDOW_H
+#define TTKFUNCTIONTOOLBOXWINDOW_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,18 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKFunctionNormalWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKFunctionNormalWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionToolBoxWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionNormalWindow(QWidget *parent = nullptr);
-    ~TTKFunctionNormalWindow();
-
-private:
-    Ui::TTKFunctionNormalWindow *ui;
+    explicit TTKFunctionToolBoxWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionToolBoxWidgetProperty();
 
 };
 
-#endif // TTKFUNCTIONNORMALWINDOW_H
+#endif // TTKFUNCTIONTOOLBOXWINDOW_H

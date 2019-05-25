@@ -21,6 +21,7 @@
 
 #include <QLabel>
 #include <QBoxLayout>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,6 +30,7 @@
 class TTK_CORE_EXPORT TTKFunctionToolBoxTopWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionToolBoxTopWidget)
 public:
     explicit TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent = nullptr);
     virtual ~TTKFunctionToolBoxTopWidget();
@@ -65,6 +67,7 @@ protected:
 class TTK_CORE_EXPORT TTKFunctionToolBoxWidgetItem : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionToolBoxWidgetItem)
 public:
     explicit TTKFunctionToolBoxWidgetItem(int index, const QString &text, QWidget *parent = nullptr);
     virtual ~TTKFunctionToolBoxWidgetItem();
@@ -117,6 +120,7 @@ typedef struct TTK_CORE_EXPORT TTKFunctionToolBoxUnionItem
 class TTK_CORE_EXPORT TTKFunctionToolBoxWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionToolBoxWidget)
 public:
     explicit TTKFunctionToolBoxWidget(QWidget *parent = nullptr);
     virtual ~TTKFunctionToolBoxWidget();
@@ -137,6 +141,8 @@ public:
 
     void setSingleExpand(bool single);
     bool getSingleExpand() const;
+
+    virtual QSize sizeHint() const override;
 
 public Q_SLOTS:
     void setCurrentIndex(int index);

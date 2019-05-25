@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QTimer;
@@ -30,6 +31,7 @@ class QTimer;
 class TTK_CORE_EXPORT TTKFunctionNormalWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionNormalWidget)
 public:
     explicit TTKFunctionNormalWidget(QWidget *parent = nullptr);
 

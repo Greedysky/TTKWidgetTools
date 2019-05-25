@@ -1,5 +1,5 @@
-#ifndef TTKFUNCTIONLISTVWINDOW_H
-#define TTKFUNCTIONLISTVWINDOW_H
+#ifndef TTKFUNCTIONNORMALWINDOW_H
+#define TTKFUNCTIONNORMALWINDOW_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,21 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKFunctionListVWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKFunctionListVWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNormaWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKFunctionListVWindow(QWidget *parent = nullptr);
-    ~TTKFunctionListVWindow();
+    explicit TTKFunctionNormaWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNormaWidgetProperty();
 
-private:
-    Ui::TTKFunctionListVWindow *ui;
+private Q_SLOTS:
+    virtual void rectPropertyChanged(QtProperty *property, const QRect &value);
 
 };
 
-#endif // TTKFUNCTIONLISTVWINDOW_H
+#endif // TTKFUNCTIONNORMALWINDOW_H

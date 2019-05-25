@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkfunctionanimationvwindow.cpp
+SOURCES += $$PWD/ttkfunctionanimationvwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkfunctionanimationvwindow.h
-
-FORMS   += $$PWD/ttkfunctionanimationvwindow.ui
+HEADERS += $$PWD/ttkfunctionanimationvwidgetproperty.h

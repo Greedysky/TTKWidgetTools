@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKFunctionItemWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionItemWidget)
 public:
     explicit TTKFunctionItemWidget(QWidget *parent = nullptr);
 
@@ -58,6 +60,7 @@ protected:
 class TTK_CORE_EXPORT TTKFunctionListHWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionListHWidget)
 public:
     explicit TTKFunctionListHWidget(QWidget *parent = nullptr);
     ~TTKFunctionListHWidget();

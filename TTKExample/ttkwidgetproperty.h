@@ -36,7 +36,7 @@ public:
     virtual void init();
     QWidget* widget() const;
 
-private Q_SLOTS:
+protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value);
     virtual void intPropertyChanged(QtProperty *property, int value);
     virtual void doublePropertyChanged(QtProperty *property, double value);

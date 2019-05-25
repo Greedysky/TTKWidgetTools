@@ -214,23 +214,36 @@ void TTKToolsApplication::sliderModuleChanged(int index)
 
 void TTKToolsApplication::titleModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKFunctionAnimationHWindow(this))->show();
+        case 0: w = new TTKOptionAnimationHWidgetProperty;
             break;
-        case 1: (new TTKFunctionAnimationVWindow(this))->show();
+        case 1: w = new TTKSkinAnimationHWidgetProperty;
             break;
-        case 2: (new TTKFunctionListHWindow(this))->show();
+        case 2: w = new TTKTableAnimationHWidgetProperty;
             break;
-        case 3: (new TTKFunctionListVWindow(this))->show();
+        case 3: w = new TTKOptionAnimationVWidgetProperty;
             break;
-        case 4: (new TTKFunctionToolBoxWindow(this))->show();
+        case 4: w = new TTKSkinAnimationVWidgetProperty;
             break;
-        case 5: (new TTKFunctionNormalWindow(this))->show();
+        case 5: w = new TTKTableAnimationVWidgetProperty;
+            break;
+        case 6: w = new TTKFunctionListHWidgetProperty;
+            break;
+        case 7: w = new TTKFunctionListVWidgetProperty;
+            break;
+        case 8: w = new TTKFunctionNormaWidgetProperty;
+            break;
+        case 9: w = new TTKFunctionToolBoxWidgetProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::widgetModuleChanged(int index)

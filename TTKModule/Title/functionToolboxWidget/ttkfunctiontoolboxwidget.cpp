@@ -345,6 +345,11 @@ bool TTKFunctionToolBoxWidget::getSingleExpand() const
     return m_singleExpand;
 }
 
+QSize TTKFunctionToolBoxWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
 {
     m_currentIndex = index;

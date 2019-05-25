@@ -19,11 +19,11 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "functionAnimationHWidget/ttkfunctionanimationhwindow.h"
-#include "functionAnimationVWidget/ttkfunctionanimationvwindow.h"
-#include "functionListHWidget/ttkfunctionlisthwindow.h"
-#include "functionListVWidget/ttkfunctionlistvwindow.h"
-#include "functionToolboxWidget/ttkfunctiontoolboxwindow.h"
-#include "functionNormalWidget/ttkfunctionnormalwindow.h"
+#include "functionAnimationHWidget/ttkfunctionanimationhwidgetproperty.h"
+#include "functionAnimationVWidget/ttkfunctionanimationvwidgetproperty.h"
+#include "functionListHWidget/ttkfunctionlisthwidgetproperty.h"
+#include "functionListVWidget/ttkfunctionlistvwidgetproperty.h"
+#include "functionToolboxWidget/ttkfunctiontoolboxwidgetproperty.h"
+#include "functionNormalWidget/ttkfunctionnormalwidgetproperty.h"
 
 #endif // TTKTITLEINCLUDE_H
