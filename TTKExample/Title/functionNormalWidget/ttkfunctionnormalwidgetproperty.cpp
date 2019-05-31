@@ -21,6 +21,7 @@ TTKFunctionNormaWidgetProperty::TTKFunctionNormaWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 
+    //
     MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("111111");
     MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("222222");
     MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("333333");

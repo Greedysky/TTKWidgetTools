@@ -21,6 +21,7 @@
 
 #include <QStackedWidget>
 #include <QPropertyAnimation>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,6 +30,7 @@
 class TTK_CORE_EXPORT TTKAnimation2StackedWidget : public QStackedWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKAnimation2StackedWidget)
     Q_PROPERTY(float value READ GetValue WRITE SetValue)
 public:
     enum AnimationType
@@ -72,6 +74,8 @@ public:
 
     float GetValue() const;
     void SetValue(const float value);
+
+    virtual QSize sizeHint() const override;
 
 Q_SIGNALS:
     void pageChanged(int index);

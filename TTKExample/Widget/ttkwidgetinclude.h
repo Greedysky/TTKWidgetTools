@@ -19,8 +19,8 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "animationStackedWidget/ttkanimationstackedwindow.h"
-#include "animation2StackedWidget/ttkanimation2stackedwindow.h"
+#include "animationStackedWidget/ttkanimationstackedwidgetproperty.h"
+#include "animation2StackedWidget/ttkanimation2stackedwidgetproperty.h"
 #include "colorTableWidget/ttkcolortablewindow.h"
 #include "grabItemWidget/ttkgrabitemwindow.h"
 #include "layoutAnimationWidget/ttklayoutanimationwindow.h"

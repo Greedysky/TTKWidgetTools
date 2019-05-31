@@ -248,27 +248,32 @@ void TTKToolsApplication::titleModuleChanged(int index)
 
 void TTKToolsApplication::widgetModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKAnimationStackedWindow(this))->show();
+        case 0:  w = new TTKAnimationStackedWidgetProperty;
             break;
-        case 1: (new TTKAnimation2StackedWindow(this))->show();
+        case 1:  w = new TTKAnimation2StackedWidgetProperty;
             break;
-        case 2: (new TTKColorTableWindow(this))->show();
-            break;
-        case 3: (new TTKGrabItemWindow(this))->show();
-            break;
-        case 4: (new TTKLayoutAnimationWindow(this))->show();
-            break;
-        case 5: (new TTKPictureBannerWindow(this))->show();
-            break;
-        case 6: (new TTKPictureFlowWindow(this))->show();
-            break;
-        case 7: (new TTKSmoothMovingTableWindow(this))->show();
-            break;
+//        case 2: (new TTKColorTableWindow(this))->show();
+//            break;
+//        case 3: (new TTKGrabItemWindow(this))->show();
+//            break;
+//        case 4: (new TTKLayoutAnimationWindow(this))->show();
+//            break;
+//        case 5: (new TTKPictureBannerWindow(this))->show();
+//            break;
+//        case 6: (new TTKPictureFlowWindow(this))->show();
+//            break;
+//        case 7: (new TTKSmoothMovingTableWindow(this))->show();
+//            break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::windowModuleChanged(int index)

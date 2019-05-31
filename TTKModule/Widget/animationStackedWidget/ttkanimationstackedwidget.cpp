@@ -8,6 +8,7 @@
 TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
     : QStackedWidget(parent)
 {
+    m_type = LeftToRight;
     m_isAnimating = false;
     m_currentValue = 0;
     m_currentIndex = 0;
@@ -21,6 +22,8 @@ TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
 
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(valueChanged(QVariant)));
     connect(m_animation, SIGNAL(finished()), SLOT(animationFinished()));
+
+    setLength(200, m_type);
 }
 
 TTKAnimationStackedWidget::~TTKAnimationStackedWidget()
@@ -125,9 +128,15 @@ void TTKAnimationStackedWidget::start(int index)
     m_previousIndex = m_currentIndex;
     m_currentIndex = index;
 
-    int offsetx = frameRect().width();
-    int offsety = frameRect().height();
-    widget(m_currentIndex)->setGeometry(0, 0, offsetx, offsety);
+    QWidget *w = widget(m_currentIndex);
+    if(!w)
+    {
+        return;
+    }
+
+    const int offsetx = frameRect().width();
+    const int offsety = frameRect().height();
+    w->setGeometry(0, 0, offsetx, offsety);
 
     currentWidget()->hide();
     m_isAnimating = true;
@@ -164,6 +173,11 @@ void TTKAnimationStackedWidget::setDuration(int duration)
 int TTKAnimationStackedWidget::getDuration() const
 {
     return m_animation->duration();
+}
+
+QSize TTKAnimationStackedWidget::sizeHint() const
+{
+    return QSize(200, 100);
 }
 
 void TTKAnimationStackedWidget::valueChanged(const QVariant &value)

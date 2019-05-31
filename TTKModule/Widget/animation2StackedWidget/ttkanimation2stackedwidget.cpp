@@ -771,6 +771,11 @@ void TTKAnimation2StackedWidget::SetValue(const float value)
     update();
 }
 
+QSize TTKAnimation2StackedWidget::sizeHint() const
+{
+    return QSize(200, 100);
+}
+
 void TTKAnimation2StackedWidget::animationFinished()
 {
     m_currentValue = 0;

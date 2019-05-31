@@ -1,5 +1,5 @@
-#ifndef TTKANIMATION2STACKEDWINDOW_H
-#define TTKANIMATION2STACKEDWINDOW_H
+#ifndef TTKANIMATIONSTACKEDWIDGETPROPERTY_H
+#define TTKANIMATIONSTACKEDWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,31 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKAnimation2StackedWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKAnimation2StackedWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKAnimationStackedWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-
 public:
-    explicit TTKAnimation2StackedWindow(QWidget *parent = nullptr);
-    ~TTKAnimation2StackedWindow();
+    explicit TTKAnimationStackedWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKAnimationStackedWidgetProperty();
 
-public Q_SLOTS:
-    void changeToFirst();
-    void changeToSecond();
-
-private:
-    Ui::TTKAnimation2StackedWindow *ui;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
 
 };
 
-#endif // TTKANIMATION2STACKEDWINDOW_H
+#endif // TTKANIMATIONSTACKEDWIDGETPROPERTY_H

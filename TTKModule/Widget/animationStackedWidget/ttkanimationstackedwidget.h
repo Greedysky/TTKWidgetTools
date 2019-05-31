@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QStackedWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -27,13 +28,15 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKAnimationStackedWidget : public QStackedWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKAnimationStackedWidget)
 public:
     enum AnimationType
     {
-        TopToBottom,
-        BottomToTop,
         LeftToRight,
-        RightToLeft
+        RightToLeft,
+        TopToBottom,
+        BottomToTop
+
     };
 
     explicit TTKAnimationStackedWidget(QWidget *parent = nullptr);
@@ -45,12 +48,14 @@ public:
     void setDuration(int duration);
     int getDuration() const;
 
+    virtual QSize sizeHint() const override;
+
 private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event);
+    virtual void paintEvent(QPaintEvent *event) override;
     void renderPreviousWidget(QPainter &painter, QTransform &transform);
     void renderCurrentWidget(QPainter &painter, QTransform &transform);
 
