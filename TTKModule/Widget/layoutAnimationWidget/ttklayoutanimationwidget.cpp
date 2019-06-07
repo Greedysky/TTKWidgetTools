@@ -41,7 +41,7 @@ TTKLayoutAnimationWidget::~TTKLayoutAnimationWidget()
 
 void TTKLayoutAnimationWidget::start()
 {
-    if(m_isAnimating)
+    if(m_isAnimating || m_widgetLayout->count() == 0)
     {
         return;
     }
@@ -74,6 +74,11 @@ void TTKLayoutAnimationWidget::addWidget(QWidget *widget, int stretch, Qt::Align
 void TTKLayoutAnimationWidget::removeWidget(QWidget *widget)
 {
     m_widgetLayout->removeWidget(widget);
+}
+
+QSize TTKLayoutAnimationWidget::sizeHint() const
+{
+    return QSize(180, 180);
 }
 
 void TTKLayoutAnimationWidget::valueChanged(const QVariant &value)

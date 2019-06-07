@@ -16,6 +16,11 @@ TTKGrabItemWidget::TTKGrabItemWidget(QWidget *parent)
     setMouseTracking(true);
 }
 
+QSize TTKGrabItemWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKGrabItemWidget::onMouseChange(int x, int y)
 {
     if(x < 0 || y < 0)

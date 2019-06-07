@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QHBoxLayout;
@@ -158,6 +159,7 @@ protected:
 class TTK_CORE_EXPORT TTKPictureBannerWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKPictureBannerWidget)
 public:
     explicit TTKPictureBannerWidget(QWidget *parent = nullptr);
 
@@ -168,6 +170,8 @@ public:
     void stopAutoPlay();
 
     void setDelayTime(int msec, bool start = false);
+
+    virtual QSize sizeHint() const override;
 
 Q_SIGNALS:
     void currentClicked(int index);

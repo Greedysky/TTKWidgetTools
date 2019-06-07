@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QListWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKColorTableWidget : public QListWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKColorTableWidget)
 public:
     explicit TTKColorTableWidget(QWidget *parent = nullptr);
 

@@ -402,6 +402,11 @@ void TTKPictureBannerWidget::setDelayTime(int msec, bool start)
     }
 }
 
+QSize TTKPictureBannerWidget::sizeHint() const
+{
+    return QSize(600, 180);
+}
+
 void TTKPictureBannerWidget::switchIndicator()
 {
     TTKPictureBannerIndicator *ind = qobject_cast<TTKPictureBannerIndicator*>(sender());

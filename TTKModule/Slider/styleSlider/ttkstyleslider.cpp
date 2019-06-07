@@ -1,6 +1,6 @@
 #include "ttkstyleslider.h"
 
-QString MSliderStyle01 = " \
+const QString MSliderStyle01 = " \
         QSlider::groove:horizontal{ \
         height:3px; border-radius:1px;} \
         QSlider::sub-page:horizontal{ background:%1;} \
@@ -8,7 +8,7 @@ QString MSliderStyle01 = " \
         QSlider::handle:horizontal{ background:%3; \
         width:9px; margin-top:-3px; margin-bottom:-3px; border-radius:4px;}";
 
-QString MSliderStyle02 = " \
+const QString MSliderStyle02 = " \
         QSlider::groove:vertical{ \
         width:3px; border-radius:1px;} \
         QSlider::sub-page:vertical{ background:%1;} \

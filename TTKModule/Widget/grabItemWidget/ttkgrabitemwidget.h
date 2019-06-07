@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKGrabItemWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKGrabItemWidget)
 public:
     enum Direction
     {
@@ -46,6 +48,8 @@ public:
 
     inline void setCrossStretch(bool c) { m_crossStretch = c;}
     inline bool gettCrossStretch() const { return m_crossStretch;}
+
+    virtual QSize sizeHint() const override;
 
 Q_SIGNALS:
     void rectChanged();

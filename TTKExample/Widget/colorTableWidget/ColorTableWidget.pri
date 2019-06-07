@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkcolortablewindow.cpp
+SOURCES += $$PWD/ttkcolortablewidgetproperty.cpp
 
-HEADERS += $$PWD/ttkcolortablewindow.h
-
-FORMS   += $$PWD/ttkcolortablewindow.ui
+HEADERS += $$PWD/ttkcolortablewidgetproperty.h

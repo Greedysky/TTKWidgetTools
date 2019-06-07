@@ -251,18 +251,18 @@ void TTKToolsApplication::widgetModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0:  w = new TTKAnimationStackedWidgetProperty;
+        case 0: w = new TTKAnimationStackedWidgetProperty;
             break;
-        case 1:  w = new TTKAnimation2StackedWidgetProperty;
+        case 1: w = new TTKAnimation2StackedWidgetProperty;
             break;
-//        case 2: (new TTKColorTableWindow(this))->show();
-//            break;
-//        case 3: (new TTKGrabItemWindow(this))->show();
-//            break;
-//        case 4: (new TTKLayoutAnimationWindow(this))->show();
-//            break;
-//        case 5: (new TTKPictureBannerWindow(this))->show();
-//            break;
+        case 2: w = new TTKColorTableWidgetProperty;
+            break;
+        case 3: w = new TTKGrabItemWidgetProperty;
+            break;
+        case 4: w = new TTKLayoutAnimationWidgetProperty;
+            break;
+        case 5: w = new TTKPictureBannerWidgetProperty;
+            break;
 //        case 6: (new TTKPictureFlowWindow(this))->show();
 //            break;
 //        case 7: (new TTKSmoothMovingTableWindow(this))->show();

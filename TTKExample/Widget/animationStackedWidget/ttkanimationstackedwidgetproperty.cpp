@@ -27,7 +27,7 @@ TTKAnimationStackedWidgetProperty::TTKAnimationStackedWidgetProperty(QWidget *pa
     m_enumManager->setEnumNames(directionItem, enumNames);
     m_enumManager->setValue(directionItem, 0);
     objectItem->addSubProperty(directionItem);
-
+    //
     m_browser->addProperty(objectItem);
 
     //

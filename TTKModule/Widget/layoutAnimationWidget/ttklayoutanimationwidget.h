@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QVBoxLayout;
@@ -31,6 +32,7 @@ class QPropertyAnimation;
 class TTK_CORE_EXPORT TTKLayoutAnimationWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKLayoutAnimationWidget)
 public:
     explicit TTKLayoutAnimationWidget(QWidget *parent = nullptr);
     ~TTKLayoutAnimationWidget();
@@ -41,6 +43,8 @@ public:
     void addStretch(int stretch = 0);
     void addWidget(QWidget *widget, int stretch = 0, Qt::Alignment alignment = 0);
     void removeWidget(QWidget *widget);
+
+    virtual QSize sizeHint() const override;
 
 private Q_SLOTS:
     void valueChanged(const QVariant &value);

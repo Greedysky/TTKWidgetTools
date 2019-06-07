@@ -1,5 +1,5 @@
-#ifndef TTKCOLORTABLEWINDOW_H
-#define TTKCOLORTABLEWINDOW_H
+#ifndef TTKLAYOUTANIMATIONWIDGETPROPERTY_H
+#define TTKLAYOUTANIMATIONWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKColorTableWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKColorTableWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKLayoutAnimationWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKColorTableWindow(QWidget *parent = nullptr);
-    ~TTKColorTableWindow();
+    explicit TTKLayoutAnimationWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKLayoutAnimationWidgetProperty();
 
-private:
-    Ui::TTKColorTableWindow *ui;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
 
 };
 
-#endif // TTKCOLORTABLEWINDOW_H
+
+#endif // TTKLAYOUTANIMATIONWIDGETPROPERTY_H

@@ -21,10 +21,10 @@
 
 #include "animationStackedWidget/ttkanimationstackedwidgetproperty.h"
 #include "animation2StackedWidget/ttkanimation2stackedwidgetproperty.h"
-#include "colorTableWidget/ttkcolortablewindow.h"
-#include "grabItemWidget/ttkgrabitemwindow.h"
-#include "layoutAnimationWidget/ttklayoutanimationwindow.h"
-#include "pictureBannerWidget/ttkpicturebannerwindow.h"
+#include "colorTableWidget/ttkcolortablewidgetproperty.h"
+#include "grabItemWidget/ttkgrabitemwidgetproperty.h"
+#include "layoutAnimationWidget/ttklayoutanimationwidgetproperty.h"
+#include "pictureBannerWidget/ttkpicturebannerwidgetproperty.h"
 #include "pictureFlowWidget/ttkpictureflowwindow.h"
 #include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
 

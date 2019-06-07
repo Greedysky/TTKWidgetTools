@@ -1,5 +1,5 @@
-#ifndef TTKPICTUREBANNERWINDOW_H
-#define TTKPICTUREBANNERWINDOW_H
+#ifndef TTKGRABITEMWIDGETPROPERTY_H
+#define TTKGRABITEMWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,26 +19,18 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QMainWindow>
-#include "ttkglobaldefine.h"
-
-namespace Ui {
-class TTKPictureBannerWindow;
-}
+#include "ttkwidgetproperty.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_CORE_EXPORT TTKPictureBannerWindow : public QMainWindow
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKGrabItemWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKPictureBannerWindow(QWidget *parent = nullptr);
-    ~TTKPictureBannerWindow();
-
-private:
-    Ui::TTKPictureBannerWindow *ui;
+    explicit TTKGrabItemWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKGrabItemWidgetProperty();
 
 };
 
-#endif // TTKPICTUREBANNERWINDOW_H
+#endif // TTKGRABITEMWIDGETPROPERTY_H

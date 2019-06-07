@@ -29,6 +29,21 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
     delete m_item;
     m_item = item;
     MStatic_cast(QVBoxLayout*, layout())->addWidget(item, 0, Qt::AlignCenter);
+
+    const QSize &hint = m_item->sizeHint();
+
+    if(hint.width() > m_item->width())
+    {
+        QRect rect = geometry();
+        rect.setWidth(hint.width());
+        setGeometry(rect);
+    }
+    else if(hint.height() > m_item->height())
+    {
+        QRect rect = geometry();
+        rect.setHeight(hint.height());
+        setGeometry(rect);
+    }
 }
 
 void TTKBackgroundContainerItem::onMouseChange(int x, int y)
