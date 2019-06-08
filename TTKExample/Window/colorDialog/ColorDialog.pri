@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkcolorwindow.cpp
+SOURCES += $$PWD/ttkcolordialogproperty.cpp
 
-HEADERS += $$PWD/ttkcolorwindow.h
-
-FORMS   += $$PWD/ttkcolorwindow.ui
+HEADERS += $$PWD/ttkcolordialogproperty.h

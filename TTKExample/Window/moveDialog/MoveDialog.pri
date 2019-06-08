@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkmovedialogwindow.cpp
+SOURCES += $$PWD/ttkmovedialogproperty.cpp
 
-HEADERS += $$PWD/ttkmovedialogwindow.h
-
-FORMS   += $$PWD/ttkmovedialogwindow.ui
+HEADERS += $$PWD/ttkmovedialogproperty.h

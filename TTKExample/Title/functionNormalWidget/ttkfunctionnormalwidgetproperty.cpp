@@ -22,9 +22,10 @@ TTKFunctionNormaWidgetProperty::TTKFunctionNormaWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 
     //
-    MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("111111");
-    MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("222222");
-    MStatic_cast(TTKFunctionNormalWidget*, m_item)->addItem("333333");
+    TTKFunctionNormalWidget *widget = MStatic_cast(TTKFunctionNormalWidget*, m_item);
+    widget->addItem("111111");
+    widget->addItem("222222");
+    widget->addItem("333333");
 }
 
 TTKFunctionNormaWidgetProperty::~TTKFunctionNormaWidgetProperty()

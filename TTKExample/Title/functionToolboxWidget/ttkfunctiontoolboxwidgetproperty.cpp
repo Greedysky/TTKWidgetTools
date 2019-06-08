@@ -21,20 +21,21 @@ TTKFunctionToolBoxWidgetProperty::TTKFunctionToolBoxWidgetProperty(QWidget *pare
     //
     m_browser->addProperty(objectItem);
 
+    TTKFunctionToolBoxWidget *widget = MStatic_cast(TTKFunctionToolBoxWidget*, m_item);
     QWidget *red = new QWidget(this);
     red->setStyleSheet("background:red");
     red->setFixedHeight(100);
-    MStatic_cast(TTKFunctionToolBoxWidget*, m_item)->addItem(red, "red");
+    widget->addItem(red, "red");
 
     QWidget *blue = new QWidget(this);
     blue->setStyleSheet("background:blue");
     blue->setFixedHeight(100);
-    MStatic_cast(TTKFunctionToolBoxWidget*, m_item)->addItem(blue, "blue");
+    widget->addItem(blue, "blue");
 
     QWidget *yellow = new QWidget(this);
     yellow->setStyleSheet("background:yellow");
     yellow->setFixedHeight(100);
-    MStatic_cast(TTKFunctionToolBoxWidget*, m_item)->addItem(yellow, "yellow");
+    widget->addItem(yellow, "yellow");
 }
 
 TTKFunctionToolBoxWidgetProperty::~TTKFunctionToolBoxWidgetProperty()

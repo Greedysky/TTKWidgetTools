@@ -813,9 +813,14 @@ void TTKPictureFlowWidget::setReflectionEffect(ReflectionEffect effect)
     triggerRender();
 }
 
+QSize TTKPictureFlowWidget::sizeHint() const
+{
+    return QSize(400, 180);
+}
+
 QImage TTKPictureFlowWidget::slide(int index) const
 {
-    QImage *img = 0;
+    QImage *img = nullptr;
     if(index >= 0 && index < slideCount())
     {
         img = m_state->m_slideImages[index];
@@ -836,7 +841,7 @@ void TTKPictureFlowWidget::setSlide(int index, const QImage &image)
 {
     if(index >= 0 && index < slideCount())
     {
-        QImage *img = image.isNull() ? 0 : new QImage(image);
+        QImage *img = image.isNull() ? nullptr : new QImage(image);
         delete m_state->m_slideImages[index];
         m_state->m_slideImages[index] = img;
         triggerRender();

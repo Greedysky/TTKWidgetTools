@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkmoveresizewidgetwindow.cpp
+SOURCES += $$PWD/ttkmoveresizewidgetproperty.cpp
 
-HEADERS += $$PWD/ttkmoveresizewidgetwindow.h
-
-FORMS   += $$PWD/ttkmoveresizewidgetwindow.ui
+HEADERS += $$PWD/ttkmoveresizewidgetproperty.h

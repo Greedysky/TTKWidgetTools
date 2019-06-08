@@ -35,8 +35,10 @@ TTKAnimation2StackedWidgetProperty::TTKAnimation2StackedWidgetProperty(QWidget *
     w1->setStyleSheet("border:none; background:red");
     QPushButton *w2 = new QPushButton(m_item);
     w2->setStyleSheet("border:none; background:yellow");
-    MStatic_cast(TTKAnimation2StackedWidget*, m_item)->addWidget(w1);
-    MStatic_cast(TTKAnimation2StackedWidget*, m_item)->addWidget(w2);
+
+    TTKAnimation2StackedWidget *widget = MStatic_cast(TTKAnimation2StackedWidget*, m_item);
+    widget->addWidget(w1);
+    widget->addWidget(w2);
 }
 
 TTKAnimation2StackedWidgetProperty::~TTKAnimation2StackedWidgetProperty()

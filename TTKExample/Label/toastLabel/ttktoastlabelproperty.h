@@ -38,7 +38,7 @@ private Q_SLOTS:
     virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
 
 private Q_SLOTS:
-    void showToast();
+    void showWidget();
 
 private:
     QWidget *m_label;

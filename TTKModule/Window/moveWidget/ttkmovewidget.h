@@ -21,6 +21,7 @@
 
 #include <QLabel>
 #include <QMouseEvent>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -29,6 +30,7 @@
 class TTK_CORE_EXPORT TTKMoveWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKMoveWidget)
 public:
     explicit TTKMoveWidget(QWidget *parent = nullptr);
     explicit TTKMoveWidget(bool transparent, QWidget *parent = nullptr);

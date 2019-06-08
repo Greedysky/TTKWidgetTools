@@ -7,7 +7,7 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
     m_item = new QToolButton(this);
-    connect(m_item, SIGNAL(clicked()), SLOT(showToast()));
+    connect(m_item, SIGNAL(clicked()), SLOT(showWidget()));
     //
     m_label = new TTKToastLabel(this);
     //
@@ -95,7 +95,7 @@ void TTKToastLabelProperty::sizePropertyChanged(QtProperty *property, const QSiz
     }
 }
 
-void TTKToastLabelProperty::showToast()
+void TTKToastLabelProperty::showWidget()
 {
     TTKToastLabel *widget = MStatic_cast(TTKToastLabel*, m_label);
     widget->popup(m_containItem);

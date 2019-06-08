@@ -19,9 +19,9 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "colorDialog/ttkcolorwindow.h"
-#include "moveDialog/ttkmovedialogwindow.h"
-#include "moveResizeWidget/ttkmoveresizewidgetwindow.h"
-#include "moveWidget/ttkmovewidgetwindow.h"
+#include "colorDialog/ttkcolordialogproperty.h"
+#include "moveDialog/ttkmovedialogproperty.h"
+#include "moveResizeWidget/ttkmoveresizewidgetproperty.h"
+#include "moveWidget/ttkmovewidgetproperty.h"
 
 #endif // TTKWINDOWINCLUDE_H

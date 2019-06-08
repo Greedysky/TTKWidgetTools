@@ -35,6 +35,11 @@ void TTKSmoothMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
     connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(valueChanged(int)));
 }
 
+QSize TTKSmoothMovingTableWidget::sizeHint() const
+{
+    return QSize(180, 180);
+}
+
 void TTKSmoothMovingTableWidget::updateRender()
 {
     m_isFirstInit = true;

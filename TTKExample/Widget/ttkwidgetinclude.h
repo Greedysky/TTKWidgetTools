@@ -25,7 +25,7 @@
 #include "grabItemWidget/ttkgrabitemwidgetproperty.h"
 #include "layoutAnimationWidget/ttklayoutanimationwidgetproperty.h"
 #include "pictureBannerWidget/ttkpicturebannerwidgetproperty.h"
-#include "pictureFlowWidget/ttkpictureflowwindow.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewindow.h"
+#include "pictureFlowWidget/ttkpictureflowwidgetproperty.h"
+#include "smoothMovingTableWidget/ttksmoothmovingtablewidgetproperty.h"
 
 #endif // TTKWIDGETINCLUDE_H

@@ -4,6 +4,7 @@
 #include <QCache>
 #include <QTimer>
 #include <QWidget>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -114,6 +115,7 @@ private:
 class TTK_CORE_EXPORT TTKPictureFlowWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKPictureFlowWidget)
     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor)
     Q_PROPERTY(QSize slideSize READ slideSize WRITE setSlideSize)
     Q_PROPERTY(int slideCount READ slideCount)
@@ -135,6 +137,8 @@ public:
 
     ReflectionEffect reflectionEffect() const;
     void setReflectionEffect(ReflectionEffect effect);
+
+    virtual QSize sizeHint() const override;
 
 Q_SIGNALS:
     void centerIndexChanged(int index);

@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttksmoothmovingtablewindow.cpp
+SOURCES += $$PWD/ttksmoothmovingtablewidgetproperty.cpp
 
-HEADERS += $$PWD/ttksmoothmovingtablewindow.h
-
-FORMS   += $$PWD/ttksmoothmovingtablewindow.ui
+HEADERS += $$PWD/ttksmoothmovingtablewidgetproperty.h

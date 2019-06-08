@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QDialog>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -28,6 +29,7 @@
 class TTK_CORE_EXPORT TTKMoveDialog : public QDialog
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKMoveDialog)
 public:
     explicit TTKMoveDialog(QWidget *parent = nullptr);
     explicit TTKMoveDialog(bool transparent, QWidget *parent = nullptr);

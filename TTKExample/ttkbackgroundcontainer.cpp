@@ -38,7 +38,7 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
         rect.setWidth(hint.width());
         setGeometry(rect);
     }
-    else if(hint.height() > m_item->height())
+    if(hint.height() > m_item->height())
     {
         QRect rect = geometry();
         rect.setHeight(hint.height());

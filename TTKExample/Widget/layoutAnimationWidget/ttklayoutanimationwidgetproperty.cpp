@@ -27,8 +27,10 @@ TTKLayoutAnimationWidgetProperty::TTKLayoutAnimationWidgetProperty(QWidget *pare
     w1->setStyleSheet("border:none; background:red");
     QWidget *w2 = new QWidget(m_item);
     w2->setStyleSheet("border:none; background:yellow");
-    MStatic_cast(TTKLayoutAnimationWidget*, m_item)->addWidget(w1);
-    MStatic_cast(TTKLayoutAnimationWidget*, m_item)->addWidget(w2);
+
+    TTKLayoutAnimationWidget *widget = MStatic_cast(TTKLayoutAnimationWidget*, m_item);
+    widget->addWidget(w1);
+    widget->addWidget(w2);
 }
 
 TTKLayoutAnimationWidgetProperty::~TTKLayoutAnimationWidgetProperty()

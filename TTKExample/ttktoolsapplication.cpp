@@ -263,10 +263,10 @@ void TTKToolsApplication::widgetModuleChanged(int index)
             break;
         case 5: w = new TTKPictureBannerWidgetProperty;
             break;
-//        case 6: (new TTKPictureFlowWindow(this))->show();
-//            break;
-//        case 7: (new TTKSmoothMovingTableWindow(this))->show();
-//            break;
+        case 6: w = new TTKPictureFlowWidgetProperty;
+            break;
+        case 7: w = new TTKSmoothMovingTableWidgetProperty;
+            break;
         default:
             break;
     }
@@ -278,19 +278,24 @@ void TTKToolsApplication::widgetModuleChanged(int index)
 
 void TTKToolsApplication::windowModuleChanged(int index)
 {
+    TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: (new TTKColorWindow(this))->show();
+        case 0: w = new TTKColorDialogProperty;
             break;
-        case 1: (new TTKMoveDialogWindow(this))->show();
+        case 1: w = new TTKMoveDialogProperty;
             break;
-        case 2: (new TTKMoveResizeWidgetWindow(this))->show();
+        case 2: w = new TTKMoveResizeWidgetProperty;
             break;
-        case 3: (new TTKMoveWidgetWindow(this))->show();
+        case 3: w = new TTKMoveWidgetProperty;
             break;
         default:
             break;
     }
+
+    ui->propertyWidget->addItem(w);
+    ui->containerWidget->addItem(w->widget());
+    w->init();
 }
 
 void TTKToolsApplication::createButtonModule()

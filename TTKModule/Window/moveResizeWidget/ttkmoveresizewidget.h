@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -40,6 +41,7 @@ struct TTK_CORE_EXPORT MoveResizeStruct
 class TTK_CORE_EXPORT TTKMoveResizeWidget : public QWidget
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKMoveResizeWidget)
 public:
     enum Direction
     {

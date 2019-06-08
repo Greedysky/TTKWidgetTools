@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkpictureflowwindow.cpp
+SOURCES += $$PWD/ttkpictureflowwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkpictureflowwindow.h
-
-FORMS   += $$PWD/ttkpictureflowwindow.ui
+HEADERS += $$PWD/ttkpictureflowwidgetproperty.h
