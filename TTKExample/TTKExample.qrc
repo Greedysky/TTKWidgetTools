@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="button">../TTKResource/icon/button.png</file>
+        <file alias="label">../TTKResource/icon/label.png</file>
+        <file alias="lineedit">../TTKResource/icon/lineedit.png</file>
+        <file alias="meter">../TTKResource/icon/meter.png</file>
+        <file alias="progress">../TTKResource/icon/progress.png</file>
+        <file alias="slider">../TTKResource/icon/slider.png</file>
+        <file alias="title">../TTKResource/icon/title.png</file>
+        <file alias="widget">../TTKResource/icon/widget.png</file>
+        <file alias="window">../TTKResource/icon/window.png</file>
+    </qresource>
+</RCC>

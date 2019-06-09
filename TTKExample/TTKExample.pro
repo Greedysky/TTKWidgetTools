@@ -63,6 +63,8 @@ HEADERS += \
 
 FORMS   += $$PWD/ttktoolsapplication.ui
 
+RESOURCES += $$PWD/TTKExample.qrc
+
 win32{
     RC_FILE = TTKExample.rc
 }

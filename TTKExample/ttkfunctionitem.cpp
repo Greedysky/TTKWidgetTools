@@ -35,9 +35,7 @@ TTKFunctionItem::~TTKFunctionItem()
 
 void TTKFunctionItem::setIcon(const QString &path)
 {
-    QPixmap p(50, 50);
-    p.fill(Qt::red);
-    m_iconLabel->setPixmap(p);
+    m_iconLabel->setPixmap(path);
 }
 
 void TTKFunctionItem::setText(const QString &text)

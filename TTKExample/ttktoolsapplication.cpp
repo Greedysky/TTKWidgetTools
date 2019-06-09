@@ -302,11 +302,11 @@ void TTKToolsApplication::createButtonModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKCheckButtonWidget");
-    widget->addItem("red", "TTKFlatButtonWidget");
-    widget->addItem("red", "TTKRadioButtonWidget");
-    widget->addItem("red", "TTKToggleWidget");
-    widget->addItem("red", "TTKToolMenuWidget");
+    widget->addItem(":/icon/button", "TTKCheckButtonWidget");
+    widget->addItem(":/icon/button", "TTKFlatButtonWidget");
+    widget->addItem(":/icon/button", "TTKRadioButtonWidget");
+    widget->addItem(":/icon/button", "TTKToggleWidget");
+    widget->addItem(":/icon/button", "TTKToolMenuWidget");
 
     widget->setObjectName("buttonRow");
     widget->setStyleSheet("#buttonRow{background-color:rgba(255, 0, 0, 50)}");
@@ -319,14 +319,14 @@ void TTKToolsApplication::createLabelModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKCircleClickLabel");
-    widget->addItem("red", "TTKCodeAreaLabel");
-    widget->addItem("red", "TTKLedPageLabel");
-    widget->addItem("red", "TTKMarqueeLabel");
-    widget->addItem("red", "TTKRoundAnimationLabel");
-    widget->addItem("red", "TTKSplitItemLabel");
-    widget->addItem("red", "TTKToastLabel");
-    widget->addItem("red", "TTKTransitionAnimationLabel");
+    widget->addItem(":/icon/label", "TTKCircleClickLabel");
+    widget->addItem(":/icon/label", "TTKCodeAreaLabel");
+    widget->addItem(":/icon/label", "TTKLedPageLabel");
+    widget->addItem(":/icon/label", "TTKMarqueeLabel");
+    widget->addItem(":/icon/label", "TTKRoundAnimationLabel");
+    widget->addItem(":/icon/label", "TTKSplitItemLabel");
+    widget->addItem(":/icon/label", "TTKToastLabel");
+    widget->addItem(":/icon/label", "TTKTransitionAnimationLabel");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
@@ -339,8 +339,8 @@ void TTKToolsApplication::createLineEditModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKIpEditWidget");
-    widget->addItem("red", "TTKLineEditWidget");
+    widget->addItem(":/icon/lineedit", "TTKIpEditWidget");
+    widget->addItem(":/icon/lineedit", "TTKLineEditWidget");
 
     widget->setObjectName("lineEidtRow");
     widget->setStyleSheet("#lineEidtRow{background-color:rgba(255, 255, 0, 50)}");
@@ -353,10 +353,10 @@ void TTKToolsApplication::createMeterModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKPaintMeterWidget");
-    widget->addItem("red", "TTKRadarMeterWidget");
-    widget->addItem("red", "TTKSpeedMeterWidget");
-    widget->addItem("red", "TTKTimeMeterWidget");
+    widget->addItem(":/icon/meter", "TTKPaintMeterWidget");
+    widget->addItem(":/icon/meter", "TTKRadarMeterWidget");
+    widget->addItem(":/icon/meter", "TTKSpeedMeterWidget");
+    widget->addItem(":/icon/meter", "TTKTimeMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
@@ -369,16 +369,16 @@ void TTKToolsApplication::createProgressModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKAnimationProgressWidget");
-    widget->addItem("red", "TTKCircleProgressWidget");
-    widget->addItem("red", "TTKCircularProgressWidget");
-    widget->addItem("red", "TTKGifProgressWidget");
-    widget->addItem("red", "TTKLoadingProgressWidget");
-    widget->addItem("red", "TTKProgressWidget");
-    widget->addItem("red", "TTKRadiusProgressWidget");
-    widget->addItem("red", "TTKRingsMapProgressWidget");
-    widget->addItem("red", "TTKRingsProgressWidget");
-    widget->addItem("red", "TTKRoundProgressWidget");
+    widget->addItem(":/icon/progress", "TTKAnimationProgressWidget");
+    widget->addItem(":/icon/progress", "TTKCircleProgressWidget");
+    widget->addItem(":/icon/progress", "TTKCircularProgressWidget");
+    widget->addItem(":/icon/progress", "TTKGifProgressWidget");
+    widget->addItem(":/icon/progress", "TTKLoadingProgressWidget");
+    widget->addItem(":/icon/progress", "TTKProgressWidget");
+    widget->addItem(":/icon/progress", "TTKRadiusProgressWidget");
+    widget->addItem(":/icon/progress", "TTKRingsMapProgressWidget");
+    widget->addItem(":/icon/progress", "TTKRingsProgressWidget");
+    widget->addItem(":/icon/progress", "TTKRoundProgressWidget");
 
     widget->setObjectName("progressRow");
     widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");
@@ -391,9 +391,9 @@ void TTKToolsApplication::createSliderModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKMovingLabelSlider");
-    widget->addItem("red", "TTKShiningSlider");
-    widget->addItem("red", "TTKStyleSlider");
+    widget->addItem(":/icon/slider", "TTKMovingLabelSlider");
+    widget->addItem(":/icon/slider", "TTKShiningSlider");
+    widget->addItem(":/icon/slider", "TTKStyleSlider");
 
     widget->setObjectName("sliderRow");
     widget->setStyleSheet("#sliderRow{background-color:rgba(0, 255, 255, 50)}");
@@ -406,16 +406,16 @@ void TTKToolsApplication::createTitleModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKOptionAnimationHWidget");
-    widget->addItem("red", "TTKSkinAnimationHWidget");
-    widget->addItem("red", "TTKTableAnimationHWidget");
-    widget->addItem("red", "TTKOptionAnimationVWidget");
-    widget->addItem("red", "TTKSkinAnimationVWidget");
-    widget->addItem("red", "TTKTableAnimationVWidget");
-    widget->addItem("red", "TTKFunctionListHWidget");
-    widget->addItem("red", "TTKFunctionListVWidget");
-    widget->addItem("red", "TTKFunctionNormalWidget");
-    widget->addItem("red", "TTKFunctionToolBoxWidget");
+    widget->addItem(":/icon/title", "TTKOptionAnimationHWidget");
+    widget->addItem(":/icon/title", "TTKSkinAnimationHWidget");
+    widget->addItem(":/icon/title", "TTKTableAnimationHWidget");
+    widget->addItem(":/icon/title", "TTKOptionAnimationVWidget");
+    widget->addItem(":/icon/title", "TTKSkinAnimationVWidget");
+    widget->addItem(":/icon/title", "TTKTableAnimationVWidget");
+    widget->addItem(":/icon/title", "TTKFunctionListHWidget");
+    widget->addItem(":/icon/title", "TTKFunctionListVWidget");
+    widget->addItem(":/icon/title", "TTKFunctionNormalWidget");
+    widget->addItem(":/icon/title", "TTKFunctionToolBoxWidget");
 
     widget->setObjectName("titleRow");
     widget->setStyleSheet("#titleRow{background-color:rgba(255, 0, 255, 50)}");
@@ -428,14 +428,14 @@ void TTKToolsApplication::createWidgetModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKAnimationStackedWidget");
-    widget->addItem("red", "TTKAnimation2StackedWidget");
-    widget->addItem("red", "TTKColorTableWidget");
-    widget->addItem("red", "TTKGrabItemWidget");
-    widget->addItem("red", "TTKLayoutAnimationWidget");
-    widget->addItem("red", "TTKPictureBannerWidget");
-    widget->addItem("red", "TTKPictureFlowWidget");
-    widget->addItem("red", "TTKSmoothMovingTableWidget");
+    widget->addItem(":/icon/widget", "TTKAnimationStackedWidget");
+    widget->addItem(":/icon/widget", "TTKAnimation2StackedWidget");
+    widget->addItem(":/icon/widget", "TTKColorTableWidget");
+    widget->addItem(":/icon/widget", "TTKGrabItemWidget");
+    widget->addItem(":/icon/widget", "TTKLayoutAnimationWidget");
+    widget->addItem(":/icon/widget", "TTKPictureBannerWidget");
+    widget->addItem(":/icon/widget", "TTKPictureFlowWidget");
+    widget->addItem(":/icon/widget", "TTKSmoothMovingTableWidget");
 
     widget->setObjectName("widgetRow");
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");
@@ -448,10 +448,10 @@ void TTKToolsApplication::createWindowModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem("red", "TTKHlSaturationPalette");
-    widget->addItem("red", "TTKMoveDialog");
-    widget->addItem("red", "TTKMoveResizeWidget");
-    widget->addItem("red", "TTKMoveWidget");
+    widget->addItem(":/icon/window", "TTKHlSaturationPalette");
+    widget->addItem(":/icon/window", "TTKMoveDialog");
+    widget->addItem(":/icon/window", "TTKMoveResizeWidget");
+    widget->addItem(":/icon/window", "TTKMoveWidget");
 
     widget->setObjectName("windowRow");
     widget->setStyleSheet("#windowRow{background-color:rgba(255, 255, 255, 50)}");

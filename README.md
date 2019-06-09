@@ -15,9 +15,62 @@ QWidget 控件集合
 | Windows  | 5.x MSVC       | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
 | OS X     | 5.x Clang     | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)                           |
 
+Module
+----
+| Module | Description       | Status                                                                                      |
+| :---:    | :---:               | :---:                                                                                       |
+| Button | TTKCheckButtonWidget |   完成   |
+| Button | TTKFlatButtonWidget |   完成   |
+| Button | TTKRadioButtonWidget |   完成   |
+| Button | TTKToggleWidget |   完成   |
+| Button | TTKToolMenuWidget |   完成   |
+| Label | TTKCircleClickLabel |   完成   |
+| Label | TTKCodeAreaLabel |   完成   |
+| Label | TTKLedPageLabel |   完成   |
+| Label | TTKMarqueeLabel |   完成   |
+| Label | TTKRoundAnimationLabel |   完成   |
+| Label | TTKSplitItemLabel | 完成     |
+| Label | TTKToastLabel |   完成   |
+| Label | TTKTransitionAnimationLabel |   完成   |
+| LineEdit | TTKIpEditWidget |   完成   |
+| LineEdit | TTKLineEditWidget |   完成   |
+| Meter | TTKPaintMeterWidget |   完成   |
+| Meter | TTKRadarMeterWidget |   完成   |
+| Meter | TTKSpeedMeterWidget |   完成   |
+| Meter | TTKTimeMeterWidget |   完成   |
+| Progress | TTKAnimationProgressWidget |   完成   |
+| Progress | TTKCircleProgressWidget |   完成   |
+| Progress | TTKCircularProgressWidget |   完成   |
+| Progress | TTKGifProgressWidget |   完成   |
+| Progress | TTKProgressWidget |   完成   |
+| Progress | TTKRadiusProgressWidget |   完成   |
+| Progress | TTKRingsMapProgressWidget |   完成   |
+| Progress | TTKRingsProgressWidget |   完成   |
+| Progress | TTKRoundProgressWidget |   完成   |
+| Slider | TTKMovingLabelSlider |   完成   |
+| Slider | TTKShiningSlider |   完成   |
+| Slider | TTKStyleSlider |   完成   |
+| Title | TTKFunctionAnimationWidget |   完成   |
+| Title | TTKFunctionListHWidget |   完成   |
+| Title | TTKFunctionListVWidget |   完成   |
+| Title | TTKFunctionNormalWidget |   完成   |
+| Title | TTKFunctionToolboxWidget |   完成   |
+| Widget | TTKAnimation2StackedWidget |   完成   |
+| Widget | TTKAnimationStackedWidget |   完成   |
+| Widget | TTKColorTableWidget |   完成   |
+| Widget | TTKGrabItemWidget |   完成   |
+| Widget | TTKLayoutAnimationWidget |   完成   |
+| Widget | TTKPictureBannerWidget |   完成   |
+| Widget | TTKPictureFlowWidget |   完成   |
+| Widget | TTKSmoothMovingTableWidget |   完成   |
+| Window | TTKColorDialog |   完成   |
+| Window | TTKMoveDialog |   完成   |
+| Window | TTKMoveResizeWidget |   完成   |
+| Window | TTKMoveWidget |   完成   |
+
 Screenshots
 ----
-Reference wik **<u>https://github.com/Greedysky/TTKWidgetTools/wiki</u>**
+![Screenshots](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/picture.png?raw=true)
 
 Copyright
 -------
