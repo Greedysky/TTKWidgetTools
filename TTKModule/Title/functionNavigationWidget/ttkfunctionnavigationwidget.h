@@ -29,6 +29,7 @@
 class TTK_CORE_EXPORT TTKFunctionNavigationWidget : public QPushButton
 {
     Q_OBJECT
+    TTK_DECLARE_MODULE(TTKFunctionNavigationWidget)
 public:
     enum TextAlign
     {

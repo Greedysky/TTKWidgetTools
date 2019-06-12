@@ -16,12 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkfunctionnavigationwidgetproperty.cpp
 
-include($$PWD/functionAnimationHWidget/FunctionAnimationHWidget.pri)
-include($$PWD/functionAnimationVWidget/FunctionAnimationVWidget.pri)
-include($$PWD/functionListHWidget/FunctionListHWidget.pri)
-include($$PWD/functionListVWidget/FunctionListVWidget.pri)
-include($$PWD/functionNavigationWidget/FunctionNavigationWidget.pri)
-include($$PWD/functionNormalWidget/FunctionNormalWidget.pri)
-include($$PWD/functionToolboxWidget/FunctionToolboxWidget.pri)
+HEADERS += $$PWD/ttkfunctionnavigationwidgetproperty.h

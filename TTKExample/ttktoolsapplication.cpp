@@ -237,6 +237,12 @@ void TTKToolsApplication::titleModuleChanged(int index)
             break;
         case 9: w = new TTKFunctionToolBoxWidgetProperty;
             break;
+        case 10: w = new TTKFunctionNavigationAWidgetProperty;
+            break;
+        case 11: w = new TTKFunctionNavigationBWidgetProperty;
+            break;
+        case 12: w = new TTKFunctionNavigationCWidgetProperty;
+            break;
         default:
             break;
     }
@@ -416,6 +422,9 @@ void TTKToolsApplication::createTitleModule()
     widget->addItem(":/icon/title", "TTKFunctionListVWidget");
     widget->addItem(":/icon/title", "TTKFunctionNormalWidget");
     widget->addItem(":/icon/title", "TTKFunctionToolBoxWidget");
+    widget->addItem(":/icon/title", "TTKFunctionNavigationAWidgetProperty");
+    widget->addItem(":/icon/title", "TTKFunctionNavigationBWidgetProperty");
+    widget->addItem(":/icon/title", "TTKFunctionNavigationCWidgetProperty");
 
     widget->setObjectName("titleRow");
     widget->setStyleSheet("#titleRow{background-color:rgba(255, 0, 255, 50)}");

@@ -23,6 +23,7 @@
 #include "functionAnimationVWidget/ttkfunctionanimationvwidgetproperty.h"
 #include "functionListHWidget/ttkfunctionlisthwidgetproperty.h"
 #include "functionListVWidget/ttkfunctionlistvwidgetproperty.h"
+#include "functionNavigationWidget/ttkfunctionnavigationwidgetproperty.h"
 #include "functionToolboxWidget/ttkfunctiontoolboxwidgetproperty.h"
 #include "functionNormalWidget/ttkfunctionnormalwidgetproperty.h"
 
