@@ -25,7 +25,26 @@ class TTKFunctionNavigationWidget;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationAWidgetProperty : public TTKWidgetProperty
+class TTK_CORE_EXPORT TTKFunctionNavigationWidgetProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionNavigationWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNavigationWidgetProperty();
+
+private Q_SLOTS:
+    void buttonClicked();
+
+protected:
+    QList<TTKFunctionNavigationWidget*> m_buttons;
+
+};
+
+
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNavigationAWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -38,18 +57,13 @@ private Q_SLOTS:
     virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
-private Q_SLOTS:
-    void buttonClicked();
-
-private:
-    QList<TTKFunctionNavigationWidget*> buttons_;
 };
 
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationBWidgetProperty : public TTKWidgetProperty
+class TTK_CORE_EXPORT TTKFunctionNavigationBWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -62,18 +76,13 @@ private Q_SLOTS:
     virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
-private Q_SLOTS:
-    void buttonClicked();
-
-private:
-    QList<TTKFunctionNavigationWidget*> buttons_;
 };
 
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationCWidgetProperty : public TTKWidgetProperty
+class TTK_CORE_EXPORT TTKFunctionNavigationCWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -87,11 +96,88 @@ private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
+};
+
+
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNavigationDWidgetProperty : public TTKFunctionNavigationWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionNavigationDWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNavigationDWidgetProperty();
+
 private Q_SLOTS:
-    void buttonClicked();
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNavigationEWidgetProperty : public TTKFunctionNavigationWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionNavigationEWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNavigationEWidgetProperty();
+
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNavigationFWidgetProperty : public TTKFunctionNavigationWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionNavigationFWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNavigationFWidgetProperty();
+
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKFunctionNavigationGWidgetProperty : public TTKFunctionNavigationWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKFunctionNavigationGWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKFunctionNavigationGWidgetProperty();
+
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
 
 private:
-    QList<TTKFunctionNavigationWidget*> buttons_;
+    QLinearGradient m_normal, m_hover, m_check;
+
 };
 
 #endif // TTKFUNCTIONNAVIGATIONWIDGETPROPERTY_H

@@ -1,4 +1,4 @@
-﻿#include "ttkbackgroundcontainer.h"
+#include "ttkbackgroundcontainer.h"
 #include "ttkglobal.h"
 
 #include <qmath.h>
@@ -175,7 +175,7 @@ void TTKBackgroundContainer::paintEvent(QPaintEvent *event)
     QPainter painter(this);
 
     QPixmap pix(":/image/lb_transparent");
-    for(int i=0; i<ceil(width()/PIX_WIDTH); ++i)
+    for(int i=0; i<=ceil(width()/PIX_WIDTH); ++i)
     {
         for(int j=0; j<=ceil(height()/PIX_HEIGHT); ++j)
         {

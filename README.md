@@ -55,6 +55,7 @@ Module
 | Title | TTKFunctionListVWidget |   完成   |
 | Title | TTKFunctionNormalWidget |   完成   |
 | Title | TTKFunctionToolboxWidget |   完成   |
+| Title | TTKFunctionNavigationWidget |   完成   |
 | Widget | TTKAnimation2StackedWidget |   完成   |
 | Widget | TTKAnimationStackedWidget |   完成   |
 | Widget | TTKColorTableWidget |   完成   |
