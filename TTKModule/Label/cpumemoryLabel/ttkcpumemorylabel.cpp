@@ -79,7 +79,7 @@ void TTKCPUMemoryLabel::getCPU()
     b = (userTime.dwHighDateTime << 31) | userTime.dwLowDateTime;
     user = b - a;
 
-    cpuPercent = (kernel + user - idle) * 100 / (kernel + user);
+    m_cpuPercent = (kernel + user - idle) * 100 / (kernel + user);
 
     preidleTime = idleTime;
     prekernelTime = kernelTime;
@@ -103,10 +103,10 @@ void TTKCPUMemoryLabel::getMemory()
     MEMORYSTATUSEX statex;
     statex.dwLength = sizeof(statex);
     GlobalMemoryStatusEx(&statex);
-    memoryPercent = statex.dwMemoryLoad;
-    memoryAll = statex.ullTotalPhys / MB;
-    memoryFree = statex.ullAvailPhys / MB;
-    memoryUse = memoryAll - memoryFree;
+    m_memoryPercent = statex.dwMemoryLoad;
+    m_memoryAll = statex.ullTotalPhys / MB;
+    m_memoryFree = statex.ullAvailPhys / MB;
+    m_memoryUse = m_memoryAll - m_memoryFree;
 
     setData();
 #else
