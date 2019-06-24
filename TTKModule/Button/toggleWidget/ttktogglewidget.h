@@ -37,7 +37,7 @@ class TTK_CORE_EXPORT TTKToggleThumb : public QWidget
     Q_PROPERTY(qreal shift WRITE setShift READ shift)
     Q_PROPERTY(QColor thumbColor WRITE setThumbColor READ thumbColor)
 public:
-    explicit TTKToggleThumb(TTKToggleWidget *parent = 0);
+    explicit TTKToggleThumb(TTKToggleWidget *parent = nullptr);
 
     void setShift(qreal shift);
 
@@ -69,7 +69,7 @@ class TTK_CORE_EXPORT TTKToggleTrack : public QWidget
     Q_OBJECT
     Q_PROPERTY(QColor trackColor WRITE setTrackColor READ trackColor)
 public:
-    explicit TTKToggleTrack(TTKToggleWidget *parent = 0);
+    explicit TTKToggleTrack(TTKToggleWidget *parent = nullptr);
 
     void setTrackColor(const QColor &color);
     inline QColor trackColor() const { return m_trackColor; }

@@ -39,7 +39,7 @@ class TTK_CORE_EXPORT TTKCheckableIcon : public QWidget
     Q_PROPERTY(qreal iconSize READ iconSize WRITE setIconSize)
     Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
 public:
-    explicit TTKCheckableIcon(const QIcon &icon, TTKCheckable *parent = 0);
+    explicit TTKCheckableIcon(const QIcon &icon, TTKCheckable *parent = nullptr);
 
     virtual QSize sizeHint() const override;
 

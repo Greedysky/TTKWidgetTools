@@ -36,7 +36,7 @@ class TTK_CORE_EXPORT TTKCircularProgressDelegate : public QObject
     Q_PROPERTY(qreal dashLength WRITE setDashLength READ dashLength)
     Q_PROPERTY(int angle WRITE setAngle READ angle)
 public:
-    explicit TTKCircularProgressDelegate(TTKCircularProgressWidget *parent = 0);
+    explicit TTKCircularProgressDelegate(TTKCircularProgressWidget *parent = nullptr);
 
     void setDashOffset(qreal offset);
     inline qreal dashOffset() const { return m_dashOffset; }

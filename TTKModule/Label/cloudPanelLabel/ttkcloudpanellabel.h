@@ -29,6 +29,7 @@
 class TTK_CORE_EXPORT TTKCloudPanelLabel : public QWidget
 {
 	Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCloudPanelLabel)
 public:
 	enum TCloudStyle {
         CloudStyle_Black = 0,
@@ -36,7 +37,7 @@ public:
         CloudStyle_Blue = 2,
         CloudStyle_Purple = 3,
 	};
-    TTKCloudPanelLabel(QWidget *parent = nullptr);
+    explicit TTKCloudPanelLabel(QWidget *parent = nullptr);
     ~TTKCloudPanelLabel();
 
     void setBgColor(const QColor &bgColor);

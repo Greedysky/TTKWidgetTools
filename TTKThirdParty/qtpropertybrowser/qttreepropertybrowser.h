@@ -72,7 +72,7 @@ public:
         ResizeToContents
     };
 
-    QtTreePropertyBrowser(QWidget *parent = 0);
+    QtTreePropertyBrowser(QWidget *parent = nullptr);
     ~QtTreePropertyBrowser();
 
     int indentation() const;
