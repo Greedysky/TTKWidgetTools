@@ -25,6 +25,7 @@
 
 /*!
 * @author Greedysky <greedysky@163.com>
+*         feiyangqingyun <feiyangqingyun@163.com>
 */
 class TTK_CORE_EXPORT TTKBarRulerLabel : public QWidget
 {
@@ -62,7 +63,6 @@ public:
     void setBarColor(const QColor &barColor);
 
     virtual QSize sizeHint() const override;
-    virtual QSize minimumSizeHint() const override;
 
 Q_SIGNALS:
     void valueChanged(double value);

@@ -188,8 +188,3 @@ QSize TTKCPUMemoryLabel::sizeHint() const
 {
     return QSize(300, 30);
 }
-
-QSize TTKCPUMemoryLabel::minimumSizeHint() const
-{
-    return QSize(30, 10);
-}

@@ -1,5 +1,5 @@
-#ifndef TTKLABELINCLUDE_H
-#define TTKLABELINCLUDE_H
+#ifndef TTKBATTERYLABELPROPERTY_H
+#define TTKBATTERYLABELPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,17 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "circleClickLabel/ttkcircleclicklabelproperty.h"
-#include "codeAreaLabel/ttkcodearealabelproperty.h"
-#include "marqueeLabel/ttkmarqueelabelproperty.h"
-#include "roundAnimationLabel/ttkroundanimationlabelproperty.h"
-#include "splitItemLabel/ttksplititemlabelproperty.h"
-#include "toastLabel/ttktoastlabelproperty.h"
-#include "transitionAnimationLabel/ttktransitionanimationlabelproperty.h"
-#include "ledPageLabel/ttkledpagelabelproperty.h"
-#include "barRulerLabel/ttkbarrulerlabelproperty.h"
-#include "batteryLabel/ttkbatterylabelproperty.h"
-#include "cloudPanelLabel/ttkcloudpanellabelproperty.h"
-#include "cpuMemoryLabel/ttkcpumemorylabelproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKLABELINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKBatteryLabelProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKBatteryLabelProperty(QWidget *parent = nullptr);
+    ~TTKBatteryLabelProperty();
+
+protected Q_SLOTS:
+    virtual void doublePropertyChanged(QtProperty *property, double value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+#endif // TTKBATTERYLABELPROPERTY_H

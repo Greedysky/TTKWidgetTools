@@ -335,11 +335,6 @@ QSize TTKBarRulerLabel::sizeHint() const
     return QSize(100, 350);
 }
 
-QSize TTKBarRulerLabel::minimumSizeHint() const
-{
-    return QSize(20, 50);
-}
-
 void TTKBarRulerLabel::updateValue()
 {
     if(!m_reverse)

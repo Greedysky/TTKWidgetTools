@@ -1,4 +1,4 @@
-﻿#include "ttkfunctionnavigationwidget.h"
+#include "ttkfunctionnavigationwidget.h"
 
 #include <QPainter>
 
@@ -42,16 +42,6 @@ TTKFunctionNavigationWidget::TTKFunctionNavigationWidget(QWidget *parent)
 
     m_hover = false;
     setCheckable(true);
-}
-
-QSize TTKFunctionNavigationWidget::sizeHint() const
-{
-    return QSize(100, 30);
-}
-
-QSize TTKFunctionNavigationWidget::minimumSizeHint() const
-{
-    return QSize(20, 10);
 }
 
 void TTKFunctionNavigationWidget::setPaddingLeft(int paddingLeft)
@@ -318,6 +308,11 @@ void TTKFunctionNavigationWidget::setCheckBgBrush(const QBrush &checkBgBrush)
         m_checkBgBrush = checkBgBrush;
         update();
     }
+}
+
+QSize TTKFunctionNavigationWidget::sizeHint() const
+{
+    return QSize(100, 30);
 }
 
 void TTKFunctionNavigationWidget::enterEvent(QEvent *event)

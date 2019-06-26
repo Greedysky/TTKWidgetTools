@@ -32,6 +32,10 @@ Module
 | Label | TTKSplitItemLabel | 完成     |
 | Label | TTKToastLabel |   完成   |
 | Label | TTKTransitionAnimationLabel |   完成   |
+| Label | TTKBarRulerLabel |   完成   |
+| Label | TTKBatteryLabel | 完成     |
+| Label | TTKCloudPanelLabel |   完成   |
+| Label | TTKCPUMemoryLabel |   完成   |
 | LineEdit | TTKIpEditWidget |   完成   |
 | LineEdit | TTKLineEditWidget |   完成   |
 | Meter | TTKPaintMeterWidget |   完成   |

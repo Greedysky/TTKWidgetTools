@@ -27,16 +27,17 @@ class QProcess;
 
 /*!
 * @author Greedysky <greedysky@163.com>
+*         feiyangqingyun <feiyangqingyun@163.com>
 */
 class TTK_CORE_EXPORT TTKCPUMemoryLabel : public QLabel
 {
-	Q_OBJECT
+    Q_OBJECT
+    TTK_DECLARE_MODULE(TTKCPUMemoryLabel)
 public:
     explicit TTKCPUMemoryLabel(QWidget *parent = nullptr);
     ~TTKCPUMemoryLabel();
 
     virtual QSize sizeHint() const override;
-    virtual QSize minimumSizeHint() const override;
 
 Q_SIGNALS:
     void textChanged(const QString &text);

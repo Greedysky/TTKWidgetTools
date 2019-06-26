@@ -132,11 +132,6 @@ QSize TTKBatteryLabel::sizeHint() const
     return QSize(150, 80);
 }
 
-QSize TTKBatteryLabel::minimumSizeHint() const
-{
-    return QSize(30, 10);
-}
-
 void TTKBatteryLabel::setRange(double minValue, double maxValue)
 {
     if(minValue >= maxValue)

@@ -1,4 +1,4 @@
-﻿#ifndef TTKFUNCTIONNAVIGATIONBUTTON_H
+#ifndef TTKFUNCTIONNAVIGATIONBUTTON_H
 #define TTKFUNCTIONNAVIGATIONBUTTON_H
 
 /* =================================================
@@ -24,8 +24,9 @@
 #include "ttkglobaldefine.h"
 
 /*!
- * @author Greedysky <greedysky@163.com>
- */
+* @author Greedysky <greedysky@163.com>
+*         feiyangqingyun <feiyangqingyun@163.com>
+*/
 class TTK_CORE_EXPORT TTKFunctionNavigationWidget : public QPushButton
 {
     Q_OBJECT
@@ -66,11 +67,6 @@ public:
 
     explicit TTKFunctionNavigationWidget(QWidget *parent = nullptr);
 
-public:
-    virtual QSize sizeHint() const override;
-    virtual QSize minimumSizeHint() const override;
-
-public Q_SLOTS:
     void setPaddingLeft(int paddingLeft);
     void setPaddingRight(int paddingRight);
     void setPaddingTop(int paddingTop);
@@ -109,6 +105,8 @@ public Q_SLOTS:
     void setNormalBgBrush(const QBrush &normalBgBrush);
     void setHoverBgBrush(const QBrush &hoverBgBrush);
     void setCheckBgBrush(const QBrush &checkBgBrush);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     virtual void enterEvent(QEvent *event) override;

@@ -25,27 +25,33 @@
 
 /*!
 * @author Greedysky <greedysky@163.com>
+*         feiyangqingyun <feiyangqingyun@163.com>
 */
 class TTK_CORE_EXPORT TTKCloudPanelLabel : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
     TTK_DECLARE_MODULE(TTKCloudPanelLabel)
 public:
-	enum TCloudStyle {
-        CloudStyle_Black = 0,
-        CloudStyle_White = 1,
-        CloudStyle_Blue = 2,
-        CloudStyle_Purple = 3,
+    enum TCloudStyle
+    {
+        CloudStyleBlack = 0,
+        CloudStyleWhite = 1,
+        CloudStyleBlue = 2,
+        CloudStylePurple = 3,
 	};
+
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);
     ~TTKCloudPanelLabel();
 
     void setBgColor(const QColor &bgColor);
     void setBaseColor(const QColor &baseColor);
+
     void setArcColor(const QColor &arcColor);
     void setBorderColor(const QColor &borderColor);
+
     void setIconColor(const QColor &textColor);
     void setPressColor(const QColor &pressColor);
+
     void setCloudStyle(const TCloudStyle &cloudStyle);
 
 Q_SIGNALS:

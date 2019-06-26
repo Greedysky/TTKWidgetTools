@@ -109,6 +109,14 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         case 7: w = new TTKTransitionAnimationLabelProperty;
             break;
+        case 8: w = new TTKBarRulerLabelProperty;
+            break;
+        case 9: w = new TTKBatteryLabelProperty;
+            break;
+        case 10: w = new TTKCloudPanelLabelProperty;
+            break;
+        case 11: w = new TTKCPUMemoryLabelProperty;
+            break;
         default:
             break;
     }
@@ -341,6 +349,10 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKSplitItemLabel");
     widget->addItem(":/icon/label", "TTKToastLabel");
     widget->addItem(":/icon/label", "TTKTransitionAnimationLabel");
+    widget->addItem(":/icon/label", "TTKBarRulerLabel");
+    widget->addItem(":/icon/label", "TTKBatteryLabel");
+    widget->addItem(":/icon/label", "TTKCloudPanelLabel");
+    widget->addItem(":/icon/label", "TTKCPUMemoryLabel");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
