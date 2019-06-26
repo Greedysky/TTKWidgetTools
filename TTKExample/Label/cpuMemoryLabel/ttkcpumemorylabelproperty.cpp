@@ -20,6 +20,8 @@ TTKCPUMemoryLabelProperty::TTKCPUMemoryLabelProperty(QWidget *parent)
     objectItem->addSubProperty(geometryItem);
     //
     m_browser->addProperty(objectItem);
+
+    MStatic_cast(TTKCPUMemoryLabel*, m_item)->start(1000);
 }
 
 TTKCPUMemoryLabelProperty::~TTKCPUMemoryLabelProperty()

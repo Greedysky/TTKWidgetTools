@@ -34,10 +34,12 @@ TTKBatteryLabelProperty::TTKBatteryLabelProperty(QWidget *parent)
     objectItem->addSubProperty(valueItem);
     //
     QtProperty *alarmValueItem = m_doubleManager->addProperty("AlarmValue");
+    m_doubleManager->setMinimum(alarmValueItem, 0);
     m_doubleManager->setValue(alarmValueItem, 30);
     objectItem->addSubProperty(alarmValueItem);
     //
     QtProperty *stepItem = m_doubleManager->addProperty("Step");
+    m_doubleManager->setMinimum(stepItem, 0);
     m_doubleManager->setValue(stepItem, 0.5);
     objectItem->addSubProperty(stepItem);
     //

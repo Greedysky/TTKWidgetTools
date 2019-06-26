@@ -35,13 +35,16 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     //
     QtProperty *precisionItem = m_intManager->addProperty("Precision");
     m_intManager->setValue(precisionItem, 0);
+    m_intManager->setMinimum(precisionItem, 0);
     objectItem->addSubProperty(precisionItem);
     //
     QtProperty *longStepItem = m_intManager->addProperty("LongStep");
+    m_intManager->setMinimum(longStepItem, 0);
     m_intManager->setValue(longStepItem, 10);
     objectItem->addSubProperty(longStepItem);
     //
     QtProperty *shortStepItem = m_intManager->addProperty("ShortStep");
+    m_intManager->setMinimum(shortStepItem, 0);
     m_intManager->setValue(shortStepItem, 1);
     objectItem->addSubProperty(shortStepItem);
     //
@@ -54,6 +57,7 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     objectItem->addSubProperty(animationItem);
     //
     QtProperty *animationStepItem = m_doubleManager->addProperty("AnimationStep");
+    m_doubleManager->setMinimum(animationStepItem, 0.0);
     m_doubleManager->setValue(animationStepItem, 0.5);
     objectItem->addSubProperty(animationStepItem);
     //

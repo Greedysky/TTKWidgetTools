@@ -28,36 +28,43 @@ TTKCloudPanelLabel::~TTKCloudPanelLabel()
 void TTKCloudPanelLabel::setBgColor(const QColor &bgColor)
 {
     m_bgColor = bgColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setBaseColor(const QColor &baseColor)
 {
     m_baseColor = baseColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setArcColor(const QColor &arcColor)
 {
     m_arcColor = arcColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setBorderColor(const QColor &borderColor)
 {
     m_borderColor = borderColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setIconColor(const QColor &textColor)
 {
     m_iconColor = textColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setPressColor(const QColor &pressColor)
 {
     m_pressColor = pressColor;
+    update();
 }
 
 void TTKCloudPanelLabel::setCloudStyle(const TCloudStyle &cloudStyle)
 {
     m_cloudStyle = cloudStyle;
+    update();
 }
 
 void TTKCloudPanelLabel::resizeEvent(QResizeEvent *event)
