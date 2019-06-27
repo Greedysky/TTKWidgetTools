@@ -36,19 +36,15 @@ public:
     ~TTKBatteryLabel();
 
     void setRange(double minValue, double maxValue);
-    void setRange(int minValue, int maxValue);
 
     void setMinValue(double minValue);
     void setMaxValue(double maxValue);
 
     void setValue(double value);
-    void setValue(int value);
 
     void setAlarmValue(double alarmValue);
-    void setAlarmValue(int alarmValue);
 
     void setStep(double step);
-    void setStep(int step);
 
     void setBorderColorStart(const QColor &borderColorStart);
     void setBorderColorEnd(const QColor &borderColorEnd);
@@ -60,9 +56,6 @@ public:
     void setNormalColorEnd(const QColor &normalColorEnd);
 
     virtual QSize sizeHint() const override;
-
-Q_SIGNALS:
-    void valueChanged(double value);
 
 private Q_SLOTS:
     void updateValue();

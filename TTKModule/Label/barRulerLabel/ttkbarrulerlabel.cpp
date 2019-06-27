@@ -43,116 +43,6 @@ TTKBarRulerLabel::~TTKBarRulerLabel()
     }
 }
 
-void TTKBarRulerLabel::paintEvent(QPaintEvent *event)
-{
-    Q_UNUSED(event);
-
-    QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-
-    drawBg(&painter);
-    drawRuler(&painter);
-    drawBarBg(&painter);
-    drawBar(&painter);
-}
-
-void TTKBarRulerLabel::drawBg(QPainter *painter)
-{
-    painter->save();
-    painter->setPen(Qt::NoPen);
-    QLinearGradient bgGradient(QPointF(0, 0), QPointF(0, height()));
-    bgGradient.setColorAt(0.0, m_bgColorStart);
-    bgGradient.setColorAt(1.0, m_bgColorEnd);
-    painter->setBrush(bgGradient);
-    painter->drawRect(rect());
-    painter->restore();
-}
-
-void TTKBarRulerLabel::drawRuler(QPainter *painter)
-{
-    painter->save();
-    painter->setPen(m_lineColor);
-
-    const double initX = m_space + 20;
-    double initY = m_space;
-
-    QPointF topPot(initX, initY);
-    QPointF bottomPot(initX, height() - m_space);
-    painter->drawLine(topPot, bottomPot);
-
-    const double length = height() - 2 * m_space;
-    const double increment = length / (m_maxValue - m_minValue);
-
-    const int longLineLen = 10;
-    int shortLineLen = 7;
-
-    for(int i = m_maxValue; i >= m_minValue; i = i - m_shortStep)
-    {
-        if(i % m_longStep == 0)
-        {
-            QPointF leftPot(initX + longLineLen, initY);
-            QPointF rightPot(initX, initY);
-            painter->drawLine(leftPot, rightPot);
-
-            QString strValue = QString("%1").arg((double)i, 0, 'f', m_precision);
-            double fontWidth = painter->fontMetrics().width(strValue);
-            double fontHeight = painter->fontMetrics().height();
-            QPointF textPot(initX - fontWidth - 5, initY + fontHeight / 3);
-            painter->drawText(textPot, strValue);
-        }
-        else
-        {
-            if(i % (m_longStep / 2) == 0)
-            {
-                shortLineLen = 7;
-            }
-            else
-            {
-                shortLineLen = 4;
-            }
-
-            QPointF leftPot(initX + shortLineLen, initY);
-            QPointF rightPot(initX, initY);
-            painter->drawLine(leftPot, rightPot);
-        }
-        initY += increment * m_shortStep;
-    }
-    painter->restore();
-}
-
-void TTKBarRulerLabel::drawBarBg(QPainter *painter)
-{
-    painter->save();
-    painter->setPen(Qt::NoPen);
-
-    const double initX = m_space + 20 + 15;
-    QPointF topLeftPot(initX, m_space);
-    QPointF bottomRightPot(width() - m_space , height() - m_space);
-    m_barRect = QRectF(topLeftPot, bottomRightPot);
-
-    painter->setBrush(m_barBgColor);
-    painter->drawRect(m_barRect);
-    painter->restore();
-}
-
-void TTKBarRulerLabel::drawBar(QPainter *painter)
-{
-    painter->save();
-    painter->setPen(Qt::NoPen);
-
-    double barHeight = m_barRect.height();
-    double increment = barHeight / (m_maxValue - m_minValue);
-    double initY = (m_currentValue - m_minValue) * increment;
-
-    QPointF topLeftPot(m_barRect.topLeft().x(), m_barRect.bottomLeft().y() - initY);
-    QPointF bottomRightPot(m_barRect.bottomRight());
-    QRectF currentRect(topLeftPot, bottomRightPot);
-
-    painter->setBrush(m_barColor);
-    painter->drawRect(currentRect);
-    painter->restore();
-}
-
 void TTKBarRulerLabel::setRange(double minValue, double maxValue)
 {
     if(minValue >= maxValue)
@@ -169,11 +59,6 @@ void TTKBarRulerLabel::setRange(double minValue, double maxValue)
     }
 
     update();
-}
-
-void TTKBarRulerLabel::setRange(int minValue, int maxValue)
-{
-    setRange(minValue, maxValue);
 }
 
 void TTKBarRulerLabel::setMinValue(double minValue)
@@ -203,7 +88,6 @@ void TTKBarRulerLabel::setValue(double value)
     }
 
     m_value = value;
-    emit valueChanged(value);
 
     if(!m_animation)
     {
@@ -214,11 +98,6 @@ void TTKBarRulerLabel::setValue(double value)
     {
         m_timer->start();
     }
-}
-
-void TTKBarRulerLabel::setValue(int value)
-{
-    setValue(value);
 }
 
 void TTKBarRulerLabel::setPrecision(int precision)
@@ -362,4 +241,114 @@ void TTKBarRulerLabel::updateValue()
         }
     }
     update();
+}
+
+void TTKBarRulerLabel::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+
+    drawBg(&painter);
+    drawRuler(&painter);
+    drawBarBg(&painter);
+    drawBar(&painter);
+}
+
+void TTKBarRulerLabel::drawBg(QPainter *painter)
+{
+    painter->save();
+    painter->setPen(Qt::NoPen);
+    QLinearGradient bgGradient(QPointF(0, 0), QPointF(0, height()));
+    bgGradient.setColorAt(0.0, m_bgColorStart);
+    bgGradient.setColorAt(1.0, m_bgColorEnd);
+    painter->setBrush(bgGradient);
+    painter->drawRect(rect());
+    painter->restore();
+}
+
+void TTKBarRulerLabel::drawRuler(QPainter *painter)
+{
+    painter->save();
+    painter->setPen(m_lineColor);
+
+    const double initX = m_space + 20;
+    double initY = m_space;
+
+    QPointF topPot(initX, initY);
+    QPointF bottomPot(initX, height() - m_space);
+    painter->drawLine(topPot, bottomPot);
+
+    const double length = height() - 2 * m_space;
+    const double increment = length / (m_maxValue - m_minValue);
+
+    const int longLineLen = 10;
+    int shortLineLen = 7;
+
+    for(int i = m_maxValue; i >= m_minValue; i = i - m_shortStep)
+    {
+        if(i % m_longStep == 0)
+        {
+            QPointF leftPot(initX + longLineLen, initY);
+            QPointF rightPot(initX, initY);
+            painter->drawLine(leftPot, rightPot);
+
+            QString strValue = QString("%1").arg((double)i, 0, 'f', m_precision);
+            double fontWidth = painter->fontMetrics().width(strValue);
+            double fontHeight = painter->fontMetrics().height();
+            QPointF textPot(initX - fontWidth - 5, initY + fontHeight / 3);
+            painter->drawText(textPot, strValue);
+        }
+        else
+        {
+            if(i % (m_longStep / 2) == 0)
+            {
+                shortLineLen = 7;
+            }
+            else
+            {
+                shortLineLen = 4;
+            }
+
+            QPointF leftPot(initX + shortLineLen, initY);
+            QPointF rightPot(initX, initY);
+            painter->drawLine(leftPot, rightPot);
+        }
+        initY += increment * m_shortStep;
+    }
+    painter->restore();
+}
+
+void TTKBarRulerLabel::drawBarBg(QPainter *painter)
+{
+    painter->save();
+    painter->setPen(Qt::NoPen);
+
+    const double initX = m_space + 20 + 15;
+    QPointF topLeftPot(initX, m_space);
+    QPointF bottomRightPot(width() - m_space , height() - m_space);
+    m_barRect = QRectF(topLeftPot, bottomRightPot);
+
+    painter->setBrush(m_barBgColor);
+    painter->drawRect(m_barRect);
+    painter->restore();
+}
+
+void TTKBarRulerLabel::drawBar(QPainter *painter)
+{
+    painter->save();
+    painter->setPen(Qt::NoPen);
+
+    double barHeight = m_barRect.height();
+    double increment = barHeight / (m_maxValue - m_minValue);
+    double initY = (m_currentValue - m_minValue) * increment;
+
+    QPointF topLeftPot(m_barRect.topLeft().x(), m_barRect.bottomLeft().y() - initY);
+    QPointF bottomRightPot(m_barRect.bottomRight());
+    QRectF currentRect(topLeftPot, bottomRightPot);
+
+    painter->setBrush(m_barColor);
+    painter->drawRect(currentRect);
+    painter->restore();
 }

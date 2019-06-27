@@ -27,44 +27,65 @@ TTKCloudPanelLabel::~TTKCloudPanelLabel()
 
 void TTKCloudPanelLabel::setBgColor(const QColor &bgColor)
 {
-    m_bgColor = bgColor;
-    update();
+    if(m_bgColor != bgColor)
+    {
+        m_bgColor = bgColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setBaseColor(const QColor &baseColor)
 {
-    m_baseColor = baseColor;
-    update();
+    if(m_baseColor != baseColor)
+    {
+        m_baseColor = baseColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setArcColor(const QColor &arcColor)
 {
-    m_arcColor = arcColor;
-    update();
+    if(m_arcColor != arcColor)
+    {
+        m_arcColor = arcColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setBorderColor(const QColor &borderColor)
 {
-    m_borderColor = borderColor;
-    update();
+    if(m_borderColor != borderColor)
+    {
+        m_borderColor = borderColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setIconColor(const QColor &textColor)
 {
-    m_iconColor = textColor;
-    update();
+    if(m_iconColor != textColor)
+    {
+        m_iconColor = textColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setPressColor(const QColor &pressColor)
 {
-    m_pressColor = pressColor;
-    update();
+    if(m_pressColor != pressColor)
+    {
+        m_pressColor = pressColor;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::setCloudStyle(const TCloudStyle &cloudStyle)
 {
-    m_cloudStyle = cloudStyle;
-    update();
+    if(m_cloudStyle != cloudStyle)
+    {
+        m_cloudStyle = cloudStyle;
+        update();
+    }
 }
 
 void TTKCloudPanelLabel::resizeEvent(QResizeEvent *event)

@@ -37,6 +37,11 @@ TTKCPUMemoryLabel::~TTKCPUMemoryLabel()
     stop();
 }
 
+QSize TTKCPUMemoryLabel::sizeHint() const
+{
+    return QSize(300, 30);
+}
+
 void TTKCPUMemoryLabel::start(int interval)
 {
     getCPU();
@@ -180,11 +185,4 @@ void TTKCPUMemoryLabel::setData()
     const QString &msg = QString("CPU %1%  Mem %2% ( Used %3 MB / ALL %4 MB )")
                          .arg(m_cpuPercent).arg(m_memoryPercent).arg(m_memoryUse).arg(m_memoryAll);
     setText(msg);
-    emit textChanged(msg);
-    emit valueChanged(m_cpuPercent, m_memoryPercent, m_memoryAll, m_memoryUse, m_memoryFree);
-}
-
-QSize TTKCPUMemoryLabel::sizeHint() const
-{
-    return QSize(300, 30);
 }

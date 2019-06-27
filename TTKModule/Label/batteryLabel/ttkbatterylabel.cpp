@@ -35,103 +35,6 @@ TTKBatteryLabel::~TTKBatteryLabel()
     }
 }
 
-void TTKBatteryLabel::paintEvent(QPaintEvent *event)
-{
-    Q_UNUSED(event);
-
-    QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-
-    drawBorder(&painter);
-    drawBg(&painter);
-}
-
-void TTKBatteryLabel::drawBorder(QPainter *painter)
-{
-    painter->save();
-    double headWidth = width() / 10;
-    double batteryWidth = width() - headWidth;
-
-    //绘制电池边框
-    QPointF topLeft(5, 5);
-    QPointF bottomRight(batteryWidth, height() - 5);
-    m_batteryRect = QRectF(topLeft, bottomRight);
-
-    painter->setPen(QPen(m_borderColorStart, 5));
-    painter->setBrush(Qt::NoBrush);
-    painter->drawRoundRect(m_batteryRect, 10, 20);
-
-    //绘制电池头部
-    QPointF headRectTopLeft(m_batteryRect.topRight().x(), height() / 3);
-    QPointF headRectBottomRight(width(), height() - height() / 3);
-    QRectF headRect(headRectTopLeft, headRectBottomRight);
-
-    QLinearGradient headRectGradient(headRect.topLeft(), headRect.bottomLeft());
-    headRectGradient.setColorAt(0.0, m_borderColorStart);
-    headRectGradient.setColorAt(1.0, m_borderColorEnd);
-
-    painter->setBrush(headRectGradient);
-    painter->drawRoundRect(headRect, 15, 25);
-    painter->restore();
-}
-
-void TTKBatteryLabel::drawBg(QPainter *painter)
-{
-    painter->save();
-    QLinearGradient batteryGradient(QPointF(0, 0), QPointF(0, height()));
-
-    if(m_currentValue <= m_alarmValue)
-    {
-        batteryGradient.setColorAt(0.0, m_alarmColorStart);
-        batteryGradient.setColorAt(1.0, m_alarmColorEnd);
-    }
-    else
-    {
-        batteryGradient.setColorAt(0.0, m_normalColorStart);
-        batteryGradient.setColorAt(1.0, m_normalColorEnd);
-    }
-
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(batteryGradient);
-
-    int margin = qMin(width(), height()) / 20;
-    double unit = (m_batteryRect.width() - (margin * 2)) / 100;
-    double width = m_currentValue * unit;
-    QPointF topLeft(m_batteryRect.topLeft().x() + margin, m_batteryRect.topLeft().y() + margin);
-    QPointF bottomRight(width + margin + 5, m_batteryRect.bottomRight().y() - margin);
-    QRectF rect(topLeft, bottomRight);
-
-    painter->drawRoundRect(rect, 10, 10);
-    painter->restore();
-}
-
-void TTKBatteryLabel::updateValue()
-{
-    if(m_isForward)
-    {
-        m_currentValue -= m_step;
-        if(m_currentValue <= m_value)
-        {
-            m_timer->stop();
-        }
-    }
-    else
-    {
-        m_currentValue += m_step;
-        if(m_currentValue >= m_value)
-        {
-            m_timer->stop();
-        }
-    }
-
-    update();
-}
-
-QSize TTKBatteryLabel::sizeHint() const
-{
-    return QSize(150, 80);
-}
-
 void TTKBatteryLabel::setRange(double minValue, double maxValue)
 {
     if(minValue >= maxValue)
@@ -148,11 +51,6 @@ void TTKBatteryLabel::setRange(double minValue, double maxValue)
     }
 
     update();
-}
-
-void TTKBatteryLabel::setRange(int minValue, int maxValue)
-{
-    setRange(minValue, maxValue);
 }
 
 void TTKBatteryLabel::setMinValue(double minValue)
@@ -172,7 +70,6 @@ void TTKBatteryLabel::setValue(double value)
         return;
     }
 
-    emit valueChanged(m_value);
     m_value = value;
 
     if(value > m_currentValue)
@@ -192,11 +89,6 @@ void TTKBatteryLabel::setValue(double value)
     update();
 }
 
-void TTKBatteryLabel::setValue(int value)
-{
-    setValue((double)value);
-}
-
 void TTKBatteryLabel::setAlarmValue(double alarmValue)
 {
     if(m_alarmValue != alarmValue)
@@ -206,11 +98,6 @@ void TTKBatteryLabel::setAlarmValue(double alarmValue)
     }
 }
 
-void TTKBatteryLabel::setAlarmValue(int alarmValue)
-{
-    setAlarmValue(alarmValue);
-}
-
 void TTKBatteryLabel::setStep(double step)
 {
     if(m_step != step)
@@ -218,11 +105,6 @@ void TTKBatteryLabel::setStep(double step)
         m_step = step;
         update();
     }
-}
-
-void TTKBatteryLabel::setStep(int step)
-{
-    setStep(step);
 }
 
 void TTKBatteryLabel::setBorderColorStart(const QColor &borderColorStart)
@@ -279,3 +161,97 @@ void TTKBatteryLabel::setNormalColorEnd(const QColor &normalColorEnd)
     }
 }
 
+QSize TTKBatteryLabel::sizeHint() const
+{
+    return QSize(150, 80);
+}
+
+void TTKBatteryLabel::updateValue()
+{
+    if(m_isForward)
+    {
+        m_currentValue -= m_step;
+        if(m_currentValue <= m_value)
+        {
+            m_timer->stop();
+        }
+    }
+    else
+    {
+        m_currentValue += m_step;
+        if(m_currentValue >= m_value)
+        {
+            m_timer->stop();
+        }
+    }
+
+    update();
+}
+
+void TTKBatteryLabel::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+
+    QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+
+    drawBorder(&painter);
+    drawBg(&painter);
+}
+
+void TTKBatteryLabel::drawBorder(QPainter *painter)
+{
+    painter->save();
+    double headWidth = width() / 10;
+    double batteryWidth = width() - headWidth;
+
+    QPointF topLeft(5, 5);
+    QPointF bottomRight(batteryWidth, height() - 5);
+    m_batteryRect = QRectF(topLeft, bottomRight);
+
+    painter->setPen(QPen(m_borderColorStart, 5));
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRoundRect(m_batteryRect, 10, 20);
+
+    QPointF headRectTopLeft(m_batteryRect.topRight().x(), height() / 3);
+    QPointF headRectBottomRight(width(), height() - height() / 3);
+    QRectF headRect(headRectTopLeft, headRectBottomRight);
+
+    QLinearGradient headRectGradient(headRect.topLeft(), headRect.bottomLeft());
+    headRectGradient.setColorAt(0.0, m_borderColorStart);
+    headRectGradient.setColorAt(1.0, m_borderColorEnd);
+
+    painter->setBrush(headRectGradient);
+    painter->drawRoundRect(headRect, 15, 25);
+    painter->restore();
+}
+
+void TTKBatteryLabel::drawBg(QPainter *painter)
+{
+    painter->save();
+    QLinearGradient batteryGradient(QPointF(0, 0), QPointF(0, height()));
+
+    if(m_currentValue <= m_alarmValue)
+    {
+        batteryGradient.setColorAt(0.0, m_alarmColorStart);
+        batteryGradient.setColorAt(1.0, m_alarmColorEnd);
+    }
+    else
+    {
+        batteryGradient.setColorAt(0.0, m_normalColorStart);
+        batteryGradient.setColorAt(1.0, m_normalColorEnd);
+    }
+
+    painter->setPen(Qt::NoPen);
+    painter->setBrush(batteryGradient);
+
+    int margin = qMin(width(), height()) / 20;
+    double unit = (m_batteryRect.width() - (margin * 2)) / 100;
+    double width = m_currentValue * unit;
+    QPointF topLeft(m_batteryRect.topLeft().x() + margin, m_batteryRect.topLeft().y() + margin);
+    QPointF bottomRight(width + margin + 5, m_batteryRect.bottomRight().y() - margin);
+    QRectF rect(topLeft, bottomRight);
+
+    painter->drawRoundRect(rect, 10, 10);
+    painter->restore();
+}

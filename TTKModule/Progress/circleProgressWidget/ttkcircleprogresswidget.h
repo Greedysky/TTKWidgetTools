@@ -38,10 +38,8 @@ class TTK_CORE_EXPORT TTKCircleProgressWidget : public QWidget
     Q_PROPERTY(qreal innerRadius READ innerRadius WRITE setInnerRadius)
     Q_PROPERTY(qreal outerRadius READ outerRadius WRITE setOuterRadius)
     Q_PROPERTY(QColor color READ color WRITE setColor)
-
     Q_PROPERTY(qreal infiniteAnimationValue READ infiniteAnimationValue WRITE setInfiniteAnimationValue)
     Q_PROPERTY(int visibleValue READ visibleValue WRITE setVisibleValue)
-
 public:
     explicit TTKCircleProgressWidget(QWidget *parent = nullptr);
     virtual ~TTKCircleProgressWidget();

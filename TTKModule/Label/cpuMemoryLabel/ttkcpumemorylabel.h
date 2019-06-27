@@ -39,10 +39,6 @@ public:
 
     virtual QSize sizeHint() const override;
 
-Q_SIGNALS:
-    void textChanged(const QString &text);
-    void valueChanged(int cpuPercent, int memoryPercent, int memoryAll, int memoryUse, int memoryFree);
-
 public Q_SLOTS:
     void start(int interval);
     void stop();

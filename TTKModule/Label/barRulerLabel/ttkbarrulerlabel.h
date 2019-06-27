@@ -36,13 +36,11 @@ public:
     ~TTKBarRulerLabel();
 
     void setRange(double minValue, double maxValue);
-    void setRange(int minValue, int maxValue);
 
     void setMinValue(double minValue);
     void setMaxValue(double maxValue);
 
     void setValue(double value);
-    void setValue(int value);
 
     void setPrecision(int precision);
 
@@ -63,9 +61,6 @@ public:
     void setBarColor(const QColor &barColor);
 
     virtual QSize sizeHint() const override;
-
-Q_SIGNALS:
-    void valueChanged(double value);
 
 private Q_SLOTS:
     void updateValue();
