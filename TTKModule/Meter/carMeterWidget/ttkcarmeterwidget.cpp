@@ -9,35 +9,35 @@ TTKCarMeterWidget::TTKCarMeterWidget(QWidget *parent)
 {
     m_minValue = 0;
     m_maxValue = 100;
-    m_value = 0;
+    m_value = 50;
 
     m_precision = 0;
-    m_scaleMajor = 0;
-    m_scaleMinor = 0;
-    m_startAngle = 0;
-    m_endAngle = 0;
+    m_scaleMajor = 10;
+    m_scaleMinor = 10;
+    m_startAngle = 40;
+    m_endAngle = 40;
 
     m_animation = false;
     m_animationStep = 0.5;
 
-    m_outerCircleColor = QColor(100, 100, 100);
-    m_innerCircleColor = QColor(60, 60, 60);
-    m_pieColorStart = QColor(255, 255, 255);
-    m_pieColorMid = QColor(255, 255, 255);
-    m_pieColorEnd = QColor(255, 255, 255);
-    m_coverCircleColor = QColor(255, 255, 255);
+    m_outerCircleColor = QColor(60, 60, 60);
+    m_innerCircleColor = QColor(80, 80, 80);
+    m_pieColorStart = QColor(253, 107, 107);
+    m_pieColorMid = QColor(217, 217, 0);
+    m_pieColorEnd = QColor(24, 188, 154);
+    m_coverCircleColor = QColor(100, 100, 100);
     m_scaleColor = QColor(255, 255, 255);
-    m_pointerColor = QColor(255, 255, 255);
+    m_pointerColor = QColor(253, 107, 107);
     m_centerCircleColor = QColor(255, 255, 255);
-    m_textColor = QColor(255, 255, 255);
+    m_textColor = QColor(0, 0, 0);
 
     m_showOverlay = true;
     m_overlayColor = QColor(255, 255, 255);
     m_pieStyle = PieStyleThree;
-    m_pointerStyle = PointerStyleCircle;
+    m_pointerStyle = PointerStyleIndicator;
 
     m_reverse = false;
-    m_currentValue = 0;
+    m_currentValue = 50;
 
     m_timer = new QTimer(this);
     m_timer->setInterval(10);

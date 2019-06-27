@@ -110,6 +110,16 @@
           </widget>
          </item>
          <item>
+          <widget class="QLabel" name="labelName">
+           <property name="styleSheet">
+            <string notr="true">color:white;font-size:15px;</string>
+           </property>
+           <property name="text">
+            <string>TTKWidgetTools</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -165,21 +175,21 @@
       </item>
       <item>
        <widget class="TTKBackgroundWidget" name="centerWidget" native="true">
-        <layout class="QHBoxLayout" name="centerWidgetLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="spacing">
           <number>0</number>
          </property>
          <property name="leftMargin">
-          <number>5</number>
+          <number>4</number>
          </property>
          <property name="topMargin">
-          <number>5</number>
+          <number>4</number>
          </property>
          <property name="rightMargin">
-          <number>5</number>
+          <number>4</number>
          </property>
          <property name="bottomMargin">
-          <number>5</number>
+          <number>4</number>
          </property>
          <item>
           <widget class="TTKFunctionToolBoxWidget" name="functionListWidget" native="true">
@@ -198,22 +208,31 @@
           </widget>
          </item>
          <item>
-          <widget class="TTKBackgroundContainer" name="containerWidget" native="true"/>
-         </item>
-         <item>
-          <widget class="TTKPropertyContainWidget" name="propertyWidget" native="true">
-           <property name="minimumSize">
-            <size>
-             <width>280</width>
-             <height>0</height>
-            </size>
+          <widget class="QSplitter" name="widget">
+           <property name="lineWidth">
+            <number>1</number>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>280</width>
-             <height>16777215</height>
-            </size>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
+           <property name="handleWidth">
+            <number>1</number>
+           </property>
+           <widget class="TTKBackgroundContainer" name="containerWidget" native="true"/>
+           <widget class="TTKPropertyContainWidget" name="propertyWidget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>280</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -238,7 +257,7 @@
    <header>ttkbackgroundcontainer.h</header>
    <container>1</container>
   </customwidget>
-    <customwidget>
+  <customwidget>
    <class>TTKPropertyContainWidget</class>
    <extends>QWidget</extends>
    <header>ttkpropertycontainwidget.h</header>
