@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QLCDNumber>
+#include <QWidget>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
@@ -102,7 +102,6 @@ private:
     bool m_reverse;
     double m_currentValue;
     QTimer *m_timer;
-    QLCDNumber *m_lcd;
 
 };
 

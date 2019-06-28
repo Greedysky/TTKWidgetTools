@@ -17,7 +17,7 @@ TTKCarMeterWidget::TTKCarMeterWidget(QWidget *parent)
     m_startAngle = 40;
     m_endAngle = 40;
 
-    m_animation = false;
+    m_animation = true;
     m_animationStep = 0.5;
 
     m_outerCircleColor = QColor(60, 60, 60);

@@ -59,7 +59,7 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     objectItem->addSubProperty(endAngleItem);
     //
     QtProperty *animationItem = m_boolManager->addProperty("Animation");
-    m_boolManager->setValue(animationItem, false);
+    m_boolManager->setValue(animationItem, true);
     objectItem->addSubProperty(animationItem);
     //
     QtProperty *animationStepItem = m_doubleManager->addProperty("AnimationStep");

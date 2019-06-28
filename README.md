@@ -42,6 +42,8 @@ Module
 | Meter | TTKRadarMeterWidget |   完成   |
 | Meter | TTKSpeedMeterWidget |   完成   |
 | Meter | TTKTimeMeterWidget |   完成   |
+| Meter | TTKCarMeterWidget |   完成   |
+| Meter | TTKSpeedRingMeterWidget |   完成   |
 | Progress | TTKAnimationProgressWidget |   完成   |
 | Progress | TTKCircleProgressWidget |   完成   |
 | Progress | TTKCircularProgressWidget |   完成   |

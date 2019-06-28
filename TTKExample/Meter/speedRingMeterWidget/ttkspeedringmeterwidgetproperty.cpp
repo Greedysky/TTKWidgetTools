@@ -59,7 +59,7 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
     objectItem->addSubProperty(endAngleItem);
     //
     QtProperty *animationItem = m_boolManager->addProperty("Animation");
-    m_boolManager->setValue(animationItem, false);
+    m_boolManager->setValue(animationItem, true);
     objectItem->addSubProperty(animationItem);
     //
     QtProperty *animationStepItem = m_doubleManager->addProperty("AnimationStep");
@@ -68,22 +68,22 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
     objectItem->addSubProperty(animationStepItem);
     //
     QtProperty *ringWidthItem = m_intManager->addProperty("RingWidth");
-    m_intManager->setValue(ringWidthItem, 10);
+    m_intManager->setValue(ringWidthItem, 15);
     m_intManager->setMinimum(ringWidthItem, 1);
     objectItem->addSubProperty(ringWidthItem);
     //
     QtProperty *ringStartPercentItem = m_intManager->addProperty("RingStartPercent");
-    m_intManager->setValue(ringStartPercentItem, 10);
+    m_intManager->setValue(ringStartPercentItem, 25);
     m_intManager->setMinimum(ringStartPercentItem, 1);
     objectItem->addSubProperty(ringStartPercentItem);
     //
     QtProperty *ringMidPercentItem = m_intManager->addProperty("RingMidPercent");
-    m_intManager->setValue(ringMidPercentItem, 10);
+    m_intManager->setValue(ringMidPercentItem, 50);
     m_intManager->setMinimum(ringMidPercentItem, 1);
     objectItem->addSubProperty(ringMidPercentItem);
     //
     QtProperty *ringEndPercentItem = m_intManager->addProperty("RingEndPercent");
-    m_intManager->setValue(ringEndPercentItem, 10);
+    m_intManager->setValue(ringEndPercentItem, 25);
     m_intManager->setMinimum(ringEndPercentItem, 1);
     objectItem->addSubProperty(ringEndPercentItem);
     //
@@ -92,15 +92,15 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
     objectItem->addSubProperty(ringColorStartItem);
     //
     QtProperty *ringColorMidItem = m_colorManager->addProperty("RingColorMid");
-    m_colorManager->setValue(ringColorMidItem, QColor(80, 80, 80));
+    m_colorManager->setValue(ringColorMidItem, QColor(45, 196, 248));
     objectItem->addSubProperty(ringColorMidItem);
     //
     QtProperty *ringColorEndItem = m_colorManager->addProperty("RingColorEnd");
-    m_colorManager->setValue(ringColorEndItem, QColor(253, 107, 107));
+    m_colorManager->setValue(ringColorEndItem, QColor(254, 68, 138));
     objectItem->addSubProperty(ringColorEndItem);
     //
     QtProperty *pointerColorItem = m_colorManager->addProperty("PointerColor");
-    m_colorManager->setValue(pointerColorItem, QColor(253, 107, 107));
+    m_colorManager->setValue(pointerColorItem, QColor(178, 221, 253));
     objectItem->addSubProperty(pointerColorItem);
     //
     QtProperty *textColorItem = m_colorManager->addProperty("TextColor");

@@ -15,7 +15,7 @@ TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
     m_shortStep = 1;
     m_space = 20;
 
-    m_animation = false;
+    m_animation = true;
     m_animationStep = 0.5;
 
     m_bgColorStart = QColor(100, 100, 100);
