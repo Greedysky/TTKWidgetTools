@@ -111,7 +111,7 @@ void TTKCarMeterWidget::setValue(double value)
 
 void TTKCarMeterWidget::setPrecision(int precision)
 {
-    if(precision <= 3 && m_precision != precision)
+    if(precision <= 2 && m_precision != precision)
     {
         m_precision = precision;
         update();

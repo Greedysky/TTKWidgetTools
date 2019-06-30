@@ -161,6 +161,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 5: w = new TTKSpeedRingMeterWidgetProperty;
             break;
+        case 6: w = new TTKDialMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -389,6 +391,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKTimeMeterWidget");
     widget->addItem(":/icon/meter", "TTKCarMeterWidget");
     widget->addItem(":/icon/meter", "TTKSpeedRingMeterWidget");
+    widget->addItem(":/icon/meter", "TTKDialMeterWidge");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");

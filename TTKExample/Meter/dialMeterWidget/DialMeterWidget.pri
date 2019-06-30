@@ -16,12 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkdialmeterwidgetproperty.cpp
 
-include($$PWD/speedMeterWidget/SpeedMeterWidget.pri)
-include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
-include($$PWD/paintMeterWidget/PaintMeterWidget.pri)
-include($$PWD/radarMeterWidget/RadarMeterWidget.pri)
-include($$PWD/carMeterWidget/CarMeterWidget.pri)
-include($$PWD/speedRingMeterWidget/SpeedRingMeterWidget.pri)
-include($$PWD/dialMeterWidget/DialMeterWidget.pri)
+HEADERS += $$PWD/ttkdialmeterwidgetproperty.h
