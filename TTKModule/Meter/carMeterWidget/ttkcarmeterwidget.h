@@ -1,5 +1,5 @@
-#ifndef TTKCARMETERWIDGET_H
-#define TTKCARMETERWIDGET_H
+#ifndef TTKPAINTMETERWIDGET_H
+#define TTKPAINTMETERWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -45,7 +45,7 @@ public:
     };
 
     explicit TTKCarMeterWidget(QWidget *parent = nullptr);
-    ~TTKCarMeterWidget();
+    virtual ~TTKCarMeterWidget();
 
     void setRange(double minValue, double maxValue);
 
@@ -136,4 +136,4 @@ private:
 
 };
 
-#endif  // TTKCARMETERWIDGET_H
+#endif  // TTKPAINTMETERWIDGET_H

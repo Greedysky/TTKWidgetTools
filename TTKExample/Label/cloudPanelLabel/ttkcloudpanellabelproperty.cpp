@@ -63,7 +63,7 @@ void TTKCloudPanelLabelProperty::enumPropertyChanged(QtProperty *property, int v
     TTKCloudPanelLabel *widget = MStatic_cast(TTKCloudPanelLabel*, m_item);
     if(property->propertyName() == "CloudStyle")
     {
-        widget->setCloudStyle(MStatic_cast(TTKCloudPanelLabel::TCloudStyle, value));
+        widget->setCloudStyle(MStatic_cast(TTKCloudPanelLabel::CloudStyle, value));
     }
 }
 

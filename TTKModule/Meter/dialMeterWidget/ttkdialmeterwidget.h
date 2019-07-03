@@ -39,7 +39,7 @@ public:
         PointerStyleTriangle = 3
     };
     explicit TTKDialMeterWidget(QWidget *parent = nullptr);
-    ~TTKDialMeterWidget();
+    virtual ~TTKDialMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

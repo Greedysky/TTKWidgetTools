@@ -52,7 +52,7 @@ class TTK_CORE_EXPORT TTKToolMenuWidget : public QToolButton
     TTK_DECLARE_MODULE(TTKToolMenuWidget)
 public:
     explicit TTKToolMenuWidget(QWidget *parent = nullptr);
-    ~TTKToolMenuWidget();
+    virtual ~TTKToolMenuWidget();
 
     void setTranslucentBackground();
 

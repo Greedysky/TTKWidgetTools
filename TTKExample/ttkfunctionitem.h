@@ -49,7 +49,7 @@ class TTK_CORE_EXPORT TTKFunctionItemRow : public QLabel
     Q_OBJECT
 public:
     explicit TTKFunctionItemRow(QWidget *parent = nullptr);
-    ~TTKFunctionItemRow();
+    virtual ~TTKFunctionItemRow();
 
     void addItem(const QString &path, const QString &text);
 

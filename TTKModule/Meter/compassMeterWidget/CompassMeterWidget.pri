@@ -18,11 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/speedMeterWidget/SpeedMeterWidget.pri)
-include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
-include($$PWD/paintMeterWidget/PaintMeterWidget.pri)
-include($$PWD/radarMeterWidget/RadarMeterWidget.pri)
-include($$PWD/carMeterWidget/CarMeterWidget.pri)
-include($$PWD/speedRingMeterWidget/SpeedRingMeterWidget.pri)
-include($$PWD/dialMeterWidget/DialMeterWidget.pri)
-include($$PWD/compassMeterWidget/CompassMeterWidget.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkcompassmeterwidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkcompassmeterwidget.cpp
+
+}

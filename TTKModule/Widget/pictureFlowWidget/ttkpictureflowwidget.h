@@ -37,7 +37,7 @@ class TTK_CORE_EXPORT TTKTTKPictureFlowWidgetState
 {
 public:
     TTKTTKPictureFlowWidgetState();
-    ~TTKTTKPictureFlowWidgetState();
+    virtual ~TTKTTKPictureFlowWidgetState();
 
     void reposition();
     void reset();
@@ -82,7 +82,7 @@ class TTK_CORE_EXPORT TTKTTKPictureFlowWidgetSoftwareRenderer
 {
 public:
     TTKTTKPictureFlowWidgetSoftwareRenderer();
-    ~TTKTTKPictureFlowWidgetSoftwareRenderer();
+    virtual ~TTKTTKPictureFlowWidgetSoftwareRenderer();
 
     void init();
     void paint();

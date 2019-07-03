@@ -32,7 +32,7 @@ class TTK_CORE_EXPORT TTKCloudPanelLabel : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCloudPanelLabel)
 public:
-    enum TCloudStyle
+    enum CloudStyle
     {
         CloudStyleBlack = 0,
         CloudStyleWhite = 1,
@@ -41,7 +41,7 @@ public:
 	};
 
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);
-    ~TTKCloudPanelLabel();
+    virtual ~TTKCloudPanelLabel();
 
     void setBgColor(const QColor &bgColor);
     void setBaseColor(const QColor &baseColor);
@@ -52,7 +52,7 @@ public:
     void setIconColor(const QColor &textColor);
     void setPressColor(const QColor &pressColor);
 
-    void setCloudStyle(const TCloudStyle &cloudStyle);
+    void setCloudStyle(const CloudStyle cloudStyle);
 
 Q_SIGNALS:
     void mousePressed(int position);
@@ -79,7 +79,7 @@ private:
     QColor m_borderColor;
     QColor m_iconColor;
     QColor m_pressColor;
-    TCloudStyle m_cloudStyle;
+    CloudStyle m_cloudStyle;
 
     bool m_enter;
     bool m_pressed;

@@ -29,7 +29,7 @@ class TTK_CORE_EXPORT TTKBatteryLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKBatteryLabelProperty(QWidget *parent = nullptr);
-    ~TTKBatteryLabelProperty();
+    virtual ~TTKBatteryLabelProperty();
 
 protected Q_SLOTS:
     virtual void doublePropertyChanged(QtProperty *property, double value) override;

@@ -146,7 +146,7 @@ protected:
     void keyReleaseEvent(QKeyEvent *e);
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
-private slots:
+private Q_SLOTS:
     void slotClearShortcut();
 private:
     void handleKeyEvent(QKeyEvent *e);

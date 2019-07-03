@@ -29,7 +29,7 @@ class TTK_CORE_EXPORT TTKCircleClickLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCircleClickLabelProperty(QWidget *parent = nullptr);
-    ~TTKCircleClickLabelProperty();
+    virtual ~TTKCircleClickLabelProperty();
 
 };
 

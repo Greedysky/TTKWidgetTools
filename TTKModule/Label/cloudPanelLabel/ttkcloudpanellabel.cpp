@@ -79,7 +79,7 @@ void TTKCloudPanelLabel::setPressColor(const QColor &pressColor)
     }
 }
 
-void TTKCloudPanelLabel::setCloudStyle(const TCloudStyle &cloudStyle)
+void TTKCloudPanelLabel::setCloudStyle(const CloudStyle cloudStyle)
 {
     if(m_cloudStyle != cloudStyle)
     {

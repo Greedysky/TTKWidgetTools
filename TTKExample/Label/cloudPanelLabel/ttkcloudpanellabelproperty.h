@@ -29,7 +29,7 @@ class TTK_CORE_EXPORT TTKCloudPanelLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCloudPanelLabelProperty(QWidget *parent = nullptr);
-    ~TTKCloudPanelLabelProperty();
+    virtual ~TTKCloudPanelLabelProperty();
 
 protected Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;

@@ -20,16 +20,16 @@ TTKSpeedRingMeterWidget::TTKSpeedRingMeterWidget(QWidget *parent)
     m_animation = true;
     m_animationStep = 0.5;
 
-    m_ringWidth = 15;
-    m_ringStartPercent = 25;
-    m_ringMidPercent = 50;
-    m_ringEndPercent = 25;
+    m_ringWidth = 10;
+    m_ringStartPercent = 10;
+    m_ringMidPercent = 10;
+    m_ringEndPercent = 10;
 
     m_ringColorStart = QColor(60, 60, 60);
-    m_ringColorMid = QColor(45, 196, 248);
-    m_ringColorEnd = QColor(254, 68, 138);
-    m_pointerColor = QColor(178, 221, 253);
-    m_textColor = QColor(0, 0, 0);
+    m_ringColorMid = QColor(80, 80, 80);
+    m_ringColorEnd = QColor(253, 107, 107);
+    m_pointerColor = QColor(217, 217, 0);
+    m_textColor = QColor(24, 188, 154);
 
     m_reverse = false;
     m_currentValue = 50;
@@ -37,6 +37,8 @@ TTKSpeedRingMeterWidget::TTKSpeedRingMeterWidget(QWidget *parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
+
+    m_lcd = new QLCDNumber(this);
 }
 
 TTKSpeedRingMeterWidget::~TTKSpeedRingMeterWidget()
@@ -434,7 +436,7 @@ void TTKSpeedRingMeterWidget::drawValue(QPainter *painter)
     font.setPixelSize(18);
     painter->setFont(font);
 
-    QRectF textRect(-radius, -radius * 0.3, radius * 2, radius * 2);
+    QRectF textRect(-radius, -radius, radius * 2, radius * 2);
     const QString &strValue = QString("%1").arg(m_currentValue, 0, 'f', m_precision);
     painter->drawText(textRect, Qt::AlignCenter, strValue);
     painter->restore();

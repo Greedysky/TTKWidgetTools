@@ -163,6 +163,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 6: w = new TTKDialMeterWidgetProperty;
             break;
+        case 7: w = new TTKCompassMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -392,6 +394,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKCarMeterWidget");
     widget->addItem(":/icon/meter", "TTKSpeedRingMeterWidget");
     widget->addItem(":/icon/meter", "TTKDialMeterWidge");
+    widget->addItem(":/icon/meter", "TTKCompassMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
