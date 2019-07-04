@@ -54,6 +54,7 @@ void TTKToastLabel::setFontSize(int size)
 {
     m_font.setPointSize(size);
     setFont(m_font);
+    update();
 }
 
 int TTKToastLabel::getFontSize() const
@@ -65,6 +66,7 @@ void TTKToastLabel::setBold(bool bold)
 {
     m_font.setBold(bold);
     setFont(m_font);
+    update();
 }
 
 bool TTKToastLabel::bold() const

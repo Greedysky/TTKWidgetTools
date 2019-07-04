@@ -14,6 +14,7 @@ TTKSplitItemLabel::TTKSplitItemLabel(QWidget *parent)
 void TTKSplitItemLabel::setSplitString(const QString &str)
 {
     m_splitString = str;
+    update();
 }
 
 void TTKSplitItemLabel::enterEvent(QEvent *event)

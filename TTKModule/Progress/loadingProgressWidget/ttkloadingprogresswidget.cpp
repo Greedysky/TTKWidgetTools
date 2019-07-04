@@ -20,11 +20,25 @@ TTKLoadingProgressWidget::TTKLoadingProgressWidget(QWidget *parent)
 void TTKLoadingProgressWidget::setDotCount(int count)
 {
     m_count = count;
+    update();
 }
 
 void TTKLoadingProgressWidget::setDotColor(const QColor &color)
 {
     m_dotColor = color;
+    update();
+}
+
+void TTKLoadingProgressWidget::setMaxDiameter(float max)
+{
+    m_maxDiameter = max;
+    update();
+}
+
+void TTKLoadingProgressWidget::setMinDiameter(float min)
+{
+    m_minDiameter = min;
+    update();
 }
 
 void TTKLoadingProgressWidget::start()
@@ -41,16 +55,6 @@ void TTKLoadingProgressWidget::stop()
 QSize TTKLoadingProgressWidget::sizeHint() const
 {
     return QSize(150, 150);
-}
-
-void TTKLoadingProgressWidget::setMaxDiameter(float max)
-{
-    m_maxDiameter = max;
-}
-
-void TTKLoadingProgressWidget::setMinDiameter(float min)
-{
-    m_minDiameter = min;
 }
 
 void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)

@@ -45,18 +45,19 @@ void TTKGifProgressWidget::setType(Type type)
     m_index = 0;
     switch(m_type = type)
     {
-        case Gif_Ballon_White: setFixedSize(GIF_BALLON_WHITE, GIF_BALLON_WHITE); break;
-        case Gif_Cicle_Blue: setFixedSize(GIF_CICLE_BLUE, GIF_CICLE_BLUE); break;
-        case Gif_Rice_Font_White: setFixedSize(GIF_RICE_FONT_WHITE, GIF_RICE_FONT_WHITE); break;
-        case Gif_Rice_Font_Black_Big: setFixedSize(GIF_RICE_FONT_BLACK_BIG, GIF_RICE_FONT_BLACK_BIG); break;
-        case Gif_Rice_Font_Black: setFixedSize(GIF_RICE_FONT_BLACK, GIF_RICE_FONT_BLACK); break;
-        case Gif_Hourglass_White: setFixedSize(GIF_HOURGLASS_WHITE, GIF_HOURGLASS_WHITE); break;
-        case Gif_Radio_Blue: setFixedSize(GIF_RADIO_BLUE, GIF_RADIO_BLUE); break;
-        case Gif_Check_Blue: setFixedSize(GIF_CHECK_BLUE, GIF_CHECK_BLUE); break;
-        case Gif_Record_red: setFixedSize(GIF_RECORD_RED, GIF_RECORD_RED); break;
-        case Gif_Close_White: setFixedSize(GIF_CLOSE_WHITE_WIDTH, GIF_CLOSE_WHITE_HEIGHT); break;
+        case GifBallonWhite: setFixedSize(GIF_BALLON_WHITE, GIF_BALLON_WHITE); break;
+        case GifCicleBlue: setFixedSize(GIF_CICLE_BLUE, GIF_CICLE_BLUE); break;
+        case GifRiceFontWhite: setFixedSize(GIF_RICE_FONT_WHITE, GIF_RICE_FONT_WHITE); break;
+        case GifRiceFontBlackBig: setFixedSize(GIF_RICE_FONT_BLACK_BIG, GIF_RICE_FONT_BLACK_BIG); break;
+        case GifRiceFontBlack: setFixedSize(GIF_RICE_FONT_BLACK, GIF_RICE_FONT_BLACK); break;
+        case GifHourglassWhite: setFixedSize(GIF_HOURGLASS_WHITE, GIF_HOURGLASS_WHITE); break;
+        case GifRadioBlue: setFixedSize(GIF_RADIO_BLUE, GIF_RADIO_BLUE); break;
+        case GifCheckBlue: setFixedSize(GIF_CHECK_BLUE, GIF_CHECK_BLUE); break;
+        case GifRecordred: setFixedSize(GIF_RECORD_RED, GIF_RECORD_RED); break;
+        case GifCloseWhite: setFixedSize(GIF_CLOSE_WHITE_WIDTH, GIF_CLOSE_WHITE_HEIGHT); break;
         default: break;
     }
+    update();
 }
 
 TTKGifProgressWidget::Type TTKGifProgressWidget::getType() const
@@ -115,7 +116,7 @@ void TTKGifProgressWidget::updateRender()
     ++m_index;
     switch(m_type)
     {
-        case Gif_Ballon_White:
+        case GifBallonWhite:
             {
                 if(m_index == 40 && infinitedModeCheck())
                 {
@@ -126,7 +127,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Cicle_Blue:
+        case GifCicleBlue:
             {
                 if(m_index == 12 && infinitedModeCheck())
                 {
@@ -137,7 +138,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Rice_Font_White:
+        case GifRiceFontWhite:
             {
                 if(m_index == 8 && infinitedModeCheck())
                 {
@@ -148,7 +149,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Rice_Font_Black_Big:
+        case GifRiceFontBlackBig:
             {
                 if(m_index == 8 && infinitedModeCheck())
                 {
@@ -159,7 +160,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Rice_Font_Black:
+        case GifRiceFontBlack:
             {
                 if(m_index == 12 && infinitedModeCheck())
                 {
@@ -170,7 +171,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Hourglass_White:
+        case GifHourglassWhite:
             {
                 if(m_index == 16 && infinitedModeCheck())
                 {
@@ -181,7 +182,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Radio_Blue:
+        case GifRadioBlue:
             {
                 if(m_index == 10 && infinitedModeCheck())
                 {
@@ -192,7 +193,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Check_Blue:
+        case GifCheckBlue:
             {
                 if(m_index == 22 && infinitedModeCheck())
                 {
@@ -203,7 +204,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Record_red:
+        case GifRecordred:
             {
                 if(m_index == 5 && infinitedModeCheck())
                 {
@@ -214,7 +215,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Gif_Close_White:
+        case GifCloseWhite:
             {
                 if(m_index == 12 && infinitedModeCheck())
                 {

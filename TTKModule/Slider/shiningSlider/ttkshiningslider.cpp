@@ -7,7 +7,7 @@ TTKShiningSlider::TTKShiningSlider(QWidget *parent)
     : QWidget(parent)
 {
     m_label = new TTKGifProgressWidget(this);
-    m_label->setType(TTKGifProgressWidget::Gif_Ballon_White);
+    m_label->setType(TTKGifProgressWidget::GifBallonWhite);
     m_label->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     m_label->move(15, 5);
     m_label->hide();
@@ -38,27 +38,32 @@ void TTKShiningSlider::setPlayState(bool state)
         m_label->stop();
         m_label->hide();
     }
+    update();
 }
 
-void TTKShiningSlider::setValue(qint64 value) const
+void TTKShiningSlider::setValue(qint64 value)
 {
     sliderMovedAt(value);
     m_slider->setValue(value);
+    update();
 }
 
 void TTKShiningSlider::setRange(int min, int max)
 {
     m_slider->setRange(min, max);
+    update();
 }
 
 void TTKShiningSlider::setMinimum(int min)
 {
     m_slider->setMinimum(min);
+    update();
 }
 
 void TTKShiningSlider::setMaximum(int max)
 {
     m_slider->setMaximum(max);
+    update();
 }
 
 QSize TTKShiningSlider::sizeHint() const

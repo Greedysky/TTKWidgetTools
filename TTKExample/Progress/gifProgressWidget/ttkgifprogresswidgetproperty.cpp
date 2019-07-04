@@ -21,9 +21,9 @@ TTKGifProgressWidgetProperty::TTKGifProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *typeItem = m_enumManager->addProperty("Type");
     QStringList enumNames;
-    enumNames << "Ballon_White" << "Cicle_Blue" << "Rice_Font_White" << "Rice_Font_Black"
-              << "Rice_Font_Black_Big" << "Hourglass_White" << "Radio_Blue" << "Check_Blue"
-              << "Record_red" << "Close_White";
+    enumNames << "BallonWhite" << "CicleBlue" << "RiceFontWhite" << "RiceFontBlack"
+              << "RiceFontBlackBig" << "HourglassWhite" << "RadioBlue" << "CheckBlue"
+              << "Recordred" << "CloseWhite";
     m_enumManager->setEnumNames(typeItem, enumNames);
     objectItem->addSubProperty(typeItem);
     //

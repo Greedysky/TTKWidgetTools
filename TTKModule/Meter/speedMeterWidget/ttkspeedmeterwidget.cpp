@@ -28,11 +28,13 @@ void TTKSpeedMeterWidget::setValue(qreal value)
         m_currentValue = m_value;
     }
     m_updateTimer->start();
+    update();
 }
 
 void TTKSpeedMeterWidget::setRatio(qreal value)
 {
     m_ratio = value;
+    update();
 }
 
 void TTKSpeedMeterWidget::setAnimating(bool enable)

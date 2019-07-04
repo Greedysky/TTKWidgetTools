@@ -38,7 +38,7 @@ public:
     virtual ~TTKShiningSlider();
 
     void setPlayState(bool state);
-    void setValue(qint64 value) const;
+    void setValue(qint64 value);
 
     void setRange(int min, int max);
     void setMinimum(int min);

@@ -30,18 +30,21 @@ void TTKStyleSlider::setHandleColor(const QColor &color)
 {
     m_handleColor = color;
     setupProperties();
+    update();
 }
 
 void TTKStyleSlider::setForegroundColor(const QColor &color)
 {
     m_foregroundColor = color;
     setupProperties();
+    update();
 }
 
 void TTKStyleSlider::setBackgroundColor(const QColor &color)
 {
     m_backgroundColor = color;
     setupProperties();
+    update();
 }
 
 QSize TTKStyleSlider::sizeHint() const

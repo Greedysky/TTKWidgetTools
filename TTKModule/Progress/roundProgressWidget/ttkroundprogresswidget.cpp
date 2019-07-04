@@ -29,16 +29,19 @@ void TTKRoundProgressWidget::setdefault(int startAngle, bool clockWise)
 {
     m_startAngle = startAngle;
     m_clockWise = clockWise;
+    update();
 }
 
 void TTKRoundProgressWidget::setOutterBarWidth(float width)
 {
     m_outterBarWidth = width;
+    update();
 }
 
 void TTKRoundProgressWidget::setInnerBarWidth(float width)
 {
     m_innerBarWidth = width;
+    update();
 }
 
 void TTKRoundProgressWidget::setRange(float min, float max)
@@ -51,6 +54,7 @@ void TTKRoundProgressWidget::setRange(float min, float max)
 
     m_max = max;
     m_min = min;
+    update();
 }
 
 void TTKRoundProgressWidget::setText(float value)
@@ -61,6 +65,7 @@ void TTKRoundProgressWidget::setText(float value)
     animation->setEndValue(value);
     animation->setEasingCurve(QEasingCurve::OutQuad);
     animation->start();
+    update();
 }
 
 void TTKRoundProgressWidget::setValue(float value)
@@ -72,32 +77,38 @@ void TTKRoundProgressWidget::setValue(float value)
 void TTKRoundProgressWidget::setOutterColor(const QColor &outterColor)
 {
     m_outterColor = outterColor;
+    update();
 }
 
 void TTKRoundProgressWidget::setInnerColor(const QColor &startColor, const QColor &endColor)
 {
     m_startColor = startColor;
     m_endColor = endColor;
+    update();
 }
 
 void TTKRoundProgressWidget::setInnerColor(const QColor &startColor)
 {
     m_startColor = startColor;
+    update();
 }
 
 void TTKRoundProgressWidget::setDefaultTextColor(const QColor &textColor)
 {
     m_textColor=textColor;
+    update();
 }
 
 void TTKRoundProgressWidget::setControlFlags(int flags)
 {
     m_controlFlags |= flags;
+    update();
 }
 
 void TTKRoundProgressWidget::setPrecision(int precision)
 {
     m_precision = precision;
+    update();
 }
 
 QSize TTKRoundProgressWidget::sizeHint() const

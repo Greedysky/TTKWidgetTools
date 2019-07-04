@@ -16,32 +16,47 @@ TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
 
 void TTKFlatButtonWidget::setForegroundColor(const QColor &color)
 {
-    m_foregroundColor = color;
-    update();
+    if(m_foregroundColor != color)
+    {
+        m_foregroundColor = color;
+        update();
+    }
 }
 
 void TTKFlatButtonWidget::setBackgroundColor(const QColor &color)
 {
-    m_backgroundColor = color;
-    update();
+    if(m_backgroundColor != color)
+    {
+        m_backgroundColor = color;
+        update();
+    }
 }
 
 void TTKFlatButtonWidget::setIconAlignment(IconAlignment alignment)
 {
-    m_iconAlignment = alignment;
-    update();
+    if(m_iconAlignment != alignment)
+    {
+        m_iconAlignment = alignment;
+        update();
+    }
 }
 
 void TTKFlatButtonWidget::setCornerRadius(qreal radius)
 {
-    m_cornerRadius = radius;
-    update();
+    if(m_cornerRadius != radius)
+    {
+        m_cornerRadius = radius;
+        update();
+    }
 }
 
 void TTKFlatButtonWidget::setTextAlignment(Qt::Alignment alignment)
 {
-    m_textAlignment = alignment;
-    update();
+    if(m_textAlignment != alignment)
+    {
+        m_textAlignment = alignment;
+        update();
+    }
 }
 
 void TTKFlatButtonWidget::paintEvent(QPaintEvent *event)

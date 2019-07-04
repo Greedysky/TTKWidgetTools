@@ -30,6 +30,7 @@ TTKLineEditWidget::~TTKLineEditWidget()
 void TTKLineEditWidget::setColor(const QColor &color)
 {
     m_color = color;
+    update();
 }
 
 QSize TTKLineEditWidget::sizeHint() const

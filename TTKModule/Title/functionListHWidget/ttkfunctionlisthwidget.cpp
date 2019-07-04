@@ -15,12 +15,14 @@ TTKFunctionItemWidget::TTKFunctionItemWidget(QWidget *parent)
 void TTKFunctionItemWidget::setLabelText(const QString &text)
 {
     m_text = text;
+    update();
 }
 
 void TTKFunctionItemWidget::setLabelIcon(const QString &iconf, const QString &iconb)
 {
     m_iconf = iconf;
     m_iconb = iconb;
+    update();
 }
 
 void TTKFunctionItemWidget::setSelectedMode(bool select)
