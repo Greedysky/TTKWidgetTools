@@ -8,22 +8,27 @@ QWidget 控件集合
  * Qt develop version be tested on Qt5.x for windows-msvc 32bit and 64bit
  * Qt develop version be tested on Qt5.x for ubuntu-linux-gcc 32bit and 64bit
   
-| Platform | Qt & Compiler       | Status                                                                                      |
-| :---:    | :---:               | :---:                                                                                       |
+| Platform | Qt & Compiler       | Status        |
+| :---:    | :---:               | :---:         |
 | Linux    | 4.8.7 GCC & 5.x GCC    | ![Linux](https://img.shields.io/badge/build-passing-brightgreen.svg)                            |
 | Windows  | 4.8.7 GCC & 5.x GCC       | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
 | Windows  | 5.x MSVC       | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
 | OS X     | 5.x Clang     | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)                           |
 
-Module
+Button
 ----
-| Module | Description       | Status                                                                                      |
-| :---:    | :---:               | :---:                                                                                       |
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Button | TTKCheckButtonWidget |   完成   |
 | Button | TTKFlatButtonWidget |   完成   |
 | Button | TTKRadioButtonWidget |   完成   |
 | Button | TTKToggleWidget |   完成   |
 | Button | TTKToolMenuWidget |   完成   |
+
+Label
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Label | TTKCircleClickLabel |   完成   |
 | Label | TTKCodeAreaLabel |   完成   |
 | Label | TTKLedPageLabel |   完成   |
@@ -36,14 +41,31 @@ Module
 | Label | TTKBatteryLabel | 完成     |
 | Label | TTKCloudPanelLabel |   完成   |
 | Label | TTKCPUMemoryLabel |   完成   |
+
+LineEdit
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | LineEdit | TTKIpEditWidget |   完成   |
 | LineEdit | TTKLineEditWidget |   完成   |
+
+Meter
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Meter | TTKPaintMeterWidget |   完成   |
 | Meter | TTKRadarMeterWidget |   完成   |
 | Meter | TTKSpeedMeterWidget |   完成   |
 | Meter | TTKTimeMeterWidget |   完成   |
 | Meter | TTKCarMeterWidget |   完成   |
 | Meter | TTKSpeedRingMeterWidget |   完成   |
+| Meter | TTKDialMeterWidget |   完成   |
+| Meter | TTKCompassMeterWidget |   完成   |
+
+Progress
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Progress | TTKAnimationProgressWidget |   完成   |
 | Progress | TTKCircleProgressWidget |   完成   |
 | Progress | TTKCircularProgressWidget |   完成   |
@@ -53,15 +75,30 @@ Module
 | Progress | TTKRingsMapProgressWidget |   完成   |
 | Progress | TTKRingsProgressWidget |   完成   |
 | Progress | TTKRoundProgressWidget |   完成   |
+
+Slider
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Slider | TTKMovingLabelSlider |   完成   |
 | Slider | TTKShiningSlider |   完成   |
 | Slider | TTKStyleSlider |   完成   |
+
+Title
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Title | TTKFunctionAnimationWidget |   完成   |
 | Title | TTKFunctionListHWidget |   完成   |
 | Title | TTKFunctionListVWidget |   完成   |
 | Title | TTKFunctionNormalWidget |   完成   |
 | Title | TTKFunctionToolboxWidget |   完成   |
 | Title | TTKFunctionNavigationWidget |   完成   |
+
+Widget
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Widget | TTKAnimation2StackedWidget |   完成   |
 | Widget | TTKAnimationStackedWidget |   完成   |
 | Widget | TTKColorTableWidget |   完成   |
@@ -70,6 +107,11 @@ Module
 | Widget | TTKPictureBannerWidget |   完成   |
 | Widget | TTKPictureFlowWidget |   完成   |
 | Widget | TTKSmoothMovingTableWidget |   完成   |
+
+Window
+----
+| Module | Description       | Status        |
+| :---:    | :---:               | :---:         |
 | Window | TTKColorDialog |   完成   |
 | Window | TTKMoveDialog |   完成   |
 | Window | TTKMoveResizeWidget |   完成   |

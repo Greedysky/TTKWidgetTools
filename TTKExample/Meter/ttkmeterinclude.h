@@ -27,5 +27,6 @@
 #include "speedRingMeterWidget/ttkspeedringmeterwidgetproperty.h"
 #include "dialMeterWidget/ttkdialmeterwidgetproperty.h"
 #include "compassMeterWidget/ttkcompassmeterwidgetproperty.h"
+#include "progressMeterWidget/ttkprogressMeterWidgetproperty.h"
 
 #endif // TTKMETERINCLUDE_H

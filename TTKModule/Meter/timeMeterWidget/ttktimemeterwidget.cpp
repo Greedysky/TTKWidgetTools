@@ -1,6 +1,6 @@
 #include "ttktimemeterwidget.h"
 
-#include <cmath>
+#include <qmath.h>
 #include <QTimer>
 #include <QPainter>
 

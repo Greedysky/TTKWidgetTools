@@ -165,6 +165,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 7: w = new TTKCompassMeterWidgetProperty;
             break;
+        case 8: w = new TTKProgressMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -395,6 +397,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKSpeedRingMeterWidget");
     widget->addItem(":/icon/meter", "TTKDialMeterWidge");
     widget->addItem(":/icon/meter", "TTKCompassMeterWidget");
+    widget->addItem(":/icon/meter", "TTKProgressMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");

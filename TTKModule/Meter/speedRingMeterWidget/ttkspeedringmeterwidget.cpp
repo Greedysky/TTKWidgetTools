@@ -37,8 +37,6 @@ TTKSpeedRingMeterWidget::TTKSpeedRingMeterWidget(QWidget *parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
-
-    m_lcd = new QLCDNumber(this);
 }
 
 TTKSpeedRingMeterWidget::~TTKSpeedRingMeterWidget()
