@@ -40,5 +40,4 @@ private Q_SLOTS:
 
 };
 
-
 #endif // TTKPROGRESSMETERWIDGETPROPERTY_H

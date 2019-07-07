@@ -35,7 +35,7 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     //
     QtProperty *precisionItem = m_intManager->addProperty("Precision");
     m_intManager->setValue(precisionItem, 0);
-    m_intManager->setMinimum(precisionItem, 0);
+    m_intManager->setRange(precisionItem, 0, 2);
     objectItem->addSubProperty(precisionItem);
     //
     QtProperty *longStepItem = m_intManager->addProperty("LongStep");

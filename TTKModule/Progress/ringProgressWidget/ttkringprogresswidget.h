@@ -1,5 +1,5 @@
-#ifndef TTKPROGRESSMETERWIDGET_H
-#define TTKPROGRESSMETERWIDGET_H
+#ifndef TTKRINGPROGRESSWIDGET_H
+#define TTKRINPROGRESSWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -24,24 +24,16 @@
 #include "ttkglobaldefine.h"
 
 /*!
-* @author Greedysky <greedysky@163.com>
-*         feiyangqingyun <feiyangqingyun@163.com>
+ * @author Greedysky <greedysky@163.com>
+*          feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKProgressMeterWidget : public QWidget
+class TTK_CORE_EXPORT TTKRingProgressWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKProgressMeterWidget)
+    TTK_DECLARE_MODULE(TTKRingProgressWidget)
 public:
-    explicit TTKProgressMeterWidget(QWidget *parent = nullptr);
-    ~TTKProgressMeterWidget();
-
-public:
-    enum PointerStyle {
-        PointerStyleCircle = 0,
-        PointerStyleIndicator = 1,
-        PointerStyleIndicatorR = 2,
-        PointerStyleTriangle = 3
-    };
+    explicit TTKRingProgressWidget(QWidget *parent = nullptr);
+    virtual ~TTKRingProgressWidget();
 
     void setRange(double minValue, double maxValue);
 
@@ -51,21 +43,32 @@ public:
     void setValue(double value);
 
     void setPrecision(int precision);
+
+    void setClockWise(bool clockWise);
+    void setShowPercent(bool showPercent);
+    void setAlarmMode(bool alarmMode);
     void setStartAngle(int startAngle);
-    void setEndAngle(int endAngle);
+
+    void setRingPadding(int ringPadding);
+    void setRingWidth(int ringWidth);
+
+    void setAnimation(bool animation);
+    void setAnimationStep(double animationStep);
 
     void setBgColor(const QColor &bgColor);
-    void setProgressColor(const QColor &progressColor);
-    void setProgressBgColor(const QColor &progressBgColor);
-
-    void setCircleColorStart(const QColor &circleColorStart);
-    void setCircleColorEnd(const QColor &circleColorEnd);
-
-    void setShowPointer(bool showPointer);
-    void setShowValue(bool showValue);
-
     void setTextColor(const QColor &textColor);
-    void setPointerStyle(const PointerStyle &pointerStyle);
+
+    void setRingColor(const QColor &ringColor);
+    void setRingBgColor(const QColor &ringBgColor);
+    void setCircleColor(const QColor &circleColor);
+
+    void setRingValueF(int ringValueF);
+    void setRingValueS(int ringValueS);
+    void setRingValueT(int ringValueT);
+
+    void setRingColorF(const QColor &ringColorF);
+    void setRingColorS(const QColor &ringColorS);
+    void setRingColorT(const QColor &ringColorT);
 
     virtual QSize sizeHint() const override;
 
@@ -75,13 +78,9 @@ private Q_SLOTS:
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
     void drawBg(QPainter *painter);
-    void drawColorPie(QPainter *painter);
-    void drawCoverCircle(QPainter *painter);
+    void drawRing(QPainter *painter);
+    void drawPadding(QPainter *painter);
     void drawCircle(QPainter *painter);
-    void drawPointerCircle(QPainter *painter);
-    void drawPointerIndicator(QPainter *painter);
-    void drawPointerIndicatorR(QPainter *painter);
-    void drawPointerTriangle(QPainter *painter);
     void drawValue(QPainter *painter);
 
 private:
@@ -89,19 +88,30 @@ private:
     double m_maxValue;
     double m_value;
     int m_precision;
+
+    bool m_clockWise;
+    bool m_showPercent;
+    bool m_alarmMode;
+
     int m_startAngle;
-    int m_endAngle;
+    int m_ringPadding;
+    int m_ringWidth;
+    bool m_animation;
+    double m_animationStep;
 
     QColor m_bgColor;
-    QColor m_progressColor;
-    QColor m_progressBgColor;
-    QColor m_circleColorStart;
-    QColor m_circleColorEnd;
     QColor m_textColor;
+    QColor m_ringColor;
+    QColor m_ringBgColor;
+    QColor m_circleColor;
 
-    bool m_showPointer;
-    bool m_showValue;
-    PointerStyle m_pointerStyle;
+    int m_ringValueF;
+    int m_ringValueS;
+    int m_ringValueT;
+
+    QColor m_ringColorF;
+    QColor m_ringColorS;
+    QColor m_ringColorT;
 
     bool m_reverse;
     double m_currentValue;
@@ -109,4 +119,4 @@ private:
 
 };
 
-#endif // TTKPROGRESSMETERWIDGET_H
+#endif // TTKRINGPROGRESSWIDGET_H

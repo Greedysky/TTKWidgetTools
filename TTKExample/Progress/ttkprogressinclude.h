@@ -29,5 +29,6 @@
 #include "ringsProgressWidget/ttkringsprogresswidgetproperty.h"
 #include "roundProgressWidget/ttkroundprogresswidgetproperty.h"
 #include "loadingProgressWidget/ttkloadingprogresswidgetproperty.h"
+#include "ringProgressWidget/ttkringprogresswidgetproperty.h"
 
 #endif // TTKPROGRESSINCLUDE_H

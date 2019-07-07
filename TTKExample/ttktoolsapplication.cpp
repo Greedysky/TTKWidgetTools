@@ -167,6 +167,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 8: w = new TTKProgressMeterWidgetProperty;
             break;
+        case 9: w = new TTKPercentMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -200,6 +202,8 @@ void TTKToolsApplication::progressModuleChanged(int index)
         case 8: w = new TTKRingsProgressWidgetProperty;
             break;
         case 9: w = new TTKRoundProgressWidgetProperty;
+            break;
+        case 10: w = new TTKRingProgressWidgetProperty;
             break;
         default:
             break;
@@ -398,6 +402,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKDialMeterWidge");
     widget->addItem(":/icon/meter", "TTKCompassMeterWidget");
     widget->addItem(":/icon/meter", "TTKProgressMeterWidget");
+    widget->addItem(":/icon/meter", "TTKPercentMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
@@ -420,6 +425,7 @@ void TTKToolsApplication::createProgressModule()
     widget->addItem(":/icon/progress", "TTKRingsMapProgressWidget");
     widget->addItem(":/icon/progress", "TTKRingsProgressWidget");
     widget->addItem(":/icon/progress", "TTKRoundProgressWidget");
+    widget->addItem(":/icon/progress", "TTKRingProgressWidget");
 
     widget->setObjectName("progressRow");
     widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");

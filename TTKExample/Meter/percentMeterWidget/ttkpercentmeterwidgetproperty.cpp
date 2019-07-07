@@ -1,16 +1,16 @@
-#include "ttkdialmeterwidgetproperty.h"
-#include "ttkdialmeterwidget.h"
+#include "ttkpercentmeterwidgetproperty.h"
+#include "ttkpercentmeterwidget.h"
 
-TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
+TTKPercentMeterWidgetProperty::TTKPercentMeterWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
-    m_item = new TTKDialMeterWidget(this);
+    m_item = new TTKPercentMeterWidget(this);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKDialMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, MStatic_cast(TTKPercentMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -58,49 +58,49 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     m_intManager->setMinimum(endAngleItem, 0);
     objectItem->addSubProperty(endAngleItem);
     //
-    QtProperty *showValueItem = m_boolManager->addProperty("ShowValue");
-    m_boolManager->setValue(showValueItem, true);
-    objectItem->addSubProperty(showValueItem);
+    QtProperty *arcColorItem = m_colorManager->addProperty("ArcColor");
+    m_colorManager->setValue(arcColorItem, QColor(114, 159, 207));
+    objectItem->addSubProperty(arcColorItem);
     //
-    QtProperty *pointerStyleItem = m_enumManager->addProperty("PointerStyle");
-    QStringList enumNames;
-    enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
-    m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKDialMeterWidget::PointerStyleCircle);
-    objectItem->addSubProperty(pointerStyleItem);
+    QtProperty *scaleColorItem = m_colorManager->addProperty("ScaleColor");
+    m_colorManager->setValue(scaleColorItem, QColor(233, 185, 110));
+    objectItem->addSubProperty(scaleColorItem);
     //
-    QtProperty *darkColorItem = m_colorManager->addProperty("DarkColor");
-    m_colorManager->setValue(darkColorItem, QColor(60, 60, 60));
-    objectItem->addSubProperty(darkColorItem);
+    QtProperty *scaleNumColorItem = m_colorManager->addProperty("ScaleNumColor");
+    m_colorManager->setValue(scaleNumColorItem, QColor(92, 53, 102));
+    objectItem->addSubProperty(scaleNumColorItem);
     //
-    QtProperty *lightColorItem = m_colorManager->addProperty("LightColor");
-    m_colorManager->setValue(lightColorItem, QColor(80, 80, 80));
-    objectItem->addSubProperty(lightColorItem);
+    QtProperty *titleItem = m_stringManager->addProperty("Title");
+    m_stringManager->setValue(titleItem, "Hello");
+    objectItem->addSubProperty(titleItem);
     //
     QtProperty *textColorItem = m_colorManager->addProperty("TextColor");
-    m_colorManager->setValue(textColorItem, QColor(100, 100, 100));
+    m_colorManager->setValue(textColorItem, QColor(46, 52, 54));
     objectItem->addSubProperty(textColorItem);
+    //
+    QtProperty *titleColorItem = m_colorManager->addProperty("TitleColor");
+    m_colorManager->setValue(titleColorItem, QColor(0, 0, 0));
+    objectItem->addSubProperty(titleColorItem);
+    //
+    QtProperty *baseColorItem = m_colorManager->addProperty("BaseColor");
+    m_colorManager->setValue(baseColorItem, QColor(178, 221, 253));
+    objectItem->addSubProperty(baseColorItem);
+    //
+    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
+    m_colorManager->setValue(bgColorItem, Qt::transparent);
+    objectItem->addSubProperty(bgColorItem);
     //
     m_browser->addProperty(objectItem);
 }
 
-TTKDialMeterWidgetProperty::~TTKDialMeterWidgetProperty()
+TTKPercentMeterWidgetProperty::~TTKPercentMeterWidgetProperty()
 {
 
 }
 
-void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
+void TTKPercentMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKDialMeterWidget *widget = MStatic_cast(TTKDialMeterWidget*, m_item);
-    if(property->propertyName() == "ShowValue")
-    {
-        widget->setShowValue(value);
-    }
-}
-
-void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
-{
-    TTKDialMeterWidget *widget = MStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = MStatic_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -123,9 +123,9 @@ void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int va
     }
 }
 
-void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
+void TTKPercentMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKDialMeterWidget *widget = MStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = MStatic_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -140,28 +140,44 @@ void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, dou
     }
 }
 
-void TTKDialMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
+void TTKPercentMeterWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKDialMeterWidget *widget = MStatic_cast(TTKDialMeterWidget*, m_item);
-    if(property->propertyName() == "PointerStyle")
+    TTKPercentMeterWidget *widget = MStatic_cast(TTKPercentMeterWidget*, m_item);
+    if(property->propertyName() == "Title")
     {
-        widget->setPointerStyle(MStatic_cast(TTKDialMeterWidget::PointerStyle, value));
+        widget->setTitle(value);
     }
 }
 
-void TTKDialMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
+void TTKPercentMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKDialMeterWidget *widget = MStatic_cast(TTKDialMeterWidget*, m_item);
-    if(property->propertyName() == "DarkColor")
+    TTKPercentMeterWidget *widget = MStatic_cast(TTKPercentMeterWidget*, m_item);
+    if(property->propertyName() == "ArcColor")
     {
-        widget->setDarkColor(value);
+        widget->setArcColor(value);
     }
-    else if(property->propertyName() == "LightColor")
+    else if(property->propertyName() == "ScaleColor")
     {
-        widget->setLightColor(value);
+        widget->setScaleColor(value);
+    }
+    else if(property->propertyName() == "ScaleNumColor")
+    {
+        widget->setScaleNumColor(value);
     }
     else if(property->propertyName() == "TextColor")
     {
         widget->setTextColor(value);
+    }
+    else if(property->propertyName() == "TitleColor")
+    {
+        widget->setTitleColor(value);
+    }
+    else if(property->propertyName() == "BaseColor")
+    {
+        widget->setBaseColor(value);
+    }
+    else if(property->propertyName() == "BgColor")
+    {
+        widget->setBgColor(value);
     }
 }

@@ -16,6 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-SOURCES += $$PWD/ttkprogressmeterwidgetproperty.cpp
+SOURCES += $$PWD/ttkpercentmeterwidgetproperty.cpp
 
-HEADERS += $$PWD/ttkprogressmeterwidgetproperty.h
+HEADERS += $$PWD/ttkpercentmeterwidgetproperty.h

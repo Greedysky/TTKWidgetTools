@@ -1,5 +1,5 @@
-#include "ttkprogressMeterWidgetproperty.h"
-#include "ttkprogressMeterWidget.h"
+#include "ttkprogressmeterwidgetproperty.h"
+#include "ttkprogressmeterwidget.h"
 
 TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
@@ -35,17 +35,17 @@ TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *precisionItem = m_intManager->addProperty("Precision");
     m_intManager->setValue(precisionItem, 0);
-    m_intManager->setMinimum(precisionItem, 0);
+    m_intManager->setRange(precisionItem, 0, 2);
     objectItem->addSubProperty(precisionItem);
     //
     QtProperty *startAngleItem = m_intManager->addProperty("StartAngle");
-    m_intManager->setValue(startAngleItem, 0);
-    m_intManager->setMinimum(startAngleItem, 40);
+    m_intManager->setValue(startAngleItem, 40);
+    m_intManager->setMinimum(startAngleItem, 0);
     objectItem->addSubProperty(startAngleItem);
     //
     QtProperty *endAngleItem = m_intManager->addProperty("EndAngle");
-    m_intManager->setValue(endAngleItem, 0);
-    m_intManager->setMinimum(endAngleItem, 40);
+    m_intManager->setValue(endAngleItem, 40);
+    m_intManager->setMinimum(endAngleItem, 0);
     objectItem->addSubProperty(endAngleItem);
     //
     QtProperty *showValueItem = m_boolManager->addProperty("ShowValue");

@@ -61,6 +61,8 @@ Meter
 | Meter | TTKSpeedRingMeterWidget |   完成   |
 | Meter | TTKDialMeterWidget |   完成   |
 | Meter | TTKCompassMeterWidget |   完成   |
+| Meter | TTKProgressMeterWidget |   完成   |
+| Meter | TTKPercentMeterWidget |   完成   |
 
 Progress
 ----
@@ -75,6 +77,7 @@ Progress
 | Progress | TTKRingsMapProgressWidget |   完成   |
 | Progress | TTKRingsProgressWidget |   完成   |
 | Progress | TTKRoundProgressWidget |   完成   |
+| Progress | TTKRingProgressWidget |   完成   |
 
 Slider
 ----
