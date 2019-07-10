@@ -303,6 +303,8 @@ void TTKToolsApplication::widgetModuleChanged(int index)
             break;
         case 7: w = new TTKSmoothMovingTableWidgetProperty;
             break;
+        case 8: w = new TTKCustomPieWidgetProperty;
+            break;
         default:
             break;
     }
@@ -490,6 +492,7 @@ void TTKToolsApplication::createWidgetModule()
     widget->addItem(":/icon/widget", "TTKPictureBannerWidget");
     widget->addItem(":/icon/widget", "TTKPictureFlowWidget");
     widget->addItem(":/icon/widget", "TTKSmoothMovingTableWidget");
+    widget->addItem(":/icon/widget", "TTKCustomPieWidget");
 
     widget->setObjectName("widgetRow");
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");

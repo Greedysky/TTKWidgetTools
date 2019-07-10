@@ -192,9 +192,9 @@ void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
 
-    int w = width();
-    int h = height();
-    int side = qMin(w, h);
+    const int w = width();
+    const int h = height();
+    const int side = qMin(w, h);
 
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
@@ -217,7 +217,7 @@ void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKPercentMeterWidget::drawArc(QPainter *painter)
 {
-    int radius = 95;
+    const int radius = 95;
     painter->save();
     painter->setBrush(Qt::NoBrush);
 
@@ -225,10 +225,10 @@ void TTKPercentMeterWidget::drawArc(QPainter *painter)
     pen.setWidthF(5);
     pen.setCapStyle(Qt::RoundCap);
 
-    double angleAll = 360.0 - m_startAngle - m_endAngle;
-    double angleCurrent = angleAll * ((m_value - m_minValue) / (m_maxValue - m_minValue));
-    double angleOther = angleAll - angleCurrent;
-    QRectF rect = QRectF(-radius, -radius, radius * 2, radius * 2);
+    const double angleAll = 360.0 - m_startAngle - m_endAngle;
+    const double angleCurrent = angleAll * ((m_value - m_minValue) / (m_maxValue - m_minValue));
+    const double angleOther = angleAll - angleCurrent;
+    const QRectF &rect = QRectF(-radius, -radius, radius * 2, radius * 2);
 
     pen.setColor(m_arcColor);
     painter->setPen(pen);
@@ -242,15 +242,15 @@ void TTKPercentMeterWidget::drawArc(QPainter *painter)
 
 void TTKPercentMeterWidget::drawCircle(QPainter *painter)
 {
-    int radius = 6;
-    int offset = 83;
+    const int radius = 6;
+    const int offset = 83;
 
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_arcColor);
     painter->rotate(m_startAngle);
 
-    double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
     painter->rotate(degRotate);
     painter->drawEllipse(-radius, radius + offset, radius * 2, radius * 2);
     painter->restore();
@@ -258,12 +258,12 @@ void TTKPercentMeterWidget::drawCircle(QPainter *painter)
 
 void TTKPercentMeterWidget::drawScale(QPainter *painter)
 {
-    int radius = 90;
+    const int radius = 90;
     painter->save();
     painter->rotate(m_startAngle);
 
-    int steps = (m_scaleMajor * m_scaleMinor);
-    double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
+    const int steps = (m_scaleMajor * m_scaleMinor);
+    const double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
 
     QPen pen;
     pen.setColor(m_scaleColor);
@@ -281,23 +281,23 @@ void TTKPercentMeterWidget::drawScale(QPainter *painter)
 
 void TTKPercentMeterWidget::drawScaleNum(QPainter *painter)
 {
-    int radius = 75;
+    const int radius = 75;
     painter->save();
     painter->setPen(m_scaleNumColor);
 
-    double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
-    double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
+    const double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
+    const double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
 
     for(int i = 0; i <= m_scaleMajor; i++)
     {
-        double sina = qSin(startRad - i * deltaRad);
-        double cosa = qCos(startRad - i * deltaRad);
-        double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
-        QString strValue = QString("%1").arg((double)value, 0, 'f', m_precision);
-        double textWidth = fontMetrics().width(strValue);
-        double textHeight = fontMetrics().height();
-        int x = radius * cosa - textWidth / 2;
-        int y = -radius * sina + textHeight / 4;
+        const double sina = qSin(startRad - i * deltaRad);
+        const double cosa = qCos(startRad - i * deltaRad);
+        const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
+        const QString &strValue = QString("%1").arg((double)value, 0, 'f', m_precision);
+        const double textWidth = fontMetrics().width(strValue);
+        const double textHeight = fontMetrics().height();
+        const int x = radius * cosa - textWidth / 2;
+        const int y = -radius * sina + textHeight / 4;
         painter->drawText(x, y, strValue);
     }
     painter->restore();
@@ -305,7 +305,7 @@ void TTKPercentMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKPercentMeterWidget::drawValue(QPainter *painter)
 {
-    int radius = 100;
+    const int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 
@@ -313,15 +313,15 @@ void TTKPercentMeterWidget::drawValue(QPainter *painter)
     font.setPixelSize(30);
     painter->setFont(font);
 
-    QRectF textRect(-radius, 0, radius * 2, radius / 3);
-    QString strValue = QString("%1%").arg(m_value, 0, 'f', m_precision);
+    const QRectF textRect(-radius, 0, radius * 2, radius / 3);
+    const QString &strValue = QString("%1%").arg(m_value, 0, 'f', m_precision);
     painter->drawText(textRect, Qt::AlignCenter, strValue);
     painter->restore();
 }
 
 void TTKPercentMeterWidget::drawTitle(QPainter *painter)
 {
-    int radius = 100;
+    const int radius = 100;
     painter->save();
     painter->setPen(m_titleColor);
 
@@ -329,7 +329,7 @@ void TTKPercentMeterWidget::drawTitle(QPainter *painter)
     font.setPixelSize(20);
     painter->setFont(font);
 
-    QRectF textRect(-radius, radius / 3, radius * 2, radius / 3);
+    const QRectF textRect(-radius, radius / 3, radius * 2, radius / 3);
     painter->drawText(textRect, Qt::AlignCenter, m_title);
     painter->restore();
 }

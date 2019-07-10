@@ -327,9 +327,9 @@ void TTKRingProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
 
-    int w = width();
-    int h = height();
-    int side = qMin(w, h);
+    const int w = width();
+    const int h = height();
+    const int side = qMin(w, h);
 
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
@@ -350,7 +350,7 @@ void TTKRingProgressWidget::paintEvent(QPaintEvent *event)
 
 void TTKRingProgressWidget::drawBg(QPainter *painter)
 {
-    int radius = 99;
+    const int radius = 99;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -361,13 +361,13 @@ void TTKRingProgressWidget::drawBg(QPainter *painter)
 
 void TTKRingProgressWidget::drawRing(QPainter *painter)
 {
-    int radius = 99 - m_ringPadding;
+    const int radius = 99 - m_ringPadding;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_ringColor);
     QRectF rect(-radius, -radius, radius * 2, radius * 2);
 
-    double angleAll = 360.0;
+    const double angleAll = 360.0;
     double angleCurrent = angleAll * ((m_currentValue - m_minValue) / (m_maxValue - m_minValue));
     double angleOther = angleAll - angleCurrent;
 
@@ -417,7 +417,7 @@ void TTKRingProgressWidget::drawRing(QPainter *painter)
 
 void TTKRingProgressWidget::drawPadding(QPainter *painter)
 {
-    int radius = 99 - m_ringWidth - m_ringPadding;
+    const int radius = 99 - m_ringWidth - m_ringPadding;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_bgColor);
@@ -427,7 +427,7 @@ void TTKRingProgressWidget::drawPadding(QPainter *painter)
 
 void TTKRingProgressWidget::drawCircle(QPainter *painter)
 {
-    int radius = 99 - m_ringWidth - (m_ringPadding * 2);
+    const int radius = 99 - m_ringWidth - (m_ringPadding * 2);
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_circleColor);
@@ -437,21 +437,21 @@ void TTKRingProgressWidget::drawCircle(QPainter *painter)
 
 void TTKRingProgressWidget::drawValue(QPainter *painter)
 {
-    int radius = 99 - m_ringWidth - (m_ringPadding * 2);
+    const int radius = 99 - m_ringWidth - (m_ringPadding * 2);
     painter->save();
     painter->setPen(m_textColor);
 
     QFont font;
-    int fontSize = radius - (m_showPercent ? 20 : 6);
+    const int fontSize = radius - (m_showPercent ? 20 : 6);
     font.setPixelSize(fontSize);
     painter->setFont(font);
 
-    QRectF textRect(-radius, -radius, radius * 2, radius * 2);
+    const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
     QString strValue;
 
     if(m_showPercent)
     {
-        double percent = (m_currentValue * 100) / (m_maxValue - m_minValue);
+        const double percent = (m_currentValue * 100) / (m_maxValue - m_minValue);
         strValue = QString("%1%").arg(percent, 0, 'f', m_precision);
     }
     else
