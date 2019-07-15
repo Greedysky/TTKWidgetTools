@@ -169,6 +169,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 9: w = new TTKPercentMeterWidgetProperty;
             break;
+        case 10: w = new TTKArcMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -405,6 +407,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKCompassMeterWidget");
     widget->addItem(":/icon/meter", "TTKProgressMeterWidget");
     widget->addItem(":/icon/meter", "TTKPercentMeterWidget");
+    widget->addItem(":/icon/meter", "TTKArcMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");

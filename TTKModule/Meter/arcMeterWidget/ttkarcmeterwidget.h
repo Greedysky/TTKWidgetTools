@@ -1,5 +1,5 @@
-#ifndef TTKPROGRESSMETERWIDGET_H
-#define TTKPROGRESSMETERWIDGET_H
+#ifndef TTKARCMETERWIDGET_H
+#define TTKARCMETERWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -25,12 +25,11 @@
 
 /*!
 * @author Greedysky <greedysky@163.com>
-*         feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKProgressMeterWidget : public QWidget
+class TTK_CORE_EXPORT TTKArcMeterWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKProgressMeterWidget)
+    TTK_DECLARE_MODULE(TTKArcMeterWidget)
 public:
     enum PointerStyle
     {
@@ -40,8 +39,8 @@ public:
         PointerStyleTriangle = 3
     };
 
-    explicit TTKProgressMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKProgressMeterWidget();
+    explicit TTKArcMeterWidget(QWidget *parent = nullptr);
+    virtual ~TTKArcMeterWidget();
 
     void setRange(double minValue, double maxValue);
 
@@ -51,20 +50,20 @@ public:
     void setValue(double value);
 
     void setPrecision(int precision);
+    void setScaleMajor(int scaleMajor);
+    void setScaleMinor(int scaleMinor);
     void setStartAngle(int startAngle);
     void setEndAngle(int endAngle);
 
-    void setBgColor(const QColor &bgColor);
-    void setProgressColor(const QColor &progressColor);
-    void setProgressBgColor(const QColor &progressBgColor);
+    void setAnimation(bool animation);
+    void setAnimationStep(double animationStep);
 
-    void setCircleColorStart(const QColor &circleColorStart);
-    void setCircleColorEnd(const QColor &circleColorEnd);
-
-    void setShowPointer(bool showPointer);
-    void setShowValue(bool showValue);
-
+    void setArcColor(const QColor &arcColor);
+    void setScaleColor(const QColor &scaleColor);
+    void setScaleNumColor(const QColor &scaleNumColor);
+    void setPointerColor(const QColor &pointerColor);
     void setTextColor(const QColor &textColor);
+
     void setPointerStyle(const PointerStyle &pointerStyle);
 
     virtual QSize sizeHint() const override;
@@ -74,14 +73,15 @@ private Q_SLOTS:
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
-    void drawBg(QPainter *painter);
-    void drawColorPie(QPainter *painter);
-    void drawCoverCircle(QPainter *painter);
-    void drawCircle(QPainter *painter);
+    void drawArc(QPainter *painter);
+    void drawScale(QPainter *painter);
+    void drawScaleNum(QPainter *painter);
     void drawPointerCircle(QPainter *painter);
     void drawPointerIndicator(QPainter *painter);
     void drawPointerIndicatorR(QPainter *painter);
     void drawPointerTriangle(QPainter *painter);
+    void drawRoundCircle(QPainter *painter);
+    void drawCenterCircle(QPainter *painter);
     void drawValue(QPainter *painter);
 
 private:
@@ -89,18 +89,18 @@ private:
     double m_maxValue;
     double m_value;
     int m_precision;
+    int m_scaleMajor;
+    int m_scaleMinor;
     int m_startAngle;
     int m_endAngle;
+    bool m_animation;
+    double m_animationStep;
 
-    QColor m_bgColor;
-    QColor m_progressColor;
-    QColor m_progressBgColor;
-    QColor m_circleColorStart;
-    QColor m_circleColorEnd;
+    QColor m_arcColor;
+    QColor m_scaleColor;
+    QColor m_scaleNumColor;
+    QColor m_pointerColor;
     QColor m_textColor;
-
-    bool m_showPointer;
-    bool m_showValue;
     PointerStyle m_pointerStyle;
 
     bool m_reverse;
@@ -109,4 +109,4 @@ private:
 
 };
 
-#endif // TTKPROGRESSMETERWIDGET_H
+#endif // TTKARCMETERWIDGET_H

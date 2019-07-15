@@ -32,12 +32,14 @@ class TTK_CORE_EXPORT TTKDialMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKDialMeterWidget)
 public:
-    enum PointerStyle {
+    enum PointerStyle
+    {
         PointerStyleCircle = 0,
         PointerStyleIndicator = 1,
         PointerStyleIndicatorR = 2,
         PointerStyleTriangle = 3
     };
+
     explicit TTKDialMeterWidget(QWidget *parent = nullptr);
     virtual ~TTKDialMeterWidget();
 

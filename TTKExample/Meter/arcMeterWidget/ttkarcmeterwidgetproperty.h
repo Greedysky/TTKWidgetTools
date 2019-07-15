@@ -1,5 +1,5 @@
-#ifndef TTKMETERINCLUDE_H
-#define TTKMETERINCLUDE_H
+#ifndef TTKARCMETERWIDGETPROPERTY_H
+#define TTKARCMETERWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,16 +19,25 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "paintMeterWidget/ttkpaintmeterwidgetproperty.h"
-#include "radarMeterWidget/ttkradarmeterwidgetproperty.h"
-#include "speedMeterWidget/ttkspeedmeterwidgetproperty.h"
-#include "timeMeterWidget/ttktimemeterwidgetproperty.h"
-#include "carMeterWidget/ttkcarmeterwidgetproperty.h"
-#include "speedRingMeterWidget/ttkspeedringmeterwidgetproperty.h"
-#include "dialMeterWidget/ttkdialmeterwidgetproperty.h"
-#include "compassMeterWidget/ttkcompassmeterwidgetproperty.h"
-#include "progressMeterWidget/ttkprogressmeterwidgetproperty.h"
-#include "percentMeterWidget/ttkpercentmeterwidgetproperty.h"
-#include "arcMeterWidget/ttkarcmeterwidgetproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKMETERINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKArcMeterWidgetProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKArcMeterWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKArcMeterWidgetProperty();
+
+protected Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void doublePropertyChanged(QtProperty *property, double value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+#endif // TTKARCMETERWIDGETPROPERTY_H
