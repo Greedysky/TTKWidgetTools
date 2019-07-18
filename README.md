@@ -41,6 +41,7 @@ Label
 | Label | TTKBatteryLabel | 完成     |
 | Label | TTKCloudPanelLabel |   完成   |
 | Label | TTKCPUMemoryLabel |   完成   |
+| Label | TTKAntLineLabel |   完成   |
 
 LineEdit
 ----
@@ -63,6 +64,7 @@ Meter
 | Meter | TTKCompassMeterWidget |   完成   |
 | Meter | TTKProgressMeterWidget |   完成   |
 | Meter | TTKPercentMeterWidget |   完成   |
+| Meter | TTKArcMeterWidget |   完成   |
 
 Progress
 ----

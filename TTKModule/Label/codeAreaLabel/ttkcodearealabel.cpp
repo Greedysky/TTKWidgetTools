@@ -69,7 +69,7 @@ void TTKCodeAreaLabel::setNoisyPointCount(int nCount)
 
 QSize TTKCodeAreaLabel::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(150, 150);
 }
 
 void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
