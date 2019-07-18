@@ -46,7 +46,7 @@ void TTKTransitionAnimationLabel::stop()
 
 QSize TTKTransitionAnimationLabel::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(180, 180);
 }
 
 void TTKTransitionAnimationLabel::setPixmap(const QPixmap &pix)

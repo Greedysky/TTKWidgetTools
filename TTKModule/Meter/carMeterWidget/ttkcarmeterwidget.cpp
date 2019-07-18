@@ -300,7 +300,7 @@ void TTKCarMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKCarMeterWidget::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(180, 180);
 }
 
 void TTKCarMeterWidget::updateValue()

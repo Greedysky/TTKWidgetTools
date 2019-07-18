@@ -220,7 +220,7 @@ void TTKArcMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKArcMeterWidget::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(180, 180);
 }
 
 void TTKArcMeterWidget::updateValue()

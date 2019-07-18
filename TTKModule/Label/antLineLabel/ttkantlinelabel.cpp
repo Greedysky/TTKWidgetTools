@@ -6,10 +6,10 @@
 TTKAntLineLabel::TTKAntLineLabel(QWidget *parent)
     : QWidget(parent)
 {
-    m_lineLen = 0;
-    m_lineWidth = 0;
-    m_lineStep = 0;
-    m_lineSpeed = 0;
+    m_lineLen = 3;
+    m_lineWidth = 6;
+    m_lineStep = 1;
+    m_lineSpeed = 500;
     m_lineColor = QColor(60, 179, 133);
     m_lineStyle = LineStyleRect;
 
@@ -75,7 +75,7 @@ void TTKAntLineLabel::setLineSpeed(int lineSpeed)
     if(m_lineSpeed != lineSpeed)
     {
         m_lineSpeed = lineSpeed;
-        update();
+        m_timer->start(m_lineSpeed);
     }
 }
 
@@ -99,7 +99,7 @@ void TTKAntLineLabel::setLineStyle(const TTKAntLineLabel::LineStyle &lineStyle)
 
 QSize TTKAntLineLabel::sizeHint() const
 {
-    return QSize(150, 150);
+    return QSize(180, 180);
 }
 
 void TTKAntLineLabel::updateValue()

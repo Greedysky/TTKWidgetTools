@@ -20,23 +20,23 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     objectItem->addSubProperty(geometryItem);
     //
     QtProperty *lineLenItem = m_intManager->addProperty("LineLen");
-    m_intManager->setValue(lineLenItem, 0);
-    m_intManager->setMinimum(lineLenItem, 0);
+    m_intManager->setValue(lineLenItem, 3);
+    m_intManager->setMinimum(lineLenItem, 1);
     objectItem->addSubProperty(lineLenItem);
     //
     QtProperty *lineWidthItem = m_intManager->addProperty("LineWidth");
-    m_intManager->setValue(lineWidthItem, 0);
-    m_intManager->setMinimum(lineWidthItem, 0);
+    m_intManager->setValue(lineWidthItem, 6);
+    m_intManager->setMinimum(lineWidthItem, 1);
     objectItem->addSubProperty(lineWidthItem);
     //
     QtProperty *lineStepItem = m_intManager->addProperty("LineStep");
-    m_intManager->setValue(lineStepItem, 0);
-    m_intManager->setMinimum(lineStepItem, 0);
+    m_intManager->setValue(lineStepItem, 1);
+    m_intManager->setMinimum(lineStepItem, 1);
     objectItem->addSubProperty(lineStepItem);
     //
     QtProperty *lineSpeedItem = m_intManager->addProperty("LineSpeed");
-    m_intManager->setValue(lineSpeedItem, 0);
-    m_intManager->setMinimum(lineSpeedItem, 0);
+    m_intManager->setValue(lineSpeedItem, 500);
+    m_intManager->setMinimum(lineSpeedItem,1);
     objectItem->addSubProperty(lineSpeedItem);
     //
     QtProperty *lineColorItem = m_colorManager->addProperty("LineColor");

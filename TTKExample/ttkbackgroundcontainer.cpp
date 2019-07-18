@@ -4,6 +4,7 @@
 #include <qmath.h>
 #include <QPainter>
 #include <QBoxLayout>
+#include <QDebug>
 
 #define PIX_HEIGHT          16
 #define PIX_WIDTH           16
@@ -31,19 +32,22 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
     MStatic_cast(QVBoxLayout*, layout())->addWidget(item, 0, Qt::AlignCenter);
 
     const QSize &hint = m_item->sizeHint();
+    const int width = geometry().width();
+    const int height = geometry().height();
 
-    if(hint.width() > m_item->width())
+    if(hint.width() > width)
     {
         QRect rect = geometry();
         rect.setWidth(hint.width());
         setGeometry(rect);
     }
-    if(hint.height() > m_item->height())
+    if(hint.height() > height)
     {
         QRect rect = geometry();
         rect.setHeight(hint.height());
         setGeometry(rect);
     }
+
 }
 
 void TTKBackgroundContainerItem::onMouseChange(int x, int y)

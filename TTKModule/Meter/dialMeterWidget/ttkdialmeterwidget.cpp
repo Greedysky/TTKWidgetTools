@@ -164,7 +164,7 @@ void TTKDialMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKDialMeterWidget::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(180, 180);
 }
 
 void TTKDialMeterWidget::paintEvent(QPaintEvent *event)

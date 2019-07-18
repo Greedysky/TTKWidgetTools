@@ -61,7 +61,7 @@ void TTKCustomPieWidget::appendPie(const QString &label, double value, const QCo
 
 QSize TTKCustomPieWidget::sizeHint() const
 {
-    return QSize(200, 200);
+    return QSize(180, 180);
 }
 
 void TTKCustomPieWidget::paintEvent(QPaintEvent *event)

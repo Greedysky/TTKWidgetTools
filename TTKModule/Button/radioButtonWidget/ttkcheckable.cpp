@@ -259,7 +259,7 @@ QSize TTKCheckable::sizeHint() const
     {
         return QSize(40, 40);
     }
-    return QSize(fontMetrics().size(Qt::TextShowMnemonic, text()).width()+52, 40);
+    return QSize(fontMetrics().size(Qt::TextShowMnemonic, text()).width() + 52, 40);
 }
 
 bool TTKCheckable::event(QEvent *event)
