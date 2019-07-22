@@ -42,6 +42,7 @@ Label
 | Label | TTKCloudPanelLabel |   完成   |
 | Label | TTKCPUMemoryLabel |   完成   |
 | Label | TTKAntLineLabel |   完成   |
+| Label | TTKTileBackgroundLabel |   完成   |
 
 LineEdit
 ----

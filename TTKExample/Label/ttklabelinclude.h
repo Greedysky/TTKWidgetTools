@@ -32,5 +32,6 @@
 #include "cloudPanelLabel/ttkcloudpanellabelproperty.h"
 #include "cpuMemoryLabel/ttkcpumemorylabelproperty.h"
 #include "antLineLabel/ttkantlinelabelproperty.h"
+#include "tileBackgroundLabel/ttktilebackgroundlabelproperty.h"
 
 #endif // TTKLABELINCLUDE_H
