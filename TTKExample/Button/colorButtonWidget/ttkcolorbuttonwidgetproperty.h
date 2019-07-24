@@ -1,5 +1,5 @@
-#ifndef TTKBUTTONINCLUDE_H
-#define TTKBUTTONINCLUDE_H
+#ifndef TTKCOLORBUTTONWIDGETPROPERTY_H
+#define TTKCOLORBUTTONWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,11 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "checkButtonWidget/ttkcheckbuttonwidgetproperty.h"
-#include "flatButtonWidget/ttkflatbuttonwidgetproperty.h"
-#include "radioButtonWidget/ttkradiobuttonwidgetproperty.h"
-#include "toggleWidget/ttktogglewidgetproperty.h"
-#include "toolMenuWidget/ttktoolmenuwidgetproperty.h"
-#include "colorButtonWidget/ttkcolorbuttonwidgetproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKBUTTONINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKColorButtonWidgetProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKColorButtonWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKColorButtonWidgetProperty();
+
+private Q_SLOTS:
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+#endif // TTKCOLORBUTTONWIDGETPROPERTY_H

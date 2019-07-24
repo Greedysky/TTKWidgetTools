@@ -9,6 +9,7 @@
 #define PIX_HEIGHT          16
 #define PIX_WIDTH           16
 #define ITEM_ICON_SZIE      25
+#define ITEM_SPACE          20
 
 TTKBackgroundContainerItem::TTKBackgroundContainerItem(QWidget *parent)
     : TTKGrabItemWidget(parent),
@@ -38,13 +39,13 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
     if(hint.width() > width)
     {
         QRect rect = geometry();
-        rect.setWidth(hint.width());
+        rect.setWidth(hint.width() + ITEM_SPACE);
         setGeometry(rect);
     }
     if(hint.height() > height)
     {
         QRect rect = geometry();
-        rect.setHeight(hint.height());
+        rect.setHeight(hint.height() + ITEM_SPACE);
         setGeometry(rect);
     }
 

@@ -74,6 +74,8 @@ void TTKToolsApplication::buttonModuleChanged(int index)
             break;
         case 4: w = new TTKToolMenuWidgetProperty;
             break;
+        case 5: w = new TTKColorButtonWidgetProperty;
+            break;
         default:
             break;
     }
@@ -123,6 +125,11 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         default:
             break;
+    }
+
+    if(!w)
+    {
+        return;
     }
 
     ui->propertyWidget->addItem(w);
@@ -179,6 +186,11 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
     w->init();
@@ -215,6 +227,11 @@ void TTKToolsApplication::progressModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
     w->init();
@@ -233,6 +250,11 @@ void TTKToolsApplication::sliderModuleChanged(int index)
             break;
         default:
             break;
+    }
+
+    if(!w)
+    {
+        return;
     }
 
     ui->propertyWidget->addItem(w);
@@ -283,6 +305,11 @@ void TTKToolsApplication::titleModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
     w->init();
@@ -315,6 +342,11 @@ void TTKToolsApplication::widgetModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
     w->init();
@@ -337,6 +369,11 @@ void TTKToolsApplication::windowModuleChanged(int index)
             break;
     }
 
+    if(!w)
+    {
+        return;
+    }
+
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
     w->init();
@@ -351,6 +388,7 @@ void TTKToolsApplication::createButtonModule()
     widget->addItem(":/icon/button", "TTKRadioButtonWidget");
     widget->addItem(":/icon/button", "TTKToggleWidget");
     widget->addItem(":/icon/button", "TTKToolMenuWidget");
+    widget->addItem(":/icon/button", "TTKColorButtonWidget");
 
     widget->setObjectName("buttonRow");
     widget->setStyleSheet("#buttonRow{background-color:rgba(255, 0, 0, 50)}");

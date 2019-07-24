@@ -18,9 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/checkButtonWidget/CheckButtonWidget.pri)
-include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
-include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
-include($$PWD/toggleWidget/ToggleWidget.pri)
-include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
-include($$PWD/colorButtonWidget/ColorButtonWidget.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkcolorbuttonwidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkcolorbuttonwidget.cpp
+
+}
