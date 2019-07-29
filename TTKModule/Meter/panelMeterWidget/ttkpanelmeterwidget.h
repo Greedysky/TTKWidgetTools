@@ -1,5 +1,5 @@
-#ifndef TTKARCMETERWIDGET_H
-#define TTKARCMETERWIDGET_H
+#ifndef TTKPANELMETERWIDGET_H
+#define TTKPANELMETERWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -27,21 +27,13 @@
 * @author Greedysky <greedysky@163.com>
 *         feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKArcMeterWidget : public QWidget
+class TTK_CORE_EXPORT TTKPanelMeterWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKArcMeterWidget)
+    TTK_DECLARE_MODULE(TTKPanelMeterWidget)
 public:
-    enum PointerStyle
-    {
-        PointerStyleCircle = 0,
-        PointerStyleIndicator = 1,
-        PointerStyleIndicatorR = 2,
-        PointerStyleTriangle = 3
-    };
-
-    explicit TTKArcMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKArcMeterWidget();
+    explicit TTKPanelMeterWidget(QWidget *parent = nullptr);
+    virtual ~TTKPanelMeterWidget();
 
     void setRange(double minValue, double maxValue);
 
@@ -59,13 +51,15 @@ public:
     void setAnimation(bool animation);
     void setAnimationStep(double animationStep);
 
-    void setArcColor(const QColor &arcColor);
-    void setScaleColor(const QColor &scaleColor);
-    void setScaleNumColor(const QColor &scaleNumColor);
-    void setPointerColor(const QColor &pointerColor);
-    void setTextColor(const QColor &textColor);
+    void setRingWidth(int ringWidth);
+    void setRingColor(const QColor &ringColor);
 
-    void setPointerStyle(const PointerStyle &pointerStyle);
+    void setScaleColor(const QColor &scaleColor);
+    void setPointerColor(const QColor &pointerColor);
+    void setBgColor(const QColor &bgColor);
+    void setTextColor(const QColor &textColor);
+    void setUnit(const QString &unit);
+    void setText(const QString &text);
 
     virtual QSize sizeHint() const override;
 
@@ -74,15 +68,10 @@ private Q_SLOTS:
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
-    void drawArc(QPainter *painter);
+    void drawRing(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
-    void drawPointerCircle(QPainter *painter);
-    void drawPointerIndicator(QPainter *painter);
-    void drawPointerIndicatorR(QPainter *painter);
-    void drawPointerTriangle(QPainter *painter);
-    void drawRoundCircle(QPainter *painter);
-    void drawCenterCircle(QPainter *painter);
+    void drawPointer(QPainter *painter);
     void drawValue(QPainter *painter);
 
 private:
@@ -97,12 +86,14 @@ private:
     bool m_animation;
     double m_animationStep;
 
-    QColor m_arcColor;
+    int m_ringWidth;
+    QColor m_ringColor;
     QColor m_scaleColor;
-    QColor m_scaleNumColor;
     QColor m_pointerColor;
+    QColor m_bgColor;
     QColor m_textColor;
-    PointerStyle m_pointerStyle;
+    QString m_unit;
+    QString m_text;
 
     bool m_reverse;
     double m_currentValue;
@@ -110,4 +101,4 @@ private:
 
 };
 
-#endif // TTKARCMETERWIDGET_H
+#endif // TTKPANELMETERWIDGET_H

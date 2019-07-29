@@ -30,5 +30,6 @@
 #include "progressMeterWidget/ttkprogressmeterwidgetproperty.h"
 #include "percentMeterWidget/ttkpercentmeterwidgetproperty.h"
 #include "arcMeterWidget/ttkarcmeterwidgetproperty.h"
+#include "panelMeterWidget/ttkpanelmeterwidgetproperty.h"
 
 #endif // TTKMETERINCLUDE_H
