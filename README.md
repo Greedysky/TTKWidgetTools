@@ -24,6 +24,7 @@ Button
 | Button | TTKRadioButtonWidget |   完成   |
 | Button | TTKToggleWidget |   完成   |
 | Button | TTKToolMenuWidget |   完成   |
+| Button | TTKColorButtonWidget |   完成   |
 
 Label
 ----
@@ -43,6 +44,7 @@ Label
 | Label | TTKCPUMemoryLabel |   完成   |
 | Label | TTKAntLineLabel |   完成   |
 | Label | TTKTileBackgroundLabel |   完成   |
+| Label | TTKLightPointLabel |   完成   |
 
 LineEdit
 ----
@@ -66,6 +68,7 @@ Meter
 | Meter | TTKProgressMeterWidget |   完成   |
 | Meter | TTKPercentMeterWidget |   完成   |
 | Meter | TTKArcMeterWidget |   完成   |
+| Meter | TTKPanelMeterWidget |   完成   |
 
 Progress
 ----

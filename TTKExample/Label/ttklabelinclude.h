@@ -33,5 +33,6 @@
 #include "cpuMemoryLabel/ttkcpumemorylabelproperty.h"
 #include "antLineLabel/ttkantlinelabelproperty.h"
 #include "tileBackgroundLabel/ttktilebackgroundlabelproperty.h"
+#include "lightPointLabel/ttklightpointlabelproperty.h"
 
 #endif // TTKLABELINCLUDE_H

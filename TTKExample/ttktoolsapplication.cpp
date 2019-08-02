@@ -123,6 +123,8 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         case 13: w = new TTKTileBackgroundLabelProperty;
             break;
+        case 14: w = new TTKLightPointLabelProperty;
+            break;
         default:
             break;
     }
@@ -417,6 +419,7 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKCPUMemoryLabel");
     widget->addItem(":/icon/label", "TTKAntLineLabel");
     widget->addItem(":/icon/label", "TTKTileBackgroundLabel");
+    widget->addItem(":/icon/label", "TTKLightPointLabel");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
