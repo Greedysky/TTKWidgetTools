@@ -4,7 +4,6 @@
 #include <qmath.h>
 #include <QPainter>
 #include <QBoxLayout>
-#include <QDebug>
 
 #define PIX_HEIGHT          16
 #define PIX_WIDTH           16

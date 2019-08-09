@@ -1,5 +1,5 @@
-#ifndef TTKWIDGETINCLUDE_H
-#define TTKWIDGETINCLUDE_H
+#ifndef TTKCUSTOMRINGWIDGETPROPERTY_H
+#define TTKCUSTOMRINGWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,15 +19,21 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "animationStackedWidget/ttkanimationstackedwidgetproperty.h"
-#include "animation2StackedWidget/ttkanimation2stackedwidgetproperty.h"
-#include "colorTableWidget/ttkcolortablewidgetproperty.h"
-#include "grabItemWidget/ttkgrabitemwidgetproperty.h"
-#include "layoutAnimationWidget/ttklayoutanimationwidgetproperty.h"
-#include "pictureBannerWidget/ttkpicturebannerwidgetproperty.h"
-#include "pictureFlowWidget/ttkpictureflowwidgetproperty.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewidgetproperty.h"
-#include "customPieWidget/ttkcustompiewidgetproperty.h"
-#include "customRingWidget/ttkcustomringwidgetproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKWIDGETINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKCustomRingWidgetProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKCustomRingWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKCustomRingWidgetProperty();
+
+protected Q_SLOTS:
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+
+};
+
+#endif // TTKCUSTOMRINGWIDGETPROPERTY_H

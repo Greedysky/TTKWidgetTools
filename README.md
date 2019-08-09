@@ -117,6 +117,7 @@ Widget
 | Widget | TTKPictureFlowWidget |   完成   |
 | Widget | TTKSmoothMovingTableWidget |   完成   |
 | Widget | TTKCustomPieWidget |   完成   |
+| Widget | TTKCustomRingWidget |   完成   |
 
 Window
 ----

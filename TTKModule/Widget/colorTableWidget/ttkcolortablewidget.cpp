@@ -1,7 +1,7 @@
 #include "ttkcolortablewidget.h"
 
 #include <QFile>
-#include <QDebug>
+
 TTKColorTableWidget::TTKColorTableWidget(QWidget *parent)
     : QListWidget(parent)
 {

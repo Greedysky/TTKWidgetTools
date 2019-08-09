@@ -1,5 +1,5 @@
-#ifndef TTKCUSTOMPIEWIDGET_H
-#define TTKCUSTOMPIEWIDGET_H
+#ifndef TTKCUSTOMRINGWIDGET_H
+#define TTKCUSTOMRINGWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -26,50 +26,33 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKCustomPieWidget : public QWidget
+class TTK_CORE_EXPORT TTKCustomRingWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKCustomPieWidget)
+    TTK_DECLARE_MODULE(TTKCustomRingWidget)
 public:
-    typedef struct PieData
-    {
-        QColor m_color;
-        QString m_text;
-        double m_value;
-    }PieData;
+    explicit TTKCustomRingWidget(QWidget *parent = nullptr);
 
-    explicit TTKCustomPieWidget(QWidget *parent = nullptr);
-
-    void setExplodedAll(bool explodedAll);
-    void setExplodedIndex(int index);
-
-    void setTextColor(const QColor &textColor);
-    void setBorderColor(const QColor &borderColor);
-
-    void setDataPie(const QList<PieData> &datas);
-
-    void appendPie(const QString &label, double value, const QColor &color);
+    void setBgColor(const QColor &bgColor);
+    void setOutCircleColor(const QColor &outCircleColor);
+    void setMidCircleColor(const QColor &midCircleColor);
+    void setInCircleColor(const QColor &inCircleColor);
 
     virtual QSize sizeHint() const override;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
-    void drawPie(QPainter *painter);
+    void drawBg(QPainter *painter);
+    void drawOutCircle(QPainter *painter);
+    void drawMidCircle(QPainter *painter);
+    void drawInCircle(QPainter *painter);
 
 private:
-    void clearPie();
-    double getSumValue();
-    QPoint getOffsetPoint(double angel, int offset);
-
-private:
-    bool m_explodedAll;
-    int m_explodedIndex;
-    bool m_showPercent;
-
-    QColor m_textColor;
-    QColor m_borderColor;
-    QList<PieData> m_datas;
+    QColor m_bgColor;
+    QColor m_outCircleColor;
+    QColor m_midCircleColor;
+    QColor m_inCircleColor;
 
 };
 
-#endif // TTKCUSTOMPIEWIDGET_H
+#endif // TTKCUSTOMRINGWIDGET_H

@@ -1,7 +1,7 @@
 #include "ttkcustompiewidget.h"
 
 #include <QPainter>
-#include <QDebug>
+
 TTKCustomPieWidget::TTKCustomPieWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -49,7 +49,7 @@ void TTKCustomPieWidget::setBorderColor(const QColor &borderColor)
     }
 }
 
-void TTKCustomPieWidget::setDataPie(const QList<CustomPieData> &datas)
+void TTKCustomPieWidget::setDataPie(const QList<PieData> &datas)
 {
     m_datas = datas;
 }
@@ -153,7 +153,7 @@ void TTKCustomPieWidget::clearPie()
 double TTKCustomPieWidget::getSumValue()
 {
     double sum = 0;
-    foreach(const CustomPieData& data, m_datas)
+    foreach(const PieData& data, m_datas)
     {
         sum += data.m_value;
 
