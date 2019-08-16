@@ -69,6 +69,7 @@ Meter
 | Meter | TTKPercentMeterWidget |   完成   |
 | Meter | TTKArcMeterWidget |   完成   |
 | Meter | TTKPanelMeterWidget |   完成   |
+| Meter | TTKMiniMeterWidget |   完成   |
 
 Progress
 ----

@@ -186,6 +186,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 11: w = new TTKPanelMeterWidgetProperty;
             break;
+        case 12: w = new TTKMiniMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -460,6 +462,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKPercentMeterWidget");
     widget->addItem(":/icon/meter", "TTKArcMeterWidget");
     widget->addItem(":/icon/meter", "TTKPanelMeterWidget");
+    widget->addItem(":/icon/meter", "TTKMiniMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
