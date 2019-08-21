@@ -16,17 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttkwaveprogresswidgetproperty.cpp
 
-include($$PWD/animationProgressWidget/AnimationProgressWidget.pri)
-include($$PWD/circularProgressWidget/CircularProgressWidget.pri)
-include($$PWD/gifProgressWidget/GifProgressWidget.pri)
-include($$PWD/circleProgressWidget/CircleProgressWidget.pri)
-include($$PWD/progressWidget/ProgressWidget.pri)
-include($$PWD/radiusProgressWidget/RadiusProgressWidget.pri)
-include($$PWD/ringsMapProgressWidget/RingsMapProgressWidget.pri)
-include($$PWD/ringProgressWidget/RingProgressWidget.pri)
-include($$PWD/ringsProgressWidget/RingsProgressWidget.pri)
-include($$PWD/roundProgressWidget/RoundProgressWidget.pri)
-include($$PWD/loadingProgressWidget/LoadingProgressWidget.pri)
-include($$PWD/waveProgressWidget/WaveProgressWidget.pri)
+HEADERS += $$PWD/ttkwaveprogresswidgetproperty.h

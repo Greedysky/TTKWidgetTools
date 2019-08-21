@@ -229,6 +229,8 @@ void TTKToolsApplication::progressModuleChanged(int index)
             break;
         case 10: w = new TTKRingProgressWidgetProperty;
             break;
+        case 11: w = new TTKWaveProgressWidgetProperty;
+            break;
         default:
             break;
     }
@@ -486,6 +488,7 @@ void TTKToolsApplication::createProgressModule()
     widget->addItem(":/icon/progress", "TTKRingsProgressWidget");
     widget->addItem(":/icon/progress", "TTKRoundProgressWidget");
     widget->addItem(":/icon/progress", "TTKRingProgressWidget");
+    widget->addItem(":/icon/progress", "TTKWaveProgressWidget");
 
     widget->setObjectName("progressRow");
     widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");

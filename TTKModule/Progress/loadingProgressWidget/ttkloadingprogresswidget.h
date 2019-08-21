@@ -51,6 +51,11 @@ public:
 
     virtual QSize sizeHint() const override;
 
+protected:
+    void paintDot(QPainter &painter);
+    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void resizeEvent(QResizeEvent *event) override;
+
 private:
     int m_index, m_count;
     QColor m_dotColor;
@@ -62,10 +67,6 @@ private:
     QList<float> m_ranges;
     QList<Position> m_dots;
 
-protected:
-    void paintDot(QPainter &painter);
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
 
 };
 

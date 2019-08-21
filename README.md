@@ -85,6 +85,7 @@ Progress
 | Progress | TTKRingsProgressWidget |   完成   |
 | Progress | TTKRoundProgressWidget |   完成   |
 | Progress | TTKRingProgressWidget |   完成   |
+| Progress | TTKWaveProgressWidget |   完成   |
 
 Slider
 ----

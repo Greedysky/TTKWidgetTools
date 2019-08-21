@@ -30,5 +30,6 @@
 #include "roundProgressWidget/ttkroundprogresswidgetproperty.h"
 #include "loadingProgressWidget/ttkloadingprogresswidgetproperty.h"
 #include "ringProgressWidget/ttkringprogresswidgetproperty.h"
+#include "waveProgressWidget/ttkwaveprogresswidgetproperty.h"
 
 #endif // TTKPROGRESSINCLUDE_H
