@@ -16,10 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-INCLUDEPATH += $$PWD
+SOURCES += $$PWD/ttksplashscreenproperty.cpp
 
-include($$PWD/colorDialog/ColorDialog.pri)
-include($$PWD/moveDialog/MoveDialog.pri)
-include($$PWD/moveWidget/MoveWidget.pri)
-include($$PWD/moveResizeWidget/MoveResizeWidget.pri)
-include($$PWD/splashScreen/SplashScreen.pri)
+HEADERS += $$PWD/ttksplashscreenproperty.h

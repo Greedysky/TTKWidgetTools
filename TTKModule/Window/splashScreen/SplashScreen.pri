@@ -18,8 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/colorDialog/ColorDialog.pri)
-include($$PWD/moveDialog/MoveDialog.pri)
-include($$PWD/moveWidget/MoveWidget.pri)
-include($$PWD/moveResizeWidget/MoveResizeWidget.pri)
-include($$PWD/splashScreen/SplashScreen.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttksplashscreen.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttksplashscreen.cpp
+
+}

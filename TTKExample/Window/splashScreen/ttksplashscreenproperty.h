@@ -1,5 +1,5 @@
-#ifndef TTKWINDOWINCLUDE_H
-#define TTKWINDOWINCLUDE_H
+#ifndef TTKSPLASHSCREENPROPERTY_H
+#define TTKSPLASHSCREENPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,10 +19,24 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "colorDialog/ttkcolordialogproperty.h"
-#include "moveDialog/ttkmovedialogproperty.h"
-#include "moveResizeWidget/ttkmoveresizewidgetproperty.h"
-#include "moveWidget/ttkmovewidgetproperty.h"
-#include "splashScreen/ttksplashscreenproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKWINDOWINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKSplashScreenProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKSplashScreenProperty(QWidget *parent = nullptr);
+    virtual ~TTKSplashScreenProperty();
+
+private Q_SLOTS:
+    void showWidget();
+
+private:
+    QWidget *m_label;
+
+};
+
+#endif // TTKSPLASHSCREENPROPERTY_H
