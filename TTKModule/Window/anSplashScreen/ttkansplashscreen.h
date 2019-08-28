@@ -1,5 +1,5 @@
-#ifndef TTKLIGHTPOINTLABEL_H
-#define TTKLIGHTPOINTLABEL_H
+#ifndef TTKANSPLASHSCREEN_H
+#define TTKANSPLASHSCREEN_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,41 +19,56 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
+#include <QLabel>
+#include <QGridLayout>
+
 /*!
-* @author Greedysky <greedysky@163.com>
-*         feiyangqingyun <feiyangqingyun@163.com>
-*/
-class TTK_CORE_EXPORT TTKLightPointLabel : public QWidget
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_CORE_EXPORT TTKAnSplashScreen : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKLightPointLabel)
+    TTK_DECLARE_MODULE(TTKAnSplashScreen)
 public:
-    explicit TTKLightPointLabel(QWidget *parent = nullptr);
-    ~TTKLightPointLabel();
+    explicit TTKAnSplashScreen(QWidget *parent = nullptr);
+    ~TTKAnSplashScreen();
 
-    void setStep(int step);
-    void setInterval(int interval);
-    void setBgColor(const QColor &bgColor);
+    void setWidget(QWidget *main);
+    void setLoadText(const QString &title);
+    void setLoadTime(int count);
+    void start();
 
-    virtual QSize sizeHint() const override;
+Q_SIGNALS:
+    void finish();
+
+private Q_SLOTS:
+    void countTimeout();
 
 protected:
+    virtual void mousePressEvent(QMouseEvent *event) override;
+    virtual void mouseMoveEvent(QMouseEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
-    void drawBg(QPainter *painter);
 
 private:
-    int m_step;
-    int m_interval;
-    QColor m_bgColor;
+    void init();
+    void initWidget();
+    void closeWidget();
 
-    int m_offset;
-    bool m_add;
-    QTimer *m_timer;
+private:
+    QGridLayout *m_gridLayout;
+    QLabel *m_numLabel;
+    QLabel *m_textLabel;
+    QWidget *m_mainWidget;
+
+    QPoint m_mousePos;
+    QTimer *m_loadTimer, *m_countTimer;
+
+    int m_w, m_h;
+    int m_dig, m_count;
 
 };
 
-#endif // TTKLIGHTPOINTLABEL_H
+#endif // TTKANSPLASHSCREEN_H

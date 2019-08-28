@@ -32,7 +32,7 @@ class TTK_CORE_EXPORT TTKSpeedRingMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSpeedRingMeterWidget)
 public:
-    explicit TTKSpeedRingMeterWidget(QWidget *parent = 0);
+    explicit TTKSpeedRingMeterWidget(QWidget *parent = nullptr);
     virtual ~TTKSpeedRingMeterWidget();
 
     void setRange(double minValue, double maxValue);

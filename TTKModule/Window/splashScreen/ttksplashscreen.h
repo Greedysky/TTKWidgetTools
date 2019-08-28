@@ -44,12 +44,14 @@ public:
 
     void start();
 
+Q_SIGNALS:
+    void finish();
+
 private Q_SLOTS:
      void updateProgress();
 
 private:
      virtual void mousePressEvent(QMouseEvent *event) override;
-     void closeWidget();
 
 private:
      int m_elapseTime;

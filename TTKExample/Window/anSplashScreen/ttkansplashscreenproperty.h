@@ -1,5 +1,5 @@
-#ifndef TTKLIGHTPOINTLABEL_H
-#define TTKLIGHTPOINTLABEL_H
+#ifndef TTKANSPLASHSCREENPROPERTY_H
+#define TTKANSPLASHSCREENPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,41 +19,24 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
-#include "ttkglobal.h"
-#include "ttkglobaldefine.h"
+#include "ttkwidgetproperty.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
-*         feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKLightPointLabel : public QWidget
+class TTK_CORE_EXPORT TTKAnSplashScreenProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKLightPointLabel)
 public:
-    explicit TTKLightPointLabel(QWidget *parent = nullptr);
-    ~TTKLightPointLabel();
+    explicit TTKAnSplashScreenProperty(QWidget *parent = nullptr);
+    virtual ~TTKAnSplashScreenProperty();
 
-    void setStep(int step);
-    void setInterval(int interval);
-    void setBgColor(const QColor &bgColor);
-
-    virtual QSize sizeHint() const override;
-
-protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    void drawBg(QPainter *painter);
+private Q_SLOTS:
+    void showWidget();
 
 private:
-    int m_step;
-    int m_interval;
-    QColor m_bgColor;
-
-    int m_offset;
-    bool m_add;
-    QTimer *m_timer;
+    QWidget *m_label;
 
 };
 
-#endif // TTKLIGHTPOINTLABEL_H
+#endif // TTKANSPLASHSCREENPROPERTY_H

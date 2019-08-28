@@ -14,9 +14,9 @@ TTKSplashScreen::TTKSplashScreen(QWidget *parent)
 }
 
 TTKSplashScreen::TTKSplashScreen(int mstime, QWidget *parent)
-    : QSplashScreen(parent),
-      m_elapseTime(mstime),
-      m_mainWidget(nullptr)
+    : QSplashScreen(parent)
+    , m_elapseTime(mstime)
+    , m_mainWidget(nullptr)
 {
     m_progressBar = new QProgressBar(this);
     m_progressBar->setStyleSheet(PROGRESS_STYLESHEET);
@@ -72,7 +72,13 @@ void TTKSplashScreen::updateProgress()
 {
     if(m_progressBar->value() >= 100)
     {
-        closeWidget();
+        emit finish();
+
+        close();
+        if(m_mainWidget)
+        {
+            m_mainWidget->show();
+        }
     }
     m_progressBar->setValue(m_progressBar->value() + 1);
 }
@@ -80,13 +86,4 @@ void TTKSplashScreen::updateProgress()
 void TTKSplashScreen::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-}
-
-void TTKSplashScreen::closeWidget()
-{
-    close();
-    if(m_mainWidget)
-    {
-        m_mainWidget->show();
-    }
 }

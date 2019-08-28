@@ -377,6 +377,8 @@ void TTKToolsApplication::windowModuleChanged(int index)
             break;
         case 4: w = new TTKSplashScreenProperty;
             break;
+        case 5: w = new TTKAnSplashScreenProperty;
+            break;
         default:
             break;
     }
@@ -574,6 +576,7 @@ void TTKToolsApplication::createWindowModule()
     widget->addItem(":/icon/window", "TTKMoveResizeWidget");
     widget->addItem(":/icon/window", "TTKMoveWidget");
     widget->addItem(":/icon/window", "TTKSplashScreen");
+    widget->addItem(":/icon/window", "TTKAnSplashScreen");
 
     widget->setObjectName("windowRow");
     widget->setStyleSheet("#windowRow{background-color:rgba(255, 255, 255, 50)}");

@@ -40,7 +40,7 @@ public:
         LineStyleCircle = 3
     };
 
-    explicit TTKAntLineLabel(QWidget *parent = 0);
+    explicit TTKAntLineLabel(QWidget *parent = nullptr);
     ~TTKAntLineLabel();
 
     void setLineLen(int lineLen);

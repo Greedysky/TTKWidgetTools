@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="lb_loading">res/lb_loading.png</file>
+    </qresource>
+</RCC>
