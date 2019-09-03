@@ -199,8 +199,11 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
 
 
 TTKTTKPictureFlowWidgetState::TTKTTKPictureFlowWidgetState()
-    : m_backgroundColor(0), m_slideWidth(150), m_slideHeight(200),
-      m_reflectionEffect(BlurredReflection), m_centerIndex(0)
+    : m_backgroundColor(0),
+      m_slideWidth(150),
+      m_slideHeight(200),
+      m_reflectionEffect(BlurredReflection),
+      m_centerIndex(0)
 {
 
 }
@@ -276,7 +279,10 @@ void TTKTTKPictureFlowWidgetState::reset()
 
 
 TTKTTKPictureFlowWidgetAnimator::TTKTTKPictureFlowWidgetAnimator()
-    : m_target(0), m_step(0), m_frame(0), m_state(nullptr)
+    : m_target(0),
+      m_step(0),
+      m_frame(0),
+      m_state(nullptr)
 {
 
 }
@@ -443,8 +449,13 @@ void TTKTTKPictureFlowWidgetAnimator::update()
 
 
 TTKTTKPictureFlowWidgetSoftwareRenderer::TTKTTKPictureFlowWidgetSoftwareRenderer()
-    : m_dirty(false), m_widget(nullptr), m_state(nullptr), m_size(0,0), m_bgcolor(0),
-      m_effect(-1), m_blankSurface(nullptr)
+    : m_dirty(false),
+      m_widget(nullptr),
+      m_state(nullptr),
+      m_size(0,0),
+      m_bgcolor(0),
+      m_effect(-1),
+      m_blankSurface(nullptr)
 {
 
 }

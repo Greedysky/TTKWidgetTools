@@ -4,8 +4,8 @@
 
 TTKRingsMapProgressWidget::TTKRingsMapProgressWidget(QWidget *parent)
     : QWidget(parent),
-    m_angle(0),
-    m_value(0)
+      m_angle(0),
+      m_value(0)
 {
 
 }

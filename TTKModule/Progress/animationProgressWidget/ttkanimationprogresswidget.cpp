@@ -7,8 +7,8 @@
 
 TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
     : QWidget(parent),
-    m_index(0),
-    m_value(0)
+      m_index(0),
+      m_value(0)
 {
     QPixmap pix(":/res/lb_animate");
 

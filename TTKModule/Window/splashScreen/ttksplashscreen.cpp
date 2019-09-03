@@ -14,9 +14,9 @@ TTKSplashScreen::TTKSplashScreen(QWidget *parent)
 }
 
 TTKSplashScreen::TTKSplashScreen(int mstime, QWidget *parent)
-    : QSplashScreen(parent)
-    , m_elapseTime(mstime)
-    , m_mainWidget(nullptr)
+    : QSplashScreen(parent),
+      m_elapseTime(mstime),
+      m_mainWidget(nullptr)
 {
     m_progressBar = new QProgressBar(this);
     m_progressBar->setStyleSheet(PROGRESS_STYLESHEET);

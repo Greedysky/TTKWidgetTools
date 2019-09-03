@@ -96,7 +96,8 @@ void TTKToggleThumb::updateOffset()
 
 
 TTKToggleTrack::TTKToggleTrack(TTKToggleWidget *parent)
-    : QWidget(parent), m_toggle(parent)
+    : QWidget(parent),
+      m_toggle(parent)
 {
     parent->installEventFilter(this);
 }

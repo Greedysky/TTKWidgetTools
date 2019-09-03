@@ -5,8 +5,8 @@
 #include <QMouseEvent>
 
 TTKAnSplashScreen::TTKAnSplashScreen(QWidget *parent)
-    : QWidget(parent)
-    , m_mainWidget(nullptr)
+    : QWidget(parent),
+      m_mainWidget(nullptr)
 {
     initWidget();
     init();
