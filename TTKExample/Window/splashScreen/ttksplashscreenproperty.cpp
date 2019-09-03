@@ -9,7 +9,13 @@ TTKSplashScreenProperty::TTKSplashScreenProperty(QWidget *parent)
     m_item = new QToolButton(this);
     connect(m_item, SIGNAL(clicked()), SLOT(showWidget()));
     //
-    m_label = nullptr;
+    TTKSplashScreen *widget = new TTKSplashScreen(this);
+    m_label = widget;
+    QWidget *mainWidget = new QWidget(this);
+    mainWidget->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    mainWidget->resize(300, 300);
+
+    widget->setWidget(mainWidget);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
@@ -24,6 +30,15 @@ TTKSplashScreenProperty::TTKSplashScreenProperty(QWidget *parent)
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
+    QtProperty *elapseTimeItem = m_intManager->addProperty("ElapseTime");
+    m_intManager->setMinimum(elapseTimeItem, 0);
+    m_intManager->setValue(elapseTimeItem, 1000);
+    objectItem->addSubProperty(elapseTimeItem);
+    //
+    QtProperty *pixmapItem = m_pixmapManager->addProperty("Pixmap");
+    m_pixmapManager->setValue(pixmapItem, ":/res/1");
+    objectItem->addSubProperty(pixmapItem);
+    //
     m_browser->addProperty(objectItem);
 }
 
@@ -32,19 +47,30 @@ TTKSplashScreenProperty::~TTKSplashScreenProperty()
 
 }
 
+void TTKSplashScreenProperty::intPropertyChanged(QtProperty *property, int value)
+{
+    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
+    if(property->propertyName() == "ElapseTime")
+    {
+        widget->setElapseTime(value);
+    }
+}
+
+void TTKSplashScreenProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
+{
+    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_item);
+    if(property->propertyName() == "Pixmap")
+    {
+        widget->setPixmap(value);
+    }
+}
+
 void TTKSplashScreenProperty::showWidget()
 {
-    delete m_label;
-    TTKSplashScreen *widget = new TTKSplashScreen(this);
-    m_label = widget;
-
-    QWidget *mainWidget = new QWidget(this);
-    mainWidget->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
-    mainWidget->resize(300, 300);
-
-    widget->setWidget(mainWidget);
-    widget->setPixmap(QPixmap(":/res/1"));
-    widget->setElapseTime(1000);
+    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
+    if(widget->widget() && widget->widget()->isVisible())
+    {
+        widget->widget()->hide();
+    }
     widget->start();
-
 }

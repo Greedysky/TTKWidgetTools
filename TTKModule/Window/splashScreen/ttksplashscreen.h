@@ -39,6 +39,8 @@ public:
     virtual ~TTKSplashScreen();
 
     void setWidget(QWidget *main);
+    QWidget *widget();
+
     void setElapseTime(int mstime);
     void setPixmap(const QPixmap &pixmap);
 

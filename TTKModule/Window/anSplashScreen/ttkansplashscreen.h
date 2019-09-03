@@ -37,8 +37,10 @@ public:
     ~TTKAnSplashScreen();
 
     void setWidget(QWidget *main);
+    QWidget *widget();
+
     void setLoadText(const QString &title);
-    void setLoadTime(int count);
+    void setLoadCount(int count);
     void start();
 
 Q_SIGNALS:

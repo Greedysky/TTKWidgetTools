@@ -25,5 +25,6 @@
 #include "moveWidget/ttkmovewidgetproperty.h"
 #include "splashScreen/ttksplashscreenproperty.h"
 #include "anSplashScreen/ttkansplashscreenproperty.h"
+#include "notifyWindow/ttknotifywindowproperty.h"
 
 #endif // TTKWINDOWINCLUDE_H

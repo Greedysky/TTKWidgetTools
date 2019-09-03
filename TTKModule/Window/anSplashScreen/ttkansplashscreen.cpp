@@ -23,6 +23,11 @@ void TTKAnSplashScreen::setWidget(QWidget *main)
     m_mainWidget = main;
 }
 
+QWidget *TTKAnSplashScreen::widget()
+{
+    return m_mainWidget;
+}
+
 void TTKAnSplashScreen::setLoadText(const QString &title)
 {
     if(!title.isEmpty())
@@ -31,7 +36,7 @@ void TTKAnSplashScreen::setLoadText(const QString &title)
     }
 }
 
-void TTKAnSplashScreen::setLoadTime(int count)
+void TTKAnSplashScreen::setLoadCount(int count)
 {
     if(m_count != count)
     {

@@ -1,5 +1,5 @@
-#ifndef TTKANSPLASHSCREENPROPERTY_H
-#define TTKANSPLASHSCREENPROPERTY_H
+#ifndef TTKNOTIFYWINDOWPROPERTY_H
+#define TTKNOTIFYWINDOWPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -24,20 +24,23 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKAnSplashScreenProperty : public TTKWidgetProperty
+class TTK_CORE_EXPORT TTKNotifyWindowProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
-    explicit TTKAnSplashScreenProperty(QWidget *parent = nullptr);
-    virtual ~TTKAnSplashScreenProperty();
+    explicit TTKNotifyWindowProperty(QWidget *parent = nullptr);
+    virtual ~TTKNotifyWindowProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;
     void showWidget();
 
 private:
-    QWidget *m_label;
+    QObject *m_manager;
+    QString m_title, m_body, m_icon;
 
 };
 
-#endif // TTKANSPLASHSCREENPROPERTY_H
+#endif // TTKNOTIFYWINDOWPROPERTY_H

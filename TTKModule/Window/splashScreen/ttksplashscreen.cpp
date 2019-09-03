@@ -50,6 +50,11 @@ void TTKSplashScreen::setWidget(QWidget *main)
     m_mainWidget = main;
 }
 
+QWidget *TTKSplashScreen::widget()
+{
+    return m_mainWidget;
+}
+
 void TTKSplashScreen::setElapseTime(int mstime)
 {
     m_elapseTime = mstime;
@@ -72,6 +77,12 @@ void TTKSplashScreen::updateProgress()
 {
     if(m_progressBar->value() >= 100)
     {
+        if(m_timer->isActive())
+        {
+            m_timer->stop();
+        }
+        m_progressBar->setValue(0);
+
         emit finish();
 
         close();

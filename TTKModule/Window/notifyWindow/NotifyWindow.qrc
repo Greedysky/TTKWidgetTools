@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="lb_message">res/lb_message.png</file>
+    </qresource>
+</RCC>

@@ -131,6 +131,7 @@ Window
 | Window | TTKMoveWidget |   完成   |
 | Window | TTKSplashScreen |   完成   |
 | Window | TTKAnSplashScreen |   完成   |
+| Window | TTKNotifyWindow |   完成   |
 
 
 Screenshots
