@@ -66,8 +66,9 @@ void TTKMoveWidget::mouseMoveEvent(QMouseEvent *event)
         event->ignore();
         return;
     }
-    int xpos = event->globalX() - m_pressAt.x();
-    int ypos = event->globalY() - m_pressAt.y();
+
+    const int xpos = event->globalX() - m_pressAt.x();
+    const int ypos = event->globalY() - m_pressAt.y();
     m_pressAt = event->globalPos();
     move( x() + xpos, y() + ypos);
 }

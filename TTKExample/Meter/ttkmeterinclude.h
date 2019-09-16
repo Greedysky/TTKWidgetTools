@@ -32,5 +32,6 @@
 #include "arcMeterWidget/ttkarcmeterwidgetproperty.h"
 #include "panelMeterWidget/ttkpanelmeterwidgetproperty.h"
 #include "miniMeterWidget/ttkminimeterwidgetproperty.h"
+#include "roundMeterWidget/ttkroundmeterwidgetproperty.h"
 
 #endif // TTKMETERINCLUDE_H

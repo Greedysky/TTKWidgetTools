@@ -50,7 +50,7 @@ void TTKMoveDialog::paintEvent(QPaintEvent *event)
 
 void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 {
-    QWidget::mousePressEvent(event);
+    QDialog::mousePressEvent(event);
     if( event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
     {
         m_leftButtonPress = true;
@@ -60,21 +60,22 @@ void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 
 void TTKMoveDialog::mouseMoveEvent(QMouseEvent *event)
 {
-    QWidget::mouseMoveEvent(event);
+    QDialog::mouseMoveEvent(event);
     if( !m_leftButtonPress )///Not press the left key
     {
         event->ignore();
         return;
     }
-    int xpos = event->globalX() - m_pressAt.x();
-    int ypos = event->globalY() - m_pressAt.y();
+
+    const int xpos = event->globalX() - m_pressAt.x();
+    const int ypos = event->globalY() - m_pressAt.y();
     m_pressAt = event->globalPos();
     move( x() + xpos, y() + ypos);
 }
 
 void TTKMoveDialog::mouseReleaseEvent(QMouseEvent *event)
 {
-    QWidget::mouseReleaseEvent(event);
+    QDialog::mouseReleaseEvent(event);
     m_pressAt = event->globalPos();
     m_leftButtonPress = false;
 }

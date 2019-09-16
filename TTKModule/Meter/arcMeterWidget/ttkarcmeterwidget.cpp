@@ -3,6 +3,7 @@
 #include <qmath.h>
 #include <QTimer>
 #include <QPainter>
+#include <QDebug>
 
 TTKArcMeterWidget::TTKArcMeterWidget(QWidget *parent)
     : QWidget(parent)

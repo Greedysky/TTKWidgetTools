@@ -70,6 +70,7 @@ Meter
 | Meter | TTKArcMeterWidget |   完成   |
 | Meter | TTKPanelMeterWidget |   完成   |
 | Meter | TTKMiniMeterWidget |   完成   |
+| Meter | TTKRoundMeterWidget |   完成   |
 
 Progress
 ----
