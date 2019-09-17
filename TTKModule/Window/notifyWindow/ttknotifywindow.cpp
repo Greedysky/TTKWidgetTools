@@ -1,5 +1,6 @@
 #include "ttknotifywindow.h"
 
+#include <QUrl>
 #include <QTimer>
 #include <QBoxLayout>
 #include <QMouseEvent>
@@ -54,11 +55,7 @@ TTKNotify::TTKNotify(int time, QWidget *parent)
     m_closeBtn = new QPushButton("×", m_backgroundLabel);
     m_closeBtn->setObjectName("notify-close-btn");
     m_closeBtn->setFixedSize(24, 24);
-    connect(m_closeBtn, &QPushButton::clicked, this, [this]
-    {
-        emit disappeared();
-    });
-
+    connect(m_closeBtn, SIGNAL(clicked()), SIGNAL(disappeared()));
     setStyleSheet("#notify-background {border: 1px solid #ccc; background:white;border-radius: 4px;} "
                   "#notify-title{font-weight: bold;color: #333;font-size: 14px;}"
                   "#notify-body{color: #444;}"
@@ -103,34 +100,36 @@ void TTKNotify::showGriant()
     m_bodyLabel->setText(text);
 
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);
+    connect(animation, SIGNAL(finished()), SLOT(showGriantChanged()));
     animation->setStartValue(0);
     animation->setEndValue(1);
     animation->setDuration(200);
     animation->start();
-
-    connect(animation, &QPropertyAnimation::finished, this, [animation, this]()
-    {
-        animation->deleteLater();
-        QTimer::singleShot(m_displayTime, this, [this](){
-            hideGriant();
-        });
-    });
 }
 
 void TTKNotify::hideGriant()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);
+    connect(animation, SIGNAL(finished()), SLOT(hideGriantChanged()));
     animation->setStartValue(this->windowOpacity());
     animation->setEndValue(0);
     animation->setDuration(200);
     animation->start();
+}
 
-    connect(animation, &QPropertyAnimation::finished, this, [animation, this]()
-    {
-        hide();
-        animation->deleteLater();
-        emit disappeared();
-    });
+void TTKNotify::showGriantChanged()
+{
+    QPropertyAnimation *animation = qobject_cast<QPropertyAnimation*>(sender());
+    animation->deleteLater();
+    QTimer::singleShot(m_displayTime, this, SLOT(hideGriant()));
+}
+
+void TTKNotify::hideGriantChanged()
+{
+    QPropertyAnimation *animation = qobject_cast<QPropertyAnimation*>(sender());
+    hide();
+    animation->deleteLater();
+    emit disappeared();
 }
 
 void TTKNotify::mousePressEvent(QMouseEvent *event)
@@ -139,7 +138,7 @@ void TTKNotify::mousePressEvent(QMouseEvent *event)
     {
         if(!m_url.isEmpty())
         {
-            QDesktopServices::openUrl(m_url);
+            QDesktopServices::openUrl(QUrl(m_url));
         }
         hideGriant();
     }
@@ -171,6 +170,23 @@ void TTKNotifyManager::setDisplayTime(int ms)
     m_displayTime = ms;
 }
 
+void TTKNotifyManager::disappeared()
+{
+   TTKNotify *notify = qobject_cast<TTKNotify*>(sender());
+    m_notifyList.removeAll(notify);
+    rearrange();
+
+    if(m_notifyList.size() == m_maxCount - 1)
+    {
+        QTimer::singleShot(300, this, SLOT(showNext()));
+    }
+    else
+    {
+        showNext();
+    }
+    notify->deleteLater();
+}
+
 void TTKNotifyManager::rearrange()
 {
     QDesktopWidget *desktop = QApplication::desktop();
@@ -184,15 +200,11 @@ void TTKNotifyManager::rearrange()
 
         const QPoint &pos = bottomRignt - QPoint(WIDTH + RIGHT, (HEIGHT + SPACE) * (index + 1) - SPACE + BOTTOM);
         QPropertyAnimation *animation = new QPropertyAnimation(notify, "pos", this);
+        connect(animation, SIGNAL(finished()), animation, SLOT(deleteLater()));
         animation->setStartValue(notify->pos());
         animation->setEndValue(pos);
         animation->setDuration(300);
         animation->start();
-
-        connect(animation, &QPropertyAnimation::finished, this, [animation, this]()
-        {
-            animation->deleteLater();
-        });
     }
 }
 
@@ -206,6 +218,7 @@ void TTKNotifyManager::showNext()
 
     const TTKNotifyData &data = m_dataQueue.dequeue();
     TTKNotify *notify = new TTKNotify(m_displayTime);
+    connect(notify, SIGNAL(disappeared()), SLOT(disappeared()));
     notify->setIcon(data.m_icon);
     notify->setTitle(data.m_title);
     notify->setBody(data.m_body);
@@ -220,23 +233,4 @@ void TTKNotifyManager::showNext()
     notify->move(pos);
     notify->showGriant();
     m_notifyList.append(notify);
-
-    connect(notify, &TTKNotify::disappeared, this, [notify, this]()
-    {
-        m_notifyList.removeAll(notify);
-        rearrange();
-
-        if(m_notifyList.size() == m_maxCount - 1)
-        {
-            QTimer::singleShot(300, this, [this]
-            {
-               showNext();
-            });
-        }
-        else
-        {
-            showNext();
-        }
-        notify->deleteLater();
-    });
 }

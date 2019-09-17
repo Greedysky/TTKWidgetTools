@@ -44,8 +44,12 @@ public:
 Q_SIGNALS:
     void disappeared();
 
-private:
+private Q_SLOTS:
     void hideGriant();
+    void showGriantChanged();
+    void hideGriantChanged();
+
+private:
     virtual void mousePressEvent(QMouseEvent *event) override;
 
 private:
@@ -83,7 +87,8 @@ public:
     void setMaxCount(int count);
     void setDisplayTime(int ms);
 
-private:
+private Q_SLOTS:
+    void disappeared();
     void rearrange();
     void showNext();
 

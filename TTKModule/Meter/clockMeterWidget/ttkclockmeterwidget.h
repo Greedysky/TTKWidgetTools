@@ -42,9 +42,6 @@ public:
     explicit TTKClockMeterWidget(QWidget *parent = nullptr);
     ~TTKClockMeterWidget();
 
-    void setSystemDateTime(const QString &year, const QString &month, const QString &day,
-                           const QString &hour, const QString &min, const QString &sec);
-
     void setCrownColorStart(const QColor &crownColorStart);
     void setCrownColorEnd(const QColor &crownColorEnd);
 
@@ -60,7 +57,6 @@ public:
     virtual QSize sizeHint() const override;
 
 private Q_SLOTS:
-    void updateStyle();
     void updateTime();
     void updateSpring();
 
@@ -93,8 +89,6 @@ private:
 
     QTimer *m_timerSpring;
     double m_angleSpring;
-
-    QAction *m_action_secondstyle;
 
 };
 

@@ -3,19 +3,11 @@
 
 #include <QTime>
 #include <QTimer>
-#include <QAction>
 #include <QPainter>
-#include <QProcess>
 
 TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     : QWidget(parent)
 {
-    m_action_secondstyle = new QAction("弹簧效果", this);
-    connect(m_action_secondstyle, SIGNAL(triggered(bool)), this, SLOT(updateStyle()));
-    addAction(m_action_secondstyle);
-
-    setContextMenuPolicy(Qt::ActionsContextMenu);
-
     m_crownColorStart = QColor(255, 255, 255);
     m_crownColorEnd = QColor(166, 166, 166);
 
@@ -53,31 +45,6 @@ TTKClockMeterWidget::~TTKClockMeterWidget()
     {
         m_timerSpring->stop();
     }
-}
-
-void TTKClockMeterWidget::setSystemDateTime(const QString &year, const QString &month, const QString &day,
-                                            const QString &hour, const QString &min, const QString &sec)
-{
-#ifdef Q_OS_WIN
-    QProcess p(0);
-    p.start("cmd");
-    p.waitForStarted();
-    p.write(QString("date %1-%2-%3\n").arg(year).arg(month).arg(day).toLatin1());
-    p.closeWriteChannel();
-    p.waitForFinished(1000);
-    p.close();
-
-    p.start("cmd");
-    p.waitForStarted();
-    p.write(QString("time %1:%2:%3.00\n").arg(hour).arg(min).arg(sec).toLatin1());
-    p.closeWriteChannel();
-    p.waitForFinished(1000);
-    p.close();
-#else
-    const QString &cmd = QString("date %1%2%3%4%5.%6").arg(month).arg(day).arg(hour).arg(min).arg(year).arg(sec);
-    system(cmd.toStdString().data());
-    system("hwclock -w");
-#endif
 }
 
 void TTKClockMeterWidget::setCrownColorStart(const QColor &crownColorStart)
@@ -156,57 +123,12 @@ void TTKClockMeterWidget::setSecondStyle(TTKClockMeterWidget::SecondStyle second
         m_timer->setInterval(1000);
     }
 
-    if(secondStyle == SecondStyleSpring)
-    {
-        m_action_secondstyle->setText("连续效果");
-    }
-    else if(secondStyle == SecondStyleContinue)
-    {
-        m_action_secondstyle->setText("隐藏效果");
-    }
-    else if(secondStyle == SecondStyleHide)
-    {
-        m_action_secondstyle->setText("普通效果");
-    }
-    else if(secondStyle == SecondStyleNormal)
-    {
-        m_action_secondstyle->setText("弹簧效果");
-        updateTime();
-        return;
-    }
-    update();
+    updateTime();
 }
 
 QSize TTKClockMeterWidget::sizeHint() const
 {
     return QSize(180, 180);
-}
-
-void TTKClockMeterWidget::updateStyle()
-{
-    QAction *action = (QAction *)sender();
-    const QString &str = action->text();
-
-    if(str == "弹簧效果")
-    {
-        action->setText("连续效果");
-        setSecondStyle(SecondStyleSpring);
-    }
-    else if(str == "连续效果")
-    {
-        action->setText("隐藏效果");
-        setSecondStyle(SecondStyleContinue);
-    }
-    else if(str == "隐藏效果")
-    {
-        action->setText("普通效果");
-        setSecondStyle(SecondStyleHide);
-    }
-    else if(str == "普通效果")
-    {
-        action->setText("弹簧效果");
-        setSecondStyle(SecondStyleNormal);
-    }
 }
 
 void TTKClockMeterWidget::updateTime()

@@ -42,6 +42,7 @@ unix{
 }
 
 INCLUDEPATH += $$PWD
+QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += \
     $$PWD/ttkwidgetproperty.cpp \
