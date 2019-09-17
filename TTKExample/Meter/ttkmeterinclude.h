@@ -33,5 +33,6 @@
 #include "panelMeterWidget/ttkpanelmeterwidgetproperty.h"
 #include "miniMeterWidget/ttkminimeterwidgetproperty.h"
 #include "roundMeterWidget/ttkroundmeterwidgetproperty.h"
+#include "clockMeterWidget/ttkclockmeterwidgetproperty.h"
 
 #endif // TTKMETERINCLUDE_H

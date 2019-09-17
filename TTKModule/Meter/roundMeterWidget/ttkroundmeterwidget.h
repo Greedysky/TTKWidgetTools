@@ -67,11 +67,11 @@ private Q_SLOTS:
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
-	void drawDial(QPainter *painter);
-	void drawBgOut(QPainter *painter);
-	void drawBgRound(QPainter *painter);
-	void drawBgCenter(QPainter *painter);
-	void drawText(QPainter *painter);
+    void drawDial(QPainter *painter);
+    void drawBgOut(QPainter *painter);
+    void drawBgRound(QPainter *painter);
+    void drawBgCenter(QPainter *painter);
+    void drawText(QPainter *painter);
 
 private:
     double m_minValue;
