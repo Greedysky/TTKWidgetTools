@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QWidget>
+#include <QLabel>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
@@ -29,25 +29,56 @@
 class TTK_CORE_EXPORT TTKMarqueeLabel : public QWidget
 {
     Q_OBJECT
+    Q_ENUMS(MoveStyle)
     TTK_DECLARE_MODULE(TTKMarqueeLabel)
 public:
-    explicit TTKMarqueeLabel(QWidget *parent = nullptr);
+    enum MoveStyle {
+        MoveStyleLeftAndRight = 0,
+        MoveStyleLeftToRight = 1,
+        MoveStyleRightToLeft = 2
+    };
 
-    void setText(const QString &newText);
-    inline QString text() const { return m_myText.trimmed(); }
+    explicit TTKMarqueeLabel(QWidget *parent = nullptr);
+    ~TTKMarqueeLabel();
+
+    void setText(const QString &text);
+    void setStep(int step);
+    void setInterval(int interval);
+
+    void setMouseHoverStop(bool mouseHoverStop);
+
+    void setForeground(const QColor &foreground);
+    void setBackground(const QColor &background);
+
+    void setMoveStyle(MoveStyle moveStyle);
 
     virtual QSize sizeHint() const override;
 
+private Q_SLOTS:
+    void timeout();
+
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void showEvent(QShowEvent *event) override;
-    virtual void hideEvent(QHideEvent *event) override;
-    virtual void timerEvent(QTimerEvent *event) override;
     virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void enterEvent(QEvent *event) override;
+    virtual void leaveEvent(QEvent *event) override;
 
 private:
-    QString m_myText;
-    int m_offset, m_myTimerId;
+    QString m_text;
+    int m_step;
+    int m_interval;
+    bool m_mouseHoverStop;
+
+    bool m_mouseHover;
+    bool m_moveRight;
+    int m_initX;
+    int m_initY;
+    QLabel *m_labText;
+    QTimer *m_timer;
+
+    QColor m_foreground;
+    QColor m_background;
+
+    MoveStyle m_moveStyle;
 
 };
 
