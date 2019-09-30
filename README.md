@@ -72,6 +72,7 @@ Meter
 | Meter | TTKMiniMeterWidget |   完成   |
 | Meter | TTKRoundMeterWidget |   完成   |
 | Meter | TTKClockMeterWidget |   完成   |
+| Meter | TTKTemperatureMeterWidget |   完成   |
 
 Progress
 ----

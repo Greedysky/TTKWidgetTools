@@ -192,6 +192,8 @@ void TTKToolsApplication::meterModuleChanged(int index)
             break;
         case 14: w = new TTKClockMeterWidgetProperty;
             break;
+        case 15: w = new TTKTemperatureMeterWidgetProperty;
+            break;
         default:
             break;
     }
@@ -477,6 +479,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKMiniMeterWidget");
     widget->addItem(":/icon/meter", "TTKRoundMeterWidget");
     widget->addItem(":/icon/meter", "TTKClockMeterWidget");
+    widget->addItem(":/icon/meter", "TTKTemperatureMeterWidget");
 
     widget->setObjectName("meterRow");
     widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
