@@ -19,122 +19,123 @@ Button
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Button | TTKCheckButtonWidget |   完成   |
-| Button | TTKFlatButtonWidget |   完成   |
-| Button | TTKRadioButtonWidget |   完成   |
-| Button | TTKToggleWidget |   完成   |
-| Button | TTKToolMenuWidget |   完成   |
-| Button | TTKColorButtonWidget |   完成   |
+| Button | TTKCheckButtonWidget |   Finish   |
+| Button | TTKFlatButtonWidget |   Finish   |
+| Button | TTKRadioButtonWidget |   Finish   |
+| Button | TTKToggleWidget |   Finish   |
+| Button | TTKToolMenuWidget |   Finish   |
+| Button | TTKColorButtonWidget |   Finish   |
 
 Label
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Label | TTKCircleClickLabel |   完成   |
-| Label | TTKCodeAreaLabel |   完成   |
-| Label | TTKLedPageLabel |   完成   |
-| Label | TTKMarqueeLabel |   完成   |
-| Label | TTKRoundAnimationLabel |   完成   |
-| Label | TTKSplitItemLabel | 完成     |
-| Label | TTKToastLabel |   完成   |
-| Label | TTKTransitionAnimationLabel |   完成   |
-| Label | TTKBarRulerLabel |   完成   |
-| Label | TTKBatteryLabel | 完成     |
-| Label | TTKCloudPanelLabel |   完成   |
-| Label | TTKCPUMemoryLabel |   完成   |
-| Label | TTKAntLineLabel |   完成   |
-| Label | TTKTileBackgroundLabel |   完成   |
-| Label | TTKLightPointLabel |   完成   |
+| Label | TTKCircleClickLabel |   Finish   |
+| Label | TTKCodeAreaLabel |   Finish   |
+| Label | TTKLedPageLabel |   Finish   |
+| Label | TTKMarqueeLabel |   Finish   |
+| Label | TTKRoundAnimationLabel |   Finish   |
+| Label | TTKSplitItemLabel | Finish     |
+| Label | TTKToastLabel |   Finish   |
+| Label | TTKTransitionAnimationLabel |   Finish   |
+| Label | TTKBarRulerLabel |   Finish   |
+| Label | TTKBatteryLabel | Finish     |
+| Label | TTKCloudPanelLabel |   Finish   |
+| Label | TTKCPUMemoryLabel |   Finish   |
+| Label | TTKAntLineLabel |   Finish   |
+| Label | TTKTileBackgroundLabel |   Finish   |
+| Label | TTKLightPointLabel |   Finish   |
+| Label | TTKScanLabel |   Finish   |
 
 LineEdit
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| LineEdit | TTKIpEditWidget |   完成   |
-| LineEdit | TTKLineEditWidget |   完成   |
+| LineEdit | TTKIpEditWidget |   Finish   |
+| LineEdit | TTKLineEditWidget |   Finish   |
 
 Meter
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Meter | TTKPaintMeterWidget |   完成   |
-| Meter | TTKRadarMeterWidget |   完成   |
-| Meter | TTKSpeedMeterWidget |   完成   |
-| Meter | TTKTimeMeterWidget |   完成   |
-| Meter | TTKCarMeterWidget |   完成   |
-| Meter | TTKSpeedRingMeterWidget |   完成   |
-| Meter | TTKDialMeterWidget |   完成   |
-| Meter | TTKCompassMeterWidget |   完成   |
-| Meter | TTKProgressMeterWidget |   完成   |
-| Meter | TTKPercentMeterWidget |   完成   |
-| Meter | TTKArcMeterWidget |   完成   |
-| Meter | TTKPanelMeterWidget |   完成   |
-| Meter | TTKMiniMeterWidget |   完成   |
-| Meter | TTKRoundMeterWidget |   完成   |
-| Meter | TTKClockMeterWidget |   完成   |
-| Meter | TTKTemperatureMeterWidget |   完成   |
+| Meter | TTKPaintMeterWidget |   Finish   |
+| Meter | TTKRadarMeterWidget |   Finish   |
+| Meter | TTKSpeedMeterWidget |   Finish   |
+| Meter | TTKTimeMeterWidget |   Finish   |
+| Meter | TTKCarMeterWidget |   Finish   |
+| Meter | TTKSpeedRingMeterWidget |   Finish   |
+| Meter | TTKDialMeterWidget |   Finish   |
+| Meter | TTKCompassMeterWidget |   Finish   |
+| Meter | TTKProgressMeterWidget |   Finish   |
+| Meter | TTKPercentMeterWidget |   Finish   |
+| Meter | TTKArcMeterWidget |   Finish   |
+| Meter | TTKPanelMeterWidget |   Finish   |
+| Meter | TTKMiniMeterWidget |   Finish   |
+| Meter | TTKRoundMeterWidget |   Finish   |
+| Meter | TTKClockMeterWidget |   Finish   |
+| Meter | TTKTemperatureMeterWidget |   Finish   |
 
 Progress
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Progress | TTKAnimationProgressWidget |   完成   |
-| Progress | TTKCircleProgressWidget |   完成   |
-| Progress | TTKCircularProgressWidget |   完成   |
-| Progress | TTKGifProgressWidget |   完成   |
-| Progress | TTKProgressWidget |   完成   |
-| Progress | TTKRadiusProgressWidget |   完成   |
-| Progress | TTKRingsMapProgressWidget |   完成   |
-| Progress | TTKRingsProgressWidget |   完成   |
-| Progress | TTKRoundProgressWidget |   完成   |
-| Progress | TTKRingProgressWidget |   完成   |
-| Progress | TTKWaveProgressWidget |   完成   |
+| Progress | TTKAnimationProgressWidget |   Finish   |
+| Progress | TTKCircleProgressWidget |   Finish   |
+| Progress | TTKCircularProgressWidget |   Finish   |
+| Progress | TTKGifProgressWidget |   Finish   |
+| Progress | TTKProgressWidget |   Finish   |
+| Progress | TTKRadiusProgressWidget |   Finish   |
+| Progress | TTKRingsMapProgressWidget |   Finish   |
+| Progress | TTKRingsProgressWidget |   Finish   |
+| Progress | TTKRoundProgressWidget |   Finish   |
+| Progress | TTKRingProgressWidget |   Finish   |
+| Progress | TTKWaveProgressWidget |   Finish   |
 
 Slider
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Slider | TTKMovingLabelSlider |   完成   |
-| Slider | TTKShiningSlider |   完成   |
-| Slider | TTKStyleSlider |   完成   |
+| Slider | TTKMovingLabelSlider |   Finish   |
+| Slider | TTKShiningSlider |   Finish   |
+| Slider | TTKStyleSlider |   Finish   |
 
 Title
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Title | TTKFunctionAnimationWidget |   完成   |
-| Title | TTKFunctionListHWidget |   完成   |
-| Title | TTKFunctionListVWidget |   完成   |
-| Title | TTKFunctionNormalWidget |   完成   |
-| Title | TTKFunctionToolboxWidget |   完成   |
-| Title | TTKFunctionNavigationWidget |   完成   |
+| Title | TTKFunctionAnimationWidget |   Finish   |
+| Title | TTKFunctionListHWidget |   Finish   |
+| Title | TTKFunctionListVWidget |   Finish   |
+| Title | TTKFunctionNormalWidget |   Finish   |
+| Title | TTKFunctionToolboxWidget |   Finish   |
+| Title | TTKFunctionNavigationWidget |   Finish   |
 
 Widget
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Widget | TTKAnimation2StackedWidget |   完成   |
-| Widget | TTKAnimationStackedWidget |   完成   |
-| Widget | TTKColorTableWidget |   完成   |
-| Widget | TTKGrabItemWidget |   完成   |
-| Widget | TTKLayoutAnimationWidget |   完成   |
-| Widget | TTKPictureBannerWidget |   完成   |
-| Widget | TTKPictureFlowWidget |   完成   |
-| Widget | TTKSmoothMovingTableWidget |   完成   |
-| Widget | TTKCustomPieWidget |   完成   |
-| Widget | TTKCustomRingWidget |   完成   |
+| Widget | TTKAnimation2StackedWidget |   Finish   |
+| Widget | TTKAnimationStackedWidget |   Finish   |
+| Widget | TTKColorTableWidget |   Finish   |
+| Widget | TTKGrabItemWidget |   Finish   |
+| Widget | TTKLayoutAnimationWidget |   Finish   |
+| Widget | TTKPictureBannerWidget |   Finish   |
+| Widget | TTKPictureFlowWidget |   Finish   |
+| Widget | TTKSmoothMovingTableWidget |   Finish   |
+| Widget | TTKCustomPieWidget |   Finish   |
+| Widget | TTKCustomRingWidget |   Finish   |
 
 Window
 ----
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
-| Window | TTKColorDialog |   完成   |
-| Window | TTKMoveDialog |   完成   |
-| Window | TTKMoveResizeWidget |   完成   |
-| Window | TTKMoveWidget |   完成   |
-| Window | TTKSplashScreen |   完成   |
-| Window | TTKAnSplashScreen |   完成   |
-| Window | TTKNotifyWindow |   完成   |
+| Window | TTKColorDialog |   Finish   |
+| Window | TTKMoveDialog |   Finish   |
+| Window | TTKMoveResizeWidget |   Finish   |
+| Window | TTKMoveWidget |   Finish   |
+| Window | TTKSplashScreen |   Finish   |
+| Window | TTKAnSplashScreen |   Finish   |
+| Window | TTKNotifyWindow |   Finish   |
 
 
 Screenshots
