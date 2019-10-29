@@ -58,7 +58,7 @@ void TTKSplashScreenProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKSplashScreenProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_item);
+    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
     if(property->propertyName() == "Pixmap")
     {
         widget->setPixmap(value);
