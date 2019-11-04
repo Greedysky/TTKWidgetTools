@@ -356,6 +356,8 @@ void TTKToolsApplication::widgetModuleChanged(int index)
             break;
         case 9: w = new TTKCustomRingWidgetProperty;
             break;
+        case 10: w = new TTKCalendarWidgetProperty;
+            break;
         default:
             break;
     }
@@ -573,6 +575,7 @@ void TTKToolsApplication::createWidgetModule()
     widget->addItem(":/icon/widget", "TTKSmoothMovingTableWidget");
     widget->addItem(":/icon/widget", "TTKCustomPieWidget");
     widget->addItem(":/icon/widget", "TTKCustomRingWidget");
+    widget->addItem(":/icon/widget", "TTKCalendarWidget");
 
     widget->setObjectName("widgetRow");
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");
