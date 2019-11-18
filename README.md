@@ -46,6 +46,7 @@ Label
 | Label | TTKTileBackgroundLabel |   Finish   |
 | Label | TTKLightPointLabel |   Finish   |
 | Label | TTKScanLabel |   Finish   |
+| Label | TTKCrossLineLabel |   Finish   |
 
 LineEdit
 ----
@@ -124,6 +125,7 @@ Widget
 | Widget | TTKSmoothMovingTableWidget |   Finish   |
 | Widget | TTKCustomPieWidget |   Finish   |
 | Widget | TTKCustomRingWidget |   Finish   |
+| Widget | TTKCalendarWidget |   Finish   |
 
 Window
 ----

@@ -127,6 +127,8 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         case 15: w = new TTKScanLabelProperty;
             break;
+        case 16: w = new TTKCrossLineLabelProperty;
+            break;
         default:
             break;
     }
@@ -443,6 +445,7 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKTileBackgroundLabel");
     widget->addItem(":/icon/label", "TTKLightPointLabel");
     widget->addItem(":/icon/label", "TTKScanLabel");
+    widget->addItem(":/icon/label", "TTKCrossLineLabel");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
