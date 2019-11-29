@@ -129,6 +129,8 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         case 16: w = new TTKCrossLineLabelProperty;
             break;
+        case 17: w = new TTKNetTrafficLabelProperty;
+            break;
         default:
             break;
     }
@@ -446,6 +448,7 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKLightPointLabel");
     widget->addItem(":/icon/label", "TTKScanLabel");
     widget->addItem(":/icon/label", "TTKCrossLineLabel");
+    widget->addItem(":/icon/label", "TTKNetTrafficLabel");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");

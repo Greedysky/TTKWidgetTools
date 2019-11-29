@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/net">
+        <file alias="res_traffic">res/avnets</file>
+    </qresource>
+</RCC>
