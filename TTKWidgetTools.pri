@@ -32,6 +32,7 @@ RCC_DIR = ./.build/rcc
 include(TTKVersion.pri)
 
 win32{
+    LIBS += -lIphlpapi
     equals(QT_MAJOR_VERSION, 5){
         msvc{
             CONFIG +=c++11
@@ -43,25 +44,19 @@ win32{
         }
 
         gcc{
-            QMAKE_CXXFLAGS += -std=c++11
-            QMAKE_CXXFLAGS += -Wunused-function
-            QMAKE_CXXFLAGS += -Wswitch
+            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
         }
     }
 
     equals(QT_MAJOR_VERSION, 4){
         gcc{
-            QMAKE_CXXFLAGS += -std=c++11
-            QMAKE_CXXFLAGS += -Wunused-function
-            QMAKE_CXXFLAGS += -Wswitch
+            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
         }
     }
 }
 
 unix:!mac{
-    QMAKE_CXXFLAGS += -std=c++11
-    QMAKE_CXXFLAGS += -Wunused-function
-    QMAKE_CXXFLAGS += -Wswitch
+    QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
 }
 
 DEFINES += TTK_LIBRARY
