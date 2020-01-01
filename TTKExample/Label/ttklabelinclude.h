@@ -36,5 +36,6 @@
 #include "lightPointLabel/ttklightpointlabelproperty.h"
 #include "scanLabel/ttkscanlabelproperty.h"
 #include "crossLineLabel/ttkcrosslinelabelproperty.h"
+#include "netTrafficLabel/ttknettrafficlabelproperty.h"
 
 #endif // TTKLABELINCLUDE_H

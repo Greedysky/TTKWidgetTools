@@ -47,6 +47,7 @@ Label
 | Label | TTKLightPointLabel |   Finish   |
 | Label | TTKScanLabel |   Finish   |
 | Label | TTKCrossLineLabel |   Finish   |
+| Label | TTKNetTrafficLabel |   Finish   |
 
 LineEdit
 ----
