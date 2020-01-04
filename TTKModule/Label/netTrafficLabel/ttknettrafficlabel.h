@@ -29,7 +29,7 @@ class QProcess;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTKNetTraffic : public QThread
+class TTK_CORE_EXPORT TTKNetTraffic : public QThread
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNetTraffic)

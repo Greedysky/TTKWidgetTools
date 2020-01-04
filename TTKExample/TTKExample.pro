@@ -18,6 +18,10 @@
 
 TEMPLATE = app
 
+equals(QT_MAJOR_VERSION, 4){
+CONFIG   += gcc
+}
+
 contains(CONFIG, TTK_BUILD_LIB){
     CONFIG -= TTK_BUILD_LIB
 }
@@ -42,7 +46,33 @@ unix{
 }
 
 INCLUDEPATH += $$PWD
-QMAKE_CXXFLAGS += -std=c++11
+
+win32{
+    equals(QT_MAJOR_VERSION, 5){
+        msvc{
+            CONFIG +=c++11
+            !contains(QMAKE_TARGET.arch, x86_64){
+                 #support on windows XP
+                 QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
+                 QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
+            }
+        }
+
+        gcc{
+            QMAKE_CXXFLAGS += -std=c++11
+        }
+    }
+
+    equals(QT_MAJOR_VERSION, 4){
+        gcc{
+            QMAKE_CXXFLAGS += -std=c++11
+        }
+    }
+}
+
+unix:!mac{
+    QMAKE_CXXFLAGS += -std=c++11
+}
 
 SOURCES += \
     $$PWD/ttkwidgetproperty.cpp \

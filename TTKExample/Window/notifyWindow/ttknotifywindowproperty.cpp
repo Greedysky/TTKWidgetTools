@@ -25,11 +25,11 @@ TTKNotifyWindowProperty::TTKNotifyWindowProperty(QWidget *parent)
     objectItem->addSubProperty(geometryItem);
     //
     QtProperty *titleItem = m_stringManager->addProperty("Title");
-    m_stringManager->setValue(titleItem, "新消息");
+    m_stringManager->setValue(titleItem, "Message");
     objectItem->addSubProperty(titleItem);
     //
     QtProperty *bodyItem = m_stringManager->addProperty("Body");
-    m_stringManager->setValue(bodyItem, "这是测试页面");
+    m_stringManager->setValue(bodyItem, "This is test page");
     objectItem->addSubProperty(bodyItem);
     //
     QtProperty *maxCountItem = m_intManager->addProperty("MaxCount");
