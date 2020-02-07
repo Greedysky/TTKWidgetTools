@@ -11,17 +11,20 @@ TTKPuzzleItemWidget::TTKPuzzleItemWidget(QWidget *parent)
     m_value = 0;
     m_squareWidth = 100;
     m_squareRadius = 30;
+
     qsrand(QDateTime::currentMSecsSinceEpoch());
 }
 
 void TTKPuzzleItemWidget::setSquareWidth(int squareWidth)
 {
     m_squareWidth = squareWidth;
+    update();
 }
 
 void TTKPuzzleItemWidget::setSquareRadius(int squareRadius)
 {
     m_squareRadius = squareRadius;
+    update();
 }
 
 void TTKPuzzleItemWidget::setPixmap(const QString& pixmap)
@@ -92,6 +95,7 @@ TTKPuzzleWidget::TTKPuzzleWidget(QWidget *parent)
     : QWidget(parent)
 {
     setFixedSize(500, 350);
+
     QVBoxLayout *layout = new QVBoxLayout(this);
     setLayout(layout);
 
@@ -101,6 +105,8 @@ TTKPuzzleWidget::TTKPuzzleWidget(QWidget *parent)
 
     layout->addWidget(m_item);
     layout->addWidget(m_slider);
+
+    m_item->setFixedSize(500, 300);
 
     connect(m_slider, SIGNAL(valueChanged(int)), m_item, SLOT(setValue(int)));
 }

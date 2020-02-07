@@ -45,10 +45,14 @@ TTKPuzzleWidgetProperty::~TTKPuzzleWidgetProperty()
 void TTKPuzzleWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKPuzzleWidget *widget = MStatic_cast(TTKPuzzleWidget*, m_item);
-//    if(property->propertyName() == "CurrentIndex")
-//    {
-//        widget->setCenterIndex(value);
-//    }
+    if(property->propertyName() == "SquareWidth")
+    {
+        widget->setSquareWidth(value);
+    }
+    else if(property->propertyName() == "SquareRadius")
+    {
+        widget->setSquareRadius(value);
+    }
 }
 
 void TTKPuzzleWidgetProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
