@@ -127,6 +127,7 @@ Widget
 | Widget | TTKCustomPieWidget |   Finish   |
 | Widget | TTKCustomRingWidget |   Finish   |
 | Widget | TTKCalendarWidget |   Finish   |
+| Widget | TTKPuzzleWidget |   Finish   |
 
 Window
 ----

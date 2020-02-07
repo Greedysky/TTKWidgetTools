@@ -1,5 +1,5 @@
-#ifndef TTKWIDGETINCLUDE_H
-#define TTKWIDGETINCLUDE_H
+#ifndef TTKPUZZLEWIDGETPROPERTY_H
+#define TTKPUZZLEWIDGETPROPERTY_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,17 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "animationStackedWidget/ttkanimationstackedwidgetproperty.h"
-#include "animation2StackedWidget/ttkanimation2stackedwidgetproperty.h"
-#include "colorTableWidget/ttkcolortablewidgetproperty.h"
-#include "grabItemWidget/ttkgrabitemwidgetproperty.h"
-#include "layoutAnimationWidget/ttklayoutanimationwidgetproperty.h"
-#include "pictureBannerWidget/ttkpicturebannerwidgetproperty.h"
-#include "pictureFlowWidget/ttkpictureflowwidgetproperty.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewidgetproperty.h"
-#include "customPieWidget/ttkcustompiewidgetproperty.h"
-#include "customRingWidget/ttkcustomringwidgetproperty.h"
-#include "calendarWidget/ttkcalendarwidgetproperty.h"
-#include "puzzleWidget/ttkpuzzlewidgetproperty.h"
+#include "ttkwidgetproperty.h"
 
-#endif // TTKWIDGETINCLUDE_H
+/*!
+* @author Greedysky <greedysky@163.com>
+*/
+class TTK_CORE_EXPORT TTKPuzzleWidgetProperty : public TTKWidgetProperty
+{
+    Q_OBJECT
+public:
+    explicit TTKPuzzleWidgetProperty(QWidget *parent = nullptr);
+    virtual ~TTKPuzzleWidgetProperty();
+
+private Q_SLOTS:
+    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;
+
+};
+
+#endif // TTKPUZZLEWIDGETPROPERTY_H

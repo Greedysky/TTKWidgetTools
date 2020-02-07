@@ -18,15 +18,12 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/colorTableWidget/ColorTableWidget.pri)
-include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
-include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)
-include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)
-include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
-include($$PWD/animationStackedWidget/AnimationStackedWidget.pri)
-include($$PWD/animation2StackedWidget/Animation2StackedWidget.pri)
-include($$PWD/grabItemWidget/GrabItemWidget.pri)
-include($$PWD/customPieWidget/CustomPieWidget.pri)
-include($$PWD/customRingWidget/CustomRingWidget.pri)
-include($$PWD/calendarWidget/CalendarWidget.pri)
-include($$PWD/puzzleWidget/PuzzleWidget.pri)
+!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
+HEADERS += $$PWD/ttkpuzzlewidget.h
+
+}
+
+contains(CONFIG, TTK_BUILD_LIB){
+SOURCES += $$PWD/ttkpuzzlewidget.cpp
+
+}

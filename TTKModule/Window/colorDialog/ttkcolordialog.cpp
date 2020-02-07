@@ -101,11 +101,6 @@ void TTKHlPalette::mouseMoveEvent(QMouseEvent *event)
     {
         QPainterPath path;
         path.addEllipse(m_ptVernierPos, 7, 7);
-        if(path.contains(event->pos()))
-        {
-            QToolTip::showText(mapToGlobal(event->pos()) + QPoint(0, 5), tr("Adjust Hue And Brightness"), this,
-                               QRect(m_ptVernierPos - QPoint(8, 8), QSize(16, 16)));
-        }
     }
 }
 
@@ -210,11 +205,6 @@ void TTKHlSaturationPalette::mouseMoveEvent(QMouseEvent *event)
         QPointF ptfCenter(m_dblVernierX, rect().bottom()/2.0);
         QPainterPath path;
         path.addEllipse(ptfCenter, 7, 7);
-        if(path.contains(event->pos()))
-        {
-            QToolTip::showText(mapToGlobal(event->pos()) + QPoint(0, 5), tr("Adjust Hue And Brightness"), this,
-                               QRect(event->pos() - QPoint(8, 8), QSize(16, 16)));
-        }
     }
 }
 

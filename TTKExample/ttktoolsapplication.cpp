@@ -362,6 +362,8 @@ void TTKToolsApplication::widgetModuleChanged(int index)
             break;
         case 10: w = new TTKCalendarWidgetProperty;
             break;
+        case 11: w = new TTKPuzzleWidgetProperty;
+            break;
         default:
             break;
     }
@@ -582,6 +584,7 @@ void TTKToolsApplication::createWidgetModule()
     widget->addItem(":/icon/widget", "TTKCustomPieWidget");
     widget->addItem(":/icon/widget", "TTKCustomRingWidget");
     widget->addItem(":/icon/widget", "TTKCalendarWidget");
+    widget->addItem(":/icon/widget", "TTKPuzzleWidget");
 
     widget->setObjectName("widgetRow");
     widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");

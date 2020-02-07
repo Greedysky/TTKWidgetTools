@@ -1,4 +1,5 @@
 #include "ttktoolsapplication.h"
+
 #include <QApplication>
 #include <QTextCodec>
 
