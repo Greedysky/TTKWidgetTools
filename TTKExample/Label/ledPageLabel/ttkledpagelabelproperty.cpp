@@ -17,7 +17,7 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKLedPageLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKLedPageLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -64,7 +64,7 @@ void TTKLedPageLabelProperty::boolPropertyChanged(QtProperty *property, bool val
 
 void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLedPageLabel *widget = MStatic_cast(TTKLedPageLabel*, m_item);
+    TTKLedPageLabel *widget = TTKStatic_cast(TTKLedPageLabel*, m_item);
     if(property->propertyName() == "BackColor")
     {
         widget->setBackColor(value);
@@ -81,6 +81,6 @@ void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const Q
 
 void TTKLedPageLabelProperty::updateRender()
 {
-    TTKLedPageLabel *widget = MStatic_cast(TTKLedPageLabel*, m_item);
+    TTKLedPageLabel *widget = TTKStatic_cast(TTKLedPageLabel*, m_item);
     widget->setText(QString::number(qrand() % 100 + 1));
 }

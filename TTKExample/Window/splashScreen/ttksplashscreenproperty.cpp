@@ -21,7 +21,7 @@ TTKSplashScreenProperty::TTKSplashScreenProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKSplashScreen*, m_label)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKSplashScreen*, m_label)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -49,7 +49,7 @@ TTKSplashScreenProperty::~TTKSplashScreenProperty()
 
 void TTKSplashScreenProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
+    TTKSplashScreen *widget = TTKStatic_cast(TTKSplashScreen*, m_label);
     if(property->propertyName() == "ElapseTime")
     {
         widget->setElapseTime(value);
@@ -58,7 +58,7 @@ void TTKSplashScreenProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKSplashScreenProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
+    TTKSplashScreen *widget = TTKStatic_cast(TTKSplashScreen*, m_label);
     if(property->propertyName() == "Pixmap")
     {
         widget->setPixmap(value);
@@ -67,7 +67,7 @@ void TTKSplashScreenProperty::pixmapPropertyChanged(QtProperty *property, const 
 
 void TTKSplashScreenProperty::showWidget()
 {
-    TTKSplashScreen *widget = MStatic_cast(TTKSplashScreen*, m_label);
+    TTKSplashScreen *widget = TTKStatic_cast(TTKSplashScreen*, m_label);
     if(widget->widget() && widget->widget()->isVisible())
     {
         widget->widget()->hide();

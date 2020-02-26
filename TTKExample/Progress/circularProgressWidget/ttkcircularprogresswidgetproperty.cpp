@@ -10,7 +10,7 @@ TTKCircularProgressWidgetProperty::TTKCircularProgressWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCircularProgressWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCircularProgressWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -43,7 +43,7 @@ TTKCircularProgressWidgetProperty::~TTKCircularProgressWidgetProperty()
 
 void TTKCircularProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCircularProgressWidget *widget = MStatic_cast(TTKCircularProgressWidget*, m_item);
+    TTKCircularProgressWidget *widget = TTKStatic_cast(TTKCircularProgressWidget*, m_item);
     if(property->propertyName() == "Size")
     {
         widget->setSize(value);
@@ -56,7 +56,7 @@ void TTKCircularProgressWidgetProperty::intPropertyChanged(QtProperty *property,
 
 void TTKCircularProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCircularProgressWidget *widget = MStatic_cast(TTKCircularProgressWidget*, m_item);
+    TTKCircularProgressWidget *widget = TTKStatic_cast(TTKCircularProgressWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

@@ -10,7 +10,7 @@ TTKLightPointLabelProperty::TTKLightPointLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKLightPointLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKLightPointLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -43,7 +43,7 @@ TTKLightPointLabelProperty::~TTKLightPointLabelProperty()
 
 void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKLightPointLabel *widget = MStatic_cast(TTKLightPointLabel*, m_item);
+    TTKLightPointLabel *widget = TTKStatic_cast(TTKLightPointLabel*, m_item);
     if(property->propertyName() == "Step")
     {
         widget->setStep(value);
@@ -56,7 +56,7 @@ void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKLightPointLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLightPointLabel *widget = MStatic_cast(TTKLightPointLabel*, m_item);
+    TTKLightPointLabel *widget = TTKStatic_cast(TTKLightPointLabel*, m_item);
     if(property->propertyName() == "BgColor")
     {
         widget->setBgColor(value);

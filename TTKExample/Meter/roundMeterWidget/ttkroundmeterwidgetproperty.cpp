@@ -10,7 +10,7 @@ TTKRoundMeterWidgetProperty::TTKRoundMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRoundMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRoundMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -88,7 +88,7 @@ TTKRoundMeterWidgetProperty::~TTKRoundMeterWidgetProperty()
 
 void TTKRoundMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKRoundMeterWidget *widget = MStatic_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKStatic_cast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -97,7 +97,7 @@ void TTKRoundMeterWidgetProperty::intPropertyChanged(QtProperty *property, int v
 
 void TTKRoundMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKRoundMeterWidget *widget = MStatic_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKStatic_cast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -118,7 +118,7 @@ void TTKRoundMeterWidgetProperty::doublePropertyChanged(QtProperty *property, do
 
 void TTKRoundMeterWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKRoundMeterWidget *widget = MStatic_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKStatic_cast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "Unit")
     {
         widget->setUnit(value);
@@ -127,7 +127,7 @@ void TTKRoundMeterWidgetProperty::stringPropertyChanged(QtProperty *property, co
 
 void TTKRoundMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRoundMeterWidget *widget = MStatic_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKStatic_cast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "UsedColor")
     {
         widget->setUsedColor(value);

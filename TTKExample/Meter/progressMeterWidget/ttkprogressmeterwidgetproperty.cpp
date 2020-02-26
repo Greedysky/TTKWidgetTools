@@ -10,7 +10,7 @@ TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKProgressMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKProgressMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -97,7 +97,7 @@ TTKProgressMeterWidgetProperty::~TTKProgressMeterWidgetProperty()
 
 void TTKProgressMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKProgressMeterWidget *widget = MStatic_cast(TTKProgressMeterWidget*, m_item);
+    TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);
     if(property->propertyName() == "ShowValue")
     {
         widget->setShowValue(value);
@@ -110,7 +110,7 @@ void TTKProgressMeterWidgetProperty::boolPropertyChanged(QtProperty *property, b
 
 void TTKProgressMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKProgressMeterWidget *widget = MStatic_cast(TTKProgressMeterWidget*, m_item);
+    TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -127,7 +127,7 @@ void TTKProgressMeterWidgetProperty::intPropertyChanged(QtProperty *property, in
 
 void TTKProgressMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKProgressMeterWidget *widget = MStatic_cast(TTKProgressMeterWidget*, m_item);
+    TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -144,16 +144,16 @@ void TTKProgressMeterWidgetProperty::doublePropertyChanged(QtProperty *property,
 
 void TTKProgressMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKProgressMeterWidget *widget = MStatic_cast(TTKProgressMeterWidget*, m_item);
+    TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(MStatic_cast(TTKProgressMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStatic_cast(TTKProgressMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKProgressMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKProgressMeterWidget *widget = MStatic_cast(TTKProgressMeterWidget*, m_item);
+    TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);
     if(property->propertyName() == "BgColor")
     {
         widget->setBgColor(value);

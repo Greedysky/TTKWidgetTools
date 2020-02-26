@@ -10,7 +10,7 @@ TTKLineEditWidgetProperty::TTKLineEditWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKLineEditWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKLineEditWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -37,7 +37,7 @@ TTKLineEditWidgetProperty::~TTKLineEditWidgetProperty()
 
 void TTKLineEditWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKLineEditWidget *widget = MStatic_cast(TTKLineEditWidget*, m_item);
+    TTKLineEditWidget *widget = TTKStatic_cast(TTKLineEditWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -46,7 +46,7 @@ void TTKLineEditWidgetProperty::stringPropertyChanged(QtProperty *property, cons
 
 void TTKLineEditWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLineEditWidget *widget = MStatic_cast(TTKLineEditWidget*, m_item);
+    TTKLineEditWidget *widget = TTKStatic_cast(TTKLineEditWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

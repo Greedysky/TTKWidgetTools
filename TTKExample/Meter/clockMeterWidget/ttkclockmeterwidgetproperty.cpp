@@ -10,7 +10,7 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKClockMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKClockMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -64,16 +64,16 @@ TTKClockMeterWidgetProperty::~TTKClockMeterWidgetProperty()
 
 void TTKClockMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKClockMeterWidget *widget = MStatic_cast(TTKClockMeterWidget*, m_item);
+    TTKClockMeterWidget *widget = TTKStatic_cast(TTKClockMeterWidget*, m_item);
     if(property->propertyName() == "SecondStyle")
     {
-        widget->setSecondStyle(MStatic_cast(TTKClockMeterWidget::SecondStyle, value));
+        widget->setSecondStyle(TTKStatic_cast(TTKClockMeterWidget::SecondStyle, value));
     }
 }
 
 void TTKClockMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKClockMeterWidget *widget = MStatic_cast(TTKClockMeterWidget*, m_item);
+    TTKClockMeterWidget *widget = TTKStatic_cast(TTKClockMeterWidget*, m_item);
     if(property->propertyName() == "CrownColorStart")
     {
         widget->setCrownColorStart(value);

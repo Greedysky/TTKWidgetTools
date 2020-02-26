@@ -10,7 +10,7 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKArcMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKArcMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -112,7 +112,7 @@ TTKArcMeterWidgetProperty::~TTKArcMeterWidgetProperty()
 
 void TTKArcMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKArcMeterWidget *widget = MStatic_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -121,7 +121,7 @@ void TTKArcMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool v
 
 void TTKArcMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKArcMeterWidget *widget = MStatic_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -146,7 +146,7 @@ void TTKArcMeterWidgetProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKArcMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKArcMeterWidget *widget = MStatic_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -167,16 +167,16 @@ void TTKArcMeterWidgetProperty::doublePropertyChanged(QtProperty *property, doub
 
 void TTKArcMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKArcMeterWidget *widget = MStatic_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(MStatic_cast(TTKArcMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStatic_cast(TTKArcMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKArcMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKArcMeterWidget *widget = MStatic_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "ArcColor")
     {
         widget->setArcColor(value);

@@ -10,7 +10,7 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRadioButtonWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRadioButtonWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -61,7 +61,7 @@ TTKRadioButtonWidgetProperty::~TTKRadioButtonWidgetProperty()
 
 void TTKRadioButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -74,7 +74,7 @@ void TTKRadioButtonWidgetProperty::boolPropertyChanged(QtProperty *property, boo
 
 void TTKRadioButtonWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -83,16 +83,16 @@ void TTKRadioButtonWidgetProperty::stringPropertyChanged(QtProperty *property, c
 
 void TTKRadioButtonWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLabelPosition(MStatic_cast(TTKRadioButtonWidget::LabelPosition, value));
+        widget->setLabelPosition(TTKStatic_cast(TTKRadioButtonWidget::LabelPosition, value));
     }
 }
 
 void TTKRadioButtonWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRadioButtonWidget *widget = MStatic_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKStatic_cast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "DisabledColor")
     {
         widget->setDisabledColor(value);

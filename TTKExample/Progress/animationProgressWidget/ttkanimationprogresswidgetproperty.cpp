@@ -10,7 +10,7 @@ TTKAnimationProgressWidgetProperty::TTKAnimationProgressWidgetProperty(QWidget *
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKAnimationProgressWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKAnimationProgressWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -29,7 +29,7 @@ TTKAnimationProgressWidgetProperty::~TTKAnimationProgressWidgetProperty()
 
 void TTKAnimationProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKAnimationProgressWidget *widget = MStatic_cast(TTKAnimationProgressWidget*, m_item);
+    TTKAnimationProgressWidget *widget = TTKStatic_cast(TTKAnimationProgressWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         if(value)

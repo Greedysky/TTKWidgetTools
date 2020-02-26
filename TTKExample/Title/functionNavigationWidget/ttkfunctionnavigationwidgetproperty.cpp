@@ -26,7 +26,7 @@ TTKFunctionNavigationWidgetProperty::~TTKFunctionNavigationWidgetProperty()
 
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
-    TTKFunctionNavigationWidget *button = MStatic_cast(TTKFunctionNavigationWidget*, sender());
+    TTKFunctionNavigationWidget *button = TTKStatic_cast(TTKFunctionNavigationWidget*, sender());
     for(int i = 0; i < m_buttons.count(); i++)
     {
         m_buttons[i]->setChecked(m_buttons[i] == button);
@@ -51,7 +51,7 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -184,7 +184,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -390,7 +390,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -565,15 +565,15 @@ void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
                 case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
             }
-            m_buttons[i]->setTextAlign(MStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(MStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(MStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -645,7 +645,7 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -792,15 +792,15 @@ void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
                 case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
             }
-            m_buttons[i]->setTextAlign(MStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(MStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(MStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -850,7 +850,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -996,11 +996,11 @@ void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
                 case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
             }
-            m_buttons[i]->setTextAlign(MStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(MStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -1074,7 +1074,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -1220,11 +1220,11 @@ void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
                 case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
             }
-            m_buttons[i]->setTextAlign(MStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(MStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -1301,7 +1301,7 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -1454,15 +1454,15 @@ void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
                 case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
             }
-            m_buttons[i]->setTextAlign(MStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(MStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(MStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }

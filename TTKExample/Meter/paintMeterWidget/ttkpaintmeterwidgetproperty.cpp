@@ -10,7 +10,7 @@ TTKPaintMeterWidgetProperty::TTKPaintMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKPaintMeterWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPaintMeterWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -39,7 +39,7 @@ TTKPaintMeterWidgetProperty::~TTKPaintMeterWidgetProperty()
 
 void TTKPaintMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPaintMeterWidget *widget = MStatic_cast(TTKPaintMeterWidget*, m_item);
+    TTKPaintMeterWidget *widget = TTKStatic_cast(TTKPaintMeterWidget*, m_item);
     if(property->propertyName() == "Value")
     {
         widget->setValue(value);

@@ -10,7 +10,7 @@ TTKCustomRingWidgetProperty::TTKCustomRingWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCustomRingWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCustomRingWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -46,7 +46,7 @@ TTKCustomRingWidgetProperty::~TTKCustomRingWidgetProperty()
 
 void TTKCustomRingWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCustomRingWidget *widget = MStatic_cast(TTKCustomRingWidget*, m_item);
+    TTKCustomRingWidget *widget = TTKStatic_cast(TTKCustomRingWidget*, m_item);
     if(property->propertyName() == "BgColor")
     {
         widget->setBgColor(value);

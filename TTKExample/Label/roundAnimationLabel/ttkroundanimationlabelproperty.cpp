@@ -10,7 +10,7 @@ TTKRoundAnimationLabelProperty::TTKRoundAnimationLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRoundAnimationLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRoundAnimationLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -34,7 +34,7 @@ TTKRoundAnimationLabelProperty::~TTKRoundAnimationLabelProperty()
 
 void TTKRoundAnimationLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKRoundAnimationLabel *widget = MStatic_cast(TTKRoundAnimationLabel*, m_item);
+    TTKRoundAnimationLabel *widget = TTKStatic_cast(TTKRoundAnimationLabel*, m_item);
     if(property->propertyName() == "Activity")
     {
         if(value)
@@ -50,7 +50,7 @@ void TTKRoundAnimationLabelProperty::boolPropertyChanged(QtProperty *property, b
 
 void TTKRoundAnimationLabelProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKRoundAnimationLabel *widget = MStatic_cast(TTKRoundAnimationLabel*, m_item);
+    TTKRoundAnimationLabel *widget = TTKStatic_cast(TTKRoundAnimationLabel*, m_item);
     if(property->propertyName() == "Pixmap")
     {
         widget->setPixmap(value);

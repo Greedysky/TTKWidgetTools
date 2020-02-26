@@ -10,7 +10,7 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKMarqueeLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKMarqueeLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -62,7 +62,7 @@ TTKMarqueeLabelProperty::~TTKMarqueeLabelProperty()
 
 void TTKMarqueeLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKMarqueeLabel *widget = MStatic_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "MouseHoverStop")
     {
         widget->setMouseHoverStop(value);
@@ -71,7 +71,7 @@ void TTKMarqueeLabelProperty::boolPropertyChanged(QtProperty *property, bool val
 
 void TTKMarqueeLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKMarqueeLabel *widget = MStatic_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "Step")
     {
         widget->setStep(value);
@@ -84,7 +84,7 @@ void TTKMarqueeLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKMarqueeLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKMarqueeLabel *widget = MStatic_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -93,16 +93,16 @@ void TTKMarqueeLabelProperty::stringPropertyChanged(QtProperty *property, const 
 
 void TTKMarqueeLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKMarqueeLabel *widget = MStatic_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "MoveStyle")
     {
-        widget->setMoveStyle(MStatic_cast(TTKMarqueeLabel::MoveStyle, value));
+        widget->setMoveStyle(TTKStatic_cast(TTKMarqueeLabel::MoveStyle, value));
     }
 }
 
 void TTKMarqueeLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKMarqueeLabel *widget = MStatic_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "Foreground")
     {
         widget->setForeground(value);

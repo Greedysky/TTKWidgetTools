@@ -17,7 +17,7 @@ TTKRingsProgressWidgetProperty::TTKRingsProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRingsProgressWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRingsProgressWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -51,6 +51,6 @@ void TTKRingsProgressWidgetProperty::boolPropertyChanged(QtProperty *property, b
 
 void TTKRingsProgressWidgetProperty::updateRender()
 {
-    TTKRingsProgressWidget *widget = MStatic_cast(TTKRingsProgressWidget*, m_item);
+    TTKRingsProgressWidget *widget = TTKStatic_cast(TTKRingsProgressWidget*, m_item);
     widget->setValue(qrand() % 100 + 1);
 }

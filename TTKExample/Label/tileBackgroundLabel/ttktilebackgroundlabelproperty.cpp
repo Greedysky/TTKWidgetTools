@@ -10,7 +10,7 @@ TTKTileBackgroundLabelProperty::TTKTileBackgroundLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKTileBackgroundLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTileBackgroundLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -37,7 +37,7 @@ TTKTileBackgroundLabelProperty::~TTKTileBackgroundLabelProperty()
 
 void TTKTileBackgroundLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKTileBackgroundLabel *widget = MStatic_cast(TTKTileBackgroundLabel*, m_item);
+    TTKTileBackgroundLabel *widget = TTKStatic_cast(TTKTileBackgroundLabel*, m_item);
     if(property->propertyName() == "ForeColor")
     {
         widget->setForeColor(value);

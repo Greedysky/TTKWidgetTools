@@ -11,7 +11,7 @@ TTKAnimation2StackedWidgetProperty::TTKAnimation2StackedWidgetProperty(QWidget *
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKAnimation2StackedWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKAnimation2StackedWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -36,7 +36,7 @@ TTKAnimation2StackedWidgetProperty::TTKAnimation2StackedWidgetProperty(QWidget *
     QPushButton *w2 = new QPushButton(m_item);
     w2->setStyleSheet("border:none; background:yellow");
 
-    TTKAnimation2StackedWidget *widget = MStatic_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKStatic_cast(TTKAnimation2StackedWidget*, m_item);
     widget->addWidget(w1);
     widget->addWidget(w2);
 }
@@ -48,7 +48,7 @@ TTKAnimation2StackedWidgetProperty::~TTKAnimation2StackedWidgetProperty()
 
 void TTKAnimation2StackedWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKAnimation2StackedWidget *widget = MStatic_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKStatic_cast(TTKAnimation2StackedWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         widget->start(value ? 0 : 1);
@@ -57,9 +57,9 @@ void TTKAnimation2StackedWidgetProperty::boolPropertyChanged(QtProperty *propert
 
 void TTKAnimation2StackedWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKAnimation2StackedWidget *widget = MStatic_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKStatic_cast(TTKAnimation2StackedWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLength(200, MStatic_cast(TTKAnimation2StackedWidget::AnimationType, value + 4));
+        widget->setLength(200, TTKStatic_cast(TTKAnimation2StackedWidget::AnimationType, value + 4));
     }
 }

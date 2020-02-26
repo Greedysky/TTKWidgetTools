@@ -10,7 +10,7 @@ TTKPuzzleWidgetProperty::TTKPuzzleWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKPuzzleWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPuzzleWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -44,7 +44,7 @@ TTKPuzzleWidgetProperty::~TTKPuzzleWidgetProperty()
 
 void TTKPuzzleWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPuzzleWidget *widget = MStatic_cast(TTKPuzzleWidget*, m_item);
+    TTKPuzzleWidget *widget = TTKStatic_cast(TTKPuzzleWidget*, m_item);
     if(property->propertyName() == "SquareWidth")
     {
         widget->setSquareWidth(value);
@@ -57,7 +57,7 @@ void TTKPuzzleWidgetProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKPuzzleWidgetProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKPuzzleWidget *widget = MStatic_cast(TTKPuzzleWidget*, m_item);
+    TTKPuzzleWidget *widget = TTKStatic_cast(TTKPuzzleWidget*, m_item);
     if(property->propertyName() == "Image")
     {
         widget->setPixmap(value);

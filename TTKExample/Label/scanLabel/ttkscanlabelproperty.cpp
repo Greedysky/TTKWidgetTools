@@ -10,7 +10,7 @@ TTKScanLabelProperty::TTKScanLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKScanLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKScanLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -69,7 +69,7 @@ TTKScanLabelProperty::~TTKScanLabelProperty()
 
 void TTKScanLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKScanLabel *widget = MStatic_cast(TTKScanLabel*, m_item);
+    TTKScanLabel *widget = TTKStatic_cast(TTKScanLabel*, m_item);
     if(property->propertyName() == "ImageRadius")
     {
         widget->setImageRadius(value);
@@ -98,7 +98,7 @@ void TTKScanLabelProperty::intPropertyChanged(QtProperty *property, int value)
 
 void TTKScanLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKScanLabel *widget = MStatic_cast(TTKScanLabel*, m_item);
+    TTKScanLabel *widget = TTKStatic_cast(TTKScanLabel*, m_item);
     if(property->propertyName() == "ImageBorderColor")
     {
         widget->setImageBorderColor(value);
@@ -115,7 +115,7 @@ void TTKScanLabelProperty::colorPropertyChanged(QtProperty *property, const QCol
 
 void TTKScanLabelProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKScanLabel *widget = MStatic_cast(TTKScanLabel*, m_item);
+    TTKScanLabel *widget = TTKStatic_cast(TTKScanLabel*, m_item);
     if(property->propertyName() == "Image")
     {
         widget->setImage(value);

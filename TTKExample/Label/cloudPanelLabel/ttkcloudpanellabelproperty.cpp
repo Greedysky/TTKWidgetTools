@@ -10,7 +10,7 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCloudPanelLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCloudPanelLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -60,16 +60,16 @@ TTKCloudPanelLabelProperty::~TTKCloudPanelLabelProperty()
 
 void TTKCloudPanelLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCloudPanelLabel *widget = MStatic_cast(TTKCloudPanelLabel*, m_item);
+    TTKCloudPanelLabel *widget = TTKStatic_cast(TTKCloudPanelLabel*, m_item);
     if(property->propertyName() == "CloudStyle")
     {
-        widget->setCloudStyle(MStatic_cast(TTKCloudPanelLabel::CloudStyle, value));
+        widget->setCloudStyle(TTKStatic_cast(TTKCloudPanelLabel::CloudStyle, value));
     }
 }
 
 void TTKCloudPanelLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCloudPanelLabel *widget = MStatic_cast(TTKCloudPanelLabel*, m_item);
+    TTKCloudPanelLabel *widget = TTKStatic_cast(TTKCloudPanelLabel*, m_item);
     if(property->propertyName() == "BgColor")
     {
         widget->setBgColor(value);

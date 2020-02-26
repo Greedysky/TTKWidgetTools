@@ -10,7 +10,7 @@ TTKCalendarWidgetProperty::TTKCalendarWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCalendarWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCalendarWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -22,7 +22,7 @@ TTKCalendarWidgetProperty::TTKCalendarWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 
-    MStatic_cast(TTKCalendarWidget*, m_item)->show();
+    TTKStatic_cast(TTKCalendarWidget*, m_item)->show();
 }
 
 TTKCalendarWidgetProperty::~TTKCalendarWidgetProperty()

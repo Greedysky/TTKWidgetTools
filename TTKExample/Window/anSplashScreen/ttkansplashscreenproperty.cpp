@@ -21,7 +21,7 @@ TTKAnSplashScreenProperty::TTKAnSplashScreenProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKAnSplashScreen*, m_label)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKAnSplashScreen*, m_label)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -45,7 +45,7 @@ TTKAnSplashScreenProperty::~TTKAnSplashScreenProperty()
 
 void TTKAnSplashScreenProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKAnSplashScreen *widget = MStatic_cast(TTKAnSplashScreen*, m_label);
+    TTKAnSplashScreen *widget = TTKStatic_cast(TTKAnSplashScreen*, m_label);
     if(property->propertyName() == "LoadCount")
     {
         widget->setLoadCount(value);
@@ -54,7 +54,7 @@ void TTKAnSplashScreenProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKAnSplashScreenProperty::showWidget()
 {
-    TTKAnSplashScreen *widget = MStatic_cast(TTKAnSplashScreen*, m_label);
+    TTKAnSplashScreen *widget = TTKStatic_cast(TTKAnSplashScreen*, m_label);
     if(widget->widget() && widget->widget()->isVisible())
     {
         widget->widget()->hide();

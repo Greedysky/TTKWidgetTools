@@ -2,7 +2,7 @@
 #define TTKPRIVATE_H
 
 /* =================================================
- * This file is part of the TTK Tiny Tools project
+ * This file is part of the TTK Widget Tools project
  * Copyright (C) 2015 - 2020 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify

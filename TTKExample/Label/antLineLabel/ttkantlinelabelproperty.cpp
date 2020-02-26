@@ -10,7 +10,7 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKAntLineLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKAntLineLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -60,7 +60,7 @@ TTKAntLineLabelProperty::~TTKAntLineLabelProperty()
 
 void TTKAntLineLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKAntLineLabel *widget = MStatic_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKStatic_cast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineLen")
     {
         widget->setLineLen(value);
@@ -81,16 +81,16 @@ void TTKAntLineLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKAntLineLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKAntLineLabel *widget = MStatic_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKStatic_cast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineStyle")
     {
-        widget->setLineStyle(MStatic_cast(TTKAntLineLabel::LineStyle, value));
+        widget->setLineStyle(TTKStatic_cast(TTKAntLineLabel::LineStyle, value));
     }
 }
 
 void TTKAntLineLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKAntLineLabel *widget = MStatic_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKStatic_cast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineColor")
     {
         widget->setLineColor(value);

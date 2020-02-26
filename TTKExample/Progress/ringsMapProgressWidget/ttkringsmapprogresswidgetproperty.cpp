@@ -17,7 +17,7 @@ TTKRingsMapProgressWidgetProperty::TTKRingsMapProgressWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKRingsMapProgressWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRingsMapProgressWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -51,6 +51,6 @@ void TTKRingsMapProgressWidgetProperty::boolPropertyChanged(QtProperty *property
 
 void TTKRingsMapProgressWidgetProperty::updateRender()
 {
-    TTKRingsMapProgressWidget *widget = MStatic_cast(TTKRingsMapProgressWidget*, m_item);
+    TTKRingsMapProgressWidget *widget = TTKStatic_cast(TTKRingsMapProgressWidget*, m_item);
     widget->setValue(qrand() % 100 + 1);
 }

@@ -10,7 +10,7 @@ TTKPictureFlowWidgetProperty::TTKPictureFlowWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKPictureFlowWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPictureFlowWidget*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -29,7 +29,7 @@ TTKPictureFlowWidgetProperty::TTKPictureFlowWidgetProperty(QWidget *parent)
     m_colorManager->setValue(backgroundColorItem, QColor(255, 255, 255));
     objectItem->addSubProperty(backgroundColorItem);
     //
-    TTKPictureFlowWidget *widget = MStatic_cast(TTKPictureFlowWidget*, m_item);
+    TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);
     QImage img;
     for(int i=0; i<5; i++)
     {
@@ -51,7 +51,7 @@ TTKPictureFlowWidgetProperty::~TTKPictureFlowWidgetProperty()
 
 void TTKPictureFlowWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPictureFlowWidget *widget = MStatic_cast(TTKPictureFlowWidget*, m_item);
+    TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);
     if(property->propertyName() == "CurrentIndex")
     {
         widget->setCenterIndex(value);
@@ -60,7 +60,7 @@ void TTKPictureFlowWidgetProperty::intPropertyChanged(QtProperty *property, int 
 
 void TTKPictureFlowWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    TTKPictureFlowWidget *widget = MStatic_cast(TTKPictureFlowWidget*, m_item);
+    TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);
     if(property->propertyName() == "SlideSize")
     {
         widget->setSlideSize(value);
@@ -69,7 +69,7 @@ void TTKPictureFlowWidgetProperty::sizePropertyChanged(QtProperty *property, con
 
 void TTKPictureFlowWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKPictureFlowWidget *widget = MStatic_cast(TTKPictureFlowWidget*, m_item);
+    TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

@@ -10,7 +10,7 @@ TTKCPUMemoryLabelProperty::TTKCPUMemoryLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, MStatic_cast(TTKCPUMemoryLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCPUMemoryLabel*, m_item)->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -21,7 +21,7 @@ TTKCPUMemoryLabelProperty::TTKCPUMemoryLabelProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 
-    MStatic_cast(TTKCPUMemoryLabel*, m_item)->start(1000);
+    TTKStatic_cast(TTKCPUMemoryLabel*, m_item)->start(1000);
 }
 
 TTKCPUMemoryLabelProperty::~TTKCPUMemoryLabelProperty()
