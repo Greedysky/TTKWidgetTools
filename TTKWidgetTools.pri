@@ -24,12 +24,9 @@ equals(QT_MAJOR_VERSION, 5){
 QT       += widgets
 }
 
-UI_DIR = ./.build/ui
-MOC_DIR = ./.build/moc
-OBJECTS_DIR = ./.build/obj
-RCC_DIR = ./.build/rcc
-
-include(TTKVersion.pri)
+include($$PWD/TTKVersion.pri)
+win32:DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
+unix:DESTDIR = $$OUT_PWD/../lib/$$TTKWidgetTools
 
 win32{
     LIBS += -lIphlpapi
@@ -66,4 +63,4 @@ HEADERS += $$PWD/ttkglobal.h
 HEADERS += $$PWD/ttkglobaldefine.h
 INCLUDEPATH += $$PWD
 #########################################
-include(TTKModule/TTKModule.pri)
+include($$PWD/TTKModule/TTKModule.pri)

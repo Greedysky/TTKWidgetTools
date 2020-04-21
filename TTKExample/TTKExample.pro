@@ -32,47 +32,14 @@ win32{
         CONFIG -= TTK_NO_MSVC_LINK_NEED
     }
 }
-include(TTKExample.pri)
-include(../TTKWidgetTools.pri)
-include(../TTKQrc/TTKQrc.pri)
+include($$PWD/TTKExample.pri)
+include($$PWD/../TTKWidgetTools.pri)
+include($$PWD/../TTKQrc/TTKQrc.pri)
 
-win32{
-    TARGET = ../../bin/TTKWidgetTools
-    LIBS += -L../bin -lTTKCore
-}
-unix{
-    TARGET = ../lib/TTKWidgetTools
-    LIBS += -L../lib -lTTKCore
-}
+TARGET = TTKWidgetTools
+LIBS += -L$$DESTDIR -lTTKCore
 
 INCLUDEPATH += $$PWD
-
-win32{
-    equals(QT_MAJOR_VERSION, 5){
-        msvc{
-            CONFIG +=c++11
-            !contains(QMAKE_TARGET.arch, x86_64){
-                 #support on windows XP
-                 QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
-                 QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
-            }
-        }
-
-        gcc{
-            QMAKE_CXXFLAGS += -std=c++11
-        }
-    }
-
-    equals(QT_MAJOR_VERSION, 4){
-        gcc{
-            QMAKE_CXXFLAGS += -std=c++11
-        }
-    }
-}
-
-unix:!mac{
-    QMAKE_CXXFLAGS += -std=c++11
-}
 
 SOURCES += \
     $$PWD/ttkwidgetproperty.cpp \
@@ -90,7 +57,7 @@ HEADERS += \
     $$PWD/ttkbackgroundcontainer.h \
     $$PWD/ttkbackgroundwidget.h \
     $$PWD/ttktoolsapplication.h \
-    ../ttkglobaldefine.h
+    $$PWD/../ttkglobaldefine.h
 
 FORMS   += $$PWD/ttktoolsapplication.ui
 

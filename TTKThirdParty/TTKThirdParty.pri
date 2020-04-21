@@ -16,4 +16,4 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # =================================================
 
-include(qtpropertybrowser/qtpropertybrowser.pri)
+include($$PWD/qtpropertybrowser/qtpropertybrowser.pri)

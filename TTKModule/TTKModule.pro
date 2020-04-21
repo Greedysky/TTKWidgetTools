@@ -19,10 +19,9 @@
 TEMPLATE = lib
 CONFIG += TTK_BUILD_LIB
 
-include(../TTKWidgetTools.pri)
+include($$PWD/../TTKWidgetTools.pri)
 
-win32:TARGET = ../../bin/TTKCore
-unix:TARGET = ../lib/TTKCore
+TARGET = TTKCore
 
 win32{
     RC_FILE = TTKCore.rc
