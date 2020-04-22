@@ -27,11 +27,10 @@ contains(CONFIG, TTK_BUILD_LIB){
 }
 
 CONFIG += TTK_NO_MSVC_LINK_NEED
-win32{
-    msvc{
-        CONFIG -= TTK_NO_MSVC_LINK_NEED
-    }
+win32:msvc{
+    CONFIG -= TTK_NO_MSVC_LINK_NEED
 }
+
 include($$PWD/TTKExample.pri)
 include($$PWD/../TTKWidgetTools.pri)
 include($$PWD/../TTKQrc/TTKQrc.pri)
