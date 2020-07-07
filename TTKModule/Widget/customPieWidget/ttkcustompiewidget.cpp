@@ -163,5 +163,7 @@ double TTKCustomPieWidget::getSumValue()
 
 QPoint TTKCustomPieWidget::getOffsetPoint(double angel, int offset)
 {
+    Q_UNUSED(angel);
+    Q_UNUSED(offset);
     return QPoint(0, 0);
 }

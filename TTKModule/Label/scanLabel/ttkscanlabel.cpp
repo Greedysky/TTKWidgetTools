@@ -143,7 +143,7 @@ void TTKScanLabel::updateRender()
 void TTKScanLabel::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    m_rings.push_back({m_ringRadius, m_ringWidth, 10});
+    m_rings.push_back({m_ringRadius, m_ringWidth * 1.0f, 10});
 }
 
 void TTKScanLabel::paintEvent(QPaintEvent *event)
