@@ -131,6 +131,8 @@ void TTKToolsApplication::labelModuleChanged(int index)
             break;
         case 17: w = new TTKNetTrafficLabelProperty;
             break;
+        case 18: w = new TTKHeatMapLabelProperty;
+            break;
         default:
             break;
     }
@@ -451,6 +453,7 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKScanLabel");
     widget->addItem(":/icon/label", "TTKCrossLineLabel");
     widget->addItem(":/icon/label", "TTKNetTrafficLabel");
+    widget->addItem(":/icon/label", "TTKHeatMapLabelProperty");
 
     widget->setObjectName("labelRow");
     widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");

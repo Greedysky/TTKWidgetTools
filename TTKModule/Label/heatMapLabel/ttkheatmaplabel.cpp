@@ -283,7 +283,7 @@ TTKHeatMapLabel::TTKHeatMapLabel(QWidget *parent)
     setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    m_heatMapper = nullptr;
+    m_heatMapper = new HeatMapper(sizeHint());
 }
 
 TTKHeatMapLabel::~TTKHeatMapLabel()
@@ -335,13 +335,9 @@ void TTKHeatMapLabel::renderImage()
     }
 }
 
-void TTKHeatMapLabel::resizeEvent(QResizeEvent *event)
+QSize TTKHeatMapLabel::sizeHint() const
 {
-    QLabel::resizeEvent(event);
-    if(!m_heatMapper)
-    {
-        m_heatMapper = new HeatMapper(size());
-    }
+    return QSize(180, 180);
 }
 
 void TTKHeatMapLabel::paintEvent(QPaintEvent *event)

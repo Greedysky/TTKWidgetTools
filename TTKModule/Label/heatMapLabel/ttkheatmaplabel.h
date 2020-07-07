@@ -218,8 +218,9 @@ public:
     void addPoint(int x, int y);
     void renderImage();
 
+    virtual QSize sizeHint() const override;
+
 protected:
-    virtual void resizeEvent(QResizeEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
 
     HeatMapper *m_heatMapper;

@@ -5,12 +5,13 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
     m_item = new TTKHeatMapLabel(this);
+    TTKHeatMapLabel *widget = TTKStatic_cast(TTKHeatMapLabel*, m_item);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKHeatMapLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, widget->getClassName());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -21,7 +22,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     //
     QtProperty *widthItem = m_intManager->addProperty("Radius");
     m_intManager->setMinimum(widthItem, 0);
-    m_intManager->setValue(widthItem, 2);
+    m_intManager->setValue(widthItem, 50);
     objectItem->addSubProperty(widthItem);
     //
     QtProperty *opacityItem = m_intManager->addProperty("Opacity");
@@ -65,6 +66,12 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     objectItem->addSubProperty(colorSchemeItem);
     //
     m_browser->addProperty(objectItem);
+    //
+    for(int i=0; i<10; ++i)
+    {
+        widget->addPoint(90 + i * i, 90 + i * i);
+    }
+    widget->renderImage();
 }
 
 TTKHeatMapLabelProperty::~TTKHeatMapLabelProperty()
@@ -83,6 +90,12 @@ void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value
     {
         widget->setOpacity(value);
     }
+
+    for(int i=0; i<10; ++i)
+    {
+        widget->addPoint(90 + i * i, 90 + i * i);
+    }
+    widget->renderImage();
 }
 
 void TTKHeatMapLabelProperty::enumPropertyChanged(QtProperty *property, int value)
