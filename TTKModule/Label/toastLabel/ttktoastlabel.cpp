@@ -6,7 +6,7 @@
 TTKToastLabel::TTKToastLabel(QWidget *parent)
     : QLabel(parent)
 {
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint );
+    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
 #ifndef TTK_BUILD_EXAMPLE

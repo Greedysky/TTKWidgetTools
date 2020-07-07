@@ -12,7 +12,7 @@ TTKMoveResizeWidget::TTKMoveResizeWidget(QWidget *parent)
     m_struct.m_mouseLeftPress = false;
     m_direction = Direction_No;
 
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint );
+    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setMouseTracking(true);
 }
