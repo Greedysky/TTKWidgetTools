@@ -198,7 +198,7 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
 
 
 
-TTKTTKPictureFlowWidgetState::TTKTTKPictureFlowWidgetState()
+TTKPictureFlowWidgetState::TTKPictureFlowWidgetState()
     : m_backgroundColor(0),
       m_slideWidth(150),
       m_slideHeight(200),
@@ -208,7 +208,7 @@ TTKTTKPictureFlowWidgetState::TTKTTKPictureFlowWidgetState()
 
 }
 
-TTKTTKPictureFlowWidgetState::~TTKTTKPictureFlowWidgetState()
+TTKPictureFlowWidgetState::~TTKPictureFlowWidgetState()
 {
     for(int i = 0; i<m_slideImages.count(); i++)
     {
@@ -216,7 +216,7 @@ TTKTTKPictureFlowWidgetState::~TTKTTKPictureFlowWidgetState()
     }
 }
 
-void TTKTTKPictureFlowWidgetState::reposition()
+void TTKPictureFlowWidgetState::reposition()
 {
     m_angle = 70 * IANGLE_MAX / 360;
 
@@ -227,7 +227,7 @@ void TTKTTKPictureFlowWidgetState::reposition()
     m_spacing = 40;
 }
 
-void TTKTTKPictureFlowWidgetState::reset()
+void TTKPictureFlowWidgetState::reset()
 {
     m_centerSlide.m_angle = 0;
     m_centerSlide.m_cx = 0;
@@ -278,7 +278,7 @@ void TTKTTKPictureFlowWidgetState::reset()
 
 
 
-TTKTTKPictureFlowWidgetAnimator::TTKTTKPictureFlowWidgetAnimator()
+TTKPictureFlowWidgetAnimator::TTKPictureFlowWidgetAnimator()
     : m_target(0),
       m_step(0),
       m_frame(0),
@@ -287,7 +287,7 @@ TTKTTKPictureFlowWidgetAnimator::TTKTTKPictureFlowWidgetAnimator()
 
 }
 
-void TTKTTKPictureFlowWidgetAnimator::start(int slide)
+void TTKPictureFlowWidgetAnimator::start(int slide)
 {
     m_target = slide;
     if(!m_animateTimer.isActive() && m_state)
@@ -297,7 +297,7 @@ void TTKTTKPictureFlowWidgetAnimator::start(int slide)
     }
 }
 
-void TTKTTKPictureFlowWidgetAnimator::stop(int slide)
+void TTKPictureFlowWidgetAnimator::stop(int slide)
 {
     m_step = 0;
     m_target = slide;
@@ -305,7 +305,7 @@ void TTKTTKPictureFlowWidgetAnimator::stop(int slide)
     m_animateTimer.stop();
 }
 
-void TTKTTKPictureFlowWidgetAnimator::update()
+void TTKPictureFlowWidgetAnimator::update()
 {
     if(!m_animateTimer.isActive() || m_step == 0 || !m_state)
     {
@@ -448,7 +448,7 @@ void TTKTTKPictureFlowWidgetAnimator::update()
 
 
 
-TTKTTKPictureFlowWidgetSoftwareRenderer::TTKTTKPictureFlowWidgetSoftwareRenderer()
+TTKPictureFlowWidgetSoftwareRenderer::TTKPictureFlowWidgetSoftwareRenderer()
     : m_dirty(false),
       m_widget(nullptr),
       m_state(nullptr),
@@ -460,14 +460,14 @@ TTKTTKPictureFlowWidgetSoftwareRenderer::TTKTTKPictureFlowWidgetSoftwareRenderer
 
 }
 
-TTKTTKPictureFlowWidgetSoftwareRenderer::~TTKTTKPictureFlowWidgetSoftwareRenderer()
+TTKPictureFlowWidgetSoftwareRenderer::~TTKPictureFlowWidgetSoftwareRenderer()
 {
     m_surfaceCache.clear();
     m_buffer = QImage();
     delete m_blankSurface;
 }
 
-void TTKTTKPictureFlowWidgetSoftwareRenderer::paint()
+void TTKPictureFlowWidgetSoftwareRenderer::paint()
 {
     if(!m_widget)
     {
@@ -500,7 +500,7 @@ void TTKTTKPictureFlowWidgetSoftwareRenderer::paint()
     painter.drawImage(QPoint(0, 0), m_buffer);
 }
 
-void TTKTTKPictureFlowWidgetSoftwareRenderer::init()
+void TTKPictureFlowWidgetSoftwareRenderer::init()
 {
     if(!m_widget)
     {
@@ -530,7 +530,7 @@ void TTKTTKPictureFlowWidgetSoftwareRenderer::init()
     m_dirty = true;
 }
 
-QImage* TTKTTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
+QImage* TTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
 {
     if(!m_state || slideIndex < 0 || slideIndex >= (int)m_state->m_slideImages.count())
     {
@@ -583,7 +583,7 @@ QImage* TTKTTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
     return sr;
 }
 
-QRect TTKTTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slide, int col1, int col2)
+QRect TTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slide, int col1, int col2)
 {
     int blend = slide.m_blend;
     if(!blend)
@@ -716,7 +716,7 @@ QRect TTKTTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &s
     return rect;
 }
 
-void TTKTTKPictureFlowWidgetSoftwareRenderer::renderSlides()
+void TTKPictureFlowWidgetSoftwareRenderer::renderSlides()
 {
     int nleft = m_state->m_leftSlides.count();
     int nright = m_state->m_rightSlides.count();
@@ -743,7 +743,7 @@ void TTKTTKPictureFlowWidgetSoftwareRenderer::renderSlides()
     }
 }
 
-void TTKTTKPictureFlowWidgetSoftwareRenderer::render()
+void TTKPictureFlowWidgetSoftwareRenderer::render()
 {
     m_buffer.fill(m_state->m_backgroundColor);
     renderSlides();
@@ -759,14 +759,14 @@ TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
     setAttribute(Qt::WA_OpaquePaintEvent, true);
     setAttribute(Qt::WA_NoSystemBackground, true);
 
-    m_state = new TTKTTKPictureFlowWidgetState;
+    m_state = new TTKPictureFlowWidgetState;
     m_state->reset();
     m_state->reposition();
 
-    m_animator = new TTKTTKPictureFlowWidgetAnimator;
+    m_animator = new TTKPictureFlowWidgetAnimator;
     m_animator->m_state = m_state;
 
-    m_renderer = new TTKTTKPictureFlowWidgetSoftwareRenderer;
+    m_renderer = new TTKPictureFlowWidgetSoftwareRenderer;
     m_renderer->m_state = m_state;
     m_renderer->m_widget = this;
     m_renderer->init();
