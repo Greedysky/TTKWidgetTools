@@ -29,7 +29,7 @@ BEGIN
                 VALUE "FileDescription", "TTKWidgetTools"
                 VALUE "FileVersion", "2.1.0.0"
                 VALUE "InternalName", "TTKWidgetTools.exe"
-                VALUE "LegalCopyright", "Copyright By Greedysky Studio(C)2020"
+                VALUE "LegalCopyright", "Copyright By Greedysky Studio(C)2021"
                 VALUE "OriginalFilename", "TTKWidgetTools.exe"
                 VALUE "ProductName", "TTKWidgetTools"
                 VALUE "ProductVersion", "2.1.0.0"
