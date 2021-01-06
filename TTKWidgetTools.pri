@@ -25,8 +25,7 @@ QT       += widgets
 }
 
 include($$PWD/TTKVersion.pri)
-win32:DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
-unix:DESTDIR = $$OUT_PWD/../lib/$$TTKWidgetTools
+DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
 
 win32{
     LIBS += -lIphlpapi

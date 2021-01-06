@@ -20,6 +20,7 @@ TEMPLATE = lib
 CONFIG += TTK_BUILD_LIB
 
 include($$PWD/../TTKWidgetTools.pri)
+CONFIG += plugin lib
 
 TARGET = TTKCore
 
