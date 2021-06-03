@@ -1,6 +1,7 @@
 #include "ttkflatbuttonwidget.h"
 
 #include <QPainter>
+#include <QPainterPath>
 
 #define ICONPADDING     12
 

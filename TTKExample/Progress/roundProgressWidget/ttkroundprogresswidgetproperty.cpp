@@ -1,11 +1,26 @@
 #include "ttkroundprogresswidgetproperty.h"
 #include "ttkroundprogresswidget.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
 #include <QTimer>
+#include <QDateTime>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 TTKRoundProgressWidgetProperty::TTKRoundProgressWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
+#if !TTK_QT_VERSION_CHECK(5,10,0)
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+#endif
     m_item = new TTKRoundProgressWidget(this);
     //
     m_timer = new QTimer(this);
@@ -150,5 +165,5 @@ void TTKRoundProgressWidgetProperty::colorPropertyChanged(QtProperty *property, 
 void TTKRoundProgressWidgetProperty::updateRender()
 {
     TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
-    widget->setText(qrand() % 100 + 1);
+    widget->setText(random(100) + 1);
 }

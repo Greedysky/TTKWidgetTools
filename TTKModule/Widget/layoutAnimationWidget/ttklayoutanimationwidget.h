@@ -41,7 +41,7 @@ public:
     void stop();
 
     void addStretch(int stretch = 0);
-    void addWidget(QWidget *widget, int stretch = 0, Qt::Alignment alignment = 0);
+    void addWidget(QWidget *widget, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
     void removeWidget(QWidget *widget);
 
     virtual QSize sizeHint() const override;

@@ -1,11 +1,26 @@
 #include "ttkringsmapprogresswidgetproperty.h"
 #include "ttkringsmapprogresswidget.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
 #include <QTimer>
+#include <QDateTime>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 TTKRingsMapProgressWidgetProperty::TTKRingsMapProgressWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
+#if !TTK_QT_VERSION_CHECK(5,10,0)
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+#endif
     m_item = new TTKRingsMapProgressWidget(this);
     //
     m_timer = new QTimer(this);
@@ -52,5 +67,5 @@ void TTKRingsMapProgressWidgetProperty::boolPropertyChanged(QtProperty *property
 void TTKRingsMapProgressWidgetProperty::updateRender()
 {
     TTKRingsMapProgressWidget *widget = TTKStatic_cast(TTKRingsMapProgressWidget*, m_item);
-    widget->setValue(qrand() % 100 + 1);
+    widget->setValue(random(100) + 1);
 }

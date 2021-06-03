@@ -51,6 +51,7 @@
 #include <QFocusEvent>
 #include <QStyle>
 #include <QPalette>
+#include "ttkglobal.h"
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE
@@ -349,7 +350,11 @@ void QtPropertyEditorDelegate::paint(QPainter *painter, const QStyleOptionViewIt
             hasValue = property->hasValue();
     }
 
+#if TTK_QT_VERSION_CHECK(5,0,0)
+    QStyleOptionViewItem opt = option;
+#else
     QStyleOptionViewItemV2 opt = option;
+#endif
     if ((m_editorPrivate && index.column() == 0) || !hasValue) {
         QtProperty *property = m_editorPrivate->indexToProperty(index);
         if (property && property->isModified()) {
@@ -484,9 +489,13 @@ void QtTreePropertyBrowserPrivate::init(QWidget *parent)
     m_delegate = new QtPropertyEditorDelegate(parent);
     m_delegate->setEditorPrivate(this);
     m_treeWidget->setItemDelegate(m_delegate);
+#if TTK_QT_VERSION_CHECK(5,0,0)
+    m_treeWidget->header()->setSectionsMovable(false);
+    m_treeWidget->header()->setSectionResizeMode(QHeaderView::Stretch);
+#else
     m_treeWidget->header()->setMovable(false);
     m_treeWidget->header()->setResizeMode(QHeaderView::Stretch);
-
+#endif
     m_expandIcon = drawIndicatorIcon(q_ptr->palette(), q_ptr->style());
 
     QObject::connect(m_treeWidget, SIGNAL(collapsed(const QModelIndex &)), q_ptr, SLOT(slotCollapsed(const QModelIndex &)));
@@ -590,7 +599,11 @@ void QtTreePropertyBrowserPrivate::propertyInserted(QtBrowserItem *index, QtBrow
     m_indexToItem[index] = newItem;
 
     newItem->setFlags(newItem->flags() | Qt::ItemIsEditable);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    newItem->setExpanded(true);
+#else
     m_treeWidget->setItemExpanded(newItem, true);
+#endif
 
     updateItem(newItem);
 }
@@ -897,7 +910,11 @@ void QtTreePropertyBrowser::setResizeMode(QtTreePropertyBrowser::ResizeMode mode
         case QtTreePropertyBrowser::Stretch:
         default:                                      m = QHeaderView::Stretch;          break;
     }
+#if TTK_QT_VERSION_CHECK(5,0,0)
+    d_ptr->m_treeWidget->header()->setSectionResizeMode(m);
+#else
     d_ptr->m_treeWidget->header()->setResizeMode(m);
+#endif
 }
 
 /*!

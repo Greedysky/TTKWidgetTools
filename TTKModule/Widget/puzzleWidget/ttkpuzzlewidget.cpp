@@ -1,9 +1,21 @@
 #include "ttkpuzzlewidget.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
 #include <QTimer>
 #include <QPainter>
+#include <QPainterPath>
 #include <QBoxLayout>
 #include <QDateTime>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 TTKPuzzleItemWidget::TTKPuzzleItemWidget(QWidget *parent)
     : QWidget(parent)
@@ -12,7 +24,9 @@ TTKPuzzleItemWidget::TTKPuzzleItemWidget(QWidget *parent)
     m_squareWidth = 100;
     m_squareRadius = 30;
 
+#if !TTK_QT_VERSION_CHECK(5,10,0)
     qsrand(QDateTime::currentMSecsSinceEpoch());
+#endif
 }
 
 void TTKPuzzleItemWidget::setSquareWidth(int squareWidth)
@@ -36,8 +50,8 @@ void TTKPuzzleItemWidget::setPixmap(const QString& pixmap)
 void TTKPuzzleItemWidget::updatePixmap()
 {
     const int offset = m_squareWidth + m_squareRadius;
-    m_offsetPoint.rx() = qBound(0, qrand() % width() + offset, width() - offset);
-    m_offsetPoint.ry() = qBound(0, qrand() % height() + offset, height() - offset);
+    m_offsetPoint.rx() = qBound(0, random(width()) + offset, width() - offset);
+    m_offsetPoint.ry() = qBound(0, random(height()) + offset, height() - offset);
     update();
 }
 

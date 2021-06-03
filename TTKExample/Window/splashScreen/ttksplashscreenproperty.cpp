@@ -9,7 +9,7 @@ TTKSplashScreenProperty::TTKSplashScreenProperty(QWidget *parent)
     m_item = new QToolButton(this);
     connect(m_item, SIGNAL(clicked()), SLOT(showWidget()));
     //
-    TTKSplashScreen *widget = new TTKSplashScreen(this);
+    TTKSplashScreen *widget = new TTKSplashScreen;
     m_label = widget;
     QWidget *mainWidget = new QWidget(this);
     mainWidget->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);

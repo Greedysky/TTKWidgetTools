@@ -1,6 +1,7 @@
 #include "ttkprogresswidget.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QPropertyAnimation>
 
 TTKProgressDelegate::TTKProgressDelegate(TTKProgressWidget *parent)

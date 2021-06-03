@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <QToolTip>
 #include <QMouseEvent>
+#include <QPainterPath>
 
 TTKHlPalette::TTKHlPalette(QWidget *parent)
     : QWidget(parent)

@@ -20,6 +20,7 @@
  ================================================= */
 
 #include <QLabel>
+#include <QPainterPath>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 

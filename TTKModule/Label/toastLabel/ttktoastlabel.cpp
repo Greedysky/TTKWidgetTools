@@ -92,7 +92,12 @@ void TTKToastLabel::popup(QWidget *parent)
 void TTKToastLabel::setText(const QString &text)
 {
     QFontMetrics metrics = QFontMetrics(m_font);
-    setFixedSize(metrics.width(text) + m_margin.x(), metrics.height() + m_margin.y());
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    const int w = metrics.horizontalAdvance(text);
+#else
+    const int w = metrics.width(text);
+#endif
+    setFixedSize(w + m_margin.x(), metrics.height() + m_margin.y());
     QLabel::setText(text);
 }
 
@@ -115,7 +120,11 @@ void TTKToastLabel::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(0, 0, 0, 175));
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    painter.drawRoundedRect(rect(), 6, 6);
+#else
     painter.drawRoundRect(rect(), 6, 6);
+#endif
 
     painter.setPen(QColor(255, 255, 255));
     painter.drawText(rect(), Qt::AlignCenter, text());

@@ -2,6 +2,7 @@
 
 #include <QTimer>
 #include <QPainter>
+#include <QPainterPath>
 
 TTKScanLabel::TTKScanLabel(QWidget *parent)
     : QWidget(parent)

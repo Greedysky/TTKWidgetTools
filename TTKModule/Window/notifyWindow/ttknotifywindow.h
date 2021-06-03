@@ -93,6 +93,8 @@ private Q_SLOTS:
     void showNext();
 
 private:
+    QRect windowScreenGeometry(int index = 0);
+
     int m_maxCount;
     int m_displayTime;
 

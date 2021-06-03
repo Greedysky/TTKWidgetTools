@@ -356,19 +356,23 @@ void TTKArcMeterWidget::drawScaleNum(QPainter *painter)
     painter->save();
     painter->setPen(m_scaleNumColor);
 
-    double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
-    double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
+    const double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
+    const double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
 
     for(int i = 0; i <= m_scaleMajor; i++)
     {
-        double sina = qSin(startRad - i * deltaRad);
-        double cosa = qCos(startRad - i * deltaRad);
-        double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
-        QString strValue = QString("%1").arg(value, 0, 'f', m_precision);
-        double textWidth = fontMetrics().width(strValue);
-        double textHeight = fontMetrics().height();
-        int x = radius * cosa - textWidth / 2;
-        int y = -radius * sina + textHeight / 4;
+        const double sina = qSin(startRad - i * deltaRad);
+        const double cosa = qCos(startRad - i * deltaRad);
+        const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
+        const QString &strValue = QString("%1").arg(value, 0, 'f', m_precision);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+        const int textWidth = fontMetrics().horizontalAdvance(strValue);
+#else
+        const int textWidth = fontMetrics().width(strValue);
+#endif
+        const int textHeight = fontMetrics().height();
+        const int x = radius * cosa - textWidth / 2.0;
+        const int y = -radius * sina + textHeight / 4.0;
         painter->drawText(x, y, strValue);
     }
     painter->restore();

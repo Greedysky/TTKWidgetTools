@@ -1,11 +1,26 @@
 #include "ttkledpagelabelproperty.h"
 #include "ttkledpagelabel.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
 #include <QTimer>
+#include <QDateTime>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
+#if !TTK_QT_VERSION_CHECK(5,10,0)
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+#endif
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
@@ -82,5 +97,5 @@ void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const Q
 void TTKLedPageLabelProperty::updateRender()
 {
     TTKLedPageLabel *widget = TTKStatic_cast(TTKLedPageLabel*, m_item);
-    widget->setText(QString::number(qrand() % 100 + 1));
+    widget->setText(QString::number(random(100) + 1));
 }

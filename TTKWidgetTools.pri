@@ -17,11 +17,14 @@
 # =================================================
 
 QT       += core gui
-equals(QT_MAJOR_VERSION, 4){
+equals(QT_MAJOR_VERSION, 4){ #Qt4
 CONFIG   += gcc
 }
-equals(QT_MAJOR_VERSION, 5){
-QT       += widgets
+greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
+    QT   += widgets
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QT   += core5compat
+    }
 }
 
 include($$PWD/TTKVersion.pri)
@@ -29,25 +32,17 @@ DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
 
 win32{
     LIBS += -lIphlpapi
-    equals(QT_MAJOR_VERSION, 5){
-        msvc{
-            CONFIG +=c++11
-            !contains(QMAKE_TARGET.arch, x86_64){
-                 #support on windows XP
-                 QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
-                 QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
-            }
-        }
-
-        gcc{
-            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
+    msvc{
+        CONFIG +=c++11
+        !contains(QMAKE_TARGET.arch, x86_64){
+             #support on windows XP
+             QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
+             QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
         }
     }
 
-    equals(QT_MAJOR_VERSION, 4){
-        gcc{
-            QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
-        }
+    gcc{
+        QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
     }
 }
 

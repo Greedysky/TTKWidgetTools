@@ -168,7 +168,11 @@ void TTKCircleProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPixmap pixmap;
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    if(!QPixmapCache::find(key(), &pixmap))
+#else
     if(!QPixmapCache::find(key(), pixmap))
+#endif
     {
         pixmap = generatePixmap();
         QPixmapCache::insert(key(), pixmap);

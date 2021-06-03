@@ -60,6 +60,7 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QMap>
+#include "ttkglobal.h"
 
 #if defined(Q_CC_MSVC)
 #    pragma warning(disable: 4786) /* MS VS 6: truncating debug info after 255 characters */
@@ -2331,9 +2332,14 @@ void QtColorEditWidget::setValue(const QColor &c)
 
 void QtColorEditWidget::buttonClicked()
 {
-    bool ok = false;
     QRgb oldRgba = m_color.rgba();
+#if TTK_QT_VERSION_CHECK(5,12,0)
+    bool ok = true;
+    QRgb newRgba = QColorDialog::getColor(oldRgba, this).rgba();
+#else
+    bool ok = false;
     QRgb newRgba = QColorDialog::getRgba(oldRgba, &ok, this);
+#endif
     if (ok && newRgba != oldRgba) {
         setValue(QColor::fromRgba(newRgba));
         emit valueChanged(m_color);

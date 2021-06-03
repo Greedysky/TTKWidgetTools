@@ -75,6 +75,10 @@ void TTKSmoothMovingTableWidget::wheelEvent(QWheelEvent *event)
         m_previousValue = m_scrollBar->value();
         m_isFirstInit = false;
     }
+#if TTK_QT_VERSION_CHECK(5,15,0)
+    m_deltaValue += event->angleDelta().y();
+#else
     m_deltaValue += event->delta();
+#endif
     m_animationTimer->start();
 }

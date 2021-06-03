@@ -1,11 +1,26 @@
 #include "ttkradiusprogresswidgetproperty.h"
 #include "ttkradiusprogresswidget.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
 #include <QTimer>
+#include <QDateTime>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 TTKRadiusProgressWidgetProperty::TTKRadiusProgressWidgetProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
+#if !TTK_QT_VERSION_CHECK(5,10,0)
+    qsrand(QDateTime::currentMSecsSinceEpoch());
+#endif
     m_item = new TTKRadiusProgressWidget(this);
     //
     m_timer = new QTimer(this);
@@ -52,5 +67,5 @@ void TTKRadiusProgressWidgetProperty::boolPropertyChanged(QtProperty *property, 
 void TTKRadiusProgressWidgetProperty::updateRender()
 {
     TTKRadiusProgressWidget *widget = TTKStatic_cast(TTKRadiusProgressWidget*, m_item);
-    widget->setValue(qrand() % 100 + 1);
+    widget->setValue(random(100) + 1);
 }

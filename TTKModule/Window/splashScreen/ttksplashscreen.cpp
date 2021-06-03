@@ -7,14 +7,14 @@
     "QProgressBar{ color:white;border:none; background:rgb(68,69,73);font:30px; text-align:center;}"\
     "QProgressBar::chunk{background-color: rgb(0, 160, 230);}"
 
-TTKSplashScreen::TTKSplashScreen(QWidget *parent)
-    : TTKSplashScreen(0, parent)
+TTKSplashScreen::TTKSplashScreen()
+    : TTKSplashScreen(0)
 {
 
 }
 
-TTKSplashScreen::TTKSplashScreen(int mstime, QWidget *parent)
-    : QSplashScreen(parent),
+TTKSplashScreen::TTKSplashScreen(int mstime)
+    : QSplashScreen(),
       m_elapseTime(mstime),
       m_mainWidget(nullptr)
 {
@@ -28,8 +28,8 @@ TTKSplashScreen::TTKSplashScreen(int mstime, QWidget *parent)
     connect(m_timer, SIGNAL(timeout()), SLOT(updateProgress()));
 }
 
-TTKSplashScreen::TTKSplashScreen(const QPixmap &pixmap, int mstime, QWidget *parent)
-    : TTKSplashScreen(mstime, parent)
+TTKSplashScreen::TTKSplashScreen(const QPixmap &pixmap, int mstime)
+    : TTKSplashScreen(mstime)
 {
     setPixmap(pixmap);
 }

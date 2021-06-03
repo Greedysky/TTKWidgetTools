@@ -33,9 +33,9 @@ class TTK_CORE_EXPORT TTKSplashScreen : public QSplashScreen
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSplashScreen)
 public:
-    explicit TTKSplashScreen(QWidget *parent = nullptr);
-    explicit TTKSplashScreen(int mstime, QWidget *parent = nullptr);
-    explicit TTKSplashScreen(const QPixmap &pixmap, int mstime, QWidget *parent = nullptr);
+    explicit TTKSplashScreen();
+    explicit TTKSplashScreen(int mstime);
+    explicit TTKSplashScreen(const QPixmap &pixmap, int mstime);
     virtual ~TTKSplashScreen();
 
     void setWidget(QWidget *main);

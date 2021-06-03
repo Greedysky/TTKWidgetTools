@@ -211,7 +211,11 @@ void TTKBatteryLabel::drawBorder(QPainter *painter)
 
     painter->setPen(QPen(m_borderColorStart, 5));
     painter->setBrush(Qt::NoBrush);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    painter->drawRoundedRect(m_batteryRect, 10, 20);
+#else
     painter->drawRoundRect(m_batteryRect, 10, 20);
+#endif
 
     QPointF headRectTopLeft(m_batteryRect.topRight().x(), height() / 3);
     QPointF headRectBottomRight(width(), height() - height() / 3);
@@ -222,7 +226,11 @@ void TTKBatteryLabel::drawBorder(QPainter *painter)
     headRectGradient.setColorAt(1.0, m_borderColorEnd);
 
     painter->setBrush(headRectGradient);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    painter->drawRoundedRect(headRect, 15, 25);
+#else
     painter->drawRoundRect(headRect, 15, 25);
+#endif
     painter->restore();
 }
 
@@ -252,6 +260,10 @@ void TTKBatteryLabel::drawBg(QPainter *painter)
     QPointF bottomRight(width + margin + 5, m_batteryRect.bottomRight().y() - margin);
     QRectF rect(topLeft, bottomRight);
 
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    painter->drawRoundedRect(rect, 10, 10);
+#else
     painter->drawRoundRect(rect, 10, 10);
+#endif
     painter->restore();
 }

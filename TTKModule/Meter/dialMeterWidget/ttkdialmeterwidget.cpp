@@ -252,10 +252,14 @@ void TTKDialMeterWidget::drawScaleNum(QPainter *painter)
         const double cosa = qCos(startRad - i * deltaRad);
         const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         const QString &strValue = QString("%1").arg(value, 0, 'f', m_precision);
-        const double textWidth = fontMetrics().width(strValue);
-        const double textHeight = fontMetrics().height();
-        const int x = radius * cosa - textWidth / 2;
-        const int y = -radius * sina + textHeight / 4;
+#if TTK_QT_VERSION_CHECK(5,13,0)
+        const int textWidth = fontMetrics().horizontalAdvance(strValue);
+#else
+        const int textWidth = fontMetrics().width(strValue);
+#endif
+        const int textHeight = fontMetrics().height();
+        const int x = radius * cosa - textWidth / 2.0;
+        const int y = -radius * sina + textHeight / 4.0;
         painter->drawText(x, y, strValue);
     }
     painter->restore();

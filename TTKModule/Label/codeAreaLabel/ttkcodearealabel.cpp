@@ -1,8 +1,20 @@
 #include "ttkcodearealabel.h"
-
+#if TTK_QT_VERSION_CHECK(5,10,0)
+#include <QRandomGenerator>
+#endif
+#include <QDateTime>
 #include <QPainter>
 #include <QPaintEvent>
-#include <QDateTime>
+#include <QPainterPath>
+
+static int random(int value)
+{
+#if TTK_QT_VERSION_CHECK(5,10,0)
+    return QRandomGenerator::global()->bounded(value);
+#else
+    return qrand() % value;
+#endif
+}
 
 #define DEF_CODECOUNT       4
 #define DEF_NOISYPOINTCOUNT 60
@@ -12,8 +24,9 @@
 TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
     : QLabel(parent)
 {
+#if !TTK_QT_VERSION_CHECK(5,10,0)
     qsrand(QDateTime::currentMSecsSinceEpoch());
-
+#endif
     m_slCodeRange << "0" << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" <<
        "a" << "b" << "c" << "d" << "e" << "f" << "g" << "h" << "i" << "j" << "k" << "l" << "m" << "n" <<
        "o" << "p" << "q" << "r" << "s" << "t" << "u" << "v" << "w" << "x" << "y" << "z" <<
@@ -34,7 +47,7 @@ void TTKCodeAreaLabel::renderPicture()
     QStringList number;
     for(int i=0; i<m_nCodeCount; i++)
     {
-        number << m_slCodeRange[qrand() % m_slCodeRange.count()];
+        number << m_slCodeRange[random(m_slCodeRange.count())];
     }
 
     m_sCode.clear();
@@ -86,7 +99,7 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
     for(int i=0; i<m_lCodePic.size(); i++)
     {
         drawConversion(painter);
-        painter.fillPath(m_lCodePic[i], QBrush(m_lCodeColor[qrand() % m_lCodeColor.count()]));
+        painter.fillPath(m_lCodePic[i], QBrush(m_lCodeColor[random(m_lCodeColor.count())]));
         painter.translate(10, 0);
     }
     painter.restore();
@@ -110,20 +123,20 @@ void TTKCodeAreaLabel::drawNoisyPoint(QPainter &painter)
     painter.setBrush(Qt::NoBrush);
     for(int i=0; i<m_nNoisyPointCount; i++)
     {
-        painter.drawPoint(QPointF(qrand() % size().width(), qrand() % size().height()));
+        painter.drawPoint(QPointF(random(size().width()), random(size().height())));
     }
 }
 
 void TTKCodeAreaLabel::drawConversion(QPainter &painter)
 {
-    if(qrand() % 2)
+    if(random(2))
     {
-        painter.rotate(qrand() % m_nConverseRotate);
+        painter.rotate(random(m_nConverseRotate));
     }
     else
     {
-        painter.rotate(-(qrand() % m_nConverseRotate));
+        painter.rotate(-random(m_nConverseRotate));
     }
-    painter.scale((qrand() % m_nConverseScale + (100 - m_nConverseScale)) / 100.0 , 
-                  (qrand() % m_nConverseScale + (100 - m_nConverseScale)) / 100.0);
+    painter.scale((random(m_nConverseScale + (100 - m_nConverseScale))) / 100.0 ,
+                  (random(m_nConverseScale + (100 - m_nConverseScale))) / 100.0);
 }

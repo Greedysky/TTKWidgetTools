@@ -1,6 +1,7 @@
 #include "ttkledpagelabel.h"
 
 #include <QPainter>
+#include <QPainterPath>
 
 TTKLedPageLabel::TTKLedPageLabel(QWidget *parent)
     : QWidget(parent)

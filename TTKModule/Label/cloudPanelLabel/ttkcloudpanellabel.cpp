@@ -1,6 +1,7 @@
 #include "ttkcloudpanellabel.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QMouseEvent>
 
 TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)

@@ -149,10 +149,11 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
     painter->setPen(Qt::white);
     painter->translate(m_center);
 
-    qreal dAngle=(qreal)270/100;
+    const qreal dAngle = (qreal)270/100;
     qreal startAngle = 45;
     int value = 0;
     QString strValue;
+
     for(int i=0; i<=100; i++)
     {
         painter->save();
@@ -160,15 +161,19 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
         if(i%10 == 0)
         {
             strValue = QString::number(value);
-            qreal textWidth = fontMetrics().width(strValue);
-            qreal textHeight = fontMetrics().height();
-            QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
-            QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_LONG);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+            const int textWidth = fontMetrics().horizontalAdvance(strValue);
+#else
+            const int textWidth = fontMetrics().width(strValue);
+#endif
+            const qreal textHeight = fontMetrics().height();
+            const QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
+            const QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_LONG);
             painter->drawLine(bottomPot, topPot);
             value += 10*m_ratio;
 
             painter->save();
-            QPointF textPot(0 - textWidth/2, m_colorCircleRadius + S_SPACE + S_LONG + S_SPACE + textHeight);
+            const QPointF textPot(0 - textWidth/2, m_colorCircleRadius + S_SPACE + S_LONG + S_SPACE + textHeight);
             painter->translate(textPot);
             painter->rotate(180);
             painter->drawText(QPointF(-textWidth, textHeight/2), strValue);
@@ -176,15 +181,15 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
         }
         else if(i%5 == 0)
         {
-            QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
-            QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_SPAOK);
+            const QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
+            const QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_SPAOK);
             painter->drawLine(bottomPot, topPot);
 
         }
         else
         {
-            QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
-            QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_SHORT);
+            const QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
+            const QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_SHORT);
             painter->drawLine(bottomPot, topPot);
         }
         painter->restore();
@@ -197,7 +202,7 @@ void TTKSpeedMeterWidget::drawCoverBall(QPainter *painter)
 {
     painter->save();
 
-    qreal ballRadius = m_outerRadius/7;
+    const qreal ballRadius = m_outerRadius/7;
     m_coverBallRadius = ballRadius;
     QRadialGradient ballGradient(m_center, ballRadius, m_center);
     ballGradient.setColorAt(0.0, QColor(140, 140, 140));
@@ -213,13 +218,13 @@ void TTKSpeedMeterWidget::drawCoverBall(QPainter *painter)
 void TTKSpeedMeterWidget::drawTextRect(QPainter *painter)
 {
     painter->save();
-    qreal rectWidth = m_coverCircleRadius/5;
+    const qreal rectWidth = m_coverCircleRadius/5;
 
-    QPointF topLeftPot(m_center.x() -2.5*rectWidth, m_center.y()+rectWidth*2);
-    QPointF bottomRightPot(topLeftPot.x()+5*rectWidth, topLeftPot.y()+rectWidth*2);
-    QRectF textRect(topLeftPot, bottomRightPot);
+    const QPointF topLeftPot(m_center.x() -2.5*rectWidth, m_center.y()+rectWidth*2);
+    const QPointF bottomRightPot(topLeftPot.x()+5*rectWidth, topLeftPot.y()+rectWidth*2);
+    const QRectF textRect(topLeftPot, bottomRightPot);
 
-    qreal fontSize = textRect.height()/2;
+    const qreal fontSize = textRect.height()/2;
     QFont font;
     font.setPointSize(fontSize);
     painter->setFont(font);
@@ -243,8 +248,8 @@ void TTKSpeedMeterWidget::drawColorPie(QPainter *painter)
 {
     painter->save();
 
-    QPointF topLeftPot(m_center.x() - m_colorCircleRadius, m_center.y() - m_colorCircleRadius);
-    QPointF bottomRightPot(m_center.x() + m_colorCircleRadius, m_center.y() + m_colorCircleRadius);
+    const QPointF topLeftPot(m_center.x() - m_colorCircleRadius, m_center.y() - m_colorCircleRadius);
+    const QPointF bottomRightPot(m_center.x() + m_colorCircleRadius, m_center.y() + m_colorCircleRadius);
     m_colorCircleRect = QRectF(topLeftPot, bottomRightPot);
     painter->setPen(Qt::NoPen);
 
@@ -269,13 +274,13 @@ void TTKSpeedMeterWidget::drawIndicator(QPainter *painter)
     painter->save();
 
     painter->translate(m_center);
-    qreal increment = (qreal)270/100;
-    qreal changedAngle = 45 + increment*m_currentValue;
+    const qreal increment = (qreal)270/100;
+    const qreal changedAngle = 45 + increment*m_currentValue;
     painter->rotate(changedAngle);
 
-    QPointF topPot(0, m_colorCircleRadius + S_LONG);
-    QPointF bottomLeftPot(-m_coverBallRadius/3, 0);
-    QPointF bottomRightPot(m_coverBallRadius/3, 0);
+    const QPointF topPot(0, m_colorCircleRadius + S_LONG);
+    const QPointF bottomLeftPot(-m_coverBallRadius/3, 0);
+    const QPointF bottomRightPot(m_coverBallRadius/3, 0);
     painter->setPen(Qt::NoPen);
 
     QLinearGradient indicatorGradient(topPot, bottomLeftPot);

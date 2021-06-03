@@ -55,7 +55,11 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
     int offset = 0;
     foreach(const QString &var, data)
     {
-        int fs = metrics.width(var.trimmed());
+#if TTK_QT_VERSION_CHECK(5,13,0)
+        const int fs = metrics.horizontalAdvance(var.trimmed());
+#else
+        const int fs = metrics.width(var.trimmed());
+#endif
         if(offset <= event->pos().x() && event->pos().x() <= offset + fs)
         {
             setCursor(QCursor(Qt::PointingHandCursor));
@@ -63,7 +67,11 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
             m_currentString = var.trimmed();
             break;
         }
+#if TTK_QT_VERSION_CHECK(5,13,0)
+        offset += (fs + metrics.horizontalAdvance(" - "));
+#else
         offset += (fs + metrics.width(" - "));
+#endif
     }
     update();
 }

@@ -47,7 +47,11 @@ void TTKMarqueeLabel::setText(const QString &text)
         m_text = text;
         m_labText->setText(text);
 
+#if TTK_QT_VERSION_CHECK(5,13,0)
+        const int textWidth = fontMetrics().horizontalAdvance(text);
+#else
         const int textWidth = fontMetrics().width(text);
+#endif
         const int textHeight = fontMetrics().height();
         m_labText->resize(QSize(textWidth + 15, textHeight + 5));
 
@@ -133,7 +137,11 @@ void TTKMarqueeLabel::timeout()
         return;
     }
 
-    int textWidth = fontMetrics().width(m_text);
+#if TTK_QT_VERSION_CHECK(5,13,0)
+    const int textWidth = fontMetrics().horizontalAdvance(m_text);
+#else
+    const int textWidth = fontMetrics().width(m_text);
+#endif
     if(m_moveStyle == MoveStyleLeftAndRight)
     {
         if(textWidth <= width())

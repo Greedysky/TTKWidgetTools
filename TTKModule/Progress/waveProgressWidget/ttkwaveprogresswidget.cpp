@@ -3,6 +3,7 @@
 #include <QTimer>
 #include <qmath.h>
 #include <QPainter>
+#include <QPainterPath>
 
 TTKWaveProgressWidget::TTKWaveProgressWidget(QWidget *parent)
     : QWidget(parent)
