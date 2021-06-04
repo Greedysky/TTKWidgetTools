@@ -18,15 +18,10 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkheatmaplabel.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkheatmaplabel.cpp
 
-}
 #########################################
 include($$PWD/heatmap/heatmap.pri)
 

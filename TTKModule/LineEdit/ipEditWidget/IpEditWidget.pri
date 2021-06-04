@@ -18,12 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkipeditwidget.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkipeditwidget.cpp
-
-}

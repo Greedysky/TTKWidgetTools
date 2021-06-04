@@ -18,12 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttktilebackgroundlabel.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttktilebackgroundlabel.cpp
-
-}

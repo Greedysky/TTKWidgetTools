@@ -18,14 +18,8 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkmovedialog.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkmovedialog.cpp
 
 RESOURCES += $$PWD/MoveDialog.qrc
-
-}

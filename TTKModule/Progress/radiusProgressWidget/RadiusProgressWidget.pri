@@ -18,14 +18,8 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkradiusprogresswidget.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkradiusprogresswidget.cpp
 
 RESOURCES += $$PWD/RadiusProgressWidget.qrc
-
-}

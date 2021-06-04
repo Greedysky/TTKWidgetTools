@@ -18,14 +18,8 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkanimationprogresswidget.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkanimationprogresswidget.cpp
 
 RESOURCES += $$PWD/AnimationProgressWidget.qrc
-
-}

@@ -33,7 +33,7 @@ DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
 win32{
     LIBS += -lIphlpapi
     msvc{
-        CONFIG +=c++11
+        CONFIG += c++11
         !contains(QMAKE_TARGET.arch, x86_64){
              #support on windows XP
              QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
@@ -57,4 +57,3 @@ HEADERS += $$PWD/ttkglobal.h
 HEADERS += $$PWD/ttkglobaldefine.h
 INCLUDEPATH += $$PWD
 #########################################
-include($$PWD/TTKModule/TTKModule.pri)

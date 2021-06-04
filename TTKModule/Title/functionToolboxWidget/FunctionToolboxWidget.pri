@@ -18,14 +18,8 @@
 
 INCLUDEPATH += $$PWD
 
-!contains(CONFIG, TTK_NO_MSVC_LINK_NEED){
 HEADERS += $$PWD/ttkfunctiontoolboxwidget.h
 
-}
-
-contains(CONFIG, TTK_BUILD_LIB){
 SOURCES += $$PWD/ttkfunctiontoolboxwidget.cpp
 
 RESOURCES += $$PWD/FunctionToolboxWidget.qrc
-
-}
