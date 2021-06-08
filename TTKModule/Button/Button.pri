@@ -18,9 +18,11 @@
 
 INCLUDEPATH += $$PWD
 
+!equals(QT_MAJOR_VERSION, 6){ #Qt6.0.x - 6.1.x not support
 include($$PWD/checkButtonWidget/CheckButtonWidget.pri)
-include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
 include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
 include($$PWD/toggleWidget/ToggleWidget.pri)
+}
+include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
 include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
 include($$PWD/colorButtonWidget/ColorButtonWidget.pri)

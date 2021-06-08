@@ -60,7 +60,10 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QMap>
-#include "ttkglobal.h"
+
+#if TTK_QT_VERSION_CHECK(6,0,0)
+#include <QRegularExpressionValidator>
+#endif
 
 #if defined(Q_CC_MSVC)
 #    pragma warning(disable: 4786) /* MS VS 6: truncating debug info after 255 characters */
@@ -1017,7 +1020,11 @@ void QtLineEditFactoryPrivate::slotRegExpChanged(QtProperty *property,
         const QValidator *oldValidator = editor->validator();
         QValidator *newValidator = 0;
         if (regExp.isValid()) {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+            newValidator = new QRegularExpressionValidator(QRegularExpression(regExp.pattern()), editor);
+#else
             newValidator = new QRegExpValidator(regExp, editor);
+#endif
         }
         editor->setValidator(newValidator);
         if (oldValidator)
@@ -1139,7 +1146,12 @@ QWidget *QtLineEditFactory::createEditor(QtStringPropertyManager *manager,
     editor->setReadOnly(manager->isReadOnly(property));
     QRegExp regExp = manager->regExp(property);
     if (regExp.isValid()) {
-        QValidator *validator = new QRegExpValidator(regExp, editor);
+        QValidator *validator = nullptr;
+#if TTK_QT_VERSION_CHECK(6,0,0)
+        validator = new QRegularExpressionValidator(QRegularExpression(regExp.pattern()), editor);
+#else
+        validator = new QRegExpValidator(regExp, editor);
+#endif
         editor->setValidator(validator);
     }
     editor->setText(manager->value(property));
@@ -1672,7 +1684,7 @@ QtCharEdit::QtCharEdit(QWidget *parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(m_lineEdit);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     m_lineEdit->installEventFilter(this);
     m_lineEdit->setReadOnly(true);
     m_lineEdit->setFocusProxy(this);
@@ -1796,7 +1808,7 @@ void QtCharEdit::keyReleaseEvent(QKeyEvent *e)
 void QtCharEdit::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
-    opt.init(this);
+    opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
@@ -2373,7 +2385,7 @@ bool QtColorEditWidget::eventFilter(QObject *obj, QEvent *ev)
 void QtColorEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
-    opt.init(this);
+    opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
@@ -2580,7 +2592,7 @@ bool QtPixmapEditWidget::eventFilter(QObject *obj, QEvent *ev)
 void QtPixmapEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
-    opt.init(this);
+    opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
@@ -2806,7 +2818,7 @@ bool QtFontEditWidget::eventFilter(QObject *obj, QEvent *ev)
 void QtFontEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
-    opt.init(this);
+    opt.initFrom(this);
     QPainter p(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }

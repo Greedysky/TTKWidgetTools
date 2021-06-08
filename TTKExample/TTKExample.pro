@@ -117,13 +117,19 @@ INCLUDEPATH += \
     $$PWD/../TTKModule/Window/notifyWindow
 
 win32:msvc{
+!equals(QT_MAJOR_VERSION, 6){ #Qt6.0.x - 6.1.x not support
 HEADERS += \
     $$PWD/../TTKModule/Button/checkButtonWidget/ttkcheckbuttonwidget.h \
-    $$PWD/../TTKModule/Button/colorButtonWidget/ttkcolorbuttonwidget.h \
-    $$PWD/../TTKModule/Button/flatButtonWidget/ttkflatbuttonwidget.h \
     $$PWD/../TTKModule/Button/radioButtonWidget/ttkcheckable.h \
     $$PWD/../TTKModule/Button/radioButtonWidget/ttkradiobuttonwidget.h \
-    $$PWD/../TTKModule/Button/toggleWidget/ttktogglewidget.h \
+    $$PWD/../TTKModule/Button/toggleWidget/ttktogglewidget.h
+}
+}
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../TTKModule/Button/colorButtonWidget/ttkcolorbuttonwidget.h \
+    $$PWD/../TTKModule/Button/flatButtonWidget/ttkflatbuttonwidget.h \
     $$PWD/../TTKModule/Button/toolMenuWidget/ttktoolmenuwidget.h \
     $$PWD/../TTKModule/Label/circleClickLabel/ttkcircleclicklabel.h \
     $$PWD/../TTKModule/Label/codeAreaLabel/ttkcodearealabel.h \

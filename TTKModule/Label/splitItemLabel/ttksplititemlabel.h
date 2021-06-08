@@ -39,7 +39,11 @@ Q_SIGNALS:
     void changed(const QString &value);
 
 private:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override;
+#else
     virtual void enterEvent(QEvent *event) override;
+#endif
     virtual void leaveEvent(QEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual void mouseMoveEvent(QMouseEvent *event) override;

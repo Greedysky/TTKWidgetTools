@@ -315,7 +315,11 @@ QSize TTKFunctionNavigationWidget::sizeHint() const
     return QSize(100, 30);
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKFunctionNavigationWidget::enterEvent(QEnterEvent *event)
+#else
 void TTKFunctionNavigationWidget::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     m_hover = true;

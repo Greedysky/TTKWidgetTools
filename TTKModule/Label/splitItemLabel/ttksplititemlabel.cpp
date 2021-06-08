@@ -17,7 +17,11 @@ void TTKSplitItemLabel::setSplitString(const QString &str)
     update();
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKSplitItemLabel::enterEvent(QEnterEvent *event)
+#else
 void TTKSplitItemLabel::enterEvent(QEvent *event)
+#endif
 {
     QLabel::enterEvent(event);
     m_lineGeometry = QRectF();

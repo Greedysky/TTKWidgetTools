@@ -21,7 +21,7 @@ TTKColorButtonWidget::TTKColorButtonWidget(QWidget *parent)
 
     m_gridLayout = new QGridLayout;
     m_gridLayout->setSpacing(m_space);
-    m_gridLayout->setMargin(0);
+    m_gridLayout->setContentsMargins(0, 0, 0, 0);
 
     setLayout(m_gridLayout);
     initStyle();

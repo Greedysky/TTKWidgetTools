@@ -20,10 +20,10 @@
  ================================================= */
 
 #include <QWidget>
+#include <QButtonGroup>
 #include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
-class QButtonGroup;
 class QPropertyAnimation;
 
 /*!

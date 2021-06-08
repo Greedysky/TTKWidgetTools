@@ -109,7 +109,11 @@ public:
     virtual QSize sizeHint() const override;
 
 protected:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override;
+#else
     virtual void enterEvent(QEvent *event) override;
+#endif
     virtual void leaveEvent(QEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
 

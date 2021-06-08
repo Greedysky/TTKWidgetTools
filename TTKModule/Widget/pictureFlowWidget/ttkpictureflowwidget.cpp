@@ -986,7 +986,13 @@ void TTKPictureFlowWidget::keyPressEvent(QKeyEvent *event)
 
 void TTKPictureFlowWidget::mousePressEvent(QMouseEvent *event)
 {
-    (event->x() > width()/2) ? showNext() : showPrevious();
+    int x = 0;
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    x = event->position().x();
+#else
+    x = event->x();
+#endif
+    (x > width() / 2) ? showNext() : showPrevious();
 }
 
 void TTKPictureFlowWidget::paintEvent(QPaintEvent *event)

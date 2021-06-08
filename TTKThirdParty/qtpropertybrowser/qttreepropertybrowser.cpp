@@ -51,7 +51,6 @@
 #include <QFocusEvent>
 #include <QStyle>
 #include <QPalette>
-#include "ttkglobal.h"
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE
@@ -368,7 +367,12 @@ void QtPropertyEditorDelegate::paint(QPainter *painter, const QStyleOptionViewIt
         opt.palette.setColor(QPalette::Text, opt.palette.color(QPalette::BrightText));
     } else {
         c = m_editorPrivate->calculatedBackgroundColor(m_editorPrivate->indexToBrowserItem(index));
-        if (c.isValid() && (opt.features & QStyleOptionViewItemV2::Alternate))
+        if (c.isValid() && (opt.features &
+#if TTK_QT_VERSION_CHECK(5,0,0)
+                            QStyleOptionViewItem::Alternate))
+#else
+                            QStyleOptionViewItemV2::Alternate))
+#endif
             c = c.lighter(112);
     }
     if (c.isValid())
@@ -472,7 +476,7 @@ static QIcon drawIndicatorIcon(const QPalette &palette, QStyle *style)
 void QtTreePropertyBrowserPrivate::init(QWidget *parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(parent);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     m_treeWidget = new QtPropertyEditorView(parent);
     m_treeWidget->setEditorPrivate(this);
     m_treeWidget->setIconSize(QSize(18, 18));

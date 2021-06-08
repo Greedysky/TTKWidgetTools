@@ -45,7 +45,11 @@ Q_SIGNALS:
     void clicked();
 
 protected:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override;
+#else
     virtual void enterEvent(QEvent *event) override;
+#endif
     virtual void leaveEvent(QEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual void mouseReleaseEvent(QMouseEvent *event) override;
@@ -75,7 +79,11 @@ Q_SIGNALS:
     void entered();
 
 protected:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override;
+#else
     virtual void enterEvent(QEvent *event) override;
+#endif
     virtual void paintEvent(QPaintEvent *event) override;
 
 private:
@@ -136,7 +144,11 @@ private Q_SLOTS:
     void slotArrowClicked();
 
 protected:
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    virtual void enterEvent(QEnterEvent *event) override;
+#else
     virtual void enterEvent(QEvent *event) override;
+#endif
     virtual void leaveEvent(QEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
 

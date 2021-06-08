@@ -42,9 +42,11 @@
 #ifndef QTPROPERTYBROWSER_H
 #define QTPROPERTYBROWSER_H
 
+#include <QRegExp>
 #include <QWidget>
 #include <QSet>
 #include <QLineEdit>
+#include "ttkglobal.h"
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE

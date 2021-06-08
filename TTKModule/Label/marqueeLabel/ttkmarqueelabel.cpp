@@ -101,7 +101,7 @@ void TTKMarqueeLabel::setForeground(const QColor &foreground)
     {
         m_foreground = foreground;
         QPalette pt = m_labText->palette();
-        pt.setColor(QPalette::Foreground, foreground);
+        pt.setColor(QPalette::WindowText, foreground);
         m_labText->setPalette(pt);
     }
 }
@@ -112,7 +112,7 @@ void TTKMarqueeLabel::setBackground(const QColor &background)
     {
         m_background = background;
         QPalette pt = palette();
-        pt.setColor(QPalette::Background, background);
+        pt.setColor(QPalette::Window, background);
         setPalette(pt);
     }
 }
@@ -206,7 +206,11 @@ void TTKMarqueeLabel::resizeEvent(QResizeEvent *event)
     m_initY = (height() - fontMetrics().height()) / 2;
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKMarqueeLabel::enterEvent(QEnterEvent *event)
+#else
 void TTKMarqueeLabel::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     m_mouseHover = true;

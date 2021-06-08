@@ -90,7 +90,11 @@ void TTKCalendarWidget::initControl()
     connect(this, SIGNAL(currentPageChanged(int,int)), SLOT(setDataLabelTimeText(int,int)));
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKCalendarWidget::paintCell(QPainter *painter, const QRect &rect, QDate date) const
+#else
 void TTKCalendarWidget::paintCell(QPainter *painter, const QRect &rect, const QDate &date) const
+#endif
 {
     if(date == selectedDate())
     {

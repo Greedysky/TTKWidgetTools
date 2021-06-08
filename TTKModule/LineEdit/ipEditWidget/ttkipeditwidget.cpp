@@ -4,7 +4,11 @@
 #include <QApplication>
 #include <QKeyEvent>
 #include <QClipboard>
+#if TTK_QT_VERSION_CHECK(6,0,0)
+#include <QRegularExpressionValidator>
+#else
 #include <QRegExpValidator>
+#endif
 #include <QStyleOptionButton>
 
 TTKIpEditWidget::TTKIpEditWidget(QWidget *parent)
@@ -45,7 +49,12 @@ void TTKIpEditWidget::initEdit(QLineEdit *edit)
     edit->setAlignment(Qt::AlignCenter);
     edit->installEventFilter(this);
 
-    QRegExpValidator *validator = new QRegExpValidator(QRegExp("^(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$"), this);
+    const QString regx("^(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    QRegularExpressionValidator *validator = new QRegularExpressionValidator(QRegularExpression(regx), this);
+#else
+    QRegExpValidator *validator = new QRegExpValidator(QRegExp(regx), this);
+#endif
     edit->setValidator(validator);
 
     connect(edit, SIGNAL(textChanged(QString)), SLOT(editTextChanged(QString)));
@@ -82,13 +91,19 @@ QString TTKIpEditWidget::text() const
     const QString &text_s = m_input_s->text().isEmpty() ? "0" : m_input_s->text();
     const QString &text_t = m_input_t->text().isEmpty() ? "0" : m_input_t->text();
     const QString &text_l = m_input_l->text().isEmpty() ? "0" : m_input_l->text();
-    return QString("%1.%2.%3.%4").arg(text_f).arg(text_s).arg(text_t).arg(text_l);
+    return QString("%1.%2.%3.%4").arg(text_f, text_s, text_t, text_l);
 }
 
 void TTKIpEditWidget::setText(const QString &text)
 {
-    QRegExp reg("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
-    if(!reg.exactMatch(text))
+    const QString pattern("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    QRegularExpression regx(pattern);
+    if(!regx.match(text).hasMatch())
+#else
+    QRegExp regx(pattern);
+    if(!regx.exactMatch(text))
+#endif
     {
         return;
     }

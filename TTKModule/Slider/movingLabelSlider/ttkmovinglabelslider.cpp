@@ -81,7 +81,11 @@ void TTKMovingLabelSlider::mouseReleaseEvent(QMouseEvent *event)
     m_isMoving = false;
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKMovingLabelSlider::enterEvent(QEnterEvent *event)
+#else
 void TTKMovingLabelSlider::enterEvent(QEvent *event)
+#endif
 {
     TTKClickedSlider::enterEvent(event);
 #ifndef Q_OS_UNIX

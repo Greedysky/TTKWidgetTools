@@ -8,7 +8,9 @@
 
 #include <QScreen>
 #include <QApplication>
+#if !TTK_QT_VERSION_CHECK(5,13,0)
 #include <QDesktopWidget>
+#endif
 #include <QDesktopServices>
 
 #define RIGHT  10

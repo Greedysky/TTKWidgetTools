@@ -12,8 +12,6 @@
 #include "ttkwidgetinclude.h"
 #include "ttkwindowinclude.h"
 
-#include <QButtonGroup>
-
 const QString MBtnMinimum = " \
         QToolButton{ border:none; \
         background-image: url(:/image/btn_min_normal);} \
@@ -64,18 +62,20 @@ void TTKToolsApplication::buttonModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKCheckButtonWidgetProperty;
+        case 0: w = new TTKFlatButtonWidgetProperty;
             break;
-        case 1: w = new TTKFlatButtonWidgetProperty;
+        case 1: w = new TTKToolMenuWidgetProperty;
             break;
-        case 2: w = new TTKRadioButtonWidgetProperty;
+        case 2: w = new TTKColorButtonWidgetProperty;
             break;
-        case 3: w = new TTKToggleWidgetProperty;
+#if !TTK_QT_VERSION_CHECK(6,0,0)
+        case 3: w = new TTKCheckButtonWidgetProperty;
             break;
-        case 4: w = new TTKToolMenuWidgetProperty;
+        case 4: w = new TTKRadioButtonWidgetProperty;
             break;
-        case 5: w = new TTKColorButtonWidgetProperty;
+        case 5: w = new TTKToggleWidgetProperty;
             break;
+#endif
         default:
             break;
     }
@@ -417,12 +417,14 @@ void TTKToolsApplication::createButtonModule()
 {
     TTKFunctionItemRow *widget = new TTKFunctionItemRow(ui->functionListWidget);
 
-    widget->addItem(":/icon/button", "TTKCheckButtonWidget");
     widget->addItem(":/icon/button", "TTKFlatButtonWidget");
-    widget->addItem(":/icon/button", "TTKRadioButtonWidget");
-    widget->addItem(":/icon/button", "TTKToggleWidget");
     widget->addItem(":/icon/button", "TTKToolMenuWidget");
     widget->addItem(":/icon/button", "TTKColorButtonWidget");
+#if !TTK_QT_VERSION_CHECK(6,0,0)
+    widget->addItem(":/icon/button", "TTKCheckButtonWidget");
+    widget->addItem(":/icon/button", "TTKRadioButtonWidget");
+    widget->addItem(":/icon/button", "TTKToggleWidget");
+#endif
 
     widget->setObjectName("buttonRow");
     widget->setStyleSheet("#buttonRow{background-color:rgba(255, 0, 0, 50)}");

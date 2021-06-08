@@ -6061,7 +6061,12 @@ void QtFontPropertyManager::setValue(QtProperty *property, const QFont &val)
         return;
 
     const QFont oldVal = it.value();
-    if (oldVal == val && oldVal.resolve() == val.resolve())
+    if (oldVal == val &&
+#if TTK_QT_VERSION_CHECK(6,0,0)
+        oldVal.resolveMask() == val.resolveMask())
+#else
+        oldVal.resolve() == val.resolve())
+#endif
         return;
 
     it.value() = val;

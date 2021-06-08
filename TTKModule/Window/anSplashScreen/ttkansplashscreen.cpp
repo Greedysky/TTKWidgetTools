@@ -112,12 +112,20 @@ void TTKAnSplashScreen::initWidget()
 
 void TTKAnSplashScreen::mousePressEvent(QMouseEvent *event)
 {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    m_mousePos = event->globalPosition().toPoint() - pos();
+#else
     m_mousePos = event->globalPos() - pos();
+#endif
 }
 
 void TTKAnSplashScreen::mouseMoveEvent(QMouseEvent *event)
 {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    move(event->globalPosition().toPoint() - m_mousePos);
+#else
     move(event->globalPos() - m_mousePos);
+#endif
 }
 
 void TTKAnSplashScreen::paintEvent(QPaintEvent *event)

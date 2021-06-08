@@ -68,7 +68,11 @@ void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
         {
             mouseGrabber();
         }
+#if TTK_QT_VERSION_CHECK(6,0,0)
+        m_movePos = event->globalPosition().toPoint() - pos();
+#else
         m_movePos = event->globalPos() - pos();
+#endif
     }
 }
 
@@ -130,8 +134,13 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
         }
         else
         {
+#if TTK_QT_VERSION_CHECK(6,0,0)
+            move(event->globalPosition().toPoint() - m_movePos);
+            m_movePos = event->globalPosition().toPoint() - pos();
+#else
             move(event->globalPos() - m_movePos);
             m_movePos = event->globalPos() - pos();
+#endif
         }
     }
     m_currentRect = geometry();

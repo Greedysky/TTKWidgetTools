@@ -18,7 +18,11 @@ TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(ArrowType type, QWidget
     setFixedSize(12, 20);
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKPictureBannerArrowWidget::enterEvent(QEnterEvent *event)
+#else
 void TTKPictureBannerArrowWidget::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     m_bMouseHover = true;
@@ -93,7 +97,11 @@ void TTKPictureBannerIndicator::select(bool selected)
     update();
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKPictureBannerIndicator::enterEvent(QEnterEvent *event)
+#else
 void TTKPictureBannerIndicator::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     emit entered();
@@ -188,7 +196,7 @@ TTKPictureBannerView::TTKPictureBannerView(QWidget *parent)
 
     QHBoxLayout *layout = new QHBoxLayout();
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addStretch(1);
     layout->addWidget(m_leftPage, 0, Qt::AlignBottom);
     layout->addWidget(m_centerPage, 0, Qt::AlignBottom);
@@ -294,7 +302,11 @@ void TTKPictureBannerView::slotArrowClicked()
     }
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKPictureBannerView::enterEvent(QEnterEvent *event)
+#else
 void TTKPictureBannerView::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     setArrowHidden(false);
@@ -501,7 +513,7 @@ void TTKPictureBannerWidget::init()
 
     QHBoxLayout *bottomLayout = new QHBoxLayout();
     bottomLayout->setSpacing(0);
-    bottomLayout->setMargin(0);
+    bottomLayout->setContentsMargins(0, 0, 0, 0);
     bottomLayout->addStretch();
     bottomLayout->addLayout(m_indLayout);
     bottomLayout->addStretch();

@@ -96,7 +96,11 @@ void TTKCloudPanelLabel::resizeEvent(QResizeEvent *event)
 	update();
 }
 
+#if TTK_QT_VERSION_CHECK(6,0,0)
+void TTKCloudPanelLabel::enterEvent(QEnterEvent *event)
+#else
 void TTKCloudPanelLabel::enterEvent(QEvent *event)
+#endif
 {
     Q_UNUSED(event);
     m_enter = true;
