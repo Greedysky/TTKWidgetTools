@@ -58,7 +58,7 @@ Q_DECL_CONSTEXPR typename std::add_const<T>::type &qAsConst(T &t) { return t; }
 #   define TTK_DEBUG
 #endif
 
-///
+//
 #ifdef __cplusplus
 #  define TTK_CAST
 #endif
