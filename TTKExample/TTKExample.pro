@@ -227,7 +227,7 @@ HEADERS += \
     $$PWD/ttkbackgroundcontainer.h \
     $$PWD/ttkbackgroundwidget.h \
     $$PWD/ttktoolsapplication.h \
-    $$PWD/../ttkglobaldefine.h
+    $$PWD/../TTKCommon/ttkglobaldefine.h
 
 FORMS += $$PWD/ttktoolsapplication.ui
 
