@@ -32,7 +32,7 @@ class TTKCheckable;
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKCheckableIcon : public QWidget
+class TTK_MODULE_EXPORT TTKCheckableIcon : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor color READ color WRITE setColor)
@@ -69,7 +69,7 @@ protected:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKCheckable : public QAbstractButton
+class TTK_MODULE_EXPORT TTKCheckable : public QAbstractButton
 {
     Q_OBJECT
 public:

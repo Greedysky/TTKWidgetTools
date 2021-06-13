@@ -21,13 +21,12 @@
 
 #include <QLabel>
 #include <QMouseEvent>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKMoveWidget : public QWidget
+class TTK_MODULE_EXPORT TTKMoveWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMoveWidget)

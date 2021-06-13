@@ -1,5 +1,4 @@
 #include "ttkbackgroundcontainer.h"
-#include "ttkglobal.h"
 
 #include <qmath.h>
 #include <QPainter>

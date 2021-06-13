@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKMarqueeLabel : public QWidget
+class TTK_MODULE_EXPORT TTKMarqueeLabel : public QWidget
 {
     Q_OBJECT
     Q_ENUMS(MoveStyle)

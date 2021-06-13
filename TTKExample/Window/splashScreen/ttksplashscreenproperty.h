@@ -24,7 +24,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKSplashScreenProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKSplashScreenProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:

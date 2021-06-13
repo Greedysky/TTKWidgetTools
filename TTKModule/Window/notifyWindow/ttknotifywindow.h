@@ -22,13 +22,12 @@
 #include <QLabel>
 #include <QQueue>
 #include <QPushButton>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKNotify : public QWidget
+class TTK_MODULE_EXPORT TTKNotify : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNotify)
@@ -64,7 +63,7 @@ private:
 };
 
 
-typedef struct TTK_CORE_EXPORT TTKNotifyData
+typedef struct TTK_MODULE_EXPORT TTKNotifyData
 {
     QString m_title;
     QString m_body;
@@ -75,7 +74,7 @@ typedef struct TTK_CORE_EXPORT TTKNotifyData
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKNotifyManager : public QObject
+class TTK_MODULE_EXPORT TTKNotifyManager : public QObject
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNotifyManager)
@@ -93,8 +92,6 @@ private Q_SLOTS:
     void showNext();
 
 private:
-    QRect windowScreenGeometry(int index = 0);
-
     int m_maxCount;
     int m_displayTime;
 

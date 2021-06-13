@@ -20,14 +20,13 @@
  ================================================= */
 
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 *          fearlazy <fearlazy@163.com>
 */
-class TTK_CORE_EXPORT TTKRadarMeterWidget : public QWidget
+class TTK_MODULE_EXPORT TTKRadarMeterWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKRadarMeterWidget)

@@ -22,7 +22,6 @@
 #include <QCache>
 #include <QTimer>
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
@@ -38,7 +37,7 @@ enum ReflectionEffect
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_CORE_EXPORT TTKSlideInfo
+struct TTK_MODULE_EXPORT TTKSlideInfo
 {
     int m_slideIndex;
     int m_angle;
@@ -51,7 +50,7 @@ struct TTK_CORE_EXPORT TTKSlideInfo
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureFlowWidgetState
+class TTK_MODULE_EXPORT TTKPictureFlowWidgetState
 {
 public:
     TTKPictureFlowWidgetState();
@@ -77,7 +76,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureFlowWidgetAnimator
+class TTK_MODULE_EXPORT TTKPictureFlowWidgetAnimator
 {
 public:
     TTKPictureFlowWidgetAnimator();
@@ -96,7 +95,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureFlowWidgetSoftwareRenderer
+class TTK_MODULE_EXPORT TTKPictureFlowWidgetSoftwareRenderer
 {
 public:
     TTKPictureFlowWidgetSoftwareRenderer();
@@ -130,7 +129,7 @@ private:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureFlowWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPictureFlowWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKPictureFlowWidget)

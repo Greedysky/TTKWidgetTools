@@ -21,7 +21,6 @@
 
 #include <QLabel>
 #include <QThread>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QProcess;
@@ -29,7 +28,7 @@ class QProcess;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKNetTraffic : public QThread
+class TTK_MODULE_EXPORT TTKNetTraffic : public QThread
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNetTraffic)
@@ -87,7 +86,7 @@ protected:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKNetTrafficLabel : public QLabel
+class TTK_MODULE_EXPORT TTKNetTrafficLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNetTrafficLabel)

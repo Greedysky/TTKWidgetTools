@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QListWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKColorTableWidget : public QListWidget
+class TTK_MODULE_EXPORT TTKColorTableWidget : public QListWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKColorTableWidget)

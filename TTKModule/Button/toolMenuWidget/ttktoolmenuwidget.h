@@ -21,13 +21,12 @@
 
 #include <QMenu>
 #include <QToolButton>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKToolMenu : public QMenu
+class TTK_MODULE_EXPORT TTKToolMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -46,7 +45,7 @@ protected:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKToolMenuWidget : public QToolButton
+class TTK_MODULE_EXPORT TTKToolMenuWidget : public QToolButton
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKToolMenuWidget)

@@ -20,12 +20,11 @@
  ================================================= */
 
 #include <QStackedWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
 
-class TTK_CORE_EXPORT TTKAnimationStackedWidget : public QStackedWidget
+class TTK_MODULE_EXPORT TTKAnimationStackedWidget : public QStackedWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKAnimationStackedWidget)

@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QDialog>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKMoveDialog : public QDialog
+class TTK_MODULE_EXPORT TTKMoveDialog : public QDialog
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMoveDialog)

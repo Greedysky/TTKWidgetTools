@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QProcess;
@@ -28,7 +27,7 @@ class QProcess;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKCrossLineLabel : public QWidget
+class TTK_MODULE_EXPORT TTKCrossLineLabel : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCrossLineLabel)

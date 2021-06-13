@@ -21,13 +21,12 @@
 
 #include <QLabel>
 #include <QPainterPath>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKCodeAreaLabel : public QLabel
+class TTK_MODULE_EXPORT TTKCodeAreaLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCodeAreaLabel)

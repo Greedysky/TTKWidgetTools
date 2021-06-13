@@ -21,10 +21,9 @@
 
 #include <QTimer>
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
-struct TTK_CORE_EXPORT Position
+struct TTK_MODULE_EXPORT Position
 {
     double x;
     double y;
@@ -33,7 +32,7 @@ struct TTK_CORE_EXPORT Position
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKLoadingProgressWidget : public QWidget
+class TTK_MODULE_EXPORT TTKLoadingProgressWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKLoadingProgressWidget)

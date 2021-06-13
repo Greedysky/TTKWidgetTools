@@ -21,7 +21,6 @@
 
 #include <QLabel>
 #include <QTimer>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 typedef struct heatmap_t DataObject;
@@ -29,7 +28,7 @@ typedef struct heatmap_stamp_t DataStamp;
 ///
 using DataRange = std::vector<unsigned char>;
 ///
-class TTK_CORE_EXPORT HeatMapper
+class TTK_MODULE_EXPORT HeatMapper
 {
 public:
   enum ColorScheme
@@ -203,7 +202,7 @@ private:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKHeatMapLabel : public QLabel
+class TTK_MODULE_EXPORT TTKHeatMapLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKHeatMapLabel)

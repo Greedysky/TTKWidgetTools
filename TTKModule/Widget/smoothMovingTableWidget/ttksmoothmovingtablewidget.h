@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QTableWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -28,7 +27,7 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
+class TTK_MODULE_EXPORT TTKSmoothMovingTableWidget : public QTableWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSmoothMovingTableWidget)

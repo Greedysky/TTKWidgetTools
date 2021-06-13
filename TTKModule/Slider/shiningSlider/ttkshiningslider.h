@@ -21,7 +21,6 @@
 
 #include <QSlider>
 #include <QMouseEvent>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class TTKGifProgressWidget;
@@ -29,7 +28,7 @@ class TTKGifProgressWidget;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKShiningSlider : public QWidget
+class TTK_MODULE_EXPORT TTKShiningSlider : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKShiningSlider)

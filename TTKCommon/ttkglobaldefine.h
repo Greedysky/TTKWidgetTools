@@ -19,19 +19,14 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include <QObject>
-
-///
-#ifdef TTK_LIBRARY
-#  define TTK_EXPORT
-#endif
+#include "ttkglobal.h"
 
 #define TTK_BUILD_EXAMPLE
 
-#ifdef TTK_EXPORT
-#  define TTK_CORE_EXPORT Q_DECL_EXPORT
+#ifdef TTK_LIBRARY
+#  define TTK_MODULE_EXPORT Q_DECL_EXPORT
 #else
-#  define TTK_CORE_IMPORT Q_DECL_IMPORT
+#  define TTK_MODULE_EXPORT Q_DECL_IMPORT
 #endif
 
 #endif // TTKGLOBALDEFINE_H

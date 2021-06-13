@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QSlider>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPuzzleItemWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPuzzleItemWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKPuzzleItemWidget)
@@ -55,7 +54,7 @@ private:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKPuzzleWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPuzzleWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKPuzzleWidget)

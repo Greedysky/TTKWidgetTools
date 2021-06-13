@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -28,7 +27,7 @@ class QPropertyAnimation;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKTransitionAnimationLabel : public QLabel
+class TTK_MODULE_EXPORT TTKTransitionAnimationLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKTransitionAnimationLabel)

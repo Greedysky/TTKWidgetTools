@@ -1,4 +1,5 @@
 #include "ttknotifywindow.h"
+#include "ttkdesktopwrapper.h"
 
 #include <QUrl>
 #include <QTimer>
@@ -6,11 +7,6 @@
 #include <QMouseEvent>
 #include <QPropertyAnimation>
 
-#include <QScreen>
-#include <QApplication>
-#if !TTK_QT_VERSION_CHECK(5,13,0)
-#include <QDesktopWidget>
-#endif
 #include <QDesktopServices>
 
 #define RIGHT  10
@@ -192,7 +188,7 @@ void TTKNotifyManager::disappeared()
 
 void TTKNotifyManager::rearrange()
 {
-    const QRect &desktopRect = windowScreenGeometry();
+    const QRect &desktopRect = TTKDesktopWrapper::screenGeometry();
     const QPoint &bottomRignt = desktopRect.bottomRight();
 
     for(auto itr = m_notifyList.begin(); itr != m_notifyList.end(); ++itr)
@@ -226,21 +222,11 @@ void TTKNotifyManager::showNext()
     notify->setUrl(data.m_url);
     notify->setFixedSize(WIDTH, HEIGHT);
 
-    const QRect &desktopRect = windowScreenGeometry();
+    const QRect &desktopRect = TTKDesktopWrapper::screenGeometry();
     const QPoint &bottomRignt = desktopRect.bottomRight();
     const QPoint &pos = bottomRignt - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.size() + 1) - SPACE + BOTTOM);
 
     notify->move(pos);
     notify->showGriant();
     m_notifyList.append(notify);
-}
-
-QRect TTKNotifyManager::windowScreenGeometry(int index)
-{
-#if TTK_QT_VERSION_CHECK(5,13,0)
-    const QList<QScreen *> &screens = QApplication::screens();
-    return (index < 0 || index >= screens.count()) ? QRect() : screens[index]->geometry();
-#else
-    return QApplication::desktop()->screenGeometry(index);
-#endif
 }

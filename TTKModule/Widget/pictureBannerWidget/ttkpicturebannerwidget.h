@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QHBoxLayout;
@@ -30,7 +29,7 @@ class QPropertyAnimation;
  * @author Greedysky <greedysky@163.com>
  *          maminjie <canpool@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureBannerArrowWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPictureBannerArrowWidget : public QWidget
 {
     Q_OBJECT
 public:
@@ -67,7 +66,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *          maminjie <canpool@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureBannerIndicator : public QWidget
+class TTK_MODULE_EXPORT TTKPictureBannerIndicator : public QWidget
 {
     Q_OBJECT
 public:
@@ -97,7 +96,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *          maminjie <canpool@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureBannerPage : public QLabel
+class TTK_MODULE_EXPORT TTKPictureBannerPage : public QLabel
 {
     Q_OBJECT
 public:
@@ -123,7 +122,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *          maminjie <canpool@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureBannerView : public QWidget
+class TTK_MODULE_EXPORT TTKPictureBannerView : public QWidget
 {
     Q_OBJECT
 public:
@@ -168,7 +167,7 @@ protected:
  * @author Greedysky <greedysky@163.com>
  *          maminjie <canpool@163.com>
  */
-class TTK_CORE_EXPORT TTKPictureBannerWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPictureBannerWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKPictureBannerWidget)

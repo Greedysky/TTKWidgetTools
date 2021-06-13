@@ -20,13 +20,12 @@
  ================================================= */
 
 #include "ttkcheckable.h"
-#include "ttkglobal.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKCheckButtonWidget : public TTKCheckable
+class TTK_MODULE_EXPORT TTKCheckButtonWidget : public TTKCheckable
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCheckButtonWidget)

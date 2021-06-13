@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -29,7 +28,7 @@ class QPropertyAnimation;
 * @author Greedysky <greedysky@163.com>
 *         mofr
 */
-class TTK_CORE_EXPORT TTKCircleProgressWidget : public QWidget
+class TTK_MODULE_EXPORT TTKCircleProgressWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCircleProgressWidget)

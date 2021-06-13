@@ -21,13 +21,12 @@
 
 #include <QPushButton>
 #include <QGridLayout>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKColorButtonWidget : public QWidget
+class TTK_MODULE_EXPORT TTKColorButtonWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKColorButtonWidget)

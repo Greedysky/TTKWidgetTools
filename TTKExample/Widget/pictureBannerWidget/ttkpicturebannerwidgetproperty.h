@@ -24,7 +24,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKPictureBannerWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKPictureBannerWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:

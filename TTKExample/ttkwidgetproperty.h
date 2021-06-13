@@ -19,14 +19,13 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "ttkglobal.h"
 #include "ttkgrabitemwidget.h"
 //
 #include "qtpropertymanager.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"
 
-class TTK_CORE_EXPORT TTKWidgetProperty : public QWidget
+class TTK_MODULE_EXPORT TTKWidgetProperty : public QWidget
 {
     Q_OBJECT
 public:

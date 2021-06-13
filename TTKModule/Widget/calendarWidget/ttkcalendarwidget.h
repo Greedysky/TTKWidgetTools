@@ -22,13 +22,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QCalendarWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKCalendarWidget : public QCalendarWidget
+class TTK_MODULE_EXPORT TTKCalendarWidget : public QCalendarWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCalendarWidget)

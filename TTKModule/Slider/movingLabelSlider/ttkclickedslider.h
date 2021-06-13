@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKClickedSlider : public QSlider
+class TTK_MODULE_EXPORT TTKClickedSlider : public QSlider
 {
     Q_OBJECT
 public:

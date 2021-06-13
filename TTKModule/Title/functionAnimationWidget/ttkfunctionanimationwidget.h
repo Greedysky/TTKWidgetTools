@@ -21,7 +21,6 @@
 
 #include <QWidget>
 #include <QButtonGroup>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -29,7 +28,7 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKBaseAnimationWidget : public QWidget
+class TTK_MODULE_EXPORT TTKBaseAnimationWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKBaseAnimationWidget)
@@ -72,7 +71,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
+class TTK_MODULE_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKBaseAnimationHWidget)
@@ -90,7 +89,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKOptionAnimationHWidget)
@@ -103,7 +102,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKTableAnimationHWidget)
@@ -119,7 +118,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSkinAnimationHWidget)
@@ -134,7 +133,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
+class TTK_MODULE_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKBaseAnimationVWidget)
@@ -152,7 +151,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKOptionAnimationVWidget)
@@ -165,7 +164,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKTableAnimationVWidget)
@@ -181,7 +180,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSkinAnimationVWidget)

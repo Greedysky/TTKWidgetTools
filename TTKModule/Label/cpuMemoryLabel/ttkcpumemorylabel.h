@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QProcess;
@@ -29,7 +28,7 @@ class QProcess;
 * @author Greedysky <greedysky@163.com>
 *         feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKCPUMemoryLabel : public QLabel
+class TTK_MODULE_EXPORT TTKCPUMemoryLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCPUMemoryLabel)

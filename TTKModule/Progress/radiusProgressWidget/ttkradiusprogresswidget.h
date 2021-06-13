@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QProgressBar>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKRadiusProgressWidget : public QProgressBar
+class TTK_MODULE_EXPORT TTKRadiusProgressWidget : public QProgressBar
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKRadiusProgressWidget)

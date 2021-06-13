@@ -24,7 +24,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKOptionAnimationHWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKOptionAnimationHWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
@@ -41,7 +41,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKTableAnimationHWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKTableAnimationHWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
@@ -58,7 +58,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKSkinAnimationHWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKSkinAnimationHWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:

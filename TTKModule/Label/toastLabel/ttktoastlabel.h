@@ -21,13 +21,12 @@
 
 #include <QLabel>
 #include <QTimer>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKToastLabel : public QLabel
+class TTK_MODULE_EXPORT TTKToastLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKToastLabel)

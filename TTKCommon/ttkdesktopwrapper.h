@@ -1,5 +1,5 @@
-#ifndef TTKCROSSLINELABELPROPERTY_H
-#define TTKCROSSLINELABELPROPERTY_H
+#ifndef TTKDESKTOPWRAPPER_H
+#define TTKDESKTOPWRAPPER_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -19,22 +19,28 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "ttkwidgetproperty.h"
+#include <QWidget>
+#include "ttkglobaldefine.h"
 
-/*!
-* @author Greedysky <greedysky@163.com>
-*/
-class TTK_MODULE_EXPORT TTKCrossLineLabelProperty : public TTKWidgetProperty
+/*! @brief The class of the desktop screen wrapper.
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_MODULE_EXPORT TTKDesktopWrapper
 {
-    Q_OBJECT
 public:
-    explicit TTKCrossLineLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKCrossLineLabelProperty();
-
-private Q_SLOTS:
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    /*!
+     * Get screen geometry by given screen index.
+     */
+    static QRect screenGeometry(int index = 0);
+    /*!
+     * Get all screen geometry.
+     */
+    static QRect geometry();
+    /*!
+     * Grab all screen geometry pixmap by given rect.
+     */
+    static QPixmap grabWindow(int x = 0, int y = 0, int w = -1, int h = -1);
 
 };
 
-#endif // TTKCROSSLINELABELPROPERTY_H
+#endif // TTKDESKTOPWRAPPER_H

@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QSlider>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKStyleSlider : public QSlider
+class TTK_MODULE_EXPORT TTKStyleSlider : public QSlider
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKStyleSlider)

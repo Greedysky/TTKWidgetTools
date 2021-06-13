@@ -20,9 +20,8 @@
  ================================================= */
 
 #include "ttkcheckable.h"
-#include "ttkglobal.h"
 
-class TTK_CORE_EXPORT TTKRadioButtonWidget : public TTKCheckable
+class TTK_MODULE_EXPORT TTKRadioButtonWidget : public TTKCheckable
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKRadioButtonWidget)

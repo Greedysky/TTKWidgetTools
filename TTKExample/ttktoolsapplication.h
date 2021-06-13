@@ -29,7 +29,7 @@ class TTKToolsApplication;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKToolsApplication : public TTKMoveResizeWidget
+class TTK_MODULE_EXPORT TTKToolsApplication : public TTKMoveResizeWidget
 {
     Q_OBJECT
 public:

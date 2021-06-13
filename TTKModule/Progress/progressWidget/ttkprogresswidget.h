@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QProgressBar>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class TTKProgressWidget;
@@ -29,7 +28,7 @@ class TTKProgressWidget;
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKProgressDelegate : public QObject
+class TTK_MODULE_EXPORT TTKProgressDelegate : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qreal offset WRITE setOffset READ offset)
@@ -50,7 +49,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKProgressWidget : public QProgressBar
+class TTK_MODULE_EXPORT TTKProgressWidget : public QProgressBar
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKProgressWidget)

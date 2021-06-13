@@ -20,14 +20,13 @@
  ================================================= */
 
 #include <QPushButton>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKFlatButtonWidget : public QPushButton
+class TTK_MODULE_EXPORT TTKFlatButtonWidget : public QPushButton
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFlatButtonWidget)

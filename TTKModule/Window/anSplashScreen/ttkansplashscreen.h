@@ -19,7 +19,6 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ================================================= */
 
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 #include <QLabel>
@@ -28,7 +27,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKAnSplashScreen : public QWidget
+class TTK_MODULE_EXPORT TTKAnSplashScreen : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKAnSplashScreen)

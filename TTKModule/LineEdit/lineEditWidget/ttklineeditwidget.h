@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QLineEdit>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QPropertyAnimation;
@@ -28,7 +27,7 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKLineEditWidget : public QLineEdit
+class TTK_MODULE_EXPORT TTKLineEditWidget : public QLineEdit
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKLineEditWidget)

@@ -25,7 +25,7 @@ class TTKFunctionNavigationWidget;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:
@@ -44,7 +44,7 @@ protected:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationAWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationAWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -63,7 +63,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationBWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationBWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -82,7 +82,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationCWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationCWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -102,7 +102,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationDWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationDWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -122,7 +122,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationEWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationEWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -142,7 +142,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationFWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationFWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:
@@ -162,7 +162,7 @@ private Q_SLOTS:
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationGWidgetProperty : public TTKFunctionNavigationWidgetProperty
+class TTK_MODULE_EXPORT TTKFunctionNavigationGWidgetProperty : public TTKFunctionNavigationWidgetProperty
 {
     Q_OBJECT
 public:

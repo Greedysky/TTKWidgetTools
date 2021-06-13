@@ -21,7 +21,7 @@
 
 #include "ttkgrabitemwidget.h"
 
-class TTK_CORE_EXPORT TTKBackgroundContainerItem : public TTKGrabItemWidget
+class TTK_MODULE_EXPORT TTKBackgroundContainerItem : public TTKGrabItemWidget
 {
     Q_OBJECT
 public:
@@ -40,7 +40,7 @@ protected:
 };
 
 
-class TTK_CORE_EXPORT TTKBackgroundContainer : public QWidget
+class TTK_MODULE_EXPORT TTKBackgroundContainer : public QWidget
 {
     Q_OBJECT
 public:

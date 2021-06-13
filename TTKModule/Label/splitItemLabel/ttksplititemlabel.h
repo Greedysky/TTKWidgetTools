@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKSplitItemLabel : public QLabel
+class TTK_MODULE_EXPORT TTKSplitItemLabel : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSplitItemLabel)

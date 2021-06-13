@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_CORE_EXPORT MoveResizeStruct
+struct TTK_MODULE_EXPORT MoveResizeStruct
 {
     bool m_mouseLeftPress;
     bool m_isPressBorder;
@@ -38,7 +37,7 @@ struct TTK_CORE_EXPORT MoveResizeStruct
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKMoveResizeWidget : public QWidget
+class TTK_MODULE_EXPORT TTKMoveResizeWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMoveResizeWidget)

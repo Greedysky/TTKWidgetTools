@@ -20,14 +20,13 @@
  ================================================= */
 
 #include <QPushButton>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 *         feiyangqingyun <feiyangqingyun@163.com>
 */
-class TTK_CORE_EXPORT TTKFunctionNavigationWidget : public QPushButton
+class TTK_MODULE_EXPORT TTKFunctionNavigationWidget : public QPushButton
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionNavigationWidget)

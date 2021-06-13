@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class QTimer;
@@ -28,7 +27,7 @@ class QTimer;
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKGifProgressWidget : public QLabel
+class TTK_MODULE_EXPORT TTKGifProgressWidget : public QLabel
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKGifProgressWidget)

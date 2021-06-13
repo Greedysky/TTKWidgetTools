@@ -22,7 +22,7 @@
 #include <QLabel>
 #include "ttkgrabitemwidget.h"
 
-class TTK_CORE_EXPORT TTKPropertyContainWidget : public QWidget
+class TTK_MODULE_EXPORT TTKPropertyContainWidget : public QWidget
 {
     Q_OBJECT
 public:

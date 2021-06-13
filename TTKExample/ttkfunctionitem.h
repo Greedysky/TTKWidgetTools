@@ -22,7 +22,7 @@
 #include <QLabel>
 #include "ttkglobaldefine.h"
 
-class TTK_CORE_EXPORT TTKFunctionItem : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionItem : public QWidget
 {
     Q_OBJECT
 public:
@@ -44,7 +44,7 @@ private:
 };
 
 
-class TTK_CORE_EXPORT TTKFunctionItemRow : public QLabel
+class TTK_MODULE_EXPORT TTKFunctionItemRow : public QLabel
 {
     Q_OBJECT
 public:

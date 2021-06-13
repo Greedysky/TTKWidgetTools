@@ -6,7 +6,7 @@
 #include <QProxyStyle>
 #include <QTextCharFormat>
 
-class TTK_CORE_EXPORT TTKCustomStyle : public QProxyStyle
+class TTK_MODULE_EXPORT TTKCustomStyle : public QProxyStyle
 {
 public:
     TTKCustomStyle(QWidget *parent)

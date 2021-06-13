@@ -21,13 +21,12 @@
 
 #include <QLabel>
 #include <QBoxLayout>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKFunctionToolBoxTopWidget : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionToolBoxTopWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionToolBoxTopWidget)
@@ -64,7 +63,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKFunctionToolBoxWidgetItem : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionToolBoxWidgetItem : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionToolBoxWidgetItem)
@@ -101,7 +100,7 @@ class QScrollArea;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-typedef struct TTK_CORE_EXPORT TTKFunctionToolBoxUnionItem
+typedef struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
 {
     int m_itemIndex;
     TTKFunctionToolBoxWidgetItem* m_widgetItem;
@@ -117,7 +116,7 @@ typedef struct TTK_CORE_EXPORT TTKFunctionToolBoxUnionItem
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKFunctionToolBoxWidget : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionToolBoxWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionToolBoxWidget)

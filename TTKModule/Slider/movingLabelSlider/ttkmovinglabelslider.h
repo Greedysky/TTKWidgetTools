@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QLabel>
-#include "ttkglobal.h"
 #include "ttkclickedslider.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
+class TTK_MODULE_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMovingLabelSlider)

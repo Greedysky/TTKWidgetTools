@@ -22,13 +22,12 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QBoxLayout>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKIpEditWidget : public QWidget
+class TTK_MODULE_EXPORT TTKIpEditWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKIpEditWidget)

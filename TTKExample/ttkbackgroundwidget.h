@@ -22,7 +22,7 @@
 #include <QWidget>
 #include "ttkgrabitemwidget.h"
 
-class TTK_CORE_EXPORT TTKBackgroundWidget : public QWidget
+class TTK_MODULE_EXPORT TTKBackgroundWidget : public QWidget
 {
     Q_OBJECT
 public:

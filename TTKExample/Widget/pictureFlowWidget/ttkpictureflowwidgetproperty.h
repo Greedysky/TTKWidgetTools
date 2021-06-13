@@ -24,7 +24,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKPictureFlowWidgetProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKPictureFlowWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:

@@ -24,7 +24,7 @@
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_CORE_EXPORT TTKBatteryLabelProperty : public TTKWidgetProperty
+class TTK_MODULE_EXPORT TTKBatteryLabelProperty : public TTKWidgetProperty
 {
     Q_OBJECT
 public:

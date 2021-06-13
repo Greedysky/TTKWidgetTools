@@ -20,13 +20,12 @@
  ================================================= */
 
 #include <QWidget>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKFunctionItemWidget : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionItemWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionItemWidget)
@@ -61,7 +60,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_CORE_EXPORT TTKFunctionListHWidget : public QWidget
+class TTK_MODULE_EXPORT TTKFunctionListHWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionListHWidget)

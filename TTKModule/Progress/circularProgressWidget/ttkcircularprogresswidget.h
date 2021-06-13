@@ -20,7 +20,6 @@
  ================================================= */
 
 #include <QProgressBar>
-#include "ttkglobal.h"
 #include "ttkglobaldefine.h"
 
 class TTKCircularProgressWidget;
@@ -29,7 +28,7 @@ class TTKCircularProgressWidget;
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKCircularProgressDelegate : public QObject
+class TTK_MODULE_EXPORT TTKCircularProgressDelegate : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qreal dashOffset WRITE setDashOffset READ dashOffset)
@@ -59,7 +58,7 @@ private:
  * @author Greedysky <greedysky@163.com>
  *   Heikki Johannes <hildenjohannes@gmail.com>
  */
-class TTK_CORE_EXPORT TTKCircularProgressWidget : public QProgressBar
+class TTK_MODULE_EXPORT TTKCircularProgressWidget : public QProgressBar
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCircularProgressWidget)
