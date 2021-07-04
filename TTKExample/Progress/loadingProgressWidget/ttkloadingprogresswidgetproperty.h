@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKLoadingProgressWidgetProperty : public TTKWidgetPrope
     Q_OBJECT
 public:
     explicit TTKLoadingProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKLoadingProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

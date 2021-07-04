@@ -84,11 +84,6 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKDialMeterWidgetProperty::~TTKDialMeterWidgetProperty()
-{
-
-}
-
 void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);

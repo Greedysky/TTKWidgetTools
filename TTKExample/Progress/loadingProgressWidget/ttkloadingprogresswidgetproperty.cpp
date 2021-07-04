@@ -41,11 +41,6 @@ TTKLoadingProgressWidgetProperty::TTKLoadingProgressWidgetProperty(QWidget *pare
     m_browser->addProperty(objectItem);
 }
 
-TTKLoadingProgressWidgetProperty::~TTKLoadingProgressWidgetProperty()
-{
-
-}
-
 void TTKLoadingProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKLoadingProgressWidget *widget = TTKStatic_cast(TTKLoadingProgressWidget*, m_item);

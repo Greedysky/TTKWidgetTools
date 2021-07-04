@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKColorTableWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKColorTableWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKColorTableWidgetProperty();
 
 };
 

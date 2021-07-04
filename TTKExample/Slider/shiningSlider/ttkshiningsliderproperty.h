@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKShiningSliderProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKShiningSliderProperty(QWidget *parent = nullptr);
-    virtual ~TTKShiningSliderProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

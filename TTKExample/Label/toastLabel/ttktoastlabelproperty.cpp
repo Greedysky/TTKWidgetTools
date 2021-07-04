@@ -50,11 +50,6 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKToastLabelProperty::~TTKToastLabelProperty()
-{
-
-}
-
 void TTKToastLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);

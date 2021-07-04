@@ -21,11 +21,6 @@ TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)
     setMinimumSize(100, 100);
 }
 
-TTKCloudPanelLabel::~TTKCloudPanelLabel()
-{
-
-}
-
 void TTKCloudPanelLabel::setBgColor(const QColor &bgColor)
 {
     if(m_bgColor != bgColor)

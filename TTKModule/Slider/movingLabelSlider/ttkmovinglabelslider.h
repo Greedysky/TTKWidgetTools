@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKMovingLabelSlider : public TTKClickedSlider
 public:
     explicit TTKMovingLabelSlider(QWidget *parent = nullptr);
     explicit TTKMovingLabelSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
-    virtual ~TTKMovingLabelSlider();
+    ~TTKMovingLabelSlider();
 
     inline bool isMoving() const { return m_isMoving;}
 

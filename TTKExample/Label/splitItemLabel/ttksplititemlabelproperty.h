@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKSplitItemLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKSplitItemLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKSplitItemLabelProperty();
 
 private Q_SLOTS:
     virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;

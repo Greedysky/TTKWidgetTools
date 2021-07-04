@@ -54,11 +54,6 @@ TTKCheckButtonWidgetProperty::TTKCheckButtonWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCheckButtonWidgetProperty::~TTKCheckButtonWidgetProperty()
-{
-
-}
-
 void TTKCheckButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKCheckButtonWidget *widget = TTKStatic_cast(TTKCheckButtonWidget*, m_item);

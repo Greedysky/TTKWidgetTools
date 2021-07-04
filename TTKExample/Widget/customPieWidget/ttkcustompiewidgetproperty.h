@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCustomPieWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCustomPieWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKCustomPieWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

@@ -30,11 +30,6 @@ TTKToolMenuWidgetProperty::TTKToolMenuWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKToolMenuWidgetProperty::~TTKToolMenuWidgetProperty()
-{
-
-}
-
 void TTKToolMenuWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKToolMenuWidget *widget = TTKStatic_cast(TTKToolMenuWidget*, m_item);

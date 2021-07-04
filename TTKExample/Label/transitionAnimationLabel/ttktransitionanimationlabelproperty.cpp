@@ -26,11 +26,6 @@ TTKTransitionAnimationLabelProperty::TTKTransitionAnimationLabelProperty(QWidget
     m_browser->addProperty(objectItem);
 }
 
-TTKTransitionAnimationLabelProperty::~TTKTransitionAnimationLabelProperty()
-{
-
-}
-
 void TTKTransitionAnimationLabelProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
     TTKTransitionAnimationLabel *widget = TTKStatic_cast(TTKTransitionAnimationLabel*, m_item);

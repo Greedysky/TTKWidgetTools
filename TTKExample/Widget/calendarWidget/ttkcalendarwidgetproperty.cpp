@@ -24,8 +24,3 @@ TTKCalendarWidgetProperty::TTKCalendarWidgetProperty(QWidget *parent)
 
     TTKStatic_cast(TTKCalendarWidget*, m_item)->show();
 }
-
-TTKCalendarWidgetProperty::~TTKCalendarWidgetProperty()
-{
-
-}

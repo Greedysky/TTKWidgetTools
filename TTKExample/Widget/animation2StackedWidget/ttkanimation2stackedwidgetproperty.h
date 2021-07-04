@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKAnimation2StackedWidgetProperty : public TTKWidgetPro
     Q_OBJECT
 public:
     explicit TTKAnimation2StackedWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKAnimation2StackedWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

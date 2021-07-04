@@ -52,11 +52,6 @@ TTKFlatButtonWidgetProperty::TTKFlatButtonWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKFlatButtonWidgetProperty::~TTKFlatButtonWidgetProperty()
-{
-
-}
-
 void TTKFlatButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKFlatButtonWidget *widget = TTKStatic_cast(TTKFlatButtonWidget*, m_item);

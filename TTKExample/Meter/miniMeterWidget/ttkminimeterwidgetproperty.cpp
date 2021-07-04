@@ -83,11 +83,6 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMiniMeterWidgetProperty::~TTKMiniMeterWidgetProperty()
-{
-
-}
-
 void TTKMiniMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKMiniMeterWidget *widget = TTKStatic_cast(TTKMiniMeterWidget*, m_item);

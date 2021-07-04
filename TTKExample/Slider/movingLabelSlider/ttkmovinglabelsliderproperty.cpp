@@ -39,11 +39,6 @@ TTKMovingLabelSliderProperty::TTKMovingLabelSliderProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMovingLabelSliderProperty::~TTKMovingLabelSliderProperty()
-{
-
-}
-
 void TTKMovingLabelSliderProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKMovingLabelSlider *widget = TTKStatic_cast(TTKMovingLabelSlider*, m_item);

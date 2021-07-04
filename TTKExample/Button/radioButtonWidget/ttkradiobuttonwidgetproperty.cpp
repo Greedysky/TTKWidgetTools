@@ -54,11 +54,6 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKRadioButtonWidgetProperty::~TTKRadioButtonWidgetProperty()
-{
-
-}
-
 void TTKRadioButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKRadioButtonWidget *widget = TTKStatic_cast(TTKRadioButtonWidget*, m_item);

@@ -30,11 +30,6 @@ TTKLineEditWidgetProperty::TTKLineEditWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKLineEditWidgetProperty::~TTKLineEditWidgetProperty()
-{
-
-}
-
 void TTKLineEditWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
     TTKLineEditWidget *widget = TTKStatic_cast(TTKLineEditWidget*, m_item);

@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKPanelMeterWidget : public QWidget
     TTK_DECLARE_MODULE(TTKPanelMeterWidget)
 public:
     explicit TTKPanelMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKPanelMeterWidget();
+    ~TTKPanelMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

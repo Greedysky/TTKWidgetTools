@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKRoundAnimationLabel : public QWidget
     TTK_DECLARE_MODULE(TTKRoundAnimationLabel)
 public:
     explicit TTKRoundAnimationLabel(QWidget *parent = nullptr);
-    virtual ~TTKRoundAnimationLabel();
+    ~TTKRoundAnimationLabel();
 
     void setPixmap(const QPixmap &pix);
     void setInterval(int value);

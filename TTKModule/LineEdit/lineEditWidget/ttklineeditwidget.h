@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKLineEditWidget : public QLineEdit
     TTK_DECLARE_MODULE(TTKLineEditWidget)
 public:
     explicit TTKLineEditWidget(QWidget *parent = nullptr);
-    virtual ~TTKLineEditWidget();
+    ~TTKLineEditWidget();
 
     void setColor(const QColor &color);
 

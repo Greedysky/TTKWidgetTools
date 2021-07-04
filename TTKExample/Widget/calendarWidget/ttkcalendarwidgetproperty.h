@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCalendarWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCalendarWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKCalendarWidgetProperty();
 
 };
 

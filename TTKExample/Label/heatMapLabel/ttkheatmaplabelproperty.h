@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKHeatMapLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKHeatMapLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKHeatMapLabelProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKPictureBannerWidgetProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKPictureBannerWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKPictureBannerWidgetProperty();
 
 };
 

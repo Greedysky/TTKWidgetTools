@@ -166,7 +166,7 @@ void TTKWidgetProperty::geometryChanged()
         return;
     }
 
-    foreach(QtProperty *property, m_rectManager->properties())
+    for(QtProperty *property : m_rectManager->properties())
     {
         if(property->propertyName() == "Geometry")
         {

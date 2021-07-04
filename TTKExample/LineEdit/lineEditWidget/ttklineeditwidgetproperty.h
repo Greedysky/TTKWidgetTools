@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKLineEditWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKLineEditWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKLineEditWidgetProperty();
 
 private Q_SLOTS:
     virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;

@@ -132,11 +132,6 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCarMeterWidgetProperty::~TTKCarMeterWidgetProperty()
-{
-
-}
-
 void TTKCarMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);

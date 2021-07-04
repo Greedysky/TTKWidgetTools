@@ -70,11 +70,6 @@ TTKBatteryLabelProperty::TTKBatteryLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKBatteryLabelProperty::~TTKBatteryLabelProperty()
-{
-
-}
-
 void TTKBatteryLabelProperty::doublePropertyChanged(QtProperty *property, double value)
 {
     TTKBatteryLabel *widget = TTKStatic_cast(TTKBatteryLabel*, m_item);

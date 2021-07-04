@@ -30,11 +30,6 @@ TTKSplitItemLabelProperty::TTKSplitItemLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKSplitItemLabelProperty::~TTKSplitItemLabelProperty()
-{
-
-}
-
 void TTKSplitItemLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
     TTKSplitItemLabel *widget = TTKStatic_cast(TTKSplitItemLabel*, m_item);

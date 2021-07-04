@@ -90,11 +90,6 @@ TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKProgressMeterWidgetProperty::~TTKProgressMeterWidgetProperty()
-{
-
-}
-
 void TTKProgressMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKProgressMeterWidget *widget = TTKStatic_cast(TTKProgressMeterWidget*, m_item);

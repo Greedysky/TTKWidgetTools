@@ -32,7 +32,6 @@ class TTK_MODULE_EXPORT TTKTileBackgroundLabel : public QWidget
     TTK_DECLARE_MODULE(TTKTileBackgroundLabel)
 public:
     explicit TTKTileBackgroundLabel(QWidget *parent = nullptr);
-    ~TTKTileBackgroundLabel();
 
     void setForeColor(const QColor &color);
     void setBackColor(const QColor &color);

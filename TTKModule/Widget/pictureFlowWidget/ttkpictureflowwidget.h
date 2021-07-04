@@ -54,7 +54,7 @@ class TTK_MODULE_EXPORT TTKPictureFlowWidgetState
 {
 public:
     TTKPictureFlowWidgetState();
-    virtual ~TTKPictureFlowWidgetState();
+    ~TTKPictureFlowWidgetState();
 
     void reposition();
     void reset();
@@ -99,7 +99,7 @@ class TTK_MODULE_EXPORT TTKPictureFlowWidgetSoftwareRenderer
 {
 public:
     TTKPictureFlowWidgetSoftwareRenderer();
-    virtual ~TTKPictureFlowWidgetSoftwareRenderer();
+    ~TTKPictureFlowWidgetSoftwareRenderer();
 
     void init();
     void paint();
@@ -139,7 +139,7 @@ class TTK_MODULE_EXPORT TTKPictureFlowWidget : public QWidget
     Q_PROPERTY(int centerIndex READ centerIndex WRITE setCenterIndex)
 public:
     explicit TTKPictureFlowWidget(QWidget *parent = nullptr);
-    virtual ~TTKPictureFlowWidget();
+    ~TTKPictureFlowWidget();
 
     QColor backgroundColor() const;
     void setBackgroundColor(const QColor &c);

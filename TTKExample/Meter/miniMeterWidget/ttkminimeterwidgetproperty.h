@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKMiniMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKMiniMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKMiniMeterWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

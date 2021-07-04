@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKOptionAnimationHWidgetProperty : public TTKWidgetProp
     Q_OBJECT
 public:
     explicit TTKOptionAnimationHWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKOptionAnimationHWidgetProperty();
 
 private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;
@@ -46,7 +45,6 @@ class TTK_MODULE_EXPORT TTKTableAnimationHWidgetProperty : public TTKWidgetPrope
     Q_OBJECT
 public:
     explicit TTKTableAnimationHWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKTableAnimationHWidgetProperty();
 
 private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;
@@ -63,7 +61,6 @@ class TTK_MODULE_EXPORT TTKSkinAnimationHWidgetProperty : public TTKWidgetProper
     Q_OBJECT
 public:
     explicit TTKSkinAnimationHWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKSkinAnimationHWidgetProperty();
 
 private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;

@@ -27,11 +27,6 @@ TTKRoundAnimationLabelProperty::TTKRoundAnimationLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKRoundAnimationLabelProperty::~TTKRoundAnimationLabelProperty()
-{
-
-}
-
 void TTKRoundAnimationLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKRoundAnimationLabel *widget = TTKStatic_cast(TTKRoundAnimationLabel*, m_item);

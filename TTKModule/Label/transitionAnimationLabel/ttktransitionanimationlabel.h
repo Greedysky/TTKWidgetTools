@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKTransitionAnimationLabel : public QLabel
     TTK_DECLARE_MODULE(TTKTransitionAnimationLabel)
 public:
     explicit TTKTransitionAnimationLabel(QWidget *parent = nullptr);
-    virtual ~TTKTransitionAnimationLabel();
+    ~TTKTransitionAnimationLabel();
 
     inline void setNoAnimation(bool on) { m_noAnimationSet = on; }
     inline bool getNoAnimation() const { return m_noAnimationSet; }

@@ -36,11 +36,6 @@ TTKCircleProgressWidgetProperty::TTKCircleProgressWidgetProperty(QWidget *parent
     m_browser->addProperty(objectItem);
 }
 
-TTKCircleProgressWidgetProperty::~TTKCircleProgressWidgetProperty()
-{
-
-}
-
 void TTKCircleProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
     TTKCircleProgressWidget *widget = TTKStatic_cast(TTKCircleProgressWidget*, m_item);

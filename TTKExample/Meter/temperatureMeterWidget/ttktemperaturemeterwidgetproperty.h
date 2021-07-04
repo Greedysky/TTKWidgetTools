@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKTemperatureMeterWidgetProperty : public TTKWidgetProp
     Q_OBJECT
 public:
     explicit TTKTemperatureMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKTemperatureMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

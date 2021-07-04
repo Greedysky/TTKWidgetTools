@@ -24,8 +24,3 @@ TTKColorTableWidgetProperty::TTKColorTableWidgetProperty(QWidget *parent)
 
     TTKStatic_cast(TTKColorTableWidget*, m_item)->init();
 }
-
-TTKColorTableWidgetProperty::~TTKColorTableWidgetProperty()
-{
-
-}

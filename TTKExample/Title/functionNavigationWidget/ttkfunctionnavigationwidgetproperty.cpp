@@ -19,11 +19,6 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
     m_buttons[0]->setChecked(true);
 }
 
-TTKFunctionNavigationWidgetProperty::~TTKFunctionNavigationWidgetProperty()
-{
-
-}
-
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
     TTKFunctionNavigationWidget *button = TTKStatic_cast(TTKFunctionNavigationWidget*, sender());
@@ -97,11 +92,6 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     objectItem->addSubProperty(lineSpaceItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKFunctionNavigationAWidgetProperty::~TTKFunctionNavigationAWidgetProperty()
-{
-
 }
 
 void TTKFunctionNavigationAWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
@@ -267,11 +257,6 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKFunctionNavigationBWidgetProperty::~TTKFunctionNavigationBWidgetProperty()
-{
-
 }
 
 void TTKFunctionNavigationBWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
@@ -496,11 +481,6 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     m_browser->addProperty(objectItem);
 }
 
-TTKFunctionNavigationCWidgetProperty::~TTKFunctionNavigationCWidgetProperty()
-{
-
-}
-
 void TTKFunctionNavigationCWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     for(int i = 0; i < m_buttons.count(); i++)
@@ -723,11 +703,6 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     m_browser->addProperty(objectItem);
 }
 
-TTKFunctionNavigationDWidgetProperty::~TTKFunctionNavigationDWidgetProperty()
-{
-
-}
-
 void TTKFunctionNavigationDWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     for(int i = 0; i < m_buttons.count(); i++)
@@ -933,11 +908,6 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKFunctionNavigationEWidgetProperty::~TTKFunctionNavigationEWidgetProperty()
-{
-
 }
 
 void TTKFunctionNavigationEWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
@@ -1157,11 +1127,6 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKFunctionNavigationFWidgetProperty::~TTKFunctionNavigationFWidgetProperty()
-{
-
 }
 
 void TTKFunctionNavigationFWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
@@ -1406,11 +1371,6 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKFunctionNavigationGWidgetProperty::~TTKFunctionNavigationGWidgetProperty()
-{
-
 }
 
 void TTKFunctionNavigationGWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)

@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKPuzzleWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKPuzzleWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKPuzzleWidgetProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

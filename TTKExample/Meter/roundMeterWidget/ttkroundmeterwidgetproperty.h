@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKRoundMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKRoundMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKRoundMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

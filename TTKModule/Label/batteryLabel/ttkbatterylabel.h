@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKBatteryLabel : public QWidget
     TTK_DECLARE_MODULE(TTKBatteryLabel)
 public:
     explicit TTKBatteryLabel(QWidget *parent = nullptr);
-    virtual ~TTKBatteryLabel();
+    ~TTKBatteryLabel();
 
     void setRange(double minValue, double maxValue);
 

@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKSplashScreenProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKSplashScreenProperty(QWidget *parent = nullptr);
-    virtual ~TTKSplashScreenProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

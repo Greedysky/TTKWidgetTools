@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKFunctionToolBoxWidgetProperty : public TTKWidgetPrope
     Q_OBJECT
 public:
     explicit TTKFunctionToolBoxWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionToolBoxWidgetProperty();
 
 };
 

@@ -93,11 +93,6 @@ TTKPercentMeterWidgetProperty::TTKPercentMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKPercentMeterWidgetProperty::~TTKPercentMeterWidgetProperty()
-{
-
-}
-
 void TTKPercentMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKPercentMeterWidget *widget = TTKStatic_cast(TTKPercentMeterWidget*, m_item);

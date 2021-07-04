@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKScanLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKScanLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKScanLabelProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

@@ -74,11 +74,6 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     widget->renderImage();
 }
 
-TTKHeatMapLabelProperty::~TTKHeatMapLabelProperty()
-{
-
-}
-
 void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKHeatMapLabel *widget = TTKStatic_cast(TTKHeatMapLabel*, m_item);

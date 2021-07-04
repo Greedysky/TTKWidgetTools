@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKMovingLabelSliderProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKMovingLabelSliderProperty(QWidget *parent = nullptr);
-    virtual ~TTKMovingLabelSliderProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

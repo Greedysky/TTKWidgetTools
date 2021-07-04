@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKToastLabel : public QLabel
 public:
     explicit TTKToastLabel(QWidget *parent = nullptr);
     explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
-    virtual ~TTKToastLabel();
+    ~TTKToastLabel();
 
     void setFontMargin(int height, int width);
 

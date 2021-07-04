@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKFlatButtonWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKFlatButtonWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFlatButtonWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

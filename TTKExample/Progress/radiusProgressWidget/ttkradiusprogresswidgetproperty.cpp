@@ -46,7 +46,7 @@ TTKRadiusProgressWidgetProperty::TTKRadiusProgressWidgetProperty(QWidget *parent
 
 TTKRadiusProgressWidgetProperty::~TTKRadiusProgressWidgetProperty()
 {
-
+    delete m_timer;
 }
 
 void TTKRadiusProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)

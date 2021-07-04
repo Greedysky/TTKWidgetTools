@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKAnimationProgressWidgetProperty : public TTKWidgetPro
     Q_OBJECT
 public:
     explicit TTKAnimationProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKAnimationProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

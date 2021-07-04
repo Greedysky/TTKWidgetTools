@@ -40,7 +40,6 @@ public:
 	};
 
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);
-    virtual ~TTKCloudPanelLabel();
 
     void setBgColor(const QColor &bgColor);
     void setBaseColor(const QColor &baseColor);

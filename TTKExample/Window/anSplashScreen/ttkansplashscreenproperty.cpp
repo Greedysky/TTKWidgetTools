@@ -38,11 +38,6 @@ TTKAnSplashScreenProperty::TTKAnSplashScreenProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKAnSplashScreenProperty::~TTKAnSplashScreenProperty()
-{
-
-}
-
 void TTKAnSplashScreenProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKAnSplashScreen *widget = TTKStatic_cast(TTKAnSplashScreen*, m_label);

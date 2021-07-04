@@ -41,7 +41,7 @@ class TTK_MODULE_EXPORT TTKCircleProgressWidget : public QWidget
     Q_PROPERTY(int visibleValue READ visibleValue WRITE setVisibleValue)
 public:
     explicit TTKCircleProgressWidget(QWidget *parent = nullptr);
-    virtual ~TTKCircleProgressWidget();
+    ~TTKCircleProgressWidget();
 
     int value() const;
     int maximum() const;

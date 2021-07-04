@@ -93,7 +93,7 @@ class TTK_MODULE_EXPORT TTKToggleWidget : public QAbstractButton
     TTK_DECLARE_MODULE(TTKToggleWidget)
 public:
     explicit TTKToggleWidget(QWidget *parent = nullptr);
-    virtual ~TTKToggleWidget();
+    ~TTKToggleWidget();
 
     void setDisabledColor(const QColor &color);
     QColor disabledColor() const;

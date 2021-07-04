@@ -36,11 +36,6 @@ TTKProgressWidget::TTKProgressWidget(QWidget *parent)
     animation->start();
 }
 
-TTKProgressWidget::~TTKProgressWidget()
-{
-
-}
-
 void TTKProgressWidget::setProgressColor(const QColor &color)
 {
     m_progressColor = color;

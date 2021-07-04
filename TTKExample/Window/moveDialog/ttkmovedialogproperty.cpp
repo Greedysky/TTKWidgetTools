@@ -27,11 +27,6 @@ TTKMoveDialogProperty::TTKMoveDialogProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMoveDialogProperty::~TTKMoveDialogProperty()
-{
-
-}
-
 void TTKMoveDialogProperty::showWidget()
 {
     m_label->resize(200, 200);

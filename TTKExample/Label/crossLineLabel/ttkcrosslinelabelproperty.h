@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCrossLineLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCrossLineLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKCrossLineLabelProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

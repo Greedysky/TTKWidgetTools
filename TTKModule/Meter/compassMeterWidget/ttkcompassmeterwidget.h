@@ -31,8 +31,8 @@ class TTK_MODULE_EXPORT TTKCompassMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCompassMeterWidget)
 public:
- explicit TTKCompassMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKCompassMeterWidget();
+    explicit TTKCompassMeterWidget(QWidget *parent = nullptr);
+    ~TTKCompassMeterWidget();
 
     void setValue(double value);
     void setPrecision(int precision);

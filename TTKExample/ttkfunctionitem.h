@@ -27,7 +27,7 @@ class TTK_MODULE_EXPORT TTKFunctionItem : public QWidget
     Q_OBJECT
 public:
     explicit TTKFunctionItem(int index, const QString &path, const QString &text, QWidget *parent = nullptr);
-    virtual ~TTKFunctionItem();
+    ~TTKFunctionItem();
 
     void setIcon(const QString &path);
     void setText(const QString &text);
@@ -49,7 +49,7 @@ class TTK_MODULE_EXPORT TTKFunctionItemRow : public QLabel
     Q_OBJECT
 public:
     explicit TTKFunctionItemRow(QWidget *parent = nullptr);
-    virtual ~TTKFunctionItemRow();
+    ~TTKFunctionItemRow();
 
     void addItem(const QString &path, const QString &text);
 

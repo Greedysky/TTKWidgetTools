@@ -55,11 +55,6 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMarqueeLabelProperty::~TTKMarqueeLabelProperty()
-{
-
-}
-
 void TTKMarqueeLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKMarqueeLabel *widget = TTKStatic_cast(TTKMarqueeLabel*, m_item);

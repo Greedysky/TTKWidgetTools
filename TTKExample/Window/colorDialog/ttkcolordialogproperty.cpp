@@ -32,8 +32,3 @@ TTKColorDialogProperty::TTKColorDialogProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 }
-
-TTKColorDialogProperty::~TTKColorDialogProperty()
-{
-
-}

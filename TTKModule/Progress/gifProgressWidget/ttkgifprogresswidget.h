@@ -48,8 +48,7 @@ public:
 
     explicit TTKGifProgressWidget(QWidget *parent = nullptr);
     explicit TTKGifProgressWidget(Type type, QWidget *parent = nullptr);
-
-    virtual ~TTKGifProgressWidget();
+    ~TTKGifProgressWidget();
 
     void setType(Type type);
     Type getType() const;

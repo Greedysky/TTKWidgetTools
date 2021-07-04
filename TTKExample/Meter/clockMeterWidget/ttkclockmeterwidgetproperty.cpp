@@ -57,11 +57,6 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKClockMeterWidgetProperty::~TTKClockMeterWidgetProperty()
-{
-
-}
-
 void TTKClockMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKClockMeterWidget *widget = TTKStatic_cast(TTKClockMeterWidget*, m_item);

@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKFunctionListVWidget : public QWidget
     TTK_DECLARE_MODULE(TTKFunctionListVWidget)
 public:
     explicit TTKFunctionListVWidget(QWidget *parent = nullptr);
-    virtual ~TTKFunctionListVWidget();
+    ~TTKFunctionListVWidget();
 
     void resizeMode(bool mode);
 

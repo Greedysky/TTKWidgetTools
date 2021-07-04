@@ -21,8 +21,3 @@ TTKFunctionListVWidgetProperty::TTKFunctionListVWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 }
-
-TTKFunctionListVWidgetProperty::~TTKFunctionListVWidgetProperty()
-{
-
-}

@@ -46,7 +46,7 @@ public:
     };
 
     explicit TTKCarMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKCarMeterWidget();
+    ~TTKCarMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

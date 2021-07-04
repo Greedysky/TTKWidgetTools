@@ -53,11 +53,6 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKAntLineLabelProperty::~TTKAntLineLabelProperty()
-{
-
-}
-
 void TTKAntLineLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKAntLineLabel *widget = TTKStatic_cast(TTKAntLineLabel*, m_item);

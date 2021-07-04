@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKPercentMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKPercentMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKPercentMeterWidgetProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

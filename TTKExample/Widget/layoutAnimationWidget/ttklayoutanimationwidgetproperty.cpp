@@ -33,11 +33,6 @@ TTKLayoutAnimationWidgetProperty::TTKLayoutAnimationWidgetProperty(QWidget *pare
     widget->addWidget(w2);
 }
 
-TTKLayoutAnimationWidgetProperty::~TTKLayoutAnimationWidgetProperty()
-{
-
-}
-
 void TTKLayoutAnimationWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKLayoutAnimationWidget *widget = TTKStatic_cast(TTKLayoutAnimationWidget*, m_item);

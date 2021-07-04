@@ -41,11 +41,6 @@ TTKAnimationStackedWidgetProperty::TTKAnimationStackedWidgetProperty(QWidget *pa
     widget->addWidget(w2);
 }
 
-TTKAnimationStackedWidgetProperty::~TTKAnimationStackedWidgetProperty()
-{
-
-}
-
 void TTKAnimationStackedWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKAnimationStackedWidget *widget = TTKStatic_cast(TTKAnimationStackedWidget*, m_item);

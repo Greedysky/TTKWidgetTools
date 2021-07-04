@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKProgressWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;

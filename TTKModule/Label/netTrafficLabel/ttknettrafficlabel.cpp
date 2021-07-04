@@ -230,7 +230,6 @@ TTKNetTrafficLabel::~TTKNetTrafficLabel()
     delete m_process;
 }
 
-
 void TTKNetTrafficLabel::setAvailableNewtworkName(const QString &name)
 {
     m_process->setAvailableNewtworkName(name);

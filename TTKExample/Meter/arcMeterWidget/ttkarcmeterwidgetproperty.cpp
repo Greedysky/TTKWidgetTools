@@ -105,11 +105,6 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKArcMeterWidgetProperty::~TTKArcMeterWidgetProperty()
-{
-
-}
-
 void TTKArcMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKArcMeterWidget *widget = TTKStatic_cast(TTKArcMeterWidget*, m_item);

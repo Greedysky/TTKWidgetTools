@@ -132,7 +132,7 @@ TTKFunctionListHWidget::~TTKFunctionListHWidget()
 
 void TTKFunctionListHWidget::resizeMode(bool mode)
 {
-    foreach(TTKFunctionItemWidget *it, m_items)
+    for(TTKFunctionItemWidget *it : qAsConst(m_items))
     {
         it->resizeMode(mode);
     }
@@ -148,7 +148,7 @@ void TTKFunctionListHWidget::selectedChanged(TTKFunctionItemWidget *item)
 
     emit currentIndexChanged(index);
 
-    foreach(TTKFunctionItemWidget *it, m_items)
+    for(TTKFunctionItemWidget *it : qAsConst(m_items))
     {
         it->setSelectedMode(false);
     }

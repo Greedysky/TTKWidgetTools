@@ -37,11 +37,6 @@ TTKShiningSliderProperty::TTKShiningSliderProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKShiningSliderProperty::~TTKShiningSliderProperty()
-{
-
-}
-
 void TTKShiningSliderProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKShiningSlider *widget = TTKStatic_cast(TTKShiningSlider*, m_item);

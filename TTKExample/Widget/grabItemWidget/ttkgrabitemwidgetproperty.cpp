@@ -22,8 +22,3 @@ TTKGrabItemWidgetProperty::TTKGrabItemWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 }
-
-TTKGrabItemWidgetProperty::~TTKGrabItemWidgetProperty()
-{
-
-}

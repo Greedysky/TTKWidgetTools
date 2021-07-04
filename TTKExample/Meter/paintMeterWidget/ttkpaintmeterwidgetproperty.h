@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKPaintMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKPaintMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKPaintMeterWidgetProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

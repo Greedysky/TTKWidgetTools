@@ -40,7 +40,7 @@ public:
     };
 
     explicit TTKArcMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKArcMeterWidget();
+    ~TTKArcMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

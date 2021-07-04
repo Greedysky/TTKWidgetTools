@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKColorButtonWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKColorButtonWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKColorButtonWidgetProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

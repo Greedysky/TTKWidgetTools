@@ -134,7 +134,7 @@ void TTKCPUMemoryLabel::readData()
             QStringList list = s.split(" ");
             m_idleNew = list.at(5).toInt();
 
-            foreach(const QString &value, list)
+            for(const QString &value : qAsConst(list))
             {
                 m_totalNew += value.toInt();
             }

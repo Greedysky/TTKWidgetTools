@@ -66,11 +66,6 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKWaveProgressWidgetProperty::~TTKWaveProgressWidgetProperty()
-{
-
-}
-
 void TTKWaveProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKWaveProgressWidget *widget = TTKStatic_cast(TTKWaveProgressWidget*, m_item);

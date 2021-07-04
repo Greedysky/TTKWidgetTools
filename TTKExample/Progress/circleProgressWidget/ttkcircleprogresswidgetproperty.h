@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCircleProgressWidgetProperty : public TTKWidgetProper
     Q_OBJECT
 public:
     explicit TTKCircleProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKCircleProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void doublePropertyChanged(QtProperty *property, double value) override;

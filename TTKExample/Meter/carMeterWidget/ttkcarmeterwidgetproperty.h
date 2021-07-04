@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCarMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCarMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKCarMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

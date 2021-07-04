@@ -37,8 +37,7 @@ public:
      * Object contsructor.
      */
     explicit TTKNetTraffic(QObject *parent = nullptr);
-
-    virtual ~TTKNetTraffic();
+    ~TTKNetTraffic();
 
     /*!
      * Set available newtwork name.
@@ -92,7 +91,7 @@ class TTK_MODULE_EXPORT TTKNetTrafficLabel : public QLabel
     TTK_DECLARE_MODULE(TTKNetTrafficLabel)
 public:
     explicit TTKNetTrafficLabel(QWidget *parent = nullptr);
-    virtual ~TTKNetTrafficLabel();
+    ~TTKNetTrafficLabel();
 
     void setAvailableNewtworkName(const QString &name);
     QStringList getNewtworkNames() const;

@@ -32,8 +32,3 @@ TTKSmoothMovingTableWidgetProperty::TTKSmoothMovingTableWidgetProperty(QWidget *
     }
     widget->setMovedScrollBar(widget->verticalScrollBar());
 }
-
-TTKSmoothMovingTableWidgetProperty::~TTKSmoothMovingTableWidgetProperty()
-{
-
-}

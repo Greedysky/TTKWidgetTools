@@ -57,7 +57,8 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
     QFontMetrics metrics = QFontMetrics(font());
     QStringList data(text().split(" - "));
     int offset = 0;
-    foreach(const QString &var, data)
+
+    for(const QString &var : qAsConst(data))
     {
 #if TTK_QT_VERSION_CHECK(5,13,0)
         const int fs = metrics.horizontalAdvance(var.trimmed());

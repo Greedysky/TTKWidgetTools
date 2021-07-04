@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCodeAreaLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCodeAreaLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKCodeAreaLabelProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

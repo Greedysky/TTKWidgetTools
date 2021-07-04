@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKColorDialogProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKColorDialogProperty(QWidget *parent = nullptr);
-    virtual ~TTKColorDialogProperty();
 
 };
 

@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKStyleSliderProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKStyleSliderProperty(QWidget *parent = nullptr);
-    virtual ~TTKStyleSliderProperty();
 
 private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;

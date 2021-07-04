@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKNetTrafficLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKNetTrafficLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKNetTrafficLabelProperty();
 
 protected Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;

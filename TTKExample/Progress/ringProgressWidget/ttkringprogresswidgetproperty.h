@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKRingProgressWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKRingProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKRingProgressWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

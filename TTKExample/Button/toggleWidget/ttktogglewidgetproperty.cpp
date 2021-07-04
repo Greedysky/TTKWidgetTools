@@ -51,11 +51,6 @@ TTKToggleWidgetProperty::TTKToggleWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKToggleWidgetProperty::~TTKToggleWidgetProperty()
-{
-
-}
-
 void TTKToggleWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKToggleWidget *widget = TTKStatic_cast(TTKToggleWidget*, m_item);

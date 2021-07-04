@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKRoundProgressWidgetProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKRoundProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKRoundProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

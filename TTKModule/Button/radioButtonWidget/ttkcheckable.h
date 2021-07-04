@@ -80,7 +80,7 @@ public:
     };
 
     explicit TTKCheckable(QWidget *parent = nullptr);
-    virtual ~TTKCheckable();
+    ~TTKCheckable();
 
     void setLabelPosition(LabelPosition placement);
     LabelPosition labelPosition() const;

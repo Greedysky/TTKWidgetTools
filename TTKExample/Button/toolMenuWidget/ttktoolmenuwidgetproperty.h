@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKToolMenuWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKToolMenuWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKToolMenuWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

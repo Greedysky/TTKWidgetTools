@@ -81,11 +81,6 @@ TTKRoundMeterWidgetProperty::TTKRoundMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKRoundMeterWidgetProperty::~TTKRoundMeterWidgetProperty()
-{
-
-}
-
 void TTKRoundMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKRoundMeterWidget *widget = TTKStatic_cast(TTKRoundMeterWidget*, m_item);

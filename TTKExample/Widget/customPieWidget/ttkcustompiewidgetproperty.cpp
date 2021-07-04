@@ -46,11 +46,6 @@ TTKCustomPieWidgetProperty::TTKCustomPieWidgetProperty(QWidget *parent)
     w->appendPie("444", 10, Qt::black);
 }
 
-TTKCustomPieWidgetProperty::~TTKCustomPieWidgetProperty()
-{
-
-}
-
 void TTKCustomPieWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKCustomPieWidget *widget = TTKStatic_cast(TTKCustomPieWidget*, m_item);

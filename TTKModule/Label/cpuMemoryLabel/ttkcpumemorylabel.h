@@ -34,7 +34,7 @@ class TTK_MODULE_EXPORT TTKCPUMemoryLabel : public QLabel
     TTK_DECLARE_MODULE(TTKCPUMemoryLabel)
 public:
     explicit TTKCPUMemoryLabel(QWidget *parent = nullptr);
-    virtual ~TTKCPUMemoryLabel();
+    ~TTKCPUMemoryLabel();
 
     virtual QSize sizeHint() const override;
 

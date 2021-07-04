@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKBarRulerLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKBarRulerLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKBarRulerLabelProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

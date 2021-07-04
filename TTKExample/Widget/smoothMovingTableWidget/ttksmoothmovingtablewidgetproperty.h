@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKSmoothMovingTableWidgetProperty : public TTKWidgetPro
     Q_OBJECT
 public:
     explicit TTKSmoothMovingTableWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKSmoothMovingTableWidgetProperty();
 
 };
 

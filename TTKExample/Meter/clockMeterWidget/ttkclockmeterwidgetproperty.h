@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKClockMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKClockMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKClockMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override;

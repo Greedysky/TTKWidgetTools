@@ -28,11 +28,6 @@ TTKFunctionNormaWidgetProperty::TTKFunctionNormaWidgetProperty(QWidget *parent)
     widget->addItem("333333");
 }
 
-TTKFunctionNormaWidgetProperty::~TTKFunctionNormaWidgetProperty()
-{
-
-}
-
 void TTKFunctionNormaWidgetProperty::rectPropertyChanged(QtProperty *property, const QRect &value)
 {
     TTKWidgetProperty::rectPropertyChanged(property, value);

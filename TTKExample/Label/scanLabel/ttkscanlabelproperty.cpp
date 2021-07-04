@@ -62,11 +62,6 @@ TTKScanLabelProperty::TTKScanLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKScanLabelProperty::~TTKScanLabelProperty()
-{
-
-}
-
 void TTKScanLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKScanLabel *widget = TTKStatic_cast(TTKScanLabel*, m_item);

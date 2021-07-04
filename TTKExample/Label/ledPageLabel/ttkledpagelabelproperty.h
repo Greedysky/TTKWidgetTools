@@ -29,7 +29,7 @@ class TTK_MODULE_EXPORT TTKLedPageLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKLedPageLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKLedPageLabelProperty();
+    ~TTKLedPageLabelProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

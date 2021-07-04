@@ -84,11 +84,6 @@ TTKTemperatureMeterWidgetProperty::TTKTemperatureMeterWidgetProperty(QWidget *pa
     m_browser->addProperty(objectItem);
 }
 
-TTKTemperatureMeterWidgetProperty::~TTKTemperatureMeterWidgetProperty()
-{
-
-}
-
 void TTKTemperatureMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKTemperatureMeterWidget *widget = TTKStatic_cast(TTKTemperatureMeterWidget*, m_item);

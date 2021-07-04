@@ -180,7 +180,7 @@ public:
   HeatMapper(const QSize &size, int radius);
   HeatMapper(int width, int height);
   HeatMapper(int width, int height, int radius);
-  virtual ~HeatMapper();
+  ~HeatMapper();
 
   void setRadius(int radius);
   void setOpacity(int opacity);
@@ -208,7 +208,7 @@ class TTK_MODULE_EXPORT TTKHeatMapLabel : public QLabel
     TTK_DECLARE_MODULE(TTKHeatMapLabel)
 public:
     explicit TTKHeatMapLabel(QWidget *parent = nullptr);
-    virtual ~TTKHeatMapLabel();
+    ~TTKHeatMapLabel();
 
     void setRadius(int radius);
     void setOpacity(int opacity);

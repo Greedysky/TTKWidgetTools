@@ -31,11 +31,6 @@ TTKCrossLineLabelProperty::TTKCrossLineLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCrossLineLabelProperty::~TTKCrossLineLabelProperty()
-{
-
-}
-
 void TTKCrossLineLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKCrossLineLabel *widget = TTKStatic_cast(TTKCrossLineLabel*, m_item);

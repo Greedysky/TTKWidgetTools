@@ -44,11 +44,6 @@ TTKPictureFlowWidgetProperty::TTKPictureFlowWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKPictureFlowWidgetProperty::~TTKPictureFlowWidgetProperty()
-{
-
-}
-
 void TTKPictureFlowWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);

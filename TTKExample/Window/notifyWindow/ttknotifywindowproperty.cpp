@@ -49,11 +49,6 @@ TTKNotifyWindowProperty::TTKNotifyWindowProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKNotifyWindowProperty::~TTKNotifyWindowProperty()
-{
-
-}
-
 void TTKNotifyWindowProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKNotifyManager *widget = TTKStatic_cast(TTKNotifyManager*, m_manager);

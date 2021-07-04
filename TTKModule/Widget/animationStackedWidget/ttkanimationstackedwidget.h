@@ -39,7 +39,7 @@ public:
     };
 
     explicit TTKAnimationStackedWidget(QWidget *parent = nullptr);
-    virtual ~TTKAnimationStackedWidget();
+    ~TTKAnimationStackedWidget();
 
     void start(int index);
     void setLength(int length, AnimationType type);

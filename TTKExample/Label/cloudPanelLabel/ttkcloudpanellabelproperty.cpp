@@ -53,11 +53,6 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCloudPanelLabelProperty::~TTKCloudPanelLabelProperty()
-{
-
-}
-
 void TTKCloudPanelLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKCloudPanelLabel *widget = TTKStatic_cast(TTKCloudPanelLabel*, m_item);

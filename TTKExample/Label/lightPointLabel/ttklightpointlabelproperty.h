@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKLightPointLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKLightPointLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKLightPointLabelProperty();
 
 protected Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

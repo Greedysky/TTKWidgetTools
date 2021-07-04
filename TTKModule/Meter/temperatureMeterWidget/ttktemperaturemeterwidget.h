@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKTemperatureMeterWidget : public QWidget
     TTK_DECLARE_MODULE(TTKTemperatureMeterWidget)
 public:
     explicit TTKTemperatureMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKTemperatureMeterWidget();
+    ~TTKTemperatureMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

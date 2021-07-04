@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKRoundAnimationLabelProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKRoundAnimationLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKRoundAnimationLabelProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

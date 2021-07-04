@@ -30,7 +30,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationWidgetProperty : public TTKWidgetPr
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationWidgetProperty();
 
 private Q_SLOTS:
     void buttonClicked();
@@ -49,7 +48,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationAWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationAWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationAWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -68,7 +66,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationBWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationBWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationBWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -87,7 +84,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationCWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationCWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationCWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -107,7 +103,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationDWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationDWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationDWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -127,7 +122,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationEWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationEWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationEWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -147,7 +141,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationFWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationFWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationFWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
@@ -167,7 +160,6 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationGWidgetProperty : public TTKFunctio
     Q_OBJECT
 public:
     explicit TTKFunctionNavigationGWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNavigationGWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

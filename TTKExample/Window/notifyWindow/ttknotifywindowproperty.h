@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKNotifyWindowProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKNotifyWindowProperty(QWidget *parent = nullptr);
-    virtual ~TTKNotifyWindowProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

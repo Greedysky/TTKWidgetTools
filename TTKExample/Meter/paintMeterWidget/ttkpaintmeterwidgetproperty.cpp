@@ -32,11 +32,6 @@ TTKPaintMeterWidgetProperty::TTKPaintMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKPaintMeterWidgetProperty::~TTKPaintMeterWidgetProperty()
-{
-
-}
-
 void TTKPaintMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKPaintMeterWidget *widget = TTKStatic_cast(TTKPaintMeterWidget*, m_item);

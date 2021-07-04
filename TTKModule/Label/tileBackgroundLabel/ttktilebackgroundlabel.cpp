@@ -10,11 +10,6 @@ TTKTileBackgroundLabel::TTKTileBackgroundLabel(QWidget *parent)
     m_pix = QPixmap(64, 64);
 }
 
-TTKTileBackgroundLabel::~TTKTileBackgroundLabel()
-{
-
-}
-
 void TTKTileBackgroundLabel::setForeColor(const QColor &color)
 {
     if(m_foreColor != color)

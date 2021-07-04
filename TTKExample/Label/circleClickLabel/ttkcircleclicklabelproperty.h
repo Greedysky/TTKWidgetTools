@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCircleClickLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCircleClickLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKCircleClickLabelProperty();
 
 };
 

@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKRingProgressWidget : public QWidget
     TTK_DECLARE_MODULE(TTKRingProgressWidget)
 public:
     explicit TTKRingProgressWidget(QWidget *parent = nullptr);
-    virtual ~TTKRingProgressWidget();
+    ~TTKRingProgressWidget();
 
     void setRange(double minValue, double maxValue);
 

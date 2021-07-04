@@ -30,10 +30,6 @@ TTKGifProgressWidgetProperty::TTKGifProgressWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKGifProgressWidgetProperty::~TTKGifProgressWidgetProperty()
-{
-}
-
 void TTKGifProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKGifProgressWidget *widget = TTKStatic_cast(TTKGifProgressWidget*, m_item);

@@ -38,7 +38,7 @@ public:
     };
 
     explicit TTKWaveProgressWidget(QWidget *parent = nullptr);
-    virtual ~TTKWaveProgressWidget();
+    ~TTKWaveProgressWidget();
 
     void setRange(int minValue, int maxValue);
 

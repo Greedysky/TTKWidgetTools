@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKMoveWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKMoveWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKMoveWidgetProperty();
 
 private Q_SLOTS:
     void showWidget();

@@ -27,11 +27,6 @@ TTKSpeedMeterWidgetProperty::TTKSpeedMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKSpeedMeterWidgetProperty::~TTKSpeedMeterWidgetProperty()
-{
-
-}
-
 void TTKSpeedMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKSpeedMeterWidget *widget = TTKStatic_cast(TTKSpeedMeterWidget*, m_item);

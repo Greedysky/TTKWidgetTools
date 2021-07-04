@@ -22,11 +22,6 @@ TTKAnimationProgressWidgetProperty::TTKAnimationProgressWidgetProperty(QWidget *
     m_browser->addProperty(objectItem);
 }
 
-TTKAnimationProgressWidgetProperty::~TTKAnimationProgressWidgetProperty()
-{
-
-}
-
 void TTKAnimationProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKAnimationProgressWidget *widget = TTKStatic_cast(TTKAnimationProgressWidget*, m_item);

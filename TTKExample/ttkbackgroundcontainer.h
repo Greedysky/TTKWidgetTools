@@ -26,7 +26,7 @@ class TTK_MODULE_EXPORT TTKBackgroundContainerItem : public TTKGrabItemWidget
     Q_OBJECT
 public:
     explicit TTKBackgroundContainerItem(QWidget *parent = nullptr);
-    virtual ~TTKBackgroundContainerItem();
+    ~TTKBackgroundContainerItem();
 
     void addItem(QWidget *item);
 
@@ -45,7 +45,7 @@ class TTK_MODULE_EXPORT TTKBackgroundContainer : public QWidget
     Q_OBJECT
 public:
     explicit TTKBackgroundContainer(QWidget *parent = nullptr);
-    virtual ~TTKBackgroundContainer();
+    ~TTKBackgroundContainer();
 
     void addItem(QWidget *item);
 

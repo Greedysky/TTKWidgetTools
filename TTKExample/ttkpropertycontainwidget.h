@@ -27,7 +27,7 @@ class TTK_MODULE_EXPORT TTKPropertyContainWidget : public QWidget
     Q_OBJECT
 public:
     explicit TTKPropertyContainWidget(QWidget *parent = nullptr);
-    virtual ~TTKPropertyContainWidget();
+    ~TTKPropertyContainWidget();
 
     void addItem(QWidget *item);
 

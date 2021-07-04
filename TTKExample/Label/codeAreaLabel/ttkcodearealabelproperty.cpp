@@ -32,11 +32,6 @@ TTKCodeAreaLabelProperty::TTKCodeAreaLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCodeAreaLabelProperty::~TTKCodeAreaLabelProperty()
-{
-
-}
-
 void TTKCodeAreaLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKCodeAreaLabel *widget = TTKStatic_cast(TTKCodeAreaLabel*, m_item);

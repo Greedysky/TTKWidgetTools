@@ -41,11 +41,6 @@ TTKStyleSliderProperty::TTKStyleSliderProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKStyleSliderProperty::~TTKStyleSliderProperty()
-{
-
-}
-
 void TTKStyleSliderProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKStyleSlider *widget = TTKStatic_cast(TTKStyleSlider*, m_item);

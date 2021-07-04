@@ -127,7 +127,7 @@ class TTK_MODULE_EXPORT TTKPictureBannerView : public QWidget
     Q_OBJECT
 public:
     explicit TTKPictureBannerView(QWidget *parent = nullptr);
-    virtual ~TTKPictureBannerView();
+    ~TTKPictureBannerView();
 
     void setLeftPixmap(const QPixmap &pixmap);
     void setCenterPixmap(const QPixmap &pixmap);

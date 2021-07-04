@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKToggleWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKToggleWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKToggleWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

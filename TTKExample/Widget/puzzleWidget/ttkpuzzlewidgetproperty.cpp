@@ -37,11 +37,6 @@ TTKPuzzleWidgetProperty::TTKPuzzleWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKPuzzleWidgetProperty::~TTKPuzzleWidgetProperty()
-{
-
-}
-
 void TTKPuzzleWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKPuzzleWidget *widget = TTKStatic_cast(TTKPuzzleWidget*, m_item);

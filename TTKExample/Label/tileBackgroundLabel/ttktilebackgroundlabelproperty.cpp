@@ -30,11 +30,6 @@ TTKTileBackgroundLabelProperty::TTKTileBackgroundLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKTileBackgroundLabelProperty::~TTKTileBackgroundLabelProperty()
-{
-
-}
-
 void TTKTileBackgroundLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKTileBackgroundLabel *widget = TTKStatic_cast(TTKTileBackgroundLabel*, m_item);

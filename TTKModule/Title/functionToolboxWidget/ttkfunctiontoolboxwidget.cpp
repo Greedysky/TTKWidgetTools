@@ -150,7 +150,7 @@ QString TTKFunctionToolBoxWidgetItem::getTitle() const
 void TTKFunctionToolBoxWidgetItem::setItemExpand(bool expand)
 {
     m_topWidget->setItemExpand(expand);
-    foreach(QWidget *w, m_itemList)
+    for(QWidget *w : qAsConst(m_itemList))
     {
         w->setVisible(expand);
     }

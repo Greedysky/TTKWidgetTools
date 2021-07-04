@@ -25,11 +25,6 @@ TTKMiniMeterWidget::TTKMiniMeterWidget(QWidget *parent)
     m_pointerStyle = PointerStyleIndicator;
 }
 
-TTKMiniMeterWidget::~TTKMiniMeterWidget()
-{
-
-}
-
 void TTKMiniMeterWidget::setRange(double minValue, double maxValue)
 {
     if(minValue >= maxValue)

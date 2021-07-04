@@ -40,6 +40,7 @@ public:
         Left,
         Right
     };
+
     explicit TTKBaseAnimationWidget(QWidget *parent = nullptr);
     virtual ~TTKBaseAnimationWidget();
 

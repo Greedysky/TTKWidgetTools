@@ -40,7 +40,6 @@ public:
     };
 
     explicit TTKDialMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKDialMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

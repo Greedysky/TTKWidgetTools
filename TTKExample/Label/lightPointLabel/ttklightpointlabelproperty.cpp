@@ -36,11 +36,6 @@ TTKLightPointLabelProperty::TTKLightPointLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKLightPointLabelProperty::~TTKLightPointLabelProperty()
-{
-
-}
-
 void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKLightPointLabel *widget = TTKStatic_cast(TTKLightPointLabel*, m_item);

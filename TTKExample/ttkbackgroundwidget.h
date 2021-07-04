@@ -27,7 +27,6 @@ class TTK_MODULE_EXPORT TTKBackgroundWidget : public QWidget
     Q_OBJECT
 public:
     explicit TTKBackgroundWidget(QWidget *parent = nullptr);
-    virtual ~TTKBackgroundWidget();
 
 private:
     virtual void paintEvent(QPaintEvent *event) override;

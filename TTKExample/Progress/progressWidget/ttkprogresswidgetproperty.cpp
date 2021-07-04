@@ -30,11 +30,6 @@ TTKProgressWidgetProperty::TTKProgressWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKProgressWidgetProperty::~TTKProgressWidgetProperty()
-{
-
-}
-
 void TTKProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKProgressWidget *widget = TTKStatic_cast(TTKProgressWidget*, m_item);

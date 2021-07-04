@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKSpeedRingMeterWidgetProperty : public TTKWidgetProper
     Q_OBJECT
 public:
     explicit TTKSpeedRingMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKSpeedRingMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

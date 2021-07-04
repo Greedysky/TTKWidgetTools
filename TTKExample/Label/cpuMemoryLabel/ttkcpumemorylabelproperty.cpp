@@ -23,8 +23,3 @@ TTKCPUMemoryLabelProperty::TTKCPUMemoryLabelProperty(QWidget *parent)
 
     TTKStatic_cast(TTKCPUMemoryLabel*, m_item)->start(1000);
 }
-
-TTKCPUMemoryLabelProperty::~TTKCPUMemoryLabelProperty()
-{
-
-}

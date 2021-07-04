@@ -103,11 +103,6 @@ TTKPanelMeterWidgetProperty::TTKPanelMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKPanelMeterWidgetProperty::~TTKPanelMeterWidgetProperty()
-{
-
-}
-
 void TTKPanelMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);

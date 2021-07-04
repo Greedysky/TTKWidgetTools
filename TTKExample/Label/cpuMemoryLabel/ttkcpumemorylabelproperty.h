@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKCPUMemoryLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKCPUMemoryLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKCPUMemoryLabelProperty();
 
 };
 

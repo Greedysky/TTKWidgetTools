@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKLayoutAnimationWidgetProperty : public TTKWidgetPrope
     Q_OBJECT
 public:
     explicit TTKLayoutAnimationWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKLayoutAnimationWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

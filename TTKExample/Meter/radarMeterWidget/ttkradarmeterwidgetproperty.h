@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKRadarMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKRadarMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKRadarMeterWidgetProperty();
 
 };
 

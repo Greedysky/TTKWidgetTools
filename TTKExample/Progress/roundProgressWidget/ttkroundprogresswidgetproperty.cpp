@@ -81,11 +81,6 @@ TTKRoundProgressWidgetProperty::TTKRoundProgressWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKRoundProgressWidgetProperty::~TTKRoundProgressWidgetProperty()
-{
-
-}
-
 void TTKRoundProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     if(property->propertyName() == "Activity")

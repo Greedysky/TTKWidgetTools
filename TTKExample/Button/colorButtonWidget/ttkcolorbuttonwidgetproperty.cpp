@@ -46,11 +46,6 @@ TTKColorButtonWidgetProperty::TTKColorButtonWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKColorButtonWidgetProperty::~TTKColorButtonWidgetProperty()
-{
-
-}
-
 void TTKColorButtonWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKColorButtonWidget *widget = TTKStatic_cast(TTKColorButtonWidget*, m_item);

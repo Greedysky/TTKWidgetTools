@@ -27,11 +27,6 @@ TTKMoveWidgetProperty::TTKMoveWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMoveWidgetProperty::~TTKMoveWidgetProperty()
-{
-
-}
-
 void TTKMoveWidgetProperty::showWidget()
 {
     m_label->resize(200, 200);

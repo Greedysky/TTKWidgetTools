@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKToastLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKToastLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKToastLabelProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

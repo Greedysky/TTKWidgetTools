@@ -34,7 +34,7 @@ class TTK_MODULE_EXPORT TTKShiningSlider : public QWidget
     TTK_DECLARE_MODULE(TTKShiningSlider)
 public:
     explicit TTKShiningSlider(QWidget *parent = nullptr);
-    virtual ~TTKShiningSlider();
+    ~TTKShiningSlider();
 
     void setPlayState(bool state);
     void setValue(qint64 value);

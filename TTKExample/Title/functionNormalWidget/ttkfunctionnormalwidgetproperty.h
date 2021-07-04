@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKFunctionNormaWidgetProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKFunctionNormaWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionNormaWidgetProperty();
 
 private Q_SLOTS:
     virtual void rectPropertyChanged(QtProperty *property, const QRect &value);

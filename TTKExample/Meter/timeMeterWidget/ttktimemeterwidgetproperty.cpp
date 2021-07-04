@@ -27,11 +27,6 @@ TTKTimeMeterWidgetProperty::TTKTimeMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKTimeMeterWidgetProperty::~TTKTimeMeterWidgetProperty()
-{
-
-}
-
 void TTKTimeMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
     TTKTimeMeterWidget *widget = TTKStatic_cast(TTKTimeMeterWidget*, m_item);

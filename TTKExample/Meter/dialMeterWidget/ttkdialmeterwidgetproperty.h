@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKDialMeterWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKDialMeterWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKDialMeterWidgetProperty();
 
 protected Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

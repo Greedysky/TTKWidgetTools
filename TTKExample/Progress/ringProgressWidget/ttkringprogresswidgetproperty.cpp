@@ -124,11 +124,6 @@ TTKRingProgressWidgetProperty::TTKRingProgressWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKRingProgressWidgetProperty::~TTKRingProgressWidgetProperty()
-{
-
-}
-
 void TTKRingProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKRingProgressWidget *widget = TTKStatic_cast(TTKRingProgressWidget*, m_item);

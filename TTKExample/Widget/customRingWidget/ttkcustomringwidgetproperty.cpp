@@ -39,11 +39,6 @@ TTKCustomRingWidgetProperty::TTKCustomRingWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCustomRingWidgetProperty::~TTKCustomRingWidgetProperty()
-{
-
-}
-
 void TTKCustomRingWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKCustomRingWidget *widget = TTKStatic_cast(TTKCustomRingWidget*, m_item);

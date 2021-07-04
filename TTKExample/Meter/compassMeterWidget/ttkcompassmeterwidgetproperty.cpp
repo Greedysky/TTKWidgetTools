@@ -88,11 +88,6 @@ TTKCompassMeterWidgetProperty::TTKCompassMeterWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKCompassMeterWidgetProperty::~TTKCompassMeterWidgetProperty()
-{
-
-}
-
 void TTKCompassMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKCompassMeterWidget *widget = TTKStatic_cast(TTKCompassMeterWidget*, m_item);

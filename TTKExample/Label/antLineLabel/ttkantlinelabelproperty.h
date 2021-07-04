@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKAntLineLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKAntLineLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKAntLineLabelProperty();
 
 protected Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

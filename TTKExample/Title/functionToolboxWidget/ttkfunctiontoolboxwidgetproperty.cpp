@@ -37,8 +37,3 @@ TTKFunctionToolBoxWidgetProperty::TTKFunctionToolBoxWidgetProperty(QWidget *pare
     yellow->setFixedHeight(100);
     widget->addItem(yellow, "yellow");
 }
-
-TTKFunctionToolBoxWidgetProperty::~TTKFunctionToolBoxWidgetProperty()
-{
-
-}

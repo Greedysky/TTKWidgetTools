@@ -7,10 +7,6 @@ TTKBackgroundWidget::TTKBackgroundWidget(QWidget *parent)
 {
 }
 
-TTKBackgroundWidget::~TTKBackgroundWidget()
-{
-}
-
 void TTKBackgroundWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);

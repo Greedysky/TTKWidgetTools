@@ -35,7 +35,7 @@ public:
     explicit TTKSplashScreen();
     explicit TTKSplashScreen(int mstime);
     explicit TTKSplashScreen(const QPixmap &pixmap, int mstime);
-    virtual ~TTKSplashScreen();
+    ~TTKSplashScreen();
 
     void setWidget(QWidget *main);
     QWidget *widget();

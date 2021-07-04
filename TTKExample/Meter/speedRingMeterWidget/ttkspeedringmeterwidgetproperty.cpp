@@ -110,11 +110,6 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
     m_browser->addProperty(objectItem);
 }
 
-TTKSpeedRingMeterWidgetProperty::~TTKSpeedRingMeterWidgetProperty()
-{
-
-}
-
 void TTKSpeedRingMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKSpeedRingMeterWidget *widget = TTKStatic_cast(TTKSpeedRingMeterWidget*, m_item);

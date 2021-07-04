@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKRoundMeterWidget : public QWidget
     TTK_DECLARE_MODULE(TTKRoundMeterWidget)
 public:
     explicit TTKRoundMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKRoundMeterWidget();
+    ~TTKRoundMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

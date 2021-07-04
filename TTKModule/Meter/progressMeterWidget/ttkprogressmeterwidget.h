@@ -40,7 +40,7 @@ public:
     };
 
     explicit TTKProgressMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKProgressMeterWidget();
+    ~TTKProgressMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

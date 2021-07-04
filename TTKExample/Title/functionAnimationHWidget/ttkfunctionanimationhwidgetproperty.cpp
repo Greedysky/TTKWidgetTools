@@ -29,11 +29,6 @@ TTKOptionAnimationHWidgetProperty::TTKOptionAnimationHWidgetProperty(QWidget *pa
     m_browser->addProperty(objectItem);
 }
 
-TTKOptionAnimationHWidgetProperty::~TTKOptionAnimationHWidgetProperty()
-{
-
-}
-
 void TTKOptionAnimationHWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKOptionAnimationHWidget *widget = TTKStatic_cast(TTKOptionAnimationHWidget*, m_item);
@@ -73,11 +68,6 @@ TTKTableAnimationHWidgetProperty::TTKTableAnimationHWidgetProperty(QWidget *pare
     m_browser->addProperty(objectItem);
 }
 
-TTKTableAnimationHWidgetProperty::~TTKTableAnimationHWidgetProperty()
-{
-
-}
-
 void TTKTableAnimationHWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKTableAnimationHWidget *widget = TTKStatic_cast(TTKTableAnimationHWidget*, m_item);
@@ -115,11 +105,6 @@ TTKSkinAnimationHWidgetProperty::TTKSkinAnimationHWidgetProperty(QWidget *parent
     objectItem->addSubProperty(directionItem);
     //
     m_browser->addProperty(objectItem);
-}
-
-TTKSkinAnimationHWidgetProperty::~TTKSkinAnimationHWidgetProperty()
-{
-
 }
 
 void TTKSkinAnimationHWidgetProperty::enumPropertyChanged(QtProperty *property, int value)

@@ -384,7 +384,7 @@ void TTKPictureBannerWidget::addPage(const QPixmap &pixmap)
 
 void TTKPictureBannerWidget::addPages(const QList<QPixmap> &pixmaps)
 {
-    foreach (QPixmap pixmap, pixmaps)
+    for(const QPixmap &pixmap : qAsConst(pixmaps))
     {
         addPage(pixmap);
     }

@@ -40,7 +40,6 @@ public:
     };
 
     explicit TTKMiniMeterWidget(QWidget *parent = nullptr);
-    virtual ~TTKMiniMeterWidget();
 
     void setRange(double minValue, double maxValue);
 

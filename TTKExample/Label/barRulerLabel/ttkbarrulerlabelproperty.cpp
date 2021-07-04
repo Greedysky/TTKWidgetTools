@@ -84,11 +84,6 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKBarRulerLabelProperty::~TTKBarRulerLabelProperty()
-{
-
-}
-
 void TTKBarRulerLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKBarRulerLabel *widget = TTKStatic_cast(TTKBarRulerLabel*, m_item);

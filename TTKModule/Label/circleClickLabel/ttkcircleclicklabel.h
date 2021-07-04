@@ -31,7 +31,7 @@ class TTK_MODULE_EXPORT TTKCircleClickLabel : public QWidget
     TTK_DECLARE_MODULE(TTKCircleClickLabel)
 public:
     explicit TTKCircleClickLabel(QWidget *parent = nullptr);
-    virtual ~TTKCircleClickLabel();
+    ~TTKCircleClickLabel();
 
     virtual QSize sizeHint() const override;
 

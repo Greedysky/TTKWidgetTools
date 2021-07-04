@@ -28,8 +28,3 @@ TTKPictureBannerWidgetProperty::TTKPictureBannerWidgetProperty(QWidget *parent)
         TTKStatic_cast(TTKPictureBannerWidget*, m_item)->addPage(QPixmap(QString(":/res/%1").arg(i)));
     }
 }
-
-TTKPictureBannerWidgetProperty::~TTKPictureBannerWidgetProperty()
-{
-
-}

@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKMarqueeLabelProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKMarqueeLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKMarqueeLabelProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;

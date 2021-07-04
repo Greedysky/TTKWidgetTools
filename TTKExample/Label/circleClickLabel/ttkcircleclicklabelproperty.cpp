@@ -21,8 +21,3 @@ TTKCircleClickLabelProperty::TTKCircleClickLabelProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 }
-
-TTKCircleClickLabelProperty::~TTKCircleClickLabelProperty()
-{
-
-}

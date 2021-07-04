@@ -21,8 +21,3 @@ TTKRadarMeterWidgetProperty::TTKRadarMeterWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 }
-
-TTKRadarMeterWidgetProperty::~TTKRadarMeterWidgetProperty()
-{
-
-}

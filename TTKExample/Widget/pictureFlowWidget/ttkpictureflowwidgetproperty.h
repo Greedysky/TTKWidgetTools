@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKPictureFlowWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKPictureFlowWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKPictureFlowWidgetProperty();
 
 private Q_SLOTS:
     virtual void intPropertyChanged(QtProperty *property, int value) override;

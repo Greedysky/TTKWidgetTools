@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKGrabItemWidgetProperty : public TTKWidgetProperty
     Q_OBJECT
 public:
     explicit TTKGrabItemWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKGrabItemWidgetProperty();
 
 };
 

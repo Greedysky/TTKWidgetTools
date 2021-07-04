@@ -46,7 +46,7 @@ TTKRingsMapProgressWidgetProperty::TTKRingsMapProgressWidgetProperty(QWidget *pa
 
 TTKRingsMapProgressWidgetProperty::~TTKRingsMapProgressWidgetProperty()
 {
-
+    delete m_timer;
 }
 
 void TTKRingsMapProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)

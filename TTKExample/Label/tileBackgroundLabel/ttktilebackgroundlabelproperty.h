@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKTileBackgroundLabelProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKTileBackgroundLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKTileBackgroundLabelProperty();
 
 protected Q_SLOTS:
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;

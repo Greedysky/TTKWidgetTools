@@ -26,11 +26,6 @@ TTKIpEditWidgetProperty::TTKIpEditWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKIpEditWidgetProperty::~TTKIpEditWidgetProperty()
-{
-
-}
-
 void TTKIpEditWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
     TTKIpEditWidget *widget = TTKStatic_cast(TTKIpEditWidget*, m_item);

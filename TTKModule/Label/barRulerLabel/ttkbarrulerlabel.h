@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKBarRulerLabel : public QWidget
     TTK_DECLARE_MODULE(TTKBarRulerLabel)
 public:
     explicit TTKBarRulerLabel(QWidget *parent = nullptr);
-    virtual ~TTKBarRulerLabel();
+    ~TTKBarRulerLabel();
 
     void setRange(double minValue, double maxValue);
 

@@ -153,7 +153,7 @@ void TTKCustomPieWidget::clearPie()
 double TTKCustomPieWidget::getSumValue()
 {
     double sum = 0;
-    foreach(const PieData& data, m_datas)
+    for(const PieData &data : qAsConst(m_datas))
     {
         sum += data.m_value;
 

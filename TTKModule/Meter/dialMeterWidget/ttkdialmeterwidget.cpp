@@ -25,11 +25,6 @@ TTKDialMeterWidget::TTKDialMeterWidget(QWidget *parent)
     m_pointerStyle = PointerStyleCircle;
 }
 
-TTKDialMeterWidget::~TTKDialMeterWidget()
-{
-
-}
-
 void TTKDialMeterWidget::setRange(double minValue, double maxValue)
 {
     if(minValue >= maxValue)

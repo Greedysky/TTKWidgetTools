@@ -34,7 +34,7 @@ class TTK_MODULE_EXPORT TTKLayoutAnimationWidget : public QWidget
     TTK_DECLARE_MODULE(TTKLayoutAnimationWidget)
 public:
     explicit TTKLayoutAnimationWidget(QWidget *parent = nullptr);
-    virtual ~TTKLayoutAnimationWidget();
+    ~TTKLayoutAnimationWidget();
 
     void start();
     void stop();

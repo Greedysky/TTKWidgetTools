@@ -29,11 +29,6 @@ TTKNetTrafficLabelProperty::TTKNetTrafficLabelProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKNetTrafficLabelProperty::~TTKNetTrafficLabelProperty()
-{
-
-}
-
 void TTKNetTrafficLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
     TTKNetTrafficLabel *widget = TTKStatic_cast(TTKNetTrafficLabel*, m_item);

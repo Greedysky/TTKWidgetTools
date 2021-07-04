@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKTransitionAnimationLabelProperty : public TTKWidgetPr
     Q_OBJECT
 public:
     explicit TTKTransitionAnimationLabelProperty(QWidget *parent = nullptr);
-    virtual ~TTKTransitionAnimationLabelProperty();
 
 private Q_SLOTS:
     virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;

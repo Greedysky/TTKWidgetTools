@@ -27,11 +27,6 @@ TTKMoveResizeWidgetProperty::TTKMoveResizeWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 }
 
-TTKMoveResizeWidgetProperty::~TTKMoveResizeWidgetProperty()
-{
-
-}
-
 void TTKMoveResizeWidgetProperty::showWidget()
 {
     m_label->setStyleSheet("background:black;");

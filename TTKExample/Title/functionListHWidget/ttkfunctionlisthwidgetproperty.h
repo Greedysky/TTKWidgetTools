@@ -29,7 +29,6 @@ class TTK_MODULE_EXPORT TTKFunctionListHWidgetProperty : public TTKWidgetPropert
     Q_OBJECT
 public:
     explicit TTKFunctionListHWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKFunctionListHWidgetProperty();
 
 };
 

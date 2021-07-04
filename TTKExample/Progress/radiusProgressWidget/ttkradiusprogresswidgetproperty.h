@@ -29,7 +29,7 @@ class TTK_MODULE_EXPORT TTKRadiusProgressWidgetProperty : public TTKWidgetProper
     Q_OBJECT
 public:
     explicit TTKRadiusProgressWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKRadiusProgressWidgetProperty();
+    ~TTKRadiusProgressWidgetProperty();
 
 private Q_SLOTS:
     virtual void boolPropertyChanged(QtProperty *property, bool value) override;
