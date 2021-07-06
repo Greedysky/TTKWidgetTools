@@ -68,7 +68,7 @@ void TTKToolsApplication::buttonModuleChanged(int index)
             break;
         case 2: w = new TTKColorButtonWidgetProperty;
             break;
-#if !TTK_QT_VERSION_CHECK(6,0,0)
+#if !TTK_QT_VERSION_CHECK(6,0,0) || TTK_QT_VERSION_CHECK(6,1,0)
         case 3: w = new TTKCheckButtonWidgetProperty;
             break;
         case 4: w = new TTKRadioButtonWidgetProperty;
@@ -420,7 +420,7 @@ void TTKToolsApplication::createButtonModule()
     widget->addItem(":/icon/button", "TTKFlatButtonWidget");
     widget->addItem(":/icon/button", "TTKToolMenuWidget");
     widget->addItem(":/icon/button", "TTKColorButtonWidget");
-#if !TTK_QT_VERSION_CHECK(6,0,0)
+#if !TTK_QT_VERSION_CHECK(6,0,0) || TTK_QT_VERSION_CHECK(6,1,0)
     widget->addItem(":/icon/button", "TTKCheckButtonWidget");
     widget->addItem(":/icon/button", "TTKRadioButtonWidget");
     widget->addItem(":/icon/button", "TTKToggleWidget");
