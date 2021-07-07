@@ -117,14 +117,14 @@ INCLUDEPATH += \
     $$PWD/../TTKModule/Window/notifyWindow
 
 win32:msvc{
-greaterThan(QT_MAJOR_VERSION, 5){ #Qt6
-    greaterThan(QT_MINOR_VERSION, 0){ #Qt6.0.x not support
+    equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
+        message(Qt6.0.x not support state machine)
+    }else{
         HEADERS += \
             $$PWD/../TTKModule/Button/checkButtonWidget/ttkcheckbuttonwidget.h \
             $$PWD/../TTKModule/Button/radioButtonWidget/ttkcheckable.h \
             $$PWD/../TTKModule/Button/radioButtonWidget/ttkradiobuttonwidget.h \
             $$PWD/../TTKModule/Button/toggleWidget/ttktogglewidget.h
-        }
     }
 }
 
