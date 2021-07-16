@@ -47,7 +47,7 @@ void TTKMarqueeLabel::setText(const QString &text)
         m_text = text;
         m_labText->setText(text);
 
-#if TTK_QT_VERSION_CHECK(5,13,0)
+#if TTK_QT_VERSION_CHECK(5,11,0)
         const int textWidth = fontMetrics().horizontalAdvance(text);
 #else
         const int textWidth = fontMetrics().width(text);
@@ -137,7 +137,7 @@ void TTKMarqueeLabel::timeout()
         return;
     }
 
-#if TTK_QT_VERSION_CHECK(5,13,0)
+#if TTK_QT_VERSION_CHECK(5,11,0)
     const int textWidth = fontMetrics().horizontalAdvance(m_text);
 #else
     const int textWidth = fontMetrics().width(m_text);

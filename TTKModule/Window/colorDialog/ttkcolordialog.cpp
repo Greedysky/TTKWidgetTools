@@ -151,9 +151,9 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
     int ntBottm = rect().bottom();
 
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    float dblVH, dblVS, dblVL = -100.0;
+    float dblVH, dblVS, dblVL = -100.0f;
 #else
-    qreal dblVH, dblVS, dblVL = -100.0;
+    qreal dblVH, dblVS, dblVL = -100.0f;
 #endif
     m_color.getHslF(&dblVH, &dblVS, &dblVL);
     QColor colorCenter;

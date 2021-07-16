@@ -92,7 +92,7 @@ void TTKToastLabel::popup(QWidget *parent)
 void TTKToastLabel::setText(const QString &text)
 {
     QFontMetrics metrics = QFontMetrics(m_font);
-#if TTK_QT_VERSION_CHECK(5,13,0)
+#if TTK_QT_VERSION_CHECK(5,11,0)
     const int w = metrics.horizontalAdvance(text);
 #else
     const int w = metrics.width(text);

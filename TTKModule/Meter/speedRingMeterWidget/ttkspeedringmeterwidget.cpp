@@ -397,7 +397,7 @@ void TTKSpeedRingMeterWidget::drawScaleNum(QPainter *painter)
         const double cosa = qCos(startRad - i * deltaRad);
         const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         const QString &strValue = QString("%1M").arg(value, 0, 'f', 0);
-#if TTK_QT_VERSION_CHECK(5,13,0)
+#if TTK_QT_VERSION_CHECK(5,11,0)
         const int textWidth = fontMetrics().horizontalAdvance(strValue);
 #else
         const int textWidth = fontMetrics().width(strValue);

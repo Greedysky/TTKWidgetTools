@@ -295,7 +295,7 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
             painter->drawLine(leftPot, rightPot);
 
             const QString &strValue = QString("%1").arg((double)i, 0, 'f', m_precision);
-#if TTK_QT_VERSION_CHECK(5,13,0)
+#if TTK_QT_VERSION_CHECK(5,11,0)
             const int fontWidth = fontMetrics().horizontalAdvance(strValue);
 #else
             const int fontWidth = fontMetrics().width(strValue);
