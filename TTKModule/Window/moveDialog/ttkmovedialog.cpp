@@ -27,7 +27,6 @@ TTKMoveDialog::TTKMoveDialog(bool transparent, QWidget *parent)
 void TTKMoveDialog::paintEvent(QPaintEvent *event)
 {
     QDialog::paintEvent(event);
-
     if(m_showShadow)
     {
         QPainter painter(this);
@@ -37,21 +36,17 @@ void TTKMoveDialog::paintEvent(QPaintEvent *event)
         painter.drawPixmap(0, height() - HEIGHT, WIDTH, HEIGHT, QPixmap(":/res/lb_left_bottom"));
         painter.drawPixmap(width() - WIDTH, height() - HEIGHT, WIDTH, HEIGHT, QPixmap(":/res/lb_right_bottom"));
 
-        painter.drawPixmap(0, WIDTH, HEIGHT, height() - 2*WIDTH,
-                           QPixmap(":/res/lb_left").scaled(WIDTH, height() - 2*HEIGHT));
-        painter.drawPixmap(width() - WIDTH, WIDTH, HEIGHT, height() - 2*HEIGHT,
-                           QPixmap(":/res/lb_right").scaled(WIDTH, height() - 2*HEIGHT));
-        painter.drawPixmap(HEIGHT, 0, width() - 2*WIDTH, HEIGHT,
-                           QPixmap(":/res/lb_top").scaled(width() - 2*WIDTH, HEIGHT));
-        painter.drawPixmap(WIDTH, height() - HEIGHT, width() - 2*WIDTH, HEIGHT,
-                           QPixmap(":/res/lb_bottom").scaled(width() - 2*WIDTH, HEIGHT));
+        painter.drawPixmap(0, WIDTH, HEIGHT, height() - 2 * WIDTH, QPixmap(":/res/lb_left").scaled(WIDTH, height() - 2 * HEIGHT));
+        painter.drawPixmap(width() - WIDTH, WIDTH, HEIGHT, height() - 2 * HEIGHT, QPixmap(":/res/lb_right").scaled(WIDTH, height() - 2 * HEIGHT));
+        painter.drawPixmap(HEIGHT, 0, width() - 2 * WIDTH, HEIGHT, QPixmap(":/res/lb_top").scaled(width() - 2 * WIDTH, HEIGHT));
+        painter.drawPixmap(WIDTH, height() - HEIGHT, width() - 2 * WIDTH, HEIGHT,  QPixmap(":/res/lb_bottom").scaled(width() - 2 * WIDTH, HEIGHT));
     }
 }
 
 void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 {
     QDialog::mousePressEvent(event);
-    if( event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
+    if(event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
     {
         m_leftButtonPress = true;
     }
@@ -65,7 +60,7 @@ void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 void TTKMoveDialog::mouseMoveEvent(QMouseEvent *event)
 {
     QDialog::mouseMoveEvent(event);
-    if( !m_leftButtonPress )///Not press the left key
+    if(!m_leftButtonPress )///Not press the left key
     {
         event->ignore();
         return;

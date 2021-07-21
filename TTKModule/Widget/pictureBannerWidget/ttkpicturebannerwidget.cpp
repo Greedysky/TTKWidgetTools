@@ -181,12 +181,12 @@ TTKPictureBannerView::TTKPictureBannerView(QWidget *parent)
     m_rightAnimation->setEasingCurve(QEasingCurve::Linear);
 
     m_centerPage->setFixedSize(m_size);
-    m_leftPage->setMinimumWidth(m_size.width()/4);
-    m_leftPage->setMaximumWidth(m_size.width()*2/3);
-    m_leftPage->setFixedHeight(m_size.height()-12);
-    m_rightPage->setMinimumWidth(m_size.width()/4);
-    m_rightPage->setMaximumWidth(m_size.width()*2/3);
-    m_rightPage->setFixedHeight(m_size.height()-12);
+    m_leftPage->setMinimumWidth(m_size.width() / 4);
+    m_leftPage->setMaximumWidth(m_size.width() * 2 / 3);
+    m_leftPage->setFixedHeight(m_size.height() - 12);
+    m_rightPage->setMinimumWidth(m_size.width() / 4);
+    m_rightPage->setMaximumWidth(m_size.width() * 2 / 3);
+    m_rightPage->setFixedHeight(m_size.height() - 12);
 
     m_leftArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Left, this);
     m_rightArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Right, this);
@@ -234,12 +234,11 @@ void TTKPictureBannerView::setRightPixmap(const QPixmap &pixmap)
 
 void TTKPictureBannerView::startAnimation(int direction)
 {
-    QRect leftRect = m_leftPage->geometry();
-    QRect centerRect = m_centerPage->geometry();
-    QRect rightRect = m_rightPage->geometry();
+    const QRect &leftRect = m_leftPage->geometry();
+    const QRect &centerRect = m_centerPage->geometry();
+    const QRect &rightRect = m_rightPage->geometry();
+    const QRect &tmpRect = QRect(centerRect.x(), centerRect.y() + 12, centerRect.width(), centerRect.height() - 12);
 
-    QRect tmpRect = QRect(centerRect.x(), centerRect.y()+12,
-                          centerRect.width(), centerRect.height()-12);
     if(direction < 0)
     {
         m_leftAnimation->setStartValue(rightRect);
@@ -249,7 +248,8 @@ void TTKPictureBannerView::startAnimation(int direction)
         m_rightAnimation->setStartValue(tmpRect);
         m_rightAnimation->setEndValue(rightRect);
 
-    }else if(direction > 0)
+    }
+    else if(direction > 0)
     {
         m_leftAnimation->setStartValue(tmpRect);
         m_leftAnimation->setEndValue(leftRect);
@@ -339,9 +339,9 @@ void TTKPictureBannerView::setArrowHidden(bool hidden)
 
     if(!hidden)
     {
-        m_leftArrow->move(m_leftPage->x()+8, m_leftPage->y()+(m_leftPage->height()-m_leftArrow->height())/2);
-        m_rightArrow->move(m_rightPage->x()+m_rightPage->width()-m_rightArrow->width()-8,
-                           m_rightPage->y()+(m_rightPage->height()-m_rightArrow->height())/2);
+        m_leftArrow->move(m_leftPage->x() + 8, m_leftPage->y() + (m_leftPage->height() - m_leftArrow->height()) / 2);
+        m_rightArrow->move(m_rightPage->x() + m_rightPage->width() - m_rightArrow->width() - 8,
+                           m_rightPage->y() + (m_rightPage->height() - m_rightArrow->height()) / 2);
         m_leftArrow->raise();
         m_rightArrow->raise();
     }

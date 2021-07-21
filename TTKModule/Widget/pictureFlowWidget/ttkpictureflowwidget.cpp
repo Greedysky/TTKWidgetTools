@@ -166,7 +166,7 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
 
                 for(int row = r1; row <= r2; row++)
                 {
-                    p = result->scanLine(row) + c2*4;
+                    p = result->scanLine(row) + c2 * 4;
                     for(int i = 0; i < 3; i++)
                     {
                         rgba[i] = p[i] << 4;
@@ -522,7 +522,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::init()
 
     for(int i = 0; i < w; i++)
     {
-        long gg = ((PFREAL_ONE >> 1) + i * PFREAL_ONE) / (2*h);
+        long gg = ((PFREAL_ONE >> 1) + i * PFREAL_ONE) / (2 * h);
         m_rays[w-i-1] = -gg;
         m_rays[w+i] = gg;
     }

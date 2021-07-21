@@ -23,11 +23,11 @@ TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(animationChanged(QVariant)));
     connect(m_animation, SIGNAL(finished()), SLOT(finished()));
 
-    m_group = new QButtonGroup(this);
+    m_buttonGroup = new QButtonGroup(this);
 #if TTK_QT_VERSION_CHECK(5,15,0)
-    connect(m_group, SIGNAL(idClicked(int)), SLOT(switchToSelectedItemStyle(int)));
+    connect(m_buttonGroup, SIGNAL(idClicked(int)), SLOT(switchToSelectedItemStyle(int)));
 #else
-    connect(m_group, SIGNAL(buttonClicked(int)), SLOT(switchToSelectedItemStyle(int)));
+    connect(m_buttonGroup, SIGNAL(buttonClicked(int)), SLOT(switchToSelectedItemStyle(int)));
 #endif
 }
 
@@ -35,7 +35,7 @@ TTKBaseAnimationWidget::~TTKBaseAnimationWidget()
 {
     qDeleteAll(m_container);
     delete m_animation;
-    delete m_group;
+    delete m_buttonGroup;
 }
 
 void TTKBaseAnimationWidget::setAlignment(Alignment alignment)
@@ -139,7 +139,7 @@ TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignVCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 
@@ -163,7 +163,7 @@ TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignVCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 
@@ -194,7 +194,7 @@ TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignVCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 
@@ -206,9 +206,6 @@ void TTKSkinAnimationHWidget::setAlignment(Alignment alignment)
     TTKBaseAnimationHWidget::setAlignment(alignment);
     m_pix = QPixmap(m_alignment == Bottom ? ":/res/bottom" : ":/res/top");
 }
-
-
-
 
 
 
@@ -277,7 +274,7 @@ TTKOptionAnimationVWidget::TTKOptionAnimationVWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignHCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 
@@ -301,7 +298,7 @@ TTKTableAnimationVWidget::TTKTableAnimationVWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignHCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 
@@ -332,7 +329,7 @@ TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
         btn->setText(QString::number(i));
         btn->setFixedSize(54, 23);
         ly->addWidget(btn, 0, Qt::AlignHCenter);
-        m_group->addButton(btn, i);
+        m_buttonGroup->addButton(btn, i);
         m_container << btn;
     }
 

@@ -102,7 +102,7 @@ void TTKMovingLabelSlider::leaveEvent(QEvent *event)
 QPoint TTKMovingLabelSlider::limitLableGeometry(int x, int y, int z)
 {
     QPoint pt;
-    if( 0 < x && x < z)
+    if(0 < x && x < z)
     {
         pt.setX(y + x);
         pt.setY(qint64(x)*maximum()/z);

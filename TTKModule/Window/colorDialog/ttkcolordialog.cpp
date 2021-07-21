@@ -147,8 +147,8 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(Qt::NoBrush);
 
-    int ntRight = rect().right();
-    int ntBottm = rect().bottom();
+    const int ntRight = rect().right();
+    const int ntBottm = rect().bottom();
 
 #if TTK_QT_VERSION_CHECK(6,0,0)
     float dblVH, dblVS, dblVL = -100.0f;
@@ -156,13 +156,9 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
     qreal dblVH, dblVS, dblVL = -100.0f;
 #endif
     m_color.getHslF(&dblVH, &dblVS, &dblVL);
-    QColor colorCenter;
+    QColor colorCenter, colorStart, colorFinal;
     colorCenter.setHslF(dblVH, 0.5, dblVL);
-
-    QColor colorStart;
     colorStart.setHslF(dblVH, 1, dblVL);
-
-    QColor colorFinal;
     colorFinal.setHslF(dblVH, 0, dblVL);
 
     QLinearGradient linearGradient;

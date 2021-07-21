@@ -39,8 +39,7 @@ void TTKMoveResizeWidget::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         m_struct.m_windowPos = pos();
-        if(QRect(DISTANCE + 1, DISTANCE + 1, width() - (DISTANCE + 1)*2,
-                 height() - (DISTANCE + 1)*2).contains(event->pos()))
+        if(QRect(DISTANCE + 1, DISTANCE + 1, width() - (DISTANCE + 1) * 2, height() - (DISTANCE + 1) * 2).contains(event->pos()))
         {
 #if TTK_QT_VERSION_CHECK(6,0,0)
             m_struct.m_mousePos = event->globalPosition().toPoint();
@@ -59,7 +58,6 @@ void TTKMoveResizeWidget::mousePressEvent(QMouseEvent *event)
 void TTKMoveResizeWidget::mouseMoveEvent(QMouseEvent *event)
 {
     QWidget::mouseMoveEvent(event);
-
     !m_struct.m_isPressBorder ? sizeDirection() : moveDirection();
     if(m_struct.m_mouseLeftPress)
     {
@@ -82,46 +80,42 @@ void TTKMoveResizeWidget::mouseReleaseEvent(QMouseEvent *event)
 void TTKMoveResizeWidget::sizeDirection()
 {
     QPoint point = mapFromGlobal(QCursor::pos());
-    if( point.x() > width() - DISTANCE && point.y() < height() - DISTANCE &&
-        point.y() > DISTANCE )//right side
+    if(point.x() > width() - DISTANCE && point.y() < height() - DISTANCE && point.y() > DISTANCE)
     {
         setCursor(Qt::SizeHorCursor);
         m_direction = Direction_Right;
     }
-    else if( point.x() < DISTANCE && point.y() < height() - DISTANCE &&
-             point.y() > DISTANCE )
+    else if(point.x() < DISTANCE && point.y() < height() - DISTANCE && point.y() > DISTANCE)
     {
         setCursor(Qt::SizeHorCursor);
         m_direction = Direction_Left;
     }
-    else if( point.y() > height() - DISTANCE && point.x() > DISTANCE &&
-             point.x() < width() - DISTANCE )
+    else if(point.y() > height() - DISTANCE && point.x() > DISTANCE && point.x() < width() - DISTANCE)
     {
         setCursor(Qt::SizeVerCursor);
         m_direction = Direction_Bottom;
     }
-    else if( point.y() < DISTANCE && point.x() > DISTANCE &&
-             point.x() < width() - DISTANCE )
+    else if(point.y() < DISTANCE && point.x() > DISTANCE && point.x() < width() - DISTANCE)
     {
         setCursor(Qt::SizeVerCursor);
         m_direction = Direction_Top;
     }
-    else if( point.y() < DISTANCE && point.x() > width() - DISTANCE )
+    else if(point.y() < DISTANCE && point.x() > width() - DISTANCE)
     {
         setCursor(Qt::SizeBDiagCursor);
         m_direction = Direction_RightTop;
     }
-    else if( point.y() < DISTANCE && point.x() < DISTANCE)
+    else if(point.y() < DISTANCE && point.x() < DISTANCE)
     {
         setCursor(Qt::SizeFDiagCursor);
         m_direction = Direction_LeftTop;
     }
-    else if( point.x() > DISTANCE && point.y() > height() - DISTANCE )
+    else if(point.x() > DISTANCE && point.y() > height() - DISTANCE)
     {
         setCursor(Qt::SizeFDiagCursor);
         m_direction = Direction_RightBottom;
     }
-    else if( point.x() < DISTANCE && point.y() > height() - DISTANCE )
+    else if(point.x() < DISTANCE && point.y() > height() - DISTANCE)
     {
         setCursor(Qt::SizeBDiagCursor);
         m_direction = Direction_LeftBottom;

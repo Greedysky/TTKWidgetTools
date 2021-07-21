@@ -72,7 +72,7 @@ void TTKProgressWidget::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::NoPen);
 
     QPainterPath path;
-    path.addRoundedRect(0, height()/2 - 3, width(), 6, 3, 3);
+    path.addRoundedRect(0, height() / 2 - 3, width(), 6, 3, 3);
     painter.setClipPath(path);
 
     painter.drawRect(0, 0, width(), height());
@@ -81,6 +81,6 @@ void TTKProgressWidget::paintEvent(QPaintEvent *event)
     {
         brush.setColor(progressColor());
         painter.setBrush(brush);
-        painter.drawRect(m_delegate->offset()*width()*2 - width(), 0, width(), height());
+        painter.drawRect(m_delegate->offset() * width() * 2 - width(), 0, width(), height());
     }
 }

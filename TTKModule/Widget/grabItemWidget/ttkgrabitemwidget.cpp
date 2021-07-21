@@ -93,7 +93,6 @@ void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
 void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
 {
     const QPoint &gloPoint = mapToParent(event->pos());
-
     const QPoint &pt_lu = mapToParent(rect().topLeft());
     const QPoint &pt_ll = mapToParent(rect().bottomLeft());
     const QPoint &pt_rl = mapToParent(rect().bottomRight());

@@ -41,7 +41,6 @@ void TTKCircleClickLabel::updateRender()
 void TTKCircleClickLabel::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
-
     m_circleOn = true;
     m_pos = event->pos();
     m_crValue = 4;

@@ -37,21 +37,17 @@ void TTKMoveWidget::paintEvent(QPaintEvent *event)
         painter.drawPixmap(0, height() - HEIGHT, WIDTH, HEIGHT, QPixmap(":/res/lb_left_bottom"));
         painter.drawPixmap(width() - WIDTH, height() - HEIGHT, WIDTH, HEIGHT, QPixmap(":/res/lb_right_bottom"));
 
-        painter.drawPixmap(0, WIDTH, HEIGHT, height() - 2*WIDTH,
-                           QPixmap(":/res/lb_left").scaled(WIDTH, height() - 2*HEIGHT));
-        painter.drawPixmap(width() - WIDTH, WIDTH, HEIGHT, height() - 2*HEIGHT,
-                           QPixmap(":/res/lb_right").scaled(WIDTH, height() - 2*HEIGHT));
-        painter.drawPixmap(HEIGHT, 0, width() - 2*WIDTH, HEIGHT,
-                           QPixmap(":/res/lb_top").scaled(width() - 2*WIDTH, HEIGHT));
-        painter.drawPixmap(WIDTH, height() - HEIGHT, width() - 2*WIDTH, HEIGHT,
-                           QPixmap(":/res/lb_bottom").scaled(width() - 2*WIDTH, HEIGHT));
+        painter.drawPixmap(0, WIDTH, HEIGHT, height() - 2 * WIDTH, QPixmap(":/res/lb_left").scaled(WIDTH, height() - 2 * HEIGHT));
+        painter.drawPixmap(width() - WIDTH, WIDTH, HEIGHT, height() - 2 * HEIGHT, QPixmap(":/res/lb_right").scaled(WIDTH, height() - 2 * HEIGHT));
+        painter.drawPixmap(HEIGHT, 0, width() - 2 * WIDTH, HEIGHT, QPixmap(":/res/lb_top").scaled(width() - 2 * WIDTH, HEIGHT));
+        painter.drawPixmap(WIDTH, height() - HEIGHT, width() - 2 * WIDTH, HEIGHT, QPixmap(":/res/lb_bottom").scaled(width() - 2 * WIDTH, HEIGHT));
     }
 }
 
 void TTKMoveWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
-    if( event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
+    if(event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
     {
         m_leftButtonPress = true;
     }
@@ -65,12 +61,11 @@ void TTKMoveWidget::mousePressEvent(QMouseEvent *event)
 void TTKMoveWidget::mouseMoveEvent(QMouseEvent *event)
 {
     QWidget::mouseMoveEvent(event);
-    if( !m_leftButtonPress )///Not press the left key
+    if(!m_leftButtonPress )///Not press the left key
     {
         event->ignore();
         return;
     }
-
 #if TTK_QT_VERSION_CHECK(6,0,0)
     const int xpos = event->globalPosition().x() - m_pressAt.x();
     const int ypos = event->globalPosition().y() - m_pressAt.y();
