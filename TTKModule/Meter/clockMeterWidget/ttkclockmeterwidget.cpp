@@ -31,7 +31,11 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     setSecondStyle(SecondStyleNormal);
     updateTime();
 
+#if TTK_QT_VERSION_CHECK(6,2,0)
+    setFont(QFont(QStringList() << "Arial", 9));
+#else
     setFont(QFont("Arial", 9));
+#endif
 }
 
 TTKClockMeterWidget::~TTKClockMeterWidget()

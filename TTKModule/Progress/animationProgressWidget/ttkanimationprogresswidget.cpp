@@ -52,7 +52,11 @@ void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
     const int side = qMin(width(), height());
     painter.drawPixmap(QRect(0, 0, side, side), m_ranges.at(m_index));
 
-    painter.setFont(QFont("Roboto", 15, QFont::Bold));
+#if TTK_QT_VERSION_CHECK(6,2,0)
+    setFont(QFont(QStringList() << "Roboto", 15, QFont::Bold));
+#else
+    setFont(QFont("Roboto", 15, QFont::Bold));
+#endif
     painter.setPen(QColor("#555555"));
     painter.drawText(QRect(20, 20, side - 40, side - 40), Qt::AlignCenter, QString("%1%").arg(m_value));
 }
