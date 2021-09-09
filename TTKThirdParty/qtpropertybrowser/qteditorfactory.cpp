@@ -88,7 +88,7 @@ static inline void setupTreeViewEditorMargin(QLayout *lt)
 // ---------- EditorFactoryPrivate :
 // Base class for editor factory private classes. Manages mapping of properties to editors and vice versa.
 
-template <class Editor>
+template <typename Editor>
 class EditorFactoryPrivate
 {
 public:
@@ -105,7 +105,7 @@ public:
     EditorToPropertyMap m_editorToProperty;
 };
 
-template <class Editor>
+template <typename Editor>
 Editor *EditorFactoryPrivate<Editor>::createEditor(QtProperty *property, QWidget *parent)
 {
     Editor *editor = new Editor(parent);
@@ -113,7 +113,7 @@ Editor *EditorFactoryPrivate<Editor>::createEditor(QtProperty *property, QWidget
     return editor;
 }
 
-template <class Editor>
+template <typename Editor>
 void EditorFactoryPrivate<Editor>::initializeEditor(QtProperty *property, Editor *editor)
 {
     typename PropertyToEditorListMap::iterator it = m_createdEditors.find(property);
@@ -123,7 +123,7 @@ void EditorFactoryPrivate<Editor>::initializeEditor(QtProperty *property, Editor
     m_editorToProperty.insert(editor, property);
 }
 
-template <class Editor>
+template <typename Editor>
 void EditorFactoryPrivate<Editor>::slotEditorDestroyed(QObject *object)
 {
     const typename EditorToPropertyMap::iterator ecend = m_editorToProperty.end();

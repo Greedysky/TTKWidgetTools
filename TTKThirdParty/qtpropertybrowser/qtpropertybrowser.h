@@ -165,7 +165,7 @@ protected Q_SLOTS:
     friend class QtAbstractPropertyBrowser;
 };
 
-template <class PropertyManager>
+template <typename PropertyManager>
 class QtAbstractEditorFactory : public QtAbstractEditorFactoryBase
 {
 public:
@@ -281,7 +281,7 @@ public:
     QList<QtBrowserItem *> topLevelItems() const;
     void clear();
 
-    template <class PropertyManager>
+    template <typename PropertyManager>
     void setFactoryForManager(PropertyManager *manager,
                     QtAbstractEditorFactory<PropertyManager> *factory) {
         QtAbstractPropertyManager *abstractManager = manager;
