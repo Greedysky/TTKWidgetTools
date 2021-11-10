@@ -53,7 +53,7 @@ void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(QRect(0, 0, side, side), m_ranges.at(m_index));
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont(QStringList() << "Roboto", 15, QFont::Bold));
+    setFont(QFont({"Roboto"}, 15, QFont::Bold));
 #else
     setFont(QFont("Roboto", 15, QFont::Bold));
 #endif

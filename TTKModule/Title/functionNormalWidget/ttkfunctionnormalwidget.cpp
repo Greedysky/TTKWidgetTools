@@ -90,7 +90,7 @@ void TTKFunctionNormalWidget::drawItem(QPainter *painter)
             }
             painter->setPen(QPen(QColor(0, 188, 212), 3));
 #if TTK_QT_VERSION_CHECK(6,2,0)
-            QFont font(QStringList() << "Roboto", 13);
+            QFont font({"Roboto"}, 13);
 #else
             QFont font("Roboto", 13);
 #endif
@@ -107,7 +107,7 @@ void TTKFunctionNormalWidget::drawItem(QPainter *painter)
         else
         {
 #if TTK_QT_VERSION_CHECK(6,2,0)
-            QFont font(QStringList() << "Roboto", 13);
+            QFont font({"Roboto"}, 13);
 #else
             QFont font("Roboto", 13);
 #endif

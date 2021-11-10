@@ -33,7 +33,7 @@ TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont(QStringList() << "Arial", 8));
+    setFont(QFont({"Arial"}, 8));
 #else
     setFont(QFont("Arial", 8));
 #endif
