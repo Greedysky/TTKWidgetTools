@@ -98,7 +98,7 @@ void TTKLedPageLabel::drawText(QPainter &painter)
     QPen pen(m_frontColor);
     painter.setPen(pen);
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Roboto"}, m_fontSize, QFont::Bold));
+    setFont(QFont(QStringList() << "Roboto", m_fontSize, QFont::Bold));
 #else
     setFont(QFont("Roboto", m_fontSize, QFont::Bold));
 #endif

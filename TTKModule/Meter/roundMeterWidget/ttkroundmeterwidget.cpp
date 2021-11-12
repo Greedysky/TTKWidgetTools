@@ -33,7 +33,7 @@ TTKRoundMeterWidget::TTKRoundMeterWidget(QWidget *parent)
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Arial"}, 7));
+    setFont(QFont(QStringList() << "Arial", 7));
 #else
     setFont(QFont("Arial", 7));
 #endif
@@ -327,7 +327,7 @@ void TTKRoundMeterWidget::drawText(QPainter *painter)
     const QString &strMaxValue = QString("%1%2").arg(m_maxValue).arg(m_unit);
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    painter->setFont(QFont({"Arial"}, 13));
+    painter->setFont(QFont(QStringList() << "Arial", 13));
 #else
     painter->setFont(QFont("Arial", 13));
 #endif
@@ -337,7 +337,7 @@ void TTKRoundMeterWidget::drawText(QPainter *painter)
     painter->drawText(textRect, Qt::AlignCenter, strValue);
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    painter->setFont(QFont({"Arial"}, 8));
+    painter->setFont(QFont(QStringList() << "Arial", 8));
 #else
     painter->setFont(QFont("Arial", 8));
 #endif

@@ -218,7 +218,7 @@ void TTKRoundProgressWidget::paintText(QPainter& painter)
 
     painter.setPen(m_textColor);
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Roboto"}, 22, QFont::Bold));
+    setFont(QFont(QStringList() << "Roboto", 22, QFont::Bold));
 #else
     setFont(QFont("Roboto", 22, QFont::Bold));
 #endif

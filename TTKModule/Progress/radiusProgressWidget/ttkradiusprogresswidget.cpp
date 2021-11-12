@@ -31,7 +31,7 @@ void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(rect, QPixmap(":/res/lb_rp_back"));
     painter.drawPixmap(fillRect, QPixmap(":/res/lb_rp_front"), fillRect);
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Roboto"}, 15, QFont::Bold));
+    setFont(QFont(QStringList() << "Roboto", 15, QFont::Bold));
 #else
     setFont(QFont("Roboto", 15, QFont::Bold));
 #endif

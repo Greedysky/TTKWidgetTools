@@ -44,7 +44,7 @@ void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawPie(outRect, (90 - m_angle) * 16, m_angle * 16);
 
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Roboto"}, 15, QFont::Bold));
+    setFont(QFont(QStringList() << "Roboto", 15, QFont::Bold));
 #else
     setFont(QFont("Roboto", 15, QFont::Bold));
 #endif

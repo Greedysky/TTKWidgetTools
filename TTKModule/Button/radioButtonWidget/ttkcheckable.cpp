@@ -98,7 +98,7 @@ TTKCheckable::TTKCheckable(QWidget *parent)
 
     setCheckable(true);
 #if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont({"Roboto"}, 11, QFont::Normal));
+    setFont(QFont(QStringList() << "Roboto", 11, QFont::Normal));
 #else
     setFont(QFont("Roboto", 11, QFont::Normal));
 #endif
