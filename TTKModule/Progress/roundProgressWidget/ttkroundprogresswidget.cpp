@@ -229,7 +229,7 @@ void TTKRoundProgressWidget::paintText(QPainter& painter)
             painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision));
             break;
         case ValueAndMax:
-            painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision) + "/" + QString::number(m_max, 'f', m_precision));
+            painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision) + TTK_SEPARATOR + QString::number(m_max, 'f', m_precision));
             break;
         case Percent:
             painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value / m_max * 100, 'f', m_precision) + "%");

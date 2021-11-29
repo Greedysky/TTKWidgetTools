@@ -591,14 +591,14 @@ void TTKAnimation2StackedWidget::start(int index)
     w->hide();
 
     QWidget *previousWidget = widget(m_previousIndex);
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+#if TTK_QT_VERSION_CHECK(5,0,0)
     m_privPixmap = previousWidget->grab(previousWidget->rect());
 #else
     m_privPixmap = QPixmap::grabWidget(previousWidget);
 #endif
 
     previousWidget = widget(m_currentIndex);
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+#if TTK_QT_VERSION_CHECK(5,0,0)
     m_privPixmap = previousWidget->grab(previousWidget->rect());
 #else
     m_privPixmap = QPixmap::grabWidget(previousWidget);

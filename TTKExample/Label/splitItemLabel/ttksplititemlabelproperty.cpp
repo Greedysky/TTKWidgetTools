@@ -20,7 +20,7 @@ TTKSplitItemLabelProperty::TTKSplitItemLabelProperty(QWidget *parent)
     objectItem->addSubProperty(geometryItem);
     //
     QtProperty *splitItem = m_stringManager->addProperty("Split");
-    m_stringManager->setValue(splitItem, "-");
+    m_stringManager->setValue(splitItem, TTK_DEFAULT_STR);
     objectItem->addSubProperty(splitItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");

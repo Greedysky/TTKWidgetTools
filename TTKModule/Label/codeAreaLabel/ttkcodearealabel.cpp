@@ -1,6 +1,6 @@
 #include "ttkcodearealabel.h"
 #if TTK_QT_VERSION_CHECK(5,10,0)
-#include <QRandomGenerator>
+#  include <QRandomGenerator>
 #endif
 #include <QDateTime>
 #include <QPainter>

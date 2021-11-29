@@ -4,10 +4,10 @@
 #include <QProcess>
 
 #ifdef Q_OS_WIN
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x502
-#endif
-#include "windows.h"
+#  ifndef _WIN32_WINNT
+#    define _WIN32_WINNT 0x502
+#  endif
+#  include "windows.h"
 #endif
 #define MB (1024 * 1024)
 #define KB (1024)
