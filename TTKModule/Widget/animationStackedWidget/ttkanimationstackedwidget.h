@@ -45,7 +45,7 @@ public:
     void setLength(int length, AnimationType type);
 
     void setDuration(int duration);
-    int getDuration() const;
+    int duration() const;
 
     virtual QSize sizeHint() const override;
 

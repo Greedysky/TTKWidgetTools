@@ -72,7 +72,7 @@ void TTKNetTraffic::setAvailableNewtworkName(const QString &name)
 #endif
 }
 
-QStringList TTKNetTraffic::getNewtworkNames() const
+QStringList TTKNetTraffic::newtworkNames() const
 {
     QStringList names;
 #ifdef Q_OS_WIN
@@ -235,9 +235,9 @@ void TTKNetTrafficLabel::setAvailableNewtworkName(const QString &name)
     m_process->setAvailableNewtworkName(name);
 }
 
-QStringList TTKNetTrafficLabel::getNewtworkNames() const
+QStringList TTKNetTrafficLabel::newtworkNames() const
 {
-    return m_process->getNewtworkNames();
+    return m_process->newtworkNames();
 }
 
 QSize TTKNetTrafficLabel::sizeHint() const

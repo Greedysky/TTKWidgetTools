@@ -45,8 +45,8 @@ public:
 
     explicit TTKGrabItemWidget(QWidget *parent = nullptr);
 
-    inline void setCrossStretch(bool c) { m_crossStretch = c;}
-    inline bool gettCrossStretch() const { return m_crossStretch;}
+    inline void setCrossStretch(bool c) { m_crossStretch = c; }
+    inline bool crossStretch() const { return m_crossStretch; }
 
     virtual QSize sizeHint() const override;
 
@@ -63,7 +63,7 @@ protected:
     virtual void resizeEvent(QResizeEvent *event) override;
     virtual void paintEvent(QPaintEvent *event) override;
 
-    Direction getRegion(const QPoint &cursor);
+    Direction region(const QPoint &cursor);
 
     bool m_isPressed;
     bool m_crossStretch;

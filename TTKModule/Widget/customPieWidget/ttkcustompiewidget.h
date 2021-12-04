@@ -57,8 +57,8 @@ protected:
 
 private:
     void clearPie();
-    double getSumValue();
-    QPoint getOffsetPoint(double angel, int offset);
+    double sumValue();
+    QPoint offsetPoint(double angel, int offset);
 
 private:
     bool m_explodedAll;

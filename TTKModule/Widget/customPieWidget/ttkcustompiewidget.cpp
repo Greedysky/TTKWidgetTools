@@ -86,7 +86,7 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
     const int radius = 93;
     const QRect rect(-radius, -radius, radius * 2, radius * 2);
     double startAngle = 0;
-    const double sum = getSumValue();
+    const double sum = sumValue();
 
     const int count = m_datas.count();
     for(int i = 0; i < count; ++i)
@@ -126,7 +126,7 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
             offset = 60;
         }
 
-        const QPoint &p = getOffsetPoint(mid, offset);
+        const QPoint &p = offsetPoint(mid, offset);
         QRect textRect;
         textRect.setX(p.x() - 40);
         textRect.setY(p.y() - 30);
@@ -150,7 +150,7 @@ void TTKCustomPieWidget::clearPie()
     update();
 }
 
-double TTKCustomPieWidget::getSumValue()
+double TTKCustomPieWidget::sumValue()
 {
     double sum = 0;
     for(const PieData &data : qAsConst(m_datas))
@@ -161,7 +161,7 @@ double TTKCustomPieWidget::getSumValue()
     return sum;
 }
 
-QPoint TTKCustomPieWidget::getOffsetPoint(double angel, int offset)
+QPoint TTKCustomPieWidget::offsetPoint(double angel, int offset)
 {
     Q_UNUSED(angel);
     Q_UNUSED(offset);

@@ -45,7 +45,7 @@ void TTKToastLabel::setTimerInterval(int msecond)
     m_timer.start();
 }
 
-int TTKToastLabel::getTimerInterval() const
+int TTKToastLabel::timerInterval() const
 {
     return m_timer.interval();
 }
@@ -57,7 +57,7 @@ void TTKToastLabel::setFontSize(int size)
     update();
 }
 
-int TTKToastLabel::getFontSize() const
+int TTKToastLabel::fontSize() const
 {
     return m_font.pointSize();
 }

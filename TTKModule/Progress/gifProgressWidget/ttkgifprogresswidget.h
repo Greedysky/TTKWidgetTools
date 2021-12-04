@@ -51,13 +51,13 @@ public:
     ~TTKGifProgressWidget();
 
     void setType(Type type);
-    Type getType() const;
+    Type type() const;
 
     void setInterval(int value);
-    int getInterval() const;
+    int interval() const;
 
     void setInfinited(bool s);
-    bool getInfinited() const;
+    bool infinited() const;
 
     void run(bool run);
 

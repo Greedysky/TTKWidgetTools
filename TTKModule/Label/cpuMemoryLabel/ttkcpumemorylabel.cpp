@@ -23,10 +23,10 @@ TTKCPUMemoryLabel::TTKCPUMemoryLabel(QWidget *parent)
     m_memoryUse = 0;
 
     m_timerCPU = new QTimer(this);
-    connect(m_timerCPU, SIGNAL(timeout()), this, SLOT(getCPU()));
+    connect(m_timerCPU, SIGNAL(timeout()), this, SLOT(cpu()));
 
     m_timerMemory = new QTimer(this);
-    connect(m_timerMemory, SIGNAL(timeout()), this, SLOT(getMemory()));
+    connect(m_timerMemory, SIGNAL(timeout()), this, SLOT(memory()));
 
     m_process = new QProcess(this);
     connect(m_process, SIGNAL(readyRead()), this, SLOT(readData()));
@@ -44,8 +44,8 @@ QSize TTKCPUMemoryLabel::sizeHint() const
 
 void TTKCPUMemoryLabel::start(int interval)
 {
-    getCPU();
-    getMemory();
+    cpu();
+    memory();
     m_timerCPU->start(interval);
     m_timerMemory->start(interval + 200);
 }
@@ -56,7 +56,7 @@ void TTKCPUMemoryLabel::stop()
     m_timerMemory->stop();
 }
 
-void TTKCPUMemoryLabel::getCPU()
+void TTKCPUMemoryLabel::cpu()
 {
 #ifdef Q_OS_WIN
     static FILETIME preidleTime;
@@ -102,7 +102,7 @@ void TTKCPUMemoryLabel::getCPU()
 #endif
 }
 
-void TTKCPUMemoryLabel::getMemory()
+void TTKCPUMemoryLabel::memory()
 {
 #ifdef Q_OS_WIN
     MEMORYSTATUSEX statex;

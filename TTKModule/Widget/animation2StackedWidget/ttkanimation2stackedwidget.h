@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKAnimation2StackedWidget : public QStackedWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKAnimation2StackedWidget)
-    Q_PROPERTY(float value READ GetValue WRITE SetValue)
+    Q_PROPERTY(float m_currentValue READ value WRITE setValue)
 public:
     enum AnimationType
     {
@@ -62,7 +62,7 @@ public:
     void setRevert(bool revert);
 
     void setDuration(int duration);
-    int getDuration() const;
+    int duration() const;
 
     void setFadeEnable(bool enable);
     void setAnimatEnable(bool animat);
@@ -71,8 +71,8 @@ public:
 
     bool isAnimating();
 
-    float GetValue() const;
-    void SetValue(const float value);
+    float value() const;
+    void setValue(const float value);
 
     virtual QSize sizeHint() const override;
 

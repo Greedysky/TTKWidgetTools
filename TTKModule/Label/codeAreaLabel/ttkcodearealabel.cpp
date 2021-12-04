@@ -27,56 +27,56 @@ TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
 #if !TTK_QT_VERSION_CHECK(5,10,0)
     qsrand(QDateTime::currentMSecsSinceEpoch());
 #endif
-    m_slCodeRange << "0" << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" <<
+    m_codeRange << "0" << "1" << "2" << "3" << "4" << "5" << "6" << "7" << "8" << "9" <<
        "a" << "b" << "c" << "d" << "e" << "f" << "g" << "h" << "i" << "j" << "k" << "l" << "m" << "n" <<
        "o" << "p" << "q" << "r" << "s" << "t" << "u" << "v" << "w" << "x" << "y" << "z" <<
        "A" << "B" << "C" << "D" << "E" << "F" << "G" << "H" << "I" << "J" << "K" << "L" << "M" << "N" <<
        "O" << "P" << "Q" << "R" << "S" << "T" << "U" << "V" << "W" << "X" << "Y" << "Z";
 
-    m_lCodeColor << Qt::darkRed << Qt::darkGreen << Qt::darkBlue << Qt::darkCyan
+    m_codeColor << Qt::darkRed << Qt::darkGreen << Qt::darkBlue << Qt::darkCyan
                  << Qt::darkMagenta << Qt::darkYellow << Qt::darkGray;
 
-    m_nNoisyPointCount = DEF_NOISYPOINTCOUNT;
-    m_nConverseRotate = DEF_CONVERSEROTATE;
-    m_nConverseScale = DEF_CONVERSESCALE;
-    m_nCodeCount = DEF_CODECOUNT;
+    m_noisyPointCount = DEF_NOISYPOINTCOUNT;
+    m_converseRotate = DEF_CONVERSEROTATE;
+    m_converseScale = DEF_CONVERSESCALE;
+    m_codeCount = DEF_CODECOUNT;
 }
 
 void TTKCodeAreaLabel::renderPicture()
 {
     QStringList number;
-    for(int i=0; i<m_nCodeCount; i++)
+    for(int i=0; i<m_codeCount; i++)
     {
-        number << m_slCodeRange[random(m_slCodeRange.count())];
+        number << m_codeRange[random(m_codeRange.count())];
     }
 
-    m_sCode.clear();
-    m_lCodePic.clear();
+    m_code.clear();
+    m_codePic.clear();
 
     QFont font;
     font.setBold(true);
     font.setPixelSize(25);
 
-    for(int i=0; i<m_nCodeCount; i++)
+    for(int i=0; i<m_codeCount; i++)
     {
-        m_sCode.append(number[i]);
+        m_code.append(number[i]);
         QPainterPath path(QPointF(0, 0));
         QRect fontBoundingRect = QFontMetrics(font).boundingRect(number[i]);
         path.addText(-QPointF(fontBoundingRect.center()), font, number[i]);
-        m_lCodePic << path;
+        m_codePic << path;
     }
     update();
 }
 
 void TTKCodeAreaLabel::setCodeCount(int nCount)
 {
-    m_nCodeCount = nCount;
+    m_codeCount = nCount;
     renderPicture();
 }
 
 void TTKCodeAreaLabel::setNoisyPointCount(int nCount)
 {
-    m_nNoisyPointCount = nCount;
+    m_noisyPointCount = nCount;
     renderPicture();
 }
 
@@ -94,12 +94,12 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
 
     painter.translate(0, 0);
     painter.save();
-    painter.translate(event->rect().center().x() - m_lCodePic.size() / 2 * 6, event->rect().center().y());
+    painter.translate(event->rect().center().x() - m_codePic.size() / 2 * 6, event->rect().center().y());
 
-    for(int i=0; i<m_lCodePic.size(); i++)
+    for(int i=0; i<m_codePic.size(); i++)
     {
         drawConversion(painter);
-        painter.fillPath(m_lCodePic[i], QBrush(m_lCodeColor[random(m_lCodeColor.count())]));
+        painter.fillPath(m_codePic[i], QBrush(m_codeColor[random(m_codeColor.count())]));
         painter.translate(10, 0);
     }
     painter.restore();
@@ -121,7 +121,8 @@ void TTKCodeAreaLabel::drawNoisyPoint(QPainter &painter)
     painter.setPen(Qt::red);
     painter.setPen(Qt::DotLine);
     painter.setBrush(Qt::NoBrush);
-    for(int i=0; i<m_nNoisyPointCount; i++)
+
+    for(int i=0; i<m_noisyPointCount; i++)
     {
         painter.drawPoint(QPointF(random(size().width()), random(size().height())));
     }
@@ -131,12 +132,12 @@ void TTKCodeAreaLabel::drawConversion(QPainter &painter)
 {
     if(random(2))
     {
-        painter.rotate(random(m_nConverseRotate));
+        painter.rotate(random(m_converseRotate));
     }
     else
     {
-        painter.rotate(-random(m_nConverseRotate));
+        painter.rotate(-random(m_converseRotate));
     }
-    painter.scale((random(m_nConverseScale + (100 - m_nConverseScale))) / 100.0 ,
-                  (random(m_nConverseScale + (100 - m_nConverseScale))) / 100.0);
+    painter.scale((random(m_converseScale + (100 - m_converseScale))) / 100.0 ,
+                  (random(m_converseScale + (100 - m_converseScale))) / 100.0);
 }

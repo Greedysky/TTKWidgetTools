@@ -99,7 +99,7 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
 
     if(!m_isPressed)
     {
-        m_direction = getRegion(gloPoint);
+        m_direction = region(gloPoint);
         m_originRect = QRect(pt_lu, pt_rl);
     }
     else
@@ -176,7 +176,7 @@ void TTKGrabItemWidget::paintEvent(QPaintEvent *event)
     painter.drawPoints(m_listMarker);
 }
 
-TTKGrabItemWidget::Direction TTKGrabItemWidget::getRegion(const QPoint &cursor)
+TTKGrabItemWidget::Direction TTKGrabItemWidget::region(const QPoint &cursor)
 {
     Direction ret_dir = Direction_No;
 

@@ -29,7 +29,7 @@ class TTK_MODULE_EXPORT TTKRoundProgressWidget : public QWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKRoundProgressWidget)
-    Q_PROPERTY(float m_value READ getValue WRITE setValue)
+    Q_PROPERTY(float m_value READ value WRITE setValue)
 public:
     enum SwitchFlags
     {
@@ -83,7 +83,7 @@ private:
 
 private:
     void setValue(float value);
-    inline float getValue() const { return m_value; }
+    inline float value() const { return m_value; }
 
 private:
     int m_startAngle;

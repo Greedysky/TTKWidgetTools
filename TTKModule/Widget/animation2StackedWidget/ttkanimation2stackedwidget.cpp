@@ -711,7 +711,7 @@ void TTKAnimation2StackedWidget::setDuration(int duration)
     m_animation->setDuration(duration);
 }
 
-int TTKAnimation2StackedWidget::getDuration() const
+int TTKAnimation2StackedWidget::duration() const
 {
     return m_animation->duration();
 }
@@ -760,12 +760,12 @@ void TTKAnimation2StackedWidget::setCurrentIndex(int index)
     }
 }
 
-float TTKAnimation2StackedWidget::GetValue() const
+float TTKAnimation2StackedWidget::value() const
 {
     return m_currentValue;
 }
 
-void TTKAnimation2StackedWidget::SetValue(const float value)
+void TTKAnimation2StackedWidget::setValue(const float value)
 {
     m_currentValue = value;
     update();

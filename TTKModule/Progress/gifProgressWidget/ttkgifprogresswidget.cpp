@@ -60,7 +60,7 @@ void TTKGifProgressWidget::setType(Type type)
     update();
 }
 
-TTKGifProgressWidget::Type TTKGifProgressWidget::getType() const
+TTKGifProgressWidget::Type TTKGifProgressWidget::type() const
 {
     return m_type;
 }
@@ -70,7 +70,7 @@ void TTKGifProgressWidget::setInterval(int value)
     m_timer->setInterval(value);
 }
 
-int TTKGifProgressWidget::getInterval() const
+int TTKGifProgressWidget::interval() const
 {
     return m_timer->interval();
 }
@@ -80,7 +80,7 @@ void TTKGifProgressWidget::setInfinited(bool s)
     m_infinited = s;
 }
 
-bool TTKGifProgressWidget::getInfinited() const
+bool TTKGifProgressWidget::infinited() const
 {
     return m_infinited;
 }

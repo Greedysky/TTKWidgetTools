@@ -10,7 +10,7 @@ TTKNetTrafficLabelProperty::TTKNetTrafficLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKNetTrafficLabel*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKNetTrafficLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -19,7 +19,7 @@ TTKNetTrafficLabelProperty::TTKNetTrafficLabelProperty(QWidget *parent)
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
-    cards_ = TTKStatic_cast(TTKNetTrafficLabel*, m_item)->getNewtworkNames();
+    cards_ = TTKStatic_cast(TTKNetTrafficLabel*, m_item)->newtworkNames();
     QtProperty *typeItem = m_enumManager->addProperty("NetworkCard");
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";

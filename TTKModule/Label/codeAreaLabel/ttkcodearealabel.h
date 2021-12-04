@@ -34,13 +34,13 @@ public:
     explicit TTKCodeAreaLabel(QWidget *parent = nullptr);
 
     void renderPicture();
-    inline QString getCheckCode() const { return m_sCode; }
+    inline QString checkCode() const { return m_code; }
 
     void setCodeCount(int nCount);
-    inline int getCodeCount() const { return m_nCodeCount; }
+    inline int codeCount() const { return m_codeCount; }
 
     void setNoisyPointCount(int nCount);
-    inline int getNoisyPointCount() const { return m_nNoisyPointCount; }
+    inline int noisyPointCount() const { return m_noisyPointCount; }
 
     virtual QSize sizeHint() const override;
 
@@ -50,12 +50,12 @@ protected:
     void drawConversion(QPainter &painter);
     virtual void paintEvent(QPaintEvent *event) override;
 
-    int m_nNoisyPointCount, m_nConverseRotate;
-    int m_nConverseScale, m_nCodeCount;
-    QString m_sCode;
-    QStringList m_slCodeRange;
-    QList<QPainterPath> m_lCodePic;
-    QList<Qt::GlobalColor> m_lCodeColor;
+    int m_noisyPointCount, m_converseRotate;
+    int m_converseScale, m_codeCount;
+    QString m_code;
+    QStringList m_codeRange;
+    QList<QPainterPath> m_codePic;
+    QList<Qt::GlobalColor> m_codeColor;
 
 };
 

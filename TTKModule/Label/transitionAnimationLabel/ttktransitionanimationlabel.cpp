@@ -24,7 +24,7 @@ TTKTransitionAnimationLabel::~TTKTransitionAnimationLabel()
     delete m_animation;
 }
 
-QPixmap TTKTransitionAnimationLabel::getRendererPixmap() const
+QPixmap TTKTransitionAnimationLabel::rendererPixmap() const
 {
     return m_rendererPixmap;
 }

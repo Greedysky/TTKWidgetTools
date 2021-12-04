@@ -60,7 +60,7 @@ void TTKFunctionToolBoxTopWidget::setTitle(const QString &text)
     m_labelText->setToolTip(text);
 }
 
-QString TTKFunctionToolBoxTopWidget::getTitle(bool suffix)
+QString TTKFunctionToolBoxTopWidget::title(bool suffix)
 {
     QString text = m_labelText->toolTip().trimmed();
     if(!suffix)
@@ -142,9 +142,9 @@ void TTKFunctionToolBoxWidgetItem::setTitle(const QString &text)
     m_topWidget->setTitle(text);
 }
 
-QString TTKFunctionToolBoxWidgetItem::getTitle() const
+QString TTKFunctionToolBoxWidgetItem::title() const
 {
-    return m_topWidget->getTitle();
+    return m_topWidget->title();
 }
 
 void TTKFunctionToolBoxWidgetItem::setItemExpand(bool expand)
@@ -305,7 +305,7 @@ void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
     }
 }
 
-QString TTKFunctionToolBoxWidget::getTitle(QWidget *item) const
+QString TTKFunctionToolBoxWidget::title(QWidget *item) const
 {
     for(int i=0; i<m_itemList.count(); ++i)
     {
@@ -314,7 +314,7 @@ QString TTKFunctionToolBoxWidget::getTitle(QWidget *item) const
         {
             if(it->item(j) == item)
             {
-                return it->getTitle();
+                return it->title();
             }
         }
     }
@@ -345,7 +345,7 @@ void TTKFunctionToolBoxWidget::setSingleExpand(bool single)
     m_singleExpand = single;
 }
 
-bool TTKFunctionToolBoxWidget::getSingleExpand() const
+bool TTKFunctionToolBoxWidget::singleExpand() const
 {
     return m_singleExpand;
 }

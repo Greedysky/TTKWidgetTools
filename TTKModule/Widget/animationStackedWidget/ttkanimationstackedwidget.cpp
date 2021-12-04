@@ -170,7 +170,7 @@ void TTKAnimationStackedWidget::setDuration(int duration)
     m_animation->setDuration(duration);
 }
 
-int TTKAnimationStackedWidget::getDuration() const
+int TTKAnimationStackedWidget::duration() const
 {
     return m_animation->duration();
 }

@@ -10,7 +10,7 @@ TTKShiningSliderProperty::TTKShiningSliderProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKShiningSlider*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKShiningSlider*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");

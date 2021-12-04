@@ -46,7 +46,7 @@ public:
     /*!
      * Get newtwork names.
      */
-    QStringList getNewtworkNames() const;
+    QStringList newtworkNames() const;
     /*!
      * Stop and quit current thread.
      */
@@ -94,7 +94,7 @@ public:
     ~TTKNetTrafficLabel();
 
     void setAvailableNewtworkName(const QString &name);
-    QStringList getNewtworkNames() const;
+    QStringList newtworkNames() const;
 
     virtual QSize sizeHint() const override;
     QString size2Number(ulong size);

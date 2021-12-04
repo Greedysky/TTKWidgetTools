@@ -35,13 +35,13 @@ public:
     ~TTKFunctionToolBoxTopWidget();
 
     inline void setItemIndex(int index) { m_index = index; }
-    inline int getItemIndex() const { return m_index; }
+    inline int itemIndex() const { return m_index; }
 
     void setItemExpand(bool expand);
     bool isItemExpand() const;
 
     void setTitle(const QString &text);
-    QString getTitle(bool suffix = false);
+    QString title(bool suffix = false);
 
 Q_SIGNALS:
     void mousePressAt(int index);
@@ -77,7 +77,7 @@ public:
     void removeItem(QWidget *item);
 
     void setTitle(const QString &text);
-    QString getTitle() const;
+    QString title() const;
 
     void setItemExpand(bool expand);
     bool itemExpand() const;
@@ -130,7 +130,7 @@ public:
     void swapItem(int before, int after);
 
     void setTitle(QWidget *item, const QString &text);
-    QString getTitle(QWidget *item) const;
+    QString title(QWidget *item) const;
 
     void resizeScrollIndex(int index) const;
 
@@ -139,7 +139,7 @@ public:
     int count() const;
 
     void setSingleExpand(bool single);
-    bool getSingleExpand() const;
+    bool singleExpand() const;
 
     virtual QSize sizeHint() const override;
 

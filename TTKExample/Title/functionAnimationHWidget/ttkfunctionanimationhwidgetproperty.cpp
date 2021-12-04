@@ -10,7 +10,7 @@ TTKOptionAnimationHWidgetProperty::TTKOptionAnimationHWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKOptionAnimationHWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKOptionAnimationHWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -49,7 +49,7 @@ TTKTableAnimationHWidgetProperty::TTKTableAnimationHWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTableAnimationHWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTableAnimationHWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -88,7 +88,7 @@ TTKSkinAnimationHWidgetProperty::TTKSkinAnimationHWidgetProperty(QWidget *parent
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKSkinAnimationHWidget*, m_item)->getClassName());
+    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKSkinAnimationHWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");

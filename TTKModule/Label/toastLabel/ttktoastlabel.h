@@ -38,10 +38,10 @@ public:
     void setFontMargin(int height, int width);
 
     void setTimerInterval(int msecond);
-    int getTimerInterval() const;
+    int timerInterval() const;
 
     void setFontSize(int size);
-    int getFontSize() const;
+    int fontSize() const;
 
     void setBold(bool bold);
     bool bold() const;
