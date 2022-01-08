@@ -42,10 +42,10 @@ public Q_SLOTS:
     void setSaturation(double dblsaturation);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
 
     void calculateColor();
 
@@ -75,10 +75,10 @@ public Q_SLOTS:
     void setBaseColor(const QColor &color);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
 
     void calculateSuration();
 

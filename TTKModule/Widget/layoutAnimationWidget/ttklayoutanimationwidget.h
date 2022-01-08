@@ -43,14 +43,14 @@ public:
     void addWidget(QWidget *widget, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
     void removeWidget(QWidget *widget);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     bool m_isAnimating;
     float m_currentValue;

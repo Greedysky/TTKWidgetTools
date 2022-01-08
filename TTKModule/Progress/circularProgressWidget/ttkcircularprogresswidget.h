@@ -78,10 +78,10 @@ public:
     void setColor(const QColor &color);
     QColor color() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKCircularProgressDelegate *m_delegate;
     QColor m_color;

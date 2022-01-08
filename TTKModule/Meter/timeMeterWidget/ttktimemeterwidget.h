@@ -35,10 +35,10 @@ public:
     void setValue(qreal value);
     qreal value() const { return m_value;}
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     void drawCrown(QPainter *painter);
     void drawScale(QPainter *painter);

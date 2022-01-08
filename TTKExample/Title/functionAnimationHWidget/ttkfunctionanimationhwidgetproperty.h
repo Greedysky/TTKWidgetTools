@@ -31,7 +31,7 @@ public:
     explicit TTKOptionAnimationHWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
 
 };
 
@@ -47,7 +47,7 @@ public:
     explicit TTKTableAnimationHWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
 
 };
 
@@ -63,7 +63,7 @@ public:
     explicit TTKSkinAnimationHWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
 
 };
 

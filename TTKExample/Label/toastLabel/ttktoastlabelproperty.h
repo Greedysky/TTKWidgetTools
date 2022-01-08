@@ -31,10 +31,10 @@ public:
     explicit TTKToastLabelProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
 
 private Q_SLOTS:
     void showWidget();

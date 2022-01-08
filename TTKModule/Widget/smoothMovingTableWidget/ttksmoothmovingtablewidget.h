@@ -37,14 +37,14 @@ public:
 
     void setMovedScrollBar(QScrollBar *bar);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void updateRender();
     void valueChanged(int value);
 
 protected:
-    virtual void wheelEvent(QWheelEvent *event) override;
+    virtual void wheelEvent(QWheelEvent *event) override final;
 
     bool m_isFirstInit;
     int m_previousValue, m_deltaValue;

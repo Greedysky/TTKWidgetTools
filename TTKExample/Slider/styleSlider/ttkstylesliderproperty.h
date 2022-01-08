@@ -31,8 +31,8 @@ public:
     explicit TTKStyleSliderProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

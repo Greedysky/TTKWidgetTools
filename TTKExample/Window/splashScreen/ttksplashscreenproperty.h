@@ -31,8 +31,8 @@ public:
     explicit TTKSplashScreenProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override final;
     void showWidget();
 
 private:

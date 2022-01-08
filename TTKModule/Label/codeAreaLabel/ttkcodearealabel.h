@@ -42,13 +42,13 @@ public:
     void setNoisyPointCount(int nCount);
     inline int noisyPointCount() const { return m_noisyPointCount; }
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
     void drawOutline(QPainter &painter);
     void drawNoisyPoint(QPainter &painter);
     void drawConversion(QPainter &painter);
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     int m_noisyPointCount, m_converseRotate;
     int m_converseScale, m_codeCount;

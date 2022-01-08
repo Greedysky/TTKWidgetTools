@@ -31,7 +31,7 @@ public:
     explicit TTKPaintMeterWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
 
 };
 

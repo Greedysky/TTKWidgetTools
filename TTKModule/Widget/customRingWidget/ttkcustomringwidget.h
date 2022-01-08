@@ -37,10 +37,10 @@ public:
     void setMidCircleColor(const QColor &midCircleColor);
     void setInCircleColor(const QColor &inCircleColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawBg(QPainter *painter);
     void drawOutCircle(QPainter *painter);
     void drawMidCircle(QPainter *painter);

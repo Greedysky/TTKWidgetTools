@@ -31,8 +31,8 @@ public:
     explicit TTKBatteryLabelProperty(QWidget *parent = nullptr);
 
 protected Q_SLOTS:
-    virtual void doublePropertyChanged(QtProperty *property, double value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void doublePropertyChanged(QtProperty *property, double value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

@@ -31,8 +31,8 @@ public:
     explicit TTKLineEditWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

@@ -35,11 +35,11 @@ public:
     void setThreshold(double value);
     void setValue(double value);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
     void thresholdManager();
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     void drawCrown(QPainter *painter);

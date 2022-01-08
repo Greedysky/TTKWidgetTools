@@ -58,13 +58,13 @@ public:
     void setCenterColorStart(const QColor &cenerColorStart);
     void setCenterColorEnd(const QColor &cenerColorEnd);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawCrownCircle(QPainter *painter);
     void drawBgCircle(QPainter *painter);
     void drawScale(QPainter *painter);

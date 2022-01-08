@@ -34,7 +34,7 @@ class TTK_MODULE_EXPORT TTKCalendarWidget : public QCalendarWidget
 public:
     explicit TTKCalendarWidget(QWidget *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void buttonClicked();
@@ -42,9 +42,9 @@ private Q_SLOTS:
 
 protected:
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    virtual void paintCell(QPainter *painter, const QRect &rect, QDate date) const override;
+    virtual void paintCell(QPainter *painter, const QRect &rect, QDate date) const override final;
 #else
-    virtual void paintCell(QPainter *painter, const QRect &rect, const QDate &date) const override;
+    virtual void paintCell(QPainter *painter, const QRect &rect, const QDate &date) const override final;
 #endif
 
 private:

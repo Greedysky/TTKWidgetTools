@@ -36,7 +36,7 @@ Q_SIGNALS:
     void clicked(int index);
 
 private:
-    virtual void mousePressEvent(QMouseEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
 
     int m_index;
     QLabel *m_iconLabel, *m_textLabel;

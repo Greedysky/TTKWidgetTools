@@ -42,7 +42,7 @@ public:
     };
 
     explicit TTKBaseAnimationWidget(QWidget *parent = nullptr);
-    virtual ~TTKBaseAnimationWidget();
+    ~TTKBaseAnimationWidget();
 
     void setAlignment(Alignment alignment);
 
@@ -79,7 +79,7 @@ class TTK_MODULE_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
 public:
     explicit TTKBaseAnimationHWidget(QWidget *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -111,7 +111,7 @@ public:
     explicit TTKTableAnimationHWidget(QWidget *parent = nullptr);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 };
 
@@ -141,7 +141,7 @@ class TTK_MODULE_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
 public:
     explicit TTKBaseAnimationVWidget(QWidget *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
@@ -173,7 +173,7 @@ public:
     explicit TTKTableAnimationVWidget(QWidget *parent = nullptr);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 };
 

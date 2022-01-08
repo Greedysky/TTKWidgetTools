@@ -36,8 +36,8 @@ Q_SIGNALS:
     void windowStateChanged(bool state);
 
 protected:
-    virtual void showEvent(QShowEvent *event) override;
-    virtual void hideEvent(QHideEvent *event) override;
+    virtual void showEvent(QShowEvent *event) override final;
+    virtual void hideEvent(QHideEvent *event) override final;
 
 };
 

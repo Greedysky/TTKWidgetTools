@@ -38,10 +38,10 @@ public:
     inline void blockMoveOption(bool block) { m_moveOption = block;}
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
 
     QPoint m_pressAt;
     bool m_moveOption, m_showShadow;

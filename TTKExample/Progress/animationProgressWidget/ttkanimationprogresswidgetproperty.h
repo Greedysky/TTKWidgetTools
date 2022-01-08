@@ -31,7 +31,7 @@ public:
     explicit TTKAnimationProgressWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
 
 };
 

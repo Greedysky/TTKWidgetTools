@@ -29,7 +29,7 @@ public:
     explicit TTKRadioButtonWidget(QWidget *parent = nullptr);
 
 protected:
-    virtual void setupProperties() override;
+    virtual void setupProperties() override final;
 
 };
 

@@ -48,12 +48,12 @@ public:
     void start();
     void stop();
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
     void paintDot(QPainter &painter);
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
 
 private:
     int m_index, m_count;

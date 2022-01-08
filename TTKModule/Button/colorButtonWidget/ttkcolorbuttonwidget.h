@@ -41,7 +41,7 @@ public:
     void setBorderWidth(int borderWidth);
     void setBorderColor(const QColor &borderColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void colorChanged(const QColor &color);

@@ -72,7 +72,7 @@ protected:
     /*!
      * Thread run now.
      */
-    virtual void run() override;
+    virtual void run() override final;
 
 protected:
     bool m_run;
@@ -96,7 +96,7 @@ public:
     void setAvailableNewtworkName(const QString &name);
     QStringList newtworkNames() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
     QString size2Number(ulong size);
 
 private Q_SLOTS:

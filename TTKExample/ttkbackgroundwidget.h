@@ -29,7 +29,7 @@ public:
     explicit TTKBackgroundWidget(QWidget *parent = nullptr);
 
 private:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 };
 

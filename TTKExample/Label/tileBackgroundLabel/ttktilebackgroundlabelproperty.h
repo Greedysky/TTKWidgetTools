@@ -31,7 +31,7 @@ public:
     explicit TTKTileBackgroundLabelProperty(QWidget *parent = nullptr);
 
 protected Q_SLOTS:
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

@@ -45,14 +45,14 @@ Q_SIGNALS:
 
 protected:
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    virtual void enterEvent(QEnterEvent *event) override;
+    virtual void enterEvent(QEnterEvent *event) override final;
 #else
-    virtual void enterEvent(QEvent *event) override;
+    virtual void enterEvent(QEvent *event) override final;
 #endif
-    virtual void leaveEvent(QEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void leaveEvent(QEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     bool m_bMouseHover, m_bMousePress;
@@ -79,11 +79,11 @@ Q_SIGNALS:
 
 protected:
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    virtual void enterEvent(QEnterEvent *event) override;
+    virtual void enterEvent(QEnterEvent *event) override final;
 #else
-    virtual void enterEvent(QEvent *event) override;
+    virtual void enterEvent(QEvent *event) override final;
 #endif
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     bool m_selected;
@@ -108,8 +108,8 @@ Q_SIGNALS:
     void clicked();
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     bool m_bActive;
@@ -144,12 +144,12 @@ private Q_SLOTS:
 
 protected:
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    virtual void enterEvent(QEnterEvent *event) override;
+    virtual void enterEvent(QEnterEvent *event) override final;
 #else
-    virtual void enterEvent(QEvent *event) override;
+    virtual void enterEvent(QEvent *event) override final;
 #endif
-    virtual void leaveEvent(QEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void leaveEvent(QEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     void setPagePixmap(TTKPictureBannerPage *page, const QPixmap &pixmap);
     void setArrowHidden(bool hidden);
@@ -182,7 +182,7 @@ public:
 
     void setDelayTime(int msec, bool start = false);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void currentClicked(int index);
@@ -193,7 +193,7 @@ public Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     void init();
     void play(int index);

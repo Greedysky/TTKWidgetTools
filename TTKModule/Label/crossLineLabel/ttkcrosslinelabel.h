@@ -37,12 +37,12 @@ public:
     void setWidth(int w);
     void setColor(const QColor &color);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     int m_width;

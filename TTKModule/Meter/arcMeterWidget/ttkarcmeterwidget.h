@@ -66,13 +66,13 @@ public:
 
     void setPointerStyle(const PointerStyle &pointerStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawArc(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);

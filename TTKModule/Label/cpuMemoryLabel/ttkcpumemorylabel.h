@@ -36,7 +36,7 @@ public:
     explicit TTKCPUMemoryLabel(QWidget *parent = nullptr);
     ~TTKCPUMemoryLabel();
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void start(int interval);

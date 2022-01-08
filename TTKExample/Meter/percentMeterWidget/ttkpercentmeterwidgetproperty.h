@@ -31,10 +31,10 @@ public:
     explicit TTKPercentMeterWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void doublePropertyChanged(QtProperty *property, double value) override;
-    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void doublePropertyChanged(QtProperty *property, double value) override final;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

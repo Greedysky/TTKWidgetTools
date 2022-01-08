@@ -56,10 +56,10 @@ public:
 
     void setPointerStyle(const PercentStyle &percentStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     void drawValue(QPainter *painter);

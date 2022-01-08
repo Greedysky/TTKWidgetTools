@@ -33,14 +33,14 @@ public:
     explicit TTKCircleClickLabel(QWidget *parent = nullptr);
     ~TTKCircleClickLabel();
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     bool m_circleOn;
     QTimer *m_circleTimer;

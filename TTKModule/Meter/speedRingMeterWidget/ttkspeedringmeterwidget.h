@@ -62,13 +62,13 @@ public:
     void setPointerColor(const QColor &pointerColor);
     void setTextColor(const QColor &textColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawRing(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);

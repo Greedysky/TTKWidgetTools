@@ -32,8 +32,8 @@ public:
     ~TTKLedPageLabelProperty();
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 private Q_SLOTS:
     void updateRender();

@@ -53,14 +53,14 @@ public:
     void setRingWidth(int ringWidth);
     void setRingColor(const QColor &ringColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawScan(QPainter *painter);
     void drawRing(QPainter *painter);
     void drawImage(QPainter *painter);

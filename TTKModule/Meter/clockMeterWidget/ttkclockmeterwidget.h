@@ -53,14 +53,14 @@ public:
 
     void setSecondStyle(SecondStyle secondStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateTime();
     void updateSpring();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawCrown(QPainter *painter);
     void drawBg(QPainter *painter);
     void drawScale(QPainter *painter);

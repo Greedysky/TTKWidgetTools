@@ -34,10 +34,10 @@ public:
 
     void setValue(int value);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     int m_angle, m_value;

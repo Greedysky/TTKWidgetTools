@@ -69,11 +69,11 @@ public:
 
     inline void setInnerDefaultTextStyle(InnerDefaultTextStyle style) { m_innerDefaultTextStyle = style; }
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
 
 private:
     void paintOutterBar(QPainter &painter);

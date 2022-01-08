@@ -33,12 +33,12 @@ class TTK_MODULE_EXPORT TTKRadarMeterWidget : public QWidget
 public:
     explicit TTKRadarMeterWidget(QWidget *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
-    virtual void timerEvent(QTimerEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
+    virtual void timerEvent(QTimerEvent *event) override final;
 
 private:
     QRect m_drawArea;

@@ -55,7 +55,7 @@ private Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     QTimer m_timer;
     QFont m_font;

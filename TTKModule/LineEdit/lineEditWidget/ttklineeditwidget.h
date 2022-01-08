@@ -37,15 +37,15 @@ public:
 
     void setColor(const QColor &color);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void focusInEvent(QFocusEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void focusInEvent(QFocusEvent *event) override final;
 
     bool m_isAnimating;
     float m_currentValue;

@@ -49,8 +49,8 @@ Q_SIGNALS:
 protected:
     bool isItemEnable() const;
 
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     int m_index;
     QString m_suffixString;
@@ -85,8 +85,8 @@ public:
     int count() const;
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void contextMenuEvent(QContextMenuEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     QVBoxLayout *m_layout;
     QList<QWidget*> m_itemList;
@@ -141,7 +141,7 @@ public:
     void setSingleExpand(bool single);
     bool singleExpand() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void setCurrentIndex(int index);
@@ -149,8 +149,8 @@ public Q_SLOTS:
     void setTransparent(int alpha);
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void contextMenuEvent(QContextMenuEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     int foundMappingIndex(int index);
 

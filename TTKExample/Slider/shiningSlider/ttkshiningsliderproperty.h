@@ -31,8 +31,8 @@ public:
     explicit TTKShiningSliderProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
 
 };
 

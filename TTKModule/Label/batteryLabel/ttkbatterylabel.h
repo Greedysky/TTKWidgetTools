@@ -54,13 +54,13 @@ public:
     void setNormalColorStart(const QColor &normalColorStart);
     void setNormalColorEnd(const QColor &normalColorEnd);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawBorder(QPainter *painter);
     void drawBg(QPainter *painter);
 

@@ -31,7 +31,7 @@ public:
     explicit TTKTransitionAnimationLabelProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override;
+    virtual void pixmapPropertyChanged(QtProperty *property, const QString &value) override final;
 
 };
 

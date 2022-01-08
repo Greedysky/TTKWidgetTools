@@ -48,7 +48,7 @@ public:
     inline void setCrossStretch(bool c) { m_crossStretch = c; }
     inline bool crossStretch() const { return m_crossStretch; }
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void rectChanged();
@@ -57,10 +57,10 @@ protected Q_SLOTS:
     virtual void onMouseChange(int x,int y);
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override;
 
     Direction region(const QPoint &cursor);

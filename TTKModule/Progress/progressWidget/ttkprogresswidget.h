@@ -65,7 +65,7 @@ public:
     QColor backgroundColor() const;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKProgressDelegate *m_delegate;
     QColor m_progressColor, m_backgroundColor;

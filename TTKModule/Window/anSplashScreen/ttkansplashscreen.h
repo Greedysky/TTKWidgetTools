@@ -49,9 +49,9 @@ private Q_SLOTS:
     void countTimeout();
 
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void mouseMoveEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     void init();

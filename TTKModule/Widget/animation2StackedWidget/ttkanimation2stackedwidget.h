@@ -74,7 +74,7 @@ public:
     float value() const;
     void setValue(const float value);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void pageChanged(int index);
@@ -86,7 +86,7 @@ private Q_SLOTS:
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void renderPreviousWidget(QPainter &painter, QTransform &transform);
     void renderCurrentWidget(QPainter &painter, QTransform &transform);
 

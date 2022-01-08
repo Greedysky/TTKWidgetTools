@@ -50,10 +50,10 @@ public:
     explicit TTKFunctionNavigationAWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -68,10 +68,10 @@ public:
     explicit TTKFunctionNavigationBWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -86,11 +86,11 @@ public:
     explicit TTKFunctionNavigationCWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -105,11 +105,11 @@ public:
     explicit TTKFunctionNavigationDWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -124,11 +124,11 @@ public:
     explicit TTKFunctionNavigationEWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -143,11 +143,11 @@ public:
     explicit TTKFunctionNavigationFWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
@@ -162,10 +162,10 @@ public:
     explicit TTKFunctionNavigationGWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 private:
     QLinearGradient m_normal, m_hover, m_check;

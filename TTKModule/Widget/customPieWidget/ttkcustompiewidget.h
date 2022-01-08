@@ -49,10 +49,10 @@ public:
 
     void appendPie(const QString &label, double value, const QColor &color);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawPie(QPainter *painter);
 
 private:

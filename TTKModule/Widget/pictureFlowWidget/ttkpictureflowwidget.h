@@ -155,7 +155,7 @@ public:
     ReflectionEffect reflectionEffect() const;
     void setReflectionEffect(ReflectionEffect effect);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void centerIndexChanged(int index);
@@ -175,10 +175,10 @@ private Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
-    virtual void keyPressEvent(QKeyEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void keyPressEvent(QKeyEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void resizeEvent(QResizeEvent *event) override final;
 
     bool m_useResize;
     TTKPictureFlowWidgetState *m_state;

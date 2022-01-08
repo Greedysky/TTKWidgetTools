@@ -49,13 +49,13 @@ public:
     void setLineColor(const QColor &lineColor);
     void setLineStyle(const LineStyle &lineStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     int m_lineLen;

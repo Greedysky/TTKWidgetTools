@@ -34,7 +34,7 @@ protected Q_SLOTS:
     virtual void onMouseChange(int x,int y);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     QWidget *m_item;
 };
@@ -50,7 +50,7 @@ public:
     void addItem(QWidget *item);
 
 private:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKBackgroundContainerItem *m_item;
 };

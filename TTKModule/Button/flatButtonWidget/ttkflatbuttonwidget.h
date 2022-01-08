@@ -55,7 +55,7 @@ public:
     inline Qt::Alignment textAlignment() const { return m_textAlignment; }
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void paintBackground(QPainter *painter);
     void paintForeground(QPainter *painter);
 

@@ -51,19 +51,19 @@ public:
 
     void setMoveStyle(MoveStyle moveStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void timeout();
 
 protected:
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void resizeEvent(QResizeEvent *event) override final;
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    virtual void enterEvent(QEnterEvent *event) override;
+    virtual void enterEvent(QEnterEvent *event) override final;
 #else
-    virtual void enterEvent(QEvent *event) override;
+    virtual void enterEvent(QEvent *event) override final;
 #endif
-    virtual void leaveEvent(QEvent *event) override;
+    virtual void leaveEvent(QEvent *event) override final;
 
 private:
     QString m_text;

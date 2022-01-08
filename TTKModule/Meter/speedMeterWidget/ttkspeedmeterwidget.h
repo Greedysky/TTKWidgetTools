@@ -41,13 +41,13 @@ public:
     void setAnimating(bool enable);
     bool isAnimating() const { return m_bAnimating;}
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
     void initVariables();

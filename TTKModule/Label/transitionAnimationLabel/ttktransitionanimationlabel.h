@@ -43,7 +43,7 @@ public:
     void start();
     void stop();
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void setPixmap(const QPixmap &pix);
@@ -53,7 +53,7 @@ private Q_SLOTS:
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     bool m_isAnimating;
     int m_currentValue;

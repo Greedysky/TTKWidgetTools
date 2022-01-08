@@ -57,10 +57,10 @@ public:
     void setBaseColor(const QColor &baseColor);
     void setBgColor(const QColor &bgColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawArc(QPainter *painter);
     void drawCircle(QPainter *painter);
     void drawScale(QPainter *painter);

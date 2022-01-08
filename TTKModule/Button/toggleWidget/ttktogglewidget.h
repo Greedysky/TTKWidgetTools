@@ -47,8 +47,8 @@ public:
     inline QColor thumbColor() const { return m_thumbColor; }
 
 protected:
-    virtual bool eventFilter(QObject *obj, QEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual bool eventFilter(QObject *obj, QEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     void updateOffset();
 
@@ -74,8 +74,8 @@ public:
     inline QColor trackColor() const { return m_trackColor; }
 
 protected:
-    virtual bool eventFilter(QObject *obj, QEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual bool eventFilter(QObject *obj, QEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKToggleWidget *m_toggle;
     QColor m_trackColor;
@@ -110,10 +110,10 @@ public:
     void setOrientation(Qt::Orientation orientation);
     Qt::Orientation orientation() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     void setupProperties();
 

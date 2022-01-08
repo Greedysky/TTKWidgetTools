@@ -65,7 +65,7 @@ public:
     virtual QSize sizeHint() const;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
     void drawBorderCircle(QPainter *painter);

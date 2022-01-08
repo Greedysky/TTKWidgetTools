@@ -38,10 +38,10 @@ public:
     void setInterval(int interval);
     void setBgColor(const QColor &bgColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawBg(QPainter *painter);
 
 private:

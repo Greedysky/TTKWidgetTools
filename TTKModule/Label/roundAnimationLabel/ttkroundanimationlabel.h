@@ -37,14 +37,14 @@ public:
     void setPixmap(const QPixmap &pix);
     void setInterval(int value);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void start();
     void stop();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     QPixmap m_pixmap;
     QTimer m_timer;

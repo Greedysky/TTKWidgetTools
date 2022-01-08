@@ -62,10 +62,10 @@ public:
     void setShowValue(bool showValue);
     void setPointerStyle(const PointerStyle &pointerStyle);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawScale(QPainter *painter);
     void drawBgCircle(QPainter *painter);
     void drawCenterCircle(QPainter *painter);

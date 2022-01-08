@@ -41,7 +41,7 @@ class TTK_MODULE_EXPORT TTKCheckableIcon : public QWidget
 public:
     explicit TTKCheckableIcon(const QIcon &icon, TTKCheckable *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
     void setIcon(const QIcon &icon);
     inline QIcon icon() const { return m_icon; }
@@ -56,7 +56,7 @@ public:
     inline qreal opacity() const { return m_opacity; }
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKCheckable *m_checkable;
     QColor m_color;
@@ -103,12 +103,12 @@ public:
     void setUncheckedIcon(const QIcon &icon);
     QIcon uncheckedIcon() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual bool event(QEvent *event) override;
-    virtual void mousePressEvent(QMouseEvent *event) override;
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual bool event(QEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     virtual void setupProperties();
 

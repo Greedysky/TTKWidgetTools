@@ -41,7 +41,7 @@ public:
     void setBackgroundColor(const QColor &color);
     inline QColor backgroundColor() const { return m_backgroundColor; }
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void setOrientation(Qt::Orientation orientation);

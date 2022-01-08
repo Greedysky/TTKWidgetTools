@@ -33,7 +33,7 @@ public:
     explicit TTKClickedSlider(Qt::Orientation orientation, QWidget *parent = nullptr);
 
 protected:
-    virtual bool event(QEvent *event) override;
+    virtual bool event(QEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual void mouseMoveEvent(QMouseEvent *event) override;
     virtual void mouseReleaseEvent(QMouseEvent *event) override;

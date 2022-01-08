@@ -55,13 +55,13 @@ public:
     void setFreeColor(const QColor &freeColor);
     void setTextColor(const QColor &textColor);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void updateValue();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawOuterCircle(QPainter *painter);
     void drawInnerCircle(QPainter *painter);
     void drawProgress(QPainter *painter);

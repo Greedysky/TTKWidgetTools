@@ -47,14 +47,14 @@ public:
     void setDuration(int duration);
     int duration() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void renderPreviousWidget(QPainter &painter, QTransform &transform);
     void renderCurrentWidget(QPainter &painter, QTransform &transform);
 

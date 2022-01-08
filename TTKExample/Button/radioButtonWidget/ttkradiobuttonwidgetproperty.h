@@ -31,10 +31,10 @@ public:
     explicit TTKRadioButtonWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
-    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override;
-    virtual void enumPropertyChanged(QtProperty *property, int value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void stringPropertyChanged(QtProperty *property, const QString &value) override final;
+    virtual void enumPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

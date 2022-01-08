@@ -32,10 +32,10 @@ class TTK_MODULE_EXPORT TTKRadiusProgressWidget : public QProgressBar
 public:
     explicit TTKRadiusProgressWidget(QWidget *parent = nullptr);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
 };
 

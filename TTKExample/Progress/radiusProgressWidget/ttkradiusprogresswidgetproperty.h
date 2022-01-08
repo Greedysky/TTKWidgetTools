@@ -32,7 +32,7 @@ public:
     ~TTKRadiusProgressWidgetProperty();
 
 private Q_SLOTS:
-    virtual void boolPropertyChanged(QtProperty *property, bool value) override;
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
 
 private Q_SLOTS:
     void updateRender();

@@ -37,10 +37,10 @@ public:
     void setBackColor(const QColor &color);
     void setBackgroundPix(const QPixmap &pix);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     void drawBackground();
 
 private:

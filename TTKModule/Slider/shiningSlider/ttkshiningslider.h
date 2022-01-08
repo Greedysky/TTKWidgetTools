@@ -43,13 +43,13 @@ public:
     void setMinimum(int min);
     void setMaximum(int max);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
     void sliderMovedAt(int pos) const;
 
 protected:
-    virtual void resizeEvent(QResizeEvent *event) override;
+    virtual void resizeEvent(QResizeEvent *event) override final;
 
     QSlider *m_slider;
     TTKGifProgressWidget *m_label;

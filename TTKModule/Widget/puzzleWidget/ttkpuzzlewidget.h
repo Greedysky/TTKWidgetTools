@@ -41,7 +41,7 @@ public Q_SLOTS:
     void setValue(int value);
 
 private:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     QString m_pixmap;
     QPoint m_offsetPoint;
@@ -65,7 +65,7 @@ public:
     void setSquareRadius(int squareRadius);
     void setPixmap(const QString& pixmap);
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 private:
     QSlider *m_slider;

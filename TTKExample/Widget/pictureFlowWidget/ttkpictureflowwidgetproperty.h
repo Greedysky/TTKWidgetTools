@@ -31,9 +31,9 @@ public:
     explicit TTKPictureFlowWidgetProperty(QWidget *parent = nullptr);
 
 private Q_SLOTS:
-    virtual void intPropertyChanged(QtProperty *property, int value) override;
-    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override;
-    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void sizePropertyChanged(QtProperty *property, const QSize &value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 

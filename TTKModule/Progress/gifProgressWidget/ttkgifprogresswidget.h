@@ -70,7 +70,7 @@ public Q_SLOTS:
     void updateRender();
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
     bool infinitedModeCheck();
 
     int m_index;

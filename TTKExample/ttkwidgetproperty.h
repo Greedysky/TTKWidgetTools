@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKWidgetProperty : public QWidget
     Q_OBJECT
 public:
     explicit TTKWidgetProperty(QWidget *parent = nullptr);
-    virtual ~TTKWidgetProperty();
+    ~TTKWidgetProperty();
 
     virtual void init();
     QWidget* widget() const;

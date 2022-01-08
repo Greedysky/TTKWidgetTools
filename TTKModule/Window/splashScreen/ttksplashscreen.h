@@ -52,7 +52,7 @@ private Q_SLOTS:
      void updateProgress();
 
 private:
-     virtual void mousePressEvent(QMouseEvent *event) override;
+     virtual void mousePressEvent(QMouseEvent *event) override final;
 
 private:
      int m_elapseTime;

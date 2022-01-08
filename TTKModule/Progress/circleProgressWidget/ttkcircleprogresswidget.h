@@ -50,7 +50,7 @@ public:
     qreal outerRadius() const;
     QColor color() const;
 
-    virtual QSize sizeHint() const override;
+    virtual QSize sizeHint() const override final;
 
 Q_SIGNALS:
     void valueChanged(int);
@@ -68,7 +68,7 @@ private Q_SLOTS:
     void setVisibleValue(int value);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void paintEvent(QPaintEvent *event) override final;
 
     QString key() const;
     QPixmap generatePixmap() const;
