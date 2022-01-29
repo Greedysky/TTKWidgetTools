@@ -19,17 +19,16 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-//update time 2021.10.27
-#define TTKTOOLS_VERSION_STR    "2.3.0.0"
-#define TTKTOOLS_VERSION_WSTR   L"2.3.0.0"
-#define TTKTOOLS_VER_TIME_STR   "(2021/10/27)"
+//update time 2022.01.29
+#define TTKTOOLS_VERSION_STR    "2.4.0.0"
+#define TTKTOOLS_VER_TIME_STR   "(2022/01/29)"
 
 #define TTKTOOLS_MAJOR_VERSION 2
-#define TTKTOOLS_MIDLE_VERSION 3
+#define TTKTOOLS_MIDLE_VERSION 4
 #define TTKTOOLS_MINOR_VERSION 0
 #define TTKTOOLS_PATCH_VERSION 0
 
-#define TTKTOOLS_VERSION 0x02300
+#define TTKTOOLS_VERSION 0x02400
 
 #define TTK_VERSION_CHECK(major, middle, minor, patch) ((major<<12)|(middle<<8)|(minor<<4)|(patch))
 
