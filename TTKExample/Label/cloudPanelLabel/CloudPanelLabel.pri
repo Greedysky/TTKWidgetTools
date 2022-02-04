@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcloudpanellabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcloudpanellabelproperty.h
+
+SOURCES += $$PWD/ttkcloudpanellabelproperty.cpp

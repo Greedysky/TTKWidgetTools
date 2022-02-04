@@ -19,7 +19,7 @@
 TEMPLATE = app
 
 equals(QT_MAJOR_VERSION, 4){
-CONFIG   += gcc
+    CONFIG += gcc
 }
 
 include($$PWD/TTKExample.pri)
@@ -213,15 +213,6 @@ HEADERS += \
     $$PWD/../TTKModule/Window/notifyWindow/ttknotifywindow.h
 }
 
-SOURCES += \
-    $$PWD/ttkwidgetproperty.cpp \
-    $$PWD/ttkpropertycontainwidget.cpp \
-    $$PWD/ttkfunctionitem.cpp \
-    $$PWD/ttkbackgroundcontainer.cpp \
-    $$PWD/ttkbackgroundwidget.cpp \
-    $$PWD/ttktoolsapplication.cpp \
-    $$PWD/main.cpp
-
 HEADERS += \
     $$PWD/ttkwidgetproperty.h \
     $$PWD/ttkpropertycontainwidget.h \
@@ -231,8 +222,17 @@ HEADERS += \
     $$PWD/ttktoolsapplication.h \
     $$PWD/../TTKCommon/ttkglobaldefine.h
 
+SOURCES += \
+    $$PWD/ttkwidgetproperty.cpp \
+    $$PWD/ttkpropertycontainwidget.cpp \
+    $$PWD/ttkfunctionitem.cpp \
+    $$PWD/ttkbackgroundcontainer.cpp \
+    $$PWD/ttkbackgroundwidget.cpp \
+    $$PWD/ttktoolsapplication.cpp \
+    $$PWD/main.cpp
+
 FORMS += $$PWD/ttktoolsapplication.ui
 
 RESOURCES += $$PWD/TTKExample.qrc
 
-win32:RC_FILE = TTKExample.rc
+win32:RC_FILE = $$PWD/TTKExample.rc

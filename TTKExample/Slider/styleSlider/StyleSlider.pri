@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkstylesliderproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkstylesliderproperty.h
+
+SOURCES += $$PWD/ttkstylesliderproperty.cpp

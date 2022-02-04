@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkshiningsliderproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkshiningsliderproperty.h
+
+SOURCES += $$PWD/ttkshiningsliderproperty.cpp

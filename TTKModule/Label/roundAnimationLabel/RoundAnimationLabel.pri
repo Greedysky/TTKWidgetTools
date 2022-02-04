@@ -23,4 +23,3 @@ HEADERS += $$PWD/ttkroundanimationlabel.h
 SOURCES += $$PWD/ttkroundanimationlabel.cpp
 
 RESOURCES += $$PWD/RoundAnimationLabel.qrc
-

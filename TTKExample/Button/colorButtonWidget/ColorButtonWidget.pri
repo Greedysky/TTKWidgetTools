@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcolorbuttonwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcolorbuttonwidgetproperty.h
+
+SOURCES += $$PWD/ttkcolorbuttonwidgetproperty.cpp

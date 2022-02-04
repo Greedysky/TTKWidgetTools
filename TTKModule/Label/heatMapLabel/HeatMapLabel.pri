@@ -24,4 +24,3 @@ SOURCES += $$PWD/ttkheatmaplabel.cpp
 
 #########################################
 include($$PWD/heatmap/heatmap.pri)
-

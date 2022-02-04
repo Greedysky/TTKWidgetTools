@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkanimation2stackedwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkanimation2stackedwidgetproperty.h
+
+SOURCES += $$PWD/ttkanimation2stackedwidgetproperty.cpp

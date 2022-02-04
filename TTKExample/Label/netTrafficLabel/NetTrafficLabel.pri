@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttknettrafficlabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttknettrafficlabelproperty.h
+
+SOURCES += $$PWD/ttknettrafficlabelproperty.cpp

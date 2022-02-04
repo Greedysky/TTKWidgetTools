@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcheckbuttonwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcheckbuttonwidgetproperty.h
+
+SOURCES += $$PWD/ttkcheckbuttonwidgetproperty.cpp

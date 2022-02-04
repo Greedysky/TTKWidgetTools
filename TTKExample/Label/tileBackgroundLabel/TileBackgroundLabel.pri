@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttktilebackgroundlabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttktilebackgroundlabelproperty.h
+
+SOURCES += $$PWD/ttktilebackgroundlabelproperty.cpp

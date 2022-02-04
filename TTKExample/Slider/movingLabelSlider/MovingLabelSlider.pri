@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkmovinglabelsliderproperty.cpp
-    
+INCLUDEPATH += $$PWD
+
 HEADERS += $$PWD/ttkmovinglabelsliderproperty.h
+
+SOURCES += $$PWD/ttkmovinglabelsliderproperty.cpp

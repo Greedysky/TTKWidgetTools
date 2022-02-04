@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkdialmeterwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkdialmeterwidgetproperty.h
+
+SOURCES += $$PWD/ttkdialmeterwidgetproperty.cpp

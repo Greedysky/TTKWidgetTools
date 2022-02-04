@@ -18,38 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-SOURCES += \
-    $$PWD/heatmap.c \
-    $$PWD/lodepng.cpp \
-    $$PWD/colorschemes/Blues.c \
-    $$PWD/colorschemes/BrBG.c \
-    $$PWD/colorschemes/BuGn.c \
-    $$PWD/colorschemes/BuPu.c \
-    $$PWD/colorschemes/GnBu.c \
-    $$PWD/colorschemes/Gray.c \
-    $$PWD/colorschemes/Greens.c \
-    $$PWD/colorschemes/Greys.c \
-    $$PWD/colorschemes/Oranges.c \
-    $$PWD/colorschemes/OrRd.c \
-    $$PWD/colorschemes/PiYG.c \
-    $$PWD/colorschemes/PRGn.c \
-    $$PWD/colorschemes/PuBu.c \
-    $$PWD/colorschemes/PuBuGn.c \
-    $$PWD/colorschemes/PuOr.c \
-    $$PWD/colorschemes/PuRd.c \
-    $$PWD/colorschemes/Purples.c \
-    $$PWD/colorschemes/RdBu.c \
-    $$PWD/colorschemes/RdGy.c \
-    $$PWD/colorschemes/RdPu.c \
-    $$PWD/colorschemes/RdYlBu.c \
-    $$PWD/colorschemes/RdYlGn.c \
-    $$PWD/colorschemes/Reds.c \
-    $$PWD/colorschemes/Spectral.c \
-    $$PWD/colorschemes/YlGn.c \
-    $$PWD/colorschemes/YlGnBu.c \
-    $$PWD/colorschemes/YlOrBr.c \
-    $$PWD/colorschemes/YlOrRd.c
-
 HEADERS += \
     $$PWD/heatmap.h \
     $$PWD/lodepng.h \
@@ -82,3 +50,34 @@ HEADERS += \
     $$PWD/colorschemes/YlOrBr.h \
     $$PWD/colorschemes/YlOrRd.h
 
+SOURCES += \
+    $$PWD/heatmap.c \
+    $$PWD/lodepng.cpp \
+    $$PWD/colorschemes/Blues.c \
+    $$PWD/colorschemes/BrBG.c \
+    $$PWD/colorschemes/BuGn.c \
+    $$PWD/colorschemes/BuPu.c \
+    $$PWD/colorschemes/GnBu.c \
+    $$PWD/colorschemes/Gray.c \
+    $$PWD/colorschemes/Greens.c \
+    $$PWD/colorschemes/Greys.c \
+    $$PWD/colorschemes/Oranges.c \
+    $$PWD/colorschemes/OrRd.c \
+    $$PWD/colorschemes/PiYG.c \
+    $$PWD/colorschemes/PRGn.c \
+    $$PWD/colorschemes/PuBu.c \
+    $$PWD/colorschemes/PuBuGn.c \
+    $$PWD/colorschemes/PuOr.c \
+    $$PWD/colorschemes/PuRd.c \
+    $$PWD/colorschemes/Purples.c \
+    $$PWD/colorschemes/RdBu.c \
+    $$PWD/colorschemes/RdGy.c \
+    $$PWD/colorschemes/RdPu.c \
+    $$PWD/colorschemes/RdYlBu.c \
+    $$PWD/colorschemes/RdYlGn.c \
+    $$PWD/colorschemes/Reds.c \
+    $$PWD/colorschemes/Spectral.c \
+    $$PWD/colorschemes/YlGn.c \
+    $$PWD/colorschemes/YlGnBu.c \
+    $$PWD/colorschemes/YlOrBr.c \
+    $$PWD/colorschemes/YlOrRd.c

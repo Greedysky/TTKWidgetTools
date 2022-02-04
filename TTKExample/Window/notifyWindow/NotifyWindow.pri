@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttknotifywindowproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttknotifywindowproperty.h
+
+SOURCES += $$PWD/ttknotifywindowproperty.cpp

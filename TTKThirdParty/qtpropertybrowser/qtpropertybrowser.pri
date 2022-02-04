@@ -20,16 +20,6 @@ INCLUDEPATH += $$PWD
 
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 
-SOURCES += \
-    $$PWD/qtpropertybrowser.cpp \
-    $$PWD/qtpropertymanager.cpp \
-    $$PWD/qteditorfactory.cpp \
-    $$PWD/qtvariantproperty.cpp \
-    $$PWD/qttreepropertybrowser.cpp \
-    $$PWD/qtbuttonpropertybrowser.cpp \
-    $$PWD/qtgroupboxpropertybrowser.cpp \
-    $$PWD/qtpropertybrowserutils.cpp
-
 HEADERS += \
     $$PWD/qtpropertybrowser.h \
     $$PWD/qtpropertymanager.h \
@@ -39,5 +29,15 @@ HEADERS += \
     $$PWD/qtbuttonpropertybrowser.h \
     $$PWD/qtgroupboxpropertybrowser.h \
     $$PWD/qtpropertybrowserutils_p.h
+
+SOURCES += \
+    $$PWD/qtpropertybrowser.cpp \
+    $$PWD/qtpropertymanager.cpp \
+    $$PWD/qteditorfactory.cpp \
+    $$PWD/qtvariantproperty.cpp \
+    $$PWD/qttreepropertybrowser.cpp \
+    $$PWD/qtbuttonpropertybrowser.cpp \
+    $$PWD/qtgroupboxpropertybrowser.cpp \
+    $$PWD/qtpropertybrowserutils.cpp
 
 RESOURCES += $$PWD/qtpropertybrowser.qrc

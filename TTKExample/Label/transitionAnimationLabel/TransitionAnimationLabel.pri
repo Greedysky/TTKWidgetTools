@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttktransitionanimationlabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttktransitionanimationlabelproperty.h
+
+SOURCES += $$PWD/ttktransitionanimationlabelproperty.cpp

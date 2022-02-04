@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkspeedringmeterwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkspeedringmeterwidgetproperty.h
+
+SOURCES += $$PWD/ttkspeedringmeterwidgetproperty.cpp

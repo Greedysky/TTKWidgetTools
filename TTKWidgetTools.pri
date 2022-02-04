@@ -16,18 +16,20 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-QT       += core gui
+QT += core gui
 equals(QT_MAJOR_VERSION, 4){ #Qt4
-CONFIG   += gcc
+    CONFIG += gcc
 }
+
 greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
-    QT   += widgets
+    QT += widgets
     equals(QT_MAJOR_VERSION, 6){ #Qt6
-        QT   += core5compat
+        QT += core5compat
     }
 }
 
 include($$PWD/TTKVersion.pri)
+
 DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
 
 win32{
@@ -42,12 +44,22 @@ win32{
     }
 
     gcc{
-        QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
+        equals(QT_MAJOR_VERSION, 6){ #Qt6
+            QMAKE_CXXFLAGS += -std=c++17
+        }else{
+            QMAKE_CXXFLAGS += -std=c++11
+        }
+        QMAKE_CXXFLAGS += -Wunused-function -Wswitch
     }
 }
 
 unix:!mac{
-    QMAKE_CXXFLAGS += -std=c++11 -Wunused-function -Wswitch
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QMAKE_CXXFLAGS += -std=c++17
+    }else{
+        QMAKE_CXXFLAGS += -std=c++11
+    }
+    QMAKE_CXXFLAGS += -Wunused-function -Wswitch
 }
 
 DEFINES += TTK_LIBRARY

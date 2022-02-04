@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttktoastlabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttktoastlabelproperty.h
+
+SOURCES += $$PWD/ttktoastlabelproperty.cpp

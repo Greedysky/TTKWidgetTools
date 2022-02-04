@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkfunctionnavigationwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkfunctionnavigationwidgetproperty.h
+
+SOURCES += $$PWD/ttkfunctionnavigationwidgetproperty.cpp

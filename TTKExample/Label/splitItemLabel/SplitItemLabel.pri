@@ -18,6 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-SOURCES += $$PWD/ttksplititemlabelproperty.cpp
-
 HEADERS += $$PWD/ttksplititemlabelproperty.h
+
+SOURCES += $$PWD/ttksplititemlabelproperty.cpp

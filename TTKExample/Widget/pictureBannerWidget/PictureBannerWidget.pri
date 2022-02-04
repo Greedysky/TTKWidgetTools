@@ -16,8 +16,10 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkpicturebannerwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkpicturebannerwidgetproperty.h
+
+SOURCES += $$PWD/ttkpicturebannerwidgetproperty.cpp
 
 RESOURCES += $$PWD/PictureBannerWidget.qrc

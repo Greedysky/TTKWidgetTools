@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcircleclicklabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcircleclicklabelproperty.h
+
+SOURCES += $$PWD/ttkcircleclicklabelproperty.cpp

@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkgifprogresswidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkgifprogresswidgetproperty.h
+
+SOURCES += $$PWD/ttkgifprogresswidgetproperty.cpp

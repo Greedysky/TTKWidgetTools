@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkmarqueelabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkmarqueelabelproperty.h
+
+SOURCES += $$PWD/ttkmarqueelabelproperty.cpp

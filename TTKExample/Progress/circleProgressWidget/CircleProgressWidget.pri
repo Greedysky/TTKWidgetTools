@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcircleprogresswidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcircleprogresswidgetproperty.h
+
+SOURCES += $$PWD/ttkcircleprogresswidgetproperty.cpp

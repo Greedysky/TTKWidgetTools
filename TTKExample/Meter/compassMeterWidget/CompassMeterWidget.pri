@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkcompassmeterwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkcompassmeterwidgetproperty.h
+
+SOURCES += $$PWD/ttkcompassmeterwidgetproperty.cpp

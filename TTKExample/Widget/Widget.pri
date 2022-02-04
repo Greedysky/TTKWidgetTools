@@ -30,4 +30,3 @@ include($$PWD/customPieWidget/CustomPieWidget.pri)
 include($$PWD/customRingWidget/CustomRingWidget.pri)
 include($$PWD/calendarWidget/CalendarWidget.pri)
 include($$PWD/puzzleWidget/PuzzleWidget.pri)
-

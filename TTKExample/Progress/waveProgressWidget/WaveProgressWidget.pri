@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkwaveprogresswidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkwaveprogresswidgetproperty.h
+
+SOURCES += $$PWD/ttkwaveprogresswidgetproperty.cpp

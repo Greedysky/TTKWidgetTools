@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkpuzzlewidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkpuzzlewidgetproperty.h
+
+SOURCES += $$PWD/ttkpuzzlewidgetproperty.cpp

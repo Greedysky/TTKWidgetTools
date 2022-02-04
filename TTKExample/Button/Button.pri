@@ -25,6 +25,7 @@ equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
     include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
     include($$PWD/toggleWidget/ToggleWidget.pri)
 }
+
 include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
 include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
 include($$PWD/colorButtonWidget/ColorButtonWidget.pri)

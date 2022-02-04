@@ -21,6 +21,7 @@ INCLUDEPATH += $$PWD
 greaterThan(QT_MAJOR_VERSION, 5):greaterThan(QT_MINOR_VERSION, 0){
     QT += statemachine
 }
+
 equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
     message(Qt6.0.x not support state machine)
 }else{
@@ -28,6 +29,7 @@ equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
     include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
     include($$PWD/toggleWidget/ToggleWidget.pri)
 }
+
 include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
 include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
 include($$PWD/colorButtonWidget/ColorButtonWidget.pri)

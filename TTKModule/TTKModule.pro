@@ -20,8 +20,9 @@ TEMPLATE = lib
 
 include($$PWD/TTKModule.pri)
 include($$PWD/../TTKWidgetTools.pri)
+
 CONFIG += plugin lib
 
 TARGET = TTKCore
 
-win32:RC_FILE = TTKCore.rc
+win32:RC_FILE = $$PWD/TTKCore.rc

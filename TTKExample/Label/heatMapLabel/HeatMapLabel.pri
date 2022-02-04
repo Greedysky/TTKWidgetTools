@@ -16,7 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkheatmaplabelproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkheatmaplabelproperty.h
 
+SOURCES += $$PWD/ttkheatmaplabelproperty.cpp

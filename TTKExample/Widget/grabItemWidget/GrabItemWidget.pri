@@ -16,6 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-SOURCES += $$PWD/ttkgrabitemwidgetproperty.cpp
+INCLUDEPATH += $$PWD
 
 HEADERS += $$PWD/ttkgrabitemwidgetproperty.h
+
+SOURCES += $$PWD/ttkgrabitemwidgetproperty.cpp
