@@ -22,7 +22,6 @@
 #include <QMap>
 #include <QSet>
 #include <QVariant>
-#include <QtCore/qglobal.h>
 
 #ifdef Q_CC_GNU
 #  pragma GCC diagnostic ignored "-Wunused-function"
