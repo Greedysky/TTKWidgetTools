@@ -1,7 +1,7 @@
 /*
 LodePNG version 20130415
 
-Copyright (c) 2005-2013 Lode Vandevenne
+Copyright (C) 2005-2013 Lode Vandevenne
 
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the authors be held liable for any damages
