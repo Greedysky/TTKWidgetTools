@@ -15,7 +15,6 @@ TTKMoveDialog::TTKMoveDialog(QWidget *parent)
 TTKMoveDialog::TTKMoveDialog(bool transparent, QWidget *parent)
     : QDialog(parent)
 {
-    ///Remove the title bar
     setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, transparent);
 
