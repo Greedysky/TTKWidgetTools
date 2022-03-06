@@ -46,7 +46,7 @@ void TTKMoveDialog::paintEvent(QPaintEvent *event)
 void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 {
     QDialog::mousePressEvent(event);
-    if(event->button() == Qt::LeftButton && !m_moveOption)///Press the left key
+    if(event->button() == Qt::LeftButton && !m_moveOption)
     {
         m_leftButtonPress = true;
     }
@@ -60,7 +60,7 @@ void TTKMoveDialog::mousePressEvent(QMouseEvent *event)
 void TTKMoveDialog::mouseMoveEvent(QMouseEvent *event)
 {
     QDialog::mouseMoveEvent(event);
-    if(!m_leftButtonPress )///Not press the left key
+    if(!m_leftButtonPress )
     {
         event->ignore();
         return;
