@@ -30,12 +30,12 @@ class TTK_MODULE_EXPORT TTKCustomPieWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCustomPieWidget)
 public:
-    typedef struct PieData
+    struct PieData
     {
         QColor m_color;
         QString m_text;
         double m_value;
-    }PieData;
+    };
 
     explicit TTKCustomPieWidget(QWidget *parent = nullptr);
 

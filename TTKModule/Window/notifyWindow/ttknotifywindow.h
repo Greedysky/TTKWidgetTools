@@ -63,13 +63,13 @@ private:
 };
 
 
-typedef struct TTK_MODULE_EXPORT TTKNotifyData
+struct TTK_MODULE_EXPORT TTKNotifyData
 {
     QString m_title;
     QString m_body;
     QString m_icon;
     QString m_url;
-} TTKNotifyData;
+};
 
 /*!
  * @author Greedysky <greedysky@163.com>

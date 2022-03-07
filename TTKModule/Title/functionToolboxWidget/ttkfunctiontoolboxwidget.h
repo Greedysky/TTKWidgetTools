@@ -100,7 +100,7 @@ class QScrollArea;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-typedef struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
+struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
 {
     int m_itemIndex;
     TTKFunctionToolBoxWidgetItem* m_widgetItem;
@@ -110,7 +110,7 @@ typedef struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
         m_itemIndex = -1;
         m_widgetItem = nullptr;
     }
-}TTKFunctionToolBoxUnionItem;
+};
 
 
 /*!
