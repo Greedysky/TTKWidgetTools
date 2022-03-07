@@ -29,6 +29,6 @@ TTKMoveWidgetProperty::TTKMoveWidgetProperty(QWidget *parent)
 
 void TTKMoveWidgetProperty::showWidget()
 {
-    m_label->resize(200, 200);
+    m_label->setFixedSize(200, 200);
     m_label->show();
 }

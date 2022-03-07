@@ -25,7 +25,7 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_MODULE_EXPORT MoveResizeStruct
+struct TTK_MODULE_EXPORT MoveResizeData
 {
     bool m_mouseLeftPress;
     bool m_isPressBorder;
@@ -67,7 +67,7 @@ protected:
     void sizeDirection();
     void moveDirection();
 
-    MoveResizeStruct m_struct;
+    MoveResizeData m_struct;
     Direction m_direction;
 
 };
