@@ -49,7 +49,7 @@ void TTKAnimationStackedWidget::paintEvent(QPaintEvent * event)
 void TTKAnimationStackedWidget::renderPreviousWidget(QPainter &painter, QTransform &transform)
 {
     QWidget *w = widget(m_previousIndex);
-    QPixmap pixmap( w->size() );
+    QPixmap pixmap(w->size());
     w->render(&pixmap);
 
     Q_UNUSED(transform);
@@ -82,7 +82,7 @@ void TTKAnimationStackedWidget::renderPreviousWidget(QPainter &painter, QTransfo
 void TTKAnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransform &transform)
 {
     QWidget *w = widget(m_currentIndex);
-    QPixmap pixmap( w->size() );
+    QPixmap pixmap(w->size());
     w->render(&pixmap);
 
     switch(m_type)

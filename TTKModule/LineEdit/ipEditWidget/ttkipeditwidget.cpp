@@ -152,7 +152,7 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
             else if(keyEvent->matches(QKeySequence::Paste))
             {
                 const QString &clip = QApplication::clipboard()->text(QClipboard::Clipboard);
-                if(clip.split(".").size() == 4)
+                if(clip.split(".").count() == 4)
                 {
                     setText(clip);
                     return true;
@@ -167,7 +167,7 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
 void TTKIpEditWidget::editTextChanged(const QString& text)
 {
     QLineEdit* curEdit = qobject_cast<QLineEdit*>(sender());
-    if(text.size() == 3)
+    if(text.length() == 3)
     {
         QLineEdit* next = nextEdit(curEdit);
         if(next)

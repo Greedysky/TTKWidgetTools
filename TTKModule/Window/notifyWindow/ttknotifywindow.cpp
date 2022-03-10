@@ -171,11 +171,11 @@ void TTKNotifyManager::setDisplayTime(int ms)
 
 void TTKNotifyManager::disappeared()
 {
-   TTKNotify *notify = qobject_cast<TTKNotify*>(sender());
+    TTKNotify *notify = qobject_cast<TTKNotify*>(sender());
     m_notifyList.removeAll(notify);
     rearrange();
 
-    if(m_notifyList.size() == m_maxCount - 1)
+    if(m_notifyList.count() == m_maxCount - 1)
     {
         QTimer::singleShot(300, this, SLOT(showNext()));
     }
@@ -208,7 +208,7 @@ void TTKNotifyManager::rearrange()
 
 void TTKNotifyManager::showNext()
 {
-    if(m_notifyList.size() >= m_maxCount || m_dataQueue.isEmpty())
+    if(m_notifyList.count() >= m_maxCount || m_dataQueue.isEmpty())
     {
         return;
     }
@@ -224,7 +224,7 @@ void TTKNotifyManager::showNext()
 
     const QRect &desktopRect = TTKDesktopWrapper::screenGeometry();
     const QPoint &bottomRignt = desktopRect.bottomRight();
-    const QPoint &pos = bottomRignt - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.size() + 1) - SPACE + BOTTOM);
+    const QPoint &pos = bottomRignt - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.count() + 1) - SPACE + BOTTOM);
 
     notify->move(pos);
     notify->showGriant();

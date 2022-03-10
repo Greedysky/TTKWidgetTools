@@ -393,7 +393,7 @@ QKeySequence QtKeySequenceEdit::keySequence() const
 int QtKeySequenceEdit::translateModifiers(Qt::KeyboardModifiers state, const QString &text) const
 {
     int result = 0;
-    if ((state & Qt::ShiftModifier) && (text.size() == 0 || !text.at(0).isPrint() || text.at(0).isLetter() || text.at(0).isSpace()))
+    if ((state & Qt::ShiftModifier) && (text.length() == 0 || !text.at(0).isPrint() || text.at(0).isLetter() || text.at(0).isSpace()))
         result |= Qt::SHIFT;
     if (state & Qt::ControlModifier)
         result |= Qt::CTRL;

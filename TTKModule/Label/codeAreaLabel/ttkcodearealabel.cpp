@@ -94,9 +94,9 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
 
     painter.translate(0, 0);
     painter.save();
-    painter.translate(event->rect().center().x() - m_codePic.size() / 2 * 6, event->rect().center().y());
+    painter.translate(event->rect().center().x() - m_codePic.count() / 2 * 6, event->rect().center().y());
 
-    for(int i=0; i<m_codePic.size(); i++)
+    for(int i=0; i<m_codePic.count(); i++)
     {
         drawConversion(painter);
         painter.fillPath(m_codePic[i], QBrush(m_codeColor[random(m_codeColor.count())]));

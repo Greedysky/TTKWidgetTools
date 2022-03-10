@@ -160,7 +160,7 @@ bool TTKFunctionToolBoxWidgetItem::itemExpand() const
 {
     if(!m_itemList.isEmpty())
     {
-        return m_itemList.first()->isVisible();
+        return m_itemList.front()->isVisible();
     }
     return false;
 }
