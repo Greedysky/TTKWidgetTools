@@ -131,7 +131,7 @@ void TTKCPUMemoryLabel::readData()
         QString s = QLatin1String(m_process->readLine());
         if(s.startsWith("cpu"))
         {
-            QStringList list = s.split(" ");
+            const QStringList &list = s.split(" ");
             m_idleNew = list.at(5).toInt();
 
             for(const QString &value : qAsConst(list))
@@ -139,8 +139,8 @@ void TTKCPUMemoryLabel::readData()
                 m_totalNew += value.toInt();
             }
 
-            int total = m_totalNew - m_totalOld;
-            int idle = m_idleNew - m_idleOld;
+            const int total = m_totalNew - m_totalOld;
+            const int idle = m_idleNew - m_idleOld;
             m_cpuPercent = 100 * (total - idle) / total;
             m_totalOld = m_totalNew;
             m_idleOld = m_idleNew;

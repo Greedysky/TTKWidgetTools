@@ -18,7 +18,7 @@ void TTKColorTableWidget::init()
     QFile file(":/res/rgb");
     if(file.open(QFile::ReadOnly))
     {
-        QStringList items(QString(file.readAll()).split("\n"));
+        const QStringList items(QString(file.readAll()).split("\n"));
         for(const QString &item : qAsConst(items))
         {
             QListWidgetItem *it = new QListWidgetItem(this);

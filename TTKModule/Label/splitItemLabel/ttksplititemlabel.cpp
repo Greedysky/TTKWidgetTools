@@ -54,8 +54,8 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
     m_lineGeometry = QRectF();
     m_currentString.clear();
 
-    QFontMetrics metrics = QFontMetrics(font());
-    QStringList data(text().split(" - "));
+    const QFontMetrics &metrics = QFontMetrics(font());
+    const QStringList data(text().split(" - "));
     int offset = 0;
 
     for(const QString &var : qAsConst(data))
