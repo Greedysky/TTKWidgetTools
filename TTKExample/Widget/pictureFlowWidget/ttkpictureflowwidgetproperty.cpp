@@ -31,7 +31,7 @@ TTKPictureFlowWidgetProperty::TTKPictureFlowWidgetProperty(QWidget *parent)
     //
     TTKPictureFlowWidget *widget = TTKStatic_cast(TTKPictureFlowWidget*, m_item);
     QImage img;
-    for(int i=0; i<5; i++)
+    for(int i = 0; i < 5; ++i)
     {
         widget->addSlide(img);
     }

@@ -23,7 +23,7 @@ TTKPictureBannerWidgetProperty::TTKPictureBannerWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 
     //
-    for(int i=0; i<5; i++)
+    for(int i = 0; i < 5; ++i)
     {
         TTKStatic_cast(TTKPictureBannerWidget*, m_item)->addPage(QPixmap(QString(":/res/%1").arg(i)));
     }

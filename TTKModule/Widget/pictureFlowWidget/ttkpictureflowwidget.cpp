@@ -73,9 +73,9 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
     QImage *result = new QImage(hs, w, QImage::Format_RGB32);
     result->fill(bgcolor);
 
-    for(int x = 0; x < w; x++)
+    for(int x = 0; x < w; ++x)
     {
-        for(int y = 0; y < h; y++)
+        for(int y = 0; y < h; ++y)
         {
             result->setPixel(hofs + y, x, img.pixel(x, y));
         }
@@ -85,9 +85,9 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
     {
         int ht = hs - h - hofs;
         int hte = ht;
-        for(int x = 0; x < w; x++)
+        for(int x = 0; x < w; ++x)
         {
-            for(int y = 0; y < ht; y++)
+            for(int y = 0; y < ht; ++y)
             {
                 QRgb color = img.pixel(x, img.height()-y-1);
                 result->setPixel(h+hofs+y, x, blendColor(color, bgcolor, 128*(hte-y)/hte));
@@ -108,83 +108,83 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
             int rgba[4];
             unsigned char* p;
 
-            for(int loop = 0; loop < 2; loop++)
+            for(int loop = 0; loop < 2; ++loop)
             {
-                for(int col = c1; col <= c2; col++)
+                for(int col = c1; col <= c2; ++col)
                 {
-                    p = result->scanLine(r1) + col*4;
-                    for(int i = 0; i < 3; i++)
+                    p = result->scanLine(r1) + col * 4;
+                    for(int i = 0; i < 3; ++i)
                     {
                         rgba[i] = p[i] << 4;
                     }
 
                     p += bpl;
-                    for(int j = r1; j < r2; j++, p += bpl)
+                    for(int j = r1; j < r2; ++j, p += bpl)
                     {
-                        for(int i = 0; i < 3; i++)
+                        for(int i = 0; i < 3; ++i)
                         {
                             p[i] = (rgba[i] += (((p[i]<<4)-rgba[i])) >> 1) >> 4;
                         }
                     }
                 }
 
-                for(int row = r1; row <= r2; row++)
+                for(int row = r1; row <= r2; ++row)
                 {
-                    p = result->scanLine(row) + c1*4;
-                    for(int i = 0; i < 3; i++)
+                    p = result->scanLine(row) + c1 * 4;
+                    for(int i = 0; i < 3; ++i)
                     {
                         rgba[i] = p[i] << 4;
                     }
 
                     p += 4;
-                    for(int j = c1; j < c2; j++, p+=4)
+                    for(int j = c1; j < c2; ++j, p += 4)
                     {
-                        for(int i = 0; i < 3; i++)
+                        for(int i = 0; i < 3; ++i)
                         {
                             p[i] = (rgba[i] += (((p[i]<<4)-rgba[i])) >> 1) >> 4;
                         }
                     }
                 }
 
-                for(int col = c1; col <= c2; col++)
+                for(int col = c1; col <= c2; ++col)
                 {
-                    p = result->scanLine(r2) + col*4;
-                    for(int i = 0; i < 3; i++)
+                    p = result->scanLine(r2) + col * 4;
+                    for(int i = 0; i < 3; ++i)
                     {
                         rgba[i] = p[i] << 4;
                     }
 
                     p -= bpl;
-                    for(int j = r1; j < r2; j++, p -= bpl)
+                    for(int j = r1; j < r2; ++j, p -= bpl)
                     {
-                        for(int i = 0; i < 3; i++)
+                        for(int i = 0; i < 3; ++i)
                         {
                             p[i] = (rgba[i] += (((p[i]<<4)-rgba[i])) >> 1) >> 4;
                         }
                     }
                 }
 
-                for(int row = r1; row <= r2; row++)
+                for(int row = r1; row <= r2; ++row)
                 {
                     p = result->scanLine(row) + c2 * 4;
-                    for(int i = 0; i < 3; i++)
+                    for(int i = 0; i < 3; ++i)
                     {
                         rgba[i] = p[i] << 4;
                     }
 
                     p -= 4;
-                    for(int j = c1; j < c2; j++, p-=4)
+                    for(int j = c1; j < c2; ++j, p -= 4)
                     {
-                        for(int i = 0; i < 3; i++)
+                        for(int i = 0; i < 3; ++i)
                         {
                             p[i] = (rgba[i] += (((p[i]<<4)-rgba[i])) >> 1) >> 4;
                         }
                     }
                 }
 
-                for(int x = 0; x < w; x++)
+                for(int x = 0; x < w; ++x)
                 {
-                    for(int y = 0; y < h; y++)
+                    for(int y = 0; y < h; ++y)
                     {
                         result->setPixel(hofs + y, x, img.pixel(x, y));
                     }
@@ -210,7 +210,7 @@ TTKPictureFlowWidgetState::TTKPictureFlowWidgetState()
 
 TTKPictureFlowWidgetState::~TTKPictureFlowWidgetState()
 {
-    for(int i = 0; i<m_slideImages.count(); i++)
+    for(int i = 0; i < m_slideImages.count(); ++i)
     {
         delete m_slideImages[i];
     }
@@ -236,7 +236,7 @@ void TTKPictureFlowWidgetState::reset()
     m_centerSlide.m_blend = 256;
 
     m_leftSlides.resize(6);
-    for(int i = 0; i<m_leftSlides.count(); i++)
+    for(int i = 0; i < m_leftSlides.count(); ++i)
     {
         TTKSlideInfo &si = m_leftSlides[i];
         si.m_angle = m_angle;
@@ -256,7 +256,7 @@ void TTKPictureFlowWidgetState::reset()
     }
 
     m_rightSlides.resize(6);
-    for(int i = 0; i<m_rightSlides.count(); i++)
+    for(int i = 0; i < m_rightSlides.count(); ++i)
     {
         TTKSlideInfo& si = m_rightSlides[i];
         si.m_angle = -m_angle;
@@ -344,13 +344,15 @@ void TTKPictureFlowWidgetAnimator::update()
         m_state->m_centerIndex = index;
         m_frame = index << 16;
         m_state->m_centerSlide.m_slideIndex = m_state->m_centerIndex;
-        for(int i = 0; i<m_state->m_leftSlides.count(); i++)
+
+        for(int i = 0; i < m_state->m_leftSlides.count(); ++i)
         {
-            m_state->m_leftSlides[i].m_slideIndex = m_state->m_centerIndex-1-i;
+            m_state->m_leftSlides[i].m_slideIndex = m_state->m_centerIndex - 1 - i;
         }
-        for(int i = 0; i<m_state->m_rightSlides.count(); i++)
+
+        for(int i = 0; i < m_state->m_rightSlides.count(); ++i)
         {
-            m_state->m_rightSlides[i].m_slideIndex = m_state->m_centerIndex+1+i;
+            m_state->m_rightSlides[i].m_slideIndex = m_state->m_centerIndex + 1 + i;
         }
     }
 
@@ -365,7 +367,7 @@ void TTKPictureFlowWidgetAnimator::update()
         return;
     }
 
-    for(int i = 0; i<m_state->m_leftSlides.count(); i++)
+    for(int i = 0; i < m_state->m_leftSlides.count(); ++i)
     {
         TTKSlideInfo &si = m_state->m_leftSlides[i];
         si.m_angle = m_state->m_angle;
@@ -373,7 +375,7 @@ void TTKPictureFlowWidgetAnimator::update()
         si.m_cy = m_state->m_offsetY;
     }
 
-    for(int i = 0; i<m_state->m_rightSlides.count(); i++)
+    for(int i = 0; i < m_state->m_rightSlides.count(); ++i)
     {
         TTKSlideInfo &si = m_state->m_rightSlides[i];
         si.m_angle = -m_state->m_angle;
@@ -383,14 +385,14 @@ void TTKPictureFlowWidgetAnimator::update()
 
     if(m_step > 0)
     {
-        long ftick = (neg * PFREAL_ONE) >> 16;
+        const long ftick = (neg * PFREAL_ONE) >> 16;
         m_state->m_rightSlides[0].m_angle = -(neg * m_state->m_angle) >> 16;
         m_state->m_rightSlides[0].m_cx = fmul(m_state->m_offsetX, ftick);
         m_state->m_rightSlides[0].m_cy = fmul(m_state->m_offsetY, ftick);
     }
     else
     {
-        long ftick = (pos * PFREAL_ONE) >> 16;
+        const long ftick = (pos * PFREAL_ONE) >> 16;
         m_state->m_leftSlides[0].m_angle = (pos * m_state->m_angle) >> 16;
         m_state->m_leftSlides[0].m_cx = -fmul(m_state->m_offsetX, ftick);
         m_state->m_leftSlides[0].m_cy = fmul(m_state->m_offsetY, ftick);
@@ -400,26 +402,29 @@ void TTKPictureFlowWidgetAnimator::update()
     {
         m_step = -1;
     }
+
     if(m_target > index && m_step < 0)
     {
         m_step = 1;
     }
 
-    int nleft = m_state->m_leftSlides.count();
-    int nright = m_state->m_rightSlides.count();
-    int fade = pos / 256;
+    const int nleft = m_state->m_leftSlides.count();
+    const int nright = m_state->m_rightSlides.count();
+    const int fade = pos / 256;
 
-    for(int index = 0; index < nleft; index++)
+    for(int index = 0; index < nleft; ++index)
     {
         int blend = 256;
         if(index == nleft-1)
         {
             blend = (m_step > 0) ? 0 : 128-fade/2;
         }
+
         if(index == nleft-2)
         {
             blend = (m_step > 0) ? 128-fade/2 : 256-fade/2;
         }
+
         if(index == nleft-3)
         {
             blend = (m_step > 0) ? 256-fade/2 : 256;
@@ -427,17 +432,19 @@ void TTKPictureFlowWidgetAnimator::update()
         m_state->m_leftSlides[index].m_blend = blend;
     }
 
-    for(int index = 0; index < nright; index++)
+    for(int index = 0; index < nright; ++index)
     {
         int blend = (index < nright-2) ? 256 : 128;
         if(index == nright-1)
         {
             blend = (m_step > 0) ? fade/2 : 0;
         }
+
         if(index == nright-2)
         {
             blend = (m_step > 0) ? 128+fade/2 : fade/2;
         }
+
         if(index == nright-3)
         {
             blend = (m_step > 0) ? 256 : 128+fade/2;
@@ -520,7 +527,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::init()
     m_buffer.fill(m_bgcolor);
     m_rays.resize(w*2);
 
-    for(int i = 0; i < w; i++)
+    for(int i = 0; i < w; ++i)
     {
         long gg = ((PFREAL_ONE >> 1) + i * PFREAL_ONE) / (2 * h);
         m_rays[w-i-1] = -gg;
@@ -631,7 +638,7 @@ QRect TTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slid
 
     bool flag = false;
     rect.setLeft(xi);
-    for(int x = qMax(xi, col1); x <= col2; x++)
+    for(int x = qMax(xi, col1); x <= col2; ++x)
     {
         long hity = 0;
         long fk = m_rays[x];
@@ -725,7 +732,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::renderSlides()
     int c1 = r.left();
     int c2 = r.right();
 
-    for(int index = 0; index < nleft; index++)
+    for(int index = 0; index < nleft; ++index)
     {
         QRect rs = renderSlide(m_state->m_leftSlides[index], 0, c1-1);
         if(!rs.isEmpty())
@@ -733,7 +740,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::renderSlides()
             c1 = rs.left();
         }
     }
-    for(int index = 0; index < nright; index++)
+    for(int index = 0; index < nright; ++index)
     {
         QRect rs = renderSlide(m_state->m_rightSlides[index], c2+1, m_buffer.width());
         if(!rs.isEmpty())
@@ -877,7 +884,7 @@ void TTKPictureFlowWidget::setCenterIndex(int index)
 
 void TTKPictureFlowWidget::clear()
 {
-    for(int i=0; i<m_state->m_slideImages.count(); i++)
+    for(int i = 0; i < m_state->m_slideImages.count(); ++i)
     {
         delete m_state->m_slideImages[i];
     }

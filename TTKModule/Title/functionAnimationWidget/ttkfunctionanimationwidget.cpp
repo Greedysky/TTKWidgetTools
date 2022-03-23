@@ -133,7 +133,7 @@ TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
 
     QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));
@@ -157,7 +157,7 @@ TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
 
     QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));
@@ -188,7 +188,7 @@ TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
 
     QHBoxLayout *ly = static_cast<QHBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));
@@ -268,7 +268,7 @@ TTKOptionAnimationVWidget::TTKOptionAnimationVWidget(QWidget *parent)
 
     QVBoxLayout *ly = static_cast<QVBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));
@@ -292,7 +292,7 @@ TTKTableAnimationVWidget::TTKTableAnimationVWidget(QWidget *parent)
 
     QVBoxLayout *ly = static_cast<QVBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));
@@ -323,7 +323,7 @@ TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
 
     QVBoxLayout *ly = static_cast<QVBoxLayout*>(layout());
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         QToolButton *btn = new QToolButton(this);
         btn->setText(QString::number(i));

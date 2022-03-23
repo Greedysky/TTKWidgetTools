@@ -235,7 +235,7 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     }
 
     //hide before widget
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         m_itemList[i].m_widgetItem->setItemExpand(false);
     }
@@ -258,10 +258,10 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
 
 void TTKFunctionToolBoxWidget::removeItem(QWidget *item)
 {
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
-        for(int j=0; j<it->count(); ++j)
+        for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
             {
@@ -291,10 +291,10 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
 
 void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 {
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
-        for(int j=0; j<it->count(); ++j)
+        for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
             {
@@ -307,10 +307,10 @@ void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 
 QString TTKFunctionToolBoxWidget::title(QWidget *item) const
 {
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
-        for(int j=0; j<it->count(); ++j)
+        for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
             {
@@ -358,7 +358,7 @@ QSize TTKFunctionToolBoxWidget::sizeHint() const
 void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
 {
     m_currentIndex = index;
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         m_itemList[i].m_widgetItem->setItemExpand( i == index );
     }
@@ -370,7 +370,7 @@ void TTKFunctionToolBoxWidget::mousePressAt(int index)
 
     if(m_singleExpand)
     {
-        for(int i=0; i<m_itemList.count(); ++i)
+        for(int i = 0; i < m_itemList.count(); ++i)
         {
             const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->itemExpand() : false;
             m_itemList[i].m_widgetItem->setItemExpand(hide);
@@ -412,7 +412,7 @@ void TTKFunctionToolBoxWidget::contextMenuEvent(QContextMenuEvent *event)
 int TTKFunctionToolBoxWidget::foundMappingIndex(int index)
 {
     int id = -1;
-    for(int i=0; i<m_itemList.count(); ++i)
+    for(int i = 0; i < m_itemList.count(); ++i)
     {
         if(m_itemList[i].m_itemIndex == index)
         {

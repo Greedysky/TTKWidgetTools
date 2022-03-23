@@ -70,7 +70,7 @@ void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
     m_dots.clear();
     m_ranges.clear();
 
-    for(int i=0; i<m_count; i++)
+    for(int i = 0; i < m_count; ++i)
     {
         m_ranges << m_maxDiameter / 2 - i * gap;
         const float radian = -angleGap * i * M_PI / 180.0;
@@ -92,7 +92,7 @@ void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
 
 void TTKLoadingProgressWidget::paintDot(QPainter &painter)
 {
-    for(int i=0; i<m_count; i++)
+    for(int i = 0; i < m_count; ++i)
     {
         painter.setPen(m_dotColor);
         const float radian = m_ranges.at((m_index + m_count - i) % m_count);

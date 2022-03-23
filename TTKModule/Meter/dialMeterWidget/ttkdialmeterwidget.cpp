@@ -213,7 +213,7 @@ void TTKDialMeterWidget::drawScale(QPainter *painter)
     QPen pen;
     pen.setCapStyle(Qt::RoundCap);
     pen.setColor(m_textColor);
-    for(int i = 0; i <= steps; i++)
+    for(int i = 0; i <= steps; ++i)
     {
         if(i % m_scaleMinor == 0)
         {
@@ -241,7 +241,7 @@ void TTKDialMeterWidget::drawScaleNum(QPainter *painter)
     const double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
     const double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
 
-    for(int i = 0; i <= m_scaleMajor; i++)
+    for(int i = 0; i <= m_scaleMajor; ++i)
     {
         const double sina = qSin(startRad - i * deltaRad);
         const double cosa = qCos(startRad - i * deltaRad);

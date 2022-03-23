@@ -197,7 +197,7 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
         m_offset = 0;
     }
 
-    for(int x = startX; x <= endX; x++)
+    for(int x = startX; x <= endX; ++x)
     {
         double waterY1 = (double)(A * sin(W * x + m_offset)) + k;
         double waterY2 = (double)(A * sin(W * x + m_offset + (endX / 2 * W))) + k;

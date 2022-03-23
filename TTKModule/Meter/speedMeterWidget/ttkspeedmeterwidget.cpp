@@ -154,7 +154,7 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
     int value = 0;
     QString strValue;
 
-    for(int i=0; i<=100; i++)
+    for(int i = 0; i <= 100; ++i)
     {
         painter->save();
         painter->rotate(startAngle);

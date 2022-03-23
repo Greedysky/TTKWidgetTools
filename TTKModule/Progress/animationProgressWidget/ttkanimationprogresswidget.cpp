@@ -12,7 +12,7 @@ TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
 {
     QPixmap pix(":/res/lb_animate");
 
-    for(int i=0; i<MAX_SIZE; i++)
+    for(int i = 0; i < MAX_SIZE; ++i)
     {
         m_ranges << pix.copy(i * (pix.width() / MAX_SIZE), 0, pix.width() / MAX_SIZE, pix.height());
     }

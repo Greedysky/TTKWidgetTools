@@ -109,7 +109,7 @@ TTKFunctionListHWidget::TTKFunctionListHWidget(QWidget *parent)
     layout->setContentsMargins(0, 18, 0, 0);
     layout->setSpacing(0);
 
-    for(int i=0; i<3; ++i)
+    for(int i = 0; i < 3; ++i)
     {
         TTKFunctionItemWidget *item = new TTKFunctionItemWidget(this);
         item->setLabelText("Hello World");

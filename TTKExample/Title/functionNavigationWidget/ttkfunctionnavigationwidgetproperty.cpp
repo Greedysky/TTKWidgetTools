@@ -8,7 +8,7 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
 {
     m_item = new QWidget(this);
 
-    for(int i=0; i<5; ++i)
+    for(int i = 0; i < 5; ++i)
     {
         TTKFunctionNavigationWidget *button = new TTKFunctionNavigationWidget(this);
         button->setText(QString("%1%1%1%1%1").arg(i));
@@ -22,7 +22,7 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
     TTKFunctionNavigationWidget *button = TTKStatic_cast(TTKFunctionNavigationWidget*, sender());
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setChecked(m_buttons[i] == button);
     }
@@ -37,7 +37,7 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         layout->addWidget(m_buttons[i]);
     }
@@ -96,7 +96,7 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
 
 void TTKFunctionNavigationAWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -107,7 +107,7 @@ void TTKFunctionNavigationAWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationAWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -126,7 +126,7 @@ void TTKFunctionNavigationAWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationAWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -139,7 +139,7 @@ void TTKFunctionNavigationAWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -165,7 +165,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         layout->addWidget(m_buttons[i]);
     }
@@ -261,7 +261,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
 
 void TTKFunctionNavigationBWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -276,7 +276,7 @@ void TTKFunctionNavigationBWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationBWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -299,7 +299,7 @@ void TTKFunctionNavigationBWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationBWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -312,7 +312,7 @@ void TTKFunctionNavigationBWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -366,7 +366,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         layout->addWidget(m_buttons[i]);
     }
@@ -483,7 +483,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
 
 void TTKFunctionNavigationCWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -498,7 +498,7 @@ void TTKFunctionNavigationCWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationCWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -521,7 +521,7 @@ void TTKFunctionNavigationCWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationCWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -532,7 +532,7 @@ void TTKFunctionNavigationCWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -562,7 +562,7 @@ void TTKFunctionNavigationCWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -616,7 +616,7 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         layout->addWidget(m_buttons[i]);
     }
@@ -705,7 +705,7 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
 
 void TTKFunctionNavigationDWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -720,7 +720,7 @@ void TTKFunctionNavigationDWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationDWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -743,7 +743,7 @@ void TTKFunctionNavigationDWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationDWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -754,7 +754,7 @@ void TTKFunctionNavigationDWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -784,7 +784,7 @@ void TTKFunctionNavigationDWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -814,7 +814,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setFont(font);
         m_buttons[i]->setShowLine(false);
@@ -912,7 +912,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
 
 void TTKFunctionNavigationEWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -927,7 +927,7 @@ void TTKFunctionNavigationEWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationEWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -942,7 +942,7 @@ void TTKFunctionNavigationEWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationEWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -953,7 +953,7 @@ void TTKFunctionNavigationEWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -979,7 +979,7 @@ void TTKFunctionNavigationEWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -1033,7 +1033,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setFont(font);
         m_buttons[i]->setShowLine(false);
@@ -1131,7 +1131,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
 
 void TTKFunctionNavigationFWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowIcon")
         {
@@ -1146,7 +1146,7 @@ void TTKFunctionNavigationFWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationFWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSpace")
         {
@@ -1161,7 +1161,7 @@ void TTKFunctionNavigationFWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationFWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "IconSize")
         {
@@ -1172,7 +1172,7 @@ void TTKFunctionNavigationFWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -1198,7 +1198,7 @@ void TTKFunctionNavigationFWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pixmap(1, 1);
     pixmap.fill(value);
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
@@ -1252,7 +1252,7 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i=0; i<m_buttons.count(); ++i)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setFont(font);
         layout->addWidget(m_buttons[i]);
@@ -1375,7 +1375,7 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
 
 void TTKFunctionNavigationGWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "ShowTriangle")
         {
@@ -1386,7 +1386,7 @@ void TTKFunctionNavigationGWidgetProperty::boolPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationGWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "PaddingLeft")
         {
@@ -1401,7 +1401,7 @@ void TTKFunctionNavigationGWidgetProperty::intPropertyChanged(QtProperty *proper
 
 void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -1429,7 +1429,7 @@ void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationGWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    for(int i = 0; i < m_buttons.count(); i++)
+    for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalBgBrushR")
         {

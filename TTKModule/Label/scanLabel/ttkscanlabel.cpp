@@ -121,7 +121,7 @@ QSize TTKScanLabel::sizeHint() const
 
 void TTKScanLabel::updateRender()
 {
-    for(int i = 0; i < m_rings.count(); i++)
+    for(int i = 0; i < m_rings.count(); ++i)
     {
         RingData *ring = &m_rings[i];
         ring->m_radius += 1;
@@ -193,7 +193,7 @@ void TTKScanLabel::drawRing(QPainter *painter)
     painter->save();
     painter->setBrush(Qt::NoBrush);
 
-    for(int i = 0; i < m_rings.count(); i++)
+    for(int i = 0; i < m_rings.count(); ++i)
     {
         const RingData &ring = m_rings.at(i);
         const int radius = ring.m_radius;

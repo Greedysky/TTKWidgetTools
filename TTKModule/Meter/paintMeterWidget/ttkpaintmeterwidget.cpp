@@ -142,7 +142,7 @@ void TTKPaintMeterWidget::drawTicks(QPainter *painter)
 
     painter->rotate(-m_startAngle);
     const double angleStep = (-m_endAngle + m_startAngle) / m_steps;
-    for(int i=0; i<=m_steps; i++)
+    for(int i = 0; i <= m_steps; ++i)
     {
         painter->drawLine(28, 0, 30, 0);
         painter->rotate(angleStep);
@@ -163,7 +163,7 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
     const double startRad = m_startAngle*PI/180.0 + PI/2;
     const double deltaRad = (m_endAngle-m_startAngle) / (m_steps) * (PI/180);
     double sina, cosa;
-    for(int i=0; i <= m_steps; i++)
+    for(int i=0; i <= m_steps; ++i)
     {
         sina = sin((double)(startRad + i * deltaRad));
         cosa = cos((double)(startRad + i * deltaRad));

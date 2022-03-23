@@ -220,7 +220,7 @@ void TTKClockMeterWidget::drawScale(QPainter *painter)
     QPen pen = painter->pen();
     pen.setCapStyle(Qt::RoundCap);
 
-    for(int i = 0; i <= 60; i++)
+    for(int i = 0; i <= 60; ++i)
     {
         if(i % 5 == 0)
         {
@@ -248,7 +248,7 @@ void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
     const double startRad = 60 * (M_PI / 180);
     const double deltaRad = 30 * (M_PI / 180);
 
-    for(int i = 0; i < 12; i++)
+    for(int i = 0; i < 12; ++i)
     {
         const double sina = sin(startRad - i * deltaRad);
         const double cosa = cos(startRad - i * deltaRad);

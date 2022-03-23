@@ -11,7 +11,7 @@ TTKRadarMeterWidget::TTKRadarMeterWidget(QWidget *parent)
     m_timerId = -1;
     m_nSpeed = 50;
 
-    for(int i=0; i<5; ++i)
+    for(int i = 0; i < 5; ++i)
     {
         m_points << QPoint();
         m_pointsAlapha << 100;
@@ -56,7 +56,7 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::NoPen);
     painter.drawPie(m_drawArea, m_pieRotate*16, 90*16);
 
-    for(int i=0; i<m_points.count(); ++i)
+    for(int i = 0; i < m_points.count(); ++i)
     {
         const int colorAlaph = m_pointsAlapha.at(i);
         painter.setPen(QPen(QColor(255, 255, 255, colorAlaph), 3));
@@ -90,11 +90,11 @@ void TTKRadarMeterWidget::timerEvent(QTimerEvent *event)
     }
     else if(m_pointTimerId == event->timerId())
     {
-        for(int i=0; i<m_points.count(); ++i)
+        for(int i = 0; i < m_points.count(); ++i)
         {
-            int offsetX = rand()%m_drawArea.width();
-            int offsetY = rand()%m_drawArea.width();
-            int alapha = rand()%255;
+            const int offsetX = rand() % m_drawArea.width();
+            const int offsetY = rand() % m_drawArea.width();
+            const int alapha = rand() % 255;
             m_points.replace(i, QPoint(offsetX, offsetY) + m_drawArea.topLeft());
             m_pointsAlapha.replace(i, alapha);
         }

@@ -60,7 +60,7 @@ void TTKTimeMeterWidget::drawScale(QPainter *painter)
 
     QPen pen ;
     pen.setColor(Qt::green);
-    for(int i=0; i<=steps; i++)
+    for(int i = 0; i <= steps; ++i)
     {
         if(i % m_scaleMinor == 0)
         {
@@ -93,7 +93,7 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
     double w, h, v;
     QString str;
 
-    for(int i=0; i<=m_scaleMajor; i++)
+    for(int i = 0; i <= m_scaleMajor; ++i)
     {
         sina = sin(startRad - i * deltaRad);
         cosa = cos(startRad - i * deltaRad);

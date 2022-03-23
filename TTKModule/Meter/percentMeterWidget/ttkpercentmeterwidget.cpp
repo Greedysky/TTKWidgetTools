@@ -271,7 +271,7 @@ void TTKPercentMeterWidget::drawScale(QPainter *painter)
     pen.setWidthF(1.0);
     painter->setPen(pen);
 
-    for(int i = 0; i <= steps; i++)
+    for(int i = 0; i <= steps; ++i)
     {
         painter->drawLine(0, radius - 5, 0, radius);
         painter->rotate(angleStep);
@@ -288,7 +288,7 @@ void TTKPercentMeterWidget::drawScaleNum(QPainter *painter)
     const double startRad = (360 - m_startAngle - 90) * (M_PI / 180);
     const double deltaRad = (360 - m_startAngle - m_endAngle) * (M_PI / 180) / m_scaleMajor;
 
-    for(int i = 0; i <= m_scaleMajor; i++)
+    for(int i = 0; i <= m_scaleMajor; ++i)
     {
         const double sina = qSin(startRad - i * deltaRad);
         const double cosa = qCos(startRad - i * deltaRad);

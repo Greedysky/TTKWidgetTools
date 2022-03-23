@@ -90,7 +90,7 @@ QStringList TTKNetTraffic::newtworkNames() const
     }
 
     GetIfTable(pTable, &dwAdapters, TRUE);
-    for(UINT i = 0; i < pTable->dwNumEntries; i++)
+    for(UINT i = 0; i < pTable->dwNumEntries; ++i)
     {
         const MIB_IFROW Row = pTable->table[i];
         TTKString s(TTKReinterpret_cast(char const*, Row.bDescr));
@@ -180,7 +180,7 @@ void TTKNetTraffic::run()
         GetIfTable(pTable, &dwAdapters, TRUE);
         DWORD dwInOctets = 0, dwOutOctets = 0;
 
-        for(UINT i = 0; i < pTable->dwNumEntries; i++)
+        for(UINT i = 0; i < pTable->dwNumEntries; ++i)
         {
             const MIB_IFROW& Row = pTable->table[i];
             const TTKString s(TTKReinterpret_cast(char const*, Row.bDescr));

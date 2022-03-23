@@ -212,7 +212,7 @@ void TTKMiniMeterWidget::drawScale(QPainter *painter)
     pen.setCapStyle(Qt::RoundCap);
     double rotate = 0;
 
-    for(int i = 0; i <= m_step; i++)
+    for(int i = 0; i <= m_step; ++i)
     {
         if(rotate <= degRotate)
         {

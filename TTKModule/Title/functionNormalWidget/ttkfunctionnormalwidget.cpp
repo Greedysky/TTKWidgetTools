@@ -77,7 +77,7 @@ void TTKFunctionNormalWidget::addItem(const QString &text)
 
 void TTKFunctionNormalWidget::drawItem(QPainter *painter)
 {
-    for(int i=0; i < m_items.count(); i++)
+    for(int i = 0; i < m_items.count(); ++i)
     {
         if(i == m_backGroundColor)
         {

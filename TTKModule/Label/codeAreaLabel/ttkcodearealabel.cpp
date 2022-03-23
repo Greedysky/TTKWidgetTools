@@ -45,7 +45,7 @@ TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
 void TTKCodeAreaLabel::renderPicture()
 {
     QStringList number;
-    for(int i=0; i<m_codeCount; i++)
+    for(int i = 0; i < m_codeCount; ++i)
     {
         number << m_codeRange[random(m_codeRange.count())];
     }
@@ -57,7 +57,7 @@ void TTKCodeAreaLabel::renderPicture()
     font.setBold(true);
     font.setPixelSize(25);
 
-    for(int i=0; i<m_codeCount; i++)
+    for(int i = 0; i < m_codeCount; ++i)
     {
         m_code.append(number[i]);
         QPainterPath path(QPointF(0, 0));
@@ -96,7 +96,7 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
     painter.save();
     painter.translate(event->rect().center().x() - m_codePic.count() / 2 * 6, event->rect().center().y());
 
-    for(int i=0; i<m_codePic.count(); i++)
+    for(int i = 0; i < m_codePic.count(); ++i)
     {
         drawConversion(painter);
         painter.fillPath(m_codePic[i], QBrush(m_codeColor[random(m_codeColor.count())]));
@@ -122,7 +122,7 @@ void TTKCodeAreaLabel::drawNoisyPoint(QPainter &painter)
     painter.setPen(Qt::DotLine);
     painter.setBrush(Qt::NoBrush);
 
-    for(int i=0; i<m_noisyPointCount; i++)
+    for(int i = 0; i < m_noisyPointCount; ++i)
     {
         painter.drawPoint(QPointF(random(size().width()), random(size().height())));
     }

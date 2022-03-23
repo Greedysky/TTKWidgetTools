@@ -206,7 +206,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
 	painter.setPen(buttonColor.darker(110));
 	double angleStep = 360.0 / 8.0;
 	painter.rotate(angleStep / 2);
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < 8; ++i)
 	{
 		painter.rotate(angleStep);
 		painter.drawLine(QPoint(33, 0), QPoint(90, 0));
@@ -356,11 +356,9 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
     painter->save();
     radius = 70;
 
-    const int offset = 15;
     const int steps = 8;
     const double angleStep = 360.0 / steps;
 
-    QRect iconRect(-offset / 2, radius - offset, offset, offset);
     int bp = 0;
     bool isIn = false;
     if(m_pressed)
@@ -368,7 +366,7 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
         isIn = isPointIn(m_lastPoint, bp);
     }
 
-    for(int i = 0; i < steps; i++)
+    for(int i = 0; i < steps; ++i)
     {
         if(isIn && (bp == i))
         {

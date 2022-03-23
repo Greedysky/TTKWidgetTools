@@ -304,7 +304,7 @@ void TTKCompassMeterWidget::drawScale(QPainter *painter)
     pen.setWidth(4);
     painter->setPen(pen);
 
-    for(int i = 0; i <= steps; i++)
+    for(int i = 0; i <= steps; ++i)
     {
         if(i % 2 != 0)
         {

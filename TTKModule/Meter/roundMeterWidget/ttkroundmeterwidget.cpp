@@ -256,7 +256,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     pen.setColor(m_usedColor);
     painter->setPen(pen);
 
-    for(double i = 0; i < m_currentPercent; i++)
+    for(double i = 0; i < m_currentPercent; ++i)
     {
         painter->drawLine(0, radius, 0, radius / 1.2);
         painter->rotate(rotate);
@@ -265,7 +265,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     pen.setColor(m_freeColor);
     painter->setPen(pen);
 
-    for(double i = m_currentPercent; i < 100; i++)
+    for(double i = m_currentPercent; i < 100; ++i)
     {
         painter->drawLine(0, radius, 0, radius / 1.2);
         painter->rotate(rotate);

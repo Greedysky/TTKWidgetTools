@@ -67,7 +67,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
     //
-    for(int i=0; i<10; ++i)
+    for(int i = 0; i < 10; ++i)
     {
         widget->addPoint(90 + i * i, 90 + i * i);
     }
@@ -86,7 +86,7 @@ void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value
         widget->setOpacity(value);
     }
 
-    for(int i=0; i<10; ++i)
+    for(int i = 0; i < 10; ++i)
     {
         widget->addPoint(90 + i * i, 90 + i * i);
     }

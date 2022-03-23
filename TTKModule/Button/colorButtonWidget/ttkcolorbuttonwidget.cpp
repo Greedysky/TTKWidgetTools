@@ -112,7 +112,7 @@ void TTKColorButtonWidget::initBtn()
     int column = 0;
     int index = 0;
 
-    for(int i = 0; i < count; i++)
+    for(int i = 0; i < count; ++i)
     {
         QPushButton *btn = new QPushButton;
         connect(btn, SIGNAL(pressed()), this, SLOT(btnClicked()));
