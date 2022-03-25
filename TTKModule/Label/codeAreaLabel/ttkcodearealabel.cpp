@@ -4,7 +4,6 @@
 #endif
 #include <QDateTime>
 #include <QPainter>
-#include <QPaintEvent>
 #include <QPainterPath>
 
 static int random(int value)
@@ -90,11 +89,11 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
     QLabel::paintEvent(event);
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    painter.fillRect(event->rect(), QBrush(Qt::white));
+    painter.fillRect(rect(), QBrush(Qt::white));
 
     painter.translate(0, 0);
     painter.save();
-    painter.translate(event->rect().center().x() - m_codePic.count() / 2 * 6, event->rect().center().y());
+    painter.translate(rect().center().x() - m_codePic.count() / 2 * 6, rect().center().y());
 
     for(int i = 0; i < m_codePic.count(); ++i)
     {
