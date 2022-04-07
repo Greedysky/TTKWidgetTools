@@ -11,7 +11,7 @@
 TTKSpeedMeterWidget::TTKSpeedMeterWidget(QWidget *parent)
     : QWidget(parent)
 {
-    initVariables();
+    initialize();
 }
 
 void TTKSpeedMeterWidget::setValue(qreal value)
@@ -86,7 +86,7 @@ void TTKSpeedMeterWidget::paintEvent(QPaintEvent *event)
     painter.end();
 }
 
-void TTKSpeedMeterWidget::initVariables()
+void TTKSpeedMeterWidget::initialize()
 {
     resetVariables();
 

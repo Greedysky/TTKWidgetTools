@@ -195,7 +195,7 @@ public Q_SLOTS:
 protected:
     virtual void paintEvent(QPaintEvent *event) override final;
 
-    void init();
+    void initialize();
     void play(int index);
 
     TTKPictureBannerView *m_view;

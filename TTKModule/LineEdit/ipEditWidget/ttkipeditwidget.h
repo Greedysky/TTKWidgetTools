@@ -40,7 +40,7 @@ public:
     virtual QSize sizeHint() const override final;
 
 protected:
-    void initEdit(QLineEdit *edit);
+    void initialize(QLineEdit *edit);
     QLineEdit *nextEdit(QLineEdit *edit);
     bool isEdit(QObject *object);
 

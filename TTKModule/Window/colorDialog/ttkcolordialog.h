@@ -33,7 +33,7 @@ public:
 
     QColor color() const;
 
-    void init();
+    void initialize();
 
 Q_SIGNALS:
     void colorChanged(const QColor &color);

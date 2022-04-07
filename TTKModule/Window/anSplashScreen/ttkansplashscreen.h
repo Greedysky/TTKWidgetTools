@@ -54,8 +54,7 @@ protected:
     virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
-    void init();
-    void initWidget();
+    void initialize();
     void closeWidget();
 
 private:

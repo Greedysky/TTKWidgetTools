@@ -483,7 +483,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::paint()
 
     if(m_widget->size() != m_size)
     {
-        init();
+        initialize();
     }
 
     if(m_state->m_backgroundColor != m_bgcolor)
@@ -507,7 +507,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::paint()
     painter.drawImage(QPoint(0, 0), m_buffer);
 }
 
-void TTKPictureFlowWidgetSoftwareRenderer::init()
+void TTKPictureFlowWidgetSoftwareRenderer::initialize()
 {
     if(!m_widget)
     {
@@ -776,7 +776,7 @@ TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
     m_renderer = new TTKPictureFlowWidgetSoftwareRenderer;
     m_renderer->m_state = m_state;
     m_renderer->m_widget = this;
-    m_renderer->init();
+    m_renderer->initialize();
 
     m_useResize = false;
 

@@ -19,7 +19,7 @@ QColor TTKHlPalette::color() const
     return m_color;
 }
 
-void TTKHlPalette::init()
+void TTKHlPalette::initialize()
 {
     m_ptVernierPos = rect().center();
     calculateColor();

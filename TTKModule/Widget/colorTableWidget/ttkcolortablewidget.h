@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKColorTableWidget : public QListWidget
 public:
     explicit TTKColorTableWidget(QWidget *parent = nullptr);
 
-    void init();
+    void initialize();
 
 };
 

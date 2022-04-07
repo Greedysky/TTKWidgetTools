@@ -59,7 +59,7 @@ public Q_SLOTS:
     void popupMenu();
 
 protected:
-    void initWidget();
+    void initialize();
 
     TTKToolMenu *m_menu;
     QWidget *m_containWidget;

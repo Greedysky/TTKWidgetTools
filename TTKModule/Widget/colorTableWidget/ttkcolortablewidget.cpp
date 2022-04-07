@@ -13,7 +13,7 @@ TTKColorTableWidget::TTKColorTableWidget(QWidget *parent)
 
 }
 
-void TTKColorTableWidget::init()
+void TTKColorTableWidget::initialize()
 {
     QFile file(":/res/rgb");
     if(file.open(QFile::ReadOnly))

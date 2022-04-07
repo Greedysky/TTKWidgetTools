@@ -32,7 +32,7 @@ public:
     explicit TTKWidgetProperty(QWidget *parent = nullptr);
     ~TTKWidgetProperty();
 
-    virtual void init();
+    virtual void initialize();
     QWidget* widget() const;
 
 protected Q_SLOTS:

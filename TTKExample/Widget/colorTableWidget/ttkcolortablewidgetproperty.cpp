@@ -22,5 +22,5 @@ TTKColorTableWidgetProperty::TTKColorTableWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
 
-    TTKStatic_cast(TTKColorTableWidget*, m_item)->init();
+    TTKStatic_cast(TTKColorTableWidget*, m_item)->initialize();
 }

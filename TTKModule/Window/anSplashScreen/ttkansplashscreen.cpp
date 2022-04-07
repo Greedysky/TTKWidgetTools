@@ -8,8 +8,7 @@ TTKAnSplashScreen::TTKAnSplashScreen(QWidget *parent)
     : QWidget(parent),
       m_mainWidget(nullptr)
 {
-    initWidget();
-    init();
+    initialize();
 }
 
 TTKAnSplashScreen::~TTKAnSplashScreen()
@@ -52,7 +51,7 @@ void TTKAnSplashScreen::start()
     show();
 }
 
-void TTKAnSplashScreen::init()
+void TTKAnSplashScreen::initialize()
 {
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -71,10 +70,7 @@ void TTKAnSplashScreen::init()
     m_dig = 0;
     m_count = 6;
     m_numLabel->setText(QString::number(m_count));
-}
 
-void TTKAnSplashScreen::initWidget()
-{
     m_gridLayout = new QGridLayout(this);
     m_gridLayout->setSpacing(0);
     m_gridLayout->setContentsMargins(11, 11, 11, 11);

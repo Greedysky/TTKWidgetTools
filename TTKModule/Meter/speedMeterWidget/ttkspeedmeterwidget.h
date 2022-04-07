@@ -50,7 +50,7 @@ protected:
     virtual void paintEvent(QPaintEvent *event) override final;
 
 private:
-    void initVariables();
+    void initialize();
     void resetVariables();
     void drawOuterCircle(QPainter *painter);
     void drawInnerCircle(QPainter *painter);

@@ -87,7 +87,7 @@ void TTKToolsApplication::buttonModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::labelModuleChanged(int index)
@@ -144,7 +144,7 @@ void TTKToolsApplication::labelModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::lineEditModuleChanged(int index)
@@ -162,7 +162,7 @@ void TTKToolsApplication::lineEditModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::meterModuleChanged(int index)
@@ -213,7 +213,7 @@ void TTKToolsApplication::meterModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::progressModuleChanged(int index)
@@ -256,7 +256,7 @@ void TTKToolsApplication::progressModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::sliderModuleChanged(int index)
@@ -281,7 +281,7 @@ void TTKToolsApplication::sliderModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::titleModuleChanged(int index)
@@ -334,7 +334,7 @@ void TTKToolsApplication::titleModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::widgetModuleChanged(int index)
@@ -377,7 +377,7 @@ void TTKToolsApplication::widgetModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::windowModuleChanged(int index)
@@ -410,7 +410,7 @@ void TTKToolsApplication::windowModuleChanged(int index)
 
     ui->propertyWidget->addItem(w);
     ui->containerWidget->addItem(w->widget());
-    w->init();
+    w->initialize();
 }
 
 void TTKToolsApplication::createButtonModule()

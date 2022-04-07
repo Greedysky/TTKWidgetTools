@@ -15,7 +15,7 @@ TTKColorDialogProperty::TTKColorDialogProperty(QWidget *parent)
 
     connect(palette, SIGNAL(colorChanged(QColor)), saturation, SLOT(setBaseColor(QColor)));
     connect(saturation, SIGNAL(saturationChanged(double)),palette, SLOT(setSaturation(double)));
-    palette->init();
+    palette->initialize();
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //

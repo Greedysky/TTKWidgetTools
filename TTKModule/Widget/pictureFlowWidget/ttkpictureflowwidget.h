@@ -101,7 +101,7 @@ public:
     TTKPictureFlowWidgetSoftwareRenderer();
     ~TTKPictureFlowWidgetSoftwareRenderer();
 
-    void init();
+    void initialize();
     void paint();
 
     bool  m_dirty;

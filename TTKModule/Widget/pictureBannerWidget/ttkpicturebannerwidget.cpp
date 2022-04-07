@@ -361,7 +361,7 @@ TTKPictureBannerWidget::TTKPictureBannerWidget(QWidget *parent)
     m_timer = 0;
     m_interval = 2000;
 
-    init();
+    initialize();
 }
 
 void TTKPictureBannerWidget::addPage(const QPixmap &pixmap)
@@ -501,7 +501,7 @@ void TTKPictureBannerWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 }
 
-void TTKPictureBannerWidget::init()
+void TTKPictureBannerWidget::initialize()
 {
     m_indLayout = new QHBoxLayout();
     m_indLayout->setSpacing(5);

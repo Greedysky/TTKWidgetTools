@@ -23,10 +23,10 @@ TTKIpEditWidget::TTKIpEditWidget(QWidget *parent)
     m_input_t = new QLineEdit(this);
     m_input_l = new QLineEdit(this);
 
-    initEdit(m_input_f);
-    initEdit(m_input_s);
-    initEdit(m_input_t);
-    initEdit(m_input_l);
+    initialize(m_input_f);
+    initialize(m_input_s);
+    initialize(m_input_t);
+    initialize(m_input_l);
 
     m_dot_f = new QLabel(".", this);
     m_dot_s = new QLabel(".", this);
@@ -43,7 +43,7 @@ TTKIpEditWidget::TTKIpEditWidget(QWidget *parent)
     setFixedSize(165, 25);
 }
 
-void TTKIpEditWidget::initEdit(QLineEdit *edit)
+void TTKIpEditWidget::initialize(QLineEdit *edit)
 {
     edit->setFrame(false);
     edit->setAlignment(Qt::AlignCenter);

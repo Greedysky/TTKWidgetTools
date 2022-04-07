@@ -33,9 +33,8 @@ TTKToolMenuWidget::TTKToolMenuWidget(QWidget *parent)
     actionWidget->setDefaultWidget(m_containWidget);
     m_menu->addAction(actionWidget);
 
+    initialize();
     connect(this, SIGNAL(clicked()), SLOT(popupMenu()));
-
-    initWidget();
 }
 
 TTKToolMenuWidget::~TTKToolMenuWidget()
@@ -68,7 +67,7 @@ void TTKToolMenuWidget::popupMenu()
     m_menu->exec(pos);
 }
 
-void TTKToolMenuWidget::initWidget()
+void TTKToolMenuWidget::initialize()
 {
     setTranslucentBackground();
     m_containWidget->setFixedSize(140, 100);
@@ -77,5 +76,4 @@ void TTKToolMenuWidget::initWidget()
     m_menu->addAction("One");
     m_menu->addAction("Two");
     m_menu->addAction("Three");
-
 }

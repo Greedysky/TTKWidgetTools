@@ -72,7 +72,7 @@ TTKWidgetProperty::~TTKWidgetProperty()
 
 }
 
-void TTKWidgetProperty::init()
+void TTKWidgetProperty::initialize()
 {
     m_containItem = TTKStatic_cast(QWidget*, m_item->parent());
     connect(TTKStatic_cast(TTKBackgroundContainerItem*, m_containItem), SIGNAL(rectChanged()), SLOT(geometryChanged()));
