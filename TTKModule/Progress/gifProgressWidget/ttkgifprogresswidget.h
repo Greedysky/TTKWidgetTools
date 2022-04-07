@@ -34,16 +34,16 @@ class TTK_MODULE_EXPORT TTKGifProgressWidget : public QLabel
 public:
     enum Type
     {
-        GifBallonWhite,
-        GifCicleBlue,
-        GifRiceFontWhite,
-        GifRiceFontBlack,
-        GifRiceFontBlackBig,
-        GifHourglassWhite,
-        GifRadioBlue,
-        GifCheckBlue,
-        GifRecordred,
-        GifCloseWhite
+        BallonWhite,
+        CicleBlue,
+        RiceFontWhite,
+        RiceFontBlack,
+        RiceFontBlackBig,
+        HourglassWhite,
+        RadioBlue,
+        CheckBlue,
+        Recordred,
+        CloseWhite
     };
 
     explicit TTKGifProgressWidget(QWidget *parent = nullptr);

@@ -55,10 +55,10 @@ void TTKBackgroundContainerItem::onMouseChange(int x, int y)
 
     switch(m_direction)
     {
-        case Direction_No:
-        case Direction_Right:
-        case Direction_Bottom:
-        case Direction_RightBottom:
+        case DirectionNo:
+        case DirectionRight:
+        case DirectionBottom:
+        case DirectionRightBottom:
             {
                 const QPoint &topLeft = m_originRect.topLeft();
                 if(x - topLeft.x() <= hint.width())
@@ -77,7 +77,7 @@ void TTKBackgroundContainerItem::onMouseChange(int x, int y)
                 }
                 break;
             }
-        case Direction_RightTop:
+        case DirectionRightTop:
             {
                 const QPoint &bottomLeft = m_originRect.bottomLeft();
                 if(x - bottomLeft.x() <= hint.width())
@@ -96,8 +96,8 @@ void TTKBackgroundContainerItem::onMouseChange(int x, int y)
                 }
                 break;
             }
-        case Direction_Left:
-        case Direction_LeftBottom:
+        case DirectionLeft:
+        case DirectionLeftBottom:
             {
                 const QPoint &topRight = m_originRect.topRight();
                 if(topRight.x() - x <= hint.width())
@@ -116,8 +116,8 @@ void TTKBackgroundContainerItem::onMouseChange(int x, int y)
                 }
                 break;
             }
-        case Direction_LeftTop:
-        case Direction_Top:
+        case DirectionLeftTop:
+        case DirectionTop:
             {
                 const QPoint &bottomRight = m_originRect.bottomRight();
                 if(bottomRight.x() - x <= hint.width())

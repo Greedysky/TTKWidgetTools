@@ -9,7 +9,7 @@
 TTKGrabItemWidget::TTKGrabItemWidget(QWidget *parent)
     : QWidget(parent)
 {
-    m_direction = Direction_No;
+    m_direction = DirectionNo;
     m_isPressed = false;
     m_crossStretch = true;
 
@@ -31,21 +31,21 @@ void TTKGrabItemWidget::onMouseChange(int x, int y)
     QPoint pt;
     switch(m_direction)
     {
-        case Direction_No:
-        case Direction_Right:
-        case Direction_Bottom:
-        case Direction_RightBottom:
+        case DirectionNo:
+        case DirectionRight:
+        case DirectionBottom:
+        case DirectionRightBottom:
             pt = m_originRect.topLeft();
             break;
-        case Direction_RightTop:
+        case DirectionRightTop:
             pt = m_originRect.bottomLeft();
             break;
-        case Direction_Left:
-        case Direction_LeftBottom:
+        case DirectionLeft:
+        case DirectionLeftBottom:
             pt = m_originRect.topRight();
             break;
-        case Direction_LeftTop:
-        case Direction_Top:
+        case DirectionLeftTop:
+        case DirectionTop:
             pt = m_originRect.bottomRight();
             break;
     }
@@ -64,7 +64,7 @@ void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         m_isPressed = true;
-        if(m_direction != Direction_No)
+        if(m_direction != DirectionNo)
         {
             mouseGrabber();
         }
@@ -81,7 +81,7 @@ void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         m_isPressed = false;
-        if(m_direction != Direction_No)
+        if(m_direction != DirectionNo)
         {
             setCursor(QCursor(Qt::SizeAllCursor));
         }
@@ -104,22 +104,22 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
     }
     else
     {
-        if(m_direction != Direction_No)
+        if(m_direction != DirectionNo)
         {
             switch(m_direction)
             {
-                case Direction_Left:
+                case DirectionLeft:
                     return onMouseChange(gloPoint.x(), pt_ll.y() + 1);
-                case Direction_Right:
+                case DirectionRight:
                     return onMouseChange(gloPoint.x(), pt_rl.y() + 1);
-                case Direction_Top:
+                case DirectionTop:
                     return onMouseChange(pt_lu.x(), gloPoint.y());
-                case Direction_Bottom:
+                case DirectionBottom:
                     return onMouseChange(pt_rl.x() + 1, gloPoint.y());
-                case Direction_LeftTop:
-                case Direction_RightTop:
-                case Direction_LeftBottom:
-                case Direction_RightBottom:
+                case DirectionLeftTop:
+                case DirectionRightTop:
+                case DirectionLeftBottom:
+                case DirectionRightBottom:
                     if(m_crossStretch)
                     {
                         return onMouseChange(gloPoint.x(), gloPoint.y());
@@ -178,7 +178,7 @@ void TTKGrabItemWidget::paintEvent(QPaintEvent *event)
 
 TTKGrabItemWidget::Direction TTKGrabItemWidget::region(const QPoint &cursor)
 {
-    Direction ret_dir = Direction_No;
+    Direction ret_dir = DirectionNo;
 
     const QPoint &pt_lu = mapToParent(rect().topLeft());
     const QPoint &pt_rl = mapToParent(rect().bottomRight());
@@ -188,47 +188,47 @@ TTKGrabItemWidget::Direction TTKGrabItemWidget::region(const QPoint &cursor)
 
     if(pt_lu.x() + PADDING >= x && pt_lu.x() <= x && pt_lu.y() + PADDING >= y && pt_lu.y() <= y)
     {
-        ret_dir = Direction_LeftTop;
+        ret_dir = DirectionLeftTop;
         setCursor(QCursor(Qt::SizeFDiagCursor));
     }
     else if(x >= pt_rl.x() - PADDING && x <= pt_rl.x() && y >= pt_rl.y() - PADDING && y <= pt_rl.y())
     {
-        ret_dir = Direction_RightBottom;
+        ret_dir = DirectionRightBottom;
         setCursor(QCursor(Qt::SizeFDiagCursor));
     }
     else if(x <= pt_lu.x() + PADDING && x >= pt_lu.x() && y >= pt_rl.y() - PADDING && y <= pt_rl.y())
     {
-        ret_dir = Direction_LeftBottom;
+        ret_dir = DirectionLeftBottom;
         setCursor(QCursor(Qt::SizeBDiagCursor));
     }
     else if(x <= pt_rl.x() && x >= pt_rl.x() - PADDING && y >= pt_lu.y() && y <= pt_lu.y() + PADDING)
     {
-        ret_dir = Direction_RightTop;
+        ret_dir = DirectionRightTop;
         setCursor(QCursor(Qt::SizeBDiagCursor));
     }
     else if(x <= pt_lu.x() + PADDING && x >= pt_lu.x())
     {
-        ret_dir = Direction_Left;
+        ret_dir = DirectionLeft;
         setCursor(QCursor(Qt::SizeHorCursor));
     }
     else if(x <= pt_rl.x() && x >= pt_rl.x() - PADDING)
     {
-        ret_dir = Direction_Right;
+        ret_dir = DirectionRight;
         setCursor(QCursor(Qt::SizeHorCursor));
     }
     else if(y >= pt_lu.y() && y <= pt_lu.y() + PADDING)
     {
-        ret_dir = Direction_Top;
+        ret_dir = DirectionTop;
         setCursor(QCursor(Qt::SizeVerCursor));
     }
     else if(y <= pt_rl.y() && y >= pt_rl.y() - PADDING)
     {
-        ret_dir = Direction_Bottom;
+        ret_dir = DirectionBottom;
         setCursor(QCursor(Qt::SizeVerCursor));
     }
     else
     {
-        ret_dir = Direction_No;
+        ret_dir = DirectionNo;
         setCursor(QCursor(Qt::SizeAllCursor));
     }
 

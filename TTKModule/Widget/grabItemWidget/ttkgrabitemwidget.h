@@ -32,15 +32,15 @@ class TTK_MODULE_EXPORT TTKGrabItemWidget : public QWidget
 public:
     enum Direction
     {
-        Direction_No = 0,
-        Direction_Left = 1,
-        Direction_Top = 2,
-        Direction_Right = 4,
-        Direction_Bottom = 8,
-        Direction_LeftTop = Direction_Left + Direction_Top,
-        Direction_LeftBottom = Direction_Left + Direction_Bottom,
-        Direction_RightTop = Direction_Right + Direction_Top,
-        Direction_RightBottom = Direction_Right + Direction_Bottom
+        DirectionNo = 0,
+        DirectionLeft = 1,
+        DirectionTop = 2,
+        DirectionRight = 4,
+        DirectionBottom = 8,
+        DirectionLeftTop = DirectionLeft + DirectionTop,
+        DirectionLeftBottom = DirectionLeft + DirectionBottom,
+        DirectionRightTop = DirectionRight + DirectionTop,
+        DirectionRightBottom = DirectionRight + DirectionBottom
     };
 
     explicit TTKGrabItemWidget(QWidget *parent = nullptr);

@@ -31,7 +31,8 @@ class TTK_MODULE_EXPORT TTKMarqueeLabel : public QWidget
     Q_ENUMS(MoveStyle)
     TTK_DECLARE_MODULE(TTKMarqueeLabel)
 public:
-    enum MoveStyle {
+    enum MoveStyle
+    {
         MoveStyleLeftAndRight = 0,
         MoveStyleLeftToRight = 1,
         MoveStyleRightToLeft = 2

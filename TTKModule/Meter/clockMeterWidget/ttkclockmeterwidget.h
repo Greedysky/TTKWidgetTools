@@ -31,7 +31,8 @@ class TTK_MODULE_EXPORT TTKClockMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKClockMeterWidget)
 public:
-	enum SecondStyle {
+    enum SecondStyle
+    {
         SecondStyleNormal = 0,
         SecondStyleSpring = 1,
         SecondStyleContinue = 2,

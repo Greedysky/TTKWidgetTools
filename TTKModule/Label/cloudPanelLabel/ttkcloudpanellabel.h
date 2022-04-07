@@ -36,7 +36,7 @@ public:
         CloudStyleBlack = 0,
         CloudStyleWhite = 1,
         CloudStyleBlue = 2,
-        CloudStylePurple = 3,
+        CloudStylePurple = 3
 	};
 
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);

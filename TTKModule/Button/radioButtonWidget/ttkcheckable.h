@@ -76,7 +76,7 @@ public:
     enum LabelPosition
     {
         LabelPositionLeft,
-        LabelPositionRight,
+        LabelPositionRight
     };
 
     explicit TTKCheckable(QWidget *parent = nullptr);

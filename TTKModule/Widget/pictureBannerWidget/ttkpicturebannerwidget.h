@@ -38,6 +38,7 @@ public:
         Left,
         Right
     };
+
     explicit TTKPictureBannerArrowWidget(ArrowType type, QWidget *parent = nullptr);
 
 Q_SIGNALS:
