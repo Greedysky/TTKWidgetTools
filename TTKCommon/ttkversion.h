@@ -20,15 +20,19 @@
  ***************************************************************************/
 
 //update time 2022.01.29
-#define TTK_VERSION_STR    "2.4.0.0"
-#define TTK_VER_TIME_STR   "(2022/01/29)"
+#define TTK_VERSION             0x02400
+#define TTK_VERSION_STR         "2.4.0.0"
+#define TTK_VERSION_TIME_STR    "(2022/01/29)"
 
 #define TTK_MAJOR_VERSION 2
 #define TTK_MIDLE_VERSION 4
 #define TTK_MINOR_VERSION 0
 #define TTK_PATCH_VERSION 0
 
-#define TTK_VERSION 0x02400
+#define TTK_RC_FILEVERSION      2,4,0,0
+#define TTK_RC_PRODUCTVERSION   TTK_VERSION_STR
+#define TTK_RC_COMPANY          "Greedysky Studio, Ltd."
+#define TTK_RC_COPYRIGHT        "Copyright (C) 2022 Greedysky Studio"
 
 #define TTK_VERSION_CHECK(major, middle, minor, patch) ((major<<12)|(middle<<8)|(minor<<4)|(patch))
 
