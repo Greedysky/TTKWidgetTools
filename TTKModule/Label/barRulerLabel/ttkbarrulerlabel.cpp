@@ -32,11 +32,7 @@ TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
 
-#if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont(QStringList() << "Arial", 8));
-#else
-    setFont(QFont("Arial", 8));
-#endif
+    setFont(QtFontInit("Arial", 8));
 }
 
 TTKBarRulerLabel::~TTKBarRulerLabel()
@@ -299,11 +295,7 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
             painter->drawLine(leftPot, rightPot);
 
             const QString &strValue = QString("%1").arg((double)i, 0, 'f', m_precision);
-#if TTK_QT_VERSION_CHECK(5,11,0)
-            const int fontWidth = fontMetrics().horizontalAdvance(strValue);
-#else
-            const int fontWidth = fontMetrics().width(strValue);
-#endif
+            const int fontWidth = QtFontWidth(fontMetrics(), strValue);
             const int fontHeight = painter->fontMetrics().height();
             const QPointF textPot(initX - fontWidth - 5, initY + fontHeight / 3.0);
             painter->drawText(textPot, strValue);

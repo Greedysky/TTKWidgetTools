@@ -24,11 +24,7 @@ TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
     connect(m_animation, SIGNAL(finished()), SLOT(finished()));
 
     m_buttonGroup = new QButtonGroup(this);
-#if TTK_QT_VERSION_CHECK(5,15,0)
-    connect(m_buttonGroup, SIGNAL(idClicked(int)), SLOT(switchToSelectedItemStyle(int)));
-#else
-    connect(m_buttonGroup, SIGNAL(buttonClicked(int)), SLOT(switchToSelectedItemStyle(int)));
-#endif
+    QtButtonGroupConnect(m_buttonGroup, this, switchToSelectedItemStyle);
 }
 
 TTKBaseAnimationWidget::~TTKBaseAnimationWidget()

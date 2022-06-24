@@ -47,11 +47,7 @@ void TTKMarqueeLabel::setText(const QString &text)
         m_text = text;
         m_labText->setText(text);
 
-#if TTK_QT_VERSION_CHECK(5,11,0)
-        const int textWidth = fontMetrics().horizontalAdvance(text);
-#else
-        const int textWidth = fontMetrics().width(text);
-#endif
+        const int textWidth = QtFontWidth(fontMetrics(), text);
         const int textHeight = fontMetrics().height();
         m_labText->resize(QSize(textWidth + 15, textHeight + 5));
 
@@ -137,11 +133,7 @@ void TTKMarqueeLabel::timeout()
         return;
     }
 
-#if TTK_QT_VERSION_CHECK(5,11,0)
-    const int textWidth = fontMetrics().horizontalAdvance(m_text);
-#else
-    const int textWidth = fontMetrics().width(m_text);
-#endif
+    const int textWidth = QtFontWidth(fontMetrics(), m_text);
     if(m_moveStyle == MoveStyleLeftAndRight)
     {
         if(textWidth <= width())
@@ -206,11 +198,7 @@ void TTKMarqueeLabel::resizeEvent(QResizeEvent *event)
     m_initY = (height() - fontMetrics().height()) / 2;
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKMarqueeLabel::enterEvent(QEnterEvent *event)
-#else
-void TTKMarqueeLabel::enterEvent(QEvent *event)
-#endif
+void TTKMarqueeLabel::enterEvent(QtEnterEvent *event)
 {
     Q_UNUSED(event);
     m_mouseHover = true;

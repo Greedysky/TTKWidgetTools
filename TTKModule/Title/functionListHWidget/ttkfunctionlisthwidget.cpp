@@ -46,11 +46,7 @@ void TTKFunctionItemWidget::mousePressEvent(QMouseEvent *event)
     update();
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKFunctionItemWidget::enterEvent(QEnterEvent *event)
-#else
-void TTKFunctionItemWidget::enterEvent(QEvent *event)
-#endif
+void TTKFunctionItemWidget::enterEvent(QtEnterEvent *event)
 {
     QWidget::enterEvent(event);
     m_enterIn = (m_selectedOn ? false : true);

@@ -161,11 +161,7 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
         if(i % 10 == 0)
         {
             strValue = QString::number(value);
-#if TTK_QT_VERSION_CHECK(5,11,0)
-            const int textWidth = fontMetrics().horizontalAdvance(strValue);
-#else
-            const int textWidth = fontMetrics().width(strValue);
-#endif
+            const int textWidth = QtFontWidth(fontMetrics(), strValue);
             const qreal textHeight = fontMetrics().height();
             const QPointF bottomPot(0, m_colorCircleRadius + S_SPACE);
             const QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_LONG);

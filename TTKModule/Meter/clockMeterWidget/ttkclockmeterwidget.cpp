@@ -31,11 +31,7 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     setSecondStyle(SecondStyleNormal);
     updateTime();
 
-#if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont(QStringList() << "Arial", 9));
-#else
-    setFont(QFont("Arial", 9));
-#endif
+    QtFontInit("Arial", 9);
 }
 
 TTKClockMeterWidget::~TTKClockMeterWidget()
@@ -253,11 +249,7 @@ void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
         const double sina = sin(startRad - i * deltaRad);
         const double cosa = cos(startRad - i * deltaRad);
         const QString &strValue = QString("%1").arg(i + 1);
-#if TTK_QT_VERSION_CHECK(5,11,0)
-        const int textWidth = fontMetrics().horizontalAdvance(strValue);
-#else
-        const int textWidth = fontMetrics().width(strValue);
-#endif
+        const int textWidth = QtFontWidth(fontMetrics(), strValue);
         const int textHeight = fontMetrics().height();
         const int x = radius * cosa - textWidth / 2.0;
         const int y = -radius * sina + textHeight / 4.0;

@@ -19,7 +19,7 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkglobal.h"
+#include "ttkqtwrapper.h"
 
 #define TTK_BUILD_EXAMPLE
 

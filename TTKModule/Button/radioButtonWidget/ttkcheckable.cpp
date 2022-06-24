@@ -97,11 +97,7 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     m_labelPosition = TTKCheckable::LabelPositionRight;
 
     setCheckable(true);
-#if TTK_QT_VERSION_CHECK(6,2,0)
-    setFont(QFont(QStringList() << "Roboto", 11, QFont::Normal));
-#else
-    setFont(QFont("Roboto", 11, QFont::Normal));
-#endif
+    setFont(QtFontInit("Roboto", 11, QFont::Normal));
 
     m_stateMachine->addState(m_uncheckedState);
     m_stateMachine->addState(m_checkedState);

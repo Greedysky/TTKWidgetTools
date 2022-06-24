@@ -202,35 +202,27 @@ void TTKBatteryLabel::paintEvent(QPaintEvent *event)
 void TTKBatteryLabel::drawBorder(QPainter *painter)
 {
     painter->save();
-    double headWidth = width() / 10;
-    double batteryWidth = width() - headWidth;
+    const double headWidth = width() / 10;
+    const double batteryWidth = width() - headWidth;
 
-    QPointF topLeft(5, 5);
-    QPointF bottomRight(batteryWidth, height() - 5);
+    const QPointF topLeft(5, 5);
+    const QPointF bottomRight(batteryWidth, height() - 5);
     m_batteryRect = QRectF(topLeft, bottomRight);
 
     painter->setPen(QPen(m_borderColorStart, 5));
     painter->setBrush(Qt::NoBrush);
-#if TTK_QT_VERSION_CHECK(5,13,0)
-    painter->drawRoundedRect(m_batteryRect, 10, 20);
-#else
-    painter->drawRoundRect(m_batteryRect, 10, 20);
-#endif
+    QtDrawRoundedRect(painter, m_batteryRect, 10, 20);
 
-    QPointF headRectTopLeft(m_batteryRect.topRight().x(), height() / 3);
-    QPointF headRectBottomRight(width(), height() - height() / 3);
-    QRectF headRect(headRectTopLeft, headRectBottomRight);
+    const QPointF headRectTopLeft(m_batteryRect.topRight().x(), height() / 3);
+    const QPointF headRectBottomRight(width(), height() - height() / 3);
+    const QRectF headRect(headRectTopLeft, headRectBottomRight);
 
     QLinearGradient headRectGradient(headRect.topLeft(), headRect.bottomLeft());
     headRectGradient.setColorAt(0.0, m_borderColorStart);
     headRectGradient.setColorAt(1.0, m_borderColorEnd);
 
     painter->setBrush(headRectGradient);
-#if TTK_QT_VERSION_CHECK(5,13,0)
-    painter->drawRoundedRect(headRect, 15, 25);
-#else
-    painter->drawRoundRect(headRect, 15, 25);
-#endif
+    QtDrawRoundedRect(painter, headRect, 15, 25);
     painter->restore();
 }
 
@@ -253,17 +245,13 @@ void TTKBatteryLabel::drawBg(QPainter *painter)
     painter->setPen(Qt::NoPen);
     painter->setBrush(batteryGradient);
 
-    int margin = qMin(width(), height()) / 20;
-    double unit = (m_batteryRect.width() - (margin * 2)) / 100;
-    double width = m_currentValue * unit;
-    QPointF topLeft(m_batteryRect.topLeft().x() + margin, m_batteryRect.topLeft().y() + margin);
-    QPointF bottomRight(width + margin + 5, m_batteryRect.bottomRight().y() - margin);
-    QRectF rect(topLeft, bottomRight);
+    const int margin = qMin(width(), height()) / 20;
+    const double unit = (m_batteryRect.width() - (margin * 2)) / 100;
+    const double width = m_currentValue * unit;
+    const QPointF topLeft(m_batteryRect.topLeft().x() + margin, m_batteryRect.topLeft().y() + margin);
+    const QPointF bottomRight(width + margin + 5, m_batteryRect.bottomRight().y() - margin);
+    const QRectF rect(topLeft, bottomRight);
 
-#if TTK_QT_VERSION_CHECK(5,13,0)
-    painter->drawRoundedRect(rect, 10, 10);
-#else
-    painter->drawRoundRect(rect, 10, 10);
-#endif
+    QtDrawRoundedRect(painter, rect, 10, 10);
     painter->restore();
 }

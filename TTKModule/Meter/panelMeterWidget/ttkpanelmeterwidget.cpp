@@ -361,11 +361,7 @@ void TTKPanelMeterWidget::drawScaleNum(QPainter *painter)
         const double cosa = qCos(startRad - i * deltaRad);
         const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         const QString &strValue = QString("%1").arg(value, 0, 'f', m_precision);
-#if TTK_QT_VERSION_CHECK(5,11,0)
-        const int textWidth = fontMetrics().horizontalAdvance(strValue);
-#else
-        const int textWidth = fontMetrics().width(strValue);
-#endif
+        const int textWidth = QtFontWidth(fontMetrics(), strValue);
         const int textHeight = fontMetrics().height();
         const int x = radius * cosa - textWidth / 2.0;
         const int y = -radius * sina + textHeight / 4.0;

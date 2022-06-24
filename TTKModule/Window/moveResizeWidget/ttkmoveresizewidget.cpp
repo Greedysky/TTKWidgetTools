@@ -58,11 +58,7 @@ void TTKMoveResizeWidget::mousePressEvent(QMouseEvent *event)
         m_struct.m_windowPos = pos();
         if(QRect(DISTANCE + 1, DISTANCE + 1, width() - (DISTANCE + 1) * 2, height() - (DISTANCE + 1) * 2).contains(event->pos()))
         {
-#if TTK_QT_VERSION_CHECK(6,0,0)
-            m_struct.m_mousePos = event->globalPosition().toPoint();
-#else
-            m_struct.m_mousePos = event->globalPos();
-#endif
+            m_struct.m_mousePos = QtMouseEventGlobalPos(event);
             m_struct.m_mouseLeftPress = true;
         }
         else
@@ -81,11 +77,7 @@ void TTKMoveResizeWidget::mouseMoveEvent(QMouseEvent *event)
 
     if(m_struct.m_mouseLeftPress)
     {
-#if TTK_QT_VERSION_CHECK(6,0,0)
-        move(m_struct.m_windowPos + (event->globalPosition().toPoint() - m_struct.m_mousePos));
-#else
-        move(m_struct.m_windowPos + (event->globalPos() - m_struct.m_mousePos));
-#endif
+        move(m_struct.m_windowPos + QtMouseEventGlobalPos(event) - m_struct.m_mousePos);
     }
 }
 

@@ -17,11 +17,7 @@ void TTKSplitItemLabel::setSplitString(const QString &str)
     update();
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKSplitItemLabel::enterEvent(QEnterEvent *event)
-#else
-void TTKSplitItemLabel::enterEvent(QEvent *event)
-#endif
+void TTKSplitItemLabel::enterEvent(QtEnterEvent *event)
 {
     QLabel::enterEvent(event);
     m_lineGeometry = QRectF();
@@ -60,11 +56,7 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
 
     for(const QString &var : qAsConst(data))
     {
-#if TTK_QT_VERSION_CHECK(5,11,0)
-        const int fs = metrics.horizontalAdvance(var.trimmed());
-#else
-        const int fs = metrics.width(var.trimmed());
-#endif
+        const int fs = QtFontWidth(metrics, var.trimmed());
         if(offset <= event->pos().x() && event->pos().x() <= offset + fs)
         {
             setCursor(QCursor(Qt::PointingHandCursor));
@@ -72,11 +64,8 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
             m_currentString = var.trimmed();
             break;
         }
-#if TTK_QT_VERSION_CHECK(5,11,0)
-        offset += (fs + metrics.horizontalAdvance(" - "));
-#else
-        offset += (fs + metrics.width(" - "));
-#endif
+
+        offset += (fs + QtFontWidth(metrics, " - "));
     }
     update();
 }

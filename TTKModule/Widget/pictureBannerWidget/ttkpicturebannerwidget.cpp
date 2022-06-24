@@ -18,11 +18,7 @@ TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(ArrowType type, QWidget
     setFixedSize(12, 20);
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKPictureBannerArrowWidget::enterEvent(QEnterEvent *event)
-#else
-void TTKPictureBannerArrowWidget::enterEvent(QEvent *event)
-#endif
+void TTKPictureBannerArrowWidget::enterEvent(QtEnterEvent *event)
 {
     Q_UNUSED(event);
     m_bMouseHover = true;
@@ -97,11 +93,7 @@ void TTKPictureBannerIndicator::select(bool selected)
     update();
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKPictureBannerIndicator::enterEvent(QEnterEvent *event)
-#else
-void TTKPictureBannerIndicator::enterEvent(QEvent *event)
-#endif
+void TTKPictureBannerIndicator::enterEvent(QtEnterEvent *event)
 {
     Q_UNUSED(event);
     emit entered();
@@ -302,11 +294,7 @@ void TTKPictureBannerView::slotArrowClicked()
     }
 }
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
-void TTKPictureBannerView::enterEvent(QEnterEvent *event)
-#else
-void TTKPictureBannerView::enterEvent(QEvent *event)
-#endif
+void TTKPictureBannerView::enterEvent(QtEnterEvent *event)
 {
     Q_UNUSED(event);
     setArrowHidden(false);

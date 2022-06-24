@@ -46,11 +46,7 @@ void TTKFunctionToolBoxTopWidget::setItemExpand(bool expand)
 
 bool TTKFunctionToolBoxTopWidget::isItemExpand() const
 {
-#if TTK_QT_VERSION_CHECK(5,15,0)
-    const QPixmap &pix =  m_labelIcon->pixmap(Qt::ReturnByValue);
-#else
-    const QPixmap &pix = *m_labelIcon->pixmap();
-#endif
+    const QPixmap &pix = QtLablePixmap(m_labelIcon);
     return pix.cacheKey() == QPixmap(":/res/down").cacheKey();
 }
 
