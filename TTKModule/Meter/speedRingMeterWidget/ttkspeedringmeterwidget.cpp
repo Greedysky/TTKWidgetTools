@@ -366,6 +366,7 @@ void TTKSpeedRingMeterWidget::drawScale(QPainter *painter)
             {
                 pen.setColor(m_ringColorEnd);
             }
+
             index++;
             pen.setWidthF(1.5);
             painter->setPen(pen);
@@ -384,7 +385,7 @@ void TTKSpeedRingMeterWidget::drawScale(QPainter *painter)
 
 void TTKSpeedRingMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 70;
+    constexpr int radius = 70;
     painter->save();
     painter->setPen(m_textColor);
 
@@ -408,7 +409,7 @@ void TTKSpeedRingMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKSpeedRingMeterWidget::drawPointer(QPainter *painter)
 {
-    const int radius = 62;
+    constexpr int radius = 62;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_pointerColor);
@@ -426,7 +427,7 @@ void TTKSpeedRingMeterWidget::drawPointer(QPainter *painter)
 
 void TTKSpeedRingMeterWidget::drawValue(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 

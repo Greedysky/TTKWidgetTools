@@ -243,7 +243,7 @@ void TTKTemperatureMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKTemperatureMeterWidget::drawOuterCircle(QPainter *painter)
 {
-    const int radius = 91;
+    constexpr int radius = 91;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -254,7 +254,7 @@ void TTKTemperatureMeterWidget::drawOuterCircle(QPainter *painter)
 
 void TTKTemperatureMeterWidget::drawInnerCircle(QPainter *painter)
 {
-    const int radius = 80;
+    constexpr int radius = 80;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -265,7 +265,7 @@ void TTKTemperatureMeterWidget::drawInnerCircle(QPainter *painter)
 
 void TTKTemperatureMeterWidget::drawProgress(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
     painter->save();
     painter->setPen(Qt::NoPen);
     const QRectF rect(-radius, -radius, radius * 2, radius * 2);
@@ -284,7 +284,7 @@ void TTKTemperatureMeterWidget::drawProgress(QPainter *painter)
 
 void TTKTemperatureMeterWidget::drawCenterCircle(QPainter *painter)
 {
-    const int radius = 60;
+    constexpr int radius = 60;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -295,7 +295,7 @@ void TTKTemperatureMeterWidget::drawCenterCircle(QPainter *painter)
 
 void TTKTemperatureMeterWidget::drawUnit(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 
@@ -303,7 +303,7 @@ void TTKTemperatureMeterWidget::drawUnit(QPainter *painter)
     font.setPixelSize(30);
     painter->setFont(font);
 
-    const int offsetY = 80;
+    constexpr int offsetY = 80;
     const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
     painter->drawText(textRect, Qt::AlignCenter, QString::number(m_value));
     const QRectF unitRect(-radius, -radius + offsetY, radius * 2, radius * 2 - offsetY);

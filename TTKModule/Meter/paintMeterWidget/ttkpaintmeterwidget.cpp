@@ -110,8 +110,8 @@ void TTKPaintMeterWidget::drawCrown(QPainter *painter)
 {
     painter->save();
 
-    const int startAngle = 30 * 16;
-    const int spanAngle = 390 * 16;
+    constexpr int startAngle = 30 * 16;
+    constexpr int spanAngle = 390 * 16;
 
     QLinearGradient linearGrad(QPointF(-47, -47), QPointF(94, 94));
     linearGrad.setColorAt(0, Qt::white);
@@ -160,8 +160,8 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
     painter->save();
     painter->setPen(m_foreground);
 
-    const double startRad = m_startAngle*PI/180.0 + PI/2;
-    const double deltaRad = (m_endAngle-m_startAngle) / (m_steps) * (PI/180);
+    const double startRad = m_startAngle * PI / 180.0 + PI / 2;
+    const double deltaRad = (m_endAngle - m_startAngle) / m_steps * (PI / 180);
     double sina, cosa;
     for(int i=0; i <= m_steps; ++i)
     {

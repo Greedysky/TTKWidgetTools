@@ -84,7 +84,7 @@ void TTKCustomRingWidget::drawBg(QPainter *painter)
 
 void TTKCustomRingWidget::drawOutCircle(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_outCircleColor);
@@ -94,7 +94,7 @@ void TTKCustomRingWidget::drawOutCircle(QPainter *painter)
 
 void TTKCustomRingWidget::drawMidCircle(QPainter *painter)
 {
-    const int radius = 50;
+    constexpr int radius = 50;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_midCircleColor);
@@ -104,7 +104,7 @@ void TTKCustomRingWidget::drawMidCircle(QPainter *painter)
 
 void TTKCustomRingWidget::drawInCircle(QPainter *painter)
 {
-    const int radius = 10;
+    constexpr int radius = 10;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_inCircleColor);

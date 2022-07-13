@@ -283,7 +283,7 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
     const double length = height() - 2 * m_space;
     const double increment = length / (m_maxValue - m_minValue);
 
-    const int longLineLen = 10;
+    constexpr int longLineLen = 10;
     int shortLineLen = 7;
 
     for(int i = m_maxValue; i >= m_minValue; i = i - m_shortStep)

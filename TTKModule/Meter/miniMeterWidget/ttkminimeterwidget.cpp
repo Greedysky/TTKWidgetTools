@@ -198,8 +198,8 @@ void TTKMiniMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKMiniMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 96;
-    const int offset = 10;
+    constexpr int radius = 96;
+    constexpr int offset = 10;
 
     painter->save();
     painter->rotate(m_startAngle);
@@ -238,7 +238,7 @@ void TTKMiniMeterWidget::drawScale(QPainter *painter)
 
 void TTKMiniMeterWidget::drawBgCircle(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
     painter->save();
 
     QPen pen;
@@ -252,7 +252,7 @@ void TTKMiniMeterWidget::drawBgCircle(QPainter *painter)
 
 void TTKMiniMeterWidget::drawCenterCircle(QPainter *painter)
 {
-    const int radius = 15;
+    constexpr int radius = 15;
     painter->save();
 
     painter->setPen(Qt::NoPen);
@@ -263,8 +263,8 @@ void TTKMiniMeterWidget::drawCenterCircle(QPainter *painter)
 
 void TTKMiniMeterWidget::drawPointerCircle(QPainter *painter)
 {
-    const int radius = 15;
-    const int offset = 20;
+    constexpr int radius = 15;
+    constexpr int offset = 20;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -328,8 +328,8 @@ void TTKMiniMeterWidget::drawPointerIndicatorR(QPainter *painter)
 
 void TTKMiniMeterWidget::drawPointerTriangle(QPainter *painter)
 {
-    const int radius = 20;
-    const int offset = 55;
+    constexpr int radius = 20;
+    constexpr int offset = 55;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -352,7 +352,7 @@ void TTKMiniMeterWidget::drawValue(QPainter *painter)
         return;
     }
 
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 

@@ -217,7 +217,7 @@ void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKPercentMeterWidget::drawArc(QPainter *painter)
 {
-    const int radius = 95;
+    constexpr int radius = 95;
     painter->save();
     painter->setBrush(Qt::NoBrush);
 
@@ -242,8 +242,8 @@ void TTKPercentMeterWidget::drawArc(QPainter *painter)
 
 void TTKPercentMeterWidget::drawCircle(QPainter *painter)
 {
-    const int radius = 6;
-    const int offset = 83;
+    constexpr int radius = 6;
+    constexpr int offset = 83;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -258,7 +258,7 @@ void TTKPercentMeterWidget::drawCircle(QPainter *painter)
 
 void TTKPercentMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
     painter->save();
     painter->rotate(m_startAngle);
 
@@ -281,7 +281,7 @@ void TTKPercentMeterWidget::drawScale(QPainter *painter)
 
 void TTKPercentMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
     painter->save();
     painter->setPen(m_scaleNumColor);
 
@@ -305,7 +305,7 @@ void TTKPercentMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKPercentMeterWidget::drawValue(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 
@@ -321,7 +321,7 @@ void TTKPercentMeterWidget::drawValue(QPainter *painter)
 
 void TTKPercentMeterWidget::drawTitle(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_titleColor);
 

@@ -37,7 +37,7 @@ void TTKTimeMeterWidget::drawCrown(QPainter *painter)
 {
     painter->save();
 
-    const int radius = 100;
+    constexpr int radius = 100;
     QLinearGradient linearGradient(0, -radius, 0, radius);
     linearGradient.setColorAt(0, Qt::white);
     linearGradient.setColorAt(1, Qt::gray);

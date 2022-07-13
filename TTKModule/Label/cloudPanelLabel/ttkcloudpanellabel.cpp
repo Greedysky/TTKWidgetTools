@@ -218,8 +218,8 @@ void TTKCloudPanelLabel::recalcLayout()
     const QPointF &center = rect().center();
     const double centerSize = side * 1.0 / 4.3;
     const double iconSize = side * 1.0 / 5.4;
-    const double offset1 = 2.3;
-    const double offset2 = 1.7;
+    constexpr double offset1 = 2.3;
+    constexpr double offset2 = 1.7;
 
     m_centerRect = QRectF(center.x() - centerSize / 2, center.y() - centerSize / 2, centerSize, centerSize);
     m_leftRect = QRectF(center.x() - iconSize * offset1, center.y() - iconSize / 2, iconSize, iconSize);
@@ -296,7 +296,7 @@ void TTKCloudPanelLabel::drawCircle(QPainter *painter, int radius, const QBrush 
 
 void TTKCloudPanelLabel::drawArc(QPainter *painter)
 {
-    const int radius = 91;
+    constexpr int radius = 91;
     painter->save();
     painter->setBrush(Qt::NoBrush);
 
@@ -352,8 +352,8 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
     painter->save();
     radius = 70;
 
-    const int steps = 8;
-    const double angleStep = 360.0 / steps;
+    constexpr int steps = 8;
+    constexpr double angleStep = 360.0 / steps;
 
     int bp = 0;
     bool isIn = false;

@@ -58,13 +58,13 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
 
     if(!pixmap.isNull())
     {
-        const qreal p = static_cast<qreal>((height()) - m_iconSize)/2;
-        const qreal z = m_iconSize/24;
+        const qreal p = static_cast<qreal>((height()) - m_iconSize) / 2;
+        const qreal z = m_iconSize / 24;
 
         QTransform t;
         if(TTKCheckable::LabelPositionLeft == m_checkable->labelPosition())
         {
-            t.translate(p+width()-42, p);
+            t.translate(p+width() - 42, p);
         }
         else
         {

@@ -183,7 +183,7 @@ void TTKClockMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKClockMeterWidget::drawCrown(QPainter *painter)
 {
-    const int radius = 99;
+    constexpr int radius = 99;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -198,7 +198,7 @@ void TTKClockMeterWidget::drawCrown(QPainter *painter)
 
 void TTKClockMeterWidget::drawBg(QPainter *painter)
 {
-    const int radius = 92;
+    constexpr int radius = 92;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -209,7 +209,7 @@ void TTKClockMeterWidget::drawBg(QPainter *painter)
 
 void TTKClockMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
     painter->save();
     painter->setPen(m_foreground);
 
@@ -237,12 +237,12 @@ void TTKClockMeterWidget::drawScale(QPainter *painter)
 
 void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 70;
+    constexpr int radius = 70;
     painter->save();
     painter->setPen(m_foreground);
 
-    const double startRad = 60 * (M_PI / 180);
-    const double deltaRad = 30 * (M_PI / 180);
+    constexpr double startRad = 60 * (M_PI / 180);
+    constexpr double deltaRad = 30 * (M_PI / 180);
 
     for(int i = 0; i < 12; ++i)
     {

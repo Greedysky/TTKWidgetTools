@@ -83,7 +83,7 @@ void TTKCustomPieWidget::paintEvent(QPaintEvent *event)
 void TTKCustomPieWidget::drawPie(QPainter *painter)
 {
     painter->save();
-    const int radius = 93;
+    constexpr int radius = 93;
     const QRect rect(-radius, -radius, radius * 2, radius * 2);
     double startAngle = 0;
     const double sum = sumValue();

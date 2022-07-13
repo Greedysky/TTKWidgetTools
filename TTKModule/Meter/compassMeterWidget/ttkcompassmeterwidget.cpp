@@ -261,7 +261,7 @@ void TTKCompassMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKCompassMeterWidget::drawCrownCircle(QPainter *painter)
 {
-    const int radius = 99;
+    constexpr int radius = 99;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -277,7 +277,7 @@ void TTKCompassMeterWidget::drawCrownCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawBgCircle(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -292,11 +292,11 @@ void TTKCompassMeterWidget::drawBgCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 85;
+    constexpr int radius = 85;
     painter->save();
 
-    const int steps = 8;
-    const double angleStep = 360.0 / steps;
+    constexpr int steps = 8;
+    constexpr double angleStep = 360.0 / steps;
 
     QPen pen;
     pen.setColor(m_foreground);
@@ -342,7 +342,7 @@ void TTKCompassMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKCompassMeterWidget::drawCoverOuterCircle(QPainter *painter)
 {
-    const int radius = 68;
+    constexpr int radius = 68;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -357,7 +357,7 @@ void TTKCompassMeterWidget::drawCoverOuterCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawCoverInnerCircle(QPainter *painter)
 {
-    const int radius = 60;
+    constexpr int radius = 60;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -372,7 +372,7 @@ void TTKCompassMeterWidget::drawCoverInnerCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawCoverCenterCircle(QPainter *painter)
 {
-    const int radius = 15;
+    constexpr int radius = 15;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setOpacity(0.8);
@@ -388,7 +388,7 @@ void TTKCompassMeterWidget::drawCoverCenterCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawPointer(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     painter->setOpacity(0.7);
@@ -413,7 +413,7 @@ void TTKCompassMeterWidget::drawPointer(QPainter *painter)
 
 void TTKCompassMeterWidget::drawCenterCircle(QPainter *painter)
 {
-    const int radius = 12;
+    constexpr int radius = 12;
     painter->save();
     painter->setOpacity(1.0);
     painter->setPen(Qt::NoPen);
@@ -429,7 +429,7 @@ void TTKCompassMeterWidget::drawCenterCircle(QPainter *painter)
 
 void TTKCompassMeterWidget::drawValue(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 

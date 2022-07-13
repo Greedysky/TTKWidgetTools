@@ -149,7 +149,7 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
     painter->setPen(Qt::white);
     painter->translate(m_center);
 
-    const qreal dAngle = (qreal)270 / 100;
+    constexpr qreal dAngle = (qreal)270 / 100;
     qreal startAngle = 45;
     int value = 0;
     QString strValue;
@@ -214,13 +214,13 @@ void TTKSpeedMeterWidget::drawCoverBall(QPainter *painter)
 void TTKSpeedMeterWidget::drawTextRect(QPainter *painter)
 {
     painter->save();
-    const qreal rectWidth = m_coverCircleRadius/5;
+    const qreal rectWidth = m_coverCircleRadius / 5;
 
-    const QPointF topLeftPot(m_center.x() -2.5 * rectWidth, m_center.y()+rectWidth * 2);
+    const QPointF topLeftPot(m_center.x() - 2.5 * rectWidth, m_center.y()+rectWidth * 2);
     const QPointF bottomRightPot(topLeftPot.x() + 5 * rectWidth, topLeftPot.y()+rectWidth * 2);
     const QRectF textRect(topLeftPot, bottomRightPot);
 
-    const qreal fontSize = textRect.height()/2;
+    const qreal fontSize = textRect.height() / 2;
     QFont font;
     font.setPointSize(fontSize);
     painter->setFont(font);
@@ -270,8 +270,8 @@ void TTKSpeedMeterWidget::drawIndicator(QPainter *painter)
     painter->save();
 
     painter->translate(m_center);
-    const qreal increment = (qreal)270 / 100;
-    const qreal changedAngle = 45 + increment*m_currentValue;
+    constexpr qreal increment = (qreal)270 / 100;
+    const qreal changedAngle = 45 + increment * m_currentValue;
     painter->rotate(changedAngle);
 
     const QPointF topPot(0, m_colorCircleRadius + S_LONG);

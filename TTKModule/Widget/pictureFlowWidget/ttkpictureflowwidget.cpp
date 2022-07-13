@@ -14,7 +14,7 @@ inline long fmul(long a, long b)
 
 inline long fdiv(long num, long den)
 {
-    long long p = (long long)(num) << (PFREAL_SHIFT*2);
+    long long p = (long long)(num) << (PFREAL_SHIFT * 2);
     long long q = p / (long long)den;
     long long r = q >> PFREAL_SHIFT;
 
@@ -23,7 +23,7 @@ inline long fdiv(long num, long den)
 
 inline long fsin(int iangle)
 {
-    static const long tab[] = {
+    static constexpr long tab[] = {
          3,    103,    202,    300,    394,    485,    571,    652,
        726,    793,    853,    904,    947,    980,   1004,   1019,
       1023,   1018,   1003,    978,    944,    901,    849,    789,
@@ -220,8 +220,8 @@ void TTKPictureFlowWidgetState::reposition()
 {
     m_angle = 70 * IANGLE_MAX / 360;
 
-    m_offsetX = m_slideWidth/2 * (PFREAL_ONE-fcos(m_angle));
-    m_offsetY = m_slideWidth/2 * fsin(m_angle);
+    m_offsetX = m_slideWidth / 2 * (PFREAL_ONE-fcos(m_angle));
+    m_offsetY = m_slideWidth / 2 * fsin(m_angle);
     m_offsetX += m_slideWidth * PFREAL_ONE;
     m_offsetY += m_slideWidth * PFREAL_ONE / 4;
     m_spacing = 40;
@@ -313,7 +313,7 @@ void TTKPictureFlowWidgetAnimator::update()
     }
 
     int speed = 16384/4;
-    const int max = 2 * 65536;
+    constexpr int max = 2 * 65536;
 
     int fi = m_frame;
     fi -= (m_target << 16);

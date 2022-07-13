@@ -273,7 +273,7 @@ void TTKProgressMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKProgressMeterWidget::drawBg(QPainter *painter)
 {
-    const int radius = 99;
+    constexpr int radius = 99;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_bgColor);
@@ -283,7 +283,7 @@ void TTKProgressMeterWidget::drawBg(QPainter *painter)
 
 void TTKProgressMeterWidget::drawColorPie(QPainter *painter)
 {
-    const int radius = 95;
+    constexpr int radius = 95;
     painter->save();
     painter->setPen(Qt::NoPen);
     const QRectF rect(-radius, -radius, radius * 2, radius * 2);
@@ -302,7 +302,7 @@ void TTKProgressMeterWidget::drawColorPie(QPainter *painter)
 
 void TTKProgressMeterWidget::drawCoverCircle(QPainter *painter)
 {
-    const int radius = 85;
+    constexpr int radius = 85;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_bgColor);
@@ -312,7 +312,7 @@ void TTKProgressMeterWidget::drawCoverCircle(QPainter *painter)
 
 void TTKProgressMeterWidget::drawCircle(QPainter *painter)
 {
-    const int radius = 80;
+    constexpr int radius = 80;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -331,8 +331,8 @@ void TTKProgressMeterWidget::drawPointerCircle(QPainter *painter)
         return;
     }
 
-    const int radius = 15;
-    const int offset = 20;
+    constexpr int radius = 15;
+    constexpr int offset = 20;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -411,8 +411,8 @@ void TTKProgressMeterWidget::drawPointerTriangle(QPainter *painter)
         return;
     }
 
-    const int radius = 20;
-    const int offset = 55;
+    constexpr int radius = 20;
+    constexpr int offset = 55;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -435,7 +435,7 @@ void TTKProgressMeterWidget::drawValue(QPainter *painter)
         return;
     }
 
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 

@@ -238,8 +238,8 @@ void TTKRoundMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKRoundMeterWidget::drawDial(QPainter *painter)
 {
-    const int radius = 95;
-    const double lineWidth = 2.5;
+    constexpr int radius = 95;
+    constexpr double lineWidth = 2.5;
     painter->save();
     painter->rotate(m_angle);
 
@@ -272,7 +272,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
 
 void TTKRoundMeterWidget::drawBgOut(QPainter *painter)
 {
-    const int radius = 70;
+    constexpr int radius = 70;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_outBgColor);
@@ -282,7 +282,7 @@ void TTKRoundMeterWidget::drawBgOut(QPainter *painter)
 
 void TTKRoundMeterWidget::drawBgRound(QPainter *painter)
 {
-    const int radius = 50;
+    constexpr int radius = 50;
     painter->save();
 
     QConicalGradient conicalGradient(radius, radius, 90);
@@ -297,7 +297,7 @@ void TTKRoundMeterWidget::drawBgRound(QPainter *painter)
 
 void TTKRoundMeterWidget::drawBgCenter(QPainter *painter)
 {
-    const int radius = 30;
+    constexpr int radius = 30;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_valueBgColor);
@@ -308,7 +308,7 @@ void TTKRoundMeterWidget::drawBgCenter(QPainter *painter)
 
 void TTKRoundMeterWidget::drawText(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
 
     double currentValue = m_currentPercent * ((m_maxValue - m_minValue) / 100) + m_minValue;

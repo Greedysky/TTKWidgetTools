@@ -68,12 +68,12 @@ void TTKToggleThumb::paintEvent(QPaintEvent *event)
 
     if(Qt::Horizontal == m_toggle->orientation())
     {
-        s = height()-10;
-        r = QRectF(5+m_offset, 5, s, s);
+        s = height() - 10;
+        r = QRectF(5 + m_offset, 5, s, s);
     }else
     {
-        s = width()-10;
-        r = QRectF(5, 5+m_offset, s, s);
+        s = width() - 10;
+        r = QRectF(5, 5 + m_offset, s, s);
     }
 
     painter.drawEllipse(r);
@@ -143,15 +143,15 @@ void TTKToggleTrack::paintEvent(QPaintEvent *event)
 
     if(Qt::Horizontal == m_toggle->orientation())
     {
-        const int h = height()/2;
-        const QRect r(0, h/2, width(), h);
-        painter.drawRoundedRect(r.adjusted(14, 4, -14, -4), h/2-4, h/2-4);
+        const int h = height() / 2;
+        const QRect r(0, h / 2, width(), h);
+        painter.drawRoundedRect(r.adjusted(14, 4, -14, -4), h / 2 - 4, h / 2 - 4);
     }
     else
     {
-        const int w = width()/2;
-        const QRect r(w/2, 0, w, height());
-        painter.drawRoundedRect(r.adjusted(4, 14, -4, -14), w/2-4, w/2-4);
+        const int w = width() / 2;
+        const QRect r(w / 2, 0, w, height());
+        painter.drawRoundedRect(r.adjusted(4, 14, -4, -14), w / 2 - 4, w / 2 - 4);
     }
 }
 

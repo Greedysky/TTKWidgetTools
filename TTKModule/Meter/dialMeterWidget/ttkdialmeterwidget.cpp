@@ -203,7 +203,7 @@ void TTKDialMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKDialMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 80;
+    constexpr int radius = 80;
     painter->save();
     painter->rotate(m_startAngle);
 
@@ -234,7 +234,7 @@ void TTKDialMeterWidget::drawScale(QPainter *painter)
 
 void TTKDialMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
     painter->save();
     painter->setPen(m_textColor);
 
@@ -258,7 +258,7 @@ void TTKDialMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKDialMeterWidget::drawBorderCircle(QPainter *painter)
 {
-    const int radius = 70;
+    constexpr int radius = 70;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -272,7 +272,7 @@ void TTKDialMeterWidget::drawBorderCircle(QPainter *painter)
 
 void TTKDialMeterWidget::drawBgCircle(QPainter *painter)
 {
-    const int radius = 60;
+    constexpr int radius = 60;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -286,8 +286,8 @@ void TTKDialMeterWidget::drawBgCircle(QPainter *painter)
 
 void TTKDialMeterWidget::drawPointerCircle(QPainter *painter)
 {
-    const int radius = 15;
-    const int offset = 10;
+    constexpr int radius = 15;
+    constexpr int offset = 10;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -308,7 +308,7 @@ void TTKDialMeterWidget::drawPointerCircle(QPainter *painter)
 
 void TTKDialMeterWidget::drawPointerIndicator(QPainter *painter)
 {
-    const int radius = 55;
+    constexpr int radius = 55;
     painter->save();
     painter->setOpacity(0.8);
     painter->setPen(Qt::NoPen);
@@ -326,7 +326,7 @@ void TTKDialMeterWidget::drawPointerIndicator(QPainter *painter)
 
 void TTKDialMeterWidget::drawPointerIndicatorR(QPainter *painter)
 {
-    const int radius = 55;
+    constexpr int radius = 55;
     painter->save();
     painter->setOpacity(0.6);
 
@@ -352,8 +352,8 @@ void TTKDialMeterWidget::drawPointerIndicatorR(QPainter *painter)
 
 void TTKDialMeterWidget::drawPointerTriangle(QPainter *painter)
 {
-    const int radius = 10;
-    const int offset = 45;
+    constexpr int radius = 10;
+    constexpr int offset = 45;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -375,8 +375,8 @@ void TTKDialMeterWidget::drawCenterCircle(QPainter *painter)
     {
         return;
     }
-    const int radius = 15;
 
+    constexpr int radius = 15;
     painter->save();
     painter->setPen(Qt::NoPen);
 
@@ -396,7 +396,7 @@ void TTKDialMeterWidget::drawValue(QPainter *painter)
         return;
     }
 
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 

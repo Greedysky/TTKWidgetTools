@@ -378,7 +378,7 @@ void TTKCarMeterWidget::paintEvent(QPaintEvent *event)
 
 void TTKCarMeterWidget::drawOuterCircle(QPainter *painter)
 {
-    const int radius = 99;
+    constexpr int radius = 99;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -389,7 +389,7 @@ void TTKCarMeterWidget::drawOuterCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawInnerCircle(QPainter *painter)
 {
-    const int radius = 90;
+    constexpr int radius = 90;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -400,7 +400,7 @@ void TTKCarMeterWidget::drawInnerCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawColorPie(QPainter *painter)
 {
-    const int radius = 60;
+    constexpr int radius = 60;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -412,7 +412,7 @@ void TTKCarMeterWidget::drawColorPie(QPainter *painter)
         const double angleStart = angleAll * 0.7;
         const double angleMid = angleAll * 0.15;
         const double angleEnd = angleAll * 0.15;
-        const int offset = 3;
+        constexpr int offset = 3;
 
         painter->setBrush(m_pieColorStart);
         painter->drawPie(rect, (270 - m_startAngle - angleStart) * 16, angleStart * 16);
@@ -440,7 +440,7 @@ void TTKCarMeterWidget::drawColorPie(QPainter *painter)
 
 void TTKCarMeterWidget::drawCoverCircle(QPainter *painter)
 {
-    const int radius = 50;
+    constexpr int radius = 50;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -451,7 +451,7 @@ void TTKCarMeterWidget::drawCoverCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 72;
+    constexpr int radius = 72;
 
     painter->save();
     painter->rotate(m_startAngle);
@@ -484,7 +484,7 @@ void TTKCarMeterWidget::drawScale(QPainter *painter)
 
 void TTKCarMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 82;
+    constexpr int radius = 82;
 
     painter->save();
     painter->setPen(m_scaleColor);
@@ -509,8 +509,8 @@ void TTKCarMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKCarMeterWidget::drawPointerCircle(QPainter *painter)
 {
-    const int radius = 6;
-    const int offset = 30;
+    constexpr int radius = 6;
+    constexpr int offset = 30;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -525,7 +525,7 @@ void TTKCarMeterWidget::drawPointerCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawPointerIndicator(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     painter->setOpacity(0.8);
@@ -544,7 +544,7 @@ void TTKCarMeterWidget::drawPointerIndicator(QPainter *painter)
 
 void TTKCarMeterWidget::drawPointerIndicatorR(QPainter *painter)
 {
-    const int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     painter->setOpacity(1.0);
@@ -573,8 +573,8 @@ void TTKCarMeterWidget::drawPointerIndicatorR(QPainter *painter)
 
 void TTKCarMeterWidget::drawPointerTriangle(QPainter *painter)
 {
-    const int radius = 10;
-    const int offset = 38;
+    constexpr int radius = 10;
+    constexpr int offset = 38;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -592,7 +592,7 @@ void TTKCarMeterWidget::drawPointerTriangle(QPainter *painter)
 
 void TTKCarMeterWidget::drawRoundCircle(QPainter *painter)
 {
-    const int radius = 18;
+    constexpr int radius = 18;
 
     painter->save();
     painter->setOpacity(0.8);
@@ -604,7 +604,7 @@ void TTKCarMeterWidget::drawRoundCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawCenterCircle(QPainter *painter)
 {
-    const int radius = 15;
+    constexpr int radius = 15;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -615,7 +615,8 @@ void TTKCarMeterWidget::drawCenterCircle(QPainter *painter)
 
 void TTKCarMeterWidget::drawValue(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
+
     painter->save();
     painter->setPen(m_textColor);
 

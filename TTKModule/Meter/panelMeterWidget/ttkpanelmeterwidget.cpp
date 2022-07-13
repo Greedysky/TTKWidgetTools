@@ -316,7 +316,7 @@ void TTKPanelMeterWidget::drawRing(QPainter *painter)
 
 void TTKPanelMeterWidget::drawScale(QPainter *painter)
 {
-    const int radius = 80;
+    constexpr int radius = 80;
     painter->save();
     painter->rotate(m_startAngle);
 
@@ -348,7 +348,7 @@ void TTKPanelMeterWidget::drawScale(QPainter *painter)
 
 void TTKPanelMeterWidget::drawScaleNum(QPainter *painter)
 {
-    const int radius = 95;
+    constexpr int radius = 95;
     painter->save();
     painter->setPen(m_scaleColor);
 
@@ -372,7 +372,7 @@ void TTKPanelMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKPanelMeterWidget::drawPointer(QPainter *painter)
 {
-    const int radius = 70;
+    constexpr int radius = 70;
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_pointerColor);
@@ -389,7 +389,7 @@ void TTKPanelMeterWidget::drawPointer(QPainter *painter)
 
 void TTKPanelMeterWidget::drawValue(QPainter *painter)
 {
-    const int radius = 100;
+    constexpr int radius = 100;
     painter->save();
     painter->setPen(m_textColor);
 
