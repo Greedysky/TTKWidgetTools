@@ -9,11 +9,11 @@ TTKFunctionNavigationWidget::TTKFunctionNavigationWidget(QWidget *parent)
     m_paddingRight = 5;
     m_paddingTop = 5;
     m_paddingBottom = 5;
-    m_textAlign = TextAlignLeft;
+    m_textAlign = Qt::AlignLeft;
 
     m_showTriangle = false;
     m_triangleLen = 5;
-    m_trianglePosition = TrianglePositionRight;
+    m_trianglePosition = TrianglePosition::Right;
     m_triangleColor = QColor(255, 255, 255);
 
     m_showIcon = false;
@@ -26,7 +26,7 @@ TTKFunctionNavigationWidget::TTKFunctionNavigationWidget(QWidget *parent)
     m_showLine = true;
     m_lineSpace = 0;
     m_lineWidth = 5;
-    m_linePosition = LinePositionLeft;
+    m_linePosition = LinePosition::Left;
     m_lineColor = QColor(0, 187, 158);
 
     m_normalBgColor = QColor(230, 230, 230);
@@ -94,7 +94,7 @@ void TTKFunctionNavigationWidget::setPadding(int paddingLeft, int paddingRight, 
     update();
 }
 
-void TTKFunctionNavigationWidget::setTextAlign(TextAlign textAlign)
+void TTKFunctionNavigationWidget::setTextAlign(Qt::Alignment textAlign)
 {
     if(textAlign != m_textAlign)
     {
@@ -351,19 +351,19 @@ void TTKFunctionNavigationWidget::drawBackground(QPainter *painter)
     const int h = height();
 
     QRect bgRect;
-    if(m_linePosition == LinePositionLeft)
+    if(m_linePosition == LinePosition::Left)
     {
         bgRect = QRect(m_lineSpace, 0, w - m_lineSpace, h);
     }
-    else if(m_linePosition == LinePositionRight)
+    else if(m_linePosition == LinePosition::Right)
     {
         bgRect = QRect(0, 0, w - m_lineSpace, h);
     }
-    else if(m_linePosition == LinePositionTop)
+    else if(m_linePosition == LinePosition::Top)
     {
         bgRect = QRect(0, m_lineSpace, w, h - m_lineSpace);
     }
-    else if(m_linePosition == LinePositionBottom)
+    else if(m_linePosition == LinePosition::Bottom)
     {
         bgRect = QRect(0, 0, w, h - m_lineSpace);
     }
@@ -486,22 +486,22 @@ void TTKFunctionNavigationWidget::drawLine(QPainter *painter)
     painter->setPen(pen);
 
     QPoint pointStart, pointEnd;
-    if(m_linePosition == LinePositionLeft)
+    if(m_linePosition == LinePosition::Left)
     {
         pointStart = QPoint(0, 0);
         pointEnd = QPoint(0, height());
     }
-    else if(m_linePosition == LinePositionRight)
+    else if(m_linePosition == LinePosition::Right)
     {
         pointStart = QPoint(width(), 0);
         pointEnd = QPoint(width(), height());
     }
-    else if(m_linePosition == LinePositionTop)
+    else if(m_linePosition == LinePosition::Top)
     {
         pointStart = QPoint(0, 0);
         pointEnd = QPoint(width(), 0);
     }
-    else if(m_linePosition == LinePositionBottom)
+    else if(m_linePosition == LinePosition::Bottom)
     {
         pointStart = QPoint(0, height());
         pointEnd = QPoint(width(), height());
@@ -533,19 +533,19 @@ void TTKFunctionNavigationWidget::drawTriangle(QPainter *painter)
     const int midHeight = h / 2;
 
     QPolygon pts;
-    if(m_trianglePosition == TrianglePositionLeft)
+    if(m_trianglePosition == TrianglePosition::Left)
     {
         pts.setPoints(3, m_triangleLen, midHeight, 0, midHeight - m_triangleLen, 0, midHeight + m_triangleLen);
     }
-    else if(m_trianglePosition == TrianglePositionRight)
+    else if(m_trianglePosition == TrianglePosition::Right)
     {
         pts.setPoints(3, w - m_triangleLen, midHeight, w, midHeight - m_triangleLen, w, midHeight + m_triangleLen);
     }
-    else if(m_trianglePosition == TrianglePositionTop)
+    else if(m_trianglePosition == TrianglePosition::Top)
     {
         pts.setPoints(3, midWidth, m_triangleLen, midWidth - m_triangleLen, 0, midWidth + m_triangleLen, 0);
     }
-    else if(m_trianglePosition == TrianglePositionBottom)
+    else if(m_trianglePosition == TrianglePosition::Bottom)
     {
         pts.setPoints(3, midWidth, h - m_triangleLen, midWidth - m_triangleLen, h, midWidth + m_triangleLen, h);
     }

@@ -250,7 +250,7 @@ void TTKSpeedRingMeterWidget::setTextColor(const QColor &textColor)
 
 QSize TTKSpeedRingMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKSpeedRingMeterWidget::updateValue()

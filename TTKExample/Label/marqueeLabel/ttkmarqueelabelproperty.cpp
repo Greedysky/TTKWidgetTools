@@ -37,7 +37,7 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "MoveStyleLeftAndRight" << "MoveStyleLeftToRight" << "MoveStyleRightToLeft";
     m_enumManager->setEnumNames(moveStyleItem, enumNames);
-    m_enumManager->setValue(moveStyleItem, TTKMarqueeLabel::MoveStyleLeftAndRight);
+    m_enumManager->setValue(moveStyleItem, TTKStatic_cast(int, TTKMarqueeLabel::MoveStyle::LeftAndRight));
     objectItem->addSubProperty(moveStyleItem);
     //
     QtProperty *foregroundItem = m_colorManager->addProperty("Foreground");

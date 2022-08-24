@@ -31,12 +31,12 @@ class TTK_MODULE_EXPORT TTKCloudPanelLabel : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCloudPanelLabel)
 public:
-    enum CloudStyle
+    enum class CloudStyle
     {
-        CloudStyleBlack = 0,
-        CloudStyleWhite = 1,
-        CloudStyleBlue = 2,
-        CloudStylePurple = 3
+        Black = 0,
+        White = 1,
+        Blue = 2,
+        Purple = 3
 	};
 
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);

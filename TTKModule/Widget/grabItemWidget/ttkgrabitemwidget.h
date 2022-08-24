@@ -30,17 +30,17 @@ class TTK_MODULE_EXPORT TTKGrabItemWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKGrabItemWidget)
 public:
-    enum Direction
+    enum class Direction
     {
-        DirectionNo = 0,
-        DirectionLeft = 1,
-        DirectionTop = 2,
-        DirectionRight = 4,
-        DirectionBottom = 8,
-        DirectionLeftTop = DirectionLeft + DirectionTop,
-        DirectionLeftBottom = DirectionLeft + DirectionBottom,
-        DirectionRightTop = DirectionRight + DirectionTop,
-        DirectionRightBottom = DirectionRight + DirectionBottom
+        No = 0,
+        Left = 1,
+        Top = 2,
+        Right = 4,
+        Bottom = 8,
+        LeftTop = Direction::Left | Direction::Top,
+        LeftBottom = Direction::Left | Direction::Bottom,
+        RightTop = Direction::Right | Direction::Top,
+        RightBottom = Direction::Right | Direction::Bottom
     };
 
     explicit TTKGrabItemWidget(QWidget *parent = nullptr);

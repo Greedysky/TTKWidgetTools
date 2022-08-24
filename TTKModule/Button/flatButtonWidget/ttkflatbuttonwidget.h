@@ -31,10 +31,10 @@ class TTK_MODULE_EXPORT TTKFlatButtonWidget : public QPushButton
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFlatButtonWidget)
 public:
-    enum IconAlignment
+    enum class IconAlignment
     {
-        LeftIcon,
-        RightIcon
+        Left,
+        Right
     };
 
     explicit TTKFlatButtonWidget(QWidget *parent = nullptr);

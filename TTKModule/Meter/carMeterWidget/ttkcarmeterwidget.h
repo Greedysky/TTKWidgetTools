@@ -31,18 +31,18 @@ class TTK_MODULE_EXPORT TTKCarMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCarMeterWidget)
 public:
-    enum PieStyle
+    enum class PieStyle
     {
-        PieStyleThree = 0,
-        PieStyleCurrent = 1
+        Three = 0,
+        Current = 1
     };
 
-    enum PointerStyle
+    enum class PointerStyle
     {
-        PointerStyleCircle = 0,
-        PointerStyleIndicator = 1,
-        PointerStyleIndicatorR = 2,
-        PointerStyleTriangle = 3
+        Circle = 0,
+        Indicator = 1,
+        IndicatorR = 2,
+        Triangle = 3
     };
 
     explicit TTKCarMeterWidget(QWidget *parent = nullptr);

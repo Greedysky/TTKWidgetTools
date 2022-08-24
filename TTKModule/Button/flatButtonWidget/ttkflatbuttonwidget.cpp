@@ -9,7 +9,7 @@ TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
     : QPushButton(parent)
 {
     m_textAlignment = Qt::AlignCenter;
-    m_iconAlignment = LeftIcon;
+    m_iconAlignment = IconAlignment::Left;
     m_backgroundColor = QColor(255, 0, 0);
     m_foregroundColor = QColor(0, 0, 0);
     m_cornerRadius = 5;
@@ -121,7 +121,7 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
     QRect textGeometry(pos + QPoint(0, base.height()/2), textSize);
     QRect iconGeometry(pos + QPoint(0, (height()-iconSize().height())/2), iconSize());
 
-    if(LeftIcon == m_iconAlignment)
+    if(IconAlignment::Left == m_iconAlignment)
     {
         textGeometry.translate(iw, 0);
     }

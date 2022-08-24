@@ -60,7 +60,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PercentStyleRect" << "PercentStyleCircle" << "PercentStyleEllipse";
     m_enumManager->setEnumNames(percentStyleItem, enumNames);
-    m_enumManager->setValue(percentStyleItem, TTKWaveProgressWidget::PercentStyleCircle);
+    m_enumManager->setValue(percentStyleItem, TTKStatic_cast(int, TTKWaveProgressWidget::PercentStyle::Circle));
     objectItem->addSubProperty(percentStyleItem);
     //
     m_browser->addProperty(objectItem);

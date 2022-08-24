@@ -62,7 +62,7 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
         const qreal z = m_iconSize / 24;
 
         QTransform t;
-        if(TTKCheckable::LabelPositionLeft == m_checkable->labelPosition())
+        if(TTKCheckable::LabelPosition::Left == m_checkable->labelPosition())
         {
             t.translate(p+width() - 42, p);
         }
@@ -94,7 +94,7 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     m_disabledCheckedState = new QState;
     m_uncheckedTransition = new QSignalTransition(this, SIGNAL(toggled(bool)));
     m_checkedTransition = new QSignalTransition(this, SIGNAL(toggled(bool)));
-    m_labelPosition = TTKCheckable::LabelPositionRight;
+    m_labelPosition = LabelPosition::Right;
 
     setCheckable(true);
     setFont(QtFontInit("Roboto", 11, QFont::Normal));
@@ -297,7 +297,7 @@ void TTKCheckable::paintEvent(QPaintEvent *event)
     pen.setColor(isEnabled() ? textColor() : disabledColor());
     painter.setPen(pen);
 
-    if(TTKCheckable::LabelPositionLeft == m_labelPosition)
+    if(LabelPosition::Left == m_labelPosition)
     {
         painter.drawText(4, 25, text());
     }

@@ -55,7 +55,7 @@ void TTKLightPointLabel::setBgColor(const QColor &bgColor)
 
 QSize TTKLightPointLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 

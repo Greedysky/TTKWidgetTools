@@ -49,7 +49,7 @@ void TTKStyleSlider::setBackgroundColor(const QColor &color)
 
 QSize TTKStyleSlider::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKStyleSlider::setOrientation(Qt::Orientation orientation)

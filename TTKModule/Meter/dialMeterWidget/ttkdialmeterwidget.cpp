@@ -22,7 +22,7 @@ TTKDialMeterWidget::TTKDialMeterWidget(QWidget *parent)
     m_textColor = QColor(0, 0, 0);
 
     m_showValue = true;
-    m_pointerStyle = PointerStyleCircle;
+    m_pointerStyle = PointerStyle::Circle;
 }
 
 void TTKDialMeterWidget::setRange(double minValue, double maxValue)
@@ -159,7 +159,7 @@ void TTKDialMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKDialMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKDialMeterWidget::paintEvent(QPaintEvent *event)
@@ -180,19 +180,19 @@ void TTKDialMeterWidget::paintEvent(QPaintEvent *event)
     drawBorderCircle(&painter);
     drawBgCircle(&painter);
 
-    if(m_pointerStyle == PointerStyleCircle)
+    if(m_pointerStyle == PointerStyle::Circle)
     {
         drawPointerCircle(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicator)
+    else if(m_pointerStyle == PointerStyle::Indicator)
     {
         drawPointerIndicator(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicatorR)
+    else if(m_pointerStyle == PointerStyle::IndicatorR)
     {
         drawPointerIndicatorR(&painter);
     }
-    else if(m_pointerStyle == PointerStyleTriangle)
+    else if(m_pointerStyle == PointerStyle::Triangle)
     {
         drawPointerTriangle(&painter);
     }

@@ -33,13 +33,13 @@ class TTK_MODULE_EXPORT TTKPictureBannerArrowWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum ArrowType
+    enum class Arrow
     {
         Left,
         Right
     };
 
-    explicit TTKPictureBannerArrowWidget(ArrowType type, QWidget *parent = nullptr);
+    explicit TTKPictureBannerArrowWidget(Arrow type, QWidget *parent = nullptr);
 
 Q_SIGNALS:
     void clicked();
@@ -53,7 +53,7 @@ protected:
 
 private:
     bool m_bMouseHover, m_bMousePress;
-    ArrowType m_type;
+    Arrow m_type;
 
 };
 

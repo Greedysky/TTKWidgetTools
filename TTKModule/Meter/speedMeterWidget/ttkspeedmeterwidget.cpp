@@ -45,7 +45,7 @@ void TTKSpeedMeterWidget::setAnimating(bool enable)
 
 QSize TTKSpeedMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKSpeedMeterWidget::updateRender()

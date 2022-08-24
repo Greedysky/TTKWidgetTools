@@ -34,8 +34,8 @@ TTKCarMeterWidget::TTKCarMeterWidget(QWidget *parent)
 
     m_showOverlay = true;
     m_overlayColor = QColor(255, 255, 255);
-    m_pieStyle = PieStyleThree;
-    m_pointerStyle = PointerStyleIndicator;
+    m_pieStyle = PieStyle::Three;
+    m_pointerStyle = PointerStyle::Indicator;
 
     m_reverse = false;
     m_currentValue = 50;
@@ -301,7 +301,7 @@ void TTKCarMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKCarMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKCarMeterWidget::updateValue()
@@ -353,19 +353,19 @@ void TTKCarMeterWidget::paintEvent(QPaintEvent *event)
     drawScale(&painter);
     drawScaleNum(&painter);
 
-    if(m_pointerStyle == PointerStyleCircle)
+    if(m_pointerStyle == PointerStyle::Circle)
     {
         drawPointerCircle(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicator)
+    else if(m_pointerStyle == PointerStyle::Indicator)
     {
         drawPointerIndicator(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicatorR)
+    else if(m_pointerStyle == PointerStyle::IndicatorR)
     {
         drawPointerIndicatorR(&painter);
     }
-    else if(m_pointerStyle == PointerStyleTriangle)
+    else if(m_pointerStyle == PointerStyle::Triangle)
     {
         drawPointerTriangle(&painter);
     }
@@ -406,7 +406,7 @@ void TTKCarMeterWidget::drawColorPie(QPainter *painter)
     painter->setPen(Qt::NoPen);
     QRectF rect(-radius, -radius, radius * 2, radius * 2);
 
-    if(m_pieStyle == PieStyleThree)
+    if(m_pieStyle == PieStyle::Three)
     {
         const double angleAll = 360.0 - m_startAngle - m_endAngle;
         const double angleStart = angleAll * 0.7;
@@ -423,7 +423,7 @@ void TTKCarMeterWidget::drawColorPie(QPainter *painter)
         painter->setBrush(m_pieColorEnd);
         painter->drawPie(rect, (270 - m_startAngle - angleStart - angleMid - angleEnd) * 16 + offset * 2, angleEnd * 16);
     }
-    else if(m_pieStyle == PieStyleCurrent)
+    else if(m_pieStyle == PieStyle::Current)
     {
         const double angleAll = 360.0 - m_startAngle - m_endAngle;
         const double angleCurrent = angleAll * ((m_currentValue - m_minValue) / (m_maxValue - m_minValue));

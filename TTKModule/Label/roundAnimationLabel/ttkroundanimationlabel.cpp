@@ -39,7 +39,7 @@ void TTKRoundAnimationLabel::stop()
 
 QSize TTKRoundAnimationLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRoundAnimationLabel::paintEvent(QPaintEvent *event)

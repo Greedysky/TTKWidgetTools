@@ -79,7 +79,7 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKArcMeterWidget::PointerStyleIndicator);
+    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKArcMeterWidget::PointerStyle::Indicator));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *arcColorItem = m_colorManager->addProperty("ArcColor");

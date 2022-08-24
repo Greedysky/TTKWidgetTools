@@ -23,7 +23,7 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "SecondStyleNormal" << "SecondStyleSpring" << "SecondStyleContinue" << "SecondStyleHide";
     m_enumManager->setEnumNames(secondStyletem, enumNames);
-    m_enumManager->setValue(secondStyletem, TTKClockMeterWidget::SecondStyleNormal);
+    m_enumManager->setValue(secondStyletem, TTKStatic_cast(int, TTKClockMeterWidget::SecondStyle::Normal));
     objectItem->addSubProperty(secondStyletem);
     //
     QtProperty *crownColorStartItem = m_colorManager->addProperty("CrownColorStart");

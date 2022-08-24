@@ -114,12 +114,12 @@ void TTKRoundProgressWidgetProperty::enumPropertyChanged(QtProperty *property, i
     TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
     if(property->propertyName() == "InnerDefaultTextStyle")
     {
-        TTKRoundProgressWidget::InnerDefaultTextStyle style(TTKRoundProgressWidget::Value);
+        TTKRoundProgressWidget::InnerDefaultTextStyle style(TTKRoundProgressWidget::InnerDefaultTextStyle::Value);
         switch(value)
         {
-            case 0: style = TTKRoundProgressWidget::Percent; break;
-            case 1: style = TTKRoundProgressWidget::Value; break;
-            case 2: style = TTKRoundProgressWidget::ValueAndMax; break;
+            case 0: style = TTKRoundProgressWidget::InnerDefaultTextStyle::Percent; break;
+            case 1: style = TTKRoundProgressWidget::InnerDefaultTextStyle::Value; break;
+            case 2: style = TTKRoundProgressWidget::InnerDefaultTextStyle::ValueAndMax; break;
         }
         widget->setInnerDefaultTextStyle(style);
     }

@@ -31,7 +31,7 @@ void TTKCrossLineLabel::setColor(const QColor &color)
 
 QSize TTKCrossLineLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKCrossLineLabel::mouseMoveEvent(QMouseEvent *event)

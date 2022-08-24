@@ -66,7 +66,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKDialMeterWidget::PointerStyleCircle);
+    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKDialMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *darkColorItem = m_colorManager->addProperty("DarkColor");

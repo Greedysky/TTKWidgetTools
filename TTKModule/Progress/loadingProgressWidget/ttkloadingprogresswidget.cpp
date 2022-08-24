@@ -54,7 +54,7 @@ void TTKLoadingProgressWidget::stop()
 
 QSize TTKLoadingProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)

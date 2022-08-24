@@ -16,13 +16,13 @@ TTKAnimation2StackedWidget::TTKAnimation2StackedWidget(QWidget *parent)
     m_currentValue = 0;
     m_currentIndex = 0;
     m_previousIndex = 0;
-    m_type = FadeExchange;
+    m_type = Module::FadeExchange;
 
     m_fade = false;
     m_animat = false;
 
-    m_animation = new QPropertyAnimation(this, "value", this);
-    m_animation->setPropertyName("value");
+    m_animation = new QPropertyAnimation(this, "m_currentValue", this);
+    m_animation->setPropertyName("m_currentValue");
     m_animation->setDuration(200);
     m_animation->setEasingCurve(m_curve);
     m_animation->setStartValue(0);
@@ -59,19 +59,19 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
     painter.save();
     switch(m_type)
     {
-        case BottomToTop :
+        case Module::BottomToTop :
                 {
                     painter.translate(0, m_currentValue);
                     painter.drawPixmap(0, -height() / 2, m_privPixmap);
                     break;
                 }
-        case TopToBottom :
+        case Module::TopToBottom :
                 {
                     painter.translate(0, m_currentValue);
                     painter.drawPixmap(0, height() / 2, m_privPixmap);
                     break;
                 }
-        case LeftToRight :
+        case Module::LeftToRight :
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
@@ -98,7 +98,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
 
                     break;
                 }
-        case RightToLeft :
+        case Module::RightToLeft :
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
@@ -123,7 +123,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
 
                     break;
                 }
-        case RollInOut:
+        case Module::RollInOut:
                 {
                     if(m_fade)
                     {
@@ -133,7 +133,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0 , m_startValue - m_currentValue, m_privPixmap);
                     break;
                 }
-        case FadeInOut:
+        case Module::FadeInOut:
                 {
                     const float opt = (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue) / 2.5;
                     if(m_fade)
@@ -144,7 +144,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
-        case FadeExchange:
+        case Module::FadeExchange:
                 {
                     const float opt = (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue);
                     if(m_fade)
@@ -155,7 +155,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
-        case BlackInOut:
+        case Module::BlackInOut:
                 {
                     float opt = (m_currentValue - (float)std::abs(m_rangeValue) / 2.0) / (float)((float)std::abs(m_rangeValue) / 2.0);
                     if(m_fade)
@@ -175,7 +175,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
-        case CoverInOutRight:
+        case Module::CoverInOutRight:
                 {
                     if(m_fade)
                     {
@@ -185,7 +185,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
-        case CoverInOutLeft:
+        case Module::CoverInOutLeft:
                 {
                     if(m_fade)
                     {
@@ -195,7 +195,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case VerticalFlipRotate:
+        case Module::VerticalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
                     if(degree <= 90)
@@ -210,11 +210,11 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     }
                     break;
                 }
-        case VerticalFlipRotateOut:
+        case Module::VerticalFlipRotateOut:
                 {
                     break;
                 }
-        case VerticalCubeRotateT2B:
+        case Module::VerticalCubeRotateT2B:
                 {
                     const float percent = (m_currentValue - m_startValue) / m_rangeValue;
                     const float degree = percent * 90;
@@ -224,7 +224,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0, 0, m_privPixmap);
                     break;
                 }
-        case VerticalCubeRotateB2T:
+        case Module::VerticalCubeRotateB2T:
                 {
                     const float percent = (m_currentValue - m_startValue) / m_rangeValue;
                     const float degree = percent * 90;
@@ -234,7 +234,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     painter.drawPixmap(0, 0, m_privPixmap);
                     break;
                 }
-        case HorizontalFlipRotate:
+        case Module::HorizontalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
                     if(degree <= qAbs(90))
@@ -260,21 +260,21 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
     painter.save();
     switch(m_type)
     {
-        case BottomToTop :
+        case Module::BottomToTop :
                 {
                     transform.translate(0, m_currentValue);
                     painter.setTransform(transform);
                     painter.drawPixmap(0, height() / 2, m_currentPixmap);
                     break;
                 }
-        case TopToBottom :
+        case Module::TopToBottom :
                 {
                     transform.translate(0, m_currentValue);
                     painter.setTransform(transform);
                     painter.drawPixmap(0, -height() / 2, m_currentPixmap);
                     break;
                 }
-        case LeftToRight :
+        case Module::LeftToRight :
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
@@ -301,7 +301,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     }
                     break;
                 }
-        case RightToLeft :
+        case Module::RightToLeft :
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
@@ -328,7 +328,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     }
                     break;
                 }
-        case RollInOut:
+        case Module::RollInOut:
                 {
                     painter.translate(m_currentValue, 0);
 
@@ -340,7 +340,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case FadeInOut:
+        case Module::FadeInOut:
                 {
                     const float opt = 1.0 - (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue);
 
@@ -352,7 +352,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case FadeExchange:
+        case Module::FadeExchange:
                 {
                     const float opt = 1.0 - (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue);
 
@@ -364,7 +364,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case BlackInOut:
+        case Module::BlackInOut:
                 {
                     float opt = ((float)std::abs(m_rangeValue) / 2.0 - m_currentValue) / ((float)std::abs(m_rangeValue) / 2.0);
 
@@ -384,7 +384,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case CoverInOutRight:
+        case Module::CoverInOutRight:
                 {
                     painter.translate(m_currentValue, 0);
 
@@ -396,7 +396,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(width() / 2, 0, m_currentPixmap);
                     break;
                 }
-        case CoverInOutLeft:
+        case Module::CoverInOutLeft:
                 {
                     painter.translate(m_currentValue, 0);
                     if(m_fade)
@@ -407,7 +407,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(width() / 2, 0, m_privPixmap);
                     break;
                 }
-        case VerticalFlipRotate:
+        case Module::VerticalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
                     if(degree > 90)
@@ -422,7 +422,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     }
                     break;
                 }
-        case VerticalFlipRotateOut:
+        case Module::VerticalFlipRotateOut:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 90;
                     if(m_fade)
@@ -434,7 +434,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case VerticalCubeRotateT2B:
+        case Module::VerticalCubeRotateT2B:
                 {
                     const float percent = (m_currentValue - m_startValue) / m_rangeValue;
                     const float degree = percent * 90;
@@ -444,7 +444,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case VerticalCubeRotateB2T:
+        case Module::VerticalCubeRotateB2T:
                 {
                     const float percent = (m_currentValue - m_startValue) / m_rangeValue;
                     const float degree = percent * 90;
@@ -454,7 +454,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     painter.drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
-        case HorizontalFlipRotate:
+        case Module::HorizontalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
                     if(degree > qAbs(90))
@@ -496,28 +496,28 @@ void TTKAnimation2StackedWidget::start(int index)
 
     switch(m_type)
     {
-        case LeftToRight:
-        case RightToLeft:
-        case SlideInOut:
-        case CoverInOutLeft:
-        case CoverInOutRight:
+        case Module::LeftToRight:
+        case Module::RightToLeft:
+        case Module::SlideInOut:
+        case Module::CoverInOutLeft:
+        case Module::CoverInOutRight:
         {
             m_startValue = width() / 2;
             break;
         }
-        case TopToBottom:
-        case BottomToTop:
+        case Module::TopToBottom:
+        case Module::BottomToTop:
         {
             m_startValue = height() / 2;
             break;
         }
-        case VerticalCubeRotateT2B:
+        case Module::VerticalCubeRotateT2B:
         {
             m_startValue = 0;
             m_endValue = height();
             break;
         }
-        case VerticalCubeRotateB2T:
+        case Module::VerticalCubeRotateB2T:
         {
             m_startValue = 0;
             m_endValue = height();
@@ -529,52 +529,52 @@ void TTKAnimation2StackedWidget::start(int index)
         }
     }
 
-    if(m_type == RightToLeft || m_type == LeftToRight)
+    if(m_type == Module::RightToLeft || m_type == Module::LeftToRight)
     {
         setLength(std::abs(m_startValue * 2), m_type);
     }
-    else if(m_type == CoverInOutLeft || m_type == CoverInOutRight)
+    else if(m_type == Module::CoverInOutLeft || m_type == Module::CoverInOutRight)
     {
         if(m_previousIndex < m_currentIndex)
         {
-            setLength(std::abs(m_startValue * 2), CoverInOutRight);
+            setLength(std::abs(m_startValue * 2), Module::CoverInOutRight);
         }
         else if(m_previousIndex > m_currentIndex)
         {
-            setLength(std::abs(m_startValue * 2), CoverInOutLeft);
+            setLength(std::abs(m_startValue * 2), Module::CoverInOutLeft);
         }
     }
-    else if(m_type == VerticalCubeRotateT2B || m_type == VerticalCubeRotateB2T)
+    else if(m_type == Module::VerticalCubeRotateT2B || m_type == Module::VerticalCubeRotateB2T)
     {
         if(m_previousIndex < m_currentIndex)
         {
-            setLength(std::abs(m_endValue), m_revert ? VerticalCubeRotateT2B : m_type);
+            setLength(std::abs(m_endValue), m_revert ? Module::VerticalCubeRotateT2B : m_type);
         }
         else if(m_previousIndex > m_currentIndex)
         {
-            setLength(std::abs(m_endValue), m_revert ? VerticalCubeRotateB2T : m_type);
+            setLength(std::abs(m_endValue), m_revert ? Module::VerticalCubeRotateB2T : m_type);
         }
     }
-    else if(m_type == TopToBottom || m_type == BottomToTop)
+    else if(m_type == Module::TopToBottom || m_type == Module::BottomToTop)
     {
         if(m_previousIndex < m_currentIndex)
         {
-            setLength(std::abs(m_startValue * 2), m_revert ? TopToBottom : BottomToTop);
+            setLength(std::abs(m_startValue * 2), m_revert ? Module::TopToBottom : Module::BottomToTop);
         }
         else if(m_previousIndex > m_currentIndex)
         {
-            setLength(std::abs(m_endValue * 2), m_revert ? BottomToTop : TopToBottom);
+            setLength(std::abs(m_endValue * 2), m_revert ? Module::BottomToTop : Module::TopToBottom);
         }
     }
-    else if(m_type == HorizontalFlipRotate)
+    else if(m_type == Module::HorizontalFlipRotate)
     {
         if(m_previousIndex < m_currentIndex)
         {
-            setLength(m_revert ? -std::abs(m_startValue) : std::abs(m_startValue), HorizontalFlipRotate);
+            setLength(m_revert ? -std::abs(m_startValue) : std::abs(m_startValue), Module::HorizontalFlipRotate);
         }
         else if(m_previousIndex > m_currentIndex)
         {
-            setLength(m_revert ? std::abs(m_startValue) : -std::abs(m_startValue), HorizontalFlipRotate);
+            setLength(m_revert ? std::abs(m_startValue) : -std::abs(m_startValue), Module::HorizontalFlipRotate);
         }
     }
 
@@ -607,91 +607,91 @@ void TTKAnimation2StackedWidget::start(int index)
     m_animation->start();
 }
 
-void TTKAnimation2StackedWidget::setLength(int length, AnimationType type)
+void TTKAnimation2StackedWidget::setLength(int length, Module type)
 {
     switch(m_type = type)
     {
-        case BottomToTop :
+        case Module::BottomToTop :
                 {
                     m_animation->setStartValue(length / 2);
                     m_animation->setEndValue(-length / 2);
                     break;
                 }
-        case LeftToRight :
+        case Module::LeftToRight :
                 {
                     m_animation->setStartValue(-length / 2);
                     m_animation->setEndValue(length / 2);
                     break;
                 }
-        case TopToBottom :
+        case Module::TopToBottom :
                 {
                     m_animation->setStartValue(-length / 2);
                     m_animation->setEndValue(length / 2);
                     break;
                 }
-        case RightToLeft :
+        case Module::RightToLeft :
                 {
                     m_animation->setStartValue(length / 2);
                     m_animation->setEndValue(-length / 2);
                     break;
                 }
-        case RollInOut:
+        case Module::RollInOut:
                 {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);
                     break;
                 }
-        case FadeInOut:
-        case BlackInOut:
-        case FadeExchange:
+        case Module::FadeInOut:
+        case Module::BlackInOut:
+        case Module::FadeExchange:
                 {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);
                     break;
                 }
-        case SlideInOut:
+        case Module::SlideInOut:
                 {
                     m_animation->setStartValue(-length / 2);
                     m_animation->setEndValue(length / 2);
                     break;
                 }
-        case CoverInOutRight:
+        case Module::CoverInOutRight:
                 {
                     m_animation->setStartValue(length / 2);
                     m_animation->setEndValue(-length / 2);
                     break;
                 }
-        case CoverInOutLeft:
+        case Module::CoverInOutLeft:
                 {
                     m_animation->setStartValue(-length / 2);
                     m_animation->setEndValue(length / 2);
                     break;
                 }
-        case VerticalFlipRotate:
+        case Module::VerticalFlipRotate:
             {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);
                     break;
             }
-        case VerticalFlipRotateOut:
+        case Module::VerticalFlipRotateOut:
             {
                     m_animation->setStartValue(0);
                     m_animation->setEndValue(length);
                     break;
             }
-        case VerticalCubeRotateT2B:
+        case Module::VerticalCubeRotateT2B:
             {
                     m_animation->setStartValue(0);
                     m_animation->setEndValue(length);
                     break;
             }
-        case VerticalCubeRotateB2T:
+        case Module::VerticalCubeRotateB2T:
             {
                     m_animation->setStartValue(0);
                     m_animation->setEndValue(length);
                     break;
             }
-        case HorizontalFlipRotate:
+        case Module::HorizontalFlipRotate:
             {
                     m_animation->setStartValue(length);
                     m_animation->setEndValue(0);

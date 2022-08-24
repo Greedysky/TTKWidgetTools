@@ -73,7 +73,7 @@ void TTKBaseAnimationWidget::finished()
 TTKBaseAnimationHWidget::TTKBaseAnimationHWidget(QWidget *parent)
     : TTKBaseAnimationWidget(parent)
 {
-    m_alignment = Bottom;
+    m_alignment = Alignment::Bottom;
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -98,7 +98,7 @@ void TTKBaseAnimationHWidget::paintEvent(QPaintEvent *event)
     int offset = m_perValue - (m_container[0]->width() + m_pix.width()) / 2;
     offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perValue);
 
-    if(m_alignment == Bottom)
+    if(m_alignment == Alignment::Bottom)
     {
         if(m_showLine)
         {
@@ -200,7 +200,7 @@ TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
 void TTKSkinAnimationHWidget::setAlignment(Alignment alignment)
 {
     TTKBaseAnimationHWidget::setAlignment(alignment);
-    m_pix = QPixmap(m_alignment == Bottom ? ":/res/bottom" : ":/res/top");
+    m_pix = QPixmap(m_alignment == Alignment::Bottom ? ":/res/bottom" : ":/res/top");
 }
 
 
@@ -208,7 +208,7 @@ void TTKSkinAnimationHWidget::setAlignment(Alignment alignment)
 TTKBaseAnimationVWidget::TTKBaseAnimationVWidget(QWidget *parent)
     : TTKBaseAnimationWidget(parent)
 {
-    m_alignment = Left;
+    m_alignment = Alignment::Left;
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -233,7 +233,7 @@ void TTKBaseAnimationVWidget::paintEvent(QPaintEvent *event)
     int offset = m_perValue - (m_container[0]->height() + m_pix.height()) / 2;
     offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perValue);
 
-    if(m_alignment == Left)
+    if(m_alignment == Alignment::Left)
     {
         if(m_showLine)
         {
@@ -335,5 +335,5 @@ TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
 void TTKSkinAnimationVWidget::setAlignment(Alignment alignment)
 {
     TTKBaseAnimationVWidget::setAlignment(alignment);
-    m_pix = QPixmap(m_alignment == Left ? ":/res/left" : ":/res/right");
+    m_pix = QPixmap(m_alignment == Alignment::Left ? ":/res/left" : ":/res/right");
 }

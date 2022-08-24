@@ -79,14 +79,14 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PieStyleThree" << "PieStyleCurrent";
     m_enumManager->setEnumNames(pieStyleItem, enumNames);
-    m_enumManager->setValue(pieStyleItem, TTKCarMeterWidget::PieStyleThree);
+    m_enumManager->setValue(pieStyleItem, TTKStatic_cast(int, TTKCarMeterWidget::PieStyle::Three));
     objectItem->addSubProperty(pieStyleItem);
     //
     QtProperty *pointerStyleItem = m_enumManager->addProperty("PointerStyle");
     enumNames.clear();
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKCarMeterWidget::PointerStyleIndicator);
+    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKCarMeterWidget::PointerStyle::Indicator));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *outerCircleColorItem = m_colorManager->addProperty("OuterCircleColor");

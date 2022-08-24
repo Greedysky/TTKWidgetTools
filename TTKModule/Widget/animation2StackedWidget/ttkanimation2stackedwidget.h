@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKAnimation2StackedWidget : public QStackedWidget
     TTK_DECLARE_MODULE(TTKAnimation2StackedWidget)
     Q_PROPERTY(float m_currentValue READ value WRITE setValue)
 public:
-    enum AnimationType
+    enum class Module
     {
         TopToBottom,
         BottomToTop,
@@ -56,7 +56,7 @@ public:
     ~TTKAnimation2StackedWidget();
 
     void start(int index);
-    void setLength(int length, AnimationType type);
+    void setLength(int length, Module type);
 
     void setCurve(QEasingCurve::Type curve);
     void setRevert(bool revert);
@@ -101,7 +101,7 @@ protected:
 
     QEasingCurve::Type m_curve;
     int m_currentIndex, m_previousIndex;
-    AnimationType m_type;
+    Module m_type;
     QPropertyAnimation *m_animation;
 
     bool m_revert;

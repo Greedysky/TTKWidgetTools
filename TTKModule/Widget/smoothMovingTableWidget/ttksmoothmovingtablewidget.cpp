@@ -37,7 +37,7 @@ void TTKSmoothMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
 
 QSize TTKSmoothMovingTableWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKSmoothMovingTableWidget::updateRender()

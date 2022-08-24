@@ -202,7 +202,7 @@ void TTKCompassMeterWidget::setCenterColorEnd(const QColor &centerColorEnd)
 
 QSize TTKCompassMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKCompassMeterWidget::updateValue()

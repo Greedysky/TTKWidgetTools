@@ -30,11 +30,11 @@ class TTK_MODULE_EXPORT TTKWaveProgressWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKWaveProgressWidget)
 public:
-    enum PercentStyle
+    enum class PercentStyle
     {
-        PercentStyleRect = 0,
-        PercentStyleCircle,
-        PercentStyleEllipse
+        Rect = 0,
+        Circle,
+        Ellipse
     };
 
     explicit TTKWaveProgressWidget(QWidget *parent = nullptr);

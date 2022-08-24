@@ -23,7 +23,7 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "CloudStyleBlack" << "CloudStyleWhite" << "CloudStyleBlue" << "CloudStylePurple";
     m_enumManager->setEnumNames(cloudStyleItem, enumNames);
-    m_enumManager->setValue(cloudStyleItem, TTKCloudPanelLabel::CloudStyleBlack);
+    m_enumManager->setValue(cloudStyleItem, TTKStatic_cast(int, TTKCloudPanelLabel::CloudStyle::Black));
     objectItem->addSubProperty(cloudStyleItem);
     //
     QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");

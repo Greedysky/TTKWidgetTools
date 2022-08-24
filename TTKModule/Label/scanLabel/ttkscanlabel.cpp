@@ -116,7 +116,7 @@ void TTKScanLabel::setRingColor(const QColor &ringColor)
 
 QSize TTKScanLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKScanLabel::updateRender()

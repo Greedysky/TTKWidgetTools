@@ -12,7 +12,7 @@ TTKMarqueeLabel::TTKMarqueeLabel(QWidget *parent)
     m_interval = 20;
 
     m_mouseHoverStop = false;
-    m_moveStyle = MoveStyleLeftAndRight;
+    m_moveStyle = MoveStyle::LeftAndRight;
 
     m_mouseHover = false;
     m_moveRight = true;
@@ -51,15 +51,15 @@ void TTKMarqueeLabel::setText(const QString &text)
         const int textHeight = fontMetrics().height();
         m_labText->resize(QSize(textWidth + 15, textHeight + 5));
 
-        if(m_moveStyle == MoveStyleLeftAndRight)
+        if(m_moveStyle == MoveStyle::LeftAndRight)
         {
             m_initX = 0;
         }
-        else if(m_moveStyle == MoveStyleLeftToRight)
+        else if(m_moveStyle == MoveStyle::LeftToRight)
         {
             m_initX = -m_labText->width();
         }
-        else if(m_moveStyle == MoveStyleRightToLeft)
+        else if(m_moveStyle == MoveStyle::RightToLeft)
         {
             m_initX = width();
         }
@@ -134,7 +134,7 @@ void TTKMarqueeLabel::timeout()
     }
 
     const int textWidth = QtFontWidth(fontMetrics(), m_text);
-    if(m_moveStyle == MoveStyleLeftAndRight)
+    if(m_moveStyle == MoveStyle::LeftAndRight)
     {
         if(textWidth <= width())
         {
@@ -170,7 +170,7 @@ void TTKMarqueeLabel::timeout()
 
         m_labText->move(m_initX, m_initY);
     }
-    else if(m_moveStyle == MoveStyleLeftToRight)
+    else if(m_moveStyle == MoveStyle::LeftToRight)
     {
         if(m_initX > width())
         {
@@ -180,7 +180,7 @@ void TTKMarqueeLabel::timeout()
         m_initX += m_step;
         m_labText->move(m_initX, m_initY);
     }
-    else if(m_moveStyle == MoveStyleRightToLeft)
+    else if(m_moveStyle == MoveStyle::RightToLeft)
     {
         if(m_initX < -textWidth)
         {

@@ -11,7 +11,7 @@ TTKAntLineLabel::TTKAntLineLabel(QWidget *parent)
     m_lineStep = 1;
     m_lineSpeed = 500;
     m_lineColor = QColor(60, 179, 133);
-    m_lineStyle = LineStyleRect;
+    m_lineStyle = LineStyle::Rect;
 
     m_dashes = m_lineLen;
     m_spaces = m_lineLen;
@@ -99,7 +99,7 @@ void TTKAntLineLabel::setLineStyle(const TTKAntLineLabel::LineStyle &lineStyle)
 
 QSize TTKAntLineLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKAntLineLabel::updateValue()
@@ -141,19 +141,19 @@ void TTKAntLineLabel::paintEvent(QPaintEvent *event)
     pen.setDashPattern(m_dashPattern);
     painter.setPen(pen);
 
-    if(m_lineStyle == LineStyleRect)
+    if(m_lineStyle == LineStyle::Rect)
     {
         painter.drawRect(0, 0, w, h);
     }
-    else if(m_lineStyle == LineStyleRoundedRect)
+    else if(m_lineStyle == LineStyle::RoundedRect)
     {
         painter.drawRoundedRect(0, 0, w, h, 5, 5);
     }
-    else if(m_lineStyle == LineStyleEllipse)
+    else if(m_lineStyle == LineStyle::Ellipse)
     {
         painter.drawEllipse(0, 0, w, h);
     }
-    else if(m_lineStyle == LineStyleCircle)
+    else if(m_lineStyle == LineStyle::Circle)
     {
         painter.drawEllipse(w / 2 - side / 2, 0, side, side);
     }

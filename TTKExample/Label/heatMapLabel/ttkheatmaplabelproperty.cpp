@@ -62,7 +62,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     enumNames << "BrBG_discrete" << "BrBG_soft" << "BrBG_mixed" << "BrBG_mixed_exp";
     enumNames << "Blues_discrete" << "Blues_soft" << "Blues_mixed" << "Blues_mixed_exp";
     m_enumManager->setEnumNames(colorSchemeItem, enumNames);
-    m_enumManager->setValue(colorSchemeItem, HeatMapper::Default);
+    m_enumManager->setValue(colorSchemeItem, TTKStatic_cast(int, HeatMapper::ColorScheme::Default));
     objectItem->addSubProperty(colorSchemeItem);
     //
     m_browser->addProperty(objectItem);

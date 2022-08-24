@@ -444,14 +444,14 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKFunctionNavigationWidget::TrianglePositionLeft);
+    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKFunctionNavigationWidget::LinePositionRight);
+    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Right));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
@@ -536,16 +536,16 @@ void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *prope
     {
         if(property->propertyName() == "TextAlign")
         {
-            TTKFunctionNavigationWidget::TextAlign style(TTKFunctionNavigationWidget::TextAlignRight);
+            Qt::Alignment style = Qt::AlignRight;
             switch(value)
             {
-                case 0: style = TTKFunctionNavigationWidget::TextAlignLeft; break;
-                case 1: style = TTKFunctionNavigationWidget::TextAlignRight; break;
-                case 2: style = TTKFunctionNavigationWidget::TextAlignTop; break;
-                case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
-                case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
+                case 0: style = Qt::AlignLeft; break;
+                case 1: style = Qt::AlignRight; break;
+                case 2: style = Qt::AlignTop; break;
+                case 3: style = Qt::AlignBottom; break;
+                case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {
@@ -690,14 +690,14 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKFunctionNavigationWidget::TrianglePositionLeft);
+    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKFunctionNavigationWidget::LinePositionRight);
+    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Right));
     objectItem->addSubProperty(linePositionItem);
     //
     m_browser->addProperty(objectItem);
@@ -758,16 +758,16 @@ void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *prope
     {
         if(property->propertyName() == "TextAlign")
         {
-            TTKFunctionNavigationWidget::TextAlign style(TTKFunctionNavigationWidget::TextAlignRight);
+            Qt::Alignment style = Qt::AlignRight;
             switch(value)
             {
-                case 0: style = TTKFunctionNavigationWidget::TextAlignLeft; break;
-                case 1: style = TTKFunctionNavigationWidget::TextAlignRight; break;
-                case 2: style = TTKFunctionNavigationWidget::TextAlignTop; break;
-                case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
-                case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
+                case 0: style = Qt::AlignLeft; break;
+                case 1: style = Qt::AlignRight; break;
+                case 2: style = Qt::AlignTop; break;
+                case 3: style = Qt::AlignBottom; break;
+                case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {
@@ -880,7 +880,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKFunctionNavigationWidget::LinePositionTop);
+    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
@@ -957,16 +957,16 @@ void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *prope
     {
         if(property->propertyName() == "TextAlign")
         {
-            TTKFunctionNavigationWidget::TextAlign style(TTKFunctionNavigationWidget::TextAlignRight);
+            Qt::Alignment style = Qt::AlignRight;
             switch(value)
             {
-                case 0: style = TTKFunctionNavigationWidget::TextAlignLeft; break;
-                case 1: style = TTKFunctionNavigationWidget::TextAlignRight; break;
-                case 2: style = TTKFunctionNavigationWidget::TextAlignTop; break;
-                case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
-                case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
+                case 0: style = Qt::AlignLeft; break;
+                case 1: style = Qt::AlignRight; break;
+                case 2: style = Qt::AlignTop; break;
+                case 3: style = Qt::AlignBottom; break;
+                case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(style);
         }
         else if(property->propertyName() == "LinePosition")
         {
@@ -1099,7 +1099,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKFunctionNavigationWidget::LinePositionTop);
+    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
@@ -1176,16 +1176,16 @@ void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *prope
     {
         if(property->propertyName() == "TextAlign")
         {
-            TTKFunctionNavigationWidget::TextAlign style(TTKFunctionNavigationWidget::TextAlignRight);
+            Qt::Alignment style = Qt::AlignRight;
             switch(value)
             {
-                case 0: style = TTKFunctionNavigationWidget::TextAlignLeft; break;
-                case 1: style = TTKFunctionNavigationWidget::TextAlignRight; break;
-                case 2: style = TTKFunctionNavigationWidget::TextAlignTop; break;
-                case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
-                case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
+                case 0: style = Qt::AlignLeft; break;
+                case 1: style = Qt::AlignRight; break;
+                case 2: style = Qt::AlignTop; break;
+                case 3: style = Qt::AlignBottom; break;
+                case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(style);
         }
         else if(property->propertyName() == "LinePosition")
         {
@@ -1312,14 +1312,14 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKFunctionNavigationWidget::TrianglePositionBottom);
+    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Bottom));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKFunctionNavigationWidget::LinePositionTop);
+    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgBrushRItem = m_colorManager->addProperty("NormalBgBrushR");
@@ -1405,16 +1405,16 @@ void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *prope
     {
         if(property->propertyName() == "TextAlign")
         {
-            TTKFunctionNavigationWidget::TextAlign style(TTKFunctionNavigationWidget::TextAlignRight);
+            Qt::Alignment style = Qt::AlignRight;
             switch(value)
             {
-                case 0: style = TTKFunctionNavigationWidget::TextAlignLeft; break;
-                case 1: style = TTKFunctionNavigationWidget::TextAlignRight; break;
-                case 2: style = TTKFunctionNavigationWidget::TextAlignTop; break;
-                case 3: style = TTKFunctionNavigationWidget::TextAlignBottom; break;
-                case 4: style = TTKFunctionNavigationWidget::TextAlignCenter; break;
+                case 0: style = Qt::AlignLeft; break;
+                case 1: style = Qt::AlignRight; break;
+                case 2: style = Qt::AlignTop; break;
+                case 3: style = Qt::AlignBottom; break;
+                case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(TTKStatic_cast(TTKFunctionNavigationWidget::TextAlign, style));
+            m_buttons[i]->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {

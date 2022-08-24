@@ -39,7 +39,7 @@ void TTKAnimationProgressWidget::stop()
 
 QSize TTKAnimationProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)

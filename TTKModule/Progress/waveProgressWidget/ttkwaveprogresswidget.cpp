@@ -17,7 +17,7 @@ TTKWaveProgressWidget::TTKWaveProgressWidget(QWidget *parent)
     m_borderWidth = 2;
     m_bgColor = QColor(0, 100, 255);
 
-    m_percentStyle = PercentStyleCircle;
+    m_percentStyle = PercentStyle::Circle;
 
     m_timer = new QTimer(this);
     connect(m_timer,  SIGNAL(timeout()), SLOT(timeout()));
@@ -125,7 +125,7 @@ void TTKWaveProgressWidget::setPointerStyle(const PercentStyle &percentStyle)
 
 QSize TTKWaveProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKWaveProgressWidget::paintEvent(QPaintEvent *event)
@@ -166,7 +166,7 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     int endX = w - m_borderWidth;
     int endY = h - m_borderWidth;
 
-    if(m_percentStyle == PercentStyleCircle)
+    if(m_percentStyle == PercentStyle::Circle)
     {
         side = side - m_borderWidth * 2;
         startX = (w - side) / 2;
@@ -180,7 +180,7 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     double A = endY * m_waterHeight;
     double k = endY * percent;
 
-    if(m_percentStyle == PercentStyleCircle)
+    if(m_percentStyle == PercentStyle::Circle)
     {
         k = (side * percent) + startY;
     }
@@ -222,15 +222,15 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     waterPath2.lineTo(endX,endY);
 
     QPainterPath bigPath;
-    if(m_percentStyle == PercentStyleRect)
+    if(m_percentStyle == PercentStyle::Rect)
     {
         bigPath.addRect(startX,startY,endX,endY);
     }
-    else if(m_percentStyle == PercentStyleCircle)
+    else if(m_percentStyle == PercentStyle::Circle)
     {
         bigPath.addEllipse(startX,startY,side,side);
     }
-    else if(m_percentStyle == PercentStyleEllipse)
+    else if(m_percentStyle == PercentStyle::Ellipse)
     {
         bigPath.addEllipse(startX, startY, w - m_borderWidth * 2, h - m_borderWidth * 2);
     }

@@ -8,7 +8,7 @@
 TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
     : QStackedWidget(parent)
 {
-    m_type = LeftToRight;
+    m_type = Module::LeftToRight;
     m_isAnimating = false;
     m_currentValue = 0;
     m_currentIndex = 0;
@@ -55,22 +55,22 @@ void TTKAnimationStackedWidget::renderPreviousWidget(QPainter &painter, QTransfo
     Q_UNUSED(transform);
     switch(m_type)
     {
-        case BottomToTop :
+        case Module::BottomToTop :
                 {
                     painter.drawPixmap(0, height() / 2, pixmap);
                     break;
                 }
-        case TopToBottom :
+        case Module::TopToBottom :
                 {
                     painter.drawPixmap(0, -height() / 2, pixmap);
                     break;
                 }
-        case LeftToRight :
+        case Module::LeftToRight :
                 {
                     painter.drawPixmap(width() / 2, 0, pixmap);
                     break;
                 }
-        case RightToLeft :
+        case Module::RightToLeft :
                 {
                     painter.drawPixmap(-width() / 2, 0, pixmap);
                     break;
@@ -87,28 +87,28 @@ void TTKAnimationStackedWidget::renderCurrentWidget(QPainter &painter, QTransfor
 
     switch(m_type)
     {
-        case BottomToTop :
+        case Module::BottomToTop :
                 {
                     transform.translate(0, m_currentValue);
                     painter.setTransform(transform);
                     painter.drawPixmap(0, -height() / 2, pixmap);
                     break;
                 }
-        case TopToBottom :
+        case Module::TopToBottom :
                 {
                     transform.translate(0, m_currentValue);
                     painter.setTransform(transform);
                     painter.drawPixmap(0, height() / 2, pixmap);
                     break;
                 }
-        case LeftToRight :
+        case Module::LeftToRight :
                 {
                     transform.translate(m_currentValue, 0);
                     painter.setTransform(transform);
                     painter.drawPixmap(-width() / 2, 0, pixmap);
                     break;
                 }
-        case RightToLeft :
+        case Module::RightToLeft :
                 {
                     transform.translate(m_currentValue, 0);
                     painter.setTransform(transform);
@@ -143,19 +143,19 @@ void TTKAnimationStackedWidget::start(int index)
     m_animation->start();
 }
 
-void TTKAnimationStackedWidget::setLength(int length, AnimationType type)
+void TTKAnimationStackedWidget::setLength(int length, Module type)
 {
     switch(m_type = type)
     {
-        case BottomToTop :
-        case LeftToRight :
+        case Module::BottomToTop :
+        case Module::LeftToRight :
                 {
                     m_animation->setStartValue(-length / 2);
                     m_animation->setEndValue(length / 2);
                     break;
                 }
-        case TopToBottom :
-        case RightToLeft :
+        case Module::TopToBottom :
+        case Module::RightToLeft :
                 {
                     m_animation->setStartValue(length / 2);
                     m_animation->setEndValue(-length / 2);

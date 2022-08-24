@@ -31,7 +31,7 @@ using DataRange = std::vector<unsigned char>;
 class TTK_MODULE_EXPORT HeatMapper
 {
 public:
-  enum ColorScheme
+  enum class ColorScheme
   {
     Default,
     ///

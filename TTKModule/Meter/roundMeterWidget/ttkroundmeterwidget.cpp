@@ -201,7 +201,7 @@ void TTKRoundMeterWidget::setCenterBgColorEnd(const QColor &centerBgColorEnd)
 
 QSize TTKRoundMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRoundMeterWidget::updateValue()

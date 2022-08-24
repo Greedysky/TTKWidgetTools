@@ -39,7 +39,7 @@ void TTKTileBackgroundLabel::setBackgroundPix(const QPixmap &pix)
 
 QSize TTKTileBackgroundLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKTileBackgroundLabel::paintEvent(QPaintEvent *event)

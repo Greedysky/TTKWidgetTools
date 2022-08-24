@@ -31,12 +31,12 @@ class TTK_MODULE_EXPORT TTKAntLineLabel : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKAntLineLabel)
 public:
-    enum LineStyle
+    enum class LineStyle
     {
-        LineStyleRect = 0,
-        LineStyleRoundedRect = 1,
-        LineStyleEllipse = 2,
-        LineStyleCircle = 3
+        Rect = 0,
+        RoundedRect = 1,
+        Ellipse = 2,
+        Circle = 3
     };
 
     explicit TTKAntLineLabel(QWidget *parent = nullptr);

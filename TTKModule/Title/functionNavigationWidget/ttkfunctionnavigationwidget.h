@@ -31,37 +31,28 @@ class TTK_MODULE_EXPORT TTKFunctionNavigationWidget : public QPushButton
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKFunctionNavigationWidget)
 public:
-    enum TextAlign
+    enum class TrianglePosition
     {
-        TextAlignLeft = 0x0001,
-        TextAlignRight = 0x0002,
-        TextAlignTop = 0x0020,
-        TextAlignBottom = 0x0040,
-        TextAlignCenter = 0x0004
+        Left,
+        Right,
+        Top,
+        Bottom
     };
 
-    enum TrianglePosition
+    enum class IconPosition
     {
-        TrianglePositionLeft,
-        TrianglePositionRight,
-        TrianglePositionTop,
-        TrianglePositionBottom
+        Left,
+        Right,
+        Top,
+        Bottom
     };
 
-    enum IconPosition
+    enum class LinePosition
     {
-        IconPositionLeft,
-        IconPositionRight,
-        IconPositionTop,
-        IconPositionBottom
-    };
-
-    enum LinePosition
-    {
-        LinePositionLeft,
-        LinePositionRight,
-        LinePositionTop,
-        LinePositionBottom
+        Left,
+        Right,
+        Top,
+        Bottom
     };
 
     explicit TTKFunctionNavigationWidget(QWidget *parent = nullptr);
@@ -73,7 +64,7 @@ public:
     void setPadding(int padding);
     void setPadding(int paddingLeft, int paddingRight, int paddingTop, int paddingBottom);
 
-    void setTextAlign(TextAlign textAlign);
+    void setTextAlign(Qt::Alignment textAlign);
 
     void setShowTriangle(bool showTriangle);
     void setTriangleLen(int triangleLen);
@@ -121,7 +112,7 @@ protected:
 
 private:
     int m_paddingLeft, m_paddingRight, m_paddingTop, m_paddingBottom;
-    TextAlign m_textAlign;
+    Qt::Alignment m_textAlign;
 
     bool m_showTriangle;
     int m_triangleLen;

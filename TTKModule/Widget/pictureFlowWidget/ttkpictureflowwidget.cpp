@@ -81,7 +81,7 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
         }
     }
 
-    if(reflectionEffect != NoReflection)
+    if(reflectionEffect != ReflectionEffect::No)
     {
         int ht = hs - h - hofs;
         int hte = ht;
@@ -94,7 +94,7 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
             }
         }
 
-        if(reflectionEffect == BlurredReflection)
+        if(reflectionEffect == ReflectionEffect::Blurred)
         {
             QRect rect(hs/2, 0, hs/2, w);
             rect &= result->rect();
@@ -202,7 +202,7 @@ TTKPictureFlowWidgetState::TTKPictureFlowWidgetState()
     : m_backgroundColor(0),
       m_slideWidth(150),
       m_slideHeight(200),
-      m_reflectionEffect(BlurredReflection),
+      m_reflectionEffect(ReflectionEffect::Blurred),
       m_centerIndex(0)
 {
 

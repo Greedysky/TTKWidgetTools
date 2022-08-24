@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKGifProgressWidget : public QLabel
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKGifProgressWidget)
 public:
-    enum Type
+    enum class Module
     {
         BallonWhite,
         CicleBlue,
@@ -47,11 +47,11 @@ public:
     };
 
     explicit TTKGifProgressWidget(QWidget *parent = nullptr);
-    explicit TTKGifProgressWidget(Type type, QWidget *parent = nullptr);
+    explicit TTKGifProgressWidget(Module type, QWidget *parent = nullptr);
     ~TTKGifProgressWidget();
 
-    void setType(Type type);
-    Type type() const;
+    void setType(Module type);
+    Module type() const;
 
     void setInterval(int value);
     int interval() const;
@@ -74,7 +74,7 @@ protected:
     bool infinitedModeCheck();
 
     int m_index;
-    Type m_type;
+    Module m_type;
     QTimer *m_timer;
     QPixmap m_renderer;
     bool m_isRunning, m_infinited;

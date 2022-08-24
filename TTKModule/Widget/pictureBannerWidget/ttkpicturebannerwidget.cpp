@@ -9,7 +9,7 @@
 const QColor frontColor = QColor(220, 0, 0);
 const QColor backColor = QColor(200, 200, 200);
 
-TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(ArrowType type, QWidget *parent)
+TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(Arrow type, QWidget *parent)
     : QWidget(parent)
 {
     m_bMouseHover = false;
@@ -63,13 +63,13 @@ void TTKPictureBannerArrowWidget::paintEvent(QPaintEvent *event)
     int margin = 2;
     switch(m_type)
     {
-        case Right:
+        case Arrow::Right:
         {
             painter.drawLine(QPointF(margin, margin), QPointF(width()-margin, height()/2));
             painter.drawLine(QPointF(margin, height()-margin), QPointF(width()-margin, height()/2));
             break;
         }
-        case Left:
+        case Arrow::Left:
         {
             painter.drawLine(QPointF(width()-margin, margin), QPointF(margin, height()/2));
             painter.drawLine(QPointF(width()-margin, height()-margin), QPointF(margin, height()/2));
@@ -180,8 +180,9 @@ TTKPictureBannerView::TTKPictureBannerView(QWidget *parent)
     m_rightPage->setMaximumWidth(m_size.width() * 2 / 3);
     m_rightPage->setFixedHeight(m_size.height() - 12);
 
-    m_leftArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Left, this);
-    m_rightArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Right, this);
+    m_leftArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Arrow::Left, this);
+    m_rightArrow = new TTKPictureBannerArrowWidget(TTKPictureBannerArrowWidget::Arrow::Right, this);
+
     setArrowHidden(true);
     connect(m_leftArrow, SIGNAL(clicked()), this, SLOT(slotArrowClicked()));
     connect(m_rightArrow, SIGNAL(clicked()), this, SLOT(slotArrowClicked()));

@@ -31,12 +31,12 @@ class TTK_MODULE_EXPORT TTKMiniMeterWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMiniMeterWidget)
 public:
-    enum PointerStyle
+    enum class PointerStyle
     {
-        PointerStyleCircle = 0,
-        PointerStyleIndicator = 1,
-        PointerStyleIndicatorR = 2,
-        PointerStyleTriangle = 3
+        Circle = 0,
+        Indicator = 1,
+        IndicatorR = 2,
+        Triangle = 3
     };
 
     explicit TTKMiniMeterWidget(QWidget *parent = nullptr);

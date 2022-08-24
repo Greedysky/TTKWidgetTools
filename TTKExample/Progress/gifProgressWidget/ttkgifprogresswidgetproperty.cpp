@@ -51,6 +51,6 @@ void TTKGifProgressWidgetProperty::enumPropertyChanged(QtProperty *property, int
     TTKGifProgressWidget *widget = TTKStatic_cast(TTKGifProgressWidget*, m_item);
     if(property->propertyName() == "Type")
     {
-        widget->setType(TTKStatic_cast(TTKGifProgressWidget::Type, value));
+        widget->setType(TTKStatic_cast(TTKGifProgressWidget::Module, value));
     }
 }

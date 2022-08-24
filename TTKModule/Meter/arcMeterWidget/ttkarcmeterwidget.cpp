@@ -26,7 +26,7 @@ TTKArcMeterWidget::TTKArcMeterWidget(QWidget *parent)
     m_pointerColor = QColor(253, 107, 107);
     m_textColor = QColor(0, 0, 0);
 
-    m_pointerStyle = PointerStyleIndicator;
+    m_pointerStyle = PointerStyle::Indicator;
 
     m_reverse = false;
     m_currentValue = 50;
@@ -220,7 +220,7 @@ void TTKArcMeterWidget::setPointerStyle(const PointerStyle &pointerStyle)
 
 QSize TTKArcMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKArcMeterWidget::updateValue()
@@ -269,19 +269,19 @@ void TTKArcMeterWidget::paintEvent(QPaintEvent *event)
     drawScale(&painter);
     drawScaleNum(&painter);
 
-    if(m_pointerStyle == PointerStyleCircle)
+    if(m_pointerStyle == PointerStyle::Circle)
     {
         drawPointerCircle(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicator)
+    else if(m_pointerStyle == PointerStyle::Indicator)
     {
         drawPointerIndicator(&painter);
     }
-    else if(m_pointerStyle == PointerStyleIndicatorR)
+    else if(m_pointerStyle == PointerStyle::IndicatorR)
     {
         drawPointerIndicatorR(&painter);
     }
-    else if(m_pointerStyle == PointerStyleTriangle)
+    else if(m_pointerStyle == PointerStyle::Triangle)
     {
         drawPointerTriangle(&painter);
     }

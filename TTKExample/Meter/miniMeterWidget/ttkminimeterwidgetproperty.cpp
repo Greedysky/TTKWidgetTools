@@ -61,7 +61,7 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKMiniMeterWidget::PointerStyleCircle);
+    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKMiniMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");

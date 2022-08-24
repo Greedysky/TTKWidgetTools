@@ -78,7 +78,7 @@ void TTKLayoutAnimationWidget::removeWidget(QWidget *widget)
 
 QSize TTKLayoutAnimationWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKLayoutAnimationWidget::valueChanged(const QVariant &value)

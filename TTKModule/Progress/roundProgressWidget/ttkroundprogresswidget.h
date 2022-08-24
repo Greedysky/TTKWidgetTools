@@ -33,20 +33,20 @@ class TTK_MODULE_EXPORT TTKRoundProgressWidget : public QWidget
 public:
     enum SwitchFlags
     {
-        Null        = 0x00000000,
-        DefaultText = 0x00000001,
-        LinearColor = 0x00000004,
-        DecorateDot = 0x00000008,
-        OutterCirle = 0x0000000E,
-        Animation   = 0x00000010,
-        All         = 0xFFFFFFFF
+        Null        = 0x0000,
+        DefaultText = 0x0001,
+        LinearColor = 0x0004,
+        DecorateDot = 0x0008,
+        OutterCirle = 0x000E,
+        Animation   = 0x0010,
+        All         = 0xFFFF
     };
 
-    enum InnerDefaultTextStyle
+    enum class InnerDefaultTextStyle
     {
-        Percent     = 0x00000001,
-        Value       = 0x00000002,
-        ValueAndMax = 0x00000004
+        Percent     = 0x0001,
+        Value       = 0x0002,
+        ValueAndMax = 0x0004
     };
 
     explicit TTKRoundProgressWidget(QWidget *parent = nullptr);

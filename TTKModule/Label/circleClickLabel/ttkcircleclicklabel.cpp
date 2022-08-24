@@ -22,7 +22,7 @@ TTKCircleClickLabel::~TTKCircleClickLabel()
 
 QSize TTKCircleClickLabel::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKCircleClickLabel::updateRender()

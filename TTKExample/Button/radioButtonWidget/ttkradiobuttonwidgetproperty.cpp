@@ -44,7 +44,7 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";
     m_enumManager->setEnumNames(directionItem, enumNames);
-    m_enumManager->setValue(directionItem, TTKRadioButtonWidget::LabelPositionRight);
+    m_enumManager->setValue(directionItem, TTKStatic_cast(int, TTKRadioButtonWidget::LabelPosition::Right));
     objectItem->addSubProperty(directionItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");

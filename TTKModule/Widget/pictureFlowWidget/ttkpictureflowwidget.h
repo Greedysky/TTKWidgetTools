@@ -27,11 +27,11 @@
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-enum ReflectionEffect
+enum class ReflectionEffect
 {
-    NoReflection,
-    PlainReflection,
-    BlurredReflection
+    No,
+    Plain,
+    Blurred
 };
 
 /*!

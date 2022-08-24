@@ -55,6 +55,6 @@ void TTKAnimation2StackedWidgetProperty::enumPropertyChanged(QtProperty *propert
     TTKAnimation2StackedWidget *widget = TTKStatic_cast(TTKAnimation2StackedWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLength(200, TTKStatic_cast(TTKAnimation2StackedWidget::AnimationType, value + 4));
+        widget->setLength(200, TTKStatic_cast(TTKAnimation2StackedWidget::Module, value + 4));
     }
 }

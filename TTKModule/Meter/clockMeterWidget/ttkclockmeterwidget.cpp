@@ -28,7 +28,7 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     connect(m_timerSpring, SIGNAL(timeout()), this, SLOT(updateSpring()));
     m_angleSpring = 6.0 * (m_sec + m_msec / 1000);
 
-    setSecondStyle(SecondStyleNormal);
+    setSecondStyle(SecondStyle::Normal);
     updateTime();
 
     QtFontInit("Arial", 9);
@@ -114,7 +114,7 @@ void TTKClockMeterWidget::setSecondStyle(TTKClockMeterWidget::SecondStyle second
 {
     m_secondStyle = secondStyle;
 
-    if(secondStyle == SecondStyleContinue)
+    if(secondStyle == SecondStyle::Continue)
     {
         m_timer->setInterval(100);
     }
@@ -128,7 +128,7 @@ void TTKClockMeterWidget::setSecondStyle(TTKClockMeterWidget::SecondStyle second
 
 QSize TTKClockMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKClockMeterWidget::updateTime()
@@ -139,10 +139,10 @@ void TTKClockMeterWidget::updateTime()
     m_sec = now.second();
     m_msec = now.msec();
 
-    if(m_secondStyle != SecondStyleHide)
+    if(m_secondStyle != SecondStyle::Hide)
     {
         m_angleSpring = 6.0 * (m_sec + m_msec / 1000);
-        if(m_secondStyle == SecondStyleSpring)
+        if(m_secondStyle == SecondStyle::Spring)
         {
             m_angleSpring += 5;
             m_timerSpring->start();
@@ -292,7 +292,7 @@ void TTKClockMeterWidget::drawMin(QPainter *painter)
 
 void TTKClockMeterWidget::drawSec(QPainter *painter)
 {
-    if(m_secondStyle == SecondStyleHide)
+    if(m_secondStyle == SecondStyle::Hide)
     {
         return;
     }

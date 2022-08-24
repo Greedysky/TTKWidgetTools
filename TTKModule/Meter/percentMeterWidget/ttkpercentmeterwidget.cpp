@@ -185,7 +185,7 @@ void TTKPercentMeterWidget::setBgColor(const QColor &bgColor)
 
 QSize TTKPercentMeterWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)

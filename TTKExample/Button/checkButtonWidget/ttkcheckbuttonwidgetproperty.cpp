@@ -44,7 +44,7 @@ TTKCheckButtonWidgetProperty::TTKCheckButtonWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";
     m_enumManager->setEnumNames(directionItem, enumNames);
-    m_enumManager->setValue(directionItem, TTKCheckButtonWidget::LabelPositionRight);
+    m_enumManager->setValue(directionItem, TTKStatic_cast(int, TTKCheckButtonWidget::LabelPosition::Right));
     objectItem->addSubProperty(directionItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");

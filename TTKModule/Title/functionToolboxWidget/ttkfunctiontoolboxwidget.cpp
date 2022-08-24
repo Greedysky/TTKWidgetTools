@@ -348,7 +348,7 @@ bool TTKFunctionToolBoxWidget::singleExpand() const
 
 QSize TTKFunctionToolBoxWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKFunctionToolBoxWidget::setCurrentIndex(int index)

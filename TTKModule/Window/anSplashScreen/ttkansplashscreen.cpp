@@ -69,7 +69,6 @@ void TTKAnSplashScreen::initialize()
 
     m_dig = 0;
     m_count = 6;
-    m_numLabel->setText(QString::number(m_count));
 
     m_gridLayout = new QGridLayout(this);
     m_gridLayout->setSpacing(0);
@@ -81,6 +80,7 @@ void TTKAnSplashScreen::initialize()
     sizePolicy.setVerticalStretch(0);
     sizePolicy.setHeightForWidth(m_numLabel->sizePolicy().hasHeightForWidth());
 
+    m_numLabel->setText(QString::number(m_count));
     m_numLabel->setSizePolicy(sizePolicy);
     m_numLabel->setAlignment(Qt::AlignCenter);
     m_numLabel->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
@@ -88,7 +88,7 @@ void TTKAnSplashScreen::initialize()
                                                 "background-color: rgb(55, 55, 55);"));
 
     m_textLabel = new QLabel(this);
-    m_textLabel->setText(QString("Loading"));
+    m_textLabel->setText("Loading");
     m_textLabel->setMinimumSize(0,40);
     m_textLabel->setMaximumHeight(40);
     m_textLabel->setAlignment(Qt::AlignHCenter | Qt::AlignTop);

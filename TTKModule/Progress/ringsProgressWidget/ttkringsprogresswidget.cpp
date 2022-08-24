@@ -20,7 +20,7 @@ void TTKRingsProgressWidget::setValue(int value)
 
 QSize TTKRingsProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRingsProgressWidget::paintEvent(QPaintEvent *event)

@@ -60,7 +60,7 @@ TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKProgressMeterWidget::PointerStyleCircle);
+    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKProgressMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");

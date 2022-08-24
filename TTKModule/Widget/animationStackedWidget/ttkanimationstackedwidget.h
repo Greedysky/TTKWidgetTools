@@ -29,7 +29,7 @@ class TTK_MODULE_EXPORT TTKAnimationStackedWidget : public QStackedWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKAnimationStackedWidget)
 public:
-    enum AnimationType
+    enum class Module
     {
         LeftToRight,
         RightToLeft,
@@ -42,7 +42,7 @@ public:
     ~TTKAnimationStackedWidget();
 
     void start(int index);
-    void setLength(int length, AnimationType type);
+    void setLength(int length, Module type);
 
     void setDuration(int duration);
     int duration() const;
@@ -61,7 +61,7 @@ protected:
     bool m_isAnimating;
     float m_currentValue;
     int m_currentIndex, m_previousIndex;
-    AnimationType m_type;
+    Module m_type;
     QPropertyAnimation *m_animation;
 
 };

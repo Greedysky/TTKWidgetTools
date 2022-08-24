@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKBaseAnimationWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKBaseAnimationWidget)
 public:
-    enum Alignment
+    enum class Alignment
     {
         Top,
         Bottom,

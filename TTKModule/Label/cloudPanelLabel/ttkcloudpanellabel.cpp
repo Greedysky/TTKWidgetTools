@@ -16,7 +16,7 @@ TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)
     m_borderColor = Qt::darkCyan;
     m_iconColor = Qt::white;
     m_pressColor = Qt::lightGray;
-    m_cloudStyle = TTKCloudPanelLabel::CloudStyleBlack;
+    m_cloudStyle = CloudStyle::Black;
 
     setMinimumSize(100, 100);
 }
@@ -140,7 +140,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
     painter.translate(w / 2, h / 2);
 	painter.scale(side / 200.0, side / 200.0);
 
-    if(m_cloudStyle == CloudStyleBlack)
+    if(m_cloudStyle == CloudStyle::Black)
     {
         drawCircle(&painter, 99, m_bgColor);
         drawArc(&painter);
@@ -149,7 +149,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
         drawCircle(&painter, 33, m_borderColor);
         drawCircle(&painter, 30, (m_pressed && m_centerRect.contains(m_lastPoint)) ? m_bgColor : m_baseColor);
 	}
-    else if(m_cloudStyle == CloudStyleWhite)
+    else if(m_cloudStyle == CloudStyle::White)
     {
         drawCircle(&painter, 99, QColor(249, 249, 249));
 
@@ -166,7 +166,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
         drawCircle(&painter, 32, QColor(208, 208, 208));
         drawCircle(&painter, 30,(m_pressed && m_centerRect.contains(m_lastPoint)) ? QColor(255, 255, 255) : QColor(245, 245, 245));
 	}
-    else if(m_cloudStyle == CloudStyleBlue)
+    else if(m_cloudStyle == CloudStyle::Blue)
     {
 		QConicalGradient gradient(0, 0, 100);
 		gradient.setColorAt(0, QColor(34, 163, 169));
@@ -181,7 +181,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
         drawCircle(&painter, 30, QColor(150, 150, 150));
         drawCircle(&painter, 30, (m_pressed && m_centerRect.contains(m_lastPoint)) ? QColor(35, 82, 133) : QColor(34, 73, 115));
 	}
-    else if(m_cloudStyle == CloudStylePurple)
+    else if(m_cloudStyle == CloudStyle::Purple)
     {
 		QConicalGradient gradient(0, 0, 100);
 		gradient.setColorAt(0, QColor(87, 87, 155));

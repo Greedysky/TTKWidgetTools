@@ -291,7 +291,7 @@ void TTKRingProgressWidget::setRingColorT(const QColor &ringColorT)
 
 QSize TTKRingProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRingProgressWidget::updateValue()

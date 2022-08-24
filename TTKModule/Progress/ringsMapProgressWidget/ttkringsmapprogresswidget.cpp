@@ -21,7 +21,7 @@ void TTKRingsMapProgressWidget::setValue(int value)
 
 QSize TTKRingsMapProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
@@ -29,16 +29,16 @@ void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
     m_angle = 360 * m_value / 100;
 
     const int side = qMin(width(), height());
-    const QRectF outRect(0, 0, side, side);
-    const QRectF inRect(20, 20, side - 40, side - 40);
+    const QRect outRect(0, 0, side, side);
+    const QRect inRect(20, 20, side - 40, side - 40);
 
     painter.setPen(Qt::NoPen);
-    painter.drawPixmap(outRect, QPixmap(":/res/lb_back"), outRect);
+    painter.drawPixmap(outRect, QPixmap(":/res/lb_back"));
 
     painter.setBrush(QBrush(QPixmap(":/res/lb_front")));
     painter.drawPie(outRect, (90 - m_angle) * 16, m_angle * 16);

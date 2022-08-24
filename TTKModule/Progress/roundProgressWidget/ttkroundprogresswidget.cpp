@@ -16,7 +16,7 @@ TTKRoundProgressWidget::TTKRoundProgressWidget(QWidget *parent)
     setInnerColor(QColor(49, 177, 190), QColor(133, 243, 244));
     setDefaultTextColor(QColor(49, 177, 190));
     setPrecision(0);
-    setInnerDefaultTextStyle(TTKRoundProgressWidget::Percent);
+    setInnerDefaultTextStyle(InnerDefaultTextStyle::Percent);
 
     m_min = 0;
     m_max = 100;
@@ -113,7 +113,7 @@ void TTKRoundProgressWidget::setPrecision(int precision)
 
 QSize TTKRoundProgressWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKRoundProgressWidget::resizeEvent(QResizeEvent *event)
@@ -221,13 +221,13 @@ void TTKRoundProgressWidget::paintText(QPainter& painter)
 
     switch(m_innerDefaultTextStyle)
     {
-        case Value:
+        case InnerDefaultTextStyle::Value:
             painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision));
             break;
-        case ValueAndMax:
+        case InnerDefaultTextStyle::ValueAndMax:
             painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision) + TTK_SEPARATOR + QString::number(m_max, 'f', m_precision));
             break;
-        case Percent:
+        case InnerDefaultTextStyle::Percent:
             painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value / m_max * 100, 'f', m_precision) + "%");
             break;
         default:

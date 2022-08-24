@@ -47,7 +47,7 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "LineStyleRect" << "LineStyleRoundedRect" << "LineStyleEllipse" << "LineStyleCircle";
     m_enumManager->setEnumNames(lineStyleItem, enumNames);
-    m_enumManager->setValue(lineStyleItem, TTKAntLineLabel::LineStyleRect);
+    m_enumManager->setValue(lineStyleItem, TTKStatic_cast(int, TTKAntLineLabel::LineStyle::Rect));
     objectItem->addSubProperty(lineStyleItem);
     //
     m_browser->addProperty(objectItem);

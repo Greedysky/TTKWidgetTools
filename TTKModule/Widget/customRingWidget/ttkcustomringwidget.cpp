@@ -49,7 +49,7 @@ void TTKCustomRingWidget::setInCircleColor(const QColor &inCircleColor)
 
 QSize TTKCustomRingWidget::sizeHint() const
 {
-    return QSize(180, 180);
+    return QSize(200, 200);
 }
 
 void TTKCustomRingWidget::paintEvent(QPaintEvent *event)

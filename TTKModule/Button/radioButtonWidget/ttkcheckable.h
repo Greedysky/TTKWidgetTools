@@ -73,10 +73,10 @@ class TTK_MODULE_EXPORT TTKCheckable : public QAbstractButton
 {
     Q_OBJECT
 public:
-    enum LabelPosition
+    enum class LabelPosition
     {
-        LabelPositionLeft,
-        LabelPositionRight
+        Left,
+        Right
     };
 
     explicit TTKCheckable(QWidget *parent = nullptr);
@@ -117,7 +117,7 @@ protected:
     QState *m_uncheckedState, *m_checkedState;
     QState *m_disabledUncheckedState, *m_disabledCheckedState;
     QSignalTransition *m_uncheckedTransition, *m_checkedTransition;
-    TTKCheckable::LabelPosition  m_labelPosition;
+    LabelPosition  m_labelPosition;
     QColor m_checkedColor, m_uncheckedColor, m_textColor, m_disabledColor;
 
 };
