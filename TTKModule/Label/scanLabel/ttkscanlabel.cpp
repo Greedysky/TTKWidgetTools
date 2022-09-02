@@ -129,7 +129,7 @@ void TTKScanLabel::updateRender()
             ring->m_alpha = 0;
         }
 
-        ring->m_width -= 0.05;
+        ring->m_width -= 0.05f;
         if(ring->m_width < 0)
         {
             ring->m_width = 0;

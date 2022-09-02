@@ -6,7 +6,7 @@
 TTKLedPageLabel::TTKLedPageLabel(QWidget *parent)
     : QWidget(parent)
 {
-    setScale(0.6);
+    setScale(0.6f);
     setBackColor(QColor(85, 85, 85));
     setFrontColor(QColor(255, 255, 255));
     setLineColor(QColor(60, 60, 60));
