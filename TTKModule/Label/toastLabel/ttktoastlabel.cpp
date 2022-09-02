@@ -6,7 +6,7 @@
 TTKToastLabel::TTKToastLabel(QWidget *parent)
     : QLabel(parent)
 {
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
 #ifndef TTK_BUILD_EXAMPLE
@@ -76,9 +76,9 @@ bool TTKToastLabel::bold() const
 
 void TTKToastLabel::popup(QWidget *parent)
 {
-    QPoint globalPoint = parent->mapToGlobal(QPoint(0, 0));
-    move( globalPoint.x() + (parent->width() - width())/2,
-          globalPoint.y() + (parent->height() - height())/2);
+    const QPoint &globalPoint = parent->mapToGlobal(QPoint(0, 0));
+    move(globalPoint.x() + (parent->width() - width()) / 2, globalPoint.y() + (parent->height() - height()) / 2);
+
     raise();
     show();
 

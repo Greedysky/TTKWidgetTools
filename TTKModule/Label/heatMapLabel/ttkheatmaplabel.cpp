@@ -184,95 +184,95 @@ const heatmap_colorscheme_t * MappingColorScheme(HeatMapper::ColorScheme scheme)
 #define DEFAULT_OPACITY 255
 
 HeatMapper::HeatMapper(const QSize &size)
-  : HeatMapper(size, 128)
+    : HeatMapper(size, 128)
 {
 }
 
 HeatMapper::HeatMapper(const QSize &size, int radius)
-  : HeatMapper(size.width(), size.height(), radius)
+    : HeatMapper(size.width(), size.height(), radius)
 {
 }
 
 HeatMapper::HeatMapper(int width, int height)
-  : HeatMapper(width, height, 128)
+    : HeatMapper(width, height, 128)
 {
 }
 
 HeatMapper::HeatMapper(int width, int height, int radius)
+    : m_opacity(DEFAULT_OPACITY),
+      m_stamp(nullptr),
+      m_scheme(ColorScheme::Default)
 {
-  m_opacity = DEFAULT_OPACITY;
-  m_heatmap = heatmap_new(width, height);
-  m_stamp = nullptr;
-  m_scheme = ColorScheme::Default;
-  setRadius(radius);
+    m_heatmap = heatmap_new(width, height);
+    setRadius(radius);
 }
 
 HeatMapper::~HeatMapper()
 {
-  if(m_stamp)
-  {
-    heatmap_stamp_free(m_stamp);
-  }
-  heatmap_free(m_heatmap);
+    if(m_stamp)
+    {
+        heatmap_stamp_free(m_stamp);
+    }
+    heatmap_free(m_heatmap);
 }
 
 void HeatMapper::setRadius(int radius)
 {
-  if(m_stamp)
-  {
-    heatmap_stamp_free(m_stamp);
-  }
-  m_stamp = heatmap_stamp_gen(radius);
+    if(m_stamp)
+    {
+        heatmap_stamp_free(m_stamp);
+    }
+    m_stamp = heatmap_stamp_gen(radius);
 }
 
 void HeatMapper::setOpacity(int opacity)
 {
-  m_opacity = qBound(0, opacity, DEFAULT_OPACITY);
+    m_opacity = qBound(0, opacity, DEFAULT_OPACITY);
 }
 
 void HeatMapper::setColorScheme(ColorScheme scheme)
 {
-  m_scheme = scheme;
+    m_scheme = scheme;
 }
 
 void HeatMapper::addPoint(int x, int y)
 {
-  heatmap_add_point_with_stamp(m_heatmap, x, y, m_stamp);
-  // We're done with adding points, we don't need the stamp anymore.
+    heatmap_add_point_with_stamp(m_heatmap, x, y, m_stamp);
+    // We're done with adding points, we don't need the stamp anymore.
 }
 
 QImage HeatMapper::render()
 {
-  DataRange input(m_heatmap->h * m_heatmap->w * 4);
-  heatmap_render_to(m_heatmap, MappingColorScheme(m_scheme), &input[0]);
+    DataRange input(m_heatmap->h * m_heatmap->w * 4);
+    heatmap_render_to(m_heatmap, MappingColorScheme(m_scheme), &input[0]);
 
-  DataRange output;
-  lodepng::encode(output, input, m_heatmap->w, m_heatmap->h);
+    DataRange output;
+    lodepng::encode(output, input, m_heatmap->w, m_heatmap->h);
 
-  if(output.empty())
-  {
-    return QImage();
-  }
+    if(output.empty())
+    {
+        return QImage();
+    }
 
-  QImage render(m_heatmap->w, m_heatmap->h, QImage::Format_ARGB32);
-  render.loadFromData(&output[0], output.size());
+    QImage render(m_heatmap->w, m_heatmap->h, QImage::Format_ARGB32);
+    render.loadFromData(&output[0], output.size());
 
-  if(m_opacity != DEFAULT_OPACITY)
-  {
-    QImage image(render.size(), QImage::Format_ARGB32);
-    image.fill(Qt::transparent);
+    if(m_opacity != DEFAULT_OPACITY)
+    {
+        QImage image(render.size(), QImage::Format_ARGB32);
+        image.fill(Qt::transparent);
 
-    QPainter painter(&image);
-    painter.setCompositionMode(QPainter::CompositionMode_Source);
-    painter.drawImage(0, 0, render);
-    painter.setCompositionMode(QPainter::CompositionMode_DestinationIn);
-    painter.fillRect(render.rect(), QColor(0, 0, 0, m_opacity));
-    painter.end();
+        QPainter painter(&image);
+        painter.setCompositionMode(QPainter::CompositionMode_Source);
+        painter.drawImage(0, 0, render);
+        painter.setCompositionMode(QPainter::CompositionMode_DestinationIn);
+        painter.fillRect(render.rect(), QColor(0, 0, 0, m_opacity));
+        painter.end();
 
-    return image;
-  }
+        return image;
+    }
 
-  return render;
+    return render;
 }
 
 
@@ -280,7 +280,7 @@ QImage HeatMapper::render()
 TTKHeatMapLabel::TTKHeatMapLabel(QWidget *parent)
     : QLabel(parent)
 {
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
     m_heatMapper = new HeatMapper(sizeHint());

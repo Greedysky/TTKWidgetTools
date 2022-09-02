@@ -48,6 +48,7 @@ protected:
     void drawOutline(QPainter &painter);
     void drawNoisyPoint(QPainter &painter);
     void drawConversion(QPainter &painter);
+
     virtual void paintEvent(QPaintEvent *event) override final;
 
     int m_noisyPointCount, m_converseRotate;

@@ -3,11 +3,12 @@
 #include <QPainter>
 
 TTKTileBackgroundLabel::TTKTileBackgroundLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_foreColor(0, 0, 0),
+      m_backColor(250, 250, 250),
+      m_pix(64, 64)
 {
-    m_foreColor = QColor(0, 0, 0);
-    m_backColor = QColor(250, 250, 250);
-    m_pix = QPixmap(64, 64);
+
 }
 
 void TTKTileBackgroundLabel::setForeColor(const QColor &color)

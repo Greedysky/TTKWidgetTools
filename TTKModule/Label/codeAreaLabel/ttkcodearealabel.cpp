@@ -21,7 +21,11 @@ static int random(int value)
 #define DEF_CONVERSESCALE   15
 
 TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
-    : QLabel(parent)
+    : QLabel(parent),
+      m_noisyPointCount(DEF_NOISYPOINTCOUNT),
+      m_converseRotate(DEF_CONVERSEROTATE),
+      m_converseScale(DEF_CONVERSESCALE),
+      m_codeCount(DEF_CODECOUNT)
 {
 #if !TTK_QT_VERSION_CHECK(5,10,0)
     qsrand(QDateTime::currentMSecsSinceEpoch());
@@ -33,12 +37,7 @@ TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
        "O" << "P" << "Q" << "R" << "S" << "T" << "U" << "V" << "W" << "X" << "Y" << "Z";
 
     m_codeColor << Qt::darkRed << Qt::darkGreen << Qt::darkBlue << Qt::darkCyan
-                 << Qt::darkMagenta << Qt::darkYellow << Qt::darkGray;
-
-    m_noisyPointCount = DEF_NOISYPOINTCOUNT;
-    m_converseRotate = DEF_CONVERSEROTATE;
-    m_converseScale = DEF_CONVERSESCALE;
-    m_codeCount = DEF_CODECOUNT;
+                << Qt::darkMagenta << Qt::darkYellow << Qt::darkGray;
 }
 
 void TTKCodeAreaLabel::renderPicture()

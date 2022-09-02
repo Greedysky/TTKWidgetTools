@@ -17,12 +17,11 @@ const QString MSliderStyle02 = " \
         height:9px; margin-left:-3px; margin-right:-3px; border-radius:4px;}";
 
 TTKStyleSlider::TTKStyleSlider(QWidget *parent)
-    : QSlider(parent)
+    : QSlider(parent),
+      m_handleColor("#FFFEA1"),
+      m_backgroundColor("#4E4F4F"),
+      m_foregroundColor("#FFFEA1")
 {
-    m_handleColor = QColor("#FFFEA1");
-    m_backgroundColor = QColor("#4E4F4F");
-    m_foregroundColor = QColor("#FFFEA1");
-
     setupProperties();
 }
 

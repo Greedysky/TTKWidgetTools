@@ -5,28 +5,23 @@
 #include <QPainter>
 
 TTKTemperatureMeterWidget::TTKTemperatureMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_outerCircleColor(80, 80, 80),
+      m_innerCircleColor(60, 60, 60),
+      m_centerCircleColor(60, 60, 60),
+      m_usedColor(24, 188, 154),
+      m_freeColor(255, 255, 255),
+      m_textColor(255, 255, 255),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_outerCircleColor = QColor(80, 80, 80);
-    m_innerCircleColor = QColor(60, 60, 60);
-    m_centerCircleColor = QColor(60, 60, 60);
-    m_usedColor = QColor(24, 188, 154);
-    m_freeColor = QColor(255, 255, 255);
-    m_textColor = QColor(255, 255, 255);
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

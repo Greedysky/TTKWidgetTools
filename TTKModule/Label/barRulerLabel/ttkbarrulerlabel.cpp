@@ -4,30 +4,24 @@
 #include <QPainter>
 
 TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
-    : QWidget(parent)
-{    
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 0;
-
-    m_precision = 0;
-    m_longStep = 10;
-    m_shortStep = 1;
-    m_space = 20;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_bgColorStart = QColor(100, 100, 100);
-    m_bgColorEnd = QColor(60, 60, 60);
-    m_lineColor = QColor(255, 255, 255);
-
-    m_barBgColor = QColor(220, 220, 220);
-    m_barColor = QColor(100, 184, 255);
-
-    m_reverse = false;
-    m_currentValue = 0;
-
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(0),
+      m_precision(0),
+      m_longStep(10),
+      m_shortStep(1),
+      m_space(20),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_bgColorStart(100, 100, 100),
+      m_bgColorEnd(60, 60, 60),
+      m_lineColor(255, 255, 255),
+      m_barBgColor(220, 220, 220),
+      m_barColor(100, 184, 255),
+      m_reverse(false),
+      m_currentValue(0)
+{
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

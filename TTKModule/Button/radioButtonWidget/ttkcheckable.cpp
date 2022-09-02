@@ -83,7 +83,8 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
 
 
 TTKCheckable::TTKCheckable(QWidget *parent)
-    : QAbstractButton(parent)
+    : QAbstractButton(parent),
+      m_labelPosition(LabelPosition::Right)
 {
     m_checkedIcon = new TTKCheckableIcon(QIcon(":/res/check_box"), this);
     m_uncheckedIcon = new TTKCheckableIcon(QIcon(":/res/check_box_outline"), this);
@@ -94,7 +95,6 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     m_disabledCheckedState = new QState;
     m_uncheckedTransition = new QSignalTransition(this, SIGNAL(toggled(bool)));
     m_checkedTransition = new QSignalTransition(this, SIGNAL(toggled(bool)));
-    m_labelPosition = LabelPosition::Right;
 
     setCheckable(true);
     setFont(QtFontInit("Roboto", 11, QFont::Normal));
@@ -112,7 +112,6 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     m_checkedState->addTransition(m_checkedTransition);
 
     QAbstractTransition *transition;
-
     transition = new QEventTransition(this, QEvent::EnabledChange);
     transition->setTargetState(m_disabledUncheckedState);
     m_uncheckedState->addTransition(transition);

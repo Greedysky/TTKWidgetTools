@@ -4,25 +4,22 @@
 #include <QPainter>
 
 TTKMiniMeterWidget::TTKMiniMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_step(20),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_borderColor(60, 60, 60),
+      m_bgColor(233, 185, 110),
+      m_textColor(92, 53, 102),
+      m_percentColor(253, 107, 107),
+      m_pointerStyle(PointerStyle::Indicator),
+      m_showValue(false)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
 
-    m_step = 20;
-    m_precision = 0;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_borderColor = QColor(60, 60, 60);
-    m_bgColor = QColor(233, 185, 110);
-    m_textColor = QColor(92, 53, 102);
-    m_percentColor = QColor(253, 107, 107);
-
-    m_showValue = false;
-
-    m_pointerStyle = PointerStyle::Indicator;
 }
 
 void TTKMiniMeterWidget::setRange(double minValue, double maxValue)

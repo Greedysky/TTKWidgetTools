@@ -47,7 +47,6 @@ protected:
     void drawIndicator(QPainter *painter);
     void drawNumericValue(QPainter *painter);
 
-    bool m_numericIndicatorEnabled;
     QColor m_foreground, m_background;
     QString m_units, m_title;
     int m_scaleMajor, m_scaleMinor;

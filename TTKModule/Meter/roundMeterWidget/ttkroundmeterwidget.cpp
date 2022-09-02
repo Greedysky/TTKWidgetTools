@@ -4,30 +4,23 @@
 #include <QPainter>
 
 TTKRoundMeterWidget::TTKRoundMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(0),
+      m_precision(0),
+      m_angle(40),
+      m_usedColor(100, 184, 255),
+      m_freeColor(70, 70, 70),
+      m_rangeTextColor(137, 137, 137),
+      m_valueTextColor(52, 155, 218),
+      m_valueBgColor(239, 239, 239),
+      m_outBgColor(233, 233, 233),
+      m_centerBgColorStart(45, 204, 112),
+      m_centerBgColorEnd(51, 152, 219),
+      m_currentPercent(0),
+      m_valuePercent(0)
 {    
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 0;
-    m_precision = 0;
-
-    m_angle = 40;
-    m_unit = "";
-
-    m_usedColor = QColor(100, 184, 255);
-    m_freeColor = QColor(70, 70, 70);
-
-    m_rangeTextColor = QColor(137, 137, 137);
-    m_valueTextColor = QColor(52, 155, 218);
-
-    m_valueBgColor = QColor(239, 239, 239);
-    m_outBgColor = QColor(233, 233, 233);
-    m_centerBgColorStart = QColor(45, 204, 112);
-    m_centerBgColorEnd = QColor(51, 152, 219);
-
-    m_currentPercent = 0;
-    m_valuePercent = 0;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

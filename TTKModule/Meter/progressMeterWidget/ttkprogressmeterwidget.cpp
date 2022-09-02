@@ -5,30 +5,25 @@
 #include <QPainter>
 
 TTKProgressMeterWidget::TTKProgressMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_bgColor(50, 50, 50),
+      m_progressColor(7, 184, 13),
+      m_progressBgColor(15, 84, 100),
+      m_circleColorStart(80, 80, 80),
+      m_circleColorEnd(100, 100, 100),
+      m_textColor(255, 255, 255),
+      m_showPointer(true),
+      m_showValue(true),
+      m_pointerStyle(PointerStyle::Circle),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_precision = 0;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_bgColor = QColor(50, 50, 50);
-    m_progressColor = QColor(7, 184, 13);
-    m_progressBgColor = QColor(15, 84, 100);
-    m_circleColorStart = QColor(80, 80, 80);
-    m_circleColorEnd = QColor(100, 100, 100);
-    m_textColor = QColor(255, 255, 255);
-
-    m_showPointer = true;
-    m_showValue = true;
-    m_pointerStyle = PointerStyle::Circle;
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

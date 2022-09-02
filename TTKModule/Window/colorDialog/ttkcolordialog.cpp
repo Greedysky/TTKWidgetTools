@@ -6,12 +6,11 @@
 #include <QPainterPath>
 
 TTKHlPalette::TTKHlPalette(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_dblSaturation(1.0)
 {
     setMinimumSize(QSize(360, 120));
     setMouseTracking(true);
-
-    m_dblSaturation = 1.0;
 }
 
 QColor TTKHlPalette::color() const
@@ -116,17 +115,16 @@ void TTKHlPalette::calculateColor()
 
 
 TTKHlSaturationPalette::TTKHlSaturationPalette(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_color(Qt::red),
+      m_dblVernierX(0),
+      m_dblVernierPercentX(0),
+      m_dblSaturation(0)
 {
     setMouseTracking(true);
     setMinimumWidth(360);
     setMinimumHeight(16);
     setMaximumHeight(24);
-
-    m_color = Qt::red;
-    m_dblVernierX = 0;
-    m_dblVernierPercentX = 0;
-    m_dblSaturation = 0;
 }
 
 double TTKHlSaturationPalette::saturation() const
@@ -208,7 +206,7 @@ void TTKHlSaturationPalette::mouseMoveEvent(QMouseEvent *event)
     }
     else
     {
-        QPointF ptfCenter(m_dblVernierX, rect().bottom()/2.0);
+        QPointF ptfCenter(m_dblVernierX, rect().bottom() / 2.0);
         QPainterPath path;
         path.addEllipse(ptfCenter, 7, 7);
     }

@@ -9,13 +9,13 @@ TTKMovingLabelSlider::TTKMovingLabelSlider(QWidget *parent)
 }
 
 TTKMovingLabelSlider::TTKMovingLabelSlider(Qt::Orientation orientation, QWidget *parent)
-    : TTKClickedSlider(orientation, parent)
+    : TTKClickedSlider(orientation, parent),
+      m_isMoving(false)
 {
     setMouseTracking(true);
 
-    m_isMoving = false;
     m_textLabel = new QLabel(this);
-    m_textLabel->setWindowFlags( Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
+    m_textLabel->setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::Tool);
     m_textLabel->setGeometry(0, 0, 40, 20);
     m_textLabel->setAlignment(Qt::AlignCenter);
     m_textLabel->setFocusPolicy(Qt::NoFocus);

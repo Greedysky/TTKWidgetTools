@@ -4,24 +4,21 @@
 #include <QPainter>
 
 TTKBatteryLabel::TTKBatteryLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(0),
+      m_alarmValue(30),
+      m_step(0.5),
+      m_borderColorStart(100, 100, 100),
+      m_borderColorEnd(80, 80, 80),
+      m_alarmColorStart(250, 118, 113),
+      m_alarmColorEnd(204, 38, 38),
+      m_normalColorStart(50, 205, 51),
+      m_normalColorEnd(60, 179, 133),
+      m_isForward(false),
+      m_currentValue(0)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 0;
-    m_alarmValue = 30;
-    m_step = 0.5;
-
-    m_borderColorStart = QColor(100, 100, 100);
-    m_borderColorEnd = QColor(80, 80, 80);
-    m_alarmColorStart = QColor(250, 118, 113);
-    m_alarmColorEnd = QColor(204, 38, 38);
-    m_normalColorStart = QColor(50, 205, 51);
-    m_normalColorEnd = QColor(60, 179, 133);
-
-    m_isForward = false;
-    m_currentValue = 0;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

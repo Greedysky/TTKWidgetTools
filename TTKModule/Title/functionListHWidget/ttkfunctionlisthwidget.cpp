@@ -4,12 +4,12 @@
 #include <QBoxLayout>
 
 TTKFunctionItemWidget::TTKFunctionItemWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_enterIn(false),
+      m_selectedOn(false),
+      m_resizeMode(false)
 {
     setFixedSize(205, 35);
-    m_enterIn = false;
-    m_selectedOn = false;
-    m_resizeMode = false;
 }
 
 void TTKFunctionItemWidget::setLabelText(const QString &text)
@@ -65,15 +65,14 @@ void TTKFunctionItemWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 
     QPainter painter(this);
-
     if(m_selectedOn)
     {
         painter.fillRect(rect(), QColor(0, 0, 0, 100));
 
         QPolygon py;
-        py.append(QPoint(width(), height()/2 - 7));
-        py.append(QPoint(width() - 7, height()/2));
-        py.append(QPoint(width(), height()/2 + 7));
+        py.append(QPoint(width(), height() / 2 - 7));
+        py.append(QPoint(width() - 7, height() / 2));
+        py.append(QPoint(width(), height() / 2 + 7));
         painter.setPen(Qt::white);
         painter.setBrush(Qt::white);
         painter.drawPolygon(py);
@@ -92,7 +91,7 @@ void TTKFunctionItemWidget::paintEvent(QPaintEvent *event)
     else
     {
         QPixmap pix(m_enterIn ? m_iconf : m_iconb);
-        painter.drawPixmap((width() - pix.width())/2, 8, pix);
+        painter.drawPixmap((width() - pix.width()) / 2, 8, pix);
     }
 }
 

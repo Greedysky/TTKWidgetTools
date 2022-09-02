@@ -7,13 +7,13 @@
 #define DISTANCE  5
 
 TTKMoveResizeWidget::TTKMoveResizeWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_direction(Direction::No)
 {
     m_struct.m_mouseLeftPress = false;
     m_struct.m_isPressBorder = false;
-    m_direction = Direction::No;
 
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setMouseTracking(true);
 }

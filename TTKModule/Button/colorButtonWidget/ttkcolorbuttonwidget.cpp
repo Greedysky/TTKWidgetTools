@@ -1,7 +1,12 @@
 #include "ttkcolorbuttonwidget.h"
 
 TTKColorButtonWidget::TTKColorButtonWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_space(2),
+      m_columnCount(11),
+      m_borderRadius(0),
+      m_borderWidth(2),
+      m_borderColor("#C0392B")
 {
     m_colors << "#FEFEFE" << "#EEEEEF" << "#DCDDDD" << "#C9CACA" << "#B6B6B7" << "#A1A1A1" << "#8B8B8C" << "#757475" << "#5F5D5D" << "#474443" << "#303030";
     m_colors << "#00A2E9" << "#009B4C" << "#FFF000" << "#E62129" << "#E40082" << "#B04B87" << "#F08519" << "#F4B3B3" << "#897870" << "#D2CDE6" << "#A79CCB";
@@ -12,12 +17,6 @@ TTKColorButtonWidget::TTKColorButtonWidget(QWidget *parent)
     m_colors << "#89765B" << "#AC6249" << "#D0753B" << "#EF8762" << "#F5B193" << "#FADAC9" << "#AF8283" << "#CF7771" << "#FF696B" << "#CF788A" << "#E61D4C";
     m_colors << "#EF8781" << "#E95A6F" << "#D49D9E" << "#876474" << "#AC6484" << "#F4B5D0" << "#D49EB6" << "#B39FA8" << "#D8C0CB" << "#B3719D" << "#CA5599";
     m_colors << "#CD81B3" << "#B593B3" << "#D0A9CD" << "#745E73" << "#977B95" << "#A878B1" << "#A72185" << "#934787" << "#804E9A" << "#7B5882" << "#714588";
-
-    m_space = 2;
-    m_columnCount = 11;
-    m_borderRadius = 0;
-    m_borderWidth = 2;
-    m_borderColor = QColor("#C0392B");
 
     m_gridLayout = new QGridLayout;
     m_gridLayout->setSpacing(m_space);

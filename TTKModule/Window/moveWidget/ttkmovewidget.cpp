@@ -13,14 +13,13 @@ TTKMoveWidget::TTKMoveWidget(QWidget *parent)
 }
 
 TTKMoveWidget::TTKMoveWidget(bool transparent, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_moveOption(false),
+      m_showShadow(true),
+      m_leftButtonPress(false)
 {
-    setWindowFlags( Qt::Window | Qt::FramelessWindowHint);
+    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, transparent);
-
-    m_moveOption = false;
-    m_leftButtonPress = false;
-    m_showShadow = true;
 }
 
 void TTKMoveWidget::paintEvent(QPaintEvent *event)

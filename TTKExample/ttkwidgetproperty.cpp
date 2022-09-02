@@ -8,7 +8,6 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
       m_item(nullptr),
       m_containItem(nullptr)
 {
-    //
     m_boolManager = new QtBoolPropertyManager(this);
     m_intManager = new QtIntPropertyManager(this);
     m_doubleManager = new QtDoublePropertyManager(this);
@@ -19,7 +18,6 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     m_enumManager = new QtEnumPropertyManager(this);
     m_colorManager = new QtColorPropertyManager(this);
     m_pixmapManager = new QtPixmapPropertyManager(this);
-
     //
     m_groupManager = new QtGroupPropertyManager(this);
     //
@@ -30,7 +28,6 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     m_comboBoxFactory = new QtEnumEditorFactory(this);
     m_colorEditorFactory = new QtColorEditorFactory(this);
     m_pixmapEditorFactory = new QtPixmapEditorFactory(this);
-
     //
     m_browser = new QtTreePropertyBrowser(this);
     //
@@ -39,7 +36,6 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     layout->setSpacing(0);
     layout->addWidget(m_browser);
     setLayout(layout);
-
     //
     m_browser->setFactoryForManager(m_boolManager, m_checkBoxFactory);
     m_browser->setFactoryForManager(m_intManager, m_spinBoxFactory);
@@ -53,7 +49,6 @@ TTKWidgetProperty::TTKWidgetProperty(QWidget *parent)
     m_browser->setFactoryForManager(m_colorManager, m_colorEditorFactory);
     m_browser->setFactoryForManager(m_pixmapManager, m_pixmapEditorFactory);
     m_browser->setFactoryForManager(m_pixmapManager->subStirngPropertyManager(), m_lineEditFactory);
-
     //
     connect(m_boolManager, SIGNAL(valueChanged(QtProperty*,bool)), SLOT(boolPropertyChanged(QtProperty*,bool)));
     connect(m_intManager, SIGNAL(valueChanged(QtProperty*,int)), SLOT(intPropertyChanged(QtProperty*,int)));

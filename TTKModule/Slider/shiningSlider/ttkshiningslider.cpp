@@ -7,14 +7,14 @@ TTKShiningSlider::TTKShiningSlider(QWidget *parent)
     : QWidget(parent)
 {
     m_label = new TTKGifProgressWidget(this);
-    m_label->setType(TTKGifProgressWidget::Module::BallonWhite);
+    m_label->setType(TTKGifProgressWidget::Module::Recordred);
     m_label->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     m_label->move(15, 5);
     m_label->hide();
 
     m_slider = new QSlider(Qt::Horizontal, this);
     m_slider->setValue(0);
-    m_slider->setGeometry(15, m_label->width()/2, width() - m_label->width(), 10);
+    m_slider->setGeometry(15, m_label->width() / 2, width() - m_label->width(), 10);
     m_slider->setCursor(QCursor(Qt::PointingHandCursor));
     connect(m_slider, SIGNAL(sliderMoved(int)), SLOT(sliderMovedAt(int)));
 }
@@ -76,7 +76,7 @@ void TTKShiningSlider::sliderMovedAt(int pos) const
     int max = m_slider->maximum();
     if(max > 0)
     {
-        float delta = m_slider->width()*(-0.015/800) + 0.0275;
+        float delta = m_slider->width()*(-0.015 / 800) + 0.0275;
         m_label->move(ceil(qint64(pos)*m_slider->width()*(1.0 - delta)/max) - 1, 5);
     }
 }

@@ -10,11 +10,11 @@ const QColor frontColor = QColor(220, 0, 0);
 const QColor backColor = QColor(200, 200, 200);
 
 TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(Arrow type, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_bMouseHover(false),
+      m_bMousePress(false),
+      m_type(type)
 {
-    m_bMouseHover = false;
-    m_bMousePress = false;
-    m_type = type;
     setFixedSize(12, 20);
 }
 
@@ -65,14 +65,14 @@ void TTKPictureBannerArrowWidget::paintEvent(QPaintEvent *event)
     {
         case Arrow::Right:
         {
-            painter.drawLine(QPointF(margin, margin), QPointF(width()-margin, height()/2));
-            painter.drawLine(QPointF(margin, height()-margin), QPointF(width()-margin, height()/2));
+            painter.drawLine(QPointF(margin, margin), QPointF(width()-margin, height() / 2));
+            painter.drawLine(QPointF(margin, height()-margin), QPointF(width()-margin, height() / 2));
             break;
         }
         case Arrow::Left:
         {
-            painter.drawLine(QPointF(width()-margin, margin), QPointF(margin, height()/2));
-            painter.drawLine(QPointF(width()-margin, height()-margin), QPointF(margin, height()/2));
+            painter.drawLine(QPointF(width()-margin, margin), QPointF(margin, height() / 2));
+            painter.drawLine(QPointF(width()-margin, height()-margin), QPointF(margin, height() / 2));
             break;
         }
         default: break;
@@ -82,9 +82,10 @@ void TTKPictureBannerArrowWidget::paintEvent(QPaintEvent *event)
 
 
 TTKPictureBannerIndicator::TTKPictureBannerIndicator(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_selected(false)
 {
-    m_selected = false;
+
 }
 
 void TTKPictureBannerIndicator::select(bool selected)
@@ -112,9 +113,10 @@ void TTKPictureBannerIndicator::paintEvent(QPaintEvent *event)
 
 
 TTKPictureBannerPage::TTKPictureBannerPage(QWidget *parent)
-    : QLabel(parent)
+    : QLabel(parent),
+      m_bActive(false)
 {
-    m_bActive = false;
+
 }
 
 void TTKPictureBannerPage::setActive(bool active)
@@ -147,10 +149,9 @@ void TTKPictureBannerPage::paintEvent(QPaintEvent *event)
 
 
 TTKPictureBannerView::TTKPictureBannerView(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_size(540, 200)
 {
-    m_size = QSize(540, 200);
-
     m_leftPage = new TTKPictureBannerPage(this);
     m_centerPage = new TTKPictureBannerPage(this);
     m_centerPage->setActive(true);
@@ -340,16 +341,12 @@ void TTKPictureBannerView::setArrowHidden(bool hidden)
 
 
 TTKPictureBannerWidget::TTKPictureBannerWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_view(0),
+      m_indLayout(0),
+      m_currentIndex(-1),
+      m_interval(2000)
 {
-    m_view = 0;
-    m_indLayout = 0;
-    m_indicators.clear();
-    m_pixmaps.clear();
-    m_currentIndex = -1;
-    m_timer = 0;
-    m_interval = 2000;
-
     initialize();
 }
 

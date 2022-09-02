@@ -106,9 +106,10 @@ struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
     TTKFunctionToolBoxWidgetItem* m_widgetItem;
 
     TTKFunctionToolBoxUnionItem()
+        : m_itemIndex(-1),
+          m_widgetItem(nullptr)
     {
-        m_itemIndex = -1;
-        m_widgetItem = nullptr;
+
     }
 };
 

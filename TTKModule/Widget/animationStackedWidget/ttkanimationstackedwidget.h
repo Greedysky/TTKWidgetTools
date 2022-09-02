@@ -35,7 +35,6 @@ public:
         RightToLeft,
         TopToBottom,
         BottomToTop
-
     };
 
     explicit TTKAnimationStackedWidget(QWidget *parent = nullptr);

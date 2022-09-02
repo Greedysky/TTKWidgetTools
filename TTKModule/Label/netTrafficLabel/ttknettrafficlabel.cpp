@@ -22,10 +22,10 @@
 #define TEMP_FILE_NAME  "net_temp"
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
-    : QThread(parent)
+    : QThread(parent),
+      m_run(true),
+      m_process(nullptr)
 {
-    m_run = true;
-    m_process = nullptr;
 #ifdef Q_OS_UNIX
     QFile openFile(":/net/res_traffic");
     if(openFile.open(QFile::ReadOnly))

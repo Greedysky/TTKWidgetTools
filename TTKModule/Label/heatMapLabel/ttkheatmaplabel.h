@@ -31,170 +31,170 @@ using DataRange = std::vector<unsigned char>;
 class TTK_MODULE_EXPORT HeatMapper
 {
 public:
-  enum class ColorScheme
-  {
-    Default,
-    ///
-    YlOrRdDiscrete,
-    YlOrRdSoft,
-    YlOrRdMixed,
-    YlOrRdMixedExp,
-    ///
-    YlOrBrDiscrete,
-    YlOrBrSoft,
-    YlOrBrMixed,
-    YlOrBrMixedExp,
-    ///
-    YlGnBuDiscrete,
-    YlGnBuSoft,
-    YlGnBuMixed,
-    YlGnBuMixedExp,
-    ///
-    YlGnDiscrete,
-    YlGnSoft,
-    YlGnMixed,
-    YlGnMixedExp,
-    ///
-    SpectralDiscrete,
-    SpectralSoft,
-    SpectralMixed,
-    SpectralMixedExp,
-    ///
-    RedsDiscrete,
-    RedsSoft,
-    RedsMixed,
-    RedsMixedExp,
-    ///
-    RdYlGnDiscrete,
-    RdYlGnSoft,
-    RdYlGnMixed,
-    RdYlGnMixedExp,
-    ///
-    RdYlBuDiscrete,
-    RdYlBuSoft,
-    RdYlBuMixed,
-    RdYlBuMixedExp,
-    ///
-    RdPuDiscrete,
-    RdPuSoft,
-    RdPuMixed,
-    RdPuMixedExp,
-    ///
-    RdGyDiscrete,
-    RdGySoft,
-    RdGyMixed,
-    RdGyMixedExp,
-    ///
-    RdBuDiscrete,
-    RdBuSoft,
-    RdBuMixed,
-    RdBuMixedExp,
-    ///
-    PurplesDiscrete,
-    PurplesSoft,
-    PurplesMixed,
-    PurplesMixedExp,
-    ///
-    PuRdDiscrete,
-    PuRdSoft,
-    PuRdMixed,
-    PuRdMixedExp,
-    ///
-    PuOrDiscrete,
-    PuOrSoft,
-    PuOrMixed,
-    PuOrMixedExp,
-    ///
-    PuBuGnDiscrete,
-    PuBuGnSoft,
-    PuBuGnMixed,
-    PuBuGnMixedExp,
-    ///
-    PuBuDiscrete,
-    PuBuSoft,
-    PuBuMixed,
-    PuBuMixedExp,
-    ///
-    PRGnDiscrete,
-    PRGnSoft,
-    PRGnMixed,
-    PRGnMixedExp,
-    ///
-    PiYGDiscrete,
-    PiYGSoft,
-    PiYGMixed,
-    PiYGMixedExp,
-    ///
-    OrRdDiscrete,
-    OrRdSoft,
-    OrRdMixed,
-    OrRdMixedExp,
-    ///
-    OrangesDiscrete,
-    OrangesSoft,
-    OrangesMixed,
-    OrangesMixedExp,
-    ///
-    GreysDiscrete,
-    GreysSoft,
-    GreysMixed,
-    GreysMixedExp,
-    ///
-    GreensDiscrete,
-    GreensSoft,
-    GreensMixed,
-    GreensMixedExp,
-    ///
-    B2w,
-    B2wOpaque,
-    W2b,
-    W2bOpaque,
-    ///
-    GnBuDiscrete,
-    GnBuSoft,
-    GnBuMixed,
-    GnBuMixedExp,
-    ///
-    BuPuDiscrete,
-    BuPuSoft,
-    BuPuMixed,
-    BuPuMixedExp,
-    ///
-    BuGnDiscrete,
-    BuGnSoft,
-    BuGnMixed,
-    BuGnMixedExp,
-    ///
-    BrBGDiscrete,
-    BrBGSoft,
-    BrBGMixed,
-    BrBGMixedExp,
-    ///
-    BluesDiscrete,
-    BluesSoft,
-    BluesMixed,
-    BluesMixedExp
-  };
+    enum class ColorScheme
+    {
+        Default,
+        ///
+        YlOrRdDiscrete,
+        YlOrRdSoft,
+        YlOrRdMixed,
+        YlOrRdMixedExp,
+        ///
+        YlOrBrDiscrete,
+        YlOrBrSoft,
+        YlOrBrMixed,
+        YlOrBrMixedExp,
+        ///
+        YlGnBuDiscrete,
+        YlGnBuSoft,
+        YlGnBuMixed,
+        YlGnBuMixedExp,
+        ///
+        YlGnDiscrete,
+        YlGnSoft,
+        YlGnMixed,
+        YlGnMixedExp,
+        ///
+        SpectralDiscrete,
+        SpectralSoft,
+        SpectralMixed,
+        SpectralMixedExp,
+        ///
+        RedsDiscrete,
+        RedsSoft,
+        RedsMixed,
+        RedsMixedExp,
+        ///
+        RdYlGnDiscrete,
+        RdYlGnSoft,
+        RdYlGnMixed,
+        RdYlGnMixedExp,
+        ///
+        RdYlBuDiscrete,
+        RdYlBuSoft,
+        RdYlBuMixed,
+        RdYlBuMixedExp,
+        ///
+        RdPuDiscrete,
+        RdPuSoft,
+        RdPuMixed,
+        RdPuMixedExp,
+        ///
+        RdGyDiscrete,
+        RdGySoft,
+        RdGyMixed,
+        RdGyMixedExp,
+        ///
+        RdBuDiscrete,
+        RdBuSoft,
+        RdBuMixed,
+        RdBuMixedExp,
+        ///
+        PurplesDiscrete,
+        PurplesSoft,
+        PurplesMixed,
+        PurplesMixedExp,
+        ///
+        PuRdDiscrete,
+        PuRdSoft,
+        PuRdMixed,
+        PuRdMixedExp,
+        ///
+        PuOrDiscrete,
+        PuOrSoft,
+        PuOrMixed,
+        PuOrMixedExp,
+        ///
+        PuBuGnDiscrete,
+        PuBuGnSoft,
+        PuBuGnMixed,
+        PuBuGnMixedExp,
+        ///
+        PuBuDiscrete,
+        PuBuSoft,
+        PuBuMixed,
+        PuBuMixedExp,
+        ///
+        PRGnDiscrete,
+        PRGnSoft,
+        PRGnMixed,
+        PRGnMixedExp,
+        ///
+        PiYGDiscrete,
+        PiYGSoft,
+        PiYGMixed,
+        PiYGMixedExp,
+        ///
+        OrRdDiscrete,
+        OrRdSoft,
+        OrRdMixed,
+        OrRdMixedExp,
+        ///
+        OrangesDiscrete,
+        OrangesSoft,
+        OrangesMixed,
+        OrangesMixedExp,
+        ///
+        GreysDiscrete,
+        GreysSoft,
+        GreysMixed,
+        GreysMixedExp,
+        ///
+        GreensDiscrete,
+        GreensSoft,
+        GreensMixed,
+        GreensMixedExp,
+        ///
+        B2w,
+        B2wOpaque,
+        W2b,
+        W2bOpaque,
+        ///
+        GnBuDiscrete,
+        GnBuSoft,
+        GnBuMixed,
+        GnBuMixedExp,
+        ///
+        BuPuDiscrete,
+        BuPuSoft,
+        BuPuMixed,
+        BuPuMixedExp,
+        ///
+        BuGnDiscrete,
+        BuGnSoft,
+        BuGnMixed,
+        BuGnMixedExp,
+        ///
+        BrBGDiscrete,
+        BrBGSoft,
+        BrBGMixed,
+        BrBGMixedExp,
+        ///
+        BluesDiscrete,
+        BluesSoft,
+        BluesMixed,
+        BluesMixedExp
+    };
 
-  explicit HeatMapper(const QSize &size);
-  HeatMapper(const QSize &size, int radius);
-  HeatMapper(int width, int height);
-  HeatMapper(int width, int height, int radius);
-  ~HeatMapper();
+    explicit HeatMapper(const QSize &size);
+    HeatMapper(const QSize &size, int radius);
+    HeatMapper(int width, int height);
+    HeatMapper(int width, int height, int radius);
+    ~HeatMapper();
 
-  void setRadius(int radius);
-  void setOpacity(int opacity);
-  void setColorScheme(ColorScheme scheme);
+    void setRadius(int radius);
+    void setOpacity(int opacity);
+    void setColorScheme(ColorScheme scheme);
 
-  void addPoint(int x, int y);
+    void addPoint(int x, int y);
 
-  QImage render();
+    QImage render();
 
 private:
-  int m_opacity;
-  DataObject *m_heatmap;
-  DataStamp *m_stamp;
-  ColorScheme m_scheme;
+    int m_opacity;
+    DataObject *m_heatmap;
+    DataStamp *m_stamp;
+    ColorScheme m_scheme;
 
 };
 

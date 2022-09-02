@@ -5,32 +5,26 @@
 #include <QPainter>
 
 TTKArcMeterWidget::TTKArcMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_arcColor(60, 60, 60),
+      m_scaleColor(233, 185, 110),
+      m_scaleNumColor(92, 53, 102),
+      m_pointerColor(253, 107, 107),
+      m_textColor(0, 0, 0),
+      m_pointerStyle(PointerStyle::Indicator),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_precision = 0;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_arcColor = QColor(60, 60, 60);
-    m_scaleColor = QColor(233, 185, 110);
-    m_scaleNumColor = QColor(92, 53, 102);
-    m_pointerColor = QColor(253, 107, 107);
-    m_textColor = QColor(0, 0, 0);
-
-    m_pointerStyle = PointerStyle::Indicator;
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

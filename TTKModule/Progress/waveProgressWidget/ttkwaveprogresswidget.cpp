@@ -6,19 +6,17 @@
 #include <QPainterPath>
 
 TTKWaveProgressWidget::TTKWaveProgressWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_value(45),
+      m_minValue(0),
+      m_maxValue(100),
+      m_waterDensity(2),
+      m_waterHeight(0.02),
+      m_offset(0),
+      m_borderWidth(2),
+      m_bgColor(0, 100, 255),
+      m_percentStyle(PercentStyle::Circle)
 {
-    m_value = 45;
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_waterDensity = 2;
-    m_waterHeight = 0.02;
-    m_offset = 0;
-    m_borderWidth = 2;
-    m_bgColor = QColor(0, 100, 255);
-
-    m_percentStyle = PercentStyle::Circle;
-
     m_timer = new QTimer(this);
     connect(m_timer,  SIGNAL(timeout()), SLOT(timeout()));
     m_timer->start(100);

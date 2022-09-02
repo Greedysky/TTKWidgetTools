@@ -5,23 +5,21 @@
 #include <QPainterPath>
 
 TTKScanLabel::TTKScanLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_imageRadius(10),
+      m_scanRadius(50),
+      m_scanWidth(0),
+      m_ringRadius(10),
+      m_ringWidth(5),
+      m_scanDeg(0),
+      m_imageBorderWidth(5),
+      m_imageBorderColor(255, 255, 255),
+      m_scanColor(255, 100, 10),
+      m_ringColor(255, 213, 110)
 {
-    m_imageRadius = 10;
-    m_scanRadius = 50;
-    m_scanWidth = 0;
-    m_ringRadius = 10;
-    m_ringWidth = 5;
-    m_scanDeg = 0;
-    m_imageBorderWidth = 5;
-
     QPixmap pix(1, 1);
     pix.fill(Qt::white);
     m_image = pix;
-
-    m_imageBorderColor = QColor(255, 255, 255);
-    m_scanColor = QColor(255, 100, 10);
-    m_ringColor = QColor(255, 213, 110);
 
     m_circleTimer = new QTimer(this);
     m_circleTimer->setInterval(20);

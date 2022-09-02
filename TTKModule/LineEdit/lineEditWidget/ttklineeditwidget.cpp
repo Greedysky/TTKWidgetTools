@@ -4,13 +4,12 @@
 #include <QPropertyAnimation>
 
 TTKLineEditWidget::TTKLineEditWidget(QWidget *parent)
-    : QLineEdit(parent)
+    : QLineEdit(parent),
+      m_isAnimating(false),
+      m_currentValue(0),
+      m_color(0, 0, 0)
 {
     setStyleSheet("border:none");
-
-    m_isAnimating = false;
-    m_currentValue = 0;
-    m_color = QColor(0, 0, 0);
 
     m_animation = new QPropertyAnimation(this, QByteArray());
     m_animation->setDuration(1000);
@@ -60,7 +59,7 @@ void TTKLineEditWidget::paintEvent(QPaintEvent * event)
 
     if(m_isAnimating)
     {
-        int hw = width()/2;
+        int hw = width() / 2;
         painter.drawLine(hw - m_currentValue - 1, height() - 1, hw, height() - 1);
         painter.drawLine(hw + 1, height() - 1, hw + m_currentValue, height() - 1);
     }
@@ -76,6 +75,6 @@ void TTKLineEditWidget::focusInEvent(QFocusEvent *event)
 
     m_isAnimating = true;
     m_animation->setStartValue(0);
-    m_animation->setEndValue(width()/2);
+    m_animation->setEndValue(width() / 2);
     m_animation->start();
 }

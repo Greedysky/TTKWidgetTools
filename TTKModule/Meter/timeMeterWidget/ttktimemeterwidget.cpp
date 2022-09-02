@@ -5,21 +5,21 @@
 #include <QPainter>
 
 TTKTimeMeterWidget::TTKTimeMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_foreground(Qt::green),
+      m_background(Qt::black),
+      m_units("km/h"),
+      m_title("Speed Meter"),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_maxValue(100),
+      m_minValue(0),
+      m_startAngle(60),
+      m_endAngle(60),
+      m_value(0),
+      m_precision(0)
 {
-    m_background = Qt::black;
-    m_foreground = Qt::green;
-    m_startAngle = 60;
-    m_endAngle = 60;
-    m_scaleMajor = 10;
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_units = "km/h";
-    m_title = "Speed Meter";
-    m_precision = 0;
-    m_value = 0;
+
 }
 
 void TTKTimeMeterWidget::setValue(qreal value)

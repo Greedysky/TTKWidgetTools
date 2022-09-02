@@ -6,40 +6,34 @@
 #include <QPainterPath>
 
 TTKCarMeterWidget::TTKCarMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_outerCircleColor(60, 60, 60),
+      m_innerCircleColor(80, 80, 80),
+      m_pieColorStart(253, 107, 107),
+      m_pieColorMid (217, 217, 0),
+      m_pieColorEnd (24, 188, 154),
+      m_coverCircleColor(100, 100, 100),
+      m_scaleColor(255, 255, 255),
+      m_pointerColor(253, 107, 107),
+      m_centerCircleColor(255, 255, 255),
+      m_textColor(0, 0, 0),
+      m_showOverlay(true),
+      m_overlayColor(255, 255, 255),
+      m_pieStyle(PieStyle::Three),
+      m_pointerStyle(PointerStyle::Indicator),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_precision = 0;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_outerCircleColor = QColor(60, 60, 60);
-    m_innerCircleColor = QColor(80, 80, 80);
-    m_pieColorStart = QColor(253, 107, 107);
-    m_pieColorMid = QColor(217, 217, 0);
-    m_pieColorEnd = QColor(24, 188, 154);
-    m_coverCircleColor = QColor(100, 100, 100);
-    m_scaleColor = QColor(255, 255, 255);
-    m_pointerColor = QColor(253, 107, 107);
-    m_centerCircleColor = QColor(255, 255, 255);
-    m_textColor = QColor(0, 0, 0);
-
-    m_showOverlay = true;
-    m_overlayColor = QColor(255, 255, 255);
-    m_pieStyle = PieStyle::Three;
-    m_pointerStyle = PointerStyle::Indicator;
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

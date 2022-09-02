@@ -8,15 +8,14 @@
 #include <QPropertyAnimation>
 
 TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_curIndex(0),
+      m_preIndex(0),
+      m_x(0),
+      m_perValue(0),
+      m_isAnimation(true),
+      m_showLine(true)
 {
-    m_curIndex = 0;
-    m_preIndex = 0;
-    m_x = 0;
-    m_perValue = 0;
-    m_isAnimation = true;
-    m_showLine = true;
-
     m_animation = new QPropertyAnimation(this, "");
     m_animation->setDuration(100);
 

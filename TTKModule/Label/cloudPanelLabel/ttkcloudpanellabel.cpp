@@ -5,19 +5,17 @@
 #include <QMouseEvent>
 
 TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_enter(false),
+      m_pressed(false),
+      m_bgColor(Qt::black),
+      m_baseColor(80, 80, 80),
+      m_arcColor(32, 32, 32),
+      m_borderColor(Qt::darkCyan),
+      m_iconColor(Qt::white),
+      m_pressColor(Qt::lightGray),
+      m_cloudStyle(CloudStyle::Black)
 {
-    m_enter = false;
-    m_pressed = false;
-
-    m_bgColor = Qt::black;
-    m_baseColor = QColor(80, 80, 80);
-    m_arcColor = QColor(32, 32, 32);
-    m_borderColor = Qt::darkCyan;
-    m_iconColor = Qt::white;
-    m_pressColor = Qt::lightGray;
-    m_cloudStyle = CloudStyle::Black;
-
     setMinimumSize(100, 100);
 }
 

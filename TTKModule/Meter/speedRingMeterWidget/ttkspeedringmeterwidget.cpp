@@ -5,35 +5,29 @@
 #include <QPainter>
 
 TTKSpeedRingMeterWidget::TTKSpeedRingMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_ringWidth(10),
+      m_ringStartPercent(10),
+      m_ringMidPercent(10),
+      m_ringEndPercent(10),
+      m_ringColorStart(60, 60, 60),
+      m_ringColorMid(80, 80, 80),
+      m_ringColorEnd(253, 107, 107),
+      m_pointerColor(217, 217, 0),
+      m_textColor(24, 188, 154),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_precision = 0;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_ringWidth = 10;
-    m_ringStartPercent = 10;
-    m_ringMidPercent = 10;
-    m_ringEndPercent = 10;
-
-    m_ringColorStart = QColor(60, 60, 60);
-    m_ringColorMid = QColor(80, 80, 80);
-    m_ringColorEnd = QColor(253, 107, 107);
-    m_pointerColor = QColor(217, 217, 0);
-    m_textColor = QColor(24, 188, 154);
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

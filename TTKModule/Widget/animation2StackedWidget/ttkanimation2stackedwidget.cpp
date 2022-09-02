@@ -6,20 +6,18 @@
 #include <QTransform>
 
 TTKAnimation2StackedWidget::TTKAnimation2StackedWidget(QWidget *parent)
-    : QStackedWidget(parent)
+    : QStackedWidget(parent),
+      m_isAnimating(false),
+      m_currentValue(0),
+      m_fade(false),
+      m_animat(false),
+      m_curve(QEasingCurve::Linear),
+      m_currentIndex(0),
+      m_previousIndex(0),
+      m_type(Module::FadeExchange),
+      m_revert(false)
 {
     setAttribute(Qt::WA_TranslucentBackground);
-
-    m_revert = false;
-    m_curve = QEasingCurve::Linear;
-    m_isAnimating = false;
-    m_currentValue = 0;
-    m_currentIndex = 0;
-    m_previousIndex = 0;
-    m_type = Module::FadeExchange;
-
-    m_fade = false;
-    m_animat = false;
 
     m_animation = new QPropertyAnimation(this, "m_currentValue", this);
     m_animation->setPropertyName("m_currentValue");

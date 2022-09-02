@@ -4,14 +4,13 @@
 #include <QPainter>
 
 TTKLightPointLabel::TTKLightPointLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_step(10),
+      m_interval(100),
+      m_bgColor(255, 179, 133),
+      m_offset(0),
+      m_add(true)
 {
-    m_step = 10;
-    m_interval = 100;
-    m_bgColor = QColor(255, 179, 133);
-
-    m_offset = 0;
-    m_add = true;
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(update()));
     m_timer->start(100);

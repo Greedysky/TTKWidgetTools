@@ -7,12 +7,12 @@
 #define ITEM_ROW_HEIGHT     40
 
 TTKFunctionItem::TTKFunctionItem(int index, const QString &path, const QString &text, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_index(index)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setContentsMargins(5, 2, 2, 2);
 
-    m_index = index;
     m_iconLabel = new QLabel(this);
     m_textLabel = new QLabel(this);
     m_textLabel->setAlignment(Qt::AlignVCenter);

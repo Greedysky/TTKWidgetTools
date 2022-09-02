@@ -5,16 +5,15 @@
 #include <QPropertyAnimation>
 
 TTKCircleProgressWidget::TTKCircleProgressWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_color(110, 190, 235),
+      m_value(0),
+      m_maximum(0),
+      m_visibleValue(0),
+      m_innerRadius(0.6f),
+      m_outerRadius(1.0f),
+      m_infiniteAnimationValue(0.0f)
 {
-    m_color = QColor(110,190,235);
-    m_value = 0;
-    m_maximum= 0;
-    m_visibleValue = 0;
-    m_innerRadius = 0.6f;
-    m_outerRadius= 1.0f;
-    m_infiniteAnimationValue = 0.0f;
-
     m_valueAnimation = new QPropertyAnimation(this, "visibleValue");
     m_infiniteAnimation = new QPropertyAnimation(this, "infiniteAnimationValue");
 
@@ -220,9 +219,9 @@ QPixmap TTKCircleProgressWidget::generatePixmap() const
     painter.setRenderHint(QPainter::Antialiasing, true);
 
     QRectF rect = pixmap.rect().adjusted(1,1,-1,-1);
-    qreal margin = rect.width()*(1.0 - m_outerRadius)/2.0;
+    qreal margin = rect.width()*(1.0 - m_outerRadius) / 2.0;
     rect.adjust(margin,margin,-margin,-margin);
-    qreal innerRadius = m_innerRadius*rect.width()/2.0;
+    qreal innerRadius = m_innerRadius*rect.width() / 2.0;
 
     painter.setBrush(QColor(225, 225, 225));
     painter.setPen(QColor(225, 225, 225));

@@ -18,12 +18,11 @@ static int random(int value)
 }
 
 TTKPuzzleItemWidget::TTKPuzzleItemWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_value(0),
+      m_squareWidth(100),
+      m_squareRadius(30)
 {
-    m_value = 0;
-    m_squareWidth = 100;
-    m_squareRadius = 30;
-
 #if !TTK_QT_VERSION_CHECK(5,10,0)
     qsrand(QDateTime::currentMSecsSinceEpoch());
 #endif

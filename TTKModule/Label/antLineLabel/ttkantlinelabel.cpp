@@ -4,19 +4,16 @@
 #include <QPainter>
 
 TTKAntLineLabel::TTKAntLineLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_lineLen(3),
+      m_lineWidth(6),
+      m_lineStep(1),
+      m_lineSpeed(500),
+      m_lineColor(60, 179, 133),
+      m_lineStyle(LineStyle::Rect),
+      m_dashes(m_lineLen),
+      m_spaces(m_lineLen)
 {
-    m_lineLen = 3;
-    m_lineWidth = 6;
-    m_lineStep = 1;
-    m_lineSpeed = 500;
-    m_lineColor = QColor(60, 179, 133);
-    m_lineStyle = LineStyle::Rect;
-
-    m_dashes = m_lineLen;
-    m_spaces = m_lineLen;
-    m_dashPattern.clear();
-
     for(int i = 0; i < 20; ++i)
     {
         m_dashPattern << m_lineLen;

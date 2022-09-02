@@ -28,7 +28,6 @@ TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     ui(new Ui::TTKToolsApplication)
 {
     ui->setupUi(this);
-
     //
     createButtonModule();
     createLabelModule();

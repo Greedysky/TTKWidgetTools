@@ -7,12 +7,11 @@
 #define PADDING          6
 
 TTKGrabItemWidget::TTKGrabItemWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_isPressed(false),
+      m_crossStretch(true),
+      m_direction(Direction::No)
 {
-    m_direction = Direction::No;
-    m_isPressed = false;
-    m_crossStretch = true;
-
     setMouseTracking(true);
 }
 

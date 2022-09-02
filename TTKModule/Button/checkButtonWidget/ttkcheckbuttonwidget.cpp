@@ -11,7 +11,6 @@ TTKCheckButtonWidget::TTKCheckButtonWidget(QWidget *parent)
     m_uncheckedState->assignProperty(m_checkedIcon, "iconSize", 0);
 
     QPropertyAnimation *animation;
-
     animation = new QPropertyAnimation(m_checkedIcon, "iconSize", this);
     animation->setDuration(300);
     m_uncheckedTransition->addAnimation(animation);

@@ -10,16 +10,16 @@
 #define RENAME_WIDTH    220
 
 TTKFunctionToolBoxTopWidget::TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_index(index)
 {
-    m_index = index;
-
     setAcceptDrops(true);
     setFixedHeight(40);
 
     QHBoxLayout *topLayout = new QHBoxLayout(this);
     topLayout->setContentsMargins(3, 0, 0, 0);
     topLayout->setSpacing(0);
+
     m_labelIcon = new QLabel(this);
     m_labelIcon->setPixmap(QPixmap(":/res/up"));
     m_labelText = new QLabel(this);
@@ -178,13 +178,12 @@ void TTKFunctionToolBoxWidgetItem::contextMenuEvent(QContextMenuEvent *event)
 
 
 TTKFunctionToolBoxWidget::TTKFunctionToolBoxWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_singleExpand(false),
+      m_currentIndex(-1),
+      m_itemIndexRaise(0)
 {
     setAttribute(Qt::WA_TranslucentBackground);
-
-    m_singleExpand = false;
-    m_currentIndex = -1;
-    m_itemIndexRaise = 0;
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);

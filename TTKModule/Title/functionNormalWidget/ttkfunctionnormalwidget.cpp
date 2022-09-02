@@ -8,14 +8,13 @@
 #define ITEM_LEGHT      100
 
 TTKFunctionNormalWidget::TTKFunctionNormalWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_backGroundColor(0),
+      m_oldChooseBackGround(0),
+      m_newChooseBackGround(0),
+      m_itemOffset(0),
+      m_chooseIndex(0)
 {
-    m_itemOffset = 0;
-    m_backGroundColor = 0;
-    m_oldChooseBackGround = 0;
-    m_newChooseBackGround = 0;
-    m_chooseIndex = 0;
-
     setSize(0, 0);
     setMouseTracking(true);
 

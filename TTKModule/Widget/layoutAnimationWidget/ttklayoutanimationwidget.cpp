@@ -5,7 +5,9 @@
 #include <QPropertyAnimation>
 
 TTKLayoutAnimationWidget::TTKLayoutAnimationWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_isAnimating(false),
+      m_currentValue(0)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -20,14 +22,12 @@ TTKLayoutAnimationWidget::TTKLayoutAnimationWidget(QWidget *parent)
     m_widgetLayout->setSpacing(0);
     m_mainWidget->setLayout(m_widgetLayout);
 
-    m_isAnimating = false;
-    m_currentValue = 0;
-
     m_animation = new QPropertyAnimation(m_mainWidget, QByteArray(), this);
     m_animation->setDuration(5000);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0.0f);
     m_animation->setEndValue(0.0f);
+
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(valueChanged(QVariant)));
     connect(m_animation, SIGNAL(finished()), SLOT(animationFinished()));
 }

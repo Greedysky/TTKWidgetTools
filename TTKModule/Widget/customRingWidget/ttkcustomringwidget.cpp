@@ -3,12 +3,13 @@
 #include <QPainter>
 
 TTKCustomRingWidget::TTKCustomRingWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_bgColor(Qt::white),
+      m_outCircleColor(Qt::red),
+      m_midCircleColor(Qt::green),
+      m_inCircleColor(Qt::blue)
 {
-    m_bgColor = Qt::white;
-    m_outCircleColor = Qt::red;
-    m_midCircleColor = Qt::green;
-    m_inCircleColor = Qt::blue;
+
 }
 
 void TTKCustomRingWidget::setBgColor(const QColor &bgColor)

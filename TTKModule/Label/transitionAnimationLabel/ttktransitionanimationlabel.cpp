@@ -4,17 +4,17 @@
 #include <QPropertyAnimation>
 
 TTKTransitionAnimationLabel::TTKTransitionAnimationLabel(QWidget *parent)
-    : QLabel(parent)
+    : QLabel(parent),
+      m_isAnimating(false),
+      m_currentValue(0),
+      m_noAnimationSet(false)
 {
-    m_isAnimating = false;
-    m_currentValue = 0;
-    m_noAnimationSet = false;
-
     m_animation = new QPropertyAnimation(this, QByteArray());
     m_animation->setDuration(500);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0);
     m_animation->setEndValue(101);
+
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(valueChanged(QVariant)));
     connect(m_animation, SIGNAL(finished()), SLOT(animationFinished()));
 }
@@ -51,6 +51,11 @@ QSize TTKTransitionAnimationLabel::sizeHint() const
 
 void TTKTransitionAnimationLabel::setPixmap(const QPixmap &pix)
 {
+    if(pix.isNull())
+    {
+        return;
+    }
+
     const QPixmap &pixmap = QtLablePixmap(this);
     if(m_noAnimationSet || pixmap.isNull())
     {

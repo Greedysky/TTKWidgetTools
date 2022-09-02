@@ -4,30 +4,26 @@
 #include <QPainter>
 
 TTKCompassMeterWidget::TTKCompassMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_value(50),
+      m_precision(0),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_crownColorStart(255, 255, 255),
+      m_crownColorEnd(60, 60, 60),
+      m_bgColorStart(50, 50, 50),
+      m_bgColorEnd(20, 20, 20),
+      m_darkColor(255, 170, 0),
+      m_lightColor(170, 255, 0),
+      m_foreground(255, 255, 255),
+      m_textColor(0, 0, 0),
+      m_northPointerColor(253, 107, 107),
+      m_southPointerColor(0, 170, 255),
+      m_centerColorStart(230, 230, 230),
+      m_centerColorEnd(180, 180, 180),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_value = 50;
-    m_precision = 0;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_crownColorStart = QColor(255, 255, 255);
-    m_crownColorEnd = QColor(60, 60, 60);
-    m_bgColorStart = QColor(50, 50, 50);
-    m_bgColorEnd = QColor(20, 20, 20);
-    m_darkColor = QColor(255, 170, 0);
-    m_lightColor = QColor(170, 255, 0);
-    m_foreground = QColor(255, 255, 255);
-    m_northPointerColor = QColor(253, 107, 107);
-    m_southPointerColor = QColor(0, 170, 255);
-    m_centerColorStart = QColor(230, 230, 230);
-    m_centerColorEnd = QColor(180, 180, 180);
-    m_textColor = QColor(0, 0, 0);
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

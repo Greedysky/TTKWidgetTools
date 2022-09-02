@@ -55,7 +55,7 @@ private:
     void drawValidWindow(QPainter *painter);
     void drawWarningWindow(QPainter *painter);
 
-    double m_value, m_maxValue, m_minValue;
+    double m_value, m_minValue, m_maxValue;
     int m_precision, m_precisionNumeric;
     QString m_units, m_label;
 	int m_steps;

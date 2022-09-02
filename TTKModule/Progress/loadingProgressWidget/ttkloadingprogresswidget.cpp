@@ -4,15 +4,14 @@
 #include <QPainter>
 
 TTKLoadingProgressWidget::TTKLoadingProgressWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_index(0),
+      m_interval(50)
 {
     setDotColor(QColor(49, 177, 190));
     setDotCount(20);
     setMaxDiameter(30);
     setMinDiameter(2);
-
-    m_interval = 50;
-    m_index = 0;
 
     connect(&m_timer, SIGNAL(timeout()), SLOT(update()));
 }

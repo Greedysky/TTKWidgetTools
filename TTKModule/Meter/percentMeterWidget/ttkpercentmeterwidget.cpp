@@ -4,27 +4,25 @@
 #include <QPainter>
 
 TTKPercentMeterWidget::TTKPercentMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_arcColor(114, 159, 207),
+      m_scaleColor(233, 185, 110),
+      m_scaleNumColor(92, 53, 102),
+      m_textColor(46, 52, 54),
+      m_titleColor(0, 0, 0),
+      m_baseColor(178, 221, 253),
+      m_bgColor(Qt::transparent),
+      m_title("Hello")
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
 
-    m_precision = 0;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_arcColor = QColor(114, 159, 207);
-    m_scaleColor = QColor(233, 185, 110);
-    m_scaleNumColor = QColor(92, 53, 102);
-    m_textColor = QColor(46, 52, 54);
-    m_titleColor = QColor(0, 0, 0);
-    m_baseColor = QColor(178, 221, 253);
-    m_bgColor = Qt::transparent;
-
-    m_title = "Hello";
 }
 
 void TTKPercentMeterWidget::setRange(double minValue, double maxValue)

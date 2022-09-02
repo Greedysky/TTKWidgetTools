@@ -4,10 +4,10 @@
 #include <QMouseEvent>
 
 TTKCrossLineLabel::TTKCrossLineLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_width(2),
+      m_color(Qt::red)
 {
-    m_width = 2;
-    m_color = Qt::red;
     setMouseTracking(true);
 }
 

@@ -6,13 +6,14 @@
 #define ICONPADDING     12
 
 TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
-    : QPushButton(parent)
+    : QPushButton(parent),
+      m_textAlignment(Qt::AlignCenter),
+      m_iconAlignment(IconAlignment::Left),
+      m_backgroundColor(255, 0, 0),
+      m_foregroundColor(0, 0, 0),
+      m_cornerRadius(5)
 {
-    m_textAlignment = Qt::AlignCenter;
-    m_iconAlignment = IconAlignment::Left;
-    m_backgroundColor = QColor(255, 0, 0);
-    m_foregroundColor = QColor(0, 0, 0);
-    m_cornerRadius = 5;
+
 }
 
 void TTKFlatButtonWidget::setForegroundColor(const QColor &color)
@@ -116,10 +117,10 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
     QSize base(size() - textSize);
 
     const int iw = iconSize().width() + ICONPADDING;
-    QPoint pos(Qt::AlignLeft == m_textAlignment ? 12 : (base.width()-iw)/2, 0);
+    QPoint pos(Qt::AlignLeft == m_textAlignment ? 12 : (base.width()-iw) / 2, 0);
 
-    QRect textGeometry(pos + QPoint(0, base.height()/2), textSize);
-    QRect iconGeometry(pos + QPoint(0, (height()-iconSize().height())/2), iconSize());
+    QRect textGeometry(pos + QPoint(0, base.height() / 2), textSize);
+    QRect iconGeometry(pos + QPoint(0, (height()-iconSize().height()) / 2), iconSize());
 
     if(IconAlignment::Left == m_iconAlignment)
     {

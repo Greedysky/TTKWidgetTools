@@ -55,9 +55,9 @@ inline long fcos(int iangle)
 
 QRgb blendColor(QRgb c1, QRgb c2, int blend)
 {
-    int r = qRed(c1) * blend/256 + qRed(c2)*(256-blend)/256;
-    int g = qGreen(c1) * blend/256 + qGreen(c2)*(256-blend)/256;
-    int b = qBlue(c1) * blend/256 + qBlue(c2)*(256-blend)/256;
+    int r = qRed(c1) * blend/256 + qRed(c2)*(256-blend) / 256;
+    int g = qGreen(c1) * blend/256 + qGreen(c2)*(256-blend) / 256;
+    int b = qBlue(c1) * blend/256 + qBlue(c2)*(256-blend) / 256;
     return qRgb(r, g, b);
 }
 
@@ -520,8 +520,8 @@ void TTKPictureFlowWidgetSoftwareRenderer::initialize()
     m_size = m_widget->size();
     int ww = m_size.width();
     int wh = m_size.height();
-    int w = (ww+1)/2;
-    int h = (wh+1)/2;
+    int w = (ww+1) / 2;
+    int h = (wh+1) / 2;
 
     m_buffer = QImage(ww, wh, QImage::Format_RGB32);
     m_buffer.fill(m_bgcolor);
@@ -760,7 +760,8 @@ void TTKPictureFlowWidgetSoftwareRenderer::render()
 
 
 TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_useResize(false)
 {
     setAttribute(Qt::WA_StaticContents, true);
     setAttribute(Qt::WA_OpaquePaintEvent, true);
@@ -777,8 +778,6 @@ TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
     m_renderer->m_state = m_state;
     m_renderer->m_widget = this;
     m_renderer->initialize();
-
-    m_useResize = false;
 
     connect(&m_animator->m_animateTimer, SIGNAL(timeout()), SLOT(updateRender()));
     connect(&m_triggerTimer, SIGNAL(timeout()), SLOT(render()));
@@ -1014,7 +1013,7 @@ void TTKPictureFlowWidget::resizeEvent(QResizeEvent *event)
     {
         if(slideCount() != 0)
         {
-            setSlideSize(QSize(width()/slideCount(), height()/2));
+            setSlideSize(QSize(width()/slideCount(), height() / 2));
         }
     }
 }

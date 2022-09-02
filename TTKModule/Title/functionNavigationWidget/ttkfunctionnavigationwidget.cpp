@@ -3,44 +3,35 @@
 #include <QPainter>
 
 TTKFunctionNavigationWidget::TTKFunctionNavigationWidget(QWidget *parent)
-    : QPushButton(parent)
+    : QPushButton(parent),
+      m_paddingLeft(20),
+      m_paddingRight(5),
+      m_paddingTop(5),
+      m_paddingBottom(5),
+      m_textAlign(Qt::AlignLeft),
+      m_showTriangle(false),
+      m_triangleLen(5),
+      m_trianglePosition(TrianglePosition::Right),
+      m_triangleColor(255, 255, 255),
+      m_showIcon(false),
+      m_iconSpace(10),
+      m_iconSize(16, 16),
+      m_showLine(true),
+      m_lineSpace(0),
+      m_lineWidth(5),
+      m_linePosition(LinePosition::Left),
+      m_lineColor(0, 187, 158),
+      m_normalBgColor(230, 230, 230),
+      m_hoverBgColor(130, 130, 130),
+      m_checkBgColor(80, 80, 80),
+      m_normalTextColor(100, 100, 100),
+      m_hoverTextColor(255, 255, 255),
+      m_checkTextColor(255, 255, 255),
+      m_normalBgBrush(Qt::NoBrush),
+      m_hoverBgBrush(Qt::NoBrush),
+      m_checkBgBrush(Qt::NoBrush),
+      m_hover(false)
 {
-    m_paddingLeft = 20;
-    m_paddingRight = 5;
-    m_paddingTop = 5;
-    m_paddingBottom = 5;
-    m_textAlign = Qt::AlignLeft;
-
-    m_showTriangle = false;
-    m_triangleLen = 5;
-    m_trianglePosition = TrianglePosition::Right;
-    m_triangleColor = QColor(255, 255, 255);
-
-    m_showIcon = false;
-    m_iconSpace = 10;
-    m_iconSize = QSize(16, 16);
-    m_iconNormal = QPixmap();
-    m_iconHover = QPixmap();
-    m_iconCheck = QPixmap();
-
-    m_showLine = true;
-    m_lineSpace = 0;
-    m_lineWidth = 5;
-    m_linePosition = LinePosition::Left;
-    m_lineColor = QColor(0, 187, 158);
-
-    m_normalBgColor = QColor(230, 230, 230);
-    m_hoverBgColor = QColor(130, 130, 130);
-    m_checkBgColor = QColor(80, 80, 80);
-    m_normalTextColor = QColor(100, 100, 100);
-    m_hoverTextColor = QColor(255, 255, 255);
-    m_checkTextColor = QColor(255, 255, 255);
-
-    m_normalBgBrush = Qt::NoBrush;
-    m_hoverBgBrush = Qt::NoBrush;
-    m_checkBgBrush = Qt::NoBrush;
-
-    m_hover = false;
     setCheckable(true);
 }
 

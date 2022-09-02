@@ -13,15 +13,17 @@
 #define KB (1024)
 
 TTKCPUMemoryLabel::TTKCPUMemoryLabel(QWidget *parent)
-    : QLabel(parent)
+    : QLabel(parent),
+      m_totalNew(0),
+      m_idleNew(0),
+      m_totalOld(0),
+      m_idleOld(0),
+      m_cpuPercent(0),
+      m_memoryPercent(0),
+      m_memoryAll(0),
+      m_memoryUse(0),
+      m_memoryFree(0)
 {
-    m_totalNew = m_idleNew = m_totalOld = m_idleOld = 0;
-    m_cpuPercent = 0;
-
-    m_memoryPercent = 0;
-    m_memoryAll = 0;
-    m_memoryUse = 0;
-
     m_timerCPU = new QTimer(this);
     connect(m_timerCPU, SIGNAL(timeout()), this, SLOT(cpu()));
 

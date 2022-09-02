@@ -6,28 +6,27 @@
 #define PI 3.1415926535
 
 TTKPaintMeterWidget::TTKPaintMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_precision(0),
+      m_precisionNumeric(0),
+      m_units("Km/h"),
+      m_label("Speed"),
+      m_steps(10),
+      m_startAngle(225),
+      m_endAngle(-45),
+      m_enableValidWindow(false),
+      m_beginValidValue(40.0),
+      m_endValidValue(50.0),
+      m_enableWarningWindow(false),
+      m_beginWarningValue(30.0),
+      m_endWarningValue(60.0),
+      m_thresholdEnabled(true),
+      m_numericIndicatorEnabled(true),
+      m_foreground(Qt::yellow),
+      m_background(Qt::black)
 {
-   m_precision = 0;
-   m_steps = 10;
-   m_precisionNumeric = 0;
-   m_foreground = QColor(Qt::yellow);
-   m_background = QColor(Qt::black);
-   m_thresholdEnabled = true;
-   m_numericIndicatorEnabled = true;
-   m_minValue = 0;
-   m_maxValue = 100;
-   m_startAngle = 225;
-   m_endAngle = -45;
-   m_units = "Km/h";
-   m_label = "Speed";
-   m_enableValidWindow = false;
-   m_beginValidValue = 40.0;
-   m_endValidValue = 50.0;
-   m_enableWarningWindow = false;
-   m_beginWarningValue = 30.0;
-   m_endWarningValue = 60.0;
-
    setThreshold(80);
    setValue(0);
 

@@ -21,8 +21,8 @@ void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
 
-    const QRect rect = QRect(0, 0, width(), height()/2);
-    const QRect textRect = QRect(0, height()/2, width(), height()/2);
+    const QRect rect = QRect(0, 0, width(), height() / 2);
+    const QRect textRect = QRect(0, height() / 2, width(), height() / 2);
 
     const double k = (double)(value() - minimum()) / (maximum()-minimum());
     const int x = (int)(rect.width() * k);

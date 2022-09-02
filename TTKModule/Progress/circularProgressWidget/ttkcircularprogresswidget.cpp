@@ -35,11 +35,12 @@ void TTKCircularProgressDelegate::setAngle(int angle)
 
 
 TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
-    : QProgressBar(parent)
+    : QProgressBar(parent),
+      m_penWidth(6.25),
+      m_size(64)
 {
     m_delegate = new TTKCircularProgressDelegate(this);
-    m_penWidth = 6.25;
-    m_size = 64;
+
     setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding));
 
     QParallelAnimationGroup *group = new QParallelAnimationGroup(this);
@@ -137,7 +138,7 @@ void TTKCircularProgressWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.translate(width()/2, height()/2);
+    painter.translate(width() / 2, height() / 2);
     painter.rotate(m_delegate->angle());
 
     QPen pen;

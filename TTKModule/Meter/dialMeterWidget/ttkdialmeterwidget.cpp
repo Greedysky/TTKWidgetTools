@@ -5,24 +5,22 @@
 #include <QPainter>
 
 TTKDialMeterWidget::TTKDialMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_scaleMajor(10),
+      m_scaleMinor(10),
+      m_startAngle(40),
+      m_endAngle(40),
+      m_darkColor(60, 60, 60),
+      m_lightColor(80, 80, 80),
+      m_textColor(0, 0, 0),
+      m_showValue(true),
+      m_pointerStyle(PointerStyle::Circle)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
 
-    m_precision = 0;
-    m_scaleMajor = 10;
-    m_scaleMinor = 10;
-    m_startAngle = 40;
-    m_endAngle = 40;
-
-    m_darkColor = QColor(60, 60, 60);
-    m_lightColor = QColor(80, 80, 80);
-    m_textColor = QColor(0, 0, 0);
-
-    m_showValue = true;
-    m_pointerStyle = PointerStyle::Circle;
 }
 
 void TTKDialMeterWidget::setRange(double minValue, double maxValue)

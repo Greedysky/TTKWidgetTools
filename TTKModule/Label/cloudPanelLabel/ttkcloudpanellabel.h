@@ -71,6 +71,9 @@ private:
     void drawButton(QPainter *painter);
 
 private:
+    bool m_enter;
+    bool m_pressed;
+
     QColor m_bgColor;
     QColor m_baseColor;
     QColor m_arcColor;
@@ -78,9 +81,6 @@ private:
     QColor m_iconColor;
     QColor m_pressColor;
     CloudStyle m_cloudStyle;
-
-    bool m_enter;
-    bool m_pressed;
 
     QPoint m_lastPoint;
     QRectF m_centerRect;

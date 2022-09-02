@@ -6,13 +6,13 @@
 #include <QPropertyAnimation>
 
 TTKSmoothMovingTableWidget::TTKSmoothMovingTableWidget(QWidget *parent)
-    : QTableWidget(parent)
+    : QTableWidget(parent),
+      m_isFirstInit(true),
+      m_previousValue(0),
+      m_deltaValue(0),
+      m_scrollBar(nullptr),
+      m_slowAnimation(nullptr)
 {
-    m_deltaValue = 0;
-    m_previousValue = 0;
-    m_isFirstInit = true;
-    m_slowAnimation = nullptr;
-    m_scrollBar = nullptr;
     m_animationTimer = new QTimer(this);
     m_animationTimer->setInterval(100);
 

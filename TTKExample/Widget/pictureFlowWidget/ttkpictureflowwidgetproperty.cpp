@@ -38,7 +38,7 @@ TTKPictureFlowWidgetProperty::TTKPictureFlowWidgetProperty(QWidget *parent)
     //
     QtProperty *codeCountItem = m_intManager->addProperty("CurrentIndex");
     m_intManager->setRange(codeCountItem, 0, widget->slideCount());
-    m_intManager->setValue(codeCountItem, widget->slideCount()/2);
+    m_intManager->setValue(codeCountItem, widget->slideCount() / 2);
     objectItem->addSubProperty(codeCountItem);
     //
     m_browser->addProperty(objectItem);

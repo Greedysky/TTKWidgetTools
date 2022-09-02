@@ -54,6 +54,7 @@ private:
     QBoxLayout *m_layout;
     QLineEdit *m_input_f, *m_input_s, *m_input_t, *m_input_l;
     QLabel *m_dot_f, *m_dot_s, *m_dot_t;
+
 };
 
 #endif // TTKIPEDITWIDGET_H

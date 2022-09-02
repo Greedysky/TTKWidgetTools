@@ -5,12 +5,11 @@
 #include <QTimerEvent>
 
 TTKRadarMeterWidget::TTKRadarMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_pieRotate(0),
+      m_timerId(-1),
+      m_nSpeed(50)
 {
-    m_pieRotate = 0;
-    m_timerId = -1;
-    m_nSpeed = 50;
-
     for(int i = 0; i < 5; ++i)
     {
         m_points << QPoint();
@@ -70,11 +69,11 @@ void TTKRadarMeterWidget::resizeEvent(QResizeEvent *event)
 
     if(width() > height())
     {
-        m_drawArea = QRect((width() - height())/2, 0, height(), height());
+        m_drawArea = QRect((width() - height()) / 2, 0, height(), height());
     }
     else
     {
-        m_drawArea = QRect(0, (height() - width())/2, width(), width());
+        m_drawArea = QRect(0, (height() - width()) / 2, width(), width());
     }
     m_drawArea.adjust(10, 10, -10, -10);
 }

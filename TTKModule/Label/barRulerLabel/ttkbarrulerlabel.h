@@ -72,8 +72,8 @@ protected:
     void drawBar(QPainter *painter);
 
 private:
-    double m_maxValue;
     double m_minValue;
+    double m_maxValue;
     double m_value;
     int m_precision;
 

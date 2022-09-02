@@ -3,10 +3,9 @@
 #include <QPainter>
 
 TTKRoundAnimationLabel::TTKRoundAnimationLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_rotateAngle(0)
 {
-    m_rotateAngle = 0;
-
     m_timer.setInterval(50);
     connect(&m_timer, SIGNAL(timeout()), SLOT(update()));
 }
@@ -48,7 +47,7 @@ void TTKRoundAnimationLabel::paintEvent(QPaintEvent *event)
     QPainter painter(this);
 
     QSize self = size();
-    QRect rotatedRect(-self.width()/2, -self.height()/2, self.width(), self.height());
+    QRect rotatedRect(-self.width() / 2, -self.height() / 2, self.width(), self.height());
     int cx = self.width() / 2;
     int cy = self.height() / 2;
 

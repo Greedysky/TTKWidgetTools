@@ -5,7 +5,8 @@
 #include <QPropertyAnimation>
 
 TTKRoundProgressWidget::TTKRoundProgressWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_controlFlags(Null)
 {
     setdefault(90,true);
     setOutterBarWidth(18);
@@ -17,12 +18,6 @@ TTKRoundProgressWidget::TTKRoundProgressWidget(QWidget *parent)
     setDefaultTextColor(QColor(49, 177, 190));
     setPrecision(0);
     setInnerDefaultTextStyle(InnerDefaultTextStyle::Percent);
-
-    m_min = 0;
-    m_max = 100;
-    m_value = 0;
-    m_precision = 0;
-    m_controlFlags = Null;
 }
 
 void TTKRoundProgressWidget::setdefault(int startAngle, bool clockWise)

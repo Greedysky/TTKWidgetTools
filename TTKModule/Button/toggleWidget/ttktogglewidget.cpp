@@ -9,7 +9,10 @@
 #include <QGraphicsDropShadowEffect>
 
 TTKToggleThumb::TTKToggleThumb(TTKToggleWidget *parent)
-    : QWidget(parent), m_toggle(parent), m_shift(0), m_offset(0)
+    : QWidget(parent),
+      m_toggle(parent),
+      m_shift(0),
+      m_offset(0)
 {
     QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect;
     effect->setBlurRadius(6);
@@ -158,14 +161,14 @@ void TTKToggleTrack::paintEvent(QPaintEvent *event)
 
 
 TTKToggleWidget::TTKToggleWidget(QWidget *parent)
-    : QAbstractButton(parent)
+    : QAbstractButton(parent),
+      m_orientation(Qt::Horizontal)
 {
     m_track = new TTKToggleTrack(this);
     m_thumb = new TTKToggleThumb(this);
     m_stateMachine = new QStateMachine(this);
     m_offState = new QState;
     m_onState = new QState;
-    m_orientation = Qt::Horizontal;
 
     setCheckable(true);
     setChecked(false);

@@ -6,18 +6,15 @@
 #include <QPainter>
 
 TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_crownColorStart(255, 255, 255),
+      m_crownColorEnd(166, 166, 166),
+      m_foreground(255, 255, 255),
+      m_background(65, 65, 65),
+      m_pointerHourColor(160, 160, 160),
+      m_pointerMinColor(160, 160, 160),
+      m_pointerSecColor(160, 160, 160)
 {
-    m_crownColorStart = QColor(255, 255, 255);
-    m_crownColorEnd = QColor(166, 166, 166);
-
-    m_foreground = QColor(255, 255, 255);
-    m_background = QColor(65, 65, 65);
-
-    m_pointerHourColor = QColor(160, 160, 160);
-    m_pointerMinColor = QColor(160, 160, 160);
-    m_pointerSecColor = QColor(160, 160, 160);
-
     m_timer = new QTimer(this);
     m_timer->setInterval(1000);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateTime()));

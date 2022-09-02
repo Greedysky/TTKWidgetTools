@@ -5,11 +5,10 @@
 #include <QMouseEvent>
 
 TTKCircleClickLabel::TTKCircleClickLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_circleOn(false),
+      m_crValue(4)
 {
-    m_circleOn = false;
-    m_crValue = 4;
-
     m_circleTimer = new QTimer(this);
     m_circleTimer->setInterval(20);
     connect(m_circleTimer, SIGNAL(timeout()), SLOT(updateRender()));

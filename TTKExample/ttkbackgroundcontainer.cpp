@@ -40,13 +40,13 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
         rect.setWidth(hint.width() + ITEM_SPACE);
         setGeometry(rect);
     }
+
     if(hint.height() > height)
     {
         QRect rect = geometry();
         rect.setHeight(hint.height() + ITEM_SPACE);
         setGeometry(rect);
     }
-
 }
 
 void TTKBackgroundContainerItem::onMouseChange(int x, int y)

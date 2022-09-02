@@ -4,41 +4,33 @@
 #include <QPainter>
 
 TTKRingProgressWidget::TTKRingProgressWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(50),
+      m_precision(0),
+      m_clockWise(true),
+      m_showPercent(true),
+      m_alarmMode(true),
+      m_startAngle(40),
+      m_ringPadding(5),
+      m_ringWidth(15),
+      m_animation(true),
+      m_animationStep(0.5),
+      m_bgColor(60, 60, 60),
+      m_textColor(60, 60, 60),
+      m_ringColor(60, 60, 60),
+      m_ringBgColor(60, 60, 60),
+      m_circleColor(60, 60, 60),
+      m_ringValueF(10),
+      m_ringValueS(20),
+      m_ringValueT(40),
+      m_ringColorF(60, 60, 60),
+      m_ringColorS(60, 60, 60),
+      m_ringColorT(60, 60, 60),
+      m_reverse(false),
+      m_currentValue(50)
 {
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 50;
-
-    m_precision = 0;
-    m_clockWise = true;
-    m_showPercent = true;
-    m_alarmMode = true;
-
-    m_startAngle = 40;
-    m_ringPadding = 5;
-    m_ringWidth = 15;
-
-    m_animation = true;
-    m_animationStep = 0.5;
-
-    m_bgColor = QColor(60, 60, 60);
-    m_textColor = QColor(60, 60, 60);
-    m_ringColor = QColor(60, 60, 60);
-    m_ringBgColor = QColor(60, 60, 60);
-    m_circleColor = QColor(60, 60, 60);
-
-    m_ringValueF = 10;
-    m_ringValueS = 20;
-    m_ringValueT = 40;
-
-    m_ringColorF = QColor(60, 60, 60);
-    m_ringColorS = QColor(60, 60, 60);
-    m_ringColorT = QColor(60, 60, 60);
-
-    m_reverse = false;
-    m_currentValue = 50;
-
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));

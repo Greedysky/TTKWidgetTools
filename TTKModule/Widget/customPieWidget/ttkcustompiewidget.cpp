@@ -3,14 +3,14 @@
 #include <QPainter>
 
 TTKCustomPieWidget::TTKCustomPieWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_explodedAll(true),
+      m_explodedIndex(0),
+      m_showPercent(true),
+      m_textColor(255, 255, 255),
+      m_borderColor(0, 0, 0)
 {
-    m_explodedAll = true;
-    m_explodedIndex = 0;
-    m_showPercent = true;
 
-    m_textColor = QColor(255, 255, 255);
-    m_borderColor = QColor(0, 0, 0);
 }
 
 void TTKCustomPieWidget::setExplodedAll(bool explodedAll)

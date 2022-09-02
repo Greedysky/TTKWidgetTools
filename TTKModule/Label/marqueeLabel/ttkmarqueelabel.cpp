@@ -4,20 +4,17 @@
 #include <QPainter>
 
 TTKMarqueeLabel::TTKMarqueeLabel(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_step(2),
+      m_interval(20),
+      m_mouseHoverStop(false),
+      m_mouseHover(false),
+      m_moveRight(true),
+      m_initX(0),
+      m_initY(0),
+      m_moveStyle(MoveStyle::LeftAndRight)
 {
     setAutoFillBackground(true);
-
-    m_step = 2;
-    m_interval = 20;
-
-    m_mouseHoverStop = false;
-    m_moveStyle = MoveStyle::LeftAndRight;
-
-    m_mouseHover = false;
-    m_moveRight = true;
-    m_initX = 0;
-    m_initY = 0;
 
     m_labText = new QLabel(this);
     m_labText->setAlignment(Qt::AlignVCenter);
