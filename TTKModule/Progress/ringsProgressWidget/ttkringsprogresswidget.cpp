@@ -47,6 +47,6 @@ void TTKRingsProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawEllipse(inRect);
 
     setFont(QtFontInit("Roboto", 15, QFont::Bold));
-    painter.setPen(QColor("#555555"));
+    painter.setPen(QColor(0x55, 0x55, 0x55));
     painter.drawText(inRect, Qt::AlignCenter, QString("%1%").arg(m_value));
 }

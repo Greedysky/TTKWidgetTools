@@ -233,27 +233,27 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     objectItem->addSubProperty(lineColorItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor("#2D9191"));
+    m_colorManager->setValue(normalBgColorItem, QColor(0x2D, 0x91, 0x91));
     objectItem->addSubProperty(normalBgColorItem);
     //
     QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor("#187294"));
+    m_colorManager->setValue(hoverBgColorItem, QColor(0x18, 0x72, 0x94));
     objectItem->addSubProperty(hoverBgColorItem);
     //
     QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor("#145C75"));
+    m_colorManager->setValue(checkBgColorItem, QColor(0x14, 0x5C, 0x75));
     objectItem->addSubProperty(checkBgColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
-    m_colorManager->setValue(normalTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(normalTextColorItem);
     //
     QtProperty *hoverTextColorItem = m_colorManager->addProperty("HoverTextColor");
-    m_colorManager->setValue(hoverTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(hoverTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(hoverTextColorItem);
     //
     QtProperty *checkTextColorItem = m_colorManager->addProperty("CheckTextColor");
-    m_colorManager->setValue(checkTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(checkTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
@@ -430,7 +430,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     objectItem->addSubProperty(lineWidthItem);
     //
     QtProperty *lineColorItem = m_colorManager->addProperty("LineColor");
-    m_colorManager->setValue(lineColorItem, QColor("#029FEA"));
+    m_colorManager->setValue(lineColorItem, QColor(0x02, 0x9F, 0xEA));
     objectItem->addSubProperty(lineColorItem);
     //
     QtProperty *textAlignItem = m_enumManager->addProperty("TextAlign");
@@ -455,27 +455,27 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor("#292F38"));
+    m_colorManager->setValue(normalBgColorItem, QColor(0x29, 0x2F, 0x38));
     objectItem->addSubProperty(normalBgColorItem);
     //
     QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor("#1D2025"));
+    m_colorManager->setValue(hoverBgColorItem, QColor(0x1D, 0x20, 0x25));
     objectItem->addSubProperty(hoverBgColorItem);
     //
     QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor("#1D2025"));
+    m_colorManager->setValue(checkBgColorItem, QColor(0x1D, 0x20, 0x25));
     objectItem->addSubProperty(checkBgColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
-    m_colorManager->setValue(normalTextColorItem, QColor("#54626F"));
+    m_colorManager->setValue(normalTextColorItem, QColor(0x54, 0x62, 0x6F));
     objectItem->addSubProperty(normalTextColorItem);
     //
     QtProperty *hoverTextColorItem = m_colorManager->addProperty("HoverTextColor");
-    m_colorManager->setValue(hoverTextColorItem, QColor("#FDFDFD"));
+    m_colorManager->setValue(hoverTextColorItem, QColor(0xFD, 0xFD, 0xFD));
     objectItem->addSubProperty(hoverTextColorItem);
     //
     QtProperty *checkTextColorItem = m_colorManager->addProperty("CheckTextColor");
-    m_colorManager->setValue(checkTextColorItem, QColor("#FDFDFD"));
+    m_colorManager->setValue(checkTextColorItem, QColor(0xFD, 0xFD, 0xFD));
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
@@ -884,27 +884,27 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor("#292929"));
+    m_colorManager->setValue(normalBgColorItem, QColor(0x29, 0x29, 0x29));
     objectItem->addSubProperty(normalBgColorItem);
     //
     QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor("#064077"));
+    m_colorManager->setValue(hoverBgColorItem, QColor(0x06, 0x40, 0x77));
     objectItem->addSubProperty(hoverBgColorItem);
     //
     QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor("#10689A"));
+    m_colorManager->setValue(checkBgColorItem, QColor(0x10, 0x68, 0x9A));
     objectItem->addSubProperty(checkBgColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
-    m_colorManager->setValue(normalTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(normalTextColorItem);
     //
     QtProperty *hoverTextColorItem = m_colorManager->addProperty("HoverTextColor");
-    m_colorManager->setValue(hoverTextColorItem, QColor("#FFFF00"));
+    m_colorManager->setValue(hoverTextColorItem, QColor(0xFF, 0xFF, 0x00));
     objectItem->addSubProperty(hoverTextColorItem);
     //
     QtProperty *checkTextColorItem = m_colorManager->addProperty("CheckTextColor");
-    m_colorManager->setValue(checkTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(checkTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
@@ -1103,27 +1103,27 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor("#E6393D"));
+    m_colorManager->setValue(normalBgColorItem, QColor(0xE6, 0x39, 0x3D));
     objectItem->addSubProperty(normalBgColorItem);
     //
     QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor("#EE0000"));
+    m_colorManager->setValue(hoverBgColorItem, QColor(0xEE, 0x00, 0x00));
     objectItem->addSubProperty(hoverBgColorItem);
     //
     QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor("#A40001"));
+    m_colorManager->setValue(checkBgColorItem, QColor(0xA4, 0x00, 0x01));
     objectItem->addSubProperty(checkBgColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
-    m_colorManager->setValue(normalTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(normalTextColorItem);
     //
     QtProperty *hoverTextColorItem = m_colorManager->addProperty("HoverTextColor");
-    m_colorManager->setValue(hoverTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(hoverTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(hoverTextColorItem);
     //
     QtProperty *checkTextColorItem = m_colorManager->addProperty("CheckTextColor");
-    m_colorManager->setValue(checkTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(checkTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);
@@ -1323,51 +1323,51 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBgBrushRItem = m_colorManager->addProperty("NormalBgBrushR");
-    m_colorManager->setValue(normalBgBrushRItem, QColor("#3985BF"));
+    m_colorManager->setValue(normalBgBrushRItem, QColor(0x39, 0x85, 0xBF));
     objectItem->addSubProperty(normalBgBrushRItem);
     //
     QtProperty *normalBgBrushGItem = m_colorManager->addProperty("NormalBgBrushG");
-    m_colorManager->setValue(normalBgBrushGItem, QColor("#2972A9"));
+    m_colorManager->setValue(normalBgBrushGItem, QColor(0x29, 0x72, 0xA9));
     objectItem->addSubProperty(normalBgBrushGItem);
     //
     QtProperty *normalBgBrushBItem = m_colorManager->addProperty("NormalBgBrushB");
-    m_colorManager->setValue(normalBgBrushBItem, QColor("#1C6496"));
+    m_colorManager->setValue(normalBgBrushBItem, QColor(0x1C, 0x64, 0x96));
     objectItem->addSubProperty(normalBgBrushBItem);
     //
     QtProperty *hoverBgBrushRItem = m_colorManager->addProperty("HoverlBgBrushR");
-    m_colorManager->setValue(hoverBgBrushRItem, QColor("#4897D1"));
+    m_colorManager->setValue(hoverBgBrushRItem, QColor(0x48, 0x97, 0xD1));
     objectItem->addSubProperty(hoverBgBrushRItem);
     //
     QtProperty *hoverBgBrushGItem = m_colorManager->addProperty("HoverlBgBrushG");
-    m_colorManager->setValue(hoverBgBrushGItem, QColor("#3283BC"));
+    m_colorManager->setValue(hoverBgBrushGItem, QColor(0x32, 0x83, 0xBC));
     objectItem->addSubProperty(hoverBgBrushGItem);
     //
     QtProperty *hoverBgBrushBItem = m_colorManager->addProperty("HoverlBgBrushB");
-    m_colorManager->setValue(hoverBgBrushBItem, QColor("#3088C3"));
+    m_colorManager->setValue(hoverBgBrushBItem, QColor(0x30, 0x88, 0xC3));
     objectItem->addSubProperty(hoverBgBrushBItem);
     //
     QtProperty *checkBgBrushRItem = m_colorManager->addProperty("CheckBgBrushR");
-    m_colorManager->setValue(checkBgBrushRItem, QColor("#4897D1"));
+    m_colorManager->setValue(checkBgBrushRItem, QColor(0x48, 0x97, 0xD1));
     objectItem->addSubProperty(checkBgBrushRItem);
     //
     QtProperty *checkBgBrushGItem = m_colorManager->addProperty("CheckBgBrushG");
-    m_colorManager->setValue(checkBgBrushGItem, QColor("#3283BC"));
+    m_colorManager->setValue(checkBgBrushGItem, QColor(0x32, 0x83, 0xBC));
     objectItem->addSubProperty(checkBgBrushGItem);
     //
     QtProperty *checkBgBrushBItem = m_colorManager->addProperty("CheckBgBrushB");
-    m_colorManager->setValue(checkBgBrushBItem, QColor("#3088C3"));
+    m_colorManager->setValue(checkBgBrushBItem, QColor(0x30, 0x88, 0xC3));
     objectItem->addSubProperty(checkBgBrushBItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
-    m_colorManager->setValue(normalTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(normalTextColorItem);
     //
     QtProperty *hoverTextColorItem = m_colorManager->addProperty("HoverTextColor");
-    m_colorManager->setValue(hoverTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(hoverTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(hoverTextColorItem);
     //
     QtProperty *checkTextColorItem = m_colorManager->addProperty("CheckTextColor");
-    m_colorManager->setValue(checkTextColorItem, QColor("#FFFFFF"));
+    m_colorManager->setValue(checkTextColorItem, QColor(0xFF, 0xFF, 0xFF));
     objectItem->addSubProperty(checkTextColorItem);
     //
     m_browser->addProperty(objectItem);

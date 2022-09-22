@@ -40,7 +40,7 @@ TTKColorButtonWidgetProperty::TTKColorButtonWidgetProperty(QWidget *parent)
     objectItem->addSubProperty(borderWidthItem);
     //
     QtProperty *borderColorItem = m_colorManager->addProperty("BorderColor");
-    m_colorManager->setValue(borderColorItem, QColor("#C0392B"));
+    m_colorManager->setValue(borderColorItem, QColor(0xC0, 0x39, 0x2B));
     objectItem->addSubProperty(borderColorItem);
     //
     m_browser->addProperty(objectItem);

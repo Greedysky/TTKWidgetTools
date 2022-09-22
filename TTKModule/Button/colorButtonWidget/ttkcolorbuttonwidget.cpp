@@ -6,7 +6,7 @@ TTKColorButtonWidget::TTKColorButtonWidget(QWidget *parent)
       m_columnCount(11),
       m_borderRadius(0),
       m_borderWidth(2),
-      m_borderColor("#C0392B")
+      m_borderColor(0xC0, 0x39, 0x2B)
 {
     m_colors << "#FEFEFE" << "#EEEEEF" << "#DCDDDD" << "#C9CACA" << "#B6B6B7" << "#A1A1A1" << "#8B8B8C" << "#757475" << "#5F5D5D" << "#474443" << "#303030";
     m_colors << "#00A2E9" << "#009B4C" << "#FFF000" << "#E62129" << "#E40082" << "#B04B87" << "#F08519" << "#F4B3B3" << "#897870" << "#D2CDE6" << "#A79CCB";

@@ -18,9 +18,9 @@ const QString MSliderStyle02 = " \
 
 TTKStyleSlider::TTKStyleSlider(QWidget *parent)
     : QSlider(parent),
-      m_handleColor("#FFFEA1"),
-      m_backgroundColor("#4E4F4F"),
-      m_foregroundColor("#FFFEA1")
+      m_handleColor(0xFF, 0xFE, 0xA1),
+      m_backgroundColor(0x4E, 0x4F, 0x4F),
+      m_foregroundColor(0xFF, 0xFE, 0xA1)
 {
     setupProperties();
 }

@@ -27,15 +27,15 @@ TTKStyleSliderProperty::TTKStyleSliderProperty(QWidget *parent)
     objectItem->addSubProperty(directionItem);
     //
     QtProperty *handleColorItem = m_colorManager->addProperty("HandleColor");
-    m_colorManager->setValue(handleColorItem, QColor("#FFFEA1"));
+    m_colorManager->setValue(handleColorItem, QColor(0xFF, 0xFE, 0xA1));
     objectItem->addSubProperty(handleColorItem);
     //
     QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
-    m_colorManager->setValue(foregroundColorItem, QColor("#4E4F4F"));
+    m_colorManager->setValue(foregroundColorItem, QColor(0x4E, 0x4F, 0x4F));
     objectItem->addSubProperty(foregroundColorItem);
     //
     QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
-    m_colorManager->setValue(backgroundColorItem, QColor("#FFFEA1"));
+    m_colorManager->setValue(backgroundColorItem, QColor(0xFF, 0xFE, 0xA1));
     objectItem->addSubProperty(backgroundColorItem);
     //
     m_browser->addProperty(objectItem);

@@ -44,6 +44,6 @@ void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawPie(outRect, (90 - m_angle) * 16, m_angle * 16);
 
     setFont(QtFontInit("Roboto", 15, QFont::Bold));
-    painter.setPen(QColor("#DDDDDD"));
+    painter.setPen(QColor(0xDD, 0xDD, 0xDD));
     painter.drawText(inRect, Qt::AlignCenter, QString("%1%").arg(m_value));
 }
