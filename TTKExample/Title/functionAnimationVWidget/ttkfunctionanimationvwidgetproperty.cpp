@@ -34,7 +34,7 @@ void TTKOptionAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property
     TTKOptionAnimationVWidget *widget = TTKStatic_cast(TTKOptionAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setAlignment(TTKStatic_cast(TTKBaseAnimationWidget::Alignment, value));
+        widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));
     }
 }
 
@@ -73,7 +73,7 @@ void TTKTableAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property,
     TTKTableAnimationVWidget *widget = TTKStatic_cast(TTKTableAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setAlignment(TTKStatic_cast(TTKBaseAnimationWidget::Alignment, value));
+        widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));
     }
 }
 
@@ -112,6 +112,6 @@ void TTKSkinAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property, 
     TTKSkinAnimationVWidget *widget = TTKStatic_cast(TTKSkinAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setAlignment(TTKStatic_cast(TTKBaseAnimationWidget::Alignment, value));
+        widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));
     }
 }

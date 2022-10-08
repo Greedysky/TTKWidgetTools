@@ -28,10 +28,10 @@ class QPropertyAnimation;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKBaseAnimationWidget : public QWidget
+class TTK_MODULE_EXPORT TTKAbstractAnimationWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKBaseAnimationWidget)
+    TTK_DECLARE_MODULE(TTKAbstractAnimationWidget)
 public:
     enum class Alignment
     {
@@ -41,8 +41,8 @@ public:
         Right
     };
 
-    explicit TTKBaseAnimationWidget(QWidget *parent = nullptr);
-    ~TTKBaseAnimationWidget();
+    explicit TTKAbstractAnimationWidget(QWidget *parent = nullptr);
+    ~TTKAbstractAnimationWidget();
 
     void setAlignment(Alignment alignment);
 
@@ -72,12 +72,12 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKBaseAnimationHWidget : public TTKBaseAnimationWidget
+class TTK_MODULE_EXPORT TTKAbstractAnimationHWidget : public TTKAbstractAnimationWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKBaseAnimationHWidget)
+    TTK_DECLARE_MODULE(TTKAbstractAnimationHWidget)
 public:
-    explicit TTKBaseAnimationHWidget(QWidget *parent = nullptr);
+    explicit TTKAbstractAnimationHWidget(QWidget *parent = nullptr);
 
     virtual QSize sizeHint() const override final;
 
@@ -90,7 +90,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKOptionAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKOptionAnimationHWidget : public TTKAbstractAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKOptionAnimationHWidget)
@@ -103,7 +103,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKTableAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKTableAnimationHWidget : public TTKAbstractAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKTableAnimationHWidget)
@@ -119,7 +119,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKSkinAnimationHWidget : public TTKBaseAnimationHWidget
+class TTK_MODULE_EXPORT TTKSkinAnimationHWidget : public TTKAbstractAnimationHWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSkinAnimationHWidget)
@@ -134,12 +134,12 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKBaseAnimationVWidget : public TTKBaseAnimationWidget
+class TTK_MODULE_EXPORT TTKAbstractAnimationVWidget : public TTKAbstractAnimationWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKBaseAnimationVWidget)
+    TTK_DECLARE_MODULE(TTKAbstractAnimationVWidget)
 public:
-    explicit TTKBaseAnimationVWidget(QWidget *parent = nullptr);
+    explicit TTKAbstractAnimationVWidget(QWidget *parent = nullptr);
 
     virtual QSize sizeHint() const override final;
 
@@ -152,7 +152,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKOptionAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKOptionAnimationVWidget : public TTKAbstractAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKOptionAnimationVWidget)
@@ -165,7 +165,7 @@ public:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKTableAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKTableAnimationVWidget : public TTKAbstractAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKTableAnimationVWidget)
@@ -181,7 +181,7 @@ protected:
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKSkinAnimationVWidget : public TTKBaseAnimationVWidget
+class TTK_MODULE_EXPORT TTKSkinAnimationVWidget : public TTKAbstractAnimationVWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKSkinAnimationVWidget)

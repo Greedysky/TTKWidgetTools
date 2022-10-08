@@ -7,7 +7,7 @@
 #include <QToolButton>
 #include <QPropertyAnimation>
 
-TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
+TTKAbstractAnimationWidget::TTKAbstractAnimationWidget(QWidget *parent)
     : QWidget(parent),
       m_curIndex(0),
       m_preIndex(0),
@@ -26,25 +26,25 @@ TTKBaseAnimationWidget::TTKBaseAnimationWidget(QWidget *parent)
     QtButtonGroupConnect(m_buttonGroup, this, switchToSelectedItemStyle);
 }
 
-TTKBaseAnimationWidget::~TTKBaseAnimationWidget()
+TTKAbstractAnimationWidget::~TTKAbstractAnimationWidget()
 {
     qDeleteAll(m_container);
     delete m_animation;
     delete m_buttonGroup;
 }
 
-void TTKBaseAnimationWidget::setAlignment(Alignment alignment)
+void TTKAbstractAnimationWidget::setAlignment(Alignment alignment)
 {
     m_alignment = alignment;
     update();
 }
 
-void TTKBaseAnimationWidget::paintEvent(QPaintEvent *event)
+void TTKAbstractAnimationWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 }
 
-void TTKBaseAnimationWidget::switchToSelectedItemStyle(int index)
+void TTKAbstractAnimationWidget::switchToSelectedItemStyle(int index)
 {
     m_isAnimation = true;
     m_preIndex = m_curIndex;
@@ -56,21 +56,21 @@ void TTKBaseAnimationWidget::switchToSelectedItemStyle(int index)
     emit buttonClicked(index);
 }
 
-void TTKBaseAnimationWidget::animationChanged(const QVariant &value)
+void TTKAbstractAnimationWidget::animationChanged(const QVariant &value)
 {
     m_x = value.toInt();
     update();
 }
 
-void TTKBaseAnimationWidget::finished()
+void TTKAbstractAnimationWidget::finished()
 {
     m_isAnimation = false;
 }
 
 
 
-TTKBaseAnimationHWidget::TTKBaseAnimationHWidget(QWidget *parent)
-    : TTKBaseAnimationWidget(parent)
+TTKAbstractAnimationHWidget::TTKAbstractAnimationHWidget(QWidget *parent)
+    : TTKAbstractAnimationWidget(parent)
 {
     m_alignment = Alignment::Bottom;
 
@@ -80,12 +80,12 @@ TTKBaseAnimationHWidget::TTKBaseAnimationHWidget(QWidget *parent)
     setLayout(layout);
 }
 
-QSize TTKBaseAnimationHWidget::sizeHint() const
+QSize TTKAbstractAnimationHWidget::sizeHint() const
 {
     return QSize(200, 35);
 }
 
-void TTKBaseAnimationHWidget::paintEvent(QPaintEvent *event)
+void TTKAbstractAnimationHWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 
@@ -120,7 +120,7 @@ void TTKBaseAnimationHWidget::paintEvent(QPaintEvent *event)
 
 
 TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
-    : TTKBaseAnimationHWidget(parent)
+    : TTKAbstractAnimationHWidget(parent)
 {
     m_pix = QPixmap(54, 2);
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
@@ -144,7 +144,7 @@ TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
 
 
 TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
-    : TTKBaseAnimationHWidget(parent)
+    : TTKAbstractAnimationHWidget(parent)
 {
     m_pix = QPixmap(54, 2);
     m_pix.fill(QColor(255, 64, 129));
@@ -171,13 +171,13 @@ void TTKTableAnimationHWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(0, 188, 212));
 
-    TTKBaseAnimationHWidget::paintEvent(event);
+    TTKAbstractAnimationHWidget::paintEvent(event);
 }
 
 
 
 TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
-    : TTKBaseAnimationHWidget(parent)
+    : TTKAbstractAnimationHWidget(parent)
 {
     m_pix = QPixmap(":/res/bottom");
 
@@ -198,14 +198,14 @@ TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
 
 void TTKSkinAnimationHWidget::setAlignment(Alignment alignment)
 {
-    TTKBaseAnimationHWidget::setAlignment(alignment);
+    TTKAbstractAnimationHWidget::setAlignment(alignment);
     m_pix = QPixmap(m_alignment == Alignment::Bottom ? ":/res/bottom" : ":/res/top");
 }
 
 
 
-TTKBaseAnimationVWidget::TTKBaseAnimationVWidget(QWidget *parent)
-    : TTKBaseAnimationWidget(parent)
+TTKAbstractAnimationVWidget::TTKAbstractAnimationVWidget(QWidget *parent)
+    : TTKAbstractAnimationWidget(parent)
 {
     m_alignment = Alignment::Left;
 
@@ -215,12 +215,12 @@ TTKBaseAnimationVWidget::TTKBaseAnimationVWidget(QWidget *parent)
     setLayout(layout);
 }
 
-QSize TTKBaseAnimationVWidget::sizeHint() const
+QSize TTKAbstractAnimationVWidget::sizeHint() const
 {
     return QSize(65, 200);
 }
 
-void TTKBaseAnimationVWidget::paintEvent(QPaintEvent *event)
+void TTKAbstractAnimationVWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 
@@ -255,7 +255,7 @@ void TTKBaseAnimationVWidget::paintEvent(QPaintEvent *event)
 
 
 TTKOptionAnimationVWidget::TTKOptionAnimationVWidget(QWidget *parent)
-    : TTKBaseAnimationVWidget(parent)
+    : TTKAbstractAnimationVWidget(parent)
 {
     m_pix = QPixmap(2, 23);
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
@@ -279,7 +279,7 @@ TTKOptionAnimationVWidget::TTKOptionAnimationVWidget(QWidget *parent)
 
 
 TTKTableAnimationVWidget::TTKTableAnimationVWidget(QWidget *parent)
-    : TTKBaseAnimationVWidget(parent)
+    : TTKAbstractAnimationVWidget(parent)
 {
     m_pix = QPixmap(2, 23);
     m_pix.fill(QColor(255, 64, 129));
@@ -306,13 +306,13 @@ void TTKTableAnimationVWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(0, 188, 212));
 
-    TTKBaseAnimationVWidget::paintEvent(event);
+    TTKAbstractAnimationVWidget::paintEvent(event);
 }
 
 
 
 TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
-    : TTKBaseAnimationVWidget(parent)
+    : TTKAbstractAnimationVWidget(parent)
 {
     m_pix = QPixmap(":/res/left");
 
@@ -333,6 +333,6 @@ TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
 
 void TTKSkinAnimationVWidget::setAlignment(Alignment alignment)
 {
-    TTKBaseAnimationVWidget::setAlignment(alignment);
+    TTKAbstractAnimationVWidget::setAlignment(alignment);
     m_pix = QPixmap(m_alignment == Alignment::Left ? ":/res/left" : ":/res/right");
 }
