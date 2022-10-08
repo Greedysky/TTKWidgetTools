@@ -66,6 +66,7 @@ protected:
 
     void sizeDirection();
     void moveDirection();
+    QObjectList foreachWidget(QObject *object);
 
     MoveResizeData m_struct;
     Direction m_direction;
