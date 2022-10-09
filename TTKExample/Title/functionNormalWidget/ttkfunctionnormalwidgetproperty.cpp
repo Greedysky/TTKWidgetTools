@@ -10,7 +10,7 @@ TTKFunctionNormaWidgetProperty::TTKFunctionNormaWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNormalWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNormalWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -22,7 +22,7 @@ TTKFunctionNormaWidgetProperty::TTKFunctionNormaWidgetProperty(QWidget *parent)
     m_browser->addProperty(objectItem);
 
     //
-    TTKFunctionNormalWidget *widget = TTKStatic_cast(TTKFunctionNormalWidget*, m_item);
+    TTKFunctionNormalWidget *widget = TTKObject_cast(TTKFunctionNormalWidget*, m_item);
     widget->addItem("111111");
     widget->addItem("222222");
     widget->addItem("333333");
@@ -32,7 +32,7 @@ void TTKFunctionNormaWidgetProperty::rectPropertyChanged(QtProperty *property, c
 {
     TTKWidgetProperty::rectPropertyChanged(property, value);
 
-    TTKFunctionNormalWidget *widget = TTKStatic_cast(TTKFunctionNormalWidget*, m_item);
+    TTKFunctionNormalWidget *widget = TTKObject_cast(TTKFunctionNormalWidget*, m_item);
     if(property->propertyName() == "Geometry")
     {
         widget->setSize(value.width(), value.height());

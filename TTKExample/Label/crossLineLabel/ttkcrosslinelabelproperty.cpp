@@ -10,7 +10,7 @@ TTKCrossLineLabelProperty::TTKCrossLineLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCrossLineLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCrossLineLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -33,7 +33,7 @@ TTKCrossLineLabelProperty::TTKCrossLineLabelProperty(QWidget *parent)
 
 void TTKCrossLineLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCrossLineLabel *widget = TTKStatic_cast(TTKCrossLineLabel*, m_item);
+    TTKCrossLineLabel *widget = TTKObject_cast(TTKCrossLineLabel*, m_item);
     if(property->propertyName() == "Width")
     {
         widget->setWidth(value);
@@ -42,7 +42,7 @@ void TTKCrossLineLabelProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKCrossLineLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCrossLineLabel *widget = TTKStatic_cast(TTKCrossLineLabel*, m_item);
+    TTKCrossLineLabel *widget = TTKObject_cast(TTKCrossLineLabel*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

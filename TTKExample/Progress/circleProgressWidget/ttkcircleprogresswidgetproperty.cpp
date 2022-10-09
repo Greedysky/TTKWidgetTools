@@ -10,7 +10,7 @@ TTKCircleProgressWidgetProperty::TTKCircleProgressWidgetProperty(QWidget *parent
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCircleProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCircleProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -38,7 +38,7 @@ TTKCircleProgressWidgetProperty::TTKCircleProgressWidgetProperty(QWidget *parent
 
 void TTKCircleProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKCircleProgressWidget *widget = TTKStatic_cast(TTKCircleProgressWidget*, m_item);
+    TTKCircleProgressWidget *widget = TTKObject_cast(TTKCircleProgressWidget*, m_item);
     if(property->propertyName() == "InnerRadius")
     {
         widget->setInnerRadius(value);
@@ -51,7 +51,7 @@ void TTKCircleProgressWidgetProperty::doublePropertyChanged(QtProperty *property
 
 void TTKCircleProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCircleProgressWidget *widget = TTKStatic_cast(TTKCircleProgressWidget*, m_item);
+    TTKCircleProgressWidget *widget = TTKObject_cast(TTKCircleProgressWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

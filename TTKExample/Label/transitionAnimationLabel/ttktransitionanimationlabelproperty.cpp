@@ -10,7 +10,7 @@ TTKTransitionAnimationLabelProperty::TTKTransitionAnimationLabelProperty(QWidget
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTransitionAnimationLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTransitionAnimationLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -28,7 +28,7 @@ TTKTransitionAnimationLabelProperty::TTKTransitionAnimationLabelProperty(QWidget
 
 void TTKTransitionAnimationLabelProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKTransitionAnimationLabel *widget = TTKStatic_cast(TTKTransitionAnimationLabel*, m_item);
+    TTKTransitionAnimationLabel *widget = TTKObject_cast(TTKTransitionAnimationLabel*, m_item);
     if(property->propertyName() == "Pixmap")
     {
         widget->setPixmap(value);

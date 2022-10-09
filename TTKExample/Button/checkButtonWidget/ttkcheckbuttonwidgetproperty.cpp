@@ -10,7 +10,7 @@ TTKCheckButtonWidgetProperty::TTKCheckButtonWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCheckButtonWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCheckButtonWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -56,7 +56,7 @@ TTKCheckButtonWidgetProperty::TTKCheckButtonWidgetProperty(QWidget *parent)
 
 void TTKCheckButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCheckButtonWidget *widget = TTKStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKCheckButtonWidget *widget = TTKObject_cast(TTKCheckButtonWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -69,7 +69,7 @@ void TTKCheckButtonWidgetProperty::boolPropertyChanged(QtProperty *property, boo
 
 void TTKCheckButtonWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKCheckButtonWidget *widget = TTKStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKCheckButtonWidget *widget = TTKObject_cast(TTKCheckButtonWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -78,7 +78,7 @@ void TTKCheckButtonWidgetProperty::stringPropertyChanged(QtProperty *property, c
 
 void TTKCheckButtonWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCheckButtonWidget *widget = TTKStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKCheckButtonWidget *widget = TTKObject_cast(TTKCheckButtonWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
         widget->setLabelPosition(TTKStatic_cast(TTKCheckButtonWidget::LabelPosition, value));
@@ -87,7 +87,7 @@ void TTKCheckButtonWidgetProperty::enumPropertyChanged(QtProperty *property, int
 
 void TTKCheckButtonWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCheckButtonWidget *widget = TTKStatic_cast(TTKCheckButtonWidget*, m_item);
+    TTKCheckButtonWidget *widget = TTKObject_cast(TTKCheckButtonWidget*, m_item);
     if(property->propertyName() == "DisabledColor")
     {
         widget->setDisabledColor(value);

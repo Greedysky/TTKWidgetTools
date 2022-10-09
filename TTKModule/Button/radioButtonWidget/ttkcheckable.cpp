@@ -58,7 +58,7 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
 
     if(!pixmap.isNull())
     {
-        const qreal p = static_cast<qreal>((height()) - m_iconSize) / 2;
+        const qreal p = TTKStatic_cast(qreal, height() - m_iconSize) / 2;
         const qreal z = m_iconSize / 24;
 
         QTransform t;

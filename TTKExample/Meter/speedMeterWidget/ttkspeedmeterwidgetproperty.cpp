@@ -10,7 +10,7 @@ TTKSpeedMeterWidgetProperty::TTKSpeedMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKSpeedMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSpeedMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -29,7 +29,7 @@ TTKSpeedMeterWidgetProperty::TTKSpeedMeterWidgetProperty(QWidget *parent)
 
 void TTKSpeedMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKSpeedMeterWidget *widget = TTKStatic_cast(TTKSpeedMeterWidget*, m_item);
+    TTKSpeedMeterWidget *widget = TTKObject_cast(TTKSpeedMeterWidget*, m_item);
     if(property->propertyName() == "Value")
     {
         widget->setValue(value);

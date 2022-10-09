@@ -10,7 +10,7 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCarMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCarMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -134,7 +134,7 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
 
 void TTKCarMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -147,7 +147,7 @@ void TTKCarMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool v
 
 void TTKCarMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -172,7 +172,7 @@ void TTKCarMeterWidgetProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKCarMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -193,7 +193,7 @@ void TTKCarMeterWidgetProperty::doublePropertyChanged(QtProperty *property, doub
 
 void TTKCarMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "PieStyle")
     {
         widget->setPieStyle(TTKStatic_cast(TTKCarMeterWidget::PieStyle, value));
@@ -206,7 +206,7 @@ void TTKCarMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int va
 
 void TTKCarMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCarMeterWidget *widget = TTKStatic_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "OverlayColor")
     {
         widget->setOverlayColor(value);

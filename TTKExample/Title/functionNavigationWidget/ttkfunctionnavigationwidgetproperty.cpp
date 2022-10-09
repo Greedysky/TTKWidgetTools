@@ -21,7 +21,7 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
 
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
-    TTKFunctionNavigationWidget *button = TTKStatic_cast(TTKFunctionNavigationWidget*, sender());
+    TTKFunctionNavigationWidget *button = TTKObject_cast(TTKFunctionNavigationWidget*, sender());
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setChecked(m_buttons[i] == button);
@@ -46,7 +46,7 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -174,7 +174,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -375,7 +375,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -625,7 +625,7 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -825,7 +825,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -1044,7 +1044,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -1266,7 +1266,7 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");

@@ -10,7 +10,7 @@ TTKShiningSliderProperty::TTKShiningSliderProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKShiningSlider*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKShiningSlider*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -39,7 +39,7 @@ TTKShiningSliderProperty::TTKShiningSliderProperty(QWidget *parent)
 
 void TTKShiningSliderProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKShiningSlider *widget = TTKStatic_cast(TTKShiningSlider*, m_item);
+    TTKShiningSlider *widget = TTKObject_cast(TTKShiningSlider*, m_item);
     if(property->propertyName() == "Activity")
     {
         widget->setPlayState(value);
@@ -48,7 +48,7 @@ void TTKShiningSliderProperty::boolPropertyChanged(QtProperty *property, bool va
 
 void TTKShiningSliderProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKShiningSlider *widget = TTKStatic_cast(TTKShiningSlider*, m_item);
+    TTKShiningSlider *widget = TTKObject_cast(TTKShiningSlider*, m_item);
     if(property->propertyName() == "RangeMin")
     {
         widget->setMinimum(value);

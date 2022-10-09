@@ -5,7 +5,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
     m_item = new TTKHeatMapLabel(this);
-    TTKHeatMapLabel *widget = TTKStatic_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
@@ -76,7 +76,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
 
 void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKHeatMapLabel *widget = TTKStatic_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
     if(property->propertyName() == "Radius")
     {
         widget->setRadius(value);
@@ -95,7 +95,7 @@ void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKHeatMapLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKHeatMapLabel *widget = TTKStatic_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
     if(property->propertyName() == "ColorScheme")
     {
         widget->setColorScheme(TTKStatic_cast(HeatMapper::ColorScheme, value));

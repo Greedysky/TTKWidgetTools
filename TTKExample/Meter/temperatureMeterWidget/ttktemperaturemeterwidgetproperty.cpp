@@ -10,7 +10,7 @@ TTKTemperatureMeterWidgetProperty::TTKTemperatureMeterWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTemperatureMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTemperatureMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -86,7 +86,7 @@ TTKTemperatureMeterWidgetProperty::TTKTemperatureMeterWidgetProperty(QWidget *pa
 
 void TTKTemperatureMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKTemperatureMeterWidget *widget = TTKStatic_cast(TTKTemperatureMeterWidget*, m_item);
+    TTKTemperatureMeterWidget *widget = TTKObject_cast(TTKTemperatureMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -95,7 +95,7 @@ void TTKTemperatureMeterWidgetProperty::boolPropertyChanged(QtProperty *property
 
 void TTKTemperatureMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKTemperatureMeterWidget *widget = TTKStatic_cast(TTKTemperatureMeterWidget*, m_item);
+    TTKTemperatureMeterWidget *widget = TTKObject_cast(TTKTemperatureMeterWidget*, m_item);
     if(property->propertyName() == "StartAngle")
     {
         widget->setStartAngle(value);
@@ -108,7 +108,7 @@ void TTKTemperatureMeterWidgetProperty::intPropertyChanged(QtProperty *property,
 
 void TTKTemperatureMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKTemperatureMeterWidget *widget = TTKStatic_cast(TTKTemperatureMeterWidget*, m_item);
+    TTKTemperatureMeterWidget *widget = TTKObject_cast(TTKTemperatureMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -129,7 +129,7 @@ void TTKTemperatureMeterWidgetProperty::doublePropertyChanged(QtProperty *proper
 
 void TTKTemperatureMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKTemperatureMeterWidget *widget = TTKStatic_cast(TTKTemperatureMeterWidget*, m_item);
+    TTKTemperatureMeterWidget *widget = TTKObject_cast(TTKTemperatureMeterWidget*, m_item);
     if(property->propertyName() == "OuterCircleColor")
     {
         widget->setOuterCircleColor(value);

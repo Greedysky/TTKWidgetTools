@@ -10,7 +10,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKWaveProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKWaveProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -68,7 +68,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
 
 void TTKWaveProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKWaveProgressWidget *widget = TTKStatic_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -93,7 +93,7 @@ void TTKWaveProgressWidgetProperty::intPropertyChanged(QtProperty *property, int
 
 void TTKWaveProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKWaveProgressWidget *widget = TTKStatic_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "WaterHeight")
     {
         widget->setWaterHeight(value);
@@ -106,7 +106,7 @@ void TTKWaveProgressWidgetProperty::doublePropertyChanged(QtProperty *property, 
 
 void TTKWaveProgressWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKWaveProgressWidget *widget = TTKStatic_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "PercentStyle")
     {
         widget->setPointerStyle(TTKStatic_cast(TTKWaveProgressWidget::PercentStyle, value));
@@ -115,7 +115,7 @@ void TTKWaveProgressWidgetProperty::enumPropertyChanged(QtProperty *property, in
 
 void TTKWaveProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKWaveProgressWidget *widget = TTKStatic_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "BgColor")
     {
         widget->setBgColor(value);

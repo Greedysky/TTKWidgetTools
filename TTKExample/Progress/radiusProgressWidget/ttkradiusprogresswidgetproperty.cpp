@@ -32,7 +32,7 @@ TTKRadiusProgressWidgetProperty::TTKRadiusProgressWidgetProperty(QWidget *parent
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRadiusProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKRadiusProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -66,6 +66,6 @@ void TTKRadiusProgressWidgetProperty::boolPropertyChanged(QtProperty *property, 
 
 void TTKRadiusProgressWidgetProperty::updateRender()
 {
-    TTKRadiusProgressWidget *widget = TTKStatic_cast(TTKRadiusProgressWidget*, m_item);
+    TTKRadiusProgressWidget *widget = TTKObject_cast(TTKRadiusProgressWidget*, m_item);
     widget->setValue(random(100) + 1);
 }

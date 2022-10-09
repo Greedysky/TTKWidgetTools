@@ -15,7 +15,7 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKToastLabel*, m_label)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKToastLabel*, m_label)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -52,7 +52,7 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
 
 void TTKToastLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);
+    TTKToastLabel *widget = TTKObject_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "Bold")
     {
         widget->setBold(value);
@@ -61,7 +61,7 @@ void TTKToastLabelProperty::boolPropertyChanged(QtProperty *property, bool value
 
 void TTKToastLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);
+    TTKToastLabel *widget = TTKObject_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "FontSize")
     {
         widget->setFontSize(value);
@@ -74,7 +74,7 @@ void TTKToastLabelProperty::intPropertyChanged(QtProperty *property, int value)
 
 void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);
+    TTKToastLabel *widget = TTKObject_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -83,7 +83,7 @@ void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QS
 
 void TTKToastLabelProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);
+    TTKToastLabel *widget = TTKObject_cast(TTKToastLabel*, m_label);
     if(property->propertyName() == "FontMargin")
     {
         widget->setFontMargin(value.width(), value.height());
@@ -92,6 +92,6 @@ void TTKToastLabelProperty::sizePropertyChanged(QtProperty *property, const QSiz
 
 void TTKToastLabelProperty::showWidget()
 {
-    TTKToastLabel *widget = TTKStatic_cast(TTKToastLabel*, m_label);
+    TTKToastLabel *widget = TTKObject_cast(TTKToastLabel*, m_label);
     widget->popup(m_containItem);
 }

@@ -10,7 +10,7 @@ TTKCompassMeterWidgetProperty::TTKCompassMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCompassMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCompassMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -90,7 +90,7 @@ TTKCompassMeterWidgetProperty::TTKCompassMeterWidgetProperty(QWidget *parent)
 
 void TTKCompassMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCompassMeterWidget *widget = TTKStatic_cast(TTKCompassMeterWidget*, m_item);
+    TTKCompassMeterWidget *widget = TTKObject_cast(TTKCompassMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -99,7 +99,7 @@ void TTKCompassMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bo
 
 void TTKCompassMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCompassMeterWidget *widget = TTKStatic_cast(TTKCompassMeterWidget*, m_item);
+    TTKCompassMeterWidget *widget = TTKObject_cast(TTKCompassMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -108,7 +108,7 @@ void TTKCompassMeterWidgetProperty::intPropertyChanged(QtProperty *property, int
 
 void TTKCompassMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKCompassMeterWidget *widget = TTKStatic_cast(TTKCompassMeterWidget*, m_item);
+    TTKCompassMeterWidget *widget = TTKObject_cast(TTKCompassMeterWidget*, m_item);
     if(property->propertyName() == "Value")
     {
         widget->setValue(value);
@@ -121,7 +121,7 @@ void TTKCompassMeterWidgetProperty::doublePropertyChanged(QtProperty *property, 
 
 void TTKCompassMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCompassMeterWidget *widget = TTKStatic_cast(TTKCompassMeterWidget*, m_item);
+    TTKCompassMeterWidget *widget = TTKObject_cast(TTKCompassMeterWidget*, m_item);
     if(property->propertyName() == "CrownColorStart")
     {
         widget->setCrownColorStart(value);

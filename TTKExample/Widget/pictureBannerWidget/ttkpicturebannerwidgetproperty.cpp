@@ -10,7 +10,7 @@ TTKPictureBannerWidgetProperty::TTKPictureBannerWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPictureBannerWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKPictureBannerWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -25,6 +25,6 @@ TTKPictureBannerWidgetProperty::TTKPictureBannerWidgetProperty(QWidget *parent)
     //
     for(int i = 0; i < 5; ++i)
     {
-        TTKStatic_cast(TTKPictureBannerWidget*, m_item)->addPage(QPixmap(QString(":/res/%1").arg(i)));
+        TTKObject_cast(TTKPictureBannerWidget*, m_item)->addPage(QPixmap(QString(":/res/%1").arg(i)));
     }
 }

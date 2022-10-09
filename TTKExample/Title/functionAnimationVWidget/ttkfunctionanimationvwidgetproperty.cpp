@@ -10,7 +10,7 @@ TTKOptionAnimationVWidgetProperty::TTKOptionAnimationVWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKOptionAnimationVWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKOptionAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -31,7 +31,7 @@ TTKOptionAnimationVWidgetProperty::TTKOptionAnimationVWidgetProperty(QWidget *pa
 
 void TTKOptionAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKOptionAnimationVWidget *widget = TTKStatic_cast(TTKOptionAnimationVWidget*, m_item);
+    TTKOptionAnimationVWidget *widget = TTKObject_cast(TTKOptionAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
         widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));
@@ -49,7 +49,7 @@ TTKTableAnimationVWidgetProperty::TTKTableAnimationVWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTableAnimationVWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTableAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -70,7 +70,7 @@ TTKTableAnimationVWidgetProperty::TTKTableAnimationVWidgetProperty(QWidget *pare
 
 void TTKTableAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKTableAnimationVWidget *widget = TTKStatic_cast(TTKTableAnimationVWidget*, m_item);
+    TTKTableAnimationVWidget *widget = TTKObject_cast(TTKTableAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
         widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));
@@ -88,7 +88,7 @@ TTKSkinAnimationVWidgetProperty::TTKSkinAnimationVWidgetProperty(QWidget *parent
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKSkinAnimationVWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSkinAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -109,7 +109,7 @@ TTKSkinAnimationVWidgetProperty::TTKSkinAnimationVWidgetProperty(QWidget *parent
 
 void TTKSkinAnimationVWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKSkinAnimationVWidget *widget = TTKStatic_cast(TTKSkinAnimationVWidget*, m_item);
+    TTKSkinAnimationVWidget *widget = TTKObject_cast(TTKSkinAnimationVWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
         widget->setAlignment(TTKStatic_cast(TTKAbstractAnimationWidget::Alignment, value));

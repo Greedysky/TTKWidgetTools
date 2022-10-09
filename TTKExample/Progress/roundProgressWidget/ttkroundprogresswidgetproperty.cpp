@@ -32,7 +32,7 @@ TTKRoundProgressWidgetProperty::TTKRoundProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKRoundProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKRoundProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -98,7 +98,7 @@ void TTKRoundProgressWidgetProperty::boolPropertyChanged(QtProperty *property, b
 
 void TTKRoundProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
+    TTKRoundProgressWidget *widget = TTKObject_cast(TTKRoundProgressWidget*, m_item);
     if(property->propertyName() == "InnerBarWidth")
     {
         widget->setInnerBarWidth(value);
@@ -111,7 +111,7 @@ void TTKRoundProgressWidgetProperty::intPropertyChanged(QtProperty *property, in
 
 void TTKRoundProgressWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
+    TTKRoundProgressWidget *widget = TTKObject_cast(TTKRoundProgressWidget*, m_item);
     if(property->propertyName() == "InnerDefaultTextStyle")
     {
         TTKRoundProgressWidget::InnerDefaultTextStyle style(TTKRoundProgressWidget::InnerDefaultTextStyle::Value);
@@ -142,7 +142,7 @@ void TTKRoundProgressWidgetProperty::enumPropertyChanged(QtProperty *property, i
 
 void TTKRoundProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
+    TTKRoundProgressWidget *widget = TTKObject_cast(TTKRoundProgressWidget*, m_item);
     if(property->propertyName() == "OutterColor")
     {
         widget->setOutterColor(value);
@@ -159,6 +159,6 @@ void TTKRoundProgressWidgetProperty::colorPropertyChanged(QtProperty *property, 
 
 void TTKRoundProgressWidgetProperty::updateRender()
 {
-    TTKRoundProgressWidget *widget = TTKStatic_cast(TTKRoundProgressWidget*, m_item);
+    TTKRoundProgressWidget *widget = TTKObject_cast(TTKRoundProgressWidget*, m_item);
     widget->setText(random(100) + 1);
 }

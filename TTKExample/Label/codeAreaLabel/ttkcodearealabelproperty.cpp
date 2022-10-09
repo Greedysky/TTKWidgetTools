@@ -10,7 +10,7 @@ TTKCodeAreaLabelProperty::TTKCodeAreaLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKCodeAreaLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCodeAreaLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -34,7 +34,7 @@ TTKCodeAreaLabelProperty::TTKCodeAreaLabelProperty(QWidget *parent)
 
 void TTKCodeAreaLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCodeAreaLabel *widget = TTKStatic_cast(TTKCodeAreaLabel*, m_item);
+    TTKCodeAreaLabel *widget = TTKObject_cast(TTKCodeAreaLabel*, m_item);
     if(property->propertyName() == "CodeCount")
     {
         widget->setCodeCount(value);

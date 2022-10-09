@@ -10,7 +10,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKDialMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKDialMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -86,7 +86,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
 
 void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "ShowValue")
     {
         widget->setShowValue(value);
@@ -95,7 +95,7 @@ void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool 
 
 void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -120,7 +120,7 @@ void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -137,7 +137,7 @@ void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, dou
 
 void TTKDialMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
         widget->setPointerStyle(TTKStatic_cast(TTKDialMeterWidget::PointerStyle, value));
@@ -146,7 +146,7 @@ void TTKDialMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int v
 
 void TTKDialMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKDialMeterWidget *widget = TTKStatic_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "DarkColor")
     {
         widget->setDarkColor(value);

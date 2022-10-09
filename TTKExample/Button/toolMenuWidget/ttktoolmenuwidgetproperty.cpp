@@ -10,7 +10,7 @@ TTKToolMenuWidgetProperty::TTKToolMenuWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKToolMenuWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKToolMenuWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -32,7 +32,7 @@ TTKToolMenuWidgetProperty::TTKToolMenuWidgetProperty(QWidget *parent)
 
 void TTKToolMenuWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKToolMenuWidget *widget = TTKStatic_cast(TTKToolMenuWidget*, m_item);
+    TTKToolMenuWidget *widget = TTKObject_cast(TTKToolMenuWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -41,7 +41,7 @@ void TTKToolMenuWidgetProperty::boolPropertyChanged(QtProperty *property, bool v
 
 void TTKToolMenuWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKToolMenuWidget *widget = TTKStatic_cast(TTKToolMenuWidget*, m_item);
+    TTKToolMenuWidget *widget = TTKObject_cast(TTKToolMenuWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);

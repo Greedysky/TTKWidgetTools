@@ -10,7 +10,7 @@ TTKTimeMeterWidgetProperty::TTKTimeMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKTimeMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTimeMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -29,7 +29,7 @@ TTKTimeMeterWidgetProperty::TTKTimeMeterWidgetProperty(QWidget *parent)
 
 void TTKTimeMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKTimeMeterWidget *widget = TTKStatic_cast(TTKTimeMeterWidget*, m_item);
+    TTKTimeMeterWidget *widget = TTKObject_cast(TTKTimeMeterWidget*, m_item);
     if(property->propertyName() == "Value")
     {
         widget->setValue(value);

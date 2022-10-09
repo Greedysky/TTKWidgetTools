@@ -10,7 +10,7 @@ TTKMovingLabelSliderProperty::TTKMovingLabelSliderProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKMovingLabelSlider*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKMovingLabelSlider*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -41,7 +41,7 @@ TTKMovingLabelSliderProperty::TTKMovingLabelSliderProperty(QWidget *parent)
 
 void TTKMovingLabelSliderProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKMovingLabelSlider *widget = TTKStatic_cast(TTKMovingLabelSlider*, m_item);
+    TTKMovingLabelSlider *widget = TTKObject_cast(TTKMovingLabelSlider*, m_item);
     if(property->propertyName() == "RangeMin")
     {
         widget->setMinimum(value);
@@ -54,7 +54,7 @@ void TTKMovingLabelSliderProperty::intPropertyChanged(QtProperty *property, int 
 
 void TTKMovingLabelSliderProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKMovingLabelSlider *widget = TTKStatic_cast(TTKMovingLabelSlider*, m_item);
+    TTKMovingLabelSlider *widget = TTKObject_cast(TTKMovingLabelSlider*, m_item);
     if(property->propertyName() == "Direction")
     {
         Qt::Orientation orientation(Qt::Horizontal);

@@ -10,7 +10,7 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKBarRulerLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKBarRulerLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -86,7 +86,7 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
 
 void TTKBarRulerLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKBarRulerLabel *widget = TTKStatic_cast(TTKBarRulerLabel*, m_item);
+    TTKBarRulerLabel *widget = TTKObject_cast(TTKBarRulerLabel*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -95,7 +95,7 @@ void TTKBarRulerLabelProperty::boolPropertyChanged(QtProperty *property, bool va
 
 void TTKBarRulerLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKBarRulerLabel *widget = TTKStatic_cast(TTKBarRulerLabel*, m_item);
+    TTKBarRulerLabel *widget = TTKObject_cast(TTKBarRulerLabel*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -116,7 +116,7 @@ void TTKBarRulerLabelProperty::intPropertyChanged(QtProperty *property, int valu
 
 void TTKBarRulerLabelProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKBarRulerLabel *widget = TTKStatic_cast(TTKBarRulerLabel*, m_item);
+    TTKBarRulerLabel *widget = TTKObject_cast(TTKBarRulerLabel*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -137,7 +137,7 @@ void TTKBarRulerLabelProperty::doublePropertyChanged(QtProperty *property, doubl
 
 void TTKBarRulerLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKBarRulerLabel *widget = TTKStatic_cast(TTKBarRulerLabel*, m_item);
+    TTKBarRulerLabel *widget = TTKObject_cast(TTKBarRulerLabel*, m_item);
     if(property->propertyName() == "BgColorStart")
     {
         widget->setBgColorStart(value);

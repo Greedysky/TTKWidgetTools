@@ -10,7 +10,7 @@ TTKPercentMeterWidgetProperty::TTKPercentMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPercentMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKPercentMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -95,7 +95,7 @@ TTKPercentMeterWidgetProperty::TTKPercentMeterWidgetProperty(QWidget *parent)
 
 void TTKPercentMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPercentMeterWidget *widget = TTKStatic_cast(TTKPercentMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = TTKObject_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -120,7 +120,7 @@ void TTKPercentMeterWidgetProperty::intPropertyChanged(QtProperty *property, int
 
 void TTKPercentMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKPercentMeterWidget *widget = TTKStatic_cast(TTKPercentMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = TTKObject_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -137,7 +137,7 @@ void TTKPercentMeterWidgetProperty::doublePropertyChanged(QtProperty *property, 
 
 void TTKPercentMeterWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKPercentMeterWidget *widget = TTKStatic_cast(TTKPercentMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = TTKObject_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "Title")
     {
         widget->setTitle(value);
@@ -146,7 +146,7 @@ void TTKPercentMeterWidgetProperty::stringPropertyChanged(QtProperty *property, 
 
 void TTKPercentMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKPercentMeterWidget *widget = TTKStatic_cast(TTKPercentMeterWidget*, m_item);
+    TTKPercentMeterWidget *widget = TTKObject_cast(TTKPercentMeterWidget*, m_item);
     if(property->propertyName() == "ArcColor")
     {
         widget->setArcColor(value);

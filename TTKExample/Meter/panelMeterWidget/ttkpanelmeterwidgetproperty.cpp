@@ -10,7 +10,7 @@ TTKPanelMeterWidgetProperty::TTKPanelMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKStatic_cast(TTKPanelMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKPanelMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *activityItem = m_boolManager->addProperty("Activity");
@@ -105,7 +105,7 @@ TTKPanelMeterWidgetProperty::TTKPanelMeterWidgetProperty(QWidget *parent)
 
 void TTKPanelMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);
+    TTKPanelMeterWidget *widget = TTKObject_cast(TTKPanelMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -114,7 +114,7 @@ void TTKPanelMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool
 
 void TTKPanelMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);
+    TTKPanelMeterWidget *widget = TTKObject_cast(TTKPanelMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -143,7 +143,7 @@ void TTKPanelMeterWidgetProperty::intPropertyChanged(QtProperty *property, int v
 
 void TTKPanelMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);
+    TTKPanelMeterWidget *widget = TTKObject_cast(TTKPanelMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -164,7 +164,7 @@ void TTKPanelMeterWidgetProperty::doublePropertyChanged(QtProperty *property, do
 
 void TTKPanelMeterWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);
+    TTKPanelMeterWidget *widget = TTKObject_cast(TTKPanelMeterWidget*, m_item);
     if(property->propertyName() == "Unit")
     {
         widget->setUnit(value);
@@ -177,7 +177,7 @@ void TTKPanelMeterWidgetProperty::stringPropertyChanged(QtProperty *property, co
 
 void TTKPanelMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKPanelMeterWidget *widget = TTKStatic_cast(TTKPanelMeterWidget*, m_item);
+    TTKPanelMeterWidget *widget = TTKObject_cast(TTKPanelMeterWidget*, m_item);
     if(property->propertyName() == "RingColor")
     {
         widget->setRingColor(value);
