@@ -75,7 +75,7 @@ void TTKCircleProgressWidget::setValue(int value)
         m_valueAnimation->start();
 
         m_value = value;
-        emit valueChanged(value);
+        Q_EMIT valueChanged(value);
     }
 }
 
@@ -90,7 +90,7 @@ void TTKCircleProgressWidget::setMaximum(int maximum)
     {
         m_maximum = maximum;
         update();
-        emit maximumChanged(maximum);
+        Q_EMIT maximumChanged(maximum);
 
         if(m_maximum == 0)
         {

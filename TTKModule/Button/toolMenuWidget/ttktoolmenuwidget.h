@@ -35,7 +35,7 @@ public:
 Q_SIGNALS:
     void windowStateChanged(bool state);
 
-protected:
+private:
     virtual void showEvent(QShowEvent *event) override final;
     virtual void hideEvent(QHideEvent *event) override final;
 
@@ -58,7 +58,7 @@ public:
 public Q_SLOTS:
     void popupMenu();
 
-protected:
+private:
     void initialize();
 
     TTKToolMenu *m_menu;

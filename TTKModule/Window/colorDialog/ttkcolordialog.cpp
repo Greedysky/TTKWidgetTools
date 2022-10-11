@@ -109,7 +109,7 @@ void TTKHlPalette::calculateColor()
     m_ptfVernierPercentPos.setX(m_ptVernierPos.x()/double(rect().right()));
     m_ptfVernierPercentPos.setY(m_ptVernierPos.y()/double(rect().bottom()));
     m_color.setHslF(m_ptfVernierPercentPos.rx(), m_dblSaturation, 1 - m_ptfVernierPercentPos.ry());
-    emit colorChanged(m_color);
+    Q_EMIT colorChanged(m_color);
 }
 
 
@@ -218,5 +218,5 @@ void TTKHlSaturationPalette::calculateSuration()
     m_dblSaturation = 1- m_dblVernierPercentX;
     m_color.setHslF(m_color.hslHueF(), m_dblSaturation, m_color.lightnessF());
 
-    emit saturationChanged(m_dblSaturation);
+    Q_EMIT saturationChanged(m_dblSaturation);
 }

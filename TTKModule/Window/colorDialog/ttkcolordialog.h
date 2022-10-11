@@ -41,7 +41,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void setSaturation(double dblsaturation);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;
@@ -74,7 +74,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void setBaseColor(const QColor &color);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;

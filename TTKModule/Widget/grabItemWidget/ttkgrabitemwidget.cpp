@@ -82,7 +82,7 @@ void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
             setCursor(QCursor(Qt::SizeAllCursor));
         }
 
-        emit rectChanged();
+        Q_EMIT rectChanged();
     }
 }
 

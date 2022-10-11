@@ -46,7 +46,7 @@ public:
 private Q_SLOTS:
     void updateRender();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
 private:

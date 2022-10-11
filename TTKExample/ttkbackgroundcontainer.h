@@ -30,13 +30,14 @@ public:
 
     void addItem(QWidget *item);
 
-protected Q_SLOTS:
-    virtual void onMouseChange(int x,int y);
+private Q_SLOTS:
+    virtual void onMouseChange(int x, int y) override final;
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     QWidget *m_item;
+
 };
 
 
@@ -53,6 +54,7 @@ private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKBackgroundContainerItem *m_item;
+
 };
 
 #endif // TTKBACKGROUNDCONTAINER_H

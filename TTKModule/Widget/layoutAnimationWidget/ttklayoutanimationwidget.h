@@ -49,7 +49,7 @@ private Q_SLOTS:
     void valueChanged(const QVariant &value);
     void animationFinished();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     bool m_isAnimating;

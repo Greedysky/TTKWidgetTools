@@ -144,7 +144,7 @@ void TTKAnSplashScreen::countTimeout()
 
     if(m_count <= 0)
     {
-        emit finish();
+        Q_EMIT finish();
 
         if(m_loadTimer->isActive())
         {

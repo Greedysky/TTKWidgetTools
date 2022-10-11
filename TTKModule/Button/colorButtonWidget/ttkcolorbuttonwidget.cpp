@@ -90,7 +90,7 @@ void TTKColorButtonWidget::btnClicked()
 {
     QPushButton *btn = (QPushButton *)sender();
     const QString &objName = btn->objectName();
-    emit colorChanged(QColor(objName.right(7)));
+    Q_EMIT colorChanged(QColor(objName.right(7)));
 }
 
 void TTKColorButtonWidget::initStyle()

@@ -40,7 +40,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void selectedChanged(TTKFunctionItemWidget *item);
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
 
     QList<TTKFunctionItemWidget*> m_items;

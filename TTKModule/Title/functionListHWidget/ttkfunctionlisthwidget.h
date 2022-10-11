@@ -41,7 +41,7 @@ public:
 Q_SIGNALS:
     void selectedChanged(TTKFunctionItemWidget *item);
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
@@ -72,7 +72,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void selectedChanged(TTKFunctionItemWidget *item);
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
 
     QList<TTKFunctionItemWidget*> m_items;

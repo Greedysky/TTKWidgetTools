@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKCustomRingWidgetProperty : public TTKWidgetProperty
 public:
     explicit TTKCustomRingWidgetProperty(QWidget *parent = nullptr);
 
-protected Q_SLOTS:
+private Q_SLOTS:
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };

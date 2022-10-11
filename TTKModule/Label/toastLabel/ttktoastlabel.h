@@ -54,7 +54,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void updateRender();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     QTimer m_timer;

@@ -38,7 +38,7 @@ void TTKSplitItemLabel::mousePressEvent(QMouseEvent *event)
     QLabel::mousePressEvent(event);
     if(event->button() == Qt::LeftButton && !m_currentString.isEmpty())
     {
-        emit changed(m_currentString);
+        Q_EMIT changed(m_currentString);
     }
 }
 

@@ -47,7 +47,7 @@ void TTKFunctionListVWidget::selectedChanged(TTKFunctionItemWidget *item)
         return;
     }
 
-    emit currentIndexChanged(index);
+    Q_EMIT currentIndexChanged(index);
 
     for(TTKFunctionItemWidget *it : qAsConst(m_items))
     {

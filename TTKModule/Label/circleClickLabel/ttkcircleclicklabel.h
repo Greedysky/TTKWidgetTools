@@ -35,10 +35,10 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void updateRender();
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 

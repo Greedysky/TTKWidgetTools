@@ -83,7 +83,7 @@ void TTKSplashScreen::updateProgress()
         }
         m_progressBar->setValue(0);
 
-        emit finish();
+        Q_EMIT finish();
 
         close();
         if(m_mainWidget)

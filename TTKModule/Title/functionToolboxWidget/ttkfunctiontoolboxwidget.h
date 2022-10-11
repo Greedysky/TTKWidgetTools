@@ -46,7 +46,7 @@ public:
 Q_SIGNALS:
     void mousePressAt(int index);
 
-protected:
+private:
     bool isItemEnable() const;
 
     virtual void mousePressEvent(QMouseEvent *event) override final;
@@ -84,7 +84,7 @@ public:
 
     int count() const;
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
@@ -149,7 +149,7 @@ public Q_SLOTS:
     void mousePressAt(int index);
     void setTransparent(int alpha);
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 

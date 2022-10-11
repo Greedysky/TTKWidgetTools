@@ -788,5 +788,5 @@ void TTKAnimation2StackedWidget::animationFinished()
     }
 
     update();
-    emit pageChanged(m_currentIndex);
+    Q_EMIT pageChanged(m_currentIndex);
 }

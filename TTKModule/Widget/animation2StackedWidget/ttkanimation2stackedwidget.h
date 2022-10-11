@@ -85,7 +85,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void animationFinished();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void renderPreviousWidget(QPainter &painter, QTransform &transform);
     void renderCurrentWidget(QPainter &painter, QTransform &transform);

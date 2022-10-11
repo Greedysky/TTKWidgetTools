@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKNetTrafficLabelProperty : public TTKWidgetProperty
 public:
     explicit TTKNetTrafficLabelProperty(QWidget *parent = nullptr);
 
-protected Q_SLOTS:
+private Q_SLOTS:
     virtual void enumPropertyChanged(QtProperty *property, int value) override final;
 
 private:

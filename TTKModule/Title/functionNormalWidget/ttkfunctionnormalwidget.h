@@ -37,10 +37,10 @@ public:
     void setSize(qreal w, qreal h);
     void addItem(const QString &text);
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void updateRender();
 
-protected:
+private:
     void paintEvent(QPaintEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);

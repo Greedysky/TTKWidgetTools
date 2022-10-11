@@ -63,7 +63,7 @@ public:
 private Q_SLOTS:
     void updateValue();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void drawCrownCircle(QPainter *painter);
     void drawBgCircle(QPainter *painter);

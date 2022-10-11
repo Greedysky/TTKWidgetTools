@@ -37,7 +37,7 @@ void TTKPictureBannerArrowWidget::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         m_bMousePress = true;
-        emit clicked();
+        Q_EMIT clicked();
     }
 }
 
@@ -97,7 +97,7 @@ void TTKPictureBannerIndicator::select(bool selected)
 void TTKPictureBannerIndicator::enterEvent(QtEnterEvent *event)
 {
     Q_UNUSED(event);
-    emit entered();
+    Q_EMIT entered();
 }
 
 void TTKPictureBannerIndicator::paintEvent(QPaintEvent *event)
@@ -128,7 +128,7 @@ void TTKPictureBannerPage::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-        emit clicked();
+        Q_EMIT clicked();
     }
 }
 
@@ -275,7 +275,7 @@ void TTKPictureBannerView::slotPageClicked()
     {
         flag = 1;
     }
-    emit clicked(flag);
+    Q_EMIT clicked(flag);
 }
 
 void TTKPictureBannerView::slotArrowClicked()
@@ -288,11 +288,11 @@ void TTKPictureBannerView::slotArrowClicked()
 
     if(arrow == m_leftArrow)
     {
-        emit clicked(-1);
+        Q_EMIT clicked(-1);
     }
     else if(arrow == m_rightArrow)
     {
-        emit clicked(1);
+        Q_EMIT clicked(1);
     }
 }
 
@@ -450,7 +450,7 @@ void TTKPictureBannerWidget::switchPage(int flag)
 
     if(flag == 0)
     {
-        emit currentClicked(m_currentIndex);
+        Q_EMIT currentClicked(m_currentIndex);
         return;
     }
 

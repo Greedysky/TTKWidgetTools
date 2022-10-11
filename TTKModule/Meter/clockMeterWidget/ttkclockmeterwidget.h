@@ -60,7 +60,7 @@ private Q_SLOTS:
     void updateTime();
     void updateSpring();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void drawCrown(QPainter *painter);
     void drawBg(QPainter *painter);

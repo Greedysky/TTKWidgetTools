@@ -78,7 +78,7 @@ void TTKFunctionToolBoxTopWidget::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
     if(event->button() == Qt::LeftButton)
     {
-        emit mousePressAt(m_index);
+        Q_EMIT mousePressAt(m_index);
     }
 }
 

@@ -67,7 +67,7 @@ private Q_SLOTS:
     void setInfiniteAnimationValue(qreal value);
     void setVisibleValue(int value);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     QString key() const;

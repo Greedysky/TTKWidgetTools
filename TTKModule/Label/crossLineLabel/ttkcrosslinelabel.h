@@ -39,7 +39,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     virtual void mouseMoveEvent(QMouseEvent *event) override final;
     virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;

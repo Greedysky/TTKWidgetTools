@@ -30,7 +30,7 @@ class TTK_MODULE_EXPORT TTKBatteryLabelProperty : public TTKWidgetProperty
 public:
     explicit TTKBatteryLabelProperty(QWidget *parent = nullptr);
 
-protected Q_SLOTS:
+private Q_SLOTS:
     virtual void doublePropertyChanged(QtProperty *property, double value) override final;
     virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 

@@ -46,7 +46,7 @@ public:
     void setThumbColor(const QColor &color);
     inline QColor thumbColor() const { return m_thumbColor; }
 
-protected:
+private:
     virtual bool eventFilter(QObject *obj, QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
@@ -73,7 +73,7 @@ public:
     void setTrackColor(const QColor &color);
     inline QColor trackColor() const { return m_trackColor; }
 
-protected:
+private:
     virtual bool eventFilter(QObject *obj, QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
@@ -112,7 +112,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     void setupProperties();

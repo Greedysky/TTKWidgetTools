@@ -37,7 +37,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     void thresholdManager();
     virtual void paintEvent(QPaintEvent *event) override final;
 

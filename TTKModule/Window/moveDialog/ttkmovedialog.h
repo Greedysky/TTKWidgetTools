@@ -36,7 +36,7 @@ public:
     inline void drawWindowShadow(bool show) { m_showShadow = show;}
     inline void blockMoveOption(bool block) { m_moveOption = block;}
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void mouseMoveEvent(QMouseEvent *event) override final;

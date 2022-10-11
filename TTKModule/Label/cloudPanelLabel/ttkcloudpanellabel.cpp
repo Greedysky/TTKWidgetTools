@@ -112,7 +112,7 @@ void TTKCloudPanelLabel::mousePressEvent(QMouseEvent *event)
     int bp;
     if(isPointIn(m_lastPoint, bp))
     {
-        emit mousePressed(bp);
+        Q_EMIT mousePressed(bp);
 	}
 	update();
 }

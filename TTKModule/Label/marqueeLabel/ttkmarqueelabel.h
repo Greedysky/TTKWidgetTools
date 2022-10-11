@@ -57,7 +57,7 @@ public:
 private Q_SLOTS:
     void timeout();
 
-protected:
+private:
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;

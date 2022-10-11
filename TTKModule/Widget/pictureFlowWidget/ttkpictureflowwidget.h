@@ -174,7 +174,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void updateRender();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void keyPressEvent(QKeyEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;

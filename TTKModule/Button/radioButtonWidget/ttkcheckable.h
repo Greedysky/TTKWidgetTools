@@ -55,7 +55,7 @@ public:
     void setOpacity(qreal opacity);
     inline qreal opacity() const { return m_opacity; }
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKCheckable *m_checkable;

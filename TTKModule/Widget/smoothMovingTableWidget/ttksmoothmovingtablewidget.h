@@ -43,7 +43,7 @@ public Q_SLOTS:
     void updateRender();
     void valueChanged(int value);
 
-protected:
+private:
     virtual void wheelEvent(QWheelEvent *event) override final;
 
     bool m_isFirstInit;

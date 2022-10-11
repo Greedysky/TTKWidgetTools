@@ -44,7 +44,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     void setValue(int value);
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void mouseMoveEvent(QMouseEvent *event) override final;
     virtual void mouseReleaseEvent(QMouseEvent *event) override final;

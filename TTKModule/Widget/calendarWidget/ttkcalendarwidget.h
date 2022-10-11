@@ -40,7 +40,7 @@ private Q_SLOTS:
     void buttonClicked();
     void setDataLabelTimeText(int year, int month);
 
-protected:
+private:
 #if TTK_QT_VERSION_CHECK(6,0,0)
     virtual void paintCell(QPainter *painter, const QRect &rect, QDate date) const override final;
 #else

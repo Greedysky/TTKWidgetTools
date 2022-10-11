@@ -65,7 +65,7 @@ public:
 private Q_SLOTS:
     void updateValue();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void drawRing(QPainter *painter);
     void drawScale(QPainter *painter);

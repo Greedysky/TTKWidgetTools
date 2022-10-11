@@ -64,7 +64,7 @@ public:
 
     virtual QSize sizeHint() const;
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);

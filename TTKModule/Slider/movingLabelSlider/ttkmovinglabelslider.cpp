@@ -39,7 +39,7 @@ void TTKMovingLabelSlider::mousePressEvent(QMouseEvent *event)
 {
     TTKClickedSlider::mousePressEvent(event);
     m_isMoving = false;
-    emit sliderMoved( m_value );
+    Q_EMIT sliderMoved( m_value );
 #ifdef Q_OS_UNIX
     m_textLabel->show();
 #endif
@@ -52,7 +52,7 @@ void TTKMovingLabelSlider::mouseMoveEvent(QMouseEvent *event)
     if(m_mousePress)
     {
         m_isMoving = true;
-        emit sliderMoved( m_value );
+        Q_EMIT sliderMoved( m_value );
     }
 
     const QPoint &curPos = mapFromGlobal(QCursor::pos());
@@ -77,7 +77,7 @@ void TTKMovingLabelSlider::mouseMoveEvent(QMouseEvent *event)
 void TTKMovingLabelSlider::mouseReleaseEvent(QMouseEvent *event)
 {
     TTKClickedSlider::mouseReleaseEvent(event);
-    emit sliderReleasedAt( m_value );
+    Q_EMIT sliderReleasedAt( m_value );
     m_isMoving = false;
 }
 

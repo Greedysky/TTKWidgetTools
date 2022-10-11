@@ -48,7 +48,7 @@ public:
 public Q_SLOTS:
     void sliderMovedAt(int pos) const;
 
-protected:
+private:
     virtual void resizeEvent(QResizeEvent *event) override final;
 
     QSlider *m_slider;

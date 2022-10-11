@@ -98,12 +98,12 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-protected:
+private:
     void drawBackground(QPainter *painter);
     void drawText(QPainter *painter);
     void drawIcon(QPainter *painter);

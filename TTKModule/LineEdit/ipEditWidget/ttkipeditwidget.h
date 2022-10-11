@@ -39,7 +39,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     void initialize(QLineEdit *edit);
     QLineEdit *nextEdit(QLineEdit *edit);
     bool isEdit(QObject *object);
@@ -47,7 +47,7 @@ protected:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual bool eventFilter(QObject *object, QEvent *event) override final;
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void editTextChanged(const QString &text);
 
 private:

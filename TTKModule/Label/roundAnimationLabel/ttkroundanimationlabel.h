@@ -43,7 +43,7 @@ public Q_SLOTS:
     void start();
     void stop();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     QPixmap m_pixmap;

@@ -46,7 +46,7 @@ public:
 public Q_SLOTS:
     void setOrientation(Qt::Orientation orientation);
 
-protected:
+private:
     void setupProperties();
 
     QColor m_handleColor, m_backgroundColor, m_foregroundColor;

@@ -44,7 +44,7 @@ public:
 Q_SIGNALS:
     void clicked();
 
-protected:
+private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;
@@ -74,7 +74,7 @@ public:
 Q_SIGNALS:
     void entered();
 
-protected:
+private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
@@ -100,7 +100,7 @@ public:
 Q_SIGNALS:
     void clicked();
 
-protected:
+private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
@@ -135,7 +135,7 @@ private Q_SLOTS:
     void slotPageClicked();
     void slotArrowClicked();
 
-protected:
+private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
@@ -181,7 +181,7 @@ public Q_SLOTS:
     void switchPage(int flag);
     void updateRender();
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     void initialize();

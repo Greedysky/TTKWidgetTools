@@ -1026,6 +1026,6 @@ void TTKPictureFlowWidget::updateRender()
 
     if(m_state->m_centerIndex != center)
     {
-        emit centerIndexChanged(m_state->m_centerIndex);
+        Q_EMIT centerIndexChanged(m_state->m_centerIndex);
     }
 }

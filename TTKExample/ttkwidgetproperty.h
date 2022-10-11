@@ -75,6 +75,7 @@ protected:
     QtPixmapEditorFactory *m_pixmapEditorFactory;
     //
     QtAbstractPropertyBrowser *m_browser;
+
 };
 
 #endif // TTKWIDGETPROPERTY_H

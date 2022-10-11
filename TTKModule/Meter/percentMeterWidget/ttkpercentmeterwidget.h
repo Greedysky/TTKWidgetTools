@@ -59,7 +59,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
     void drawArc(QPainter *painter);
     void drawCircle(QPainter *painter);

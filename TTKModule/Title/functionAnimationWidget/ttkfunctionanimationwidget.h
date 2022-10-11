@@ -110,7 +110,7 @@ class TTK_MODULE_EXPORT TTKTableAnimationHWidget : public TTKAbstractAnimationHW
 public:
     explicit TTKTableAnimationHWidget(QWidget *parent = nullptr);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
 };
@@ -172,7 +172,7 @@ class TTK_MODULE_EXPORT TTKTableAnimationVWidget : public TTKAbstractAnimationVW
 public:
     explicit TTKTableAnimationVWidget(QWidget *parent = nullptr);
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
 };

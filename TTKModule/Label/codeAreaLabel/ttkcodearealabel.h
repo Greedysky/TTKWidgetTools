@@ -44,7 +44,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     void drawOutline(QPainter &painter);
     void drawNoisyPoint(QPainter &painter);
     void drawConversion(QPainter &painter);

@@ -68,13 +68,13 @@ private Q_SLOTS:
      */
     void outputRecieved();
 
-protected:
+private:
     /*!
      * Thread run now.
      */
     virtual void run() override final;
 
-protected:
+private:
     bool m_run;
     QString m_name;
     QProcess *m_process ;

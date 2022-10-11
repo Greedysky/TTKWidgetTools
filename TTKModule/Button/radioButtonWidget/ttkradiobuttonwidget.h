@@ -28,7 +28,7 @@ class TTK_MODULE_EXPORT TTKRadioButtonWidget : public TTKCheckable
 public:
     explicit TTKRadioButtonWidget(QWidget *parent = nullptr);
 
-protected:
+private:
     virtual void setupProperties() override final;
 
 };

@@ -11,13 +11,13 @@ TTKToolMenu::TTKToolMenu(QWidget *parent)
 void TTKToolMenu::showEvent(QShowEvent *event)
 {
     QMenu::showEvent(event);
-    emit windowStateChanged(true);
+    Q_EMIT windowStateChanged(true);
 }
 
 void TTKToolMenu::hideEvent(QHideEvent *event)
 {
     QMenu::hideEvent(event);
-    emit windowStateChanged(false);
+    Q_EMIT windowStateChanged(false);
 }
 
 

@@ -47,7 +47,7 @@ void TTKFunctionItem::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-        emit clicked(m_index);
+        Q_EMIT clicked(m_index);
     }
 }
 

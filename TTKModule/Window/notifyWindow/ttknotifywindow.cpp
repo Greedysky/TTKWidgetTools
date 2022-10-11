@@ -128,7 +128,7 @@ void TTKNotify::hideGriantChanged()
     QPropertyAnimation *animation = qobject_cast<QPropertyAnimation*>(sender());
     hide();
     animation->deleteLater();
-    emit disappeared();
+    Q_EMIT disappeared();
 }
 
 void TTKNotify::mousePressEvent(QMouseEvent *event)

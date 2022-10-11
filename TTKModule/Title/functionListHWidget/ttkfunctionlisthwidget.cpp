@@ -42,7 +42,7 @@ void TTKFunctionItemWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
     m_selectedOn = true;
-    emit selectedChanged(this);
+    Q_EMIT selectedChanged(this);
     update();
 }
 
@@ -141,7 +141,7 @@ void TTKFunctionListHWidget::selectedChanged(TTKFunctionItemWidget *item)
         return;
     }
 
-    emit currentIndexChanged(index);
+    Q_EMIT currentIndexChanged(index);
 
     for(TTKFunctionItemWidget *it : qAsConst(m_items))
     {

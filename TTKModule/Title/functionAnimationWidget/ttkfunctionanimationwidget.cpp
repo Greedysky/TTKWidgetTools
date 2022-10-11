@@ -53,7 +53,7 @@ void TTKAbstractAnimationWidget::switchToSelectedItemStyle(int index)
     m_animation->setEndValue(index*m_perValue);
     m_animation->start();
 
-    emit buttonClicked(index);
+    Q_EMIT buttonClicked(index);
 }
 
 void TTKAbstractAnimationWidget::animationChanged(const QVariant &value)

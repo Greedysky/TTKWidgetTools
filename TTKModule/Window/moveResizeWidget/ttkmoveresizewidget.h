@@ -57,7 +57,7 @@ public:
 
     explicit TTKMoveResizeWidget(QWidget *parent = nullptr);
 
-protected:
+private:
     virtual bool eventFilter(QObject *object, QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void mousePressEvent(QMouseEvent *event) override final;
