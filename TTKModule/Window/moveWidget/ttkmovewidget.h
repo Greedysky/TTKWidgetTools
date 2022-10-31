@@ -19,34 +19,9 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QLabel>
-#include <QMouseEvent>
-#include "ttkglobaldefine.h"
+#include "ttkabstractmovewidget.h"
 
-/*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_MODULE_EXPORT TTKMoveWidget : public QWidget
-{
-    Q_OBJECT
-    TTK_DECLARE_MODULE(TTKMoveWidget)
-public:
-    explicit TTKMoveWidget(QWidget *parent = nullptr);
-    explicit TTKMoveWidget(bool transparent, QWidget *parent = nullptr);
+using TTKMoveWidget = TTKAbstractMoveWidget;
 
-    inline void drawWindowShadow(bool show) { m_showShadow = show;}
-    inline void blockMoveOption(bool block) { m_moveOption = block;}
-
-private:
-    virtual void paintEvent(QPaintEvent *event) override final;
-    virtual void mousePressEvent(QMouseEvent *event) override final;
-    virtual void mouseMoveEvent(QMouseEvent *event) override final;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
-
-    QPoint m_pressAt;
-    bool m_moveOption, m_showShadow;
-    bool m_leftButtonPress;
-
-};
 
 #endif // TTKMOVEWIDGET_H

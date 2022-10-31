@@ -18,4 +18,4 @@
 
 TEMPLATE = subdirs
 CONFIG += ordered
-SUBDIRS = TTKModule TTKExample
+SUBDIRS = TTKCommon TTKModule TTKExample

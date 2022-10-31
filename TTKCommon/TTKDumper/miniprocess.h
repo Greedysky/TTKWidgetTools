@@ -1,5 +1,5 @@
-#ifndef TTKGLOBALDEFINE_H
-#define TTKGLOBALDEFINE_H
+#ifndef MINIPROCESS_H
+#define MINIPROCESS_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,12 +19,19 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkqtwrapper.h"
+#include "ttkglobaldefine.h"
 
-#ifdef TTK_LIBRARY
-#  define TTK_MODULE_EXPORT Q_DECL_EXPORT
-#else
-#  define TTK_MODULE_EXPORT Q_DECL_IMPORT
+namespace MusicObject
+{
+    /*!
+     * Kill process by name.
+     */
+    TTK_MODULE_EXPORT void killProcessByName(const QString &process);
+    /*!
+     * Kill process by name list.
+     */
+    TTK_MODULE_EXPORT void killProcessByName(const QStringList &processes);
+
+}
+
 #endif
-
-#endif // TTKGLOBALDEFINE_H

@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Widget Tools project
+# * This file is part of the TTK Library Module project
 # * Copyright (C) 2015 - 2022 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -16,8 +16,37 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
+QT += core
 
-HEADERS += $$PWD/ttkmovewidget.h
+TEMPLATE = lib
+DEFINES += TTK_LIBRARY
 
-SOURCES += $$PWD/ttkmovewidget.cpp
+include($$PWD/../../TTKVersion.pri)
+
+DESTDIR = $$OUT_PWD/../../bin/$$TTKVersion
+TARGET = TTKDumper
+
+CONFIG += plugin lib
+
+INCLUDEPATH += $$PWD/../
+
+win32:LIBS += -lpsapi
+win32:msvc{
+    CONFIG += c++11
+}else{
+    equals(QT_MAJOR_VERSION, 6){ #Qt6
+        QMAKE_CXXFLAGS += -std=c++17
+    }else{
+        QMAKE_CXXFLAGS += -std=c++11
+    }
+}
+
+HEADERS += \
+    $$PWD/miniprocess.h \
+    $$PWD/ttkdumper.h
+
+SOURCES += \
+    $$PWD/miniprocess.cpp \
+    $$PWD/ttkdumper.cpp
+
+win32:RC_FILE = $$PWD/TTKDumper.rc

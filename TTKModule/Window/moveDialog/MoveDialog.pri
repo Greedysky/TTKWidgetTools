@@ -21,5 +21,3 @@ INCLUDEPATH += $$PWD
 HEADERS += $$PWD/ttkmovedialog.h
 
 SOURCES += $$PWD/ttkmovedialog.cpp
-
-RESOURCES += $$PWD/MoveDialog.qrc

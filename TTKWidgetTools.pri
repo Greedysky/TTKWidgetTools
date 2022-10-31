@@ -30,7 +30,7 @@ greaterThan(QT_MAJOR_VERSION, 4){ #Qt5
 
 include($$PWD/TTKVersion.pri)
 
-DESTDIR = $$OUT_PWD/../bin/$$TTKWidgetTools
+DESTDIR = $$OUT_PWD/../bin/$$TTKVersion
 
 win32{
     LIBS += -lIphlpapi
@@ -41,6 +41,7 @@ win32{
              QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
              QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
         }
+        LIBS += -L$$DESTDIR -lTTKLibrary
     }
 
     gcc{
@@ -50,6 +51,7 @@ win32{
             QMAKE_CXXFLAGS += -std=c++11
         }
         QMAKE_CXXFLAGS += -Wunused-function -Wswitch
+        LIBS += -L$$DESTDIR -lTTKLibrary
     }
 }
 
@@ -60,6 +62,7 @@ unix:!mac{
         QMAKE_CXXFLAGS += -std=c++11
     }
     QMAKE_CXXFLAGS += -Wunused-function -Wswitch
+    LIBS += -L$$DESTDIR -lTTKLibrary
 }
 
 DEFINES += TTK_LIBRARY

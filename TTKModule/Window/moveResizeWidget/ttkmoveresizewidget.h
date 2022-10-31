@@ -19,57 +19,17 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QLabel>
-#include "ttkglobaldefine.h"
+#include "ttkabstractmoveresizewidget.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_MODULE_EXPORT MoveResizeData
-{
-    bool m_mouseLeftPress;
-    bool m_isPressBorder;
-    QPoint m_mousePos;
-    QPoint m_windowPos;
-    QSize m_pressedSize;
-};
-
-/*!
- * @author Greedysky <greedysky@163.com>
- */
-class TTK_MODULE_EXPORT TTKMoveResizeWidget : public QWidget
+class TTK_MODULE_EXPORT TTKMoveResizeWidget : public TTKAbstractMoveResizeWidget
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKMoveResizeWidget)
 public:
-    enum class Direction
-    {
-        No = 0,
-        Left = 1,
-        Top = 2,
-        Right = 4,
-        Bottom = 8,
-        LeftTop = Direction::Left | Direction::Top,
-        LeftBottom = Direction::Left | Direction::Bottom,
-        RightTop = Direction::Right | Direction::Top,
-        RightBottom = Direction::Right | Direction::Bottom
-    };
-
     explicit TTKMoveResizeWidget(QWidget *parent = nullptr);
-
-private:
-    virtual bool eventFilter(QObject *object, QEvent *event) override final;
-    virtual void paintEvent(QPaintEvent *event) override final;
-    virtual void mousePressEvent(QMouseEvent *event) override final;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
-    virtual void mouseMoveEvent(QMouseEvent *event) override final;
-
-    void sizeDirection();
-    void moveDirection();
-    QObjectList foreachWidget(QObject *object);
-
-    MoveResizeData m_struct;
-    Direction m_direction;
 
 };
 

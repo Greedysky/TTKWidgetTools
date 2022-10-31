@@ -1,8 +1,8 @@
-#ifndef TTKGLOBALDEFINE_H
-#define TTKGLOBALDEFINE_H
+#ifndef TTKABSTRACTRESIZEINTERFACE_H
+#define TTKABSTRACTRESIZEINTERFACE_H
 
 /***************************************************************************
- * This file is part of the TTK Library Module project
+ * This file is part of the TTK Music Player project
  * Copyright (C) 2015 - 2022 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
@@ -19,12 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkqtwrapper.h"
+#include "ttkglobaldefine.h"
 
-#ifdef TTK_LIBRARY
-#  define TTK_MODULE_EXPORT Q_DECL_EXPORT
-#else
-#  define TTK_MODULE_EXPORT Q_DECL_IMPORT
-#endif
+/*! @brief The class of the widget resize interface.
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_MODULE_EXPORT TTKAbstractResizeInterface
+{
+public:
+    TTKAbstractResizeInterface() = default;
 
-#endif // TTKGLOBALDEFINE_H
+    /*!
+     * Resize widget bound by resize called.
+     * Subclass should implement this function.
+     */
+    virtual void resizeWidget() = 0;
+
+};
+
+#endif // TTKABSTRACTRESIZEINTERFACE_H

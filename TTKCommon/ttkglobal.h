@@ -2,7 +2,7 @@
 #define TTKGLOBAL_H
 
 /***************************************************************************
- * This file is part of the TTK Widget Tools project
+ * This file is part of the TTK Library Module project
  * Copyright (C) 2015 - 2022 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
@@ -22,6 +22,7 @@
 #include <QMap>
 #include <QSet>
 #include <QVariant>
+#include "ttklogger.h"
 
 #ifdef Q_CC_GNU
 #  pragma GCC diagnostic ignored "-Wswitch"

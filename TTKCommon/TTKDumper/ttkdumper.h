@@ -1,5 +1,5 @@
-#ifndef TTKGLOBALDEFINE_H
-#define TTKGLOBALDEFINE_H
+#ifndef TTKDUMPER_H
+#define TTKDUMPER_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,12 +19,29 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkqtwrapper.h"
+#include "ttkprivate.h"
 
-#ifdef TTK_LIBRARY
-#  define TTK_MODULE_EXPORT Q_DECL_EXPORT
-#else
-#  define TTK_MODULE_EXPORT Q_DECL_IMPORT
-#endif
+class TTKDumperPrivate;
 
-#endif // TTKGLOBALDEFINE_H
+/*! @brief The class of the ttk dumper.
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_MODULE_EXPORT TTKDumper
+{
+public:
+    /*!
+     * Object contsructor.
+     */
+    TTKDumper();
+
+    /*!
+     * Run.
+     */
+    void run();
+
+private:
+    TTK_DECLARE_PRIVATE(TTKDumper)
+
+};
+
+#endif // TTKDUMPER_H

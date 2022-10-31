@@ -1,5 +1,5 @@
 # ***************************************************************************
-# * This file is part of the TTK Widget Tools project
+# * This file is part of the TTK Library Module project
 # * Copyright (C) 2015 - 2022 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
@@ -18,6 +18,11 @@
 
 INCLUDEPATH += $$PWD
 
-HEADERS += $$PWD/ttkmovewidget.h
+HEADERS += \
+    $$PWD/ttklocalpeer.h \
+    $$PWD/ttkrunapplication.h \
 
-SOURCES += $$PWD/ttkmovewidget.cpp
+SOURCES += \
+    $$PWD/ttklocalpeer.cpp \
+    $$PWD/ttkrunapplication.cpp
+

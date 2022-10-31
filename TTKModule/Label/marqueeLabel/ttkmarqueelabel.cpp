@@ -93,9 +93,9 @@ void TTKMarqueeLabel::setForeground(const QColor &foreground)
     if(m_foreground != foreground)
     {
         m_foreground = foreground;
-        QPalette pt = m_labText->palette();
-        pt.setColor(QPalette::WindowText, foreground);
-        m_labText->setPalette(pt);
+        QPalette plt = m_labText->palette();
+        plt.setColor(QPalette::WindowText, foreground);
+        m_labText->setPalette(plt);
     }
 }
 
@@ -104,9 +104,9 @@ void TTKMarqueeLabel::setBackground(const QColor &background)
     if(m_background != background)
     {
         m_background = background;
-        QPalette pt = palette();
-        pt.setColor(QPalette::Window, background);
-        setPalette(pt);
+        QPalette plt = palette();
+        plt.setColor(QPalette::Window, background);
+        setPalette(plt);
     }
 }
 

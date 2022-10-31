@@ -1,8 +1,8 @@
-#ifndef TTKDESKTOPWRAPPER_H
-#define TTKDESKTOPWRAPPER_H
+#ifndef TTKCLICKEDLABEL_H
+#define TTKCLICKEDLABEL_H
 
 /***************************************************************************
- * This file is part of the TTK Widget Tools project
+ * This file is part of the TTK Library Module project
  * Copyright (C) 2015 - 2022 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
@@ -19,28 +19,35 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QWidget>
+#include <QLabel>
 #include "ttkglobaldefine.h"
 
-/*! @brief The class of the desktop screen wrapper.
+/*! @brief The class of the label widget that can click.
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKDesktopWrapper
+class TTK_MODULE_EXPORT TTKClickedLabel : public QLabel
 {
+    Q_OBJECT
+    TTK_DECLARE_MODULE(TTKClickedLabel)
 public:
     /*!
-     * Get screen geometry by given screen index.
+     * Object contsructor.
      */
-    static QRect screenGeometry(int index = 0);
+    explicit TTKClickedLabel(QWidget *parent = nullptr);
+    explicit TTKClickedLabel(const QString &text, QWidget *parent = nullptr);
+
+Q_SIGNALS:
     /*!
-     * Get all screen geometry.
+     * Click the item emit.
      */
-    static QRect geometry();
+    void clicked();
+
+private:
     /*!
-     * Grab all screen geometry pixmap by given rect.
+     * Override the widget event.
      */
-    static QPixmap grabWindow(int x = 0, int y = 0, int w = -1, int h = -1);
+    virtual void mousePressEvent(QMouseEvent *event) override final;
 
 };
 
-#endif // TTKDESKTOPWRAPPER_H
+#endif // TTKCLICKEDLABEL_H

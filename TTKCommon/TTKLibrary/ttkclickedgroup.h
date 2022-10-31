@@ -1,5 +1,5 @@
-#ifndef TTKGLOBALDEFINE_H
-#define TTKGLOBALDEFINE_H
+#ifndef TTKCLICKEDGROUP_H
+#define TTKCLICKEDGROUP_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,12 +19,42 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkqtwrapper.h"
+#include <QWidget>
+#include "ttkglobaldefine.h"
 
-#ifdef TTK_LIBRARY
-#  define TTK_MODULE_EXPORT Q_DECL_EXPORT
-#else
-#  define TTK_MODULE_EXPORT Q_DECL_IMPORT
-#endif
+/*! @brief The class of the label widget click group mapper.
+ * @author Greedysky <greedysky@163.com>
+ */
+class TTK_MODULE_EXPORT TTKClickedGroup : public QObject
+{
+    Q_OBJECT
+    TTK_DECLARE_MODULE(TTKClickedGroup)
+public:
+    /*!
+     * Object contsructor.
+     */
+    explicit TTKClickedGroup(QObject *parent = nullptr);
 
-#endif // TTKGLOBALDEFINE_H
+    /*!
+     * Map the clicked widget.
+     */
+    void mapped(QWidget *widget);
+
+Q_SIGNALS:
+    /*!
+     * Index widget click emit.
+     */
+    void clicked(int index);
+
+private Q_SLOTS:
+    /*!
+     * Update the current clicked state.
+     */
+    void update();
+
+private:
+    QWidgetList m_container;
+
+};
+
+#endif // TTKCLICKEDGROUP_H
