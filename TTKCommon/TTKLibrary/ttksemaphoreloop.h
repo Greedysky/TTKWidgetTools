@@ -1,5 +1,5 @@
-#ifndef TTKDUMPER_H
-#define TTKDUMPER_H
+#ifndef TTKSEMAPHORELOOP_H
+#define TTKSEMAPHORELOOP_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,35 +19,38 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "ttkprivate.h"
-#include "miniprocess.h"
+#include <QTimer>
+#include <QEventLoop>
+#include "ttkglobaldefine.h"
 
-#include <functional>
-
-class TTKDumperPrivate;
-
-using TTKDumperFunctor = std::function<void(void)>;
-
-/*! @brief The class of the ttk dumper.
+/*! @brief The class of the semaphore event loop.
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKDumper
+class TTK_MODULE_EXPORT TTKSemaphoreLoop : public QEventLoop
 {
+    Q_OBJECT
+    TTK_DECLARE_MODULE(TTKSemaphoreLoop)
 public:
     /*!
      * Object contsructor.
      */
-    TTKDumper();
-    TTKDumper(const TTKDumperFunctor &functor);
+    explicit TTKSemaphoreLoop(QObject *parent = nullptr);
+    ~TTKSemaphoreLoop();
 
     /*!
-     * Run.
+     * Event loop start.
      */
-    void run();
+    int exec(ProcessEventsFlags flags = AllEvents);
+
+public Q_SLOTS:
+    /*!
+     * Event loop quit.
+     */
+    void quit();
 
 private:
-    TTK_DECLARE_PRIVATE(TTKDumper)
+    QTimer m_timer;
 
 };
 
-#endif // TTKDUMPER_H
+#endif // TTKSEMAPHORELOOP_H
