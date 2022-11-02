@@ -17,11 +17,10 @@
 # ***************************************************************************
 
 TEMPLATE = lib
+CONFIG += plugin lib
 
 include($$PWD/TTKModule.pri)
 include($$PWD/../TTKWidgetTools.pri)
-
-CONFIG += plugin lib
 
 TARGET = TTKCore
 

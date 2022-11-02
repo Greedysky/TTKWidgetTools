@@ -17,8 +17,7 @@
 # ***************************************************************************
 
 TEMPLATE = app
-
-equals(QT_MAJOR_VERSION, 4){
+equals(QT_MAJOR_VERSION, 4){ #Qt4
     CONFIG += gcc
 }
 
@@ -27,6 +26,7 @@ include($$PWD/../TTKWidgetTools.pri)
 include($$PWD/../TTKUi/TTKUi.pri)
 
 TARGET = TTKWidgetTools
+
 LIBS += -L$$DESTDIR -lTTKCore
 
 INCLUDEPATH += \
