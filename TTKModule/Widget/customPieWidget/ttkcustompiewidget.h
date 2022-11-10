@@ -36,6 +36,7 @@ public:
         QString m_text;
         double m_value;
     };
+    TTK_DECLARE_LIST(PieData);
 
     explicit TTKCustomPieWidget(QWidget *parent = nullptr);
 
@@ -45,7 +46,7 @@ public:
     void setTextColor(const QColor &textColor);
     void setBorderColor(const QColor &borderColor);
 
-    void setDataPie(const QList<PieData> &datas);
+    void setDataPie(const PieDataList &datas);
 
     void appendPie(const QString &label, double value, const QColor &color);
 
@@ -67,7 +68,7 @@ private:
 
     QColor m_textColor;
     QColor m_borderColor;
-    QList<PieData> m_datas;
+    PieDataList m_datas;
 
 };
 

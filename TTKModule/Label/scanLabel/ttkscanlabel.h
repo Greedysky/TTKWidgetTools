@@ -36,6 +36,7 @@ public:
         float m_width;
         int m_alpha;
     };
+    TTK_DECLARE_LIST(RingData);
 
     explicit TTKScanLabel(QWidget *parent = nullptr);
     ~TTKScanLabel();
@@ -80,7 +81,7 @@ private:
     QColor m_scanColor;
     QColor m_ringColor;
 
-    QList<RingData> m_rings;
+    RingDataList m_rings;
     QTimer *m_circleTimer;
 };
 

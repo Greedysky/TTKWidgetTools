@@ -44,7 +44,7 @@ private:
     QRect m_drawArea;
     int m_pieRotate, m_timerId, m_pointTimerId, m_nSpeed;
     QList<QPoint> m_points;
-    QList<int> m_pointsAlapha;
+    TTKIntList m_pointsAlapha;
 
 };
 

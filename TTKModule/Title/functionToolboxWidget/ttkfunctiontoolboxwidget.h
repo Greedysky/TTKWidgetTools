@@ -89,7 +89,7 @@ private:
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     QVBoxLayout *m_layout;
-    QList<QWidget*> m_itemList;
+    QWidgetList m_itemList;
     TTKFunctionToolBoxTopWidget *m_topWidget;
 
 };

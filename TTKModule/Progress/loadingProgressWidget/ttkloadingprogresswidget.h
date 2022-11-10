@@ -66,7 +66,6 @@ private:
     QList<float> m_ranges;
     QList<Position> m_dots;
 
-
 };
 
 #endif // TTKLOADINGPROGRESSWIDGET_H

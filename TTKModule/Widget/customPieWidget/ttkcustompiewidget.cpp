@@ -49,7 +49,7 @@ void TTKCustomPieWidget::setBorderColor(const QColor &borderColor)
     }
 }
 
-void TTKCustomPieWidget::setDataPie(const QList<PieData> &datas)
+void TTKCustomPieWidget::setDataPie(const PieDataList &datas)
 {
     m_datas = datas;
 }
