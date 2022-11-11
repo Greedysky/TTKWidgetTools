@@ -22,4 +22,4 @@ OBJECTS_DIR = ./.build/obj
 RCC_DIR = ./.build/rcc
 
 # update time 2022.01.29
-TTKVersion = 2.4.0.0
+TTK_VERSION = 2.4.0.0
