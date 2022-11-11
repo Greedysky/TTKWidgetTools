@@ -18,6 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-HEADERS += $$PWD/ttktoastlabel.h
+HEADERS += $$PWD/ttktoastlabel2.h
 
-SOURCES += $$PWD/ttktoastlabel.cpp
+SOURCES += $$PWD/ttktoastlabel2.cpp

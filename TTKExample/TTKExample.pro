@@ -139,7 +139,7 @@ HEADERS += \
     $$PWD/../TTKModule/Label/marqueeLabel/ttkmarqueelabel.h \
     $$PWD/../TTKModule/Label/roundAnimationLabel/ttkroundanimationlabel.h \
     $$PWD/../TTKModule/Label/splitItemLabel/ttksplititemlabel.h \
-    $$PWD/../TTKModule/Label/toastLabel/ttktoastlabel.h \
+    $$PWD/../TTKModule/Label/toastLabel/ttktoastlabel2.h \
     $$PWD/../TTKModule/Label/transitionAnimationLabel/ttktransitionanimationlabel.h \
     $$PWD/../TTKModule/Label/cloudPanelLabel/ttkcloudpanellabel.h \
     $$PWD/../TTKModule/Label/barRulerLabel/ttkbarrulerlabel.h \

@@ -1,5 +1,5 @@
-#ifndef TTKTOASTLABEL_H
-#define TTKTOASTLABEL_H
+#ifndef TTKTOASTLABEL2_H
+#define TTKTOASTLABEL2_H
 
 /***************************************************************************
  * This file is part of the TTK Widget Tools project
@@ -19,48 +19,20 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QLabel>
-#include <QTimer>
-#include "ttkglobaldefine.h"
+#include "ttktoastlabel.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_MODULE_EXPORT TTKToastLabel : public QLabel
+class TTK_MODULE_EXPORT TTKToastLabel2 : public TTKToastLabel
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKToastLabel)
+    TTK_DECLARE_MODULE(TTKToastLabel2)
 public:
-    explicit TTKToastLabel(QWidget *parent = nullptr);
-    explicit TTKToastLabel(const QString &text, QWidget *parent = nullptr);
-    ~TTKToastLabel();
-
-    void setFontMargin(int height, int width);
-
-    void setTimerInterval(int msecond);
-    int timerInterval() const;
-
-    void setFontSize(int size);
-    int fontSize() const;
-
-    void setBold(bool bold);
-    bool bold() const;
-
-    void popup(QWidget *parent);
-
-public Q_SLOTS:
-    void setText(const QString &text);
-
-private Q_SLOTS:
-    void updateRender();
-
-private:
-    virtual void paintEvent(QPaintEvent *event) override final;
-
-    QTimer m_timer;
-    QFont m_font;
-    QPoint m_margin;
+    explicit TTKToastLabel2(QWidget *parent = nullptr);
+    explicit TTKToastLabel2(const QString &text, QWidget *parent = nullptr);
+    ~TTKToastLabel2();
 
 };
 
-#endif // TTKTOASTLABEL_H
+#endif // TTKTOASTLABEL2_H
