@@ -173,7 +173,6 @@ QPixmap QtPropertyBrowserUtils::brushValuePixmap(const QBrush &b)
         painter.fillRect(img.width() / 4, img.height() / 4,
                          img.width() / 2, img.height() / 2, opaqueBrush);
     }
-    painter.end();
     return QPixmap::fromImage(img);
 }
 

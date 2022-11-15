@@ -83,7 +83,6 @@ void TTKSpeedMeterWidget::paintEvent(QPaintEvent *event)
     drawIndicator(&painter);
     drawCoverBall(&painter);
     drawTextRect(&painter);
-    painter.end();
 }
 
 void TTKSpeedMeterWidget::initialize()

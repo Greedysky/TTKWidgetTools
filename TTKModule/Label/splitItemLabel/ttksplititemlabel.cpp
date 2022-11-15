@@ -76,5 +76,4 @@ void TTKSplitItemLabel::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.drawRect(m_lineGeometry);
-    painter.end();
 }

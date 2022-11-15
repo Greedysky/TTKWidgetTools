@@ -571,7 +571,6 @@ QImage* TTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
             painter.setPen(QPen(QColor(64,64,64), 4));
             painter.setBrush(QBrush());
             painter.drawRect(2, 2, sw-3, sh-3);
-            painter.end();
 
             m_blankSurface = prepareSurface(&img, sw, sh, m_bgcolor, m_state->m_reflectionEffect);
         }

@@ -267,11 +267,8 @@ QImage HeatMapper::render()
         painter.drawImage(0, 0, render);
         painter.setCompositionMode(QPainter::CompositionMode_DestinationIn);
         painter.fillRect(render.rect(), QColor(0, 0, 0, m_opacity));
-        painter.end();
-
         return image;
     }
-
     return render;
 }
 
