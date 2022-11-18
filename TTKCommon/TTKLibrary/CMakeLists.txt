@@ -26,6 +26,7 @@ set(MUSIC_HEADERS
   ttkglobalhelper.h
   ttksemaphoreloop.h
   ttksuperenum.h
+  ttktabbutton.h
   ttktime.h
   ttktoastlabel.h
 )
@@ -44,6 +45,7 @@ set(MUSIC_SOURCES
   ttkglobalhelper.cpp
   ttksemaphoreloop.cpp
   ttksuperenum.cpp
+  ttktabbutton.cpp
   ttktime.cpp
   ttktoastlabel.cpp
 )
@@ -66,7 +68,7 @@ if(TTK_QT_VERSION VERSION_GREATER "4")
     add_library(${PROJECT_NAME} STATIC ${MUSIC_SOURCES}  ${MUSIC_MOC_H} ${MUSIC_HEADERS})
   endif()
   
-  set(QT5_LIBS Qt5::Core Qt5::Gui Qt5::Widgets)
+  set(QT5_LIBS Qt5::Core Qt5::Xml Qt5::Gui Qt5::Widgets)
   target_link_libraries(${PROJECT_NAME} ${QT5_LIBS})
 else()
   QT4_WRAP_CPP(MUSIC_MOC_H ${MUSIC_HEADERS})

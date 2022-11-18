@@ -1,5 +1,5 @@
-#ifndef TTKCLICKEDGROUP_H
-#define TTKCLICKEDGROUP_H
+#ifndef TTKTABBUTTON_H
+#define TTKTABBUTTON_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,42 +19,53 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QWidget>
+#include <QPushButton>
+#include <QButtonGroup>
 #include "ttkglobaldefine.h"
 
-/*! @brief The class of the label widget click group mapper.
+/*! @brief The class of the tab button module.
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKClickedGroup : public QObject
+class TTK_MODULE_EXPORT TTKTabButton : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKClickedGroup)
+    TTK_DECLARE_MODULE(TTKTabButton)
 public:
     /*!
      * Object contsructor.
      */
-    explicit TTKClickedGroup(QObject *parent = nullptr);
+    explicit TTKTabButton(QWidget *parent = nullptr);
+    ~TTKTabButton();
 
     /*!
-     * Map the clicked widget.
+     * Add button by input titles.
      */
-    void mapped(QWidget *widget);
+    void addButtons(const QStringList &titles);
+    /*!
+     * Set button enable or disable.
+     */
+    void setButtonEnabled(bool enable);
+
+    /*!
+     * Get tab buttons count.
+     */
+    inline int count() const { return m_buttonGroup->buttons().count(); }
 
 Q_SIGNALS:
     /*!
-     * Index widget click.
+     * Index button click.
      */
     void clicked(int index);
 
 private Q_SLOTS:
     /*!
-     * Update the current clicked state.
+     * Set diff button clicked by index.
      */
-    void update();
+    void buttonClicked(int index);
 
 private:
-    QWidgetList m_container;
+    QButtonGroup *m_buttonGroup;
 
 };
 
-#endif // TTKCLICKEDGROUP_H
+#endif // TTKTABBUTTON_H
