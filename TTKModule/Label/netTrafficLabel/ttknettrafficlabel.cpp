@@ -28,10 +28,10 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
 {
 #ifdef Q_OS_UNIX
     QFile openFile(":/net/res_traffic");
-    if(openFile.open(QFile::ReadOnly))
+    if(openFile.open(QIODevice::ReadOnly))
     {
         QFile file(TEMP_FILE_NAME);
-        if(file.open(QFile::WriteOnly))
+        if(file.open(QIODevice::WriteOnly))
         {
             file.write(openFile.readAll());
             file.close();
