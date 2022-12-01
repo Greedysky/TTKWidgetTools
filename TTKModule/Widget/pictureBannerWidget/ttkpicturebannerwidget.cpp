@@ -53,7 +53,7 @@ void TTKPictureBannerArrowWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     QPen pen;
     pen.setWidth(3);
@@ -413,7 +413,7 @@ void TTKPictureBannerWidget::switchIndicator()
         return;
     }
 
-    int index = m_indicators.indexOf(ind);
+    const int index = m_indicators.indexOf(ind);
     if(index == m_currentIndex)
     {
         return;
@@ -454,11 +454,12 @@ void TTKPictureBannerWidget::switchPage(int flag)
         return;
     }
 
-    int count = m_indicators.count();
+    const int count = m_indicators.count();
     if(count < 2)
     {
         return;
     }
+
     m_indicators.at(m_currentIndex)->select(false);
     m_currentIndex += flag;
 
@@ -517,8 +518,9 @@ void TTKPictureBannerWidget::play(int index)
         return;
     }
 
-    int count = m_indicators.count();
+    const int count = m_indicators.count();
     int leftIndex = 0, rightIndex = 0;
+
     if(count > 1)
     {
         if(index == 0)

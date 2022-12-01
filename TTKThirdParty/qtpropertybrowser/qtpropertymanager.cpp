@@ -3078,7 +3078,7 @@ QString QtPointFPropertyManager::valueText(const QtProperty *property) const
     if (it == d_ptr->m_values.constEnd())
         return QString();
     const QPointF v = it.value().val;
-    const int dec =  it.value().decimals;
+    const int dec = it.value().decimals;
     return QString(tr("(%1, %2)").arg(QString::number(v.x(), 'f', dec))
                                  .arg(QString::number(v.y(), 'f', dec)));
 }
@@ -5270,7 +5270,7 @@ QString QtFlagPropertyManager::valueText(const QtProperty *property) const
     int level = 0;
     const QChar bar = QLatin1Char('|');
     const QStringList::const_iterator fncend = data.flagNames.constEnd();
-    for (QStringList::const_iterator it =  data.flagNames.constBegin(); it != fncend; ++it) {
+    for (QStringList::const_iterator it = data.flagNames.constBegin(); it != fncend; ++it) {
         if (data.val & (1 << level)) {
             if (!str.isEmpty())
                 str += bar;

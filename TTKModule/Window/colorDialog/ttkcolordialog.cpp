@@ -36,7 +36,7 @@ void TTKHlPalette::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(Qt::NoBrush);
 
     const int ntRight = rect().right();
@@ -142,7 +142,7 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setBrush(Qt::NoBrush);
 
     const int ntRight = rect().right();
@@ -168,7 +168,7 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
     QBrush brush(linearGradient);
     painter.fillRect(rect(), brush);
 
-    QPointF ptfCenter(m_dblVernierX, ntBottm/2.0);
+    const QPointF ptfCenter(m_dblVernierX, ntBottm/2.0);
     painter.setPen(QPen(Qt::black, 2));
     painter.drawEllipse(ptfCenter, 5, 5);
 

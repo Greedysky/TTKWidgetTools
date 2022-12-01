@@ -41,7 +41,7 @@ void TTKFunctionListVWidget::resizeMode(bool mode)
 
 void TTKFunctionListVWidget::selectedChanged(TTKFunctionItemWidget *item)
 {
-    int index = m_items.indexOf(item);
+    const int index = m_items.indexOf(item);
     if(index == -1)
     {
         return;

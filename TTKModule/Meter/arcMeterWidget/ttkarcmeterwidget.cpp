@@ -296,9 +296,9 @@ void TTKArcMeterWidget::drawArc(QPainter *painter)
     painter->setPen(pen);
     painter->setBrush(Qt::NoBrush);
 
-    double angleAll = 360.0 - m_startAngle - m_endAngle;
-    double angleCurrent = angleAll * ((m_currentValue - m_minValue) / (m_maxValue - m_minValue));
-    double angleOther = angleAll - angleCurrent;
+    const double angleAll = 360.0 - m_startAngle - m_endAngle;
+    const double angleCurrent = angleAll * ((m_currentValue - m_minValue) / (m_maxValue - m_minValue));
+    const double angleOther = angleAll - angleCurrent;
 
     QRectF rect = QRectF(-radius, -radius, radius * 2, radius * 2);
     painter->drawArc(rect, (270 - m_startAngle - angleCurrent) * 16, angleCurrent * 16);
@@ -313,13 +313,14 @@ void TTKArcMeterWidget::drawArc(QPainter *painter)
 
 void TTKArcMeterWidget::drawScale(QPainter *painter)
 {
-    int radius = 97;
+    constexpr int radius = 97;
 
     painter->save();
     painter->rotate(m_startAngle);
 
-    int steps = (m_scaleMajor * m_scaleMinor);
-    double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
+    const int steps = (m_scaleMajor * m_scaleMinor);
+    const double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
+
     QPen pen;
     pen.setColor(m_scaleColor);
     pen.setCapStyle(Qt::RoundCap);
@@ -345,7 +346,7 @@ void TTKArcMeterWidget::drawScale(QPainter *painter)
 
 void TTKArcMeterWidget::drawScaleNum(QPainter *painter)
 {
-    int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     painter->setPen(m_scaleNumColor);
@@ -370,15 +371,15 @@ void TTKArcMeterWidget::drawScaleNum(QPainter *painter)
 
 void TTKArcMeterWidget::drawPointerCircle(QPainter *painter)
 {
-    int radius = 8;
-    int offset = 30;
+    constexpr int radius = 8;
+    constexpr int offset = 30;
 
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_pointerColor);
     painter->rotate(m_startAngle);
 
-    double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
     painter->rotate(degRotate);
     painter->drawEllipse(-radius, radius + offset, radius * 2, radius * 2);
     painter->restore();
@@ -386,7 +387,7 @@ void TTKArcMeterWidget::drawPointerCircle(QPainter *painter)
 
 void TTKArcMeterWidget::drawPointerIndicator(QPainter *painter)
 {
-    int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     painter->setOpacity(0.8);
@@ -397,7 +398,7 @@ void TTKArcMeterWidget::drawPointerIndicator(QPainter *painter)
     pts.setPoints(3, -5, 0, 5, 0, 0, radius);
     painter->rotate(m_startAngle);
 
-    double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
     painter->restore();
@@ -405,7 +406,7 @@ void TTKArcMeterWidget::drawPointerIndicator(QPainter *painter)
 
 void TTKArcMeterWidget::drawPointerIndicatorR(QPainter *painter)
 {
-    int radius = 75;
+    constexpr int radius = 75;
 
     painter->save();
     QPen pen;
@@ -418,7 +419,7 @@ void TTKArcMeterWidget::drawPointerIndicatorR(QPainter *painter)
     pts.setPoints(3, -5, 0, 5, 0, 0, radius);
     painter->rotate(m_startAngle);
 
-    double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
 
@@ -431,8 +432,8 @@ void TTKArcMeterWidget::drawPointerIndicatorR(QPainter *painter)
 
 void TTKArcMeterWidget::drawPointerTriangle(QPainter *painter)
 {
-    int radius = 10;
-    int offset = 55;
+    constexpr int radius = 10;
+    constexpr int offset = 55;
 
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -441,8 +442,8 @@ void TTKArcMeterWidget::drawPointerTriangle(QPainter *painter)
     QPolygon pts;
     pts.setPoints(3, -5, 0 + offset, 5, 0 + offset, 0, radius + offset);
     painter->rotate(m_startAngle);
-    double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
     painter->restore();
@@ -450,7 +451,8 @@ void TTKArcMeterWidget::drawPointerTriangle(QPainter *painter)
 
 void TTKArcMeterWidget::drawRoundCircle(QPainter *painter)
 {
-    int radius = 12;
+    constexpr int radius = 12;
+
     painter->save();
     painter->setOpacity(0.5);
     painter->setPen(Qt::NoPen);
@@ -461,7 +463,8 @@ void TTKArcMeterWidget::drawRoundCircle(QPainter *painter)
 
 void TTKArcMeterWidget::drawCenterCircle(QPainter *painter)
 {
-    int radius = 8;
+    constexpr int radius = 8;
+
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_pointerColor);
@@ -471,7 +474,7 @@ void TTKArcMeterWidget::drawCenterCircle(QPainter *painter)
 
 void TTKArcMeterWidget::drawValue(QPainter *painter)
 {
-    int radius = 100;
+    constexpr int radius = 100;
 
     painter->save();
     painter->setPen(m_textColor);
@@ -480,8 +483,7 @@ void TTKArcMeterWidget::drawValue(QPainter *painter)
     font.setPixelSize(30);
     painter->setFont(font);
 
-    QRectF textRect(-radius, radius / 2, radius * 2, radius / 3);
-    QString strValue = QString("%1").arg(m_currentValue, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    const QRectF textRect(-radius, radius / 2, radius * 2, radius / 3);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1").arg(m_currentValue, 0, 'f', m_precision));
     painter->restore();
 }

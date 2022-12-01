@@ -53,7 +53,7 @@ void TTKClickedSlider::mouseMoveEvent(QMouseEvent *event)
     {
         if(orientation() == Qt::Horizontal)
         {
-            int x = event->pos().x();
+            const int x = event->pos().x();
             if((x >= 0) && (x <= width()))
             {
                 double pos = event->pos().x()*1.0 / width();
@@ -71,7 +71,7 @@ void TTKClickedSlider::mouseMoveEvent(QMouseEvent *event)
         }
         else
         {
-            int y = event->pos().y();
+            const int y = event->pos().y();
             if((y >= 0) && (y <= height()))
             {
                 double pos = event->pos().y()*1.0 / height();

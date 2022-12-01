@@ -84,8 +84,8 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
     painter->save();
     painter->setPen(m_foreground);
 
-    double startRad = ( 270-m_startAngle) * (3.14 / 180);
-    double deltaRad = (360 - m_startAngle - m_endAngle) * (3.14 / 180) / m_scaleMajor;
+    const double startRad = ( 270-m_startAngle) * (3.14 / 180);
+    const double deltaRad = (360 - m_startAngle - m_endAngle) * (3.14 / 180) / m_scaleMajor;
     double sina,cosa;
     int x, y;
 
@@ -114,18 +114,18 @@ void TTKTimeMeterWidget::drawTitle(QPainter *painter)
     painter->save();
     painter->setPen(m_foreground);
 
-    QString str(m_title);
+    const QString str(m_title);
     QFontMetricsF fm(font());
-    double w = fm.size(Qt::TextSingleLine, str).width();
+    const double w = fm.size(Qt::TextSingleLine, str).width();
     painter->drawText(-w / 2, -30, str);
     painter->restore();
 }
 
 void TTKTimeMeterWidget::drawNumericValue(QPainter *painter)
 {
-    QString str = QString("%1 %2").arg(m_value, 0, 'f', m_precision).arg(m_units);
+    const QString &str = QString("%1 %2").arg(m_value, 0, 'f', m_precision).arg(m_units);
     QFontMetricsF fm(font());
-    double w = fm.size(Qt::TextSingleLine, str).width();
+    const double w = fm.size(Qt::TextSingleLine, str).width();
     painter->setPen(m_foreground);
     painter->drawText(-w / 2, 42, str);
 }
@@ -138,8 +138,8 @@ void TTKTimeMeterWidget::drawIndicator(QPainter *painter)
     pts.setPoints(3, -2, 0, 2, 0, 0, 60);
 
     painter->rotate(m_startAngle);
-    double degRotate =  (360.0 - m_startAngle - m_endAngle)/(m_maxValue - m_minValue)*(m_value - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle)/(m_maxValue - m_minValue)*(m_value - m_minValue);
     painter->rotate(degRotate);
     QRadialGradient haloGradient(0, 0, 60, 0, 0);
     haloGradient.setColorAt(0, QColor(60, 60, 60));

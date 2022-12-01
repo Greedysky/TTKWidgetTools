@@ -47,7 +47,6 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     group->setLoopCount(-1);
 
     QPropertyAnimation *animation;
-
     animation = new QPropertyAnimation(this);
     animation->setPropertyName("dashLength");
     animation->setTargetObject(m_delegate);
@@ -58,7 +57,6 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setKeyValueAt(0.7, 20);
     animation->setEndValue(20);
     animation->setDuration(2050);
-
     group->addAnimation(animation);
 
     animation = new QPropertyAnimation(this);
@@ -71,7 +69,6 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setKeyValueAt(0.7, -7);
     animation->setEndValue(-25);
     animation->setDuration(2050);
-
     group->addAnimation(animation);
 
     animation = new QPropertyAnimation(this);
@@ -80,7 +77,6 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setStartValue(0);
     animation->setEndValue(719);
     animation->setDuration(2050);
-
     group->addAnimation(animation);
 
     group->start();
@@ -142,17 +138,16 @@ void TTKCircularProgressWidget::paintEvent(QPaintEvent *event)
     painter.rotate(m_delegate->angle());
 
     QPen pen;
-    pen.setCapStyle(Qt::RoundCap);
     pen.setWidthF(m_penWidth);
     pen.setColor(color());
 
     QVector<qreal> pattern;
-    pattern << m_delegate->dashLength()*m_size/50 << 30*m_size/50;
+    pattern << m_delegate->dashLength() * m_size / 50 << 30 * m_size / 50;
 
-    pen.setDashOffset(m_delegate->dashOffset()*m_size/50);
+    pen.setDashOffset(m_delegate->dashOffset() * m_size / 50);
     pen.setDashPattern(pattern);
 
     painter.setPen(pen);
-    painter.drawEllipse(QPoint(0, 0), m_size/2, m_size/2);
+    painter.drawEllipse(QPoint(0, 0), m_size / 2, m_size / 2);
 
 }

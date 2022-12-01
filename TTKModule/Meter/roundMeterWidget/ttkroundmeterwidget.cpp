@@ -245,7 +245,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     pen.setColor(m_usedColor);
     painter->setPen(pen);
 
-    for(double i = 0; i < m_currentPercent; ++i)
+    for(int i = 0; i < m_currentPercent; ++i)
     {
         painter->drawLine(0, radius, 0, radius / 1.2);
         painter->rotate(rotate);
@@ -254,7 +254,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     pen.setColor(m_freeColor);
     painter->setPen(pen);
 
-    for(double i = m_currentPercent; i < 100; ++i)
+    for(int i = m_currentPercent; i < 100; ++i)
     {
         painter->drawLine(0, radius, 0, radius / 1.2);
         painter->rotate(rotate);
@@ -311,7 +311,7 @@ void TTKRoundMeterWidget::drawText(QPainter *painter)
         currentValue = m_value;
     }
 
-    const QString &strValue = QString("%1%2").arg(QString::number(currentValue, 'f', m_precision)).arg(m_unit);
+    const QString &strValue = QString("%1%2").arg(QString::number(currentValue, 'f', m_precision), m_unit);
     const QString &strMinValue = QString("%1%2").arg(m_minValue).arg(m_unit);
     const QString &strMaxValue = QString("%1%2").arg(m_maxValue).arg(m_unit);
 

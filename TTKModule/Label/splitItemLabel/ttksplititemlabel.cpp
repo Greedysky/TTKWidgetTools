@@ -50,13 +50,13 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
     m_lineGeometry = QRectF();
     m_currentString.clear();
 
-    const QFontMetrics &metrics = QFontMetrics(font());
+    const QFontMetrics ft(font());
     const QStringList data(text().split(" - "));
     int offset = 0;
 
     for(const QString &var : qAsConst(data))
     {
-        const int fs = QtFontWidth(metrics, var.trimmed());
+        const int fs = QtFontWidth(ft, var.trimmed());
         if(offset <= event->pos().x() && event->pos().x() <= offset + fs)
         {
             setCursor(QCursor(Qt::PointingHandCursor));
@@ -65,7 +65,7 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
             break;
         }
 
-        offset += (fs + QtFontWidth(metrics, " - "));
+        offset += (fs + QtFontWidth(ft, " - "));
     }
     update();
 }

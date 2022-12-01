@@ -135,7 +135,7 @@ void TTKFunctionListHWidget::resizeMode(bool mode)
 
 void TTKFunctionListHWidget::selectedChanged(TTKFunctionItemWidget *item)
 {
-    int index = m_items.indexOf(item);
+    const int index = m_items.indexOf(item);
     if(index == -1)
     {
         return;

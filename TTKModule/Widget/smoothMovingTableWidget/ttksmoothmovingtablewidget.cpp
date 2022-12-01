@@ -45,7 +45,7 @@ void TTKSmoothMovingTableWidget::updateRender()
     m_isFirstInit = true;
     m_animationTimer->stop();
 
-    float delta = (rowCount() > 0) ? (height()*1.0/rowCount()) : 0;
+    const float delta = (rowCount() > 0) ? (height()*1.0/rowCount()) : 0;
     m_deltaValue = (m_deltaValue/480.0)*(m_deltaValue < 0 ? m_deltaValue + 120 : -m_deltaValue + 120);
 
     m_slowAnimation->setStartValue(m_previousValue);

@@ -202,6 +202,7 @@ void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)
         painter.setPen(Qt::NoPen);
         painter.fillRect(rect(), m_bgColor);
     }
+
     painter.translate(w / 2, h / 2);
     painter.scale(side / 200.0, side / 200.0);
 
@@ -312,8 +313,7 @@ void TTKPercentMeterWidget::drawValue(QPainter *painter)
     painter->setFont(font);
 
     const QRectF textRect(-radius, 0, radius * 2, radius / 3);
-    const QString &strValue = QString("%1%").arg(m_value, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1%").arg(m_value, 0, 'f', m_precision));
     painter->restore();
 }
 

@@ -50,6 +50,7 @@ void TTKTileBackgroundLabel::paintEvent(QPaintEvent *event)
     {
         return;
     }
+
     QPainter painter(this);
     painter.drawTiledPixmap(rect(), m_pix);
 }

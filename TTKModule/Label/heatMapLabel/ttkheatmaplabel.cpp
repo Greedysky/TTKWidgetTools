@@ -32,7 +32,7 @@
 #include <heatmap/colorschemes/BrBG.h>
 #include <heatmap/colorschemes/Blues.h>
 
-const heatmap_colorscheme_t * MappingColorScheme(HeatMapper::ColorScheme scheme)
+static const heatmap_colorscheme_t * MappingColorScheme(HeatMapper::ColorScheme scheme)
 {
   switch(scheme)
   {

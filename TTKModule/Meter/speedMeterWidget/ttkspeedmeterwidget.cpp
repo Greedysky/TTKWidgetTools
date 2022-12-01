@@ -97,6 +97,7 @@ void TTKSpeedMeterWidget::initialize()
     m_updateTimer = new QTimer(this);
     m_updateTimer->setInterval(10);
     connect(m_updateTimer, SIGNAL(timeout()), SLOT(updateRender()));
+
     m_singleTimer = new QTimer(this);
     m_singleTimer->setInterval(100);
     connect(m_singleTimer, SIGNAL(timeout()), SLOT(update()));
@@ -187,6 +188,7 @@ void TTKSpeedMeterWidget::drawMark(QPainter *painter)
             const QPointF topPot(0, m_colorCircleRadius + S_SPACE + S_SHORT);
             painter->drawLine(bottomPot, topPot);
         }
+
         painter->restore();
         startAngle += dAngle;
     }
@@ -199,6 +201,7 @@ void TTKSpeedMeterWidget::drawCoverBall(QPainter *painter)
 
     const qreal ballRadius = m_outerRadius / 7;
     m_coverBallRadius = ballRadius;
+
     QRadialGradient ballGradient(m_center, ballRadius, m_center);
     ballGradient.setColorAt(0.0, QColor(140, 140, 140));
     ballGradient.setColorAt(0.7, QColor(140, 140, 140));
@@ -226,7 +229,7 @@ void TTKSpeedMeterWidget::drawTextRect(QPainter *painter)
 
     painter->setOpacity(1.0);
     painter->setPen(Qt::black);
-    painter->drawText(textRect, Qt::AlignCenter, QString("%1 %2").arg(m_value*m_ratio).arg(m_units));
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1 %2").arg(m_value * m_ratio).arg(m_units));
     painter->restore();
 }
 

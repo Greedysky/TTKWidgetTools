@@ -481,7 +481,6 @@ void TTKAnimation2StackedWidget::start(int index)
     }
 
     m_previousIndex = currentIndex();
-
     m_currentIndex = index;
 
     if(m_isAnimating)

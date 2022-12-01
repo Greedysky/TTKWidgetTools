@@ -420,7 +420,7 @@ void QtButtonPropertyBrowserPrivate::insertRow(QGridLayout *layout, int row) con
         }
     }
 
-    const QMap<QLayoutItem *, QRect>::ConstIterator icend =  itemToPos.constEnd();
+    const QMap<QLayoutItem *, QRect>::ConstIterator icend = itemToPos.constEnd();
     for(QMap<QLayoutItem *, QRect>::ConstIterator it = itemToPos.constBegin(); it != icend; ++it) {
         const QRect r = it.value();
         layout->addItem(it.key(), r.x(), r.y(), r.width(), r.height());
@@ -441,7 +441,7 @@ void QtButtonPropertyBrowserPrivate::removeRow(QGridLayout *layout, int row) con
         }
     }
 
-    const QMap<QLayoutItem *, QRect>::ConstIterator icend =  itemToPos.constEnd();
+    const QMap<QLayoutItem *, QRect>::ConstIterator icend = itemToPos.constEnd();
     for(QMap<QLayoutItem *, QRect>::ConstIterator it = itemToPos.constBegin(); it != icend; ++it) {
         const QRect r = it.value();
         layout->addItem(it.key(), r.x(), r.y(), r.width(), r.height());
@@ -564,7 +564,7 @@ QtButtonPropertyBrowser::QtButtonPropertyBrowser(QWidget *parent)
 QtButtonPropertyBrowser::~QtButtonPropertyBrowser()
 {
     const QMap<QtButtonPropertyBrowserPrivate::WidgetItem *, QtBrowserItem *>::ConstIterator icend = d_ptr->m_itemToIndex.constEnd();
-    for (QMap<QtButtonPropertyBrowserPrivate::WidgetItem *, QtBrowserItem *>::ConstIterator  it =  d_ptr->m_itemToIndex.constBegin(); it != icend; ++it)
+    for (QMap<QtButtonPropertyBrowserPrivate::WidgetItem *, QtBrowserItem *>::ConstIterator  it = d_ptr->m_itemToIndex.constBegin(); it != icend; ++it)
         delete it.key();
     delete d_ptr;
 }

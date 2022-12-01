@@ -290,9 +290,10 @@ void TTKDialMeterWidget::drawPointerCircle(QPainter *painter)
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->rotate(m_startAngle);
-    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
     painter->rotate(degRotate);
+
     QLinearGradient bgGradient(0, 0, radius * 2, radius * 2);
     bgGradient.setColorAt(0.0, m_darkColor);
     bgGradient.setColorAt(1.0, m_lightColor);
@@ -315,8 +316,8 @@ void TTKDialMeterWidget::drawPointerIndicator(QPainter *painter)
     QPolygon pts;
     pts.setPoints(3, -5, 0, 5, 0, 0, radius);
     painter->rotate(m_startAngle);
-    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
     painter->restore();
@@ -337,6 +338,7 @@ void TTKDialMeterWidget::drawPointerIndicatorR(QPainter *painter)
     QPolygon pts;
     pts.setPoints(3, -5, 0, 5, 0, 0, radius);
     painter->rotate(m_startAngle);
+
     const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
@@ -360,8 +362,8 @@ void TTKDialMeterWidget::drawPointerTriangle(QPainter *painter)
     QPolygon pts;
     pts.setPoints(3, -radius / 2, offset, radius / 2, offset, 0, radius + offset);
     painter->rotate(m_startAngle);
-    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
     painter->restore();
@@ -404,7 +406,6 @@ void TTKDialMeterWidget::drawValue(QPainter *painter)
     painter->setFont(font);
 
     QRectF textRect(-radius, -radius, radius * 2, radius * 2);
-    QString strValue = QString("%1").arg(m_value, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1").arg(m_value, 0, 'f', m_precision));
     painter->restore();
 }

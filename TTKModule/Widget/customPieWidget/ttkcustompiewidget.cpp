@@ -94,7 +94,7 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
         const double value = m_datas[i].m_value;
         const double arcLength = value / sum * 360;
         const double percent = value / sum * 100;
-        QRect pieRect = rect;
+        const QRect &pieRect = rect;
 
         painter->setPen(Qt::NoPen);
         if(m_explodedIndex == i || m_explodedAll)
@@ -108,7 +108,7 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
         QString strValue = m_datas[i].m_text;
         if(m_showPercent && percent > 7)
         {
-            strValue = QString("%1%2%3%").arg(strValue).arg(strValue.isEmpty() ? "" : "\n").arg(QString::number(percent, 'f', 0));
+            strValue = QString("%1%2%3%").arg(strValue, strValue.isEmpty() ? "" : "\n", QString::number(percent, 'f', 0));
         }
 
         const int mid = startAngle + arcLength / 2;

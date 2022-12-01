@@ -193,8 +193,7 @@ QPixmap QtPropertyBrowserUtils::fontValuePixmap(const QFont &font)
     QImage img(16, 16, QImage::Format_ARGB32_Premultiplied);
     img.fill(0);
     QPainter p(&img);
-    p.setRenderHint(QPainter::TextAntialiasing, true);
-    p.setRenderHint(QPainter::Antialiasing, true);
+    p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     f.setPointSize(13);
     p.setFont(f);
     QTextOption t;

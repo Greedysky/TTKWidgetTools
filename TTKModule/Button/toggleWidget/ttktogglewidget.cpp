@@ -134,7 +134,8 @@ void TTKToggleTrack::paintEvent(QPaintEvent *event)
     {
         brush.setColor(m_trackColor);
         painter.setOpacity(0.8);
-    }else
+    }
+    else
     {
         brush.setColor(m_toggle->disabledColor());
         painter.setOpacity(0.6);

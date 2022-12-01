@@ -263,7 +263,7 @@ QSize TTKCheckable::sizeHint() const
 
 bool TTKCheckable::event(QEvent *event)
 {
-    switch (event->type())
+    switch(event->type())
     {
         case QEvent::Resize:
         case QEvent::Move:
@@ -278,7 +278,6 @@ bool TTKCheckable::event(QEvent *event)
 void TTKCheckable::mousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event)
-
     if(!isEnabled())
     {
         return;

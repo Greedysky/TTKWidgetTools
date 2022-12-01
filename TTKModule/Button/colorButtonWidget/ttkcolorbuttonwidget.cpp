@@ -106,12 +106,11 @@ void TTKColorButtonWidget::initBtn()
     qDeleteAll(m_btns);
     m_btns.clear();
 
-    int count = m_colors.count();
     int row = 0;
     int column = 0;
     int index = 0;
 
-    for(int i = 0; i < count; ++i)
+    for(int i = 0; i < m_colors.count(); ++i)
     {
         QPushButton *btn = new QPushButton;
         connect(btn, SIGNAL(pressed()), this, SLOT(btnClicked()));

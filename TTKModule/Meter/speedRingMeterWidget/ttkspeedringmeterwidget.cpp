@@ -411,8 +411,8 @@ void TTKSpeedRingMeterWidget::drawPointer(QPainter *painter)
     QPolygon pts;
     pts.setPoints(4, -5, 0, 0, -8, 5, 0, 0, radius);
     painter->rotate(m_startAngle);
-    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
 
+    const double degRotate = (360.0 - m_startAngle - m_endAngle) / (m_maxValue - m_minValue) * (m_currentValue - m_minValue);
     painter->rotate(degRotate);
     painter->drawConvexPolygon(pts);
     painter->restore();
@@ -429,8 +429,7 @@ void TTKSpeedRingMeterWidget::drawValue(QPainter *painter)
     font.setPixelSize(18);
     painter->setFont(font);
 
-    QRectF textRect(-radius, -radius, radius * 2, radius * 2);
-    const QString &strValue = QString("%1").arg(m_currentValue, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1").arg(m_currentValue, 0, 'f', m_precision));
     painter->restore();
 }

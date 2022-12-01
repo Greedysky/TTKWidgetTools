@@ -434,8 +434,7 @@ void TTKCompassMeterWidget::drawValue(QPainter *painter)
     font.setBold(true);
     painter->setFont(font);
 
-    QRectF textRect(-radius, -radius, radius * 2, radius * 2);
-    QString strValue = QString("%1").arg(m_value, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1").arg(m_value, 0, 'f', m_precision));
     painter->restore();
 }

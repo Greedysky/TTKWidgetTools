@@ -198,7 +198,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
     drawButton(&painter);
 
 	painter.setPen(buttonColor.darker(110));
-	double angleStep = 360.0 / 8.0;
+    constexpr double angleStep = 360.0 / 8.0;
 	painter.rotate(angleStep / 2);
     for(int i = 0; i < 8; ++i)
 	{
@@ -279,7 +279,6 @@ bool TTKCloudPanelLabel::isPointIn(const QPoint &pos, int &bp)
         bp = 8;
         bIsIn = true;
     }
-
     return bIsIn;
 }
 
@@ -303,15 +302,12 @@ void TTKCloudPanelLabel::drawArc(QPainter *painter)
     pen.setColor(m_arcColor);
     painter->setPen(pen);
 
-    QRectF rect = QRectF(-radius, -radius, radius * 2, radius * 2);
-    painter->drawArc(rect, 0 * 16, 360 * 16);
+    painter->drawArc(QRectF(-radius, -radius, radius * 2, radius * 2), 0 * 16, 360 * 16);
     painter->restore();
 }
 
 void TTKCloudPanelLabel::drawButton(QPainter *painter)
 {
-    int radius = 100;
-
     painter->save();
     QPen pen;
     pen.setStyle(Qt::SolidLine);
@@ -326,7 +322,6 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
 
     pen.setWidth(3);
     painter->setPen(pen);
-    QRectF centerRect(-radius, -radius, radius * 2, radius * 2);
     painter->drawArc(QRect(-10, -10, 20, 20), 30 * 16, 100 * 16);
     painter->drawArc(QRect(-10, -10, 20, 20), 210 * 16, 100 * 16);
 
@@ -348,7 +343,6 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
     painter->restore();
 
     painter->save();
-    radius = 70;
 
     constexpr int steps = 8;
     constexpr double angleStep = 360.0 / steps;
@@ -372,6 +366,7 @@ void TTKCloudPanelLabel::drawButton(QPainter *painter)
             painter->setPen(m_iconColor);
             painter->setBrush(QBrush(m_iconColor));
         }
+
         QPainterPath path;
         path.moveTo(75, 0);
         path.lineTo(65, -10);

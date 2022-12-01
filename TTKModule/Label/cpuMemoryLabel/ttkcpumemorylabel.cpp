@@ -94,13 +94,11 @@ void TTKCPUMemoryLabel::cpu()
 
     setData();
 #else
-
     if(m_process->state() == QProcess::NotRunning)
     {
         m_totalNew = m_idleNew = 0;
         m_process->start("cat /proc/stat");
     }
-
 #endif
 }
 
@@ -117,12 +115,10 @@ void TTKCPUMemoryLabel::memory()
 
     setData();
 #else
-
     if(m_process->state() == QProcess::NotRunning)
     {
         m_process->start("cat /proc/meminfo");
     }
-
 #endif
 }
 
@@ -183,7 +179,6 @@ void TTKCPUMemoryLabel::readData()
 void TTKCPUMemoryLabel::setData()
 {
     m_cpuPercent = (m_cpuPercent < 0 ? 0 : m_cpuPercent);
-
     const QString &msg = QString("CPU %1%  Mem %2% ( Used %3 MB / ALL %4 MB )")
                          .arg(m_cpuPercent).arg(m_memoryPercent).arg(m_memoryUse).arg(m_memoryAll);
     setText(msg);

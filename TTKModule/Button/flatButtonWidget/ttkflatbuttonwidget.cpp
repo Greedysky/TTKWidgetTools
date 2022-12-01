@@ -113,8 +113,8 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
         return;
     }
 
-    QSize textSize(fontMetrics().size(Qt::TextSingleLine, text()));
-    QSize base(size() - textSize);
+    const QSize textSize(fontMetrics().size(Qt::TextSingleLine, text()));
+    const QSize base(size() - textSize);
 
     const int iw = iconSize().width() + ICONPADDING;
     QPoint pos(Qt::AlignLeft == m_textAlignment ? 12 : (base.width()-iw) / 2, 0);
@@ -133,6 +133,6 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
 
     painter->drawText(textGeometry, Qt::AlignCenter, text());
 
-    QPixmap pixmap = icon().pixmap(iconSize());
+    const QPixmap &pixmap = icon().pixmap(iconSize());
     painter->drawPixmap(iconGeometry, pixmap);
 }

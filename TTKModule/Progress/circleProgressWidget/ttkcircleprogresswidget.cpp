@@ -148,17 +148,17 @@ void TTKCircleProgressWidget::setColor(const QColor &color)
     }
 }
 
-QRectF squared(QRectF rect)
+static QRectF squared(QRectF rect)
 {
     if(rect.width() > rect.height())
     {
-        qreal diff = rect.width() - rect.height();
-        return rect.adjusted(diff/2, 0, -diff/2, 0);
+        const qreal diff = rect.width() - rect.height();
+        return rect.adjusted(diff / 2, 0, -diff / 2, 0);
     }
     else
     {
-        qreal diff = rect.height() - rect.width();
-        return rect.adjusted(0, diff/2, 0, -diff/2);
+        const qreal diff = rect.height() - rect.width();
+        return rect.adjusted(0, diff / 2, 0, -diff / 2);
     }
 }
 
@@ -178,7 +178,7 @@ void TTKCircleProgressWidget::paintEvent(QPaintEvent *event)
     }
 
     QPainter painter(this);
-    painter.drawPixmap( 0.5 * ( width() - pixmap.width() ), 0.5 * ( height() - pixmap.height() ), pixmap );
+    painter.drawPixmap(0.5 * (width() - pixmap.width()), 0.5 * (height() - pixmap.height()), pixmap);
 }
 
 void TTKCircleProgressWidget::setInfiniteAnimationValue(qreal value)
@@ -206,51 +206,47 @@ QString TTKCircleProgressWidget::key() const
             .arg(m_outerRadius)
             .arg(width())
             .arg(height())
-            .arg(m_color.rgb())
-            ;
+            .arg(m_color.rgb());
 }
 
 QPixmap TTKCircleProgressWidget::generatePixmap() const
 {
     QPixmap pixmap(squared(rect()).size().toSize());
-    pixmap.fill(QColor(0,0,0,0));
+    pixmap.fill(QColor(0, 0, 0, 0));
+
     QPainter painter(&pixmap);
+    painter.setRenderHint(QPainter::Antialiasing);
 
-    painter.setRenderHint(QPainter::Antialiasing, true);
-
-    QRectF rect = pixmap.rect().adjusted(1,1,-1,-1);
-    qreal margin = rect.width()*(1.0 - m_outerRadius) / 2.0;
-    rect.adjust(margin,margin,-margin,-margin);
-    qreal innerRadius = m_innerRadius*rect.width() / 2.0;
+    QRectF rect = pixmap.rect().adjusted(1, 1, -1, 1);
+    const qreal margin = rect.width()*(1.0 - m_outerRadius) / 2.0;
+    rect.adjust(margin, margin, -margin, -margin);
+    const qreal innerRadius = m_innerRadius * rect.width() / 2.0;
 
     painter.setBrush(QColor(225, 225, 225));
     painter.setPen(QColor(225, 225, 225));
-    painter.drawPie(rect, 0, 360*16);
+    painter.drawPie(rect, 0, 360 * 16);
 
     painter.setBrush(m_color);
     painter.setPen(m_color);
 
     if(m_maximum == 0)
     {
-        int startAngle = -m_infiniteAnimationValue * 360 * 16;
-        int spanAngle = 0.15 * 360 * 16;
+        const int startAngle = -m_infiniteAnimationValue * 360 * 16;
+        const int spanAngle = 0.15 * 360 * 16;
         painter.drawPie(rect, startAngle, spanAngle);
     }
     else
     {
-        int value = qMin(m_visibleValue, m_maximum);
-        int startAngle = 90 * 16;
-        int spanAngle = -qreal(value) * 360 * 16 / m_maximum;
-
+        const int value = qMin(m_visibleValue, m_maximum);
+        const int startAngle = 90 * 16;
+        const int spanAngle = -qreal(value) * 360 * 16 / m_maximum;
         painter.drawPie(rect, startAngle, spanAngle);
     }
 
-    painter.setBrush(QColor(255,255,255));
-    painter.setPen(QColor(0,0,0, 60));
+    painter.setBrush(QColor(255, 255, 255));
+    painter.setPen(QColor(0, 0, 0, 60));
     painter.drawEllipse(rect.center(), innerRadius, innerRadius);
-
-    painter.drawArc(rect, 0, 360*16);
-
+    painter.drawArc(rect, 0, 360 * 16);
     return pixmap;
 }
 

@@ -357,7 +357,7 @@ void TTKRingProgressWidget::drawRing(QPainter *painter)
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_ringColor);
-    QRectF rect(-radius, -radius, radius * 2, radius * 2);
+    const QRectF rect(-radius, -radius, radius * 2, radius * 2);
 
     constexpr double angleAll = 360.0;
     double angleCurrent = angleAll * ((m_currentValue - m_minValue) / (m_maxValue - m_minValue));

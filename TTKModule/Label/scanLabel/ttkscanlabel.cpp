@@ -124,6 +124,7 @@ void TTKScanLabel::updateRender()
         RingData *ring = &m_rings[i];
         ring->m_radius += 1;
         ring->m_alpha += 5;
+
         if(ring->m_alpha < 0)
         {
             ring->m_alpha = 0;
@@ -135,6 +136,7 @@ void TTKScanLabel::updateRender()
             ring->m_width = 0;
         }
     }
+
     m_scanDeg -= 3;
     update();
 }
@@ -181,7 +183,7 @@ void TTKScanLabel::drawScan(QPainter *painter)
     painter->setPen(pen);
     painter->setBrush(conicalGradient);
 
-    QRect rect(-m_scanRadius, -m_scanRadius, m_scanRadius * 2, m_scanRadius * 2);
+    const QRect rect(-m_scanRadius, -m_scanRadius, m_scanRadius * 2, m_scanRadius * 2);
     painter->drawPie(rect, m_scanDeg * 16, 360 * 16);
     painter->restore();
 }
@@ -196,6 +198,7 @@ void TTKScanLabel::drawRing(QPainter *painter)
         const RingData &ring = m_rings.at(i);
         const int radius = ring.m_radius;
         const float width = ring.m_width;
+
         int alpha = 255 - ring.m_alpha;
         if(alpha < 0)
         {
@@ -222,7 +225,7 @@ void TTKScanLabel::drawImage(QPainter *painter)
     path.addEllipse(QPoint(0, 0), m_imageRadius, m_imageRadius);
     painter->setClipPath(path);
 
-    QRect rect(-m_imageRadius, -m_imageRadius, m_imageRadius * 2, m_imageRadius * 2);
+    const QRect rect(-m_imageRadius, -m_imageRadius, m_imageRadius * 2, m_imageRadius * 2);
     painter->drawPixmap(rect, m_image);
 
     QPen pen;

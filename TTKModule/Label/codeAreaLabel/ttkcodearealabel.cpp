@@ -59,7 +59,7 @@ void TTKCodeAreaLabel::renderPicture()
     {
         m_code.append(number[i]);
         QPainterPath path(QPointF(0, 0));
-        QRect fontBoundingRect = QFontMetrics(font).boundingRect(number[i]);
+        const QRect &fontBoundingRect = QFontMetrics(font).boundingRect(number[i]);
         path.addText(-QPointF(fontBoundingRect.center()), font, number[i]);
         m_codePic << path;
     }
@@ -136,6 +136,5 @@ void TTKCodeAreaLabel::drawConversion(QPainter &painter)
     {
         painter.rotate(-random(m_converseRotate));
     }
-    painter.scale((random(m_converseScale + (100 - m_converseScale))) / 100.0 ,
-                  (random(m_converseScale + (100 - m_converseScale))) / 100.0);
+    painter.scale((random(m_converseScale + (100 - m_converseScale))) / 100.0, (random(m_converseScale + (100 - m_converseScale))) / 100.0);
 }

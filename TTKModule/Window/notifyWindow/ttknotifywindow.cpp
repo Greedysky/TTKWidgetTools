@@ -94,8 +94,8 @@ void TTKNotify::showGriant()
     m_backgroundLabel->setFixedSize(size());
     m_closeBtn->move(m_backgroundLabel->width() - m_closeBtn->width(), 0);
 
-    QFontMetrics elidfont(m_bodyLabel->font());
-    const QString &text = elidfont.elidedText(m_body, Qt::ElideRight, m_bodyLabel->width() - 5);
+    const QFontMetrics ft(m_bodyLabel->font());
+    const QString &text = ft.elidedText(m_body, Qt::ElideRight, m_bodyLabel->width() - 5);
     m_bodyLabel->setText(text);
 
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);

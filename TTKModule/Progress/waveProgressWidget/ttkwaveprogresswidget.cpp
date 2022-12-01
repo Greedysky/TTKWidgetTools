@@ -174,8 +174,8 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     }
 
     const double percent = 1 - (double)(m_value - m_minValue) / (m_maxValue - m_minValue);
-    double W = m_waterDensity * M_PI / endX;
-    double A = endY * m_waterHeight;
+    const double W = m_waterDensity * M_PI / endX;
+    const double A = endY * m_waterHeight;
     double k = endY * percent;
 
     if(m_percentStyle == PercentStyle::Circle)
@@ -186,8 +186,8 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     QPainterPath waterPath1;
     QPainterPath waterPath2;
 
-    waterPath1.moveTo(startX,endY);
-    waterPath2.moveTo(startX,endY);
+    waterPath1.moveTo(startX, endY);
+    waterPath2.moveTo(startX, endY);
 
     m_offset += 0.6;
     if(m_offset > (endX / 2))
@@ -212,21 +212,21 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
             waterY2 = startY;
         }
 
-        waterPath1.lineTo(x,waterY1);
-        waterPath2.lineTo(x,waterY2);
+        waterPath1.lineTo(x, waterY1);
+        waterPath2.lineTo(x, waterY2);
     }
 
-    waterPath1.lineTo(endX,endY);
-    waterPath2.lineTo(endX,endY);
+    waterPath1.lineTo(endX, endY);
+    waterPath2.lineTo(endX, endY);
 
     QPainterPath bigPath;
     if(m_percentStyle == PercentStyle::Rect)
     {
-        bigPath.addRect(startX,startY,endX,endY);
+        bigPath.addRect(startX, startY, endX, endY);
     }
     else if(m_percentStyle == PercentStyle::Circle)
     {
-        bigPath.addEllipse(startX,startY,side,side);
+        bigPath.addEllipse(startX, startY, side, side);
     }
     else if(m_percentStyle == PercentStyle::Ellipse)
     {

@@ -440,7 +440,6 @@ void TTKProgressMeterWidget::drawValue(QPainter *painter)
     painter->setFont(font);
 
     const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
-    QString strValue = QString("%1").arg(m_currentValue, 0, 'f', m_precision);
-    painter->drawText(textRect, Qt::AlignCenter, strValue);
+    painter->drawText(textRect, Qt::AlignCenter, QString("%1").arg(m_currentValue, 0, 'f', m_precision));
     painter->restore();
 }

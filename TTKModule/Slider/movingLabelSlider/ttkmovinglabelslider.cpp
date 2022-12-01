@@ -103,11 +103,13 @@ QPoint TTKMovingLabelSlider::limitLableGeometry(int x, int y, int z)
         pt.setX(y + x);
         pt.setY(qint64(x)*maximum()/z);
     }
+
     if(x <= 0)
     {
         pt.setX(y);
         pt.setY(0);
     }
+
     if(x >= z)
     {
         pt.setX(y + z);

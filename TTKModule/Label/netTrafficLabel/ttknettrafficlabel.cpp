@@ -115,6 +115,7 @@ QStringList TTKNetTraffic::newtworkNames() const
             names << QString(ifa->ifa_name);
         }
     }
+
     freeifaddrs(ifList);
 #endif
     return names;
@@ -267,6 +268,6 @@ QString TTKNetTrafficLabel::size2Number(ulong size)
 
 void TTKNetTrafficLabel::setData(ulong upload, ulong download)
 {
-    const QString &msg = QString("↑ %1, ↓ %2").arg(size2Number(upload)).arg(size2Number(download));
+    const QString &msg = QString("↑ %1, ↓ %2").arg(size2Number(upload), size2Number(download));
     setText(msg);
 }

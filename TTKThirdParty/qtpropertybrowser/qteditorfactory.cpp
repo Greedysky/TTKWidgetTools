@@ -127,7 +127,7 @@ template <typename Editor>
 void EditorFactoryPrivate<Editor>::slotEditorDestroyed(QObject *object)
 {
     const typename EditorToPropertyMap::iterator ecend = m_editorToProperty.end();
-    for (typename EditorToPropertyMap::iterator itEditor = m_editorToProperty.begin(); itEditor !=  ecend; ++itEditor) {
+    for (typename EditorToPropertyMap::iterator itEditor = m_editorToProperty.begin(); itEditor != ecend; ++itEditor) {
         if (itEditor.key() == object) {
             Editor *editor = itEditor.key();
             QtProperty *property = itEditor.value();
@@ -227,7 +227,7 @@ void QtSpinBoxFactoryPrivate::slotSetValue(int value)
 {
     QObject *object = q_ptr->sender();
     const QMap<QSpinBox *, QtProperty *>::ConstIterator  ecend = m_editorToProperty.constEnd();
-    for (QMap<QSpinBox *, QtProperty *>::ConstIterator itEditor = m_editorToProperty.constBegin(); itEditor !=  ecend; ++itEditor) {
+    for (QMap<QSpinBox *, QtProperty *>::ConstIterator itEditor = m_editorToProperty.constBegin(); itEditor != ecend; ++itEditor) {
         if (itEditor.key() == object) {
             QtProperty *property = itEditor.value();
             QtIntPropertyManager *manager = q_ptr->propertyManager(property);
@@ -1517,7 +1517,7 @@ void QtDateTimeEditFactory::connectPropertyManager(QtDateTimePropertyManager *ma
 QWidget *QtDateTimeEditFactory::createEditor(QtDateTimePropertyManager *manager,
         QtProperty *property, QWidget *parent)
 {
-    QDateTimeEdit *editor =  d_ptr->createEditor(property, parent);
+    QDateTimeEdit *editor = d_ptr->createEditor(property, parent);
     editor->setDateTime(manager->value(property));
 
     connect(editor, SIGNAL(dateTimeChanged(const QDateTime &)),
@@ -1569,7 +1569,7 @@ void QtKeySequenceEditorFactoryPrivate::slotSetValue(const QKeySequence &value)
 {
     QObject *object = q_ptr->sender();
     const  QMap<QtKeySequenceEdit *, QtProperty *>::ConstIterator ecend = m_editorToProperty.constEnd();
-    for (QMap<QtKeySequenceEdit *, QtProperty *>::ConstIterator itEditor =  m_editorToProperty.constBegin(); itEditor != ecend; ++itEditor)
+    for (QMap<QtKeySequenceEdit *, QtProperty *>::ConstIterator itEditor = m_editorToProperty.constBegin(); itEditor != ecend; ++itEditor)
         if (itEditor.key() == object) {
             QtProperty *property = itEditor.value();
             QtKeySequencePropertyManager *manager = q_ptr->propertyManager(property);

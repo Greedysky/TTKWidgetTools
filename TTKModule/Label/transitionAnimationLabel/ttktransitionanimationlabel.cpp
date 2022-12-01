@@ -81,7 +81,6 @@ void TTKTransitionAnimationLabel::animationFinished()
     m_currentValue = 0;
     m_isAnimating = false;
     m_rendererPixmap = m_currentPixmap;
-
     QLabel::setPixmap(m_rendererPixmap);
 }
 
@@ -94,6 +93,7 @@ void TTKTransitionAnimationLabel::paintEvent(QPaintEvent *event)
 
         QPixmap pixed(size());
         pixed.fill(Qt::transparent);
+
         QPainter paint(&pixed);
         paint.fillRect(rect(), QColor(0xFF, 0xFF, 0xFF, 2.55*m_currentValue));
         paint.setCompositionMode(QPainter::CompositionMode_SourceIn);

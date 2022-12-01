@@ -61,16 +61,10 @@ void TTKStyleSlider::setupProperties()
 {
     if(orientation() == Qt::Vertical)
     {
-        setStyleSheet(MSliderStyle02
-                      .arg(m_foregroundColor.name())
-                      .arg(m_backgroundColor.name())
-                      .arg(m_handleColor.name()));
+        setStyleSheet(MSliderStyle02.arg(m_foregroundColor.name(), m_backgroundColor.name(), m_handleColor.name()));
     }
     else
     {
-        setStyleSheet(MSliderStyle01
-                      .arg(m_backgroundColor.name())
-                      .arg(m_foregroundColor.name())
-                      .arg(m_handleColor.name()));
+        setStyleSheet(MSliderStyle01.arg(m_backgroundColor.name(), m_foregroundColor.name(), m_handleColor.name()));
     }
 }

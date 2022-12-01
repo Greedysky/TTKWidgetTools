@@ -270,8 +270,8 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
     const double initX = m_space + 20;
     double initY = m_space;
 
-    QPointF topPot(initX, initY);
-    QPointF bottomPot(initX, height() - m_space);
+    const QPointF topPot(initX, initY);
+    const QPointF bottomPot(initX, height() - m_space);
     painter->drawLine(topPot, bottomPot);
 
     const double length = height() - 2 * m_space;

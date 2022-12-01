@@ -223,7 +223,7 @@ TTKFunctionToolBoxWidget::~TTKFunctionToolBoxWidget()
 
 void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
 {
-    int count = m_layout->count();
+    const int count = m_layout->count();
     if(count > 1)
     {
         m_layout->removeItem(m_layout->itemAt(count - 1));
@@ -275,11 +275,13 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
     m_itemList.insert(after, widgetItem);
 
     m_layout->removeWidget(widgetItem.m_widgetItem);
-    int count = m_layout->count();
+
+    const int count = m_layout->count();
     if(count > 1)
     {
         m_layout->removeItem(m_layout->itemAt(count - 1));
     }
+
     m_layout->insertWidget(after, widgetItem.m_widgetItem);
     m_layout->addStretch(5);
 }
@@ -380,7 +382,7 @@ void TTKFunctionToolBoxWidget::mousePressAt(int index)
 
 void TTKFunctionToolBoxWidget::setTransparent(int alpha)
 {
-    QString alphaStr = QString("background:rgba(255, 255, 255, %1)").arg(alpha);
+    const QString &alphaStr = QString("background:rgba(255, 255, 255, %1)").arg(alpha);
     QWidget *view = m_scrollArea->viewport();
     view->setObjectName("viewport");
     view->setStyleSheet(QString("#viewport{%1}").arg(alphaStr));
