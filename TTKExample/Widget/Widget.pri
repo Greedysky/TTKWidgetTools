@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 include($$PWD/colorTableWidget/ColorTableWidget.pri)
 include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
 include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)

@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 include($$PWD/movingLabelSlider/MovingLabelSlider.pri)
 include($$PWD/shiningSlider/ShiningSlider.pri)
 include($$PWD/styleSlider/StyleSlider.pri)

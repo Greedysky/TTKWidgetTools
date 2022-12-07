@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 include($$PWD/colorDialog/ColorDialog.pri)
 include($$PWD/moveDialog/MoveDialog.pri)
 include($$PWD/moveWidget/MoveWidget.pri)

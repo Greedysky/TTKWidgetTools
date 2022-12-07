@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 include($$PWD/functionAnimationWidget/FunctionAnimationWidget.pri)
 include($$PWD/functionListHWidget/FunctionListHWidget.pri)
 include($$PWD/functionListVWidget/FunctionListVWidget.pri)

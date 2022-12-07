@@ -16,7 +16,5 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 include($$PWD/lineEditWidget/LineEditWidget.pri)
 include($$PWD/ipEditWidget/IpEditWidget.pri)

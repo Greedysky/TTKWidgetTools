@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
     message(Qt6.0.x not support state machine)
 }else{

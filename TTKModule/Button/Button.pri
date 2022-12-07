@@ -16,8 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-INCLUDEPATH += $$PWD
-
 greaterThan(QT_MAJOR_VERSION, 5):greaterThan(QT_MINOR_VERSION, 0){
     QT += statemachine
 }
