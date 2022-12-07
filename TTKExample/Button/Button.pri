@@ -29,3 +29,30 @@ equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
 include($$PWD/flatButtonWidget/FlatButtonWidget.pri)
 include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
 include($$PWD/colorButtonWidget/ColorButtonWidget.pri)
+
+INCLUDEPATH += \
+    $$PWD/../../TTKModule/Button/checkButtonWidget \
+    $$PWD/../../TTKModule/Button/colorButtonWidget \
+    $$PWD/../../TTKModule/Button/flatButtonWidget \
+    $$PWD/../../TTKModule/Button/radioButtonWidget \
+    $$PWD/../../TTKModule/Button/toggleWidget \
+    $$PWD/../../TTKModule/Button/toolMenuWidget
+
+win32:msvc{
+    equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
+        message(Qt6.0.x not support state machine)
+    }else{
+        HEADERS += \
+            $$PWD/../../TTKModule/Button/checkButtonWidget/ttkcheckbuttonwidget.h \
+            $$PWD/../../TTKModule/Button/radioButtonWidget/ttkcheckable.h \
+            $$PWD/../../TTKModule/Button/radioButtonWidget/ttkradiobuttonwidget.h \
+            $$PWD/../../TTKModule/Button/toggleWidget/ttktogglewidget.h
+    }
+}
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../../TTKModule/Button/colorButtonWidget/ttkcolorbuttonwidget.h \
+    $$PWD/../../TTKModule/Button/flatButtonWidget/ttkflatbuttonwidget.h \
+    $$PWD/../../TTKModule/Button/toolMenuWidget/ttktoolmenuwidget.h
+}

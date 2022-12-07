@@ -34,3 +34,41 @@ include($$PWD/miniMeterWidget/MiniMeterWidget.pri)
 include($$PWD/roundMeterWidget/RoundMeterWidget.pri)
 include($$PWD/clockMeterWidget/ClockMeterWidget.pri)
 include($$PWD/temperatureMeterWidget/TemperatureMeterWidget.pri)
+
+INCLUDEPATH += \
+    $$PWD/../../TTKModule/Meter/speedMeterWidget \
+    $$PWD/../../TTKModule/Meter/timeMeterWidget \
+    $$PWD/../../TTKModule/Meter/paintMeterWidget \
+    $$PWD/../../TTKModule/Meter/radarMeterWidget \
+    $$PWD/../../TTKModule/Meter/carMeterWidget \
+    $$PWD/../../TTKModule/Meter/speedRingMeterWidget \
+    $$PWD/../../TTKModule/Meter/dialMeterWidget \
+    $$PWD/../../TTKModule/Meter/compassMeterWidget \
+    $$PWD/../../TTKModule/Meter/progressMeterWidget \
+    $$PWD/../../TTKModule/Meter/percentMeterWidget \
+    $$PWD/../../TTKModule/Meter/arcMeterWidget \
+    $$PWD/../../TTKModule/Meter/panelMeterWidget \
+    $$PWD/../../TTKModule/Meter/miniMeterWidget \
+    $$PWD/../../TTKModule/Meter/roundMeterWidget \
+    $$PWD/../../TTKModule/Meter/clockMeterWidget \
+    $$PWD/../../TTKModule/Meter/temperatureMeterWidget
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../../TTKModule/Meter/speedMeterWidget/ttkspeedmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/timeMeterWidget/ttktimemeterwidget.h \
+    $$PWD/../../TTKModule/Meter/paintMeterWidget/ttkpaintmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/radarMeterWidget/ttkradarmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/carMeterWidget/ttkcarmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/speedRingMeterWidget/ttkspeedringmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/dialMeterWidget/ttkdialmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/compassMeterWidget/ttkcompassmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/progressMeterWidget/ttkprogressmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/percentMeterWidget/ttkpercentmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/arcMeterWidget/ttkarcmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/panelMeterWidget/ttkpanelmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/miniMeterWidget/ttkminimeterwidget.h \
+    $$PWD/../../TTKModule/Meter/roundMeterWidget/ttkroundmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/clockMeterWidget/ttkclockmeterwidget.h \
+    $$PWD/../../TTKModule/Meter/temperatureMeterWidget/ttktemperaturemeterwidget.h
+}

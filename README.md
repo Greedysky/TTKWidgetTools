@@ -84,6 +84,7 @@ Progress
 | :---:    | :---:               | :---:         |
 | Progress | TTKAnimationProgressWidget |   Finish   |
 | Progress | TTKCircleProgressWidget |   Finish   |
+| Progress | TTKCircleWaitProgressWidget |   Finish   |
 | Progress | TTKCircularProgressWidget |   Finish   |
 | Progress | TTKGifProgressWidget |   Finish   |
 | Progress | TTKProgressWidget |   Finish   |

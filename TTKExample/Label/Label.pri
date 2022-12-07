@@ -37,3 +37,47 @@ include($$PWD/scanLabel/ScanLabel.pri)
 include($$PWD/crossLineLabel/CrossLineLabel.pri)
 include($$PWD/netTrafficLabel/NetTrafficLabel.pri)
 include($$PWD/heatMapLabel/HeatMapLabel.pri)
+
+INCLUDEPATH += \
+    $$PWD/../../TTKModule/Label/circleClickLabel \
+    $$PWD/../../TTKModule/Label/codeAreaLabel \
+    $$PWD/../../TTKModule/Label/ledPageLabel \
+    $$PWD/../../TTKModule/Label/marqueeLabel \
+    $$PWD/../../TTKModule/Label/roundAnimationLabel \
+    $$PWD/../../TTKModule/Label/splitItemLabel \
+    $$PWD/../../TTKModule/Label/toastLabel \
+    $$PWD/../../TTKModule/Label/transitionAnimationLabel \
+    $$PWD/../../TTKModule/Label/cloudPanelLabel \
+    $$PWD/../../TTKModule/Label/barRulerLabel \
+    $$PWD/../../TTKModule/Label/batteryLabel \
+    $$PWD/../../TTKModule/Label/cpuMemoryLabel \
+    $$PWD/../../TTKModule/Label/antLineLabel \
+    $$PWD/../../TTKModule/Label/tileBackgroundLabel \
+    $$PWD/../../TTKModule/Label/lightPointLabel \
+    $$PWD/../../TTKModule/Label/scanLabel \
+    $$PWD/../../TTKModule/Label/crossLineLabel \
+    $$PWD/../../TTKModule/Label/netTrafficLabel \
+    $$PWD/../../TTKModule/Label/heatMapLabel
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../../TTKModule/Label/circleClickLabel/ttkcircleclicklabel.h \
+    $$PWD/../../TTKModule/Label/codeAreaLabel/ttkcodearealabel.h \
+    $$PWD/../../TTKModule/Label/ledPageLabel/ttkledpagelabel.h \
+    $$PWD/../../TTKModule/Label/marqueeLabel/ttkmarqueelabel.h \
+    $$PWD/../../TTKModule/Label/roundAnimationLabel/ttkroundanimationlabel.h \
+    $$PWD/../../TTKModule/Label/splitItemLabel/ttksplititemlabel.h \
+    $$PWD/../../TTKModule/Label/toastLabel/ttktoastlabel2.h \
+    $$PWD/../../TTKModule/Label/transitionAnimationLabel/ttktransitionanimationlabel.h \
+    $$PWD/../../TTKModule/Label/cloudPanelLabel/ttkcloudpanellabel.h \
+    $$PWD/../../TTKModule/Label/barRulerLabel/ttkbarrulerlabel.h \
+    $$PWD/../../TTKModule/Label/batteryLabel/ttkbatterylabel.h \
+    $$PWD/../../TTKModule/Label/cpuMemoryLabel/ttkcpumemorylabel.h \
+    $$PWD/../../TTKModule/Label/antLineLabel/ttkantlinelabel.h \
+    $$PWD/../../TTKModule/Label/tileBackgroundLabel/ttktilebackgroundlabel.h \
+    $$PWD/../../TTKModule/Label/lightPointLabel/ttklightpointlabel.h \
+    $$PWD/../../TTKModule/Label/scanLabel/ttkscanlabel.h \
+    $$PWD/../../TTKModule/Label/crossLineLabel/ttkcrosslinelabel.h \
+    $$PWD/../../TTKModule/Label/netTrafficLabel/ttknettrafficlabel.h \
+    $$PWD/../../TTKModule/Label/heatMapLabel/ttkheatmaplabel.h
+}

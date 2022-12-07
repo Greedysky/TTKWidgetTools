@@ -21,3 +21,16 @@ INCLUDEPATH += $$PWD
 include($$PWD/movingLabelSlider/MovingLabelSlider.pri)
 include($$PWD/shiningSlider/ShiningSlider.pri)
 include($$PWD/styleSlider/StyleSlider.pri)
+
+INCLUDEPATH += \
+    $$PWD/../../TTKModule/Slider/movingLabelSlider \
+    $$PWD/../../TTKModule/Slider/shiningSlider \
+    $$PWD/../../TTKModule/Slider/styleSlider
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../../TTKModule/Slider/movingLabelSlider/ttkclickedslider.h \
+    $$PWD/../../TTKModule/Slider/movingLabelSlider/ttkmovinglabelslider.h \
+    $$PWD/../../TTKModule/Slider/shiningSlider/ttkshiningslider.h \
+    $$PWD/../../TTKModule/Slider/styleSlider/ttkstyleslider.h
+}

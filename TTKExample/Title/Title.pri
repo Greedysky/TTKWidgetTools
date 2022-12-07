@@ -25,3 +25,21 @@ include($$PWD/functionListVWidget/FunctionListVWidget.pri)
 include($$PWD/functionNavigationWidget/FunctionNavigationWidget.pri)
 include($$PWD/functionNormalWidget/FunctionNormalWidget.pri)
 include($$PWD/functionToolboxWidget/FunctionToolboxWidget.pri)
+
+INCLUDEPATH += \
+    $$PWD/../../TTKModule/Title/functionAnimationWidget \
+    $$PWD/../../TTKModule/Title/functionListHWidget \
+    $$PWD/../../TTKModule/Title/functionListVWidget \
+    $$PWD/../../TTKModule/Title/functionNavigationWidget \
+    $$PWD/../../TTKModule/Title/functionNormalWidget \
+    $$PWD/../../TTKModule/Title/functionToolboxWidget
+
+win32:msvc{
+HEADERS += \
+    $$PWD/../../TTKModule/Title/functionAnimationWidget/ttkfunctionanimationwidget.h \
+    $$PWD/../../TTKModule/Title/functionListHWidget/ttkfunctionlisthwidget.h \
+    $$PWD/../../TTKModule/Title/functionListVWidget/ttkfunctionlistvwidget.h \
+    $$PWD/../../TTKModule/Title/functionNavigationWidget/ttkfunctionnavigationwidget.h \
+    $$PWD/../../TTKModule/Title/functionNormalWidget/ttkfunctionnormalwidget.h \
+    $$PWD/../../TTKModule/Title/functionToolboxWidget/ttkfunctiontoolboxwidget.h
+}

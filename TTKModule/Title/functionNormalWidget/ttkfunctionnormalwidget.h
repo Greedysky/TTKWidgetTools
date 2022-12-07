@@ -41,9 +41,9 @@ private Q_SLOTS:
     void updateRender();
 
 private:
-    void paintEvent(QPaintEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event);
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void mousePressEvent(QMouseEvent *event) override final;
 
     void drawItem(QPainter *painter);
     void drawChooseItem(QPainter* painter);

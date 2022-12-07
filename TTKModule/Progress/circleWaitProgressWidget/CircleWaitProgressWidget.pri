@@ -18,15 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-include($$PWD/lineEditWidget/LineEditWidget.pri)
-include($$PWD/ipEditWidget/IpEditWidget.pri)
+HEADERS += $$PWD/ttkcirclewaitprogresswidget.h
 
-INCLUDEPATH += \
-    $$PWD/../../TTKModule/LineEdit/lineEditWidget \
-    $$PWD/../../TTKModule/LineEdit/ipEditWidget
-
-win32:msvc{
-HEADERS += \
-    $$PWD/../../TTKModule/LineEdit/lineEditWidget/ttklineeditwidget.h \
-    $$PWD/../../TTKModule/LineEdit/ipEditWidget/ttkipeditwidget.h
-}
+SOURCES += $$PWD/ttkcirclewaitprogresswidget.cpp

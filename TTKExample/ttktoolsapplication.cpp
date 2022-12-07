@@ -61,22 +61,15 @@ void TTKToolsApplication::buttonModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKFlatButtonWidgetProperty;
-            break;
-        case 1: w = new TTKToolMenuWidgetProperty;
-            break;
-        case 2: w = new TTKColorButtonWidgetProperty;
-            break;
+        case 0: w = new TTKFlatButtonWidgetProperty; break;
+        case 1: w = new TTKToolMenuWidgetProperty; break;
+        case 2: w = new TTKColorButtonWidgetProperty; break;
 #if !TTK_QT_VERSION_CHECK(6,0,0) || TTK_QT_VERSION_CHECK(6,1,0)
-        case 3: w = new TTKCheckButtonWidgetProperty;
-            break;
-        case 4: w = new TTKRadioButtonWidgetProperty;
-            break;
-        case 5: w = new TTKToggleWidgetProperty;
-            break;
+        case 3: w = new TTKCheckButtonWidgetProperty; break;
+        case 4: w = new TTKRadioButtonWidgetProperty; break;
+        case 5: w = new TTKToggleWidgetProperty; break;
 #endif
-        default:
-            break;
+        default: break;
     }
 
     if(!w)
@@ -94,46 +87,26 @@ void TTKToolsApplication::labelModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKCircleClickLabelProperty;
-            break;
-        case 1: w = new TTKCodeAreaLabelProperty;
-            break;
-        case 2: w = new TTKLedPageLabelProperty;
-            break;
-        case 3: w = new TTKMarqueeLabelProperty;
-            break;
-        case 4: w = new TTKRoundAnimationLabelProperty;
-            break;
-        case 5: w = new TTKSplitItemLabelProperty;
-            break;
-        case 6: w = new TTKToastLabelProperty;
-            break;
-        case 7: w = new TTKTransitionAnimationLabelProperty;
-            break;
-        case 8: w = new TTKBarRulerLabelProperty;
-            break;
-        case 9: w = new TTKBatteryLabelProperty;
-            break;
-        case 10: w = new TTKCloudPanelLabelProperty;
-            break;
-        case 11: w = new TTKCPUMemoryLabelProperty;
-            break;
-        case 12: w = new TTKAntLineLabelProperty;
-            break;
-        case 13: w = new TTKTileBackgroundLabelProperty;
-            break;
-        case 14: w = new TTKLightPointLabelProperty;
-            break;
-        case 15: w = new TTKScanLabelProperty;
-            break;
-        case 16: w = new TTKCrossLineLabelProperty;
-            break;
-        case 17: w = new TTKNetTrafficLabelProperty;
-            break;
-        case 18: w = new TTKHeatMapLabelProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKCircleClickLabelProperty; break;
+        case 1: w = new TTKCodeAreaLabelProperty; break;
+        case 2: w = new TTKLedPageLabelProperty; break;
+        case 3: w = new TTKMarqueeLabelProperty; break;
+        case 4: w = new TTKRoundAnimationLabelProperty; break;
+        case 5: w = new TTKSplitItemLabelProperty; break;
+        case 6: w = new TTKToastLabelProperty; break;
+        case 7: w = new TTKTransitionAnimationLabelProperty; break;
+        case 8: w = new TTKBarRulerLabelProperty; break;
+        case 9: w = new TTKBatteryLabelProperty; break;
+        case 10: w = new TTKCloudPanelLabelProperty; break;
+        case 11: w = new TTKCPUMemoryLabelProperty; break;
+        case 12: w = new TTKAntLineLabelProperty; break;
+        case 13: w = new TTKTileBackgroundLabelProperty; break;
+        case 14: w = new TTKLightPointLabelProperty; break;
+        case 15: w = new TTKScanLabelProperty; break;
+        case 16: w = new TTKCrossLineLabelProperty; break;
+        case 17: w = new TTKNetTrafficLabelProperty; break;
+        case 18: w = new TTKHeatMapLabelProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -151,12 +124,9 @@ void TTKToolsApplication::lineEditModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKIpEditWidgetProperty;
-            break;
-        case 1: w = new TTKLineEditWidgetProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKIpEditWidgetProperty; break;
+        case 1: w = new TTKLineEditWidgetProperty; break;
+        default: break;
     }
 
     ui->propertyWidget->addItem(w);
@@ -169,40 +139,23 @@ void TTKToolsApplication::meterModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKPaintMeterWidgetProperty;
-            break;
-        case 1: w = new TTKRadarMeterWidgetProperty;
-            break;
-        case 2: w = new TTKSpeedMeterWidgetProperty;
-            break;
-        case 3: w = new TTKTimeMeterWidgetProperty;
-            break;
-        case 4: w = new TTKCarMeterWidgetProperty;
-            break;
-        case 5: w = new TTKSpeedRingMeterWidgetProperty;
-            break;
-        case 6: w = new TTKDialMeterWidgetProperty;
-            break;
-        case 7: w = new TTKCompassMeterWidgetProperty;
-            break;
-        case 8: w = new TTKProgressMeterWidgetProperty;
-            break;
-        case 9: w = new TTKPercentMeterWidgetProperty;
-            break;
-        case 10: w = new TTKArcMeterWidgetProperty;
-            break;
-        case 11: w = new TTKPanelMeterWidgetProperty;
-            break;
-        case 12: w = new TTKMiniMeterWidgetProperty;
-            break;
-        case 13: w = new TTKRoundMeterWidgetProperty;
-            break;
-        case 14: w = new TTKClockMeterWidgetProperty;
-            break;
-        case 15: w = new TTKTemperatureMeterWidgetProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKPaintMeterWidgetProperty; break;
+        case 1: w = new TTKRadarMeterWidgetProperty; break;
+        case 2: w = new TTKSpeedMeterWidgetProperty; break;
+        case 3: w = new TTKTimeMeterWidgetProperty; break;
+        case 4: w = new TTKCarMeterWidgetProperty; break;
+        case 5: w = new TTKSpeedRingMeterWidgetProperty; break;
+        case 6: w = new TTKDialMeterWidgetProperty; break;
+        case 7: w = new TTKCompassMeterWidgetProperty; break;
+        case 8: w = new TTKProgressMeterWidgetProperty; break;
+        case 9: w = new TTKPercentMeterWidgetProperty; break;
+        case 10: w = new TTKArcMeterWidgetProperty; break;
+        case 11: w = new TTKPanelMeterWidgetProperty; break;
+        case 12: w = new TTKMiniMeterWidgetProperty; break;
+        case 13: w = new TTKRoundMeterWidgetProperty; break;
+        case 14: w = new TTKClockMeterWidgetProperty; break;
+        case 15: w = new TTKTemperatureMeterWidgetProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -220,32 +173,21 @@ void TTKToolsApplication::progressModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKAnimationProgressWidgetProperty;
-            break;
-        case 1: w = new TTKCircleProgressWidgetProperty;
-            break;
-        case 2: w = new TTKCircularProgressWidgetProperty;
-            break;
-        case 3: w = new TTKGifProgressWidgetProperty;
-            break;
-        case 4: w = new TTKLoadingProgressWidgetProperty;
-            break;
-        case 5: w = new TTKProgressWidgetProperty;
-            break;
-        case 6: w = new TTKRadiusProgressWidgetProperty;
-            break;
-        case 7: w = new TTKRingsMapProgressWidgetProperty;
-            break;
-        case 8: w = new TTKRingsProgressWidgetProperty;
-            break;
-        case 9: w = new TTKRoundProgressWidgetProperty;
-            break;
-        case 10: w = new TTKRingProgressWidgetProperty;
-            break;
-        case 11: w = new TTKWaveProgressWidgetProperty;
-            break;
-        default:
-            break;
+
+        case 0: w = new TTKAnimationProgressWidgetProperty; break;
+        case 1: w = new TTKCircleProgressWidgetProperty; break;
+        case 2: w = new TTKCircleWaitProgressWidgetProperty; break;
+        case 3: w = new TTKCircularProgressWidgetProperty; break;
+        case 4: w = new TTKGifProgressWidgetProperty; break;
+        case 5: w = new TTKLoadingProgressWidgetProperty; break;
+        case 6: w = new TTKProgressWidgetProperty; break;
+        case 7: w = new TTKRadiusProgressWidgetProperty; break;
+        case 8: w = new TTKRingsMapProgressWidgetProperty; break;
+        case 9: w = new TTKRingsProgressWidgetProperty; break;
+        case 10: w = new TTKRoundProgressWidgetProperty; break;
+        case 11: w = new TTKRingProgressWidgetProperty; break;
+        case 12: w = new TTKWaveProgressWidgetProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -263,14 +205,10 @@ void TTKToolsApplication::sliderModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKMovingLabelSliderProperty;
-            break;
-        case 1: w = new TTKShiningSliderProperty;
-            break;
-        case 2: w = new TTKStyleSliderProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKMovingLabelSliderProperty; break;
+        case 1: w = new TTKShiningSliderProperty; break;
+        case 2: w = new TTKStyleSliderProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -288,42 +226,24 @@ void TTKToolsApplication::titleModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKOptionAnimationHWidgetProperty;
-            break;
-        case 1: w = new TTKSkinAnimationHWidgetProperty;
-            break;
-        case 2: w = new TTKTableAnimationHWidgetProperty;
-            break;
-        case 3: w = new TTKOptionAnimationVWidgetProperty;
-            break;
-        case 4: w = new TTKSkinAnimationVWidgetProperty;
-            break;
-        case 5: w = new TTKTableAnimationVWidgetProperty;
-            break;
-        case 6: w = new TTKFunctionListHWidgetProperty;
-            break;
-        case 7: w = new TTKFunctionListVWidgetProperty;
-            break;
-        case 8: w = new TTKFunctionNormaWidgetProperty;
-            break;
-        case 9: w = new TTKFunctionToolBoxWidgetProperty;
-            break;
-        case 10: w = new TTKFunctionNavigationAWidgetProperty;
-            break;
-        case 11: w = new TTKFunctionNavigationBWidgetProperty;
-            break;
-        case 12: w = new TTKFunctionNavigationCWidgetProperty;
-            break;
-        case 13: w = new TTKFunctionNavigationDWidgetProperty;
-            break;
-        case 14: w = new TTKFunctionNavigationEWidgetProperty;
-            break;
-        case 15: w = new TTKFunctionNavigationFWidgetProperty;
-            break;
-        case 16: w = new TTKFunctionNavigationGWidgetProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKOptionAnimationHWidgetProperty; break;
+        case 1: w = new TTKSkinAnimationHWidgetProperty; break;
+        case 2: w = new TTKTableAnimationHWidgetProperty; break;
+        case 3: w = new TTKOptionAnimationVWidgetProperty; break;
+        case 4: w = new TTKSkinAnimationVWidgetProperty; break;
+        case 5: w = new TTKTableAnimationVWidgetProperty; break;
+        case 6: w = new TTKFunctionListHWidgetProperty; break;
+        case 7: w = new TTKFunctionListVWidgetProperty; break;
+        case 8: w = new TTKFunctionNormaWidgetProperty; break;
+        case 9: w = new TTKFunctionToolBoxWidgetProperty; break;
+        case 10: w = new TTKFunctionNavigationAWidgetProperty; break;
+        case 11: w = new TTKFunctionNavigationBWidgetProperty; break;
+        case 12: w = new TTKFunctionNavigationCWidgetProperty; break;
+        case 13: w = new TTKFunctionNavigationDWidgetProperty; break;
+        case 14: w = new TTKFunctionNavigationEWidgetProperty; break;
+        case 15: w = new TTKFunctionNavigationFWidgetProperty; break;
+        case 16: w = new TTKFunctionNavigationGWidgetProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -341,32 +261,19 @@ void TTKToolsApplication::widgetModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKAnimationStackedWidgetProperty;
-            break;
-        case 1: w = new TTKAnimation2StackedWidgetProperty;
-            break;
-        case 2: w = new TTKColorTableWidgetProperty;
-            break;
-        case 3: w = new TTKGrabItemWidgetProperty;
-            break;
-        case 4: w = new TTKLayoutAnimationWidgetProperty;
-            break;
-        case 5: w = new TTKPictureBannerWidgetProperty;
-            break;
-        case 6: w = new TTKPictureFlowWidgetProperty;
-            break;
-        case 7: w = new TTKSmoothMovingTableWidgetProperty;
-            break;
-        case 8: w = new TTKCustomPieWidgetProperty;
-            break;
-        case 9: w = new TTKCustomRingWidgetProperty;
-            break;
-        case 10: w = new TTKCalendarWidgetProperty;
-            break;
-        case 11: w = new TTKPuzzleWidgetProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKAnimationStackedWidgetProperty; break;
+        case 1: w = new TTKAnimation2StackedWidgetProperty; break;
+        case 2: w = new TTKColorTableWidgetProperty; break;
+        case 3: w = new TTKGrabItemWidgetProperty; break;
+        case 4: w = new TTKLayoutAnimationWidgetProperty; break;
+        case 5: w = new TTKPictureBannerWidgetProperty; break;
+        case 6: w = new TTKPictureFlowWidgetProperty; break;
+        case 7: w = new TTKSmoothMovingTableWidgetProperty; break;
+        case 8: w = new TTKCustomPieWidgetProperty; break;
+        case 9: w = new TTKCustomRingWidgetProperty; break;
+        case 10: w = new TTKCalendarWidgetProperty; break;
+        case 11: w = new TTKPuzzleWidgetProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -384,22 +291,14 @@ void TTKToolsApplication::windowModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-        case 0: w = new TTKColorDialogProperty;
-            break;
-        case 1: w = new TTKMoveDialogProperty;
-            break;
-        case 2: w = new TTKMoveResizeWidgetProperty;
-            break;
-        case 3: w = new TTKMoveWidgetProperty;
-            break;
-        case 4: w = new TTKSplashScreenProperty;
-            break;
-        case 5: w = new TTKAnSplashScreenProperty;
-            break;
-        case 6: w = new TTKNotifyWindowProperty;
-            break;
-        default:
-            break;
+        case 0: w = new TTKColorDialogProperty; break;
+        case 1: w = new TTKMoveDialogProperty; break;
+        case 2: w = new TTKMoveResizeWidgetProperty; break;
+        case 3: w = new TTKMoveWidgetProperty; break;
+        case 4: w = new TTKSplashScreenProperty; break;
+        case 5: w = new TTKAnSplashScreenProperty; break;
+        case 6: w = new TTKNotifyWindowProperty; break;
+        default: break;
     }
 
     if(!w)
@@ -511,6 +410,7 @@ void TTKToolsApplication::createProgressModule()
 
     widget->addItem(":/icon/progress", "TTKAnimationProgressWidget");
     widget->addItem(":/icon/progress", "TTKCircleProgressWidget");
+    widget->addItem(":/icon/progress", "TTKCircleWaitProgressWidget");
     widget->addItem(":/icon/progress", "TTKCircularProgressWidget");
     widget->addItem(":/icon/progress", "TTKGifProgressWidget");
     widget->addItem(":/icon/progress", "TTKLoadingProgressWidget");
