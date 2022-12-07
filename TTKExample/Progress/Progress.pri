@@ -31,6 +31,7 @@ include($$PWD/roundProgressWidget/RoundProgressWidget.pri)
 include($$PWD/waveProgressWidget/WaveProgressWidget.pri)
 
 INCLUDEPATH += \
+    $$PWD/ \
     $$PWD/../ \
     $$PWD/../../TTKModule/Progress/animationProgressWidget \
     $$PWD/../../TTKModule/Progress/circleProgressWidget \

@@ -25,6 +25,7 @@ include($$PWD/functionNormalWidget/FunctionNormalWidget.pri)
 include($$PWD/functionToolboxWidget/FunctionToolboxWidget.pri)
 
 INCLUDEPATH += \
+    $$PWD/ \
     $$PWD/../ \
     $$PWD/../../TTKModule/Title/functionAnimationWidget \
     $$PWD/../../TTKModule/Title/functionListHWidget \

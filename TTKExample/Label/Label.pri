@@ -37,6 +37,7 @@ include($$PWD/netTrafficLabel/NetTrafficLabel.pri)
 include($$PWD/heatMapLabel/HeatMapLabel.pri)
 
 INCLUDEPATH += \
+    $$PWD/ \
     $$PWD/../ \
     $$PWD/../../TTKModule/Label/circleClickLabel \
     $$PWD/../../TTKModule/Label/codeAreaLabel \
