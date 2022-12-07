@@ -32,6 +32,7 @@ include($$PWD/calendarWidget/CalendarWidget.pri)
 include($$PWD/puzzleWidget/PuzzleWidget.pri)
 
 INCLUDEPATH += \
+    $$PWD/../ \
     $$PWD/../../TTKModule/Widget/colorTableWidget \
     $$PWD/../../TTKModule/Widget/layoutAnimationWidget \
     $$PWD/../../TTKModule/Widget/pictureBannerWidget \

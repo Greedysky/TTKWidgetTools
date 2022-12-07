@@ -23,6 +23,7 @@ include($$PWD/shiningSlider/ShiningSlider.pri)
 include($$PWD/styleSlider/StyleSlider.pri)
 
 INCLUDEPATH += \
+    $$PWD/../ \
     $$PWD/../../TTKModule/Slider/movingLabelSlider \
     $$PWD/../../TTKModule/Slider/shiningSlider \
     $$PWD/../../TTKModule/Slider/styleSlider

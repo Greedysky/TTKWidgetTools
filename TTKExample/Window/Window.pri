@@ -27,6 +27,7 @@ include($$PWD/anSplashScreen/AnSplashScreen.pri)
 include($$PWD/notifyWindow/NotifyWindow.pri)
 
 INCLUDEPATH += \
+    $$PWD/../ \
     $$PWD/../../TTKModule/Window/colorDialog \
     $$PWD/../../TTKModule/Window/moveDialog \
     $$PWD/../../TTKModule/Window/moveWidget \

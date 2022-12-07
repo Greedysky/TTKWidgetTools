@@ -36,6 +36,7 @@ include($$PWD/clockMeterWidget/ClockMeterWidget.pri)
 include($$PWD/temperatureMeterWidget/TemperatureMeterWidget.pri)
 
 INCLUDEPATH += \
+    $$PWD/../ \
     $$PWD/../../TTKModule/Meter/speedMeterWidget \
     $$PWD/../../TTKModule/Meter/timeMeterWidget \
     $$PWD/../../TTKModule/Meter/paintMeterWidget \
