@@ -32,8 +32,8 @@ public:
     void setColor(const QColor &color);
     inline QColor color() const { return m_color; }
 
-    void setClockwiseRotate(bool clockwise);
-    inline bool clockwiseRotate() const { return m_clockwiseRotate; }
+    void setClockWise(bool clockwise);
+    inline bool clockWise() const { return m_clockWise; }
 
     void setRotateDelta(int delta);
     inline bool rotateDelta() const { return m_rotateDelta; }
@@ -46,7 +46,7 @@ protected:
 
 private:
     QColor m_color;
-    bool m_clockwiseRotate;
+    bool m_clockWise;
     int m_rotateDelta;
     int m_rotateAngle;
 

@@ -13,9 +13,6 @@ TTKTileBackgroundLabelProperty::TTKTileBackgroundLabelProperty(QWidget *parent)
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTileBackgroundLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //

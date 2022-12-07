@@ -13,9 +13,6 @@ TTKOptionAnimationVWidgetProperty::TTKOptionAnimationVWidgetProperty(QWidget *pa
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKOptionAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
@@ -52,9 +49,6 @@ TTKTableAnimationVWidgetProperty::TTKTableAnimationVWidgetProperty(QWidget *pare
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKTableAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
@@ -90,9 +84,6 @@ TTKSkinAnimationVWidgetProperty::TTKSkinAnimationVWidgetProperty(QWidget *parent
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSkinAnimationVWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);

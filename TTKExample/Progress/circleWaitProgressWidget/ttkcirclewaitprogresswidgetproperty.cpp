@@ -13,15 +13,12 @@ TTKCircleWaitProgressWidgetProperty::TTKCircleWaitProgressWidgetProperty(QWidget
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCircleWaitProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
-    QtProperty *clockwiseRotateItem = m_boolManager->addProperty("ClockwiseRotate");
-    m_boolManager->setValue(clockwiseRotateItem, true);
-    objectItem->addSubProperty(clockwiseRotateItem);
+    QtProperty *clockWiseItem = m_boolManager->addProperty("ClockWise");
+    m_boolManager->setValue(clockWiseItem, true);
+    objectItem->addSubProperty(clockWiseItem);
     //
     QtProperty *rotateDeltaItem = m_intManager->addProperty("RotateDelta");
     m_intManager->setMinimum(rotateDeltaItem, 0);
@@ -38,9 +35,9 @@ TTKCircleWaitProgressWidgetProperty::TTKCircleWaitProgressWidgetProperty(QWidget
 void TTKCircleWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
     TTKCircleWaitProgressWidget *widget = TTKObject_cast(TTKCircleWaitProgressWidget*, m_item);
-    if(property->propertyName() == "ClockwiseRotate")
+    if(property->propertyName() == "ClockWise")
     {
-        widget->setClockwiseRotate(value);
+        widget->setClockWise(value);
     }
 }
 

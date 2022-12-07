@@ -6,7 +6,7 @@
 TTKCircleWaitProgressWidget::TTKCircleWaitProgressWidget(QWidget *parent)
     : QWidget(parent),
       m_color(Qt::black),
-      m_clockwiseRotate(true),
+      m_clockWise(true),
       m_rotateDelta(36),
       m_rotateAngle(0)
 {
@@ -25,11 +25,11 @@ void TTKCircleWaitProgressWidget::setColor(const QColor &color)
     }
 }
 
-void TTKCircleWaitProgressWidget::setClockwiseRotate(bool clockwise)
+void TTKCircleWaitProgressWidget::setClockWise(bool clockwise)
 {
-    if(clockwise != m_clockwiseRotate)
+    if(clockwise != m_clockWise)
     {
-        m_clockwiseRotate = clockwise;
+        m_clockWise = clockwise;
         update();
     }
 }
@@ -60,7 +60,7 @@ void TTKCircleWaitProgressWidget::paintEvent(QPaintEvent *event)
 
     painter.rotate(m_rotateAngle);
     drawCircleWait(&painter);
-    m_rotateAngle += m_clockwiseRotate ? m_rotateDelta : -m_rotateDelta;
+    m_rotateAngle += m_clockWise ? m_rotateDelta : -m_rotateDelta;
     m_rotateAngle %= 360;
 }
 

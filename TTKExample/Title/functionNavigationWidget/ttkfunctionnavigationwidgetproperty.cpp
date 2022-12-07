@@ -49,9 +49,6 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
@@ -176,9 +173,6 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
@@ -377,9 +371,6 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
@@ -628,9 +619,6 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
@@ -827,9 +815,6 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
@@ -1046,9 +1031,6 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
@@ -1268,9 +1250,6 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     objectItem->addSubProperty(classNameItem);
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
-    //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);

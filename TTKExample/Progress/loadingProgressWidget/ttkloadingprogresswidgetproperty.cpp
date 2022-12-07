@@ -13,14 +13,16 @@ TTKLoadingProgressWidgetProperty::TTKLoadingProgressWidgetProperty(QWidget *pare
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLoadingProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
+    QtProperty *activityItem = m_boolManager->addProperty("Activity");
+    m_boolManager->setValue(activityItem, true);
+    objectItem->addSubProperty(activityItem);
+    //
     QtProperty *dotCountItem = m_intManager->addProperty("DotCount");
     m_intManager->setMinimum(dotCountItem, 0);
+    m_intManager->setMaximum(dotCountItem, 20);
     m_intManager->setValue(dotCountItem, 20);
     objectItem->addSubProperty(dotCountItem);
     //

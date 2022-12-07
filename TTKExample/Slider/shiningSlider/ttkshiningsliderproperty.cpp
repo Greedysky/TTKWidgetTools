@@ -13,11 +13,12 @@ TTKShiningSliderProperty::TTKShiningSliderProperty(QWidget *parent)
     m_stringManager->setValue(classNameItem, TTKObject_cast(TTKShiningSlider*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
-    QtProperty *activityItem = m_boolManager->addProperty("Activity");
-    objectItem->addSubProperty(activityItem);
-    //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
+    //
+    QtProperty *activityItem = m_boolManager->addProperty("Activity");
+    m_boolManager->setValue(activityItem, true);
+    objectItem->addSubProperty(activityItem);
     //
     QtProperty *rangeMinItem = m_intManager->addProperty("RangeMin");
     m_intManager->setMinimum(rangeMinItem, 0);
