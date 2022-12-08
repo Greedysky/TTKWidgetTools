@@ -51,7 +51,6 @@ private Q_SLOTS:
 private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
 
-private:
     int m_displayTime;
     QString m_icon, m_title, m_body, m_url;
 

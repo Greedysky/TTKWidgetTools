@@ -39,7 +39,6 @@ public:
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     int m_angle, m_value;
 
 };

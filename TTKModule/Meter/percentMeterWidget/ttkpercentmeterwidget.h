@@ -55,12 +55,13 @@ public:
     void setTitleColor(const QColor &titleColor);
 
     void setBaseColor(const QColor &baseColor);
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     virtual QSize sizeHint() const override final;
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawArc(QPainter *painter);
     void drawCircle(QPainter *painter);
     void drawScale(QPainter *painter);
@@ -68,7 +69,6 @@ private:
     void drawValue(QPainter *painter);
     void drawTitle(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -84,7 +84,7 @@ private:
     QColor m_textColor;
     QColor m_titleColor;
     QColor m_baseColor;
-    QColor m_bgColor;
+    QColor m_backgroundColor;
 
     QString m_title;
 

@@ -176,7 +176,7 @@ void TTKDialMeterWidget::paintEvent(QPaintEvent *event)
     drawScale(&painter);
     drawScaleNum(&painter);
     drawBorderCircle(&painter);
-    drawBgCircle(&painter);
+    drawBackgroundCircle(&painter);
 
     if(m_pointerStyle == PointerStyle::Circle)
     {
@@ -268,7 +268,7 @@ void TTKDialMeterWidget::drawBorderCircle(QPainter *painter)
     painter->restore();
 }
 
-void TTKDialMeterWidget::drawBgCircle(QPainter *painter)
+void TTKDialMeterWidget::drawBackgroundCircle(QPainter *painter)
 {
     constexpr int radius = 60;
     painter->save();

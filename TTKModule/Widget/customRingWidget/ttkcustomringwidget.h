@@ -32,7 +32,7 @@ class TTK_MODULE_EXPORT TTKCustomRingWidget : public QWidget
 public:
     explicit TTKCustomRingWidget(QWidget *parent = nullptr);
 
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setOutCircleColor(const QColor &outCircleColor);
     void setMidCircleColor(const QColor &midCircleColor);
     void setInCircleColor(const QColor &inCircleColor);
@@ -41,13 +41,13 @@ public:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
+
+    void drawBackground(QPainter *painter);
     void drawOutCircle(QPainter *painter);
     void drawMidCircle(QPainter *painter);
     void drawInCircle(QPainter *painter);
 
-private:
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_outCircleColor;
     QColor m_midCircleColor;
     QColor m_inCircleColor;

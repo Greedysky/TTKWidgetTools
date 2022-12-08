@@ -52,22 +52,20 @@ public:
 
     void setOffset(int offset);
     void setBorderWidth(double borderWidth);
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     void setPointerStyle(const PercentStyle &percentStyle);
 
     virtual QSize sizeHint() const override final;
 
-private:
-    virtual void paintEvent(QPaintEvent *event) override final;
-
-private:
-    void drawValue(QPainter *painter);
-
 private Q_SLOTS:
     void timeout();
 
 private:
+    virtual void paintEvent(QPaintEvent *event) override final;
+
+    void drawValue(QPainter *painter);
+
     int m_value;
     int m_minValue;
     int m_maxValue;
@@ -76,7 +74,7 @@ private:
     double m_offset;
     int m_borderWidth;
 
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QTimer *m_timer;
     PercentStyle m_percentStyle;
 

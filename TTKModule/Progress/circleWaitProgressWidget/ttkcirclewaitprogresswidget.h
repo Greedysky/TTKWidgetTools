@@ -30,27 +30,23 @@ public:
     explicit TTKCircleWaitProgressWidget(QWidget *parent = nullptr);
 
     void setColor(const QColor &color);
-    inline QColor color() const { return m_color; }
-
     void setClockWise(bool clockwise);
-    inline bool clockWise() const { return m_clockWise; }
-
     void setRotateDelta(int delta);
-    inline bool rotateDelta() const { return m_rotateDelta; }
 
     virtual QSize sizeHint() const override final;
 
 protected:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawCircleWait(QPainter *painter);
 
-private:
     QColor m_color;
     bool m_clockWise;
     int m_rotateDelta;
     int m_rotateAngle;
 
     QTimer* m_timer;
+
 };
 
 #endif // TTKCIRCLEWAITPROGRESSWIDGET_H

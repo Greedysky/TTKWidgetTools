@@ -61,10 +61,10 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBorder(QPainter *painter);
-    void drawBg(QPainter *painter);
 
-private:    
+    void drawBorder(QPainter *painter);
+    void drawBackground(QPainter *painter);
+
     double m_minValue;
     double m_maxValue;
     double m_value;

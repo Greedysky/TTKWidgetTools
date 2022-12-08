@@ -42,17 +42,17 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     m_boolManager->setValue(activityItem, true);
     objectItem->addSubProperty(activityItem);
     //
-    QtProperty *backColorItem = m_colorManager->addProperty("BackColor");
-    m_colorManager->setValue(backColorItem, QColor(255, 85, 85));
-    objectItem->addSubProperty(backColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(255, 85, 85));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *lineColorItem = m_colorManager->addProperty("LineColor");
     m_colorManager->setValue(lineColorItem, QColor(250, 250, 250));
     objectItem->addSubProperty(lineColorItem);
     //
-    QtProperty *frontColorItem = m_colorManager->addProperty("FrontColor");
-    m_colorManager->setValue(frontColorItem, QColor(50, 50, 50));
-    objectItem->addSubProperty(frontColorItem);
+    QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
+    m_colorManager->setValue(foregroundColorItem, QColor(50, 50, 50));
+    objectItem->addSubProperty(foregroundColorItem);
     //
     m_browser->addProperty(objectItem);
 }
@@ -80,17 +80,17 @@ void TTKLedPageLabelProperty::boolPropertyChanged(QtProperty *property, bool val
 void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKLedPageLabel *widget = TTKObject_cast(TTKLedPageLabel*, m_item);
-    if(property->propertyName() == "BackColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBackColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "LineColor")
     {
         widget->setLineColor(value);
     }
-    else if(property->propertyName() == "FrontColor")
+    else if(property->propertyName() == "ForegroundColor")
     {
-        widget->setFrontColor(value);
+        widget->setForegroundColor(value);
     }
 }
 

@@ -94,7 +94,7 @@ void TTKLayoutAnimationWidget::animationFinished()
     m_mainWidget->show();
 }
 
-void TTKLayoutAnimationWidget::paintEvent(QPaintEvent * event)
+void TTKLayoutAnimationWidget::paintEvent(QPaintEvent *event)
 {
     if(m_isAnimating)
     {

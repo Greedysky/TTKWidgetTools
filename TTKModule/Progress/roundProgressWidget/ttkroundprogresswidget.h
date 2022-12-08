@@ -67,7 +67,7 @@ public:
     void setControlFlags(int flags);
     void setPrecision(int precision);
 
-    inline void setInnerDefaultTextStyle(InnerDefaultTextStyle style) { m_innerDefaultTextStyle = style; }
+    void setInnerDefaultTextStyle(InnerDefaultTextStyle style);
 
     virtual QSize sizeHint() const override final;
 
@@ -75,17 +75,14 @@ private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
 
-private:
-    void paintOutterBar(QPainter &painter);
-    void paintInnerBar(QPainter &painter);
-    void paintDot(QPainter &painter);
-    void paintText(QPainter &painter);
+    void drawOutterBar(QPainter *painter);
+    void drawInnerBar(QPainter *painter);
+    void drawDot(QPainter *painter);
+    void drawText(QPainter *painter);
 
-private:
     void setValue(float value);
     inline float value() const { return m_value; }
 
-private:
     int m_startAngle;
     bool m_clockWise;
     float m_outterBarWidth, m_innerBarWidth;

@@ -96,45 +96,45 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
 
     for(int i = 0; i < m_codePic.count(); ++i)
     {
-        drawConversion(painter);
+        drawConversion(&painter);
         painter.fillPath(m_codePic[i], QBrush(m_codeColor[random(m_codeColor.count())]));
         painter.translate(10, 0);
     }
     painter.restore();
 
-    drawOutline(painter);
-    drawNoisyPoint(painter);
+    drawOutline(&painter);
+    drawNoisyPoint(&painter);
 }
 
-void TTKCodeAreaLabel::drawOutline(QPainter &painter)
+void TTKCodeAreaLabel::drawOutline(QPainter *painter)
 {
-    painter.setPen(Qt::darkGreen);
-    painter.setPen(Qt::DashLine);
-    painter.setBrush(Qt::NoBrush);
-    painter.drawRect(rect());
+    painter->setPen(Qt::darkGreen);
+    painter->setPen(Qt::DashLine);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRect(rect());
 }
 
-void TTKCodeAreaLabel::drawNoisyPoint(QPainter &painter)
+void TTKCodeAreaLabel::drawNoisyPoint(QPainter *painter)
 {
-    painter.setPen(Qt::red);
-    painter.setPen(Qt::DotLine);
-    painter.setBrush(Qt::NoBrush);
+    painter->setPen(Qt::red);
+    painter->setPen(Qt::DotLine);
+    painter->setBrush(Qt::NoBrush);
 
     for(int i = 0; i < m_noisyPointCount; ++i)
     {
-        painter.drawPoint(QPointF(random(size().width()), random(size().height())));
+        painter->drawPoint(QPointF(random(size().width()), random(size().height())));
     }
 }
 
-void TTKCodeAreaLabel::drawConversion(QPainter &painter)
+void TTKCodeAreaLabel::drawConversion(QPainter *painter)
 {
     if(random(2))
     {
-        painter.rotate(random(m_converseRotate));
+        painter->rotate(random(m_converseRotate));
     }
     else
     {
-        painter.rotate(-random(m_converseRotate));
+        painter->rotate(-random(m_converseRotate));
     }
-    painter.scale((random(m_converseScale + (100 - m_converseScale))) / 100.0, (random(m_converseScale + (100 - m_converseScale))) / 100.0);
+    painter->scale((random(m_converseScale + (100 - m_converseScale))) / 100.0, (random(m_converseScale + (100 - m_converseScale))) / 100.0);
 }

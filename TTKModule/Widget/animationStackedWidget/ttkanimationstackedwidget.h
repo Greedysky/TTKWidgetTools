@@ -54,8 +54,9 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void renderPreviousWidget(QPainter &painter, QTransform &transform);
-    void renderCurrentWidget(QPainter &painter, QTransform &transform);
+
+    void renderPreviousWidget(QPainter *painter, QTransform &transform);
+    void renderCurrentWidget(QPainter *painter, QTransform &transform);
 
     bool m_isAnimating;
     float m_currentValue;

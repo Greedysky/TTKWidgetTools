@@ -8,7 +8,7 @@ TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)
     : QWidget(parent),
       m_enter(false),
       m_pressed(false),
-      m_bgColor(Qt::black),
+      m_backgroundColor(Qt::black),
       m_baseColor(80, 80, 80),
       m_arcColor(32, 32, 32),
       m_borderColor(Qt::darkCyan),
@@ -19,11 +19,11 @@ TTKCloudPanelLabel::TTKCloudPanelLabel(QWidget *parent)
     setMinimumSize(100, 100);
 }
 
-void TTKCloudPanelLabel::setBgColor(const QColor &bgColor)
+void TTKCloudPanelLabel::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -140,12 +140,12 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
 
     if(m_cloudStyle == CloudStyle::Black)
     {
-        drawCircle(&painter, 99, m_bgColor);
+        drawCircle(&painter, 99, m_backgroundColor);
         drawArc(&painter);
         drawCircle(&painter, 91, m_baseColor);
         drawCircle(&painter, 40, m_arcColor);
         drawCircle(&painter, 33, m_borderColor);
-        drawCircle(&painter, 30, (m_pressed && m_centerRect.contains(m_lastPoint)) ? m_bgColor : m_baseColor);
+        drawCircle(&painter, 30, (m_pressed && m_centerRect.contains(m_lastPoint)) ? m_backgroundColor : m_baseColor);
 	}
     else if(m_cloudStyle == CloudStyle::White)
     {

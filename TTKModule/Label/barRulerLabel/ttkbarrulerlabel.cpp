@@ -14,10 +14,10 @@ TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
       m_space(20),
       m_animation(true),
       m_animationStep(0.5),
-      m_bgColorStart(100, 100, 100),
-      m_bgColorEnd(60, 60, 60),
+      m_backgroundColorStart(100, 100, 100),
+      m_backgroundColorEnd(60, 60, 60),
       m_lineColor(255, 255, 255),
-      m_barBgColor(220, 220, 220),
+      m_barBackgroundColor(220, 220, 220),
       m_barColor(100, 184, 255),
       m_reverse(false),
       m_currentValue(0)
@@ -158,20 +158,20 @@ void TTKBarRulerLabel::setAnimationStep(double animationStep)
     }
 }
 
-void TTKBarRulerLabel::setBgColorStart(const QColor &bgColorStart)
+void TTKBarRulerLabel::setBackgroundColorStart(const QColor &backgroundColorStart)
 {
-    if(m_bgColorStart != bgColorStart)
+    if(m_backgroundColorStart != backgroundColorStart)
     {
-        m_bgColorStart = bgColorStart;
+        m_backgroundColorStart = backgroundColorStart;
         update();
     }
 }
 
-void TTKBarRulerLabel::setBgColorEnd(const QColor &bgColorEnd)
+void TTKBarRulerLabel::setBackgroundColorEnd(const QColor &backgroundColorEnd)
 {
-    if(m_bgColorEnd != bgColorEnd)
+    if(m_backgroundColorEnd != backgroundColorEnd)
     {
-        m_bgColorEnd = bgColorEnd;
+        m_backgroundColorEnd = backgroundColorEnd;
         update();
     }
 }
@@ -185,11 +185,11 @@ void TTKBarRulerLabel::setLineColor(const QColor &lineColor)
     }
 }
 
-void TTKBarRulerLabel::setBarBgColor(const QColor &barBgColor)
+void TTKBarRulerLabel::setBarBackgroundColor(const QColor &barBackgroundColor)
 {
-    if(m_barBgColor != barBgColor)
+    if(m_barBackgroundColor != barBackgroundColor)
     {
-        m_barBgColor = barBgColor;
+        m_barBackgroundColor = barBackgroundColor;
         update();
     }
 }
@@ -244,19 +244,21 @@ void TTKBarRulerLabel::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    drawBg(&painter);
+    drawBackground(&painter);
     drawRuler(&painter);
-    drawBarBg(&painter);
+    drawBarBackground(&painter);
     drawBar(&painter);
 }
 
-void TTKBarRulerLabel::drawBg(QPainter *painter)
+void TTKBarRulerLabel::drawBackground(QPainter *painter)
 {
     painter->save();
     painter->setPen(Qt::NoPen);
+
     QLinearGradient bgGradient(QPointF(0, 0), QPointF(0, height()));
-    bgGradient.setColorAt(0.0, m_bgColorStart);
-    bgGradient.setColorAt(1.0, m_bgColorEnd);
+    bgGradient.setColorAt(0.0, m_backgroundColorStart);
+    bgGradient.setColorAt(1.0, m_backgroundColorEnd);
+
     painter->setBrush(bgGradient);
     painter->drawRect(rect());
     painter->restore();
@@ -314,7 +316,7 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
     painter->restore();
 }
 
-void TTKBarRulerLabel::drawBarBg(QPainter *painter)
+void TTKBarRulerLabel::drawBarBackground(QPainter *painter)
 {
     painter->save();
     painter->setPen(Qt::NoPen);
@@ -324,7 +326,7 @@ void TTKBarRulerLabel::drawBarBg(QPainter *painter)
     const QPointF bottomRightPot(width() - m_space , height() - m_space);
     m_barRect = QRectF(topLeftPot, bottomRightPot);
 
-    painter->setBrush(m_barBgColor);
+    painter->setBrush(m_barBackgroundColor);
     painter->drawRect(m_barRect);
     painter->restore();
 }

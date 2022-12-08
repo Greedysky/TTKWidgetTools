@@ -36,15 +36,15 @@ TTKAnimation2StackedWidget::~TTKAnimation2StackedWidget()
     delete m_animation;
 }
 
-void TTKAnimation2StackedWidget::paintEvent(QPaintEvent * event)
+void TTKAnimation2StackedWidget::paintEvent(QPaintEvent *event)
 {
     if(m_isAnimating)
     {
         QPainter painter(this);
         QTransform transform;
 
-        renderPreviousWidget(painter, transform);
-        renderCurrentWidget(painter, transform);
+        renderPreviousWidget(&painter, transform);
+        renderCurrentWidget(&painter, transform);
     }
     else
     {
@@ -52,21 +52,21 @@ void TTKAnimation2StackedWidget::paintEvent(QPaintEvent * event)
     }
 }
 
-void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransform &transform)
+void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter *painter, QTransform &transform)
 {
-    painter.save();
+    painter->save();
     switch(m_type)
     {
         case Module::BottomToTop :
                 {
-                    painter.translate(0, m_currentValue);
-                    painter.drawPixmap(0, -height() / 2, m_privPixmap);
+                    painter->translate(0, m_currentValue);
+                    painter->drawPixmap(0, -height() / 2, m_privPixmap);
                     break;
                 }
         case Module::TopToBottom :
                 {
-                    painter.translate(0, m_currentValue);
-                    painter.drawPixmap(0, height() / 2, m_privPixmap);
+                    painter->translate(0, m_currentValue);
+                    painter->drawPixmap(0, height() / 2, m_privPixmap);
                     break;
                 }
         case Module::LeftToRight :
@@ -74,24 +74,24 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
                         transform.translate(0 - m_currentValue, 0);
-                        painter.setTransform(transform);
+                        painter->setTransform(transform);
 
                         if(m_fade)
                         {
-                            painter.setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(-width() / 2, 0, m_privPixmap);
+                        painter->drawPixmap(-width() / 2, 0, m_privPixmap);
                     }
                     else
                     {
-                        painter.translate(m_currentValue, 0);
+                        painter->translate(m_currentValue, 0);
                         if(m_fade)
                         {
-                            painter.setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(width() / 2, 0, m_privPixmap);
+                        painter->drawPixmap(width() / 2, 0, m_privPixmap);
                     }
 
                     break;
@@ -100,23 +100,23 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
-                        painter.translate(-m_currentValue, 0);
+                        painter->translate(-m_currentValue, 0);
                         if(m_fade)
                         {
-                            painter.setOpacity((m_endValue - m_currentValue) / m_rangeValue);
+                            painter->setOpacity((m_endValue - m_currentValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(width() / 2, 0, m_privPixmap);
+                        painter->drawPixmap(width() / 2, 0, m_privPixmap);
                     }
                     else
                     {
-                        painter.translate(m_currentValue, 0);
+                        painter->translate(m_currentValue, 0);
                         if(m_fade)
                         {
-                            painter.setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(-width() / 2, 0, m_privPixmap);
+                        painter->drawPixmap(-width() / 2, 0, m_privPixmap);
                     }
 
                     break;
@@ -125,10 +125,10 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                 {
                     if(m_fade)
                     {
-                        painter.setOpacity((float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue));
+                        painter->setOpacity((float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue));
                     }
 
-                    painter.drawPixmap(0 , m_startValue - m_currentValue, m_privPixmap);
+                    painter->drawPixmap(0 , m_startValue - m_currentValue, m_privPixmap);
                     break;
                 }
         case Module::FadeInOut:
@@ -136,10 +136,10 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     const float opt = (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue) / 2.5;
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0 , 0, m_privPixmap);
+                    painter->drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
         case Module::FadeExchange:
@@ -147,10 +147,10 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     const float opt = (float)(m_currentValue - m_endValue) / (float)std::abs(m_rangeValue);
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0 , 0, m_privPixmap);
+                    painter->drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
         case Module::BlackInOut:
@@ -158,39 +158,39 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     float opt = (m_currentValue - (float)std::abs(m_rangeValue) / 2.0) / (float)((float)std::abs(m_rangeValue) / 2.0);
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0 , 0, m_privPixmap);
+                    painter->drawPixmap(0 , 0, m_privPixmap);
 
                     opt = opt < 0 ? 0 : (float)(1.0 - opt);
 
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0 , 0, m_privPixmap);
+                    painter->drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
         case Module::CoverInOutRight:
                 {
                     if(m_fade)
                     {
-                        painter.setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
+                        painter->setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
                     }
 
-                    painter.drawPixmap(0 , 0, m_privPixmap);
+                    painter->drawPixmap(0 , 0, m_privPixmap);
                     break;
                 }
         case Module::CoverInOutLeft:
                 {
                     if(m_fade)
                     {
-                        painter.setOpacity((m_currentValue - m_startValue) / m_rangeValue);
+                        painter->setOpacity((m_currentValue - m_startValue) / m_rangeValue);
                     }
 
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::VerticalFlipRotate:
@@ -200,11 +200,11 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     {
                         if(m_fade)
                         {
-                            painter.setOpacity((90 - degree) / 90);
+                            painter->setOpacity((90 - degree) / 90);
                         }
 
-                        painter.setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                        painter.drawPixmap(0, 0, m_privPixmap);
+                        painter->setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                        painter->drawPixmap(0, 0, m_privPixmap);
                     }
                     break;
                 }
@@ -218,8 +218,8 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     const float degree = percent * 90;
                     const float pos = percent * height();
 
-                    painter.setTransform(QTransform().translate(0, pos/ 2).translate(width() / 2, height() / 2).rotate(-degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                    painter.drawPixmap(0, 0, m_privPixmap);
+                    painter->setTransform(QTransform().translate(0, pos/ 2).translate(width() / 2, height() / 2).rotate(-degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter->drawPixmap(0, 0, m_privPixmap);
                     break;
                 }
         case Module::VerticalCubeRotateB2T:
@@ -228,8 +228,8 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     const float degree = percent * 90;
                     const float pos = percent * height();
 
-                    painter.setTransform(QTransform().translate(0, -pos/ 2).translate(width() / 2, height() / 2).rotate(degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                    painter.drawPixmap(0, 0, m_privPixmap);
+                    painter->setTransform(QTransform().translate(0, -pos/ 2).translate(width() / 2, height() / 2).rotate(degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter->drawPixmap(0, 0, m_privPixmap);
                     break;
                 }
         case Module::HorizontalFlipRotate:
@@ -239,63 +239,63 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter &painter, QTransf
                     {
                         if(m_fade)
                         {
-                            painter.setOpacity((90 - degree) / 90);
+                            painter->setOpacity((90 - degree) / 90);
                         }
 
-                        painter.setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
-                        painter.drawPixmap(0, 0, m_privPixmap);
+                        painter->setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
+                        painter->drawPixmap(0, 0, m_privPixmap);
                     }
                     break;
                 }
         default: break;
     }
 
-    painter.restore();
+    painter->restore();
 }
 
-void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransform &transform)
+void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter *painter, QTransform &transform)
 {
-    painter.save();
+    painter->save();
     switch(m_type)
     {
         case Module::BottomToTop :
                 {
                     transform.translate(0, m_currentValue);
-                    painter.setTransform(transform);
-                    painter.drawPixmap(0, height() / 2, m_currentPixmap);
+                    painter->setTransform(transform);
+                    painter->drawPixmap(0, height() / 2, m_currentPixmap);
                     break;
                 }
         case Module::TopToBottom :
                 {
                     transform.translate(0, m_currentValue);
-                    painter.setTransform(transform);
-                    painter.drawPixmap(0, -height() / 2, m_currentPixmap);
+                    painter->setTransform(transform);
+                    painter->drawPixmap(0, -height() / 2, m_currentPixmap);
                     break;
                 }
         case Module::LeftToRight :
                 {
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
-                        painter.translate(-m_currentValue, 0);
+                        painter->translate(-m_currentValue, 0);
 
                         if(m_fade)
                         {
-                            painter.setOpacity(1 - (m_endValue - m_currentValue) / m_rangeValue);
+                            painter->setOpacity(1 - (m_endValue - m_currentValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(width() / 2, 0, m_currentPixmap);
+                        painter->drawPixmap(width() / 2, 0, m_currentPixmap);
                     }
                     else
                     {
                         transform.translate(m_currentValue, 0);
-                        painter.setTransform(transform);
+                        painter->setTransform(transform);
 
                         if(m_fade)
                         {
-                            painter.setOpacity((m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity((m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(-width() / 2, 0, m_currentPixmap);
+                        painter->drawPixmap(-width() / 2, 0, m_currentPixmap);
                     }
                     break;
                 }
@@ -304,38 +304,38 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     if(m_previousIndex > m_currentIndex && m_revert)
                     {
                         transform.translate(0 - m_currentValue, 0);
-                        painter.setTransform(transform);
+                        painter->setTransform(transform);
 
                         if(m_fade)
                         {
-                            painter.setOpacity((m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity((m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(-width() / 2, 0, m_currentPixmap);
+                        painter->drawPixmap(-width() / 2, 0, m_currentPixmap);
                     }
                     else
                     {
-                        painter.translate(m_currentValue, 0);
+                        painter->translate(m_currentValue, 0);
 
                         if(m_fade)
                         {
-                            painter.setOpacity((m_currentValue - m_startValue) / m_rangeValue);
+                            painter->setOpacity((m_currentValue - m_startValue) / m_rangeValue);
                         }
 
-                        painter.drawPixmap(width() / 2, 0, m_currentPixmap);
+                        painter->drawPixmap(width() / 2, 0, m_currentPixmap);
                     }
                     break;
                 }
         case Module::RollInOut:
                 {
-                    painter.translate(m_currentValue, 0);
+                    painter->translate(m_currentValue, 0);
 
                     if(m_fade)
                     {
-                        painter.setOpacity((m_startValue - m_currentValue) / (float)std::abs(m_rangeValue));
+                        painter->setOpacity((m_startValue - m_currentValue) / (float)std::abs(m_rangeValue));
                     }
 
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::FadeInOut:
@@ -344,10 +344,10 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
 
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::FadeExchange:
@@ -356,10 +356,10 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
 
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::BlackInOut:
@@ -368,41 +368,41 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
 
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
 
                     opt = opt > 0 ? (float)(1.0 - opt) : 0;
 
                     if(m_fade)
                     {
-                        painter.setOpacity(opt);
+                        painter->setOpacity(opt);
                     }
 
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::CoverInOutRight:
                 {
-                    painter.translate(m_currentValue, 0);
+                    painter->translate(m_currentValue, 0);
 
                     if(m_fade)
                     {
-                        painter.setOpacity((m_currentValue - m_startValue) / m_rangeValue);
+                        painter->setOpacity((m_currentValue - m_startValue) / m_rangeValue);
                     }
 
-                    painter.drawPixmap(width() / 2, 0, m_currentPixmap);
+                    painter->drawPixmap(width() / 2, 0, m_currentPixmap);
                     break;
                 }
         case Module::CoverInOutLeft:
                 {
-                    painter.translate(m_currentValue, 0);
+                    painter->translate(m_currentValue, 0);
                     if(m_fade)
                     {
-                        painter.setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
+                        painter->setOpacity(1 - (m_currentValue - m_startValue) / m_rangeValue);
                     }
 
-                    painter.drawPixmap(width() / 2, 0, m_privPixmap);
+                    painter->drawPixmap(width() / 2, 0, m_privPixmap);
                     break;
                 }
         case Module::VerticalFlipRotate:
@@ -412,11 +412,11 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     {
                         if(m_fade)
                         {
-                            painter.setOpacity((degree - 90) / 90);
+                            painter->setOpacity((degree - 90) / 90);
                         }
 
-                        painter.setTransform(QTransform().translate(width() / 2, height() / 2).rotate(180 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                        painter.drawPixmap(0, 0, m_currentPixmap);
+                        painter->setTransform(QTransform().translate(width() / 2, height() / 2).rotate(180 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                        painter->drawPixmap(0, 0, m_currentPixmap);
                     }
                     break;
                 }
@@ -425,11 +425,11 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 90;
                     if(m_fade)
                     {
-                        painter.setOpacity(degree / 90);
+                        painter->setOpacity(degree / 90);
                     }
 
-                    painter.setTransform(QTransform().translate(width() / 2, height() / 2).rotate(90 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->setTransform(QTransform().translate(width() / 2, height() / 2).rotate(90 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::VerticalCubeRotateT2B:
@@ -438,8 +438,8 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     const float degree = percent * 90;
                     const float pos = (1 - percent) * height();
 
-                    painter.setTransform(QTransform().translate(0, -pos / 2 ).translate(width() / 2, height() / 2).rotate(90 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->setTransform(QTransform().translate(0, -pos / 2 ).translate(width() / 2, height() / 2).rotate(90 - degree, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::VerticalCubeRotateB2T:
@@ -448,8 +448,8 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     const float degree = percent * 90;
                     const float pos = (1 - percent) * height();
 
-                    painter.setTransform(QTransform().translate(0, pos / 2 ).translate(width() / 2, height() / 2).rotate(degree - 90, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
-                    painter.drawPixmap(0, 0, m_currentPixmap);
+                    painter->setTransform(QTransform().translate(0, pos / 2 ).translate(width() / 2, height() / 2).rotate(degree - 90, Qt::XAxis).translate(-width() / 2, -height() / 2), false);
+                    painter->drawPixmap(0, 0, m_currentPixmap);
                     break;
                 }
         case Module::HorizontalFlipRotate:
@@ -459,18 +459,18 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter &painter, QTransfo
                     {
                         if(m_fade)
                         {
-                            painter.setOpacity((degree - 90) / 90);
+                            painter->setOpacity((degree - 90) / 90);
                         }
 
-                        painter.setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree - 180, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
-                        painter.drawPixmap(0, 0, m_currentPixmap);
+                        painter->setTransform(QTransform().translate(width() / 2, height() / 2).rotate(degree - 180, Qt::YAxis).translate(-width() / 2, -height() / 2), false);
+                        painter->drawPixmap(0, 0, m_currentPixmap);
                     }
                     break;
                 }
         default: break;
     }
 
-    painter.restore();
+    painter->restore();
 }
 
 void TTKAnimation2StackedWidget::start(int index)

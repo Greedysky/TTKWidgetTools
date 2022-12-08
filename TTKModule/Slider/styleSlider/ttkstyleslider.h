@@ -33,13 +33,8 @@ public:
     explicit TTKStyleSlider(QWidget *parent = nullptr);
 
     void setHandleColor(const QColor &color);
-    inline QColor handleColor() const { return m_handleColor; }
-
     void setForegroundColor(const QColor &color);
-    inline QColor foregroundColor() const { return m_foregroundColor; }
-
     void setBackgroundColor(const QColor &color);
-    inline QColor backgroundColor() const { return m_backgroundColor; }
 
     virtual QSize sizeHint() const override final;
 

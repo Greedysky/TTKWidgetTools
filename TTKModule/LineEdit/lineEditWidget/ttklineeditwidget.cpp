@@ -49,7 +49,7 @@ void TTKLineEditWidget::animationFinished()
     m_isAnimating = false;
 }
 
-void TTKLineEditWidget::paintEvent(QPaintEvent * event)
+void TTKLineEditWidget::paintEvent(QPaintEvent *event)
 {
     QLineEdit::paintEvent(event);
 

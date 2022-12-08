@@ -49,7 +49,6 @@ private Q_SLOTS:
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     void initialize();
     void resetVariables();
     void drawOuterCircle(QPainter *painter);

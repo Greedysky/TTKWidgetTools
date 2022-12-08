@@ -17,10 +17,10 @@ TTKRingProgressWidget::TTKRingProgressWidget(QWidget *parent)
       m_ringWidth(15),
       m_animation(true),
       m_animationStep(0.5),
-      m_bgColor(60, 60, 60),
+      m_backgroundColor(60, 60, 60),
       m_textColor(60, 60, 60),
       m_ringColor(60, 60, 60),
-      m_ringBgColor(60, 60, 60),
+      m_ringBackgroundColor(60, 60, 60),
       m_circleColor(60, 60, 60),
       m_ringValueF(10),
       m_ringValueS(20),
@@ -182,11 +182,11 @@ void TTKRingProgressWidget::setAnimationStep(double animationStep)
     }
 }
 
-void TTKRingProgressWidget::setBgColor(const QColor &bgColor)
+void TTKRingProgressWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -209,11 +209,11 @@ void TTKRingProgressWidget::setRingColor(const QColor &ringColor)
     }
 }
 
-void TTKRingProgressWidget::setRingBgColor(const QColor &ringBgColor)
+void TTKRingProgressWidget::setRingBackgroundColor(const QColor &ringBackgroundColor)
 {
-    if(m_ringBgColor != ringBgColor)
+    if(m_ringBackgroundColor != ringBackgroundColor)
     {
-        m_ringBgColor = ringBgColor;
+        m_ringBackgroundColor = ringBackgroundColor;
         update();
     }
 }
@@ -328,7 +328,7 @@ void TTKRingProgressWidget::paintEvent(QPaintEvent *event)
     painter.translate(w / 2, h / 2);
     painter.scale(side / 200.0, side / 200.0);
 
-    drawBg(&painter);
+    drawBackground(&painter);
     drawRing(&painter);
 
     if(m_ringPadding > 0)
@@ -340,13 +340,13 @@ void TTKRingProgressWidget::paintEvent(QPaintEvent *event)
     drawValue(&painter);
 }
 
-void TTKRingProgressWidget::drawBg(QPainter *painter)
+void TTKRingProgressWidget::drawBackground(QPainter *painter)
 {
     constexpr int radius = 99;
     painter->save();
     painter->setPen(Qt::NoPen);
 
-    painter->setBrush(m_ringPadding == 0 ? m_ringBgColor : m_bgColor);
+    painter->setBrush(m_ringPadding == 0 ? m_ringBackgroundColor : m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }
@@ -402,7 +402,7 @@ void TTKRingProgressWidget::drawRing(QPainter *painter)
     painter->setBrush(color);
     painter->drawPie(rect, (m_startAngle - angleCurrent) * 16, angleCurrent * 16);
 
-    painter->setBrush(m_ringBgColor);
+    painter->setBrush(m_ringBackgroundColor);
     painter->drawPie(rect, (m_startAngle - angleCurrent - angleOther) * 16, angleOther * 16);
     painter->restore();
 }
@@ -412,7 +412,7 @@ void TTKRingProgressWidget::drawPadding(QPainter *painter)
     const int radius = 99 - m_ringWidth - m_ringPadding;
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_bgColor);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }

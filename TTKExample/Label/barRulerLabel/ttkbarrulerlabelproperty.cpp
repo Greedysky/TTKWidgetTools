@@ -58,21 +58,21 @@ TTKBarRulerLabelProperty::TTKBarRulerLabelProperty(QWidget *parent)
     m_doubleManager->setValue(animationStepItem, 0.5);
     objectItem->addSubProperty(animationStepItem);
     //
-    QtProperty *bgColorStartItem = m_colorManager->addProperty("BgColorStart");
-    m_colorManager->setValue(bgColorStartItem, QColor(100, 100, 100));
-    objectItem->addSubProperty(bgColorStartItem);
+    QtProperty *backgroundColorStartItem = m_colorManager->addProperty("BackgroundColorStart");
+    m_colorManager->setValue(backgroundColorStartItem, QColor(100, 100, 100));
+    objectItem->addSubProperty(backgroundColorStartItem);
     //
-    QtProperty *bgColorEndItem = m_colorManager->addProperty("BgColorEnd");
-    m_colorManager->setValue(bgColorEndItem, QColor(60, 60, 60));
-    objectItem->addSubProperty(bgColorEndItem);
+    QtProperty *backgroundColorEndItem = m_colorManager->addProperty("BackgroundColorEnd");
+    m_colorManager->setValue(backgroundColorEndItem, QColor(60, 60, 60));
+    objectItem->addSubProperty(backgroundColorEndItem);
     //
     QtProperty *lineColorItem = m_colorManager->addProperty("LineColor");
     m_colorManager->setValue(lineColorItem, QColor(255, 255, 255));
     objectItem->addSubProperty(lineColorItem);
     //
-    QtProperty *barBgColorItem = m_colorManager->addProperty("BarBgColor");
-    m_colorManager->setValue(barBgColorItem, QColor(220, 220, 220));
-    objectItem->addSubProperty(barBgColorItem);
+    QtProperty *barBackgroundColorItem = m_colorManager->addProperty("BarBackgroundColor");
+    m_colorManager->setValue(barBackgroundColorItem, QColor(220, 220, 220));
+    objectItem->addSubProperty(barBackgroundColorItem);
     //
     QtProperty *barColorItem = m_colorManager->addProperty("BarColor");
     m_colorManager->setValue(barColorItem, QColor(100, 184, 255));
@@ -135,21 +135,21 @@ void TTKBarRulerLabelProperty::doublePropertyChanged(QtProperty *property, doubl
 void TTKBarRulerLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKBarRulerLabel *widget = TTKObject_cast(TTKBarRulerLabel*, m_item);
-    if(property->propertyName() == "BgColorStart")
+    if(property->propertyName() == "BackgroundColorStart")
     {
-        widget->setBgColorStart(value);
+        widget->setBackgroundColorStart(value);
     }
-    else if(property->propertyName() == "BgColorEnd")
+    else if(property->propertyName() == "BackgroundColorEnd")
     {
-        widget->setBgColorEnd(value);
+        widget->setBackgroundColorEnd(value);
     }
     else if(property->propertyName() == "LineColor")
     {
         widget->setLineColor(value);
     }
-    else if(property->propertyName() == "BarBgColor")
+    else if(property->propertyName() == "BarBackgroundColor")
     {
-        widget->setBarBgColor(value);
+        widget->setBarBackgroundColor(value);
     }
     else if(property->propertyName() == "BarColor")
     {

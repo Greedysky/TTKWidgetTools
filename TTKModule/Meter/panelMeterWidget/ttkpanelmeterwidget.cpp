@@ -20,7 +20,7 @@ TTKPanelMeterWidget::TTKPanelMeterWidget(QWidget *parent)
       m_ringColor(60, 60, 60),
       m_scaleColor(100, 181, 200),
       m_pointerColor(0, 181, 200),
-      m_bgColor(0, 0, 0),
+      m_backgroundColor(0, 0, 0),
       m_textColor(255, 255, 255),
       m_unit("m"),
       m_reverse(false),
@@ -195,11 +195,11 @@ void TTKPanelMeterWidget::setPointerColor(const QColor &pointerColor)
     }
 }
 
-void TTKPanelMeterWidget::setBgColor(const QColor &bgColor)
+void TTKPanelMeterWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -276,10 +276,10 @@ void TTKPanelMeterWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    if(m_bgColor != Qt::transparent)
+    if(m_backgroundColor != Qt::transparent)
     {
         painter.setPen(Qt::NoPen);
-        painter.fillRect(rect(), m_bgColor);
+        painter.fillRect(rect(), m_backgroundColor);
     }
 
     painter.translate(w / 2, h / 2);

@@ -21,15 +21,15 @@ TTKFunctionNavigationWidget::TTKFunctionNavigationWidget(QWidget *parent)
       m_lineWidth(5),
       m_linePosition(LinePosition::Left),
       m_lineColor(0, 187, 158),
-      m_normalBgColor(230, 230, 230),
-      m_hoverBgColor(130, 130, 130),
-      m_checkBgColor(80, 80, 80),
+      m_normalBackgroundColor(230, 230, 230),
+      m_hoverBackgroundColor(130, 130, 130),
+      m_checkBackgroundColor(80, 80, 80),
       m_normalTextColor(100, 100, 100),
       m_hoverTextColor(255, 255, 255),
       m_checkTextColor(255, 255, 255),
-      m_normalBgBrush(Qt::NoBrush),
-      m_hoverBgBrush(Qt::NoBrush),
-      m_checkBgBrush(Qt::NoBrush),
+      m_normalBackgroundBrush(Qt::NoBrush),
+      m_hoverBackgroundBrush(Qt::NoBrush),
+      m_checkBackgroundBrush(Qt::NoBrush),
       m_hover(false)
 {
     setCheckable(true);
@@ -220,29 +220,29 @@ void TTKFunctionNavigationWidget::setLineColor(const QColor &lineColor)
     }
 }
 
-void TTKFunctionNavigationWidget::setNormalBgColor(const QColor &normalBgColor)
+void TTKFunctionNavigationWidget::setNormalBackgroundColor(const QColor &normalBackgroundColor)
 {
-    if(normalBgColor != m_normalBgColor)
+    if(normalBackgroundColor != m_normalBackgroundColor)
     {
-        m_normalBgColor = normalBgColor;
+        m_normalBackgroundColor = normalBackgroundColor;
         update();
     }
 }
 
-void TTKFunctionNavigationWidget::setHoverBgColor(const QColor &hoverBgColor)
+void TTKFunctionNavigationWidget::setHoverBackgroundColor(const QColor &hoverBackgroundColor)
 {
-    if(hoverBgColor != m_hoverBgColor)
+    if(hoverBackgroundColor != m_hoverBackgroundColor)
     {
-        m_hoverBgColor = hoverBgColor;
+        m_hoverBackgroundColor = hoverBackgroundColor;
         update();
     }
 }
 
-void TTKFunctionNavigationWidget::setCheckBgColor(const QColor &checkBgColor)
+void TTKFunctionNavigationWidget::setCheckBackgroundColor(const QColor &checkBackgroundColor)
 {
-    if(checkBgColor != m_checkBgColor)
+    if(checkBackgroundColor != m_checkBackgroundColor)
     {
-        m_checkBgColor = checkBgColor;
+        m_checkBackgroundColor = checkBackgroundColor;
         update();
     }
 }
@@ -274,29 +274,29 @@ void TTKFunctionNavigationWidget::setCheckTextColor(const QColor &checkTextColor
     }
 }
 
-void TTKFunctionNavigationWidget::setNormalBgBrush(const QBrush &normalBgBrush)
+void TTKFunctionNavigationWidget::setNormalBackgroundBrush(const QBrush &normalBackgroundBrush)
 {
-    if(normalBgBrush != m_normalBgBrush)
+    if(normalBackgroundBrush != m_normalBackgroundBrush)
     {
-        m_normalBgBrush = normalBgBrush;
+        m_normalBackgroundBrush = normalBackgroundBrush;
         update();
     }
 }
 
-void TTKFunctionNavigationWidget::setHoverBgBrush(const QBrush &hoverBgBrush)
+void TTKFunctionNavigationWidget::setHoverBackgroundBrush(const QBrush &hoverBackgroundBrush)
 {
-    if(hoverBgBrush != m_hoverBgBrush)
+    if(hoverBackgroundBrush != m_hoverBackgroundBrush)
     {
-        m_hoverBgBrush = hoverBgBrush;
+        m_hoverBackgroundBrush = hoverBackgroundBrush;
         update();
     }
 }
 
-void TTKFunctionNavigationWidget::setCheckBgBrush(const QBrush &checkBgBrush)
+void TTKFunctionNavigationWidget::setCheckBackgroundBrush(const QBrush &checkBackgroundBrush)
 {
-    if(checkBgBrush != m_checkBgBrush)
+    if(checkBackgroundBrush != m_checkBackgroundBrush)
     {
-        m_checkBgBrush = checkBgBrush;
+        m_checkBackgroundBrush = checkBackgroundBrush;
         update();
     }
 }
@@ -341,61 +341,62 @@ void TTKFunctionNavigationWidget::drawBackground(QPainter *painter)
     const int w = width();
     const int h = height();
 
-    QRect bgRect;
+    QRect backgroundRect;
     if(m_linePosition == LinePosition::Left)
     {
-        bgRect = QRect(m_lineSpace, 0, w - m_lineSpace, h);
+        backgroundRect = QRect(m_lineSpace, 0, w - m_lineSpace, h);
     }
     else if(m_linePosition == LinePosition::Right)
     {
-        bgRect = QRect(0, 0, w - m_lineSpace, h);
+        backgroundRect = QRect(0, 0, w - m_lineSpace, h);
     }
     else if(m_linePosition == LinePosition::Top)
     {
-        bgRect = QRect(0, m_lineSpace, w, h - m_lineSpace);
+        backgroundRect = QRect(0, m_lineSpace, w, h - m_lineSpace);
     }
     else if(m_linePosition == LinePosition::Bottom)
     {
-        bgRect = QRect(0, 0, w, h - m_lineSpace);
+        backgroundRect = QRect(0, 0, w, h - m_lineSpace);
     }
 
-    QBrush bgBrush;
+    QBrush backgroundBrush;
     if(isChecked())
     {
-        bgBrush = m_checkBgBrush;
+        backgroundBrush = m_checkBackgroundBrush;
     }
     else if(m_hover)
     {
-        bgBrush = m_hoverBgBrush;
+        backgroundBrush = m_hoverBackgroundBrush;
     }
     else
     {
-        bgBrush = m_normalBgBrush;
+        backgroundBrush = m_normalBackgroundBrush;
     }
 
-    if(bgBrush != Qt::NoBrush)
+    if(backgroundBrush != Qt::NoBrush)
     {
-        painter->setBrush(bgBrush);
+        painter->setBrush(backgroundBrush);
     }
     else
     {
-        QColor bgColor;
+        QColor backgroundColor;
         if(isChecked())
         {
-            bgColor = m_checkBgColor;
+            backgroundColor = m_checkBackgroundColor;
         }
-        else if(m_hover){
-            bgColor = m_hoverBgColor;
+        else if(m_hover)
+        {
+            backgroundColor = m_hoverBackgroundColor;
         }
         else
         {
-            bgColor = m_normalBgColor;
+            backgroundColor = m_normalBackgroundColor;
         }
 
-        painter->setBrush(bgColor);
+        painter->setBrush(backgroundColor);
     }
 
-    painter->drawRect(bgRect);
+    painter->drawRect(backgroundRect);
     painter->restore();
 }
 

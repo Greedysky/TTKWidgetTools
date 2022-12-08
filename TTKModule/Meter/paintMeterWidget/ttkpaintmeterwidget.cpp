@@ -24,8 +24,8 @@ TTKPaintMeterWidget::TTKPaintMeterWidget(QWidget *parent)
       m_endWarningValue(60.0),
       m_thresholdEnabled(true),
       m_numericIndicatorEnabled(true),
-      m_foreground(Qt::yellow),
-      m_background(Qt::black)
+      m_foregroundColor(Qt::yellow),
+      m_backgroundColor(Qt::black)
 {
    setThreshold(80);
    setValue(0);
@@ -67,18 +67,6 @@ void TTKPaintMeterWidget::setValue(double value)
 QSize TTKPaintMeterWidget::sizeHint() const
 {
     return QSize(200, 200);
-}
-
-void TTKPaintMeterWidget::thresholdManager()
-{
-    if(m_value > m_threshold && !m_thresholdFlag)
-    {
-        m_thresholdFlag = true;
-    }
-    else if(m_value < m_threshold && m_thresholdFlag)
-    {
-        m_thresholdFlag = false;
-    }
 }
 
 void TTKPaintMeterWidget::paintEvent(QPaintEvent *event)
@@ -127,7 +115,7 @@ void TTKPaintMeterWidget::drawCrown(QPainter *painter)
 
 void TTKPaintMeterWidget::drawBackground(QPainter *painter)
 {
-    painter->setBrush(m_background);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-45, -45, 90, 90);
 }
 
@@ -135,7 +123,7 @@ void TTKPaintMeterWidget::drawTicks(QPainter *painter)
 {
     painter->save();
 
-    QPen pen = QPen(m_foreground);
+    QPen pen = QPen(m_foregroundColor);
     pen.setWidth(0);
     painter->setPen(pen);
 
@@ -157,7 +145,7 @@ void TTKPaintMeterWidget::drawTicks(QPainter *painter)
 void TTKPaintMeterWidget::drawScale(QPainter *painter)
 {
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     const double startRad = m_startAngle * PI / 180.0 + PI / 2;
     const double deltaRad = (m_endAngle - m_startAngle) / m_steps * (PI / 180);
@@ -181,10 +169,9 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
 
 void TTKPaintMeterWidget::drawUnits(QPainter *painter)
 {
-    painter->setPen(m_foreground);
-    painter->setBrush(m_foreground);
-    painter->setPen(m_foreground);
-
+    painter->setPen(m_foregroundColor);
+    painter->setBrush(m_foregroundColor);
+    painter->setPen(m_foregroundColor);
     painter->drawText(QRectF(-15, -20, 30, 10), Qt::AlignCenter, m_units);
 }
 
@@ -284,9 +271,9 @@ void TTKPaintMeterWidget::drawCoverGlass(QPainter *painter)
 void TTKPaintMeterWidget::drawLabel(QPainter *painter)
 {
     painter->save();
-    painter->setPen(m_foreground);
-    painter->setBrush(m_foreground);
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
+    painter->setBrush(m_foregroundColor);
+    painter->setPen(m_foregroundColor);
 
     QFontMetricsF fm(font());
     const double w = fm.size(Qt::TextSingleLine, m_label).width();
@@ -317,6 +304,18 @@ void TTKPaintMeterWidget::drawWarningWindow(QPainter *painter)
         painter->drawArc(-25, -25, 50, 50,
                          beginAngle > endAngle ? endAngle * 16 : beginAngle * 16,
                          beginAngle > endAngle ? (beginAngle - endAngle) * 16 : (endAngle - beginAngle) * 16);
+    }
+}
+
+void TTKPaintMeterWidget::thresholdManager()
+{
+    if(m_value > m_threshold && !m_thresholdFlag)
+    {
+        m_thresholdFlag = true;
+    }
+    else if(m_value < m_threshold && m_thresholdFlag)
+    {
+        m_thresholdFlag = false;
     }
 }
 

@@ -40,7 +40,6 @@ private:
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void timerEvent(QTimerEvent *event) override final;
 
-private:
     QRect m_drawArea;
     int m_pieRotate, m_timerId, m_pointTimerId, m_nSpeed;
     QList<QPoint> m_points;

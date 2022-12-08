@@ -53,9 +53,9 @@ public:
     void setStartAngle(int startAngle);
     void setEndAngle(int endAngle);
 
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setProgressColor(const QColor &progressColor);
-    void setProgressBgColor(const QColor &progressBgColor);
+    void setProgressBackgroundColor(const QColor &progressBackgroundColor);
 
     void setCircleColorStart(const QColor &circleColorStart);
     void setCircleColorEnd(const QColor &circleColorEnd);
@@ -73,7 +73,8 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
+
+    void drawBackground(QPainter *painter);
     void drawColorPie(QPainter *painter);
     void drawCoverCircle(QPainter *painter);
     void drawCircle(QPainter *painter);
@@ -83,7 +84,6 @@ private:
     void drawPointerTriangle(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -91,9 +91,9 @@ private:
     int m_startAngle;
     int m_endAngle;
 
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_progressColor;
-    QColor m_progressBgColor;
+    QColor m_progressBackgroundColor;
     QColor m_circleColorStart;
     QColor m_circleColorEnd;
     QColor m_textColor;

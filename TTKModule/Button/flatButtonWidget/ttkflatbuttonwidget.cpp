@@ -16,20 +16,20 @@ TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
 
 }
 
-void TTKFlatButtonWidget::setForegroundColor(const QColor &color)
+void TTKFlatButtonWidget::setForegroundColor(const QColor &foregroundColor)
 {
-    if(m_foregroundColor != color)
+    if(m_foregroundColor != foregroundColor)
     {
-        m_foregroundColor = color;
+        m_foregroundColor = foregroundColor;
         update();
     }
 }
 
-void TTKFlatButtonWidget::setBackgroundColor(const QColor &color)
+void TTKFlatButtonWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_backgroundColor != color)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_backgroundColor = color;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -77,27 +77,15 @@ void TTKFlatButtonWidget::paintEvent(QPaintEvent *event)
         painter.setClipping(true);
     }
 
-    paintBackground(&painter);
-    paintForeground(&painter);
+    drawBackground(&painter);
+    drawForeground(&painter);
 }
 
-void TTKFlatButtonWidget::paintBackground(QPainter *painter)
-{
-    QBrush brush;
-    brush.setStyle(Qt::SolidPattern);
-    brush.setColor(backgroundColor());
-
-    painter->setOpacity(1);
-    painter->setBrush(brush);
-    painter->setPen(Qt::NoPen);
-    painter->drawRect(rect());
-}
-
-void TTKFlatButtonWidget::paintForeground(QPainter *painter)
+void TTKFlatButtonWidget::drawForeground(QPainter *painter)
 {
     if(isEnabled())
     {
-        painter->setPen(foregroundColor());
+        painter->setPen(m_foregroundColor);
     }
 
     if(icon().isNull())
@@ -135,4 +123,16 @@ void TTKFlatButtonWidget::paintForeground(QPainter *painter)
 
     const QPixmap &pixmap = icon().pixmap(iconSize());
     painter->drawPixmap(iconGeometry, pixmap);
+}
+
+void TTKFlatButtonWidget::drawBackground(QPainter *painter)
+{
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(m_backgroundColor);
+
+    painter->setOpacity(1);
+    painter->setBrush(brush);
+    painter->setPen(Qt::NoPen);
+    painter->drawRect(rect());
 }

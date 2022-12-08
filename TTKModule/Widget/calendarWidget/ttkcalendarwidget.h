@@ -47,15 +47,14 @@ private:
     virtual void paintCell(QPainter *painter, const QRect &rect, const QDate &date) const override final;
 #endif
 
-private:
     void initControl();
     void initTopWidget();
     void initBottomWidget();
 
-private:
     QPushButton *m_leftYearButton, *m_leftMonthButton;
     QPushButton *m_rightYearButton, *m_rightMonthButton;
     QLabel *m_dataLabel;
+
 };
 
 #endif // TTKCALENDARWIDGET_H

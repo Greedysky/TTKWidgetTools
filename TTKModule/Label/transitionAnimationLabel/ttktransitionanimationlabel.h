@@ -35,11 +35,6 @@ public:
     explicit TTKTransitionAnimationLabel(QWidget *parent = nullptr);
     ~TTKTransitionAnimationLabel();
 
-    inline void setNoAnimation(bool on) { m_noAnimationSet = on; }
-    inline bool noAnimation() const { return m_noAnimationSet; }
-
-    QPixmap rendererPixmap() const;
-
     void start();
     void stop();
 

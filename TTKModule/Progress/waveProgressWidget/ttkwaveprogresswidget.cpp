@@ -14,7 +14,7 @@ TTKWaveProgressWidget::TTKWaveProgressWidget(QWidget *parent)
       m_waterHeight(0.02),
       m_offset(0),
       m_borderWidth(2),
-      m_bgColor(0, 100, 255),
+      m_backgroundColor(0, 100, 255),
       m_percentStyle(PercentStyle::Circle)
 {
     m_timer = new QTimer(this);
@@ -103,11 +103,11 @@ void TTKWaveProgressWidget::setBorderWidth(double borderWidth)
     }
 }
 
-void TTKWaveProgressWidget::setBgColor(const QColor &bgColor)
+void TTKWaveProgressWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -124,6 +124,12 @@ void TTKWaveProgressWidget::setPointerStyle(const PercentStyle &percentStyle)
 QSize TTKWaveProgressWidget::sizeHint() const
 {
     return QSize(200, 200);
+}
+
+void TTKWaveProgressWidget::timeout()
+{
+    m_offset += 0.4;
+    update();
 }
 
 void TTKWaveProgressWidget::paintEvent(QPaintEvent *event)
@@ -234,9 +240,9 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     }
 
     QPainterPath path;
-    QColor waterColor1 = m_bgColor;
+    QColor waterColor1 = m_backgroundColor;
     waterColor1.setAlpha(100);
-    QColor waterColor2 = m_bgColor;
+    QColor waterColor2 = m_backgroundColor;
     waterColor2.setAlpha(200);
 
     painter->save();
@@ -251,10 +257,4 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
     painter->drawPath(path);
 
     painter->restore();
-}
-
-void TTKWaveProgressWidget::timeout()
-{
-    m_offset += 0.4;
-    update();
 }

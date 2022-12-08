@@ -32,8 +32,8 @@ class TTK_MODULE_EXPORT TTKLedPageLabel : public QWidget
 public:
     explicit TTKLedPageLabel(QWidget *parent = nullptr);
 
-    void setFrontColor(const QColor&);
-    void setBackColor(const QColor&);
+    void setForegroundColor(const QColor &color);
+    void setBackgroundColor(const QColor &color);
     void setLineColor(const QColor&);
 
     void setScale(float scale);
@@ -46,16 +46,15 @@ private:
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
 
-private:
-    void drawBack(QPainter &painter);
-    void drawText(QPainter &painter);
-    void drawLine(QPainter &painter);
+    void drawBackground(QPainter *painter);
+    void drawText(QPainter *painter);
+    void drawLine(QPainter *painter);
 
-private:
-    QColor m_frontColor, m_backColor, m_lineColor;
+    QColor m_foregroundColor, m_backgroundColor, m_lineColor;
     QString m_text;
     float m_width, m_height, m_scale;
     int m_fontSize;
+
 };
 
 #endif // TTKLEDPAGELABEL_H

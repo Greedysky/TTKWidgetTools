@@ -61,9 +61,9 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
     m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKMiniMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(50, 50, 50));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(50, 50, 50));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *borderColorItem = m_colorManager->addProperty("BorderColor");
     m_colorManager->setValue(borderColorItem, QColor(7, 184, 13));
@@ -139,9 +139,9 @@ void TTKMiniMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int v
 void TTKMiniMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "BorderColor")
     {

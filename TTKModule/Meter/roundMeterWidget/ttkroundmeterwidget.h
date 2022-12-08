@@ -53,11 +53,11 @@ public:
     void setRangeTextColor(const QColor &rangeTextColor);
     void setValueTextColor(const QColor &valueTextColor);
 
-    void setValueBgColor(const QColor &valueBgColor);
-    void setOutBgColor(const QColor &outBgColor);
+    void setValueBackgroundColor(const QColor &valueBackgroundColor);
+    void setOutBackgroundColor(const QColor &outBackgroundColor);
 
-    void setCenterBgColorStart(const QColor &centerBgColorStart);
-    void setCenterBgColorEnd(const QColor &centerBgColorEnd);
+    void setCenterBackgroundColorStart(const QColor &centerBackgroundColorStart);
+    void setCenterBackgroundColorEnd(const QColor &centerBackgroundColorEnd);
 
     virtual QSize sizeHint() const override final;
 
@@ -66,13 +66,13 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawDial(QPainter *painter);
-    void drawBgOut(QPainter *painter);
-    void drawBgRound(QPainter *painter);
-    void drawBgCenter(QPainter *painter);
+    void drawBackgroundOut(QPainter *painter);
+    void drawBackgroundRound(QPainter *painter);
+    void drawBackgroundCenter(QPainter *painter);
     void drawText(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -87,10 +87,10 @@ private:
     QColor m_rangeTextColor;
     QColor m_valueTextColor;
 
-    QColor m_valueBgColor;
-    QColor m_outBgColor;
-    QColor m_centerBgColorStart;
-    QColor m_centerBgColorEnd;
+    QColor m_valueBackgroundColor;
+    QColor m_outBackgroundColor;
+    QColor m_centerBackgroundColorStart;
+    QColor m_centerBackgroundColorEnd;
 
     double m_currentPercent;
     double m_valuePercent;

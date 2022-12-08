@@ -16,9 +16,9 @@ TTKCustomRingWidgetProperty::TTKCustomRingWidgetProperty(QWidget *parent)
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(255, 255, 255));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(255, 255, 255));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *outCircleColorItem = m_colorManager->addProperty("OutCircleColor");
     m_colorManager->setValue(outCircleColorItem, QColor(255, 0, 0));
@@ -38,9 +38,9 @@ TTKCustomRingWidgetProperty::TTKCustomRingWidgetProperty(QWidget *parent)
 void TTKCustomRingWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKCustomRingWidget *widget = TTKObject_cast(TTKCustomRingWidget*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "OutCircleColor")
     {

@@ -6,8 +6,8 @@
 
 TTKTimeMeterWidget::TTKTimeMeterWidget(QWidget *parent)
     : QWidget(parent),
-      m_foreground(Qt::green),
-      m_background(Qt::black),
+      m_foregroundColor(Qt::green),
+      m_backgroundColor(Qt::black),
       m_units("km/h"),
       m_title("Speed Meter"),
       m_scaleMajor(10),
@@ -45,7 +45,7 @@ void TTKTimeMeterWidget::drawCrown(QPainter *painter)
     painter->setBrush(linearGradient);
     painter->setPen(Qt::NoPen);
     painter->drawEllipse(-radius, -radius, radius << 1, radius << 1);
-    painter->setBrush(m_background = Qt::black);
+    painter->setBrush(m_backgroundColor = Qt::black);
     painter->drawEllipse(-92, -92, 184, 184);
     painter->restore();
 }
@@ -82,7 +82,7 @@ void TTKTimeMeterWidget::drawScale(QPainter *painter)
 void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
 {
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     const double startRad = ( 270-m_startAngle) * (3.14 / 180);
     const double deltaRad = (360 - m_startAngle - m_endAngle) * (3.14 / 180) / m_scaleMajor;
@@ -112,7 +112,7 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
 void TTKTimeMeterWidget::drawTitle(QPainter *painter)
 {
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     const QString str(m_title);
     QFontMetricsF fm(font());
@@ -126,7 +126,7 @@ void TTKTimeMeterWidget::drawNumericValue(QPainter *painter)
     const QString &str = QString("%1 %2").arg(m_value, 0, 'f', m_precision).arg(m_units);
     QFontMetricsF fm(font());
     const double w = fm.size(Qt::TextSingleLine, str).width();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
     painter->drawText(-w / 2, 42, str);
 }
 

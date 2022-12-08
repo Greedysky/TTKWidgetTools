@@ -51,12 +51,12 @@ public:
     void setAnimation(bool animation);
     void setAnimationStep(double animationStep);
 
-    void setBgColorStart(const QColor &bgColorStart);
-    void setBgColorEnd(const QColor &bgColorEnd);
+    void setBackgroundColorStart(const QColor &backgroundColorStart);
+    void setBackgroundColorEnd(const QColor &backgroundColorEnd);
 
     void setLineColor(const QColor &lineColor);
 
-    void setBarBgColor(const QColor &barBgColor);
+    void setBarBackgroundColor(const QColor &barBackgroundColor);
     void setBarColor(const QColor &barColor);
 
     virtual QSize sizeHint() const override final;
@@ -66,12 +66,12 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
+
+    void drawBackground(QPainter *painter);
     void drawRuler(QPainter *painter);
-    void drawBarBg(QPainter *painter);
+    void drawBarBackground(QPainter *painter);
     void drawBar(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -84,10 +84,10 @@ private:
     bool m_animation;
     double m_animationStep;
 
-    QColor m_bgColorStart;
-    QColor m_bgColorEnd;
+    QColor m_backgroundColorStart;
+    QColor m_backgroundColorEnd;
     QColor m_lineColor;
-    QColor m_barBgColor;
+    QColor m_barBackgroundColor;
     QColor m_barColor;
 
     bool m_reverse;

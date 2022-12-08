@@ -83,9 +83,9 @@ TTKPercentMeterWidgetProperty::TTKPercentMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(baseColorItem, QColor(178, 221, 253));
     objectItem->addSubProperty(baseColorItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, Qt::transparent);
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, Qt::transparent);
+    objectItem->addSubProperty(backgroundColorItem);
     //
     m_browser->addProperty(objectItem);
 }
@@ -168,8 +168,8 @@ void TTKPercentMeterWidgetProperty::colorPropertyChanged(QtProperty *property, c
     {
         widget->setBaseColor(value);
     }
-    else if(property->propertyName() == "BgColor")
+    else if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
 }

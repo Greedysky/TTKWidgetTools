@@ -31,13 +31,13 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(crownColorEndItem, QColor(166, 166,166));
     objectItem->addSubProperty(crownColorEndItem);
     //
-    QtProperty *foregroundItem = m_colorManager->addProperty("Foreground");
-    m_colorManager->setValue(foregroundItem, QColor(255, 255, 255));
-    objectItem->addSubProperty(foregroundItem);
+    QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
+    m_colorManager->setValue(foregroundColorItem, QColor(255, 255, 255));
+    objectItem->addSubProperty(foregroundColorItem);
     //
-    QtProperty *backgroundItem = m_colorManager->addProperty("Background");
-    m_colorManager->setValue(backgroundItem, QColor(100, 100, 100));
-    objectItem->addSubProperty(backgroundItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(100, 100, 100));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *pointerHourColorItem = m_colorManager->addProperty("PointerHourColor");
     m_colorManager->setValue(pointerHourColorItem, QColor(180, 180, 180));
@@ -74,13 +74,13 @@ void TTKClockMeterWidgetProperty::colorPropertyChanged(QtProperty *property, con
     {
         widget->setCrownColorEnd(value);
     }
-    else if(property->propertyName() == "Foreground")
+    else if(property->propertyName() == "ForegroundColor")
     {
-        widget->setForeground(value);
+        widget->setForegroundColor(value);
     }
-    else if(property->propertyName() == "Background")
+    else if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBackground(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "PointerHourColor")
     {

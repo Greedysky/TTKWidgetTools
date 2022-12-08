@@ -54,11 +54,11 @@ public:
     void setAnimation(bool animation);
     void setAnimationStep(double animationStep);
 
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setTextColor(const QColor &textColor);
 
     void setRingColor(const QColor &ringColor);
-    void setRingBgColor(const QColor &ringBgColor);
+    void setRingBackgroundColor(const QColor &ringBackgroundColor);
     void setCircleColor(const QColor &circleColor);
 
     void setRingValueF(int ringValueF);
@@ -76,13 +76,13 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
+
+    void drawBackground(QPainter *painter);
     void drawRing(QPainter *painter);
     void drawPadding(QPainter *painter);
     void drawCircle(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -98,10 +98,10 @@ private:
     bool m_animation;
     double m_animationStep;
 
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_textColor;
     QColor m_ringColor;
-    QColor m_ringBgColor;
+    QColor m_ringBackgroundColor;
     QColor m_circleColor;
 
     int m_ringValueF;

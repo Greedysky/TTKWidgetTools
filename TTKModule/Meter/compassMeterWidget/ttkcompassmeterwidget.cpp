@@ -11,11 +11,11 @@ TTKCompassMeterWidget::TTKCompassMeterWidget(QWidget *parent)
       m_animationStep(0.5),
       m_crownColorStart(255, 255, 255),
       m_crownColorEnd(60, 60, 60),
-      m_bgColorStart(50, 50, 50),
-      m_bgColorEnd(20, 20, 20),
+      m_backgroundColorStart(50, 50, 50),
+      m_backgroundColorEnd(20, 20, 20),
       m_darkColor(255, 170, 0),
       m_lightColor(170, 255, 0),
-      m_foreground(255, 255, 255),
+      m_foregroundColor(255, 255, 255),
       m_textColor(0, 0, 0),
       m_northPointerColor(253, 107, 107),
       m_southPointerColor(0, 170, 255),
@@ -106,20 +106,20 @@ void TTKCompassMeterWidget::setCrownColorEnd(const QColor &crownColorEnd)
     }
 }
 
-void TTKCompassMeterWidget::setBgColorStart(const QColor &bgColorStart)
+void TTKCompassMeterWidget::setBackgroundColorStart(const QColor &backgroundColorStart)
 {
-    if(m_bgColorStart != bgColorStart)
+    if(m_backgroundColorStart != backgroundColorStart)
     {
-        m_bgColorStart = bgColorStart;
+        m_backgroundColorStart = backgroundColorStart;
         update();
     }
 }
 
-void TTKCompassMeterWidget::setBgColorEnd(const QColor &bgColorEnd)
+void TTKCompassMeterWidget::setBackgroundColorEnd(const QColor &backgroundColorEnd)
 {
-    if(m_bgColorEnd != bgColorEnd)
+    if(m_backgroundColorEnd != backgroundColorEnd)
     {
-        m_bgColorEnd = bgColorEnd;
+        m_backgroundColorEnd = backgroundColorEnd;
         update();
     }
 }
@@ -142,11 +142,11 @@ void TTKCompassMeterWidget::setLightColor(const QColor &lightColor)
     }
 }
 
-void TTKCompassMeterWidget::setForeground(const QColor &foreground)
+void TTKCompassMeterWidget::setForegroundColor(const QColor &foregroundColor)
 {
-    if(m_foreground != foreground)
+    if(m_foregroundColor != foregroundColor)
     {
-        m_foreground = foreground;
+        m_foregroundColor = foregroundColor;
         update();
     }
 }
@@ -244,7 +244,7 @@ void TTKCompassMeterWidget::paintEvent(QPaintEvent *event)
     painter.scale(side / 200.0, side / 200.0);
 
     drawCrownCircle(&painter);
-    drawBgCircle(&painter);
+    drawBackgroundCircle(&painter);
     drawScale(&painter);
     drawScaleNum(&painter);
     drawCoverOuterCircle(&painter);
@@ -271,15 +271,15 @@ void TTKCompassMeterWidget::drawCrownCircle(QPainter *painter)
     painter->restore();
 }
 
-void TTKCompassMeterWidget::drawBgCircle(QPainter *painter)
+void TTKCompassMeterWidget::drawBackgroundCircle(QPainter *painter)
 {
     constexpr int radius = 90;
     painter->save();
     painter->setPen(Qt::NoPen);
 
     QLinearGradient lineGradient(0, -radius, 0, radius);
-    lineGradient.setColorAt(0, m_bgColorStart);
-    lineGradient.setColorAt(1, m_bgColorEnd);
+    lineGradient.setColorAt(0, m_backgroundColorStart);
+    lineGradient.setColorAt(1, m_backgroundColorEnd);
 
     painter->setBrush(lineGradient);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
@@ -295,7 +295,7 @@ void TTKCompassMeterWidget::drawScale(QPainter *painter)
     constexpr double angleStep = 360.0 / steps;
 
     QPen pen;
-    pen.setColor(m_foreground);
+    pen.setColor(m_foregroundColor);
     pen.setCapStyle(Qt::RoundCap);
     pen.setWidth(4);
     painter->setPen(pen);
@@ -315,7 +315,7 @@ void TTKCompassMeterWidget::drawScaleNum(QPainter *painter)
 {
     int radius = 88;
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     QFont font;
     font.setPixelSize(15);

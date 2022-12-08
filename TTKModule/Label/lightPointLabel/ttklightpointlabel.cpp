@@ -7,7 +7,7 @@ TTKLightPointLabel::TTKLightPointLabel(QWidget *parent)
     : QWidget(parent),
       m_step(10),
       m_interval(100),
-      m_bgColor(255, 179, 133),
+      m_backgroundColor(255, 179, 133),
       m_offset(0),
       m_add(true)
 {
@@ -43,11 +43,11 @@ void TTKLightPointLabel::setInterval(int interval)
     }
 }
 
-void TTKLightPointLabel::setBgColor(const QColor &bgColor)
+void TTKLightPointLabel::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -70,10 +70,10 @@ void TTKLightPointLabel::paintEvent(QPaintEvent *event)
     painter.translate(w / 2, h / 2);
     painter.scale(side / 200.0, side / 200.0);
 
-    drawBg(&painter);
+    drawBackground(&painter);
 }
 
-void TTKLightPointLabel::drawBg(QPainter *painter)
+void TTKLightPointLabel::drawBackground(QPainter *painter)
 {
     int radius = 99;
     painter->save();
@@ -82,14 +82,14 @@ void TTKLightPointLabel::drawBg(QPainter *painter)
     (m_offset < 70 && m_add) ? (m_offset += m_step) : (m_add = false);
     (m_offset > 0 && !m_add) ? (m_offset -= m_step) : (m_add = true);
 
-    m_bgColor.setAlpha(255);
-    g.setColorAt(0.1, m_bgColor);
-    m_bgColor.setAlpha(100 + m_offset);
-    g.setColorAt(0.3, m_bgColor);
-    m_bgColor.setAlpha(50 + m_offset);
-    g.setColorAt(0.6, m_bgColor);
-    m_bgColor.setAlpha(0);
-    g.setColorAt(1.0, m_bgColor);
+    m_backgroundColor.setAlpha(255);
+    g.setColorAt(0.1, m_backgroundColor);
+    m_backgroundColor.setAlpha(100 + m_offset);
+    g.setColorAt(0.3, m_backgroundColor);
+    m_backgroundColor.setAlpha(50 + m_offset);
+    g.setColorAt(0.6, m_backgroundColor);
+    m_backgroundColor.setAlpha(0);
+    g.setColorAt(1.0, m_backgroundColor);
 
     painter->setPen(Qt::NoPen);
     painter->setBrush(g);

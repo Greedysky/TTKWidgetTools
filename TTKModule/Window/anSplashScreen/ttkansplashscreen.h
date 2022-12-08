@@ -53,11 +53,9 @@ private:
     virtual void mouseMoveEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     void initialize();
     void closeWidget();
 
-private:
     QGridLayout *m_gridLayout;
     QLabel *m_numLabel;
     QLabel *m_textLabel;

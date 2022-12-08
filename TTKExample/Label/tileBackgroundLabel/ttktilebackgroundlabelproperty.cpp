@@ -16,13 +16,13 @@ TTKTileBackgroundLabelProperty::TTKTileBackgroundLabelProperty(QWidget *parent)
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
-    QtProperty *foreColorItem = m_colorManager->addProperty("ForeColor");
-    m_colorManager->setValue(foreColorItem, QColor(50, 50, 50));
-    objectItem->addSubProperty(foreColorItem);
+    QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
+    m_colorManager->setValue(foregroundColorItem, QColor(50, 50, 50));
+    objectItem->addSubProperty(foregroundColorItem);
     //
-    QtProperty *backColorItem = m_colorManager->addProperty("BackColor");
-    m_colorManager->setValue(backColorItem, QColor(255, 255, 255));
-    objectItem->addSubProperty(backColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(255, 255, 255));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     m_browser->addProperty(objectItem);
 }
@@ -30,12 +30,12 @@ TTKTileBackgroundLabelProperty::TTKTileBackgroundLabelProperty(QWidget *parent)
 void TTKTileBackgroundLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKTileBackgroundLabel *widget = TTKObject_cast(TTKTileBackgroundLabel*, m_item);
-    if(property->propertyName() == "ForeColor")
+    if(property->propertyName() == "ForegroundColor")
     {
-        widget->setForeColor(value);
+        widget->setForegroundColor(value);
     }
-    else if(property->propertyName() == "BackColor")
+    else if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBackColor(value);
+        widget->setBackgroundColor(value);
     }
 }

@@ -47,9 +47,9 @@ QColor TTKProgressWidget::progressColor() const
     return m_progressColor;
 }
 
-void TTKProgressWidget::setBackgroundColor(const QColor &color)
+void TTKProgressWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    m_backgroundColor = color;
+    m_backgroundColor = backgroundColor;
     update();
 }
 

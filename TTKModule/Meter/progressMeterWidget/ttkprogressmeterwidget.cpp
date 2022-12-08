@@ -12,9 +12,9 @@ TTKProgressMeterWidget::TTKProgressMeterWidget(QWidget *parent)
       m_precision(0),
       m_startAngle(40),
       m_endAngle(40),
-      m_bgColor(50, 50, 50),
+      m_backgroundColor(50, 50, 50),
       m_progressColor(7, 184, 13),
-      m_progressBgColor(15, 84, 100),
+      m_progressBackgroundColor(15, 84, 100),
       m_circleColorStart(80, 80, 80),
       m_circleColorEnd(100, 100, 100),
       m_textColor(255, 255, 255),
@@ -113,11 +113,11 @@ void TTKProgressMeterWidget::setEndAngle(int endAngle)
     }
 }
 
-void TTKProgressMeterWidget::setBgColor(const QColor &bgColor)
+void TTKProgressMeterWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -131,11 +131,11 @@ void TTKProgressMeterWidget::setProgressColor(const QColor &progressColor)
     }
 }
 
-void TTKProgressMeterWidget::setProgressBgColor(const QColor &progressBgColor)
+void TTKProgressMeterWidget::setProgressBackgroundColor(const QColor &progressBackgroundColor)
 {
-    if(m_progressBgColor != progressBgColor)
+    if(m_progressBackgroundColor != progressBackgroundColor)
     {
-        m_progressBgColor = progressBgColor;
+        m_progressBackgroundColor = progressBackgroundColor;
         update();
     }
 }
@@ -241,7 +241,7 @@ void TTKProgressMeterWidget::paintEvent(QPaintEvent *event)
     painter.translate(w / 2, h / 2);
     painter.scale(side / 200.0, side / 200.0);
 
-    drawBg(&painter);
+    drawBackground(&painter);
     drawColorPie(&painter);
     drawCoverCircle(&painter);
     drawCircle(&painter);
@@ -266,12 +266,12 @@ void TTKProgressMeterWidget::paintEvent(QPaintEvent *event)
     drawValue(&painter);
 }
 
-void TTKProgressMeterWidget::drawBg(QPainter *painter)
+void TTKProgressMeterWidget::drawBackground(QPainter *painter)
 {
     constexpr int radius = 99;
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_bgColor);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }
@@ -290,7 +290,7 @@ void TTKProgressMeterWidget::drawColorPie(QPainter *painter)
     painter->setBrush(m_progressColor);
     painter->drawPie(rect, (270 - m_startAngle - angleCurrent) * 16, angleCurrent * 16);
 
-    painter->setBrush(m_progressBgColor);
+    painter->setBrush(m_progressBackgroundColor);
     painter->drawPie(rect, (270 - m_startAngle - angleCurrent - angleOther) * 16, angleOther * 16);
     painter->restore();
 }
@@ -300,7 +300,7 @@ void TTKProgressMeterWidget::drawCoverCircle(QPainter *painter)
     constexpr int radius = 85;
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_bgColor);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }

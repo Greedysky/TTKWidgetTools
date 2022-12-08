@@ -33,7 +33,6 @@ public:
     explicit TTKTimeMeterWidget(QWidget *parent = nullptr);
 
     void setValue(qreal value);
-    qreal value() const { return m_value;}
 
     virtual QSize sizeHint() const override final;
 
@@ -47,7 +46,7 @@ private:
     void drawIndicator(QPainter *painter);
     void drawNumericValue(QPainter *painter);
 
-    QColor m_foreground, m_background;
+    QColor m_foregroundColor, m_backgroundColor;
     QString m_units, m_title;
     int m_scaleMajor, m_scaleMinor;
     int m_maxValue, m_minValue;

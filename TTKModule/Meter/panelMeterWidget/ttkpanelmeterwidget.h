@@ -55,7 +55,7 @@ public:
 
     void setScaleColor(const QColor &scaleColor);
     void setPointerColor(const QColor &pointerColor);
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setTextColor(const QColor &textColor);
     void setUnit(const QString &unit);
     void setText(const QString &text);
@@ -67,13 +67,13 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawRing(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
     void drawPointer(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -89,7 +89,7 @@ private:
     QColor m_ringColor;
     QColor m_scaleColor;
     QColor m_pointerColor;
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_textColor;
     QString m_unit;
     QString m_text;

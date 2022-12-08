@@ -226,17 +226,17 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     m_colorManager->setValue(lineColorItem, QColor(255, 107, 107));
     objectItem->addSubProperty(lineColorItem);
     //
-    QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor(0x2D, 0x91, 0x91));
-    objectItem->addSubProperty(normalBgColorItem);
+    QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
+    m_colorManager->setValue(normalBackgroundColorItem, QColor(0x2D, 0x91, 0x91));
+    objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor(0x18, 0x72, 0x94));
-    objectItem->addSubProperty(hoverBgColorItem);
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x18, 0x72, 0x94));
+    objectItem->addSubProperty(hoverBackgroundColorItem);
     //
-    QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor(0x14, 0x5C, 0x75));
-    objectItem->addSubProperty(checkBgColorItem);
+    QtProperty *checkBackgroundColorItem = m_colorManager->addProperty("CheckBackgroundColor");
+    m_colorManager->setValue(checkBackgroundColorItem, QColor(0x14, 0x5C, 0x75));
+    objectItem->addSubProperty(checkBackgroundColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
     m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
@@ -324,17 +324,17 @@ void TTKFunctionNavigationBWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setLineColor(value);
         }
-        else if(property->propertyName() == "NormalBgColor")
+        else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBgColor(value);
+            m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBgColor")
+        else if(property->propertyName() == "HoverlBackgroundColor")
         {
-            m_buttons[i]->setHoverBgColor(value);
+            m_buttons[i]->setHoverBackgroundColor(value);
         }
-        else if(property->propertyName() == "CheckBgColor")
+        else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBgColor(value);
+            m_buttons[i]->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
@@ -445,17 +445,17 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Right));
     objectItem->addSubProperty(linePositionItem);
     //
-    QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor(0x29, 0x2F, 0x38));
-    objectItem->addSubProperty(normalBgColorItem);
+    QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
+    m_colorManager->setValue(normalBackgroundColorItem, QColor(0x29, 0x2F, 0x38));
+    objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor(0x1D, 0x20, 0x25));
-    objectItem->addSubProperty(hoverBgColorItem);
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x1D, 0x20, 0x25));
+    objectItem->addSubProperty(hoverBackgroundColorItem);
     //
-    QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor(0x1D, 0x20, 0x25));
-    objectItem->addSubProperty(checkBgColorItem);
+    QtProperty *checkBackgroundColorItem = m_colorManager->addProperty("CheckBackgroundColor");
+    m_colorManager->setValue(checkBackgroundColorItem, QColor(0x1D, 0x20, 0x25));
+    objectItem->addSubProperty(checkBackgroundColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
     m_colorManager->setValue(normalTextColorItem, QColor(0x54, 0x62, 0x6F));
@@ -571,17 +571,17 @@ void TTKFunctionNavigationCWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setLineColor(value);
         }
-        else if(property->propertyName() == "NormalBgColor")
+        else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBgColor(value);
+            m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBgColor")
+        else if(property->propertyName() == "HoverlBackgroundColor")
         {
-            m_buttons[i]->setHoverBgColor(value);
+            m_buttons[i]->setHoverBackgroundColor(value);
         }
-        else if(property->propertyName() == "CheckBgColor")
+        else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBgColor(value);
+            m_buttons[i]->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
@@ -868,17 +868,17 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
-    QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor(0x29, 0x29, 0x29));
-    objectItem->addSubProperty(normalBgColorItem);
+    QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
+    m_colorManager->setValue(normalBackgroundColorItem, QColor(0x29, 0x29, 0x29));
+    objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor(0x06, 0x40, 0x77));
-    objectItem->addSubProperty(hoverBgColorItem);
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x06, 0x40, 0x77));
+    objectItem->addSubProperty(hoverBackgroundColorItem);
     //
-    QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor(0x10, 0x68, 0x9A));
-    objectItem->addSubProperty(checkBgColorItem);
+    QtProperty *checkBackgroundColorItem = m_colorManager->addProperty("CheckBackgroundColor");
+    m_colorManager->setValue(checkBackgroundColorItem, QColor(0x10, 0x68, 0x9A));
+    objectItem->addSubProperty(checkBackgroundColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
     m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
@@ -978,17 +978,17 @@ void TTKFunctionNavigationEWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setIconCheck(pixmap);
         }
-        else if(property->propertyName() == "NormalBgColor")
+        else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBgColor(value);
+            m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBgColor")
+        else if(property->propertyName() == "HoverlBackgroundColor")
         {
-            m_buttons[i]->setHoverBgColor(value);
+            m_buttons[i]->setHoverBackgroundColor(value);
         }
-        else if(property->propertyName() == "CheckBgColor")
+        else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBgColor(value);
+            m_buttons[i]->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
@@ -1084,17 +1084,17 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
-    QtProperty *normalBgColorItem = m_colorManager->addProperty("NormalBgColor");
-    m_colorManager->setValue(normalBgColorItem, QColor(0xE6, 0x39, 0x3D));
-    objectItem->addSubProperty(normalBgColorItem);
+    QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
+    m_colorManager->setValue(normalBackgroundColorItem, QColor(0xE6, 0x39, 0x3D));
+    objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBgColorItem = m_colorManager->addProperty("HoverlBgColor");
-    m_colorManager->setValue(hoverBgColorItem, QColor(0xEE, 0x00, 0x00));
-    objectItem->addSubProperty(hoverBgColorItem);
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    m_colorManager->setValue(hoverBackgroundColorItem, QColor(0xEE, 0x00, 0x00));
+    objectItem->addSubProperty(hoverBackgroundColorItem);
     //
-    QtProperty *checkBgColorItem = m_colorManager->addProperty("CheckBgColor");
-    m_colorManager->setValue(checkBgColorItem, QColor(0xA4, 0x00, 0x01));
-    objectItem->addSubProperty(checkBgColorItem);
+    QtProperty *checkBackgroundColorItem = m_colorManager->addProperty("CheckBackgroundColor");
+    m_colorManager->setValue(checkBackgroundColorItem, QColor(0xA4, 0x00, 0x01));
+    objectItem->addSubProperty(checkBackgroundColorItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
     m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
@@ -1194,17 +1194,17 @@ void TTKFunctionNavigationFWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setIconCheck(pixmap);
         }
-        else if(property->propertyName() == "NormalBgColor")
+        else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBgColor(value);
+            m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBgColor")
+        else if(property->propertyName() == "HoverlBackgroundColor")
         {
-            m_buttons[i]->setHoverBgColor(value);
+            m_buttons[i]->setHoverBackgroundColor(value);
         }
-        else if(property->propertyName() == "CheckBgColor")
+        else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBgColor(value);
+            m_buttons[i]->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
@@ -1301,41 +1301,41 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
-    QtProperty *normalBgBrushRItem = m_colorManager->addProperty("NormalBgBrushR");
-    m_colorManager->setValue(normalBgBrushRItem, QColor(0x39, 0x85, 0xBF));
-    objectItem->addSubProperty(normalBgBrushRItem);
+    QtProperty *normalBackgroundBrushRItem = m_colorManager->addProperty("NormalBackgroundBrushR");
+    m_colorManager->setValue(normalBackgroundBrushRItem, QColor(0x39, 0x85, 0xBF));
+    objectItem->addSubProperty(normalBackgroundBrushRItem);
     //
-    QtProperty *normalBgBrushGItem = m_colorManager->addProperty("NormalBgBrushG");
-    m_colorManager->setValue(normalBgBrushGItem, QColor(0x29, 0x72, 0xA9));
-    objectItem->addSubProperty(normalBgBrushGItem);
+    QtProperty *normalBackgroundBrushGItem = m_colorManager->addProperty("NormalBackgroundBrushG");
+    m_colorManager->setValue(normalBackgroundBrushGItem, QColor(0x29, 0x72, 0xA9));
+    objectItem->addSubProperty(normalBackgroundBrushGItem);
     //
-    QtProperty *normalBgBrushBItem = m_colorManager->addProperty("NormalBgBrushB");
-    m_colorManager->setValue(normalBgBrushBItem, QColor(0x1C, 0x64, 0x96));
-    objectItem->addSubProperty(normalBgBrushBItem);
+    QtProperty *normalBackgroundBrushBItem = m_colorManager->addProperty("NormalBackgroundBrushB");
+    m_colorManager->setValue(normalBackgroundBrushBItem, QColor(0x1C, 0x64, 0x96));
+    objectItem->addSubProperty(normalBackgroundBrushBItem);
     //
-    QtProperty *hoverBgBrushRItem = m_colorManager->addProperty("HoverlBgBrushR");
-    m_colorManager->setValue(hoverBgBrushRItem, QColor(0x48, 0x97, 0xD1));
-    objectItem->addSubProperty(hoverBgBrushRItem);
+    QtProperty *hoverBackgroundBrushRItem = m_colorManager->addProperty("HoverlBackgroundBrushR");
+    m_colorManager->setValue(hoverBackgroundBrushRItem, QColor(0x48, 0x97, 0xD1));
+    objectItem->addSubProperty(hoverBackgroundBrushRItem);
     //
-    QtProperty *hoverBgBrushGItem = m_colorManager->addProperty("HoverlBgBrushG");
-    m_colorManager->setValue(hoverBgBrushGItem, QColor(0x32, 0x83, 0xBC));
-    objectItem->addSubProperty(hoverBgBrushGItem);
+    QtProperty *hoverBackgroundBrushGItem = m_colorManager->addProperty("HoverlBackgroundBrushG");
+    m_colorManager->setValue(hoverBackgroundBrushGItem, QColor(0x32, 0x83, 0xBC));
+    objectItem->addSubProperty(hoverBackgroundBrushGItem);
     //
-    QtProperty *hoverBgBrushBItem = m_colorManager->addProperty("HoverlBgBrushB");
-    m_colorManager->setValue(hoverBgBrushBItem, QColor(0x30, 0x88, 0xC3));
-    objectItem->addSubProperty(hoverBgBrushBItem);
+    QtProperty *hoverBackgroundBrushBItem = m_colorManager->addProperty("HoverlBackgroundBrushB");
+    m_colorManager->setValue(hoverBackgroundBrushBItem, QColor(0x30, 0x88, 0xC3));
+    objectItem->addSubProperty(hoverBackgroundBrushBItem);
     //
-    QtProperty *checkBgBrushRItem = m_colorManager->addProperty("CheckBgBrushR");
-    m_colorManager->setValue(checkBgBrushRItem, QColor(0x48, 0x97, 0xD1));
-    objectItem->addSubProperty(checkBgBrushRItem);
+    QtProperty *checkBackgroundBrushRItem = m_colorManager->addProperty("CheckBackgroundBrushR");
+    m_colorManager->setValue(checkBackgroundBrushRItem, QColor(0x48, 0x97, 0xD1));
+    objectItem->addSubProperty(checkBackgroundBrushRItem);
     //
-    QtProperty *checkBgBrushGItem = m_colorManager->addProperty("CheckBgBrushG");
-    m_colorManager->setValue(checkBgBrushGItem, QColor(0x32, 0x83, 0xBC));
-    objectItem->addSubProperty(checkBgBrushGItem);
+    QtProperty *checkBackgroundBrushGItem = m_colorManager->addProperty("CheckBackgroundBrushG");
+    m_colorManager->setValue(checkBackgroundBrushGItem, QColor(0x32, 0x83, 0xBC));
+    objectItem->addSubProperty(checkBackgroundBrushGItem);
     //
-    QtProperty *checkBgBrushBItem = m_colorManager->addProperty("CheckBgBrushB");
-    m_colorManager->setValue(checkBgBrushBItem, QColor(0x30, 0x88, 0xC3));
-    objectItem->addSubProperty(checkBgBrushBItem);
+    QtProperty *checkBackgroundBrushBItem = m_colorManager->addProperty("CheckBackgroundBrushB");
+    m_colorManager->setValue(checkBackgroundBrushBItem, QColor(0x30, 0x88, 0xC3));
+    objectItem->addSubProperty(checkBackgroundBrushBItem);
     //
     QtProperty *normalTextColorItem = m_colorManager->addProperty("NormalTextColor");
     m_colorManager->setValue(normalTextColorItem, QColor(0xFF, 0xFF, 0xFF));
@@ -1410,50 +1410,50 @@ void TTKFunctionNavigationGWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     for(int i = 0; i < m_buttons.count(); ++i)
     {
-        if(property->propertyName() == "NormalBgBrushR")
+        if(property->propertyName() == "NormalBackgroundBrushR")
         {
             m_normal.setColorAt(0.0, value);
-            m_buttons[i]->setNormalBgBrush(m_normal);
+            m_buttons[i]->setNormalBackgroundBrush(m_normal);
         }
-        else if(property->propertyName() == "NormalBgBrushG")
+        else if(property->propertyName() == "NormalBackgroundBrushG")
         {
             m_normal.setColorAt(0.5, value);
-            m_buttons[i]->setNormalBgBrush(m_normal);
+            m_buttons[i]->setNormalBackgroundBrush(m_normal);
         }
-        else if(property->propertyName() == "NormalBgBrushB")
+        else if(property->propertyName() == "NormalBackgroundBrushB")
         {
             m_normal.setColorAt(1.0, value);
-            m_buttons[i]->setNormalBgBrush(m_normal);
+            m_buttons[i]->setNormalBackgroundBrush(m_normal);
         }
-        else if(property->propertyName() == "HoverlBgBrushR")
+        else if(property->propertyName() == "HoverlBackgroundBrushR")
         {
             m_hover.setColorAt(0.0, value);
-            m_buttons[i]->setHoverBgBrush(m_hover);
+            m_buttons[i]->setHoverBackgroundBrush(m_hover);
         }
-        else if(property->propertyName() == "HoverlBgBrushG")
+        else if(property->propertyName() == "HoverlBackgroundBrushG")
         {
             m_hover.setColorAt(0.5, value);
-            m_buttons[i]->setHoverBgBrush(m_hover);
+            m_buttons[i]->setHoverBackgroundBrush(m_hover);
         }
-        else if(property->propertyName() == "HoverlBgBrushB")
+        else if(property->propertyName() == "HoverlBackgroundBrushB")
         {
             m_hover.setColorAt(1.0, value);
-            m_buttons[i]->setHoverBgBrush(m_hover);
+            m_buttons[i]->setHoverBackgroundBrush(m_hover);
         }
-        else if(property->propertyName() == "CheckBgBrushR")
+        else if(property->propertyName() == "CheckBackgroundBrushR")
         {
             m_check.setColorAt(0.0, value);
-            m_buttons[i]->setCheckBgBrush(m_check);
+            m_buttons[i]->setCheckBackgroundBrush(m_check);
         }
-        else if(property->propertyName() == "CheckBgBrushG")
+        else if(property->propertyName() == "CheckBackgroundBrushG")
         {
             m_check.setColorAt(0.5, value);
-            m_buttons[i]->setCheckBgBrush(m_check);
+            m_buttons[i]->setCheckBackgroundBrush(m_check);
         }
-        else if(property->propertyName() == "CheckBgBrushB")
+        else if(property->propertyName() == "CheckBackgroundBrushB")
         {
             m_check.setColorAt(1.0, value);
-            m_buttons[i]->setCheckBgBrush(m_check);
+            m_buttons[i]->setCheckBackgroundBrush(m_check);
         }
         else if(property->propertyName() == "NormalTextColor")
         {

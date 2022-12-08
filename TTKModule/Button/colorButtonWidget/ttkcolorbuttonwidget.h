@@ -53,7 +53,6 @@ private:
     void initStyle();
     void initBtn();
 
-private:
     QGridLayout *m_gridLayout;
     QList<QPushButton*> m_btns;
     QStringList m_colors;

@@ -4,7 +4,7 @@
 
 TTKCustomRingWidget::TTKCustomRingWidget(QWidget *parent)
     : QWidget(parent),
-      m_bgColor(Qt::white),
+      m_backgroundColor(Qt::white),
       m_outCircleColor(Qt::red),
       m_midCircleColor(Qt::green),
       m_inCircleColor(Qt::blue)
@@ -12,11 +12,11 @@ TTKCustomRingWidget::TTKCustomRingWidget(QWidget *parent)
 
 }
 
-void TTKCustomRingWidget::setBgColor(const QColor &bgColor)
+void TTKCustomRingWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -64,7 +64,7 @@ void TTKCustomRingWidget::paintEvent(QPaintEvent *event)
     const int side = qMin(rect.width(), rect.height());
     const qreal scale = side / 200.0;
 
-    drawBg(&painter);
+    drawBackground(&painter);
 
     painter.translate(rect.center());
     painter.scale(scale, scale);
@@ -74,11 +74,11 @@ void TTKCustomRingWidget::paintEvent(QPaintEvent *event)
     drawInCircle(&painter);
 }
 
-void TTKCustomRingWidget::drawBg(QPainter *painter)
+void TTKCustomRingWidget::drawBackground(QPainter *painter)
 {
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_bgColor);
+    painter->setBrush(m_backgroundColor);
     painter->drawRoundedRect(this->rect(), 5, 5);
     painter->restore();
 }

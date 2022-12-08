@@ -37,13 +37,13 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     m_enumManager->setValue(moveStyleItem, TTKStatic_cast(int, TTKMarqueeLabel::MoveStyle::LeftAndRight));
     objectItem->addSubProperty(moveStyleItem);
     //
-    QtProperty *foregroundItem = m_colorManager->addProperty("Foreground");
-    m_colorManager->setValue(foregroundItem, QColor(100, 184, 255));
-    objectItem->addSubProperty(foregroundItem);
+    QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
+    m_colorManager->setValue(foregroundColorItem, QColor(100, 184, 255));
+    objectItem->addSubProperty(foregroundColorItem);
     //
-    QtProperty *backgroundItem = m_colorManager->addProperty("Background");
-    m_colorManager->setValue(backgroundItem, QColor(222, 222, 222));
-    objectItem->addSubProperty(backgroundItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(222, 222, 222));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");
     m_stringManager->setValue(textItem, "Hello word");
@@ -95,12 +95,12 @@ void TTKMarqueeLabelProperty::enumPropertyChanged(QtProperty *property, int valu
 void TTKMarqueeLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
-    if(property->propertyName() == "Foreground")
+    if(property->propertyName() == "ForegroundColor")
     {
-        widget->setForeground(value);
+        widget->setForegroundColor(value);
     }
-    else if(property->propertyName() == "Background")
+    else if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBackground(value);
+        widget->setBackgroundColor(value);
     }
 }

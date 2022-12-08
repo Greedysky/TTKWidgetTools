@@ -44,7 +44,6 @@ private:
     virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     int m_width;
     QColor m_color;
     QPoint m_pos;

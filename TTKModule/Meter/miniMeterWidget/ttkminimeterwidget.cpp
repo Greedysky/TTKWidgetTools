@@ -13,7 +13,7 @@ TTKMiniMeterWidget::TTKMiniMeterWidget(QWidget *parent)
       m_startAngle(40),
       m_endAngle(40),
       m_borderColor(60, 60, 60),
-      m_bgColor(233, 185, 110),
+      m_backgroundColor(233, 185, 110),
       m_textColor(92, 53, 102),
       m_percentColor(253, 107, 107),
       m_pointerStyle(PointerStyle::Indicator),
@@ -106,11 +106,11 @@ void TTKMiniMeterWidget::setBorderColor(const QColor &borderColor)
     }
 }
 
-void TTKMiniMeterWidget::setBgColor(const QColor &bgColor)
+void TTKMiniMeterWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -170,7 +170,7 @@ void TTKMiniMeterWidget::paintEvent(QPaintEvent *event)
     painter.scale(side / 200.0, side / 200.0);
 
     drawScale(&painter);
-    drawBgCircle(&painter);
+    drawBackgroundCircle(&painter);
 
     if(m_pointerStyle == PointerStyle::Circle)
     {
@@ -233,7 +233,7 @@ void TTKMiniMeterWidget::drawScale(QPainter *painter)
     painter->restore();
 }
 
-void TTKMiniMeterWidget::drawBgCircle(QPainter *painter)
+void TTKMiniMeterWidget::drawBackgroundCircle(QPainter *painter)
 {
     constexpr int radius = 75;
     painter->save();
@@ -242,7 +242,7 @@ void TTKMiniMeterWidget::drawBgCircle(QPainter *painter)
     pen.setWidthF(5.0);
     pen.setColor(m_borderColor);
     painter->setPen(pen);
-    painter->setBrush(m_bgColor);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }

@@ -66,10 +66,11 @@ public:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
     void drawBorderCircle(QPainter *painter);
-    void drawBgCircle(QPainter *painter);
+    void drawBackgroundCircle(QPainter *painter);
     void drawPointerCircle(QPainter *painter);
     void drawPointerIndicator(QPainter *painter);
     void drawPointerIndicatorR(QPainter *painter);
@@ -77,7 +78,6 @@ private:
     void drawCenterCircle(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;

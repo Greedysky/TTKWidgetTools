@@ -56,6 +56,18 @@ QSize TTKLoadingProgressWidget::sizeHint() const
     return QSize(200, 200);
 }
 
+void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event)
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    painter.setPen(m_dotColor);
+    painter.setBrush(m_dotColor);
+
+    drawDot(&painter);
+}
+
 void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
@@ -77,26 +89,14 @@ void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
     }
 }
 
-void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
-{
-    Q_UNUSED(event)
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
-    painter.setPen(m_dotColor);
-    painter.setBrush(m_dotColor);
-
-    paintDot(painter);
-}
-
-void TTKLoadingProgressWidget::paintDot(QPainter &painter)
+void TTKLoadingProgressWidget::drawDot(QPainter *painter)
 {
     for(int i = 0; i < m_count; ++i)
     {
-        painter.setPen(m_dotColor);
+        painter->setPen(m_dotColor);
         const float radian = m_ranges.at((m_index + m_count - i) % m_count);
         const Position &position = m_dots.at(i);
-        painter.drawEllipse(QPointF(position.x, position.y), radian, radian);
+        painter->drawEllipse(QPointF(position.x, position.y), radian, radian);
     }
     m_index++;
 }

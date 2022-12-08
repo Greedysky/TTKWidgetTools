@@ -4,32 +4,32 @@
 
 TTKTileBackgroundLabel::TTKTileBackgroundLabel(QWidget *parent)
     : QWidget(parent),
-      m_foreColor(0, 0, 0),
-      m_backColor(250, 250, 250),
+      m_foregroundColor(0, 0, 0),
+      m_backgroundColor(250, 250, 250),
       m_pix(64, 64)
 {
 
 }
 
-void TTKTileBackgroundLabel::setForeColor(const QColor &color)
+void TTKTileBackgroundLabel::setForegroundColor(const QColor &foregroundColor)
 {
-    if(m_foreColor != color)
+    if(m_foregroundColor != foregroundColor)
     {
-        m_foreColor = color;
+        m_foregroundColor = foregroundColor;
         drawBackground();
     }
 }
 
-void TTKTileBackgroundLabel::setBackColor(const QColor &color)
+void TTKTileBackgroundLabel::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_backColor != color)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_backColor = color;
+        m_backgroundColor = backgroundColor;
         drawBackground();
     }
 }
 
-void TTKTileBackgroundLabel::setBackgroundPix(const QPixmap &pix)
+void TTKTileBackgroundLabel::setBackgroundPixmap(const QPixmap &pix)
 {
     if(!pix.isNull())
     {
@@ -57,10 +57,10 @@ void TTKTileBackgroundLabel::paintEvent(QPaintEvent *event)
 
 void TTKTileBackgroundLabel::drawBackground()
 {
-    m_pix.fill(m_backColor);
+    m_pix.fill(m_backgroundColor);
 
     QPainter painter(&m_pix);
-    painter.fillRect(0, 0, 32, 32, m_foreColor);
-    painter.fillRect(32, 32, 32, 32, m_foreColor);
+    painter.fillRect(0, 0, 32, 32, m_foregroundColor);
+    painter.fillRect(32, 32, 32, 32, m_foregroundColor);
     update();
 }

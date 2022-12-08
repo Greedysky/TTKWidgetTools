@@ -57,7 +57,6 @@ private Q_SLOTS:
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     int m_lineLen;
     int m_lineWidth;
     int m_lineStep;

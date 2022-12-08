@@ -26,9 +26,9 @@ TTKLightPointLabelProperty::TTKLightPointLabelProperty(QWidget *parent)
     m_intManager->setMinimum(intervalItem, 1);
     objectItem->addSubProperty(intervalItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(255, 179, 133));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(255, 179, 133));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     m_browser->addProperty(objectItem);
 }
@@ -49,8 +49,8 @@ void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int va
 void TTKLightPointLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKLightPointLabel *widget = TTKObject_cast(TTKLightPointLabel*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
 }

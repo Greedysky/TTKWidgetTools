@@ -51,7 +51,6 @@ private:
     virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     bool m_bMouseHover, m_bMousePress;
     Arrow m_type;
 
@@ -78,7 +77,6 @@ private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     bool m_selected;
 
 };
@@ -104,7 +102,6 @@ private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     bool m_bActive;
 
 };

@@ -60,17 +60,17 @@ TTKProgressMeterWidgetProperty::TTKProgressMeterWidgetProperty(QWidget *parent)
     m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKProgressMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(50, 50, 50));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(50, 50, 50));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *progressColorItem = m_colorManager->addProperty("ProgressColor");
     m_colorManager->setValue(progressColorItem, QColor(7, 184, 13));
     objectItem->addSubProperty(progressColorItem);
     //
-    QtProperty *progressBgColorItem = m_colorManager->addProperty("ProgressBgColor");
-    m_colorManager->setValue(progressBgColorItem, QColor(15, 84, 100));
-    objectItem->addSubProperty(progressBgColorItem);
+    QtProperty *progressBackgroundColorItem = m_colorManager->addProperty("ProgressBackgroundColor");
+    m_colorManager->setValue(progressBackgroundColorItem, QColor(15, 84, 100));
+    objectItem->addSubProperty(progressBackgroundColorItem);
     //
     QtProperty *circleColorStartItem = m_colorManager->addProperty("CircleColorStart");
     m_colorManager->setValue(circleColorStartItem, QColor(80, 80, 80));
@@ -146,17 +146,17 @@ void TTKProgressMeterWidgetProperty::enumPropertyChanged(QtProperty *property, i
 void TTKProgressMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKProgressMeterWidget *widget = TTKObject_cast(TTKProgressMeterWidget*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "ProgressColor")
     {
         widget->setProgressColor(value);
     }
-    else if(property->propertyName() == "ProgressBgColor")
+    else if(property->propertyName() == "ProgressBackgroundColor")
     {
-        widget->setProgressBgColor(value);
+        widget->setProgressBackgroundColor(value);
     }
     else if(property->propertyName() == "CircleColorStart")
     {

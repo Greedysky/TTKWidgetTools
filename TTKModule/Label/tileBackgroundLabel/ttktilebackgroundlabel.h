@@ -33,19 +33,19 @@ class TTK_MODULE_EXPORT TTKTileBackgroundLabel : public QWidget
 public:
     explicit TTKTileBackgroundLabel(QWidget *parent = nullptr);
 
-    void setForeColor(const QColor &color);
-    void setBackColor(const QColor &color);
-    void setBackgroundPix(const QPixmap &pix);
+    void setForegroundColor(const QColor &foregroundColor);
+    void setBackgroundColor(const QColor &backgroundColor);
+    void setBackgroundPixmap(const QPixmap &pix);
 
     virtual QSize sizeHint() const override final;
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawBackground();
 
-private:
-    QColor m_foreColor;
-    QColor m_backColor;
+    QColor m_foregroundColor;
+    QColor m_backgroundColor;
     QPixmap m_pix;
 
 };

@@ -41,7 +41,7 @@ public:
 
     explicit TTKCloudPanelLabel(QWidget *parent = nullptr);
 
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setBaseColor(const QColor &baseColor);
 
     void setArcColor(const QColor &arcColor);
@@ -63,18 +63,16 @@ private:
     virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     void recalcLayout();
     bool isPointIn(const QPoint &pos, int &bp);
     void drawCircle(QPainter *painter, int radius, const QBrush &brush);
     void drawArc(QPainter *painter);
     void drawButton(QPainter *painter);
 
-private:
     bool m_enter;
     bool m_pressed;
 
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_baseColor;
     QColor m_arcColor;
     QColor m_borderColor;

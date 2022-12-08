@@ -74,7 +74,6 @@ private:
      */
     virtual void run() override final;
 
-private:
     bool m_run;
     QString m_name;
     QProcess *m_process ;

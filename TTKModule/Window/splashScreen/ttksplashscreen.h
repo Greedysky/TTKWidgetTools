@@ -54,7 +54,6 @@ private Q_SLOTS:
 private:
      virtual void mousePressEvent(QMouseEvent *event) override final;
 
-private:
      int m_elapseTime;
      QTimer *m_timer;
      QWidget *m_mainWidget;

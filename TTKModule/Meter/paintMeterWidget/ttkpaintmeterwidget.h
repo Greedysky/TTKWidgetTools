@@ -38,10 +38,8 @@ public:
     virtual QSize sizeHint() const override final;
 
 private:
-    void thresholdManager();
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     void drawCrown(QPainter *painter);
     void drawBackground(QPainter *painter);
     void drawTicks(QPainter *painter);
@@ -54,6 +52,7 @@ private:
     void drawLabel(QPainter *painter);
     void drawValidWindow(QPainter *painter);
     void drawWarningWindow(QPainter *painter);
+    void thresholdManager();
 
     double m_value, m_minValue, m_maxValue;
     int m_precision, m_precisionNumeric;
@@ -65,7 +64,7 @@ private:
     bool m_enableWarningWindow;
     double m_beginWarningValue, m_endWarningValue;
     bool m_thresholdEnabled, m_numericIndicatorEnabled;
-    QColor m_foreground, m_background;
+    QColor m_foregroundColor, m_backgroundColor;
 
 };
 

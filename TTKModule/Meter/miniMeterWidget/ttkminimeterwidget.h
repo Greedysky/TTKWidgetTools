@@ -55,7 +55,7 @@ public:
     void setEndAngle(int endAngle);
 
     void setBorderColor(const QColor &borderColor);
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
     void setTextColor(const QColor &textColor);
     void setPercentColor(const QColor &percentColor);
 
@@ -66,8 +66,9 @@ public:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawScale(QPainter *painter);
-    void drawBgCircle(QPainter *painter);
+    void drawBackgroundCircle(QPainter *painter);
     void drawCenterCircle(QPainter *painter);
     void drawPointerCircle(QPainter *painter);
     void drawPointerIndicator(QPainter *painter);
@@ -75,7 +76,6 @@ private:
     void drawPointerTriangle(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;
@@ -85,7 +85,7 @@ private:
     int m_endAngle;
 
     QColor m_borderColor;
-    QColor m_bgColor;
+    QColor m_backgroundColor;
     QColor m_textColor;
     QColor m_percentColor;
     PointerStyle m_pointerStyle;

@@ -43,13 +43,13 @@ public:
     void setCrownColorStart(const QColor &crownColorStart);
     void setCrownColorEnd(const QColor &crownColorEnd);
 
-    void setBgColorStart(const QColor &bgColorStart);
-    void setBgColorEnd(const QColor &bgColorEnd);
+    void setBackgroundColorStart(const QColor &backgroundColorStart);
+    void setBackgroundColorEnd(const QColor &backgroundColorEnd);
 
     void setDarkColor(const QColor &darkColor);
     void setLightColor(const QColor &lightColor);
 
-    void setForeground(const QColor &foreground);
+    void setForegroundColor(const QColor &foregroundColor);
     void setTextColor(const QColor &textColor);
 
     void setNorthPointerColor(const QColor &northPointerColor);
@@ -65,8 +65,9 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawCrownCircle(QPainter *painter);
-    void drawBgCircle(QPainter *painter);
+    void drawBackgroundCircle(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
     void drawCoverOuterCircle(QPainter *painter);
@@ -76,7 +77,6 @@ private:
     void drawCenterCircle(QPainter *painter);
     void drawValue(QPainter *painter);
 
-private:
     double m_value;
     int m_precision;
     bool m_animation;
@@ -84,11 +84,11 @@ private:
 
     QColor m_crownColorStart;
     QColor m_crownColorEnd;
-    QColor m_bgColorStart;
-    QColor m_bgColorEnd;
+    QColor m_backgroundColorStart;
+    QColor m_backgroundColorEnd;
     QColor m_darkColor;
     QColor m_lightColor;
-    QColor m_foreground;
+    QColor m_foregroundColor;
     QColor m_textColor;
     QColor m_northPointerColor;
     QColor m_southPointerColor;

@@ -59,29 +59,14 @@ void TTKGifProgressWidget::setType(Module type)
     update();
 }
 
-TTKGifProgressWidget::Module TTKGifProgressWidget::type() const
-{
-    return m_type;
-}
-
 void TTKGifProgressWidget::setInterval(int value)
 {
     m_timer->setInterval(value);
 }
 
-int TTKGifProgressWidget::interval() const
-{
-    return m_timer->interval();
-}
-
 void TTKGifProgressWidget::setInfinited(bool s)
 {
     m_infinited = s;
-}
-
-bool TTKGifProgressWidget::infinited() const
-{
-    return m_infinited;
 }
 
 void TTKGifProgressWidget::run(bool run)

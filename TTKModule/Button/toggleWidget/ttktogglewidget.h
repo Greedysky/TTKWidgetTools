@@ -39,9 +39,7 @@ public:
     explicit TTKToggleThumb(TTKToggleWidget *parent = nullptr);
 
     void setShift(qreal shift);
-
     inline qreal shift() const { return m_shift; }
-    inline qreal offset() const { return m_offset; }
 
     void setThumbColor(const QColor &color);
     inline QColor thumbColor() const { return m_thumbColor; }

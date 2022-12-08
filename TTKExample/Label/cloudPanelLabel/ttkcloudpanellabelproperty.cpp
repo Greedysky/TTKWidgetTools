@@ -23,9 +23,9 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     m_enumManager->setValue(cloudStyleItem, TTKStatic_cast(int, TTKCloudPanelLabel::CloudStyle::Black));
     objectItem->addSubProperty(cloudStyleItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(0, 0, 0));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(0, 0, 0));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *baseColorItem = m_colorManager->addProperty("BaseColor");
     m_colorManager->setValue(baseColorItem, QColor(80, 80, 80));
@@ -62,9 +62,9 @@ void TTKCloudPanelLabelProperty::enumPropertyChanged(QtProperty *property, int v
 void TTKCloudPanelLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKCloudPanelLabel *widget = TTKObject_cast(TTKCloudPanelLabel*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "BaseColor")
     {

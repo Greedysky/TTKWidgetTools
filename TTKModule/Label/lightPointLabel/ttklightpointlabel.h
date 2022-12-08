@@ -36,18 +36,18 @@ public:
 
     void setStep(int step);
     void setInterval(int interval);
-    void setBgColor(const QColor &bgColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     virtual QSize sizeHint() const override final;
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void drawBg(QPainter *painter);
 
-private:
+    void drawBackground(QPainter *painter);
+
     int m_step;
     int m_interval;
-    QColor m_bgColor;
+    QColor m_backgroundColor;
 
     int m_offset;
     bool m_add;

@@ -19,7 +19,7 @@ TTKPercentMeterWidget::TTKPercentMeterWidget(QWidget *parent)
       m_textColor(46, 52, 54),
       m_titleColor(0, 0, 0),
       m_baseColor(178, 221, 253),
-      m_bgColor(Qt::transparent),
+      m_backgroundColor(Qt::transparent),
       m_title("Hello")
 {
 
@@ -172,11 +172,11 @@ void TTKPercentMeterWidget::setBaseColor(const QColor &baseColor)
     }
 }
 
-void TTKPercentMeterWidget::setBgColor(const QColor &bgColor)
+void TTKPercentMeterWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_bgColor != bgColor)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_bgColor = bgColor;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -197,10 +197,10 @@ void TTKPercentMeterWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    if(m_bgColor != Qt::transparent)
+    if(m_backgroundColor != Qt::transparent)
     {
         painter.setPen(Qt::NoPen);
-        painter.fillRect(rect(), m_bgColor);
+        painter.fillRect(rect(), m_backgroundColor);
     }
 
     painter.translate(w / 2, h / 2);

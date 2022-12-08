@@ -25,8 +25,8 @@ TTKMarqueeLabel::TTKMarqueeLabel(QWidget *parent)
     connect(m_timer, SIGNAL(timeout()), this, SLOT(timeout()));
     m_timer->start();
 
-    setForeground(QColor(100, 184, 255));
-    setBackground(QColor(222, 222, 222));
+    setForegroundColor(QColor(100, 184, 255));
+    setBackgroundColor(QColor(222, 222, 222));
 }
 
 TTKMarqueeLabel::~TTKMarqueeLabel()
@@ -88,24 +88,24 @@ void TTKMarqueeLabel::setMouseHoverStop(bool mouseHoverStop)
     }
 }
 
-void TTKMarqueeLabel::setForeground(const QColor &foreground)
+void TTKMarqueeLabel::setForegroundColor(const QColor &foregroundColor)
 {
-    if(m_foreground != foreground)
+    if(m_foregroundColor != foregroundColor)
     {
-        m_foreground = foreground;
+        m_foregroundColor = foregroundColor;
         QPalette plt = m_labText->palette();
-        plt.setColor(QPalette::WindowText, foreground);
+        plt.setColor(QPalette::WindowText, foregroundColor);
         m_labText->setPalette(plt);
     }
 }
 
-void TTKMarqueeLabel::setBackground(const QColor &background)
+void TTKMarqueeLabel::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_background != background)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_background = background;
+        m_backgroundColor = backgroundColor;
         QPalette plt = palette();
-        plt.setColor(QPalette::Window, background);
+        plt.setColor(QPalette::Window, backgroundColor);
         setPalette(plt);
     }
 }

@@ -51,11 +51,11 @@ public:
     virtual QSize sizeHint() const override final;
 
 private:
-    void paintDot(QPainter &painter);
     virtual void paintEvent(QPaintEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
 
-private:
+    void drawDot(QPainter *painter);
+
     int m_index, m_count;
     QColor m_dotColor;
     float m_minDiameter, m_maxDiameter;

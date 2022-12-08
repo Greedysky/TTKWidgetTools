@@ -47,8 +47,8 @@ public:
 
     void setMouseHoverStop(bool mouseHoverStop);
 
-    void setForeground(const QColor &foreground);
-    void setBackground(const QColor &background);
+    void setForegroundColor(const QColor &foregroundColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     void setMoveStyle(MoveStyle moveStyle);
 
@@ -62,7 +62,6 @@ private:
     virtual void enterEvent(QtEnterEvent *event) override final;
     virtual void leaveEvent(QEvent *event) override final;
 
-private:
     QString m_text;
     int m_step;
     int m_interval;
@@ -75,8 +74,8 @@ private:
     QLabel *m_labText;
     QTimer *m_timer;
 
-    QColor m_foreground;
-    QColor m_background;
+    QColor m_foregroundColor;
+    QColor m_backgroundColor;
 
     MoveStyle m_moveStyle;
 

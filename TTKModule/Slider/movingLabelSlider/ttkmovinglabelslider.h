@@ -35,7 +35,6 @@ public:
     ~TTKMovingLabelSlider();
 
     inline bool isMoving() const { return m_isMoving;}
-
     inline void setMoving(bool m) { m_isMoving = m;}
 
 Q_SIGNALS:

@@ -61,7 +61,7 @@ public:
     void setProgressColor(const QColor &color);
     QColor progressColor() const;
 
-    void setBackgroundColor(const QColor &color);
+    void setBackgroundColor(const QColor &backgroundColor);
     QColor backgroundColor() const;
 
 private:

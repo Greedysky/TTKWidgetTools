@@ -51,13 +51,8 @@ public:
     ~TTKGifProgressWidget();
 
     void setType(Module type);
-    Module type() const;
-
     void setInterval(int value);
-    int interval() const;
-
     void setInfinited(bool s);
-    bool infinited() const;
 
     void run(bool run);
 
@@ -71,6 +66,7 @@ public Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     bool infinitedModeCheck();
 
     int m_index;

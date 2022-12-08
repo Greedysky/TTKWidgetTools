@@ -55,21 +55,21 @@ TTKRoundMeterWidgetProperty::TTKRoundMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(valueTextColorItem, QColor(52, 155, 218));
     objectItem->addSubProperty(valueTextColorItem);
     //
-    QtProperty *valueBgColorItem = m_colorManager->addProperty("ValueBgColor");
-    m_colorManager->setValue(valueBgColorItem, QColor(239, 239, 239));
-    objectItem->addSubProperty(valueBgColorItem);
+    QtProperty *valueBackgroundColorItem = m_colorManager->addProperty("ValueBackgroundColor");
+    m_colorManager->setValue(valueBackgroundColorItem, QColor(239, 239, 239));
+    objectItem->addSubProperty(valueBackgroundColorItem);
     //
-    QtProperty *outBgColorItem = m_colorManager->addProperty("OutBgColor");
-    m_colorManager->setValue(outBgColorItem, QColor(233, 233, 233));
-    objectItem->addSubProperty(outBgColorItem);
+    QtProperty *outBackgroundColorItem = m_colorManager->addProperty("OutBackgroundColor");
+    m_colorManager->setValue(outBackgroundColorItem, QColor(233, 233, 233));
+    objectItem->addSubProperty(outBackgroundColorItem);
     //
-    QtProperty *centerBgColorStartItem = m_colorManager->addProperty("CenterBgColorStart");
-    m_colorManager->setValue(centerBgColorStartItem, QColor(45, 204, 112));
-    objectItem->addSubProperty(centerBgColorStartItem);
+    QtProperty *centerBackgroundColorStartItem = m_colorManager->addProperty("CenterBackgroundColorStart");
+    m_colorManager->setValue(centerBackgroundColorStartItem, QColor(45, 204, 112));
+    objectItem->addSubProperty(centerBackgroundColorStartItem);
     //
-    QtProperty *centerBgColorEndItem = m_colorManager->addProperty("CenterBgColorEnd");
-    m_colorManager->setValue(centerBgColorEndItem, QColor(51, 152, 219));
-    objectItem->addSubProperty(centerBgColorEndItem);
+    QtProperty *centerBackgroundColorEndItem = m_colorManager->addProperty("CenterBackgroundColorEnd");
+    m_colorManager->setValue(centerBackgroundColorEndItem, QColor(51, 152, 219));
+    objectItem->addSubProperty(centerBackgroundColorEndItem);
     //
     QtProperty *unitItem = m_stringManager->addProperty("Unit");
     m_stringManager->setValue(unitItem, "%");
@@ -136,20 +136,20 @@ void TTKRoundMeterWidgetProperty::colorPropertyChanged(QtProperty *property, con
     {
         widget->setValueTextColor(value);
     }
-    else if(property->propertyName() == "ValueBgColor")
+    else if(property->propertyName() == "ValueBackgroundColor")
     {
-        widget->setValueBgColor(value);
+        widget->setValueBackgroundColor(value);
     }
-    else if(property->propertyName() == "OutBgColor")
+    else if(property->propertyName() == "OutBackgroundColor")
     {
-        widget->setOutBgColor(value);
+        widget->setOutBackgroundColor(value);
     }
-    else if(property->propertyName() == "CenterBgColorStart")
+    else if(property->propertyName() == "CenterBackgroundColorStart")
     {
-        widget->setCenterBgColorStart(value);
+        widget->setCenterBackgroundColorStart(value);
     }
-    else if(property->propertyName() == "CenterBgColorEnd")
+    else if(property->propertyName() == "CenterBackgroundColorEnd")
     {
-        widget->setCenterBgColorEnd(value);
+        widget->setCenterBackgroundColorEnd(value);
     }
 }

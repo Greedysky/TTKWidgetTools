@@ -84,17 +84,17 @@ public:
     void setLinePosition(LinePosition linePosition);
     void setLineColor(const QColor &lineColor);
 
-    void setNormalBgColor(const QColor &normalBgColor);
-    void setHoverBgColor(const QColor &hoverBgColor);
-    void setCheckBgColor(const QColor &checkBgColor);
+    void setNormalBackgroundColor(const QColor &normalBackgroundColor);
+    void setHoverBackgroundColor(const QColor &hoverBackgroundColor);
+    void setCheckBackgroundColor(const QColor &checkBackgroundColor);
 
     void setNormalTextColor(const QColor &normalTextColor);
     void setHoverTextColor(const QColor &hoverTextColor);
     void setCheckTextColor(const QColor &checkTextColor);
 
-    void setNormalBgBrush(const QBrush &normalBgBrush);
-    void setHoverBgBrush(const QBrush &hoverBgBrush);
-    void setCheckBgBrush(const QBrush &checkBgBrush);
+    void setNormalBackgroundBrush(const QBrush &normalBackgroundBrush);
+    void setHoverBackgroundBrush(const QBrush &hoverBackgroundBrush);
+    void setCheckBackgroundBrush(const QBrush &checkBackgroundBrush);
 
     virtual QSize sizeHint() const override final;
 
@@ -103,14 +103,12 @@ private:
     virtual void leaveEvent(QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-private:
     void drawBackground(QPainter *painter);
     void drawText(QPainter *painter);
     void drawIcon(QPainter *painter);
     void drawLine(QPainter *painter);
     void drawTriangle(QPainter *painter);
 
-private:
     int m_paddingLeft, m_paddingRight, m_paddingTop, m_paddingBottom;
     Qt::Alignment m_textAlign;
 
@@ -129,12 +127,13 @@ private:
     LinePosition m_linePosition;
     QColor m_lineColor;
 
-    QColor m_normalBgColor, m_hoverBgColor, m_checkBgColor;
+    QColor m_normalBackgroundColor, m_hoverBackgroundColor, m_checkBackgroundColor;
     QColor m_normalTextColor, m_hoverTextColor, m_checkTextColor;
 
-    QBrush m_normalBgBrush, m_hoverBgBrush, m_checkBgBrush;
+    QBrush m_normalBackgroundBrush, m_hoverBackgroundBrush, m_checkBackgroundBrush;
 
     bool m_hover;
+
 };
 
 #endif // TTKFUNCTIONNAVIGATIONBUTTON_H

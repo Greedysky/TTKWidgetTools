@@ -7,22 +7,22 @@ TTKLedPageLabel::TTKLedPageLabel(QWidget *parent)
     : QWidget(parent)
 {
     setScale(0.6f);
-    setBackColor(QColor(85, 85, 85));
-    setFrontColor(QColor(255, 255, 255));
+    setBackgroundColor(QColor(85, 85, 85));
+    setForegroundColor(QColor(255, 255, 255));
     setLineColor(QColor(60, 60, 60));
     setText("2");
     setFontSize(40);
 }
 
-void TTKLedPageLabel::setFrontColor(const QColor &color)
+void TTKLedPageLabel::setForegroundColor(const QColor &color)
 {
-    m_frontColor = color;
+    m_foregroundColor = color;
     update();
 }
 
-void TTKLedPageLabel::setBackColor(const QColor &color)
+void TTKLedPageLabel::setBackgroundColor(const QColor &color)
 {
-    m_backColor = color;
+    m_backgroundColor = color;
     update();
 }
 
@@ -77,33 +77,33 @@ void TTKLedPageLabel::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    drawBack(painter);
-    drawText(painter);
-    drawLine(painter);
+    drawBackground(&painter);
+    drawText(&painter);
+    drawLine(&painter);
 }
 
-void TTKLedPageLabel::drawBack(QPainter &painter)
+void TTKLedPageLabel::drawBackground(QPainter *painter)
 {
-    QPen pen(m_backColor,1);
-    painter.setPen(pen);
+    QPen pen(m_backgroundColor, 1);
+    painter->setPen(pen);
 
     QPainterPath path;
     path.addRoundedRect(1, 1, m_width,  m_height, 10, 10);
-    painter.fillPath(path, m_backColor);
-    painter.drawPath(path);
+    painter->fillPath(path, m_backgroundColor);
+    painter->drawPath(path);
 }
 
-void TTKLedPageLabel::drawText(QPainter &painter)
+void TTKLedPageLabel::drawText(QPainter *painter)
 {
-    QPen pen(m_frontColor);
-    painter.setPen(pen);
+    QPen pen(m_foregroundColor);
+    painter->setPen(pen);
     setFont(QtFontInit("Roboto", m_fontSize, QFont::Bold));
-    painter.drawText(0, 0, m_width, m_height, Qt::AlignCenter, m_text);
+    painter->drawText(0, 0, m_width, m_height, Qt::AlignCenter, m_text);
 }
 
-void TTKLedPageLabel::drawLine(QPainter &painter)
+void TTKLedPageLabel::drawLine(QPainter *painter)
 {
     QPen pen(m_lineColor, 3);
-    painter.setPen(pen);
-    painter.drawLine(1, m_height / 2, m_width + 1, m_height / 2);
+    painter->setPen(pen);
+    painter->drawLine(1, m_height / 2, m_width + 1, m_height / 2);
 }

@@ -9,8 +9,8 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     : QWidget(parent),
       m_crownColorStart(255, 255, 255),
       m_crownColorEnd(166, 166, 166),
-      m_foreground(255, 255, 255),
-      m_background(65, 65, 65),
+      m_foregroundColor(255, 255, 255),
+      m_backgroundColor(65, 65, 65),
       m_pointerHourColor(160, 160, 160),
       m_pointerMinColor(160, 160, 160),
       m_pointerSecColor(160, 160, 160)
@@ -62,20 +62,20 @@ void TTKClockMeterWidget::setCrownColorEnd(const QColor &crownColorEnd)
     }
 }
 
-void TTKClockMeterWidget::setForeground(const QColor &foreground)
+void TTKClockMeterWidget::setForegroundColor(const QColor &foregroundColor)
 {
-    if(m_foreground != foreground)
+    if(m_foregroundColor != foregroundColor)
     {
-        m_foreground = foreground;
+        m_foregroundColor = foregroundColor;
         update();
     }
 }
 
-void TTKClockMeterWidget::setBackground(const QColor &background)
+void TTKClockMeterWidget::setBackgroundColor(const QColor &backgroundColor)
 {
-    if(m_background != background)
+    if(m_backgroundColor != backgroundColor)
     {
-        m_background = background;
+        m_backgroundColor = backgroundColor;
         update();
     }
 }
@@ -169,7 +169,7 @@ void TTKClockMeterWidget::paintEvent(QPaintEvent *event)
     painter.scale(side / 200.0, side / 200.0);
 
     drawCrown(&painter);
-    drawBg(&painter);
+    drawBackground(&painter);
     drawScale(&painter);
     drawScaleNum(&painter);
     drawHour(&painter);
@@ -193,13 +193,13 @@ void TTKClockMeterWidget::drawCrown(QPainter *painter)
     painter->restore();
 }
 
-void TTKClockMeterWidget::drawBg(QPainter *painter)
+void TTKClockMeterWidget::drawBackground(QPainter *painter)
 {
     constexpr int radius = 92;
 
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_background);
+    painter->setBrush(m_backgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }
@@ -208,7 +208,7 @@ void TTKClockMeterWidget::drawScale(QPainter *painter)
 {
     constexpr int radius = 90;
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     QPen pen = painter->pen();
     pen.setCapStyle(Qt::RoundCap);
@@ -236,7 +236,7 @@ void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
 {
     constexpr int radius = 70;
     painter->save();
-    painter->setPen(m_foreground);
+    painter->setPen(m_foregroundColor);
 
     constexpr double startRad = 60 * (M_PI / 180);
     constexpr double deltaRad = 30 * (M_PI / 180);
@@ -313,9 +313,9 @@ void TTKClockMeterWidget::drawDot(QPainter *painter)
     painter->save();
 
     QConicalGradient coneGradient(0, 0, -90.0);
-    coneGradient.setColorAt(0.0, m_background);
-    coneGradient.setColorAt(0.5, m_foreground);
-    coneGradient.setColorAt(1.0, m_background);
+    coneGradient.setColorAt(0.0, m_backgroundColor);
+    coneGradient.setColorAt(0.5, m_foregroundColor);
+    coneGradient.setColorAt(1.0, m_backgroundColor);
 
     painter->setOpacity(0.9);
     painter->setPen(Qt::NoPen);

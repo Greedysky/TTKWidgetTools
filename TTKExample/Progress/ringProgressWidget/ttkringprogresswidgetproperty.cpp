@@ -71,9 +71,9 @@ TTKRingProgressWidgetProperty::TTKRingProgressWidgetProperty(QWidget *parent)
     m_doubleManager->setValue(animationStepItem, 0.5);
     objectItem->addSubProperty(animationStepItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(255, 255, 255));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(255, 255, 255));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *textColorItem = m_colorManager->addProperty("TextColor");
     m_colorManager->setValue(textColorItem, QColor(60, 60, 60));
@@ -83,9 +83,9 @@ TTKRingProgressWidgetProperty::TTKRingProgressWidgetProperty(QWidget *parent)
     m_colorManager->setValue(ringColorItem, QColor(80, 80, 80));
     objectItem->addSubProperty(ringColorItem);
     //
-    QtProperty *ringBgColortem = m_colorManager->addProperty("RingBgColor");
-    m_colorManager->setValue(ringBgColortem, QColor(253, 107, 107));
-    objectItem->addSubProperty(ringBgColortem);
+    QtProperty *ringBackgroundColortem = m_colorManager->addProperty("RingBackgroundColor");
+    m_colorManager->setValue(ringBackgroundColortem, QColor(253, 107, 107));
+    objectItem->addSubProperty(ringBackgroundColortem);
     //
     QtProperty *circleColorItem = m_colorManager->addProperty("CircleColor");
     m_colorManager->setValue(circleColorItem, QColor(217, 217, 0));
@@ -199,9 +199,9 @@ void TTKRingProgressWidgetProperty::doublePropertyChanged(QtProperty *property, 
 void TTKRingProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKRingProgressWidget *widget = TTKObject_cast(TTKRingProgressWidget*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "TextColor")
     {
@@ -211,9 +211,9 @@ void TTKRingProgressWidgetProperty::colorPropertyChanged(QtProperty *property, c
     {
         widget->setRingColor(value);
     }
-    else if(property->propertyName() == "RingBgColor")
+    else if(property->propertyName() == "RingBackgroundColor")
     {
-        widget->setRingBgColor(value);
+        widget->setRingBackgroundColor(value);
     }
     else if(property->propertyName() == "CircleColor")
     {

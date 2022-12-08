@@ -62,11 +62,11 @@ private Q_SLOTS:
 private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawScan(QPainter *painter);
     void drawRing(QPainter *painter);
     void drawImage(QPainter *painter);
 
-private:
     QPixmap m_image;
 
     int m_imageRadius;

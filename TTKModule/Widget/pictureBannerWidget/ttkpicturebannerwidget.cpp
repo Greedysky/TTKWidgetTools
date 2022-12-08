@@ -6,9 +6,6 @@
 #include <QMouseEvent>
 #include <QPropertyAnimation>
 
-const QColor frontColor = QColor(220, 0, 0);
-const QColor backColor = QColor(200, 200, 200);
-
 TTKPictureBannerArrowWidget::TTKPictureBannerArrowWidget(Arrow type, QWidget *parent)
     : QWidget(parent),
       m_bMouseHover(false),
@@ -106,7 +103,7 @@ void TTKPictureBannerIndicator::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QBrush(m_selected ? frontColor : backColor));
+    painter.setBrush(QBrush(m_selected ? QColor(200, 200, 200) : QColor(220, 0, 0)));
     painter.drawRect(rect());
 }
 

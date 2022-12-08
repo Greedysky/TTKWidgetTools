@@ -14,10 +14,10 @@ TTKRoundMeterWidget::TTKRoundMeterWidget(QWidget *parent)
       m_freeColor(70, 70, 70),
       m_rangeTextColor(137, 137, 137),
       m_valueTextColor(52, 155, 218),
-      m_valueBgColor(239, 239, 239),
-      m_outBgColor(233, 233, 233),
-      m_centerBgColorStart(45, 204, 112),
-      m_centerBgColorEnd(51, 152, 219),
+      m_valueBackgroundColor(239, 239, 239),
+      m_outBackgroundColor(233, 233, 233),
+      m_centerBackgroundColorStart(45, 204, 112),
+      m_centerBackgroundColorEnd(51, 152, 219),
       m_currentPercent(0),
       m_valuePercent(0)
 {    
@@ -156,38 +156,38 @@ void TTKRoundMeterWidget::setValueTextColor(const QColor &valueTextColor)
     }
 }
 
-void TTKRoundMeterWidget::setValueBgColor(const QColor &valueBgColor)
+void TTKRoundMeterWidget::setValueBackgroundColor(const QColor &valueBackgroundColor)
 {
-    if(m_valueBgColor != valueBgColor)
+    if(m_valueBackgroundColor != valueBackgroundColor)
     {
-        m_valueBgColor = valueBgColor;
+        m_valueBackgroundColor = valueBackgroundColor;
         update();
     }
 }
 
-void TTKRoundMeterWidget::setOutBgColor(const QColor &outBgColor)
+void TTKRoundMeterWidget::setOutBackgroundColor(const QColor &outBackgroundColor)
 {
-    if(m_outBgColor != outBgColor)
+    if(m_outBackgroundColor != outBackgroundColor)
     {
-        m_outBgColor = outBgColor;
+        m_outBackgroundColor = outBackgroundColor;
         update();
     }
 }
 
-void TTKRoundMeterWidget::setCenterBgColorStart(const QColor &centerBgColorStart)
+void TTKRoundMeterWidget::setCenterBackgroundColorStart(const QColor &centerBackgroundColorStart)
 {
-    if(m_centerBgColorStart != centerBgColorStart)
+    if(m_centerBackgroundColorStart != centerBackgroundColorStart)
     {
-        m_centerBgColorStart = centerBgColorStart;
+        m_centerBackgroundColorStart = centerBackgroundColorStart;
         update();
     }
 }
 
-void TTKRoundMeterWidget::setCenterBgColorEnd(const QColor &centerBgColorEnd)
+void TTKRoundMeterWidget::setCenterBackgroundColorEnd(const QColor &centerBackgroundColorEnd)
 {
-    if(m_centerBgColorEnd != centerBgColorEnd)
+    if(m_centerBackgroundColorEnd != centerBackgroundColorEnd)
     {
-        m_centerBgColorEnd = centerBgColorEnd;
+        m_centerBackgroundColorEnd = centerBackgroundColorEnd;
         update();
     }
 }
@@ -223,9 +223,9 @@ void TTKRoundMeterWidget::paintEvent(QPaintEvent *event)
     painter.scale(side / 200.0, side / 200.0);
 
     drawDial(&painter);
-    drawBgOut(&painter);
-    drawBgRound(&painter);
-    drawBgCenter(&painter);
+    drawBackgroundOut(&painter);
+    drawBackgroundRound(&painter);
+    drawBackgroundCenter(&painter);
     drawText(&painter);
 }
 
@@ -263,24 +263,24 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     painter->restore();
 }
 
-void TTKRoundMeterWidget::drawBgOut(QPainter *painter)
+void TTKRoundMeterWidget::drawBackgroundOut(QPainter *painter)
 {
     constexpr int radius = 70;
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_outBgColor);
+    painter->setBrush(m_outBackgroundColor);
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();
 }
 
-void TTKRoundMeterWidget::drawBgRound(QPainter *painter)
+void TTKRoundMeterWidget::drawBackgroundRound(QPainter *painter)
 {
     constexpr int radius = 50;
     painter->save();
 
     QConicalGradient conicalGradient(radius, radius, 90);
-    conicalGradient.setColorAt(0, m_centerBgColorStart);
-    conicalGradient.setColorAt(1.0, m_centerBgColorEnd);
+    conicalGradient.setColorAt(0, m_centerBackgroundColorStart);
+    conicalGradient.setColorAt(1.0, m_centerBackgroundColorEnd);
 
     painter->setPen(Qt::NoPen);
     painter->setBrush(conicalGradient);
@@ -288,12 +288,12 @@ void TTKRoundMeterWidget::drawBgRound(QPainter *painter)
     painter->restore();
 }
 
-void TTKRoundMeterWidget::drawBgCenter(QPainter *painter)
+void TTKRoundMeterWidget::drawBackgroundCenter(QPainter *painter)
 {
     constexpr int radius = 30;
     painter->save();
     painter->setPen(Qt::NoPen);
-    painter->setBrush(m_valueBgColor);
+    painter->setBrush(m_valueBackgroundColor);
 
     painter->drawEllipse(-radius, -radius, radius * 2, radius * 2);
     painter->restore();

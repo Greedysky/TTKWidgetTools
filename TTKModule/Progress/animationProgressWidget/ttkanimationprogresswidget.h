@@ -39,13 +39,12 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-private:
-    virtual void paintEvent(QPaintEvent *event) override final;
-
 private Q_SLOTS:
     void valueChanged(const QVariant &value);
 
 private:
+    virtual void paintEvent(QPaintEvent *event) override final;
+
     int m_index;
     int m_value;
     QList<QPixmap> m_ranges;

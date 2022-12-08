@@ -54,14 +54,13 @@ public:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawPie(QPainter *painter);
 
-private:
     void clearPie();
     double sumValue();
     QPoint offsetPoint(double angel, int offset);
 
-private:
     bool m_explodedAll;
     int m_explodedIndex;
     bool m_showPercent;

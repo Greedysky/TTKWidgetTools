@@ -45,8 +45,8 @@ public:
     void setCrownColorStart(const QColor &crownColorStart);
     void setCrownColorEnd(const QColor &crownColorEnd);
 
-    void setForeground(const QColor &foreground);
-    void setBackground(const QColor &background);
+    void setForegroundColor(const QColor &foregroundColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     void setPointerHourColor(const QColor &pointerHourColor);
     void setPointerMinColor(const QColor &pointerMinColor);
@@ -62,8 +62,9 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawCrown(QPainter *painter);
-    void drawBg(QPainter *painter);
+    void drawBackground(QPainter *painter);
     void drawScale(QPainter *painter);
     void drawScaleNum(QPainter *painter);
     void drawHour(QPainter *painter);
@@ -71,12 +72,11 @@ private:
     void drawSec(QPainter *painter);
     void drawDot(QPainter *painter);
 
-private:
     QColor m_crownColorStart;
     QColor m_crownColorEnd;
 
-    QColor m_foreground;
-    QColor m_background;
+    QColor m_foregroundColor;
+    QColor m_backgroundColor;
 
     QColor m_pointerHourColor;
     QColor m_pointerMinColor;

@@ -193,7 +193,7 @@ void TTKBatteryLabel::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     drawBorder(&painter);
-    drawBg(&painter);
+    drawBackground(&painter);
 }
 
 void TTKBatteryLabel::drawBorder(QPainter *painter)
@@ -223,7 +223,7 @@ void TTKBatteryLabel::drawBorder(QPainter *painter)
     painter->restore();
 }
 
-void TTKBatteryLabel::drawBg(QPainter *painter)
+void TTKBatteryLabel::drawBackground(QPainter *painter)
 {
     painter->save();
     QLinearGradient batteryGradient(QPointF(0, 0), QPointF(0, height()));

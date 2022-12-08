@@ -88,6 +88,7 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
+
     void drawOuterCircle(QPainter *painter);
     void drawInnerCircle(QPainter *painter);
     void drawColorPie(QPainter *painter);
@@ -103,7 +104,6 @@ private:
     void drawValue(QPainter *painter);
     void drawOverlay(QPainter *painter);
 
-private:
     double m_minValue;
     double m_maxValue;
     double m_value;

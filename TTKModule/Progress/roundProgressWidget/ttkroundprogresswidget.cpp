@@ -106,9 +106,26 @@ void TTKRoundProgressWidget::setPrecision(int precision)
     update();
 }
 
+void TTKRoundProgressWidget::setInnerDefaultTextStyle(InnerDefaultTextStyle style)
+{
+    m_innerDefaultTextStyle = style;
+}
+
 QSize TTKRoundProgressWidget::sizeHint() const
 {
     return QSize(200, 200);
+}
+
+void TTKRoundProgressWidget::paintEvent(QPaintEvent *event)
+{
+    Q_UNUSED(event);
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
+    drawOutterBar(&painter);
+    drawInnerBar(&painter);
+    drawDot(&painter);
+    drawText(&painter);
 }
 
 void TTKRoundProgressWidget::resizeEvent(QResizeEvent *event)
@@ -131,19 +148,7 @@ void TTKRoundProgressWidget::resizeEvent(QResizeEvent *event)
     m_dotY = m_squareStart;
 }
 
-void TTKRoundProgressWidget::paintEvent(QPaintEvent *event)
-{
-    Q_UNUSED(event);
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
-    paintOutterBar(painter);
-    paintInnerBar(painter);
-    paintDot(painter);
-    paintText(painter);
-}
-
-void TTKRoundProgressWidget::paintOutterBar(QPainter &painter)
+void TTKRoundProgressWidget::drawOutterBar(QPainter *painter)
 {
     if(!(m_controlFlags & OutterCirle))
     {
@@ -153,12 +158,11 @@ void TTKRoundProgressWidget::paintOutterBar(QPainter &painter)
     QPen pen;
     pen.setWidth(m_outterBarWidth);
     pen.setColor(m_outterColor);
-    painter.setPen(pen);
-
-    painter.drawEllipse(QRectF(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth));
+    painter->setPen(pen);
+    painter->drawEllipse(QRectF(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth));
 }
 
-void TTKRoundProgressWidget::paintInnerBar(QPainter& painter)
+void TTKRoundProgressWidget::drawInnerBar(QPainter *painter)
 {
     QPen pen;
     if(!(m_controlFlags & LinearColor))
@@ -179,14 +183,14 @@ void TTKRoundProgressWidget::paintInnerBar(QPainter& painter)
     pen.setStyle(Qt::SolidLine);
     pen.setCapStyle(Qt::RoundCap);
     pen.setJoinStyle(Qt::RoundJoin);
-    painter.setPen(pen);
+    painter->setPen(pen);
 
     const int startAngle = m_startAngle * 16;
     const int spanAngle = (m_value - m_min) / (m_max-m_min) * 360 * 16 * (m_clockWise ? - 1 : 1);
-    painter.drawArc(QRectF(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth), startAngle, spanAngle);
+    painter->drawArc(QRectF(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth), startAngle, spanAngle);
 }
 
-void TTKRoundProgressWidget::paintDot(QPainter& painter)
+void TTKRoundProgressWidget::drawDot(QPainter *painter)
 {
     if(!(m_controlFlags & DecorateDot))
     {
@@ -198,32 +202,31 @@ void TTKRoundProgressWidget::paintDot(QPainter& painter)
         return;
     }
 
-    painter.setPen(QColor(255, 255, 255));
-    painter.setBrush(QColor(255, 255, 255));
-
-    painter.drawEllipse(m_dotX - m_innerBarWidth / 6, m_dotY - m_innerBarWidth / 6, m_innerBarWidth / 3, m_innerBarWidth / 3);
+    painter->setPen(QColor(255, 255, 255));
+    painter->setBrush(QColor(255, 255, 255));
+    painter->drawEllipse(m_dotX - m_innerBarWidth / 6, m_dotY - m_innerBarWidth / 6, m_innerBarWidth / 3, m_innerBarWidth / 3);
 }
 
-void TTKRoundProgressWidget::paintText(QPainter& painter)
+void TTKRoundProgressWidget::drawText(QPainter *painter)
 {
     if(!(m_controlFlags & DefaultText))
     {
         return;
     }
 
-    painter.setPen(m_textColor);
+    painter->setPen(m_textColor);
     setFont(QtFontInit("Roboto", 22, QFont::Bold));
 
     switch(m_innerDefaultTextStyle)
     {
         case InnerDefaultTextStyle::Value:
-            painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision));
+            painter->drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision));
             break;
         case InnerDefaultTextStyle::ValueAndMax:
-            painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision) + TTK_SEPARATOR + QString::number(m_max, 'f', m_precision));
+            painter->drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value, 'f', m_precision) + TTK_SEPARATOR + QString::number(m_max, 'f', m_precision));
             break;
         case InnerDefaultTextStyle::Percent:
-            painter.drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value / m_max * 100, 'f', m_precision) + "%");
+            painter->drawText(m_squareStart, m_squareStart, m_squareWidth, m_squareWidth, Qt::AlignCenter, QString::number(m_value / m_max * 100, 'f', m_precision) + "%");
             break;
         default:
             break;

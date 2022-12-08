@@ -94,6 +94,7 @@ Progress
 | Progress | TTKRoundProgressWidget |   Finish   |
 | Progress | TTKRingProgressWidget |   Finish   |
 | Progress | TTKWaveProgressWidget |   Finish   |
+| Progress | TTKPieWaitProgressWidget |   Finish   |
 
 Slider
 ----

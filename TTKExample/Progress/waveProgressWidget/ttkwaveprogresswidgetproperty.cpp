@@ -49,9 +49,9 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     m_doubleManager->setValue(borderWidthItem, 2);
     objectItem->addSubProperty(borderWidthItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(0, 100, 255));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(0, 100, 255));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *percentStyleItem = m_enumManager->addProperty("PercentStyle");
     QStringList enumNames;
@@ -113,9 +113,9 @@ void TTKWaveProgressWidgetProperty::enumPropertyChanged(QtProperty *property, in
 void TTKWaveProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
     TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
-    if(property->propertyName() == "BgColor")
+    if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
 }
 

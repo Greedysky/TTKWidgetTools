@@ -47,10 +47,10 @@ Q_SIGNALS:
     void mousePressAt(int index);
 
 private:
-    bool isItemEnable() const;
-
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
+
+    bool isItemEnable() const;
 
     int m_index;
     QString m_suffixString;

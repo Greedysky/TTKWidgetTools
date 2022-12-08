@@ -39,18 +39,17 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-private:
-    void initialize(QLineEdit *edit);
-    QLineEdit *nextEdit(QLineEdit *edit);
-    bool isEdit(QObject *object);
-
-    virtual void paintEvent(QPaintEvent *event) override final;
-    virtual bool eventFilter(QObject *object, QEvent *event) override final;
-
 private Q_SLOTS:
     void editTextChanged(const QString &text);
 
 private:
+    virtual void paintEvent(QPaintEvent *event) override final;
+    virtual bool eventFilter(QObject *object, QEvent *event) override final;
+
+    void initialize(QLineEdit *edit);
+    QLineEdit *nextEdit(QLineEdit *edit);
+    bool isEdit(QObject *object);
+
     QBoxLayout *m_layout;
     QLineEdit *m_input_f, *m_input_s, *m_input_t, *m_input_l;
     QLabel *m_dot_f, *m_dot_s, *m_dot_t;

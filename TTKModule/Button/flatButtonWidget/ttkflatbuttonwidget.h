@@ -39,25 +39,18 @@ public:
 
     explicit TTKFlatButtonWidget(QWidget *parent = nullptr);
 
-    void setForegroundColor(const QColor &color);
-    inline QColor foregroundColor() const { return m_foregroundColor; }
-
-    void setBackgroundColor(const QColor &color);
-    inline QColor backgroundColor() const { return m_backgroundColor; }
+    void setForegroundColor(const QColor &foregroundColor);
+    void setBackgroundColor(const QColor &backgroundColor);
 
     void setIconAlignment(IconAlignment alignment);
-    inline IconAlignment iconAlignment() const { return m_iconAlignment; }
-
     void setCornerRadius(qreal radius);
-    inline qreal cornerRadius() const { return m_cornerRadius; }
-
     void setTextAlignment(Qt::Alignment alignment);
-    inline Qt::Alignment textAlignment() const { return m_textAlignment; }
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    void paintBackground(QPainter *painter);
-    void paintForeground(QPainter *painter);
+
+    void drawForeground(QPainter *painter);
+    void drawBackground(QPainter *painter);
 
     Qt::Alignment m_textAlignment;
     IconAlignment m_iconAlignment;

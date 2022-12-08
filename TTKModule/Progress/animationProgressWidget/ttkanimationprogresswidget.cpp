@@ -42,6 +42,14 @@ QSize TTKAnimationProgressWidget::sizeHint() const
     return QSize(200, 200);
 }
 
+void TTKAnimationProgressWidget::valueChanged(const QVariant &value)
+{
+    m_index = value.toInt();
+    m_value = m_index*100 / MAX_SIZE;
+
+    update();
+}
+
 void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
@@ -55,12 +63,4 @@ void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
     setFont(QtFontInit("Roboto", 15, QFont::Bold));
     painter.setPen(QColor(0x55, 0x55, 0x55));
     painter.drawText(QRect(20, 20, side - 40, side - 40), Qt::AlignCenter, QString("%1%").arg(m_value));
-}
-
-void TTKAnimationProgressWidget::valueChanged(const QVariant &value)
-{
-    m_index = value.toInt();
-    m_value = m_index*100 / MAX_SIZE;
-
-    update();
 }

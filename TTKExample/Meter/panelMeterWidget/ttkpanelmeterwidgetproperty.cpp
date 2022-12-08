@@ -81,9 +81,9 @@ TTKPanelMeterWidgetProperty::TTKPanelMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(pointerColorItem, QColor(0, 181, 200));
     objectItem->addSubProperty(pointerColorItem);
     //
-    QtProperty *bgColorItem = m_colorManager->addProperty("BgColor");
-    m_colorManager->setValue(bgColorItem, QColor(0, 0, 0));
-    objectItem->addSubProperty(bgColorItem);
+    QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
+    m_colorManager->setValue(backgroundColorItem, QColor(0, 0, 0));
+    objectItem->addSubProperty(backgroundColorItem);
     //
     QtProperty *textColorItem = m_colorManager->addProperty("TextColor");
     m_colorManager->setValue(textColorItem, QColor(255, 255, 255));
@@ -183,9 +183,9 @@ void TTKPanelMeterWidgetProperty::colorPropertyChanged(QtProperty *property, con
     {
         widget->setScaleColor(value);
     }
-    else if(property->propertyName() == "BgColor")
+    else if(property->propertyName() == "BackgroundColor")
     {
-        widget->setBgColor(value);
+        widget->setBackgroundColor(value);
     }
     else if(property->propertyName() == "PointerColor")
     {

@@ -68,11 +68,6 @@ QString TTKFunctionToolBoxTopWidget::title(bool suffix)
     return text;
 }
 
-bool TTKFunctionToolBoxTopWidget::isItemEnable() const
-{
-    return true;
-}
-
 void TTKFunctionToolBoxTopWidget::mousePressEvent(QMouseEvent *event)
 {
     QWidget::mousePressEvent(event);
@@ -89,6 +84,11 @@ void TTKFunctionToolBoxTopWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
     painter.drawLine(0, height(), width(), height());
+}
+
+bool TTKFunctionToolBoxTopWidget::isItemEnable() const
+{
+    return true;
 }
 
 

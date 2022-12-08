@@ -42,13 +42,13 @@ TTKCompassMeterWidgetProperty::TTKCompassMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(crownColorEndItem, QColor(60, 60, 60));
     objectItem->addSubProperty(crownColorEndItem);
     //
-    QtProperty *bgColorStartItem = m_colorManager->addProperty("BgColorStart");
-    m_colorManager->setValue(bgColorStartItem, QColor(50, 50, 50));
-    objectItem->addSubProperty(bgColorStartItem);
+    QtProperty *backgroundColorStartItem = m_colorManager->addProperty("BackgroundColorStart");
+    m_colorManager->setValue(backgroundColorStartItem, QColor(50, 50, 50));
+    objectItem->addSubProperty(backgroundColorStartItem);
     //
-    QtProperty *bgColorEndItem = m_colorManager->addProperty("BgColorEnd");
-    m_colorManager->setValue(bgColorEndItem, QColor(20, 0, 20));
-    objectItem->addSubProperty(bgColorEndItem);
+    QtProperty *backgroundColorEndItem = m_colorManager->addProperty("BackgroundColorEnd");
+    m_colorManager->setValue(backgroundColorEndItem, QColor(20, 0, 20));
+    objectItem->addSubProperty(backgroundColorEndItem);
     //
     QtProperty *darkColorItem = m_colorManager->addProperty("DarkColor");
     m_colorManager->setValue(darkColorItem, QColor(255, 170, 0));
@@ -58,9 +58,9 @@ TTKCompassMeterWidgetProperty::TTKCompassMeterWidgetProperty(QWidget *parent)
     m_colorManager->setValue(lightColorEndItem, QColor(170, 255, 0));
     objectItem->addSubProperty(lightColorEndItem);
     //
-    QtProperty *foregroundItem = m_colorManager->addProperty("Foreground");
-    m_colorManager->setValue(foregroundItem, QColor(255, 255, 255));
-    objectItem->addSubProperty(foregroundItem);
+    QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
+    m_colorManager->setValue(foregroundColorItem, QColor(255, 255, 255));
+    objectItem->addSubProperty(foregroundColorItem);
     //
     QtProperty *textColorItem = m_colorManager->addProperty("TextColor");
     m_colorManager->setValue(textColorItem, QColor(0, 0, 0));
@@ -127,13 +127,13 @@ void TTKCompassMeterWidgetProperty::colorPropertyChanged(QtProperty *property, c
     {
         widget->setCrownColorEnd(value);
     }
-    else if(property->propertyName() == "BgColorStart")
+    else if(property->propertyName() == "BackgroundColorStart")
     {
-        widget->setBgColorStart(value);
+        widget->setBackgroundColorStart(value);
     }
-    else if(property->propertyName() == "BgColorEnd")
+    else if(property->propertyName() == "BackgroundColorEnd")
     {
-        widget->setBgColorEnd(value);
+        widget->setBackgroundColorEnd(value);
     }
     else if(property->propertyName() == "DarkColor")
     {
@@ -143,9 +143,9 @@ void TTKCompassMeterWidgetProperty::colorPropertyChanged(QtProperty *property, c
     {
         widget->setLightColor(value);
     }
-    else if(property->propertyName() == "Foreground")
+    else if(property->propertyName() == "ForegroundColor")
     {
-        widget->setForeground(value);
+        widget->setForegroundColor(value);
     }
     else if(property->propertyName() == "TextColor")
     {

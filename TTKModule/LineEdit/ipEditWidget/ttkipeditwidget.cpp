@@ -43,48 +43,6 @@ TTKIpEditWidget::TTKIpEditWidget(QWidget *parent)
     setFixedSize(165, 25);
 }
 
-void TTKIpEditWidget::initialize(QLineEdit *edit)
-{
-    edit->setFrame(false);
-    edit->setAlignment(Qt::AlignCenter);
-    edit->installEventFilter(this);
-
-    const QString regx("^(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
-#if TTK_QT_VERSION_CHECK(6,0,0)
-    QRegularExpressionValidator *validator = new QRegularExpressionValidator(QRegularExpression(regx), this);
-#else
-    QRegExpValidator *validator = new QRegExpValidator(QRegExp(regx), this);
-#endif
-    edit->setValidator(validator);
-
-    connect(edit, SIGNAL(textChanged(QString)), SLOT(editTextChanged(QString)));
-}
-
-QLineEdit *TTKIpEditWidget::nextEdit(QLineEdit *edit)
-{
-    if(edit == m_input_f)
-    {
-        return m_input_s;
-    }
-    else if(edit == m_input_s)
-    {
-        return m_input_t;
-    }
-    else if(edit == m_input_t)
-    {
-        return m_input_l;
-    }
-    else
-    {
-        return nullptr;
-    }
-}
-
-bool TTKIpEditWidget::isEdit(QObject *object)
-{
-    return (object == m_input_f || object == m_input_s || object == m_input_t || object == m_input_l);
-}
-
 QString TTKIpEditWidget::text() const
 {
     const QString &text_f = m_input_f->text().isEmpty() ? "0" : m_input_f->text();
@@ -119,6 +77,20 @@ void TTKIpEditWidget::setText(const QString &text)
 QSize TTKIpEditWidget::sizeHint() const
 {
     return QSize(165, 25);
+}
+
+void TTKIpEditWidget::editTextChanged(const QString& text)
+{
+    QLineEdit* curEdit = qobject_cast<QLineEdit*>(sender());
+    if(text.length() == 3)
+    {
+        QLineEdit* next = nextEdit(curEdit);
+        if(next)
+        {
+            next->setFocus();
+            next->selectAll();
+        }
+    }
 }
 
 void TTKIpEditWidget::paintEvent(QPaintEvent *event)
@@ -164,16 +136,44 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-void TTKIpEditWidget::editTextChanged(const QString& text)
+void TTKIpEditWidget::initialize(QLineEdit *edit)
 {
-    QLineEdit* curEdit = qobject_cast<QLineEdit*>(sender());
-    if(text.length() == 3)
+    edit->setFrame(false);
+    edit->setAlignment(Qt::AlignCenter);
+    edit->installEventFilter(this);
+
+    const QString regx("^(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
+#if TTK_QT_VERSION_CHECK(6,0,0)
+    QRegularExpressionValidator *validator = new QRegularExpressionValidator(QRegularExpression(regx), this);
+#else
+    QRegExpValidator *validator = new QRegExpValidator(QRegExp(regx), this);
+#endif
+    edit->setValidator(validator);
+
+    connect(edit, SIGNAL(textChanged(QString)), SLOT(editTextChanged(QString)));
+}
+
+QLineEdit *TTKIpEditWidget::nextEdit(QLineEdit *edit)
+{
+    if(edit == m_input_f)
     {
-        QLineEdit* next = nextEdit(curEdit);
-        if(next)
-        {
-            next->setFocus();
-            next->selectAll();
-        }
+        return m_input_s;
     }
+    else if(edit == m_input_s)
+    {
+        return m_input_t;
+    }
+    else if(edit == m_input_t)
+    {
+        return m_input_l;
+    }
+    else
+    {
+        return nullptr;
+    }
+}
+
+bool TTKIpEditWidget::isEdit(QObject *object)
+{
+    return (object == m_input_f || object == m_input_s || object == m_input_t || object == m_input_l);
 }
