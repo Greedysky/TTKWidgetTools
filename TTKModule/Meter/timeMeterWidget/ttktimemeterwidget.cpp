@@ -89,7 +89,7 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
     double sina,cosa;
     int x, y;
 
-    QFontMetricsF fm(font());
+    QFontMetricsF ftm(font());
     double w, h, v;
     QString str;
 
@@ -100,8 +100,8 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
 
         v = 1.0 * i *((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         str = QString::number(v);
-        w = fm.size(Qt::TextSingleLine, str).width();
-        h = fm.size(Qt::TextSingleLine, str).height();
+        w = ftm.size(Qt::TextSingleLine, str).width();
+        h = ftm.size(Qt::TextSingleLine, str).height();
         x = 82 * cosa - w / 2;
         y = -82 * sina + h / 4;
         painter->drawText(x, y, str);
@@ -115,8 +115,8 @@ void TTKTimeMeterWidget::drawTitle(QPainter *painter)
     painter->setPen(m_foregroundColor);
 
     const QString str(m_title);
-    QFontMetricsF fm(font());
-    const double w = fm.size(Qt::TextSingleLine, str).width();
+    QFontMetricsF ftm(font());
+    const double w = ftm.size(Qt::TextSingleLine, str).width();
     painter->drawText(-w / 2, -30, str);
     painter->restore();
 }
@@ -124,8 +124,8 @@ void TTKTimeMeterWidget::drawTitle(QPainter *painter)
 void TTKTimeMeterWidget::drawNumericValue(QPainter *painter)
 {
     const QString &str = QString("%1 %2").arg(m_value, 0, 'f', m_precision).arg(m_units);
-    QFontMetricsF fm(font());
-    const double w = fm.size(Qt::TextSingleLine, str).width();
+    QFontMetricsF ftm(font());
+    const double w = ftm.size(Qt::TextSingleLine, str).width();
     painter->setPen(m_foregroundColor);
     painter->drawText(-w / 2, 42, str);
 }

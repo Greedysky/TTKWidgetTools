@@ -230,7 +230,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     m_colorManager->setValue(normalBackgroundColorItem, QColor(0x2D, 0x91, 0x91));
     objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverBackgroundColor");
     m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x18, 0x72, 0x94));
     objectItem->addSubProperty(hoverBackgroundColorItem);
     //
@@ -328,7 +328,7 @@ void TTKFunctionNavigationBWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBackgroundColor")
+        else if(property->propertyName() == "HoverBackgroundColor")
         {
             m_buttons[i]->setHoverBackgroundColor(value);
         }
@@ -449,7 +449,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     m_colorManager->setValue(normalBackgroundColorItem, QColor(0x29, 0x2F, 0x38));
     objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverBackgroundColor");
     m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x1D, 0x20, 0x25));
     objectItem->addSubProperty(hoverBackgroundColorItem);
     //
@@ -575,7 +575,7 @@ void TTKFunctionNavigationCWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBackgroundColor")
+        else if(property->propertyName() == "HoverBackgroundColor")
         {
             m_buttons[i]->setHoverBackgroundColor(value);
         }
@@ -872,7 +872,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     m_colorManager->setValue(normalBackgroundColorItem, QColor(0x29, 0x29, 0x29));
     objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverBackgroundColor");
     m_colorManager->setValue(hoverBackgroundColorItem, QColor(0x06, 0x40, 0x77));
     objectItem->addSubProperty(hoverBackgroundColorItem);
     //
@@ -982,7 +982,7 @@ void TTKFunctionNavigationEWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBackgroundColor")
+        else if(property->propertyName() == "HoverBackgroundColor")
         {
             m_buttons[i]->setHoverBackgroundColor(value);
         }
@@ -1088,7 +1088,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     m_colorManager->setValue(normalBackgroundColorItem, QColor(0xE6, 0x39, 0x3D));
     objectItem->addSubProperty(normalBackgroundColorItem);
     //
-    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverlBackgroundColor");
+    QtProperty *hoverBackgroundColorItem = m_colorManager->addProperty("HoverBackgroundColor");
     m_colorManager->setValue(hoverBackgroundColorItem, QColor(0xEE, 0x00, 0x00));
     objectItem->addSubProperty(hoverBackgroundColorItem);
     //
@@ -1198,7 +1198,7 @@ void TTKFunctionNavigationFWidgetProperty::colorPropertyChanged(QtProperty *prop
         {
             m_buttons[i]->setNormalBackgroundColor(value);
         }
-        else if(property->propertyName() == "HoverlBackgroundColor")
+        else if(property->propertyName() == "HoverBackgroundColor")
         {
             m_buttons[i]->setHoverBackgroundColor(value);
         }
@@ -1313,15 +1313,15 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     m_colorManager->setValue(normalBackgroundBrushBItem, QColor(0x1C, 0x64, 0x96));
     objectItem->addSubProperty(normalBackgroundBrushBItem);
     //
-    QtProperty *hoverBackgroundBrushRItem = m_colorManager->addProperty("HoverlBackgroundBrushR");
+    QtProperty *hoverBackgroundBrushRItem = m_colorManager->addProperty("HoverBackgroundBrushR");
     m_colorManager->setValue(hoverBackgroundBrushRItem, QColor(0x48, 0x97, 0xD1));
     objectItem->addSubProperty(hoverBackgroundBrushRItem);
     //
-    QtProperty *hoverBackgroundBrushGItem = m_colorManager->addProperty("HoverlBackgroundBrushG");
+    QtProperty *hoverBackgroundBrushGItem = m_colorManager->addProperty("HoverBackgroundBrushG");
     m_colorManager->setValue(hoverBackgroundBrushGItem, QColor(0x32, 0x83, 0xBC));
     objectItem->addSubProperty(hoverBackgroundBrushGItem);
     //
-    QtProperty *hoverBackgroundBrushBItem = m_colorManager->addProperty("HoverlBackgroundBrushB");
+    QtProperty *hoverBackgroundBrushBItem = m_colorManager->addProperty("HoverBackgroundBrushB");
     m_colorManager->setValue(hoverBackgroundBrushBItem, QColor(0x30, 0x88, 0xC3));
     objectItem->addSubProperty(hoverBackgroundBrushBItem);
     //
@@ -1425,17 +1425,17 @@ void TTKFunctionNavigationGWidgetProperty::colorPropertyChanged(QtProperty *prop
             m_normal.setColorAt(1.0, value);
             m_buttons[i]->setNormalBackgroundBrush(m_normal);
         }
-        else if(property->propertyName() == "HoverlBackgroundBrushR")
+        else if(property->propertyName() == "HoverBackgroundBrushR")
         {
             m_hover.setColorAt(0.0, value);
             m_buttons[i]->setHoverBackgroundBrush(m_hover);
         }
-        else if(property->propertyName() == "HoverlBackgroundBrushG")
+        else if(property->propertyName() == "HoverBackgroundBrushG")
         {
             m_hover.setColorAt(0.5, value);
             m_buttons[i]->setHoverBackgroundBrush(m_hover);
         }
-        else if(property->propertyName() == "HoverlBackgroundBrushB")
+        else if(property->propertyName() == "HoverBackgroundBrushB")
         {
             m_hover.setColorAt(1.0, value);
             m_buttons[i]->setHoverBackgroundBrush(m_hover);
