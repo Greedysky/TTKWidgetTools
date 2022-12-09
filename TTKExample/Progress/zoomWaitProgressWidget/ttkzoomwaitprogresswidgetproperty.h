@@ -1,5 +1,5 @@
-#ifndef TTKLINEWAITPROGRESSWIDGET_H
-#define TTKLINEWAITPROGRESSWIDGET_H
+#ifndef TTKZOOMWAITPROGRESSWIDGETPROPERTY_H
+#define TTKZOOMWAITPROGRESSWIDGETPROPERTY_H
 
 /***************************************************************************
  * This file is part of the TTK Widget Tools project
@@ -19,37 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include <QWidget>
-#include "ttkglobaldefine.h"
+#include "ttkwidgetproperty.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-class TTK_MODULE_EXPORT TTKLineWaitProgressWidget : public QWidget
+class TTK_MODULE_EXPORT TTKZoomWaitProgressWidgetProperty : public TTKWidgetProperty
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKLineWaitProgressWidget)
 public:
-    explicit TTKLineWaitProgressWidget(QWidget *parent = nullptr);
+    explicit TTKZoomWaitProgressWidgetProperty(QWidget *parent = nullptr);
 
-    void setColor(const QColor &color);
-    void setClockWise(bool clockwise);
-    void setRotateDelta(int delta);
-
-    virtual QSize sizeHint() const override final;
-
-private:
-    virtual void paintEvent(QPaintEvent *event) override final;
-
-    void drawLineWait(QPainter *painter);
-
-    QColor m_color;
-    bool m_clockWise;
-    int m_rotateDelta;
-    int m_rotateAngle;
-
-    QTimer* m_timer;
+private Q_SLOTS:
+    virtual void boolPropertyChanged(QtProperty *property, bool value) override final;
+    virtual void intPropertyChanged(QtProperty *property, int value) override final;
+    virtual void colorPropertyChanged(QtProperty *property, const QColor &value) override final;
 
 };
 
-#endif // TTKLINEWAITPROGRESSWIDGET_H
+#endif // TTKZOOMWAITPROGRESSWIDGETPROPERTY_H

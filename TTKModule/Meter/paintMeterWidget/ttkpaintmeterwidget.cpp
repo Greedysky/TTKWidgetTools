@@ -157,7 +157,7 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
         const double v = i * ((m_maxValue - m_minValue) / m_steps) + m_minValue;
 
         const QString& str = QString("%1").arg(v, 0, 'f', m_precision);
-        QFontMetricsF ftm(font());
+        const QFontMetricsF ftm(font());
         const double w = ftm.size(Qt::TextSingleLine, str).width();
         const double h = ftm.size(Qt::TextSingleLine, str).height();
         const int x = (int)((38 * sina) - (w / 2));
@@ -275,7 +275,7 @@ void TTKPaintMeterWidget::drawLabel(QPainter *painter)
     painter->setBrush(m_foregroundColor);
     painter->setPen(m_foregroundColor);
 
-    QFontMetricsF ftm(font());
+    const QFontMetricsF ftm(font());
     const double w = ftm.size(Qt::TextSingleLine, m_label).width();
 
     QRectF labelRect(-20, 15, 40, 10);

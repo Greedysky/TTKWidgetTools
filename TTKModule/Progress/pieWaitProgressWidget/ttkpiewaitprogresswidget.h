@@ -22,6 +22,9 @@
 #include <QWidget>
 #include "ttkglobaldefine.h"
 
+/*!
+ * @author Greedysky <greedysky@163.com>
+ */
 class TTK_MODULE_EXPORT TTKPieWaitProgressWidget : public QWidget
 {
     Q_OBJECT
@@ -36,7 +39,7 @@ public:
 
     virtual QSize sizeHint() const override final;
 
-protected:
+private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
     void drawPieWait(QPainter *painter);

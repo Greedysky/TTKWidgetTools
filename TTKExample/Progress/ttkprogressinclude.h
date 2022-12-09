@@ -32,5 +32,9 @@
 #include "ringProgressWidget/ttkringprogresswidgetproperty.h"
 #include "waveProgressWidget/ttkwaveprogresswidgetproperty.h"
 #include "circleWaitProgressWidget/ttkcirclewaitprogresswidgetproperty.h"
+#include "pieWaitProgressWidget/ttkpiewaitprogresswidgetproperty.h"
+#include "lineWaitProgressWidget/ttklinewaitprogresswidgetproperty.h"
+#include "donutWaitProgressWidget/ttkdonutwaitprogresswidgetproperty.h"
+#include "zoomWaitProgressWidget/ttkzoomwaitprogresswidgetproperty.h"
 
 #endif // TTKPROGRESSINCLUDE_H

@@ -29,6 +29,10 @@ include($$PWD/ringProgressWidget/RingProgressWidget.pri)
 include($$PWD/ringsProgressWidget/RingsProgressWidget.pri)
 include($$PWD/roundProgressWidget/RoundProgressWidget.pri)
 include($$PWD/waveProgressWidget/WaveProgressWidget.pri)
+include($$PWD/pieWaitProgressWidget/PieWaitProgressWidget.pri)
+include($$PWD/lineWaitProgressWidget/LineWaitProgressWidget.pri)
+include($$PWD/donutWaitProgressWidget/DonutWaitProgressWidget.pri)
+include($$PWD/zoomWaitProgressWidget/ZoomWaitProgressWidget.pri)
 
 INCLUDEPATH += \
     $$PWD/ \
@@ -45,7 +49,11 @@ INCLUDEPATH += \
     $$PWD/../../TTKModule/Progress/ringProgressWidget \
     $$PWD/../../TTKModule/Progress/ringsProgressWidget \
     $$PWD/../../TTKModule/Progress/roundProgressWidget \
-    $$PWD/../../TTKModule/Progress/waveProgressWidget
+    $$PWD/../../TTKModule/Progress/waveProgressWidget \
+    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget \
+    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget \
+    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget \
+    $$PWD/../../TTKModule/Progress/zoomWaitProgressWidget
 
 win32:msvc{
 HEADERS += \
@@ -61,5 +69,9 @@ HEADERS += \
     $$PWD/../../TTKModule/Progress/ringProgressWidget/ttkringprogresswidget.h \
     $$PWD/../../TTKModule/Progress/ringsProgressWidget/ttkringsprogresswidget.h \
     $$PWD/../../TTKModule/Progress/roundProgressWidget/ttkroundprogresswidget.h \
-    $$PWD/../../TTKModule/Progress/waveProgressWidget/ttkwaveprogresswidget.h
+    $$PWD/../../TTKModule/Progress/waveProgressWidget/ttkwaveprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget/ttkpiewaitprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget/ttklinewaitprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget/ttkdonutwaitprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/zoomWaitProgressWidget/ttkzoomwaitprogresswidget.h
 }
