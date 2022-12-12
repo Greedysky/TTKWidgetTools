@@ -56,10 +56,10 @@ void TTKIpEditWidget::setText(const QString &text)
 {
     const QString pattern("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
 #if TTK_QT_VERSION_CHECK(6,0,0)
-    QRegularExpression regx(pattern);
+    const QRegularExpression regx(pattern);
     if(!regx.match(text).hasMatch())
 #else
-    QRegExp regx(pattern);
+    const QRegExp regx(pattern);
     if(!regx.exactMatch(text))
 #endif
     {

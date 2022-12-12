@@ -26,11 +26,11 @@ void TTKColorTableWidget::initialize()
 
             const QString pattern("RGB\\[(\\d+),(\\d+),(\\d+)\\]");
 #if TTK_QT_VERSION_CHECK(5,0,0)
-            QRegularExpression regx(pattern);
+            const QRegularExpression regx(pattern);
             int pos = 0;
             do
             {
-                QRegularExpressionMatch match = regx.match(item, pos);
+                const QRegularExpressionMatch match = regx.match(item, pos);
                 if(!match.hasMatch())
                 {
                     break;
@@ -42,7 +42,7 @@ void TTKColorTableWidget::initialize()
                 pos = match.capturedEnd();
             } while(pos < item.length());
 #else
-            QRegExp regx(pattern);
+            const QRegExp regx(pattern);
             int pos = 0;
             while((pos = regx.indexIn(item , pos)) != -1)
             {
