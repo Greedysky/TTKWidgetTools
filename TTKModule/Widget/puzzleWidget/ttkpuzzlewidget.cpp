@@ -1,4 +1,5 @@
 #include "ttkpuzzlewidget.h"
+#include "ttknumberdefine.h"
 #if TTK_QT_VERSION_CHECK(5,10,0)
 #  include <QRandomGenerator>
 #endif
@@ -43,7 +44,7 @@ void TTKPuzzleItemWidget::setSquareRadius(int squareRadius)
 void TTKPuzzleItemWidget::setPixmap(const QString& pixmap)
 {
     m_pixmap = pixmap;
-    QTimer::singleShot(10, this, SLOT(updatePixmap()));
+    QTimer::singleShot(MT_ONCE, this, SLOT(updatePixmap()));
 }
 
 void TTKPuzzleItemWidget::updatePixmap()
