@@ -6,6 +6,8 @@ build-*/
 *.autosave
 *.*~
 *.uxf
+*.bak
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
