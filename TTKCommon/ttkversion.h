@@ -3,7 +3,7 @@
 
 /***************************************************************************
  * This file is part of the TTK Widget Tools project
- * Copyright (C) 2015 - 2022 Greedysky Studio
+ * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@
 #define TTK_RC_FILEVERSION      2,5,0,0
 #define TTK_RC_PRODUCTVERSION   TTK_VERSION_STR
 #define TTK_RC_COMPANY          "Greedysky Studio, Ltd."
-#define TTK_RC_COPYRIGHT        "Copyright (C) 2022 Greedysky Studio"
+#define TTK_RC_COPYRIGHT        "Copyright (C) 2023 Greedysky Studio"
 
 #define TTK_VERSION_CHECK(major, middle, minor, patch) ((major<<12)|(middle<<8)|(minor<<4)|(patch))
 
