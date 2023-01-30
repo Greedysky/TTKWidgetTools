@@ -12,12 +12,12 @@
 #include "ttkwidgetinclude.h"
 #include "ttkwindowinclude.h"
 
-const QString MBtnMinimum = " \
+const QString BtnMinimum = " \
         QToolButton{ border:none; \
         background-image: url(:/image/btn_min_normal);} \
         QToolButton:hover{ background-image: url(:/image/btn_min_hover);}";
 
-const QString MBtnTClose = " \
+const QString BtnTClose = " \
         QToolButton{ border:none; \
         background-image: url(:/image/btn_close_hover);} \
         QToolButton:hover{ background-image: url(:/image/btn_close_hover);}";
@@ -42,11 +42,11 @@ TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     ui->background->installEventFilter(this);
     ui->background->setMouseTracking(true);
 
-    ui->minimization->setStyleSheet(MBtnMinimum);
+    ui->minimization->setStyleSheet(BtnMinimum);
     ui->minimization->setCursor(QCursor(Qt::PointingHandCursor));
     connect(ui->minimization, SIGNAL(clicked()), SLOT(showMinimized()));
 
-    ui->windowClose->setStyleSheet(MBtnTClose);
+    ui->windowClose->setStyleSheet(BtnTClose);
     ui->windowClose->setCursor(QCursor(Qt::PointingHandCursor));
     connect(ui->windowClose, SIGNAL(clicked()), SLOT(close()));
 }

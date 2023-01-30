@@ -1,6 +1,6 @@
 #include "ttkstyleslider.h"
 
-const QString MSliderStyle01 = " \
+const QString SliderStyle01 = " \
         QSlider::groove:horizontal{ \
         height:3px; border-radius:1px;} \
         QSlider::sub-page:horizontal{ background:%1;} \
@@ -8,7 +8,7 @@ const QString MSliderStyle01 = " \
         QSlider::handle:horizontal{ background:%3; \
         width:9px; margin-top:-3px; margin-bottom:-3px; border-radius:4px;}";
 
-const QString MSliderStyle02 = " \
+const QString SliderStyle02 = " \
         QSlider::groove:vertical{ \
         width:3px; border-radius:1px;} \
         QSlider::sub-page:vertical{ background:%1;} \
@@ -61,10 +61,10 @@ void TTKStyleSlider::setupProperties()
 {
     if(orientation() == Qt::Vertical)
     {
-        setStyleSheet(MSliderStyle02.arg(m_foregroundColor.name(), m_backgroundColor.name(), m_handleColor.name()));
+        setStyleSheet(SliderStyle02.arg(m_foregroundColor.name(), m_backgroundColor.name(), m_handleColor.name()));
     }
     else
     {
-        setStyleSheet(MSliderStyle01.arg(m_backgroundColor.name(), m_foregroundColor.name(), m_handleColor.name()));
+        setStyleSheet(SliderStyle01.arg(m_backgroundColor.name(), m_foregroundColor.name(), m_handleColor.name()));
     }
 }
