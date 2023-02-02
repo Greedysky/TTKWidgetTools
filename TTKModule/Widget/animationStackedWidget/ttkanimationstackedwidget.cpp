@@ -49,30 +49,30 @@ void TTKAnimationStackedWidget::paintEvent(QPaintEvent *event)
 void TTKAnimationStackedWidget::renderPreviousWidget(QPainter *painter, QTransform &transform)
 {
     QWidget *w = widget(m_previousIndex);
-    QPixmap pixmap(w->size());
-    w->render(&pixmap);
+    QPixmap pix(w->size());
+    w->render(&pix);
 
     Q_UNUSED(transform);
     switch(m_type)
     {
         case Module::BottomToTop :
                 {
-                    painter->drawPixmap(0, height() / 2, pixmap);
+                    painter->drawPixmap(0, height() / 2, pix);
                     break;
                 }
         case Module::TopToBottom :
                 {
-                    painter->drawPixmap(0, -height() / 2, pixmap);
+                    painter->drawPixmap(0, -height() / 2, pix);
                     break;
                 }
         case Module::LeftToRight :
                 {
-                    painter->drawPixmap(width() / 2, 0, pixmap);
+                    painter->drawPixmap(width() / 2, 0, pix);
                     break;
                 }
         case Module::RightToLeft :
                 {
-                    painter->drawPixmap(-width() / 2, 0, pixmap);
+                    painter->drawPixmap(-width() / 2, 0, pix);
                     break;
                 }
         default: break;
@@ -82,8 +82,8 @@ void TTKAnimationStackedWidget::renderPreviousWidget(QPainter *painter, QTransfo
 void TTKAnimationStackedWidget::renderCurrentWidget(QPainter *painter, QTransform &transform)
 {
     QWidget *w = widget(m_currentIndex);
-    QPixmap pixmap(w->size());
-    w->render(&pixmap);
+    QPixmap pix(w->size());
+    w->render(&pix);
 
     switch(m_type)
     {
@@ -91,28 +91,28 @@ void TTKAnimationStackedWidget::renderCurrentWidget(QPainter *painter, QTransfor
                 {
                     transform.translate(0, m_currentValue);
                     painter->setTransform(transform);
-                    painter->drawPixmap(0, -height() / 2, pixmap);
+                    painter->drawPixmap(0, -height() / 2, pix);
                     break;
                 }
         case Module::TopToBottom :
                 {
                     transform.translate(0, m_currentValue);
                     painter->setTransform(transform);
-                    painter->drawPixmap(0, height() / 2, pixmap);
+                    painter->drawPixmap(0, height() / 2, pix);
                     break;
                 }
         case Module::LeftToRight :
                 {
                     transform.translate(m_currentValue, 0);
                     painter->setTransform(transform);
-                    painter->drawPixmap(-width() / 2, 0, pixmap);
+                    painter->drawPixmap(-width() / 2, 0, pix);
                     break;
                 }
         case Module::RightToLeft :
                 {
                     transform.translate(m_currentValue, 0);
                     painter->setTransform(transform);
-                    painter->drawPixmap(width() / 2, 0, pixmap);
+                    painter->drawPixmap(width() / 2, 0, pix);
                     break;
                 }
         default: break;

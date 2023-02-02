@@ -123,12 +123,12 @@ void TTKAnSplashScreen::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    QPixmap pixmap;
-    pixmap.load(":/res/lb_loading");
+    QPixmap pix;
+    pix.load(":/res/lb_loading");
     painter.translate(m_w / 2, m_h / 2);
     painter.rotate(m_dig);
     painter.translate(-m_w / 2, -m_h / 2);
-    painter.drawPixmap(0, 0, m_w, m_h, pixmap);
+    painter.drawPixmap(0, 0, m_w, m_h, pix);
 
     m_dig++;
     if(m_dig >= 360)

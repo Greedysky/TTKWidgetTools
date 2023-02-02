@@ -54,9 +54,9 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setOpacity(m_opacity);
 
-    QPixmap pixmap = icon().pixmap(24, 24);
+    QPixmap pix = icon().pixmap(24, 24);
 
-    if(!pixmap.isNull())
+    if(!pix.isNull())
     {
         const qreal p = TTKStatic_cast(qreal, height() - m_iconSize) / 2;
         const qreal z = m_iconSize / 24;
@@ -73,10 +73,10 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
         t.scale(z, z);
         painter.setTransform(t);
 
-        QPainter icon(&pixmap);
+        QPainter icon(&pix);
         icon.setCompositionMode(QPainter::CompositionMode_SourceIn);
-        icon.fillRect(pixmap.rect(), color());
-        painter.drawPixmap(0, 0, pixmap);
+        icon.fillRect(pix.rect(), color());
+        painter.drawPixmap(0, 0, pix);
     }
 }
 

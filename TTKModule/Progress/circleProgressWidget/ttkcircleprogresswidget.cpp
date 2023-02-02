@@ -166,19 +166,19 @@ void TTKCircleProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
 
-    QPixmap pixmap;
+    QPixmap pix;
 #if TTK_QT_VERSION_CHECK(5,13,0)
-    if(!QPixmapCache::find(key(), &pixmap))
+    if(!QPixmapCache::find(key(), &pix))
 #else
-    if(!QPixmapCache::find(key(), pixmap))
+    if(!QPixmapCache::find(key(), pix))
 #endif
     {
-        pixmap = generatePixmap();
-        QPixmapCache::insert(key(), pixmap);
+        pix = generatePixmap();
+        QPixmapCache::insert(key(), pix);
     }
 
     QPainter painter(this);
-    painter.drawPixmap(0.5 * (width() - pixmap.width()), 0.5 * (height() - pixmap.height()), pixmap);
+    painter.drawPixmap(0.5 * (width() - pix.width()), 0.5 * (height() - pix.height()), pix);
 }
 
 void TTKCircleProgressWidget::setInfiniteAnimationValue(qreal value)
@@ -211,13 +211,13 @@ QString TTKCircleProgressWidget::key() const
 
 QPixmap TTKCircleProgressWidget::generatePixmap() const
 {
-    QPixmap pixmap(squared(rect()).size().toSize());
-    pixmap.fill(QColor(0, 0, 0, 0));
+    QPixmap pix(squared(rect()).size().toSize());
+    pix.fill(QColor(0, 0, 0, 0));
 
-    QPainter painter(&pixmap);
+    QPainter painter(&pix);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    QRectF rect = pixmap.rect().adjusted(1, 1, -1, 1);
+    QRectF rect = pix.rect().adjusted(1, 1, -1, 1);
     const qreal margin = rect.width()*(1.0 - m_outerRadius) / 2.0;
     rect.adjust(margin, margin, -margin, -margin);
     const qreal innerRadius = m_innerRadius * rect.width() / 2.0;
@@ -247,7 +247,7 @@ QPixmap TTKCircleProgressWidget::generatePixmap() const
     painter.setPen(QColor(0, 0, 0, 60));
     painter.drawEllipse(rect.center(), innerRadius, innerRadius);
     painter.drawArc(rect, 0, 360 * 16);
-    return pixmap;
+    return pix;
 }
 
 qreal TTKCircleProgressWidget::infiniteAnimationValue() const

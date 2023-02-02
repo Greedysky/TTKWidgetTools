@@ -134,21 +134,21 @@ void TTKFunctionNavigationAWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationAWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
     }
 }
@@ -304,21 +304,21 @@ void TTKFunctionNavigationBWidgetProperty::sizePropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationBWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
         else if(property->propertyName() == "LineColor")
         {
@@ -551,21 +551,21 @@ void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationCWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
         else if(property->propertyName() == "LineColor")
         {
@@ -770,21 +770,21 @@ void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationDWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
     }
 }
@@ -962,21 +962,21 @@ void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationEWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {
@@ -1178,21 +1178,21 @@ void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *prope
 
 void TTKFunctionNavigationFWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    QPixmap pixmap(1, 1);
-    pixmap.fill(value);
+    QPixmap pix(1, 1);
+    pix.fill(value);
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pixmap);
+            m_buttons[i]->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pixmap);
+            m_buttons[i]->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pixmap);
+            m_buttons[i]->setIconCheck(pix);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {

@@ -86,16 +86,16 @@ void TTKTransitionAnimationLabel::paintEvent(QPaintEvent *event)
         QPainter painter(this);
         painter.drawPixmap(rect(), m_previousPixmap);
 
-        QPixmap pixed(size());
-        pixed.fill(Qt::transparent);
+        QPixmap pix(size());
+        pix.fill(Qt::transparent);
 
-        QPainter paint(&pixed);
+        QPainter paint(&pix);
         paint.fillRect(rect(), QColor(0xFF, 0xFF, 0xFF, 2.55*m_currentValue));
         paint.setCompositionMode(QPainter::CompositionMode_SourceIn);
         paint.drawPixmap(rect(), m_currentPixmap);
 
-        m_rendererPixmap = pixed;
-        painter.drawPixmap(rect(), pixed);
+        m_rendererPixmap = pix;
+        painter.drawPixmap(rect(), pix);
     }
     else
     {
