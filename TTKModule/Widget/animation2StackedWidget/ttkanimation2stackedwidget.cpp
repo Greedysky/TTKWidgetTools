@@ -1,4 +1,5 @@
 #include "ttkanimation2stackedwidget.h"
+#include "ttkdesktopwrapper.h"
 
 #include <cmath>
 #include <QPixmap>
@@ -588,18 +589,10 @@ void TTKAnimation2StackedWidget::start(int index)
     w->hide();
 
     QWidget *previousWidget = widget(m_previousIndex);
-#if TTK_QT_VERSION_CHECK(5,0,0)
-    m_privPixmap = previousWidget->grab(previousWidget->rect());
-#else
-    m_privPixmap = QPixmap::grabWidget(previousWidget);
-#endif
+    m_privPixmap = TTKDesktopWrapper::grabWidget(previousWidget, previousWidget->rect());
 
     previousWidget = widget(m_currentIndex);
-#if TTK_QT_VERSION_CHECK(5,0,0)
-    m_privPixmap = previousWidget->grab(previousWidget->rect());
-#else
-    m_privPixmap = QPixmap::grabWidget(previousWidget);
-#endif
+    m_privPixmap = TTKDesktopWrapper::grabWidget(previousWidget, previousWidget->rect());
 
     m_animation->start();
 }
