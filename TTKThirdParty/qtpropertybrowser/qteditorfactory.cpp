@@ -2559,7 +2559,7 @@ void QtPixmapEditWidget::setValue(const QString &value)
 
 void QtPixmapEditWidget::buttonClicked()
 {
-    const QString &path = QFileDialog::getOpenFileName(this, QString(), QDir::currentPath(), "Images (*.png *.bmp *.jpg)");
+    const QString &path = QFileDialog::getOpenFileName(this, QString(), QDir::currentPath(), "Image Files (*.png *.bmp *.jpg)");
     if (!path.isEmpty()) {
         setValue(path);
     }
