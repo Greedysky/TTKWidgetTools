@@ -44,7 +44,7 @@ void TTKColorTableWidget::initialize()
 #else
             const QRegExp regx(pattern);
             int pos = 0;
-            while((pos = regx.indexIn(item , pos)) != -1)
+            while((pos = regx.indexIn(item, pos)) != -1)
             {
                 it->setBackground(QColor(regx.cap(1).toInt(),
                                          regx.cap(2).toInt(),
