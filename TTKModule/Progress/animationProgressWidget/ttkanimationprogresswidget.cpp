@@ -57,7 +57,7 @@ void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
-    const int side = qMin(width(), height());
+    const int side = std::min(width(), height());
     painter.drawPixmap(QRect(0, 0, side, side), m_ranges.at(m_index));
 
     setFont(QtFontInit("Roboto", 15, QFont::Bold));

@@ -242,7 +242,7 @@ void TTKBatteryLabel::drawBackground(QPainter *painter)
     painter->setPen(Qt::NoPen);
     painter->setBrush(batteryGradient);
 
-    const int margin = qMin(width(), height()) / 20;
+    const int margin = std::min(width(), height()) / 20;
     const double unit = (m_batteryRect.width() - (margin * 2)) / 100;
     const double width = m_currentValue * unit;
     const QPointF topLeft(m_batteryRect.topLeft().x() + margin, m_batteryRect.topLeft().y() + margin);

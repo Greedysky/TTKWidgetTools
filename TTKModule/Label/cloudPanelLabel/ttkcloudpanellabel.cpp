@@ -129,7 +129,7 @@ void TTKCloudPanelLabel::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
     const int w = width();
     const int h = height();
-    const int side = qMin(w, h);
+    const int side = std::min(w, h);
 
     QColor buttonColor = m_baseColor;
 
@@ -211,7 +211,7 @@ void TTKCloudPanelLabel::recalcLayout()
 {
     const int w = width();
     const int h = height();
-    const int side = qMin(w, h);
+    const int side = std::min(w, h);
 
     const QPointF &center = rect().center();
     const double centerSize = side * 1.0 / 4.3;

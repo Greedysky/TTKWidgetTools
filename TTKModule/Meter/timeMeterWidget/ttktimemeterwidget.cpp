@@ -167,7 +167,7 @@ void TTKTimeMeterWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.translate(width() / 2, height() / 2);
 
-    int side = qMin(width(), height());
+    int side = std::min(width(), height());
     painter.scale(side / 200.0, side / 200.0);
 
     drawCrown(&painter);

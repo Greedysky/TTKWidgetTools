@@ -74,7 +74,7 @@ void TTKPaintMeterWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 	QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    const int side = qMin(width(), height());
+    const int side = std::min(width(), height());
 
     painter.setViewport((width() - side) / 2, (height() - side) / 2,side, side);
     painter.setWindow(-50, -50, 100, 100);

@@ -1,10 +1,51 @@
 #include "ttkdesktopwrapper.h"
+#include "ttklibrary.h"
 
 #include <QScreen>
 #include <QApplication>
 #if !TTK_QT_VERSION_CHECK(5,0,0)
 #  include <QDesktopWidget>
 #endif
+
+TTKDesktopWrapper::TaskbarInfo TTKDesktopWrapper::screenTaskbar(int index)
+{
+#if TTK_QT_VERSION_CHECK(5,0,0)
+    QScreen *screen = QApplication::primaryScreen();
+    const QRect &dr = screen->availableGeometry();
+#else
+    QDesktopWidget *widget = QApplication::desktop();
+    const QRect &dr = widget->availableGeometry();
+#endif
+    TaskbarInfo info;
+    const QRect &sr = screenGeometry(index);
+
+    if(sr.left() != dr.left())
+    {
+        info.m_size = std::abs(sr.left() - dr.left());
+        info.m_direction = TTKObject::Direction::Left;
+    }
+    else if(sr.right() != dr.right())
+    {
+        info.m_size = std::abs(sr.right() - dr.right());
+        info.m_direction = TTKObject::Direction::Right;
+    }
+    else if(sr.top() != dr.top())
+    {
+        info.m_size = std::abs(sr.top() - dr.top());
+        info.m_direction = TTKObject::Direction::Top;
+    }
+    else if(sr.bottom() != dr.bottom())
+    {
+        info.m_size = std::abs(sr.bottom() - dr.bottom());
+        info.m_direction = TTKObject::Direction::Bottom;
+    }
+    else
+    {
+        info.m_size = 0;
+        info.m_direction = TTKObject::Direction::No;
+    }
+    return info;
+}
 
 QRect TTKDesktopWrapper::screenGeometry(int index)
 {

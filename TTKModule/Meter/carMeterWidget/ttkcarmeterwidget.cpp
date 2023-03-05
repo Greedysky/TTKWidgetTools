@@ -333,7 +333,7 @@ void TTKCarMeterWidget::paintEvent(QPaintEvent *event)
 
     const int w = width();
     const int h = height();
-    const int side = qMin(w, h);
+    const int side = std::min(w, h);
 
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
