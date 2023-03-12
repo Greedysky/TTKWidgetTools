@@ -35,7 +35,7 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
         {
             file.write(openFile.readAll());
             file.close();
-            QProcess::execute(QString("chmod +x ") + TEMP_FILE_NAME);
+            QProcess::execute("chmod", {"+x", TEMP_FILE_NAME});
         }
         openFile.close();
     }
