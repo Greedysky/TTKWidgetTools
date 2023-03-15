@@ -76,6 +76,6 @@ void TTKSmoothMovingTableWidget::wheelEvent(QWheelEvent *event)
         m_isFirstInit = false;
     }
 
-    m_deltaValue += QtWheelEventDelta(event);
+    m_deltaValue += QtWheelDelta(event);
     m_animationTimer->start();
 }

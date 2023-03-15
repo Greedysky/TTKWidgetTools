@@ -1000,7 +1000,7 @@ void TTKPictureFlowWidget::keyPressEvent(QKeyEvent *event)
 
 void TTKPictureFlowWidget::mousePressEvent(QMouseEvent *event)
 {
-    const int x = QtMouseEventX(event);
+    const int x = QtMouseX(event);
     (x > width() / 2) ? showNext() : showPrevious();
 }
 

@@ -68,7 +68,7 @@ void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
             mouseGrabber();
         }
 
-        m_movePos = QtMouseEventGlobalPos(event) - pos();
+        m_movePos = QtMouseGlobalPos(event) - pos();
     }
 }
 
@@ -129,8 +129,8 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
         }
         else
         {
-            move(QtMouseEventGlobalPos(event) - m_movePos);
-            m_movePos = QtMouseEventGlobalPos(event) - pos();
+            move(QtMouseGlobalPos(event) - m_movePos);
+            m_movePos = QtMouseGlobalPos(event) - pos();
         }
     }
     m_currentRect = geometry();
