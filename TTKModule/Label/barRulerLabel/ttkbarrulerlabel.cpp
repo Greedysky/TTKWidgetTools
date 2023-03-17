@@ -26,7 +26,7 @@ TTKBarRulerLabel::TTKBarRulerLabel(QWidget *parent)
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
 
-    setFont(QtFontInit("Arial", 8));
+    setFont(QFont("Arial", 8));
 }
 
 TTKBarRulerLabel::~TTKBarRulerLabel()

@@ -215,7 +215,7 @@ void TTKRoundProgressWidget::drawText(QPainter *painter)
     }
 
     painter->setPen(m_textColor);
-    setFont(QtFontInit("Roboto", 22, QFont::Bold));
+    setFont(QFont("Roboto", 22, QFont::Bold));
 
     switch(m_innerDefaultTextStyle)
     {

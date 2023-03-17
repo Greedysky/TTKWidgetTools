@@ -97,7 +97,7 @@ TTKCheckable::TTKCheckable(QWidget *parent)
     m_checkedTransition = new QSignalTransition(this, SIGNAL(toggled(bool)));
 
     setCheckable(true);
-    setFont(QtFontInit("Roboto", 11, QFont::Normal));
+    setFont(QFont("Roboto", 11, QFont::Normal));
 
     m_stateMachine->addState(m_uncheckedState);
     m_stateMachine->addState(m_checkedState);

@@ -27,8 +27,6 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
 
     setSecondStyle(SecondStyle::Normal);
     updateTime();
-
-    QtFontInit("Arial", 9);
 }
 
 TTKClockMeterWidget::~TTKClockMeterWidget()

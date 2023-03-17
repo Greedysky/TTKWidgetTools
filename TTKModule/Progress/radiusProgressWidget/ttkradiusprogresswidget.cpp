@@ -31,7 +31,7 @@ void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
     painter.drawPixmap(rect, QPixmap(":/res/lb_rp_back"));
     painter.drawPixmap(fillRect, QPixmap(":/res/lb_rp_front"), fillRect);
 
-    setFont(QtFontInit("Roboto", 15, QFont::Bold));
+    setFont(QFont("Roboto", 15, QFont::Bold));
     painter.setPen(QColor(0x55, 0x55, 0x55));
     painter.drawText(textRect, Qt::AlignCenter, QString("%1%").arg(value()));
 }

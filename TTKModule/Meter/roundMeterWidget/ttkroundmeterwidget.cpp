@@ -24,8 +24,6 @@ TTKRoundMeterWidget::TTKRoundMeterWidget(QWidget *parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(10);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
-
-    QtFontInit("Arial", 7);
 }
 
 TTKRoundMeterWidget::~TTKRoundMeterWidget()
@@ -315,13 +313,13 @@ void TTKRoundMeterWidget::drawText(QPainter *painter)
     const QString &strMinValue = QString("%1%2").arg(m_minValue).arg(m_unit);
     const QString &strMaxValue = QString("%1%2").arg(m_maxValue).arg(m_unit);
 
-    painter->setFont(QtFontInit("Arial", 13));
+    painter->setFont(QFont("Arial", 13));
     painter->setPen(QPen(m_valueTextColor));
 
     const QRectF textRect(-radius, -radius, radius * 2, radius * 2);
     painter->drawText(textRect, Qt::AlignCenter, strValue);
 
-    painter->setFont(QtFontInit("Arial", 8));
+    painter->setFont(QFont("Arial", 8));
     painter->setPen(QPen(m_rangeTextColor));
 
     QSizeF size = painter->fontMetrics().size(Qt::TextSingleLine, strMinValue);
