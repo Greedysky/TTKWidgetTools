@@ -4,8 +4,6 @@
 #include <QScrollBar>
 #include <QScrollArea>
 #include <QMouseEvent>
-#include <QDrag>
-#include <QMimeData>
 
 #define RENAME_WIDTH    220
 
