@@ -111,7 +111,7 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
     {
         if(event->type() == QEvent::KeyPress)
         {
-            QKeyEvent *keyEvent = TTKStatic_cast(QKeyEvent*, event);
+            QKeyEvent *keyEvent = TTKStaticCast(QKeyEvent*, event);
             if(keyEvent->key() == Qt::Key_Period)
             {
                 QLineEdit *next = nextEdit(qobject_cast<QLineEdit*>(object));

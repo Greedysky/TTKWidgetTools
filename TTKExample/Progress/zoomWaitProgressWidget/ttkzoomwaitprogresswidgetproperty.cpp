@@ -10,7 +10,7 @@ TTKZoomWaitProgressWidgetProperty::TTKZoomWaitProgressWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKZoomWaitProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKZoomWaitProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -44,7 +44,7 @@ TTKZoomWaitProgressWidgetProperty::TTKZoomWaitProgressWidgetProperty(QWidget *pa
 
 void TTKZoomWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKZoomWaitProgressWidget *widget = TTKObject_cast(TTKZoomWaitProgressWidget*, m_item);
+    TTKZoomWaitProgressWidget *widget = TTKObjectCast(TTKZoomWaitProgressWidget*, m_item);
     if(property->propertyName() == "ZoomOut")
     {
         widget->setZoomOut(value);
@@ -53,7 +53,7 @@ void TTKZoomWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property
 
 void TTKZoomWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKZoomWaitProgressWidget *widget = TTKObject_cast(TTKZoomWaitProgressWidget*, m_item);
+    TTKZoomWaitProgressWidget *widget = TTKObjectCast(TTKZoomWaitProgressWidget*, m_item);
     if(property->propertyName() == "ZoomDelta")
     {
         widget->setZoomDelta(value);
@@ -70,7 +70,7 @@ void TTKZoomWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property,
 
 void TTKZoomWaitProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKZoomWaitProgressWidget *widget = TTKObject_cast(TTKZoomWaitProgressWidget*, m_item);
+    TTKZoomWaitProgressWidget *widget = TTKObjectCast(TTKZoomWaitProgressWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

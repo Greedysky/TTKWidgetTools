@@ -10,7 +10,7 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKAntLineLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKAntLineLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -44,7 +44,7 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "LineStyleRect" << "LineStyleRoundedRect" << "LineStyleEllipse" << "LineStyleCircle";
     m_enumManager->setEnumNames(lineStyleItem, enumNames);
-    m_enumManager->setValue(lineStyleItem, TTKStatic_cast(int, TTKAntLineLabel::LineStyle::Rect));
+    m_enumManager->setValue(lineStyleItem, TTKStaticCast(int, TTKAntLineLabel::LineStyle::Rect));
     objectItem->addSubProperty(lineStyleItem);
     //
     m_browser->addProperty(objectItem);
@@ -52,7 +52,7 @@ TTKAntLineLabelProperty::TTKAntLineLabelProperty(QWidget *parent)
 
 void TTKAntLineLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKAntLineLabel *widget = TTKObject_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKObjectCast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineLen")
     {
         widget->setLineLen(value);
@@ -73,16 +73,16 @@ void TTKAntLineLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKAntLineLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKAntLineLabel *widget = TTKObject_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKObjectCast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineStyle")
     {
-        widget->setLineStyle(TTKStatic_cast(TTKAntLineLabel::LineStyle, value));
+        widget->setLineStyle(TTKStaticCast(TTKAntLineLabel::LineStyle, value));
     }
 }
 
 void TTKAntLineLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKAntLineLabel *widget = TTKObject_cast(TTKAntLineLabel*, m_item);
+    TTKAntLineLabel *widget = TTKObjectCast(TTKAntLineLabel*, m_item);
     if(property->propertyName() == "LineColor")
     {
         widget->setLineColor(value);

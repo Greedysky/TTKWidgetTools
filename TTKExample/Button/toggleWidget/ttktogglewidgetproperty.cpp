@@ -10,7 +10,7 @@ TTKToggleWidgetProperty::TTKToggleWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKToggleWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKToggleWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -50,7 +50,7 @@ TTKToggleWidgetProperty::TTKToggleWidgetProperty(QWidget *parent)
 
 void TTKToggleWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKToggleWidget *widget = TTKObject_cast(TTKToggleWidget*, m_item);
+    TTKToggleWidget *widget = TTKObjectCast(TTKToggleWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -63,16 +63,16 @@ void TTKToggleWidgetProperty::boolPropertyChanged(QtProperty *property, bool val
 
 void TTKToggleWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKToggleWidget *widget = TTKObject_cast(TTKToggleWidget*, m_item);
+    TTKToggleWidget *widget = TTKObjectCast(TTKToggleWidget*, m_item);
     if(property->propertyName() == "Orientation")
     {
-        widget->setOrientation(TTKStatic_cast(Qt::Orientation, value));
+        widget->setOrientation(TTKStaticCast(Qt::Orientation, value));
     }
 }
 
 void TTKToggleWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKToggleWidget *widget = TTKObject_cast(TTKToggleWidget*, m_item);
+    TTKToggleWidget *widget = TTKObjectCast(TTKToggleWidget*, m_item);
     if(property->propertyName() == "DisabledColor")
     {
         widget->setDisabledColor(value);

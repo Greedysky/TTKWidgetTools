@@ -10,7 +10,7 @@ TTKBatteryLabelProperty::TTKBatteryLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKBatteryLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKBatteryLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -69,7 +69,7 @@ TTKBatteryLabelProperty::TTKBatteryLabelProperty(QWidget *parent)
 
 void TTKBatteryLabelProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKBatteryLabel *widget = TTKObject_cast(TTKBatteryLabel*, m_item);
+    TTKBatteryLabel *widget = TTKObjectCast(TTKBatteryLabel*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -94,7 +94,7 @@ void TTKBatteryLabelProperty::doublePropertyChanged(QtProperty *property, double
 
 void TTKBatteryLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKBatteryLabel *widget = TTKObject_cast(TTKBatteryLabel*, m_item);
+    TTKBatteryLabel *widget = TTKObjectCast(TTKBatteryLabel*, m_item);
     if(property->propertyName() == "BorderColorStart")
     {
         widget->setBorderColorStart(value);

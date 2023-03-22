@@ -21,7 +21,7 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
 
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
-    TTKFunctionNavigationWidget *button = TTKObject_cast(TTKFunctionNavigationWidget*, sender());
+    TTKFunctionNavigationWidget *button = TTKObjectCast(TTKFunctionNavigationWidget*, sender());
     for(int i = 0; i < m_buttons.count(); ++i)
     {
         m_buttons[i]->setChecked(m_buttons[i] == button);
@@ -46,7 +46,7 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -171,7 +171,7 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -369,7 +369,7 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -435,14 +435,14 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
+    m_enumManager->setValue(trianglePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Right));
+    m_enumManager->setValue(linePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::LinePosition::Right));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
@@ -540,11 +540,11 @@ void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *prope
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -616,7 +616,7 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -678,14 +678,14 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
+    m_enumManager->setValue(trianglePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::TrianglePosition::Left));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Right));
+    m_enumManager->setValue(linePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::LinePosition::Right));
     objectItem->addSubProperty(linePositionItem);
     //
     m_browser->addProperty(objectItem);
@@ -759,11 +759,11 @@ void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *prope
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -813,7 +813,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -865,7 +865,7 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
+    m_enumManager->setValue(linePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
@@ -955,7 +955,7 @@ void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *prope
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -1029,7 +1029,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -1081,7 +1081,7 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
+    m_enumManager->setValue(linePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBackgroundColorItem = m_colorManager->addProperty("NormalBackgroundColor");
@@ -1171,7 +1171,7 @@ void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *prope
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -1248,7 +1248,7 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionNavigationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionNavigationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -1291,14 +1291,14 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     QStringList trianglePositionNames;
     trianglePositionNames << "TrianglePositionLeft" << "TrianglePositionRight" << "TrianglePositionTop" << "TrianglePositionBottom";
     m_enumManager->setEnumNames(trianglePositionItem, trianglePositionNames);
-    m_enumManager->setValue(trianglePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::TrianglePosition::Bottom));
+    m_enumManager->setValue(trianglePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::TrianglePosition::Bottom));
     objectItem->addSubProperty(trianglePositionItem);
     //
     QtProperty *linePositionItem = m_enumManager->addProperty("LinePosition");
     QStringList linePositionNames;
     linePositionNames << "LinePositionLeft" << "LinePositionRight" << "LinePositionTop" << "LinePositionBottom";
     m_enumManager->setEnumNames(linePositionItem, linePositionNames);
-    m_enumManager->setValue(linePositionItem, TTKStatic_cast(int, TTKFunctionNavigationWidget::LinePosition::Top));
+    m_enumManager->setValue(linePositionItem, TTKStaticCast(int, TTKFunctionNavigationWidget::LinePosition::Top));
     objectItem->addSubProperty(linePositionItem);
     //
     QtProperty *normalBackgroundBrushRItem = m_colorManager->addProperty("NormalBackgroundBrushR");
@@ -1397,11 +1397,11 @@ void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *prope
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStatic_cast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStatic_cast(TTKFunctionNavigationWidget::LinePosition, value));
+            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }

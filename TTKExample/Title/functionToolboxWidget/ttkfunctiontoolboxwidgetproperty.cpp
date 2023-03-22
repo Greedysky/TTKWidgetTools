@@ -10,7 +10,7 @@ TTKFunctionToolBoxWidgetProperty::TTKFunctionToolBoxWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFunctionToolBoxWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFunctionToolBoxWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -18,7 +18,7 @@ TTKFunctionToolBoxWidgetProperty::TTKFunctionToolBoxWidgetProperty(QWidget *pare
     //
     m_browser->addProperty(objectItem);
 
-    TTKFunctionToolBoxWidget *widget = TTKObject_cast(TTKFunctionToolBoxWidget*, m_item);
+    TTKFunctionToolBoxWidget *widget = TTKObjectCast(TTKFunctionToolBoxWidget*, m_item);
     QWidget *red = new QWidget(this);
     red->setStyleSheet("background:red");
     red->setFixedHeight(100);

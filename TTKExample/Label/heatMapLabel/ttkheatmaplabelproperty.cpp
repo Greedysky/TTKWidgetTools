@@ -5,7 +5,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     : TTKWidgetProperty(parent)
 {
     m_item = new TTKHeatMapLabel(this);
-    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObjectCast(TTKHeatMapLabel*, m_item);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
@@ -59,7 +59,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
     enumNames << "BrBG_discrete" << "BrBG_soft" << "BrBG_mixed" << "BrBG_mixed_exp";
     enumNames << "Blues_discrete" << "Blues_soft" << "Blues_mixed" << "Blues_mixed_exp";
     m_enumManager->setEnumNames(colorSchemeItem, enumNames);
-    m_enumManager->setValue(colorSchemeItem, TTKStatic_cast(int, HeatMapper::ColorScheme::Default));
+    m_enumManager->setValue(colorSchemeItem, TTKStaticCast(int, HeatMapper::ColorScheme::Default));
     objectItem->addSubProperty(colorSchemeItem);
     //
     m_browser->addProperty(objectItem);
@@ -73,7 +73,7 @@ TTKHeatMapLabelProperty::TTKHeatMapLabelProperty(QWidget *parent)
 
 void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObjectCast(TTKHeatMapLabel*, m_item);
     if(property->propertyName() == "Radius")
     {
         widget->setRadius(value);
@@ -92,9 +92,9 @@ void TTKHeatMapLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKHeatMapLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKHeatMapLabel *widget = TTKObject_cast(TTKHeatMapLabel*, m_item);
+    TTKHeatMapLabel *widget = TTKObjectCast(TTKHeatMapLabel*, m_item);
     if(property->propertyName() == "ColorScheme")
     {
-        widget->setColorScheme(TTKStatic_cast(HeatMapper::ColorScheme, value));
+        widget->setColorScheme(TTKStaticCast(HeatMapper::ColorScheme, value));
     }
 }

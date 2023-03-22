@@ -10,7 +10,7 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSpeedRingMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKSpeedRingMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -109,7 +109,7 @@ TTKSpeedRingMeterWidgetProperty::TTKSpeedRingMeterWidgetProperty(QWidget *parent
 
 void TTKSpeedRingMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKSpeedRingMeterWidget *widget = TTKObject_cast(TTKSpeedRingMeterWidget*, m_item);
+    TTKSpeedRingMeterWidget *widget = TTKObjectCast(TTKSpeedRingMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -118,7 +118,7 @@ void TTKSpeedRingMeterWidgetProperty::boolPropertyChanged(QtProperty *property, 
 
 void TTKSpeedRingMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKSpeedRingMeterWidget *widget = TTKObject_cast(TTKSpeedRingMeterWidget*, m_item);
+    TTKSpeedRingMeterWidget *widget = TTKObjectCast(TTKSpeedRingMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -159,7 +159,7 @@ void TTKSpeedRingMeterWidgetProperty::intPropertyChanged(QtProperty *property, i
 
 void TTKSpeedRingMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKSpeedRingMeterWidget *widget = TTKObject_cast(TTKSpeedRingMeterWidget*, m_item);
+    TTKSpeedRingMeterWidget *widget = TTKObjectCast(TTKSpeedRingMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -180,7 +180,7 @@ void TTKSpeedRingMeterWidgetProperty::doublePropertyChanged(QtProperty *property
 
 void TTKSpeedRingMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKSpeedRingMeterWidget *widget = TTKObject_cast(TTKSpeedRingMeterWidget*, m_item);
+    TTKSpeedRingMeterWidget *widget = TTKObjectCast(TTKSpeedRingMeterWidget*, m_item);
     if(property->propertyName() == "RingColorStart")
     {
         widget->setRingColorStart(value);

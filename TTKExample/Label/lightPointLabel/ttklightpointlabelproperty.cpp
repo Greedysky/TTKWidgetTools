@@ -10,7 +10,7 @@ TTKLightPointLabelProperty::TTKLightPointLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLightPointLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKLightPointLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -35,7 +35,7 @@ TTKLightPointLabelProperty::TTKLightPointLabelProperty(QWidget *parent)
 
 void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKLightPointLabel *widget = TTKObject_cast(TTKLightPointLabel*, m_item);
+    TTKLightPointLabel *widget = TTKObjectCast(TTKLightPointLabel*, m_item);
     if(property->propertyName() == "Step")
     {
         widget->setStep(value);
@@ -48,7 +48,7 @@ void TTKLightPointLabelProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKLightPointLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLightPointLabel *widget = TTKObject_cast(TTKLightPointLabel*, m_item);
+    TTKLightPointLabel *widget = TTKObjectCast(TTKLightPointLabel*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

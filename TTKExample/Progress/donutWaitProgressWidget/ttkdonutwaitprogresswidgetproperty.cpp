@@ -10,7 +10,7 @@ TTKDonutWaitProgressWidgetProperty::TTKDonutWaitProgressWidgetProperty(QWidget *
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKDonutWaitProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKDonutWaitProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -38,7 +38,7 @@ TTKDonutWaitProgressWidgetProperty::TTKDonutWaitProgressWidgetProperty(QWidget *
 
 void TTKDonutWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKDonutWaitProgressWidget *widget = TTKObject_cast(TTKDonutWaitProgressWidget*, m_item);
+    TTKDonutWaitProgressWidget *widget = TTKObjectCast(TTKDonutWaitProgressWidget*, m_item);
     if(property->propertyName() == "ClockWise")
     {
         widget->setClockWise(value);
@@ -47,7 +47,7 @@ void TTKDonutWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *propert
 
 void TTKDonutWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKDonutWaitProgressWidget *widget = TTKObject_cast(TTKDonutWaitProgressWidget*, m_item);
+    TTKDonutWaitProgressWidget *widget = TTKObjectCast(TTKDonutWaitProgressWidget*, m_item);
     if(property->propertyName() == "RotateDelta")
     {
         widget->setRotateDelta(value);
@@ -56,7 +56,7 @@ void TTKDonutWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property
 
 void TTKDonutWaitProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKDonutWaitProgressWidget *widget = TTKObject_cast(TTKDonutWaitProgressWidget*, m_item);
+    TTKDonutWaitProgressWidget *widget = TTKObjectCast(TTKDonutWaitProgressWidget*, m_item);
     if(property->propertyName() == "ForegroundColor")
     {
         widget->setForegroundColor(value);

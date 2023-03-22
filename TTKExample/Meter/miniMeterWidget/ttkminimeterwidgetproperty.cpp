@@ -10,7 +10,7 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKMiniMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKMiniMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -58,7 +58,7 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKMiniMeterWidget::PointerStyle::Circle));
+    m_enumManager->setValue(pointerStyleItem, TTKStaticCast(int, TTKMiniMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
@@ -82,7 +82,7 @@ TTKMiniMeterWidgetProperty::TTKMiniMeterWidgetProperty(QWidget *parent)
 
 void TTKMiniMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
+    TTKMiniMeterWidget *widget = TTKObjectCast(TTKMiniMeterWidget*, m_item);
     if(property->propertyName() == "ShowValue")
     {
         widget->setShowValue(value);
@@ -91,7 +91,7 @@ void TTKMiniMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool 
 
 void TTKMiniMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
+    TTKMiniMeterWidget *widget = TTKObjectCast(TTKMiniMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -112,7 +112,7 @@ void TTKMiniMeterWidgetProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKMiniMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
+    TTKMiniMeterWidget *widget = TTKObjectCast(TTKMiniMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -129,16 +129,16 @@ void TTKMiniMeterWidgetProperty::doublePropertyChanged(QtProperty *property, dou
 
 void TTKMiniMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
+    TTKMiniMeterWidget *widget = TTKObjectCast(TTKMiniMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(TTKStatic_cast(TTKMiniMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStaticCast(TTKMiniMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKMiniMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKMiniMeterWidget *widget = TTKObject_cast(TTKMiniMeterWidget*, m_item);
+    TTKMiniMeterWidget *widget = TTKObjectCast(TTKMiniMeterWidget*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

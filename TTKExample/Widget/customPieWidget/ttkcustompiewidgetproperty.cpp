@@ -10,7 +10,7 @@ TTKCustomPieWidgetProperty::TTKCustomPieWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCustomPieWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKCustomPieWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -35,7 +35,7 @@ TTKCustomPieWidgetProperty::TTKCustomPieWidgetProperty(QWidget *parent)
     //
     m_browser->addProperty(objectItem);
     //
-    TTKCustomPieWidget *w = TTKObject_cast(TTKCustomPieWidget*, m_item);
+    TTKCustomPieWidget *w = TTKObjectCast(TTKCustomPieWidget*, m_item);
     w->appendPie("111", 10, Qt::blue);
     w->appendPie("222", 10, Qt::red);
     w->appendPie("333", 10, Qt::yellow);
@@ -44,7 +44,7 @@ TTKCustomPieWidgetProperty::TTKCustomPieWidgetProperty(QWidget *parent)
 
 void TTKCustomPieWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCustomPieWidget *widget = TTKObject_cast(TTKCustomPieWidget*, m_item);
+    TTKCustomPieWidget *widget = TTKObjectCast(TTKCustomPieWidget*, m_item);
     if(property->propertyName() == "ExplodedAll")
     {
         widget->setExplodedAll(value);
@@ -53,7 +53,7 @@ void TTKCustomPieWidgetProperty::boolPropertyChanged(QtProperty *property, bool 
 
 void TTKCustomPieWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCustomPieWidget *widget = TTKObject_cast(TTKCustomPieWidget*, m_item);
+    TTKCustomPieWidget *widget = TTKObjectCast(TTKCustomPieWidget*, m_item);
     if(property->propertyName() == "ExplodedIndex")
     {
         widget->setExplodedIndex(value);
@@ -62,7 +62,7 @@ void TTKCustomPieWidgetProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKCustomPieWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCustomPieWidget *widget = TTKObject_cast(TTKCustomPieWidget*, m_item);
+    TTKCustomPieWidget *widget = TTKObjectCast(TTKCustomPieWidget*, m_item);
     if(property->propertyName() == "TextColor")
     {
         widget->setTextColor(value);

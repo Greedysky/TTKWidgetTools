@@ -10,7 +10,7 @@ TTKPaintMeterWidgetProperty::TTKPaintMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKPaintMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKPaintMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -31,7 +31,7 @@ TTKPaintMeterWidgetProperty::TTKPaintMeterWidgetProperty(QWidget *parent)
 
 void TTKPaintMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPaintMeterWidget *widget = TTKObject_cast(TTKPaintMeterWidget*, m_item);
+    TTKPaintMeterWidget *widget = TTKObjectCast(TTKPaintMeterWidget*, m_item);
     if(property->propertyName() == "Value")
     {
         widget->setValue(value);

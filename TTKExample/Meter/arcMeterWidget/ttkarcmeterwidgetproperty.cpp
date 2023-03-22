@@ -10,7 +10,7 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKArcMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKArcMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -76,7 +76,7 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKArcMeterWidget::PointerStyle::Indicator));
+    m_enumManager->setValue(pointerStyleItem, TTKStaticCast(int, TTKArcMeterWidget::PointerStyle::Indicator));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *arcColorItem = m_colorManager->addProperty("ArcColor");
@@ -104,7 +104,7 @@ TTKArcMeterWidgetProperty::TTKArcMeterWidgetProperty(QWidget *parent)
 
 void TTKArcMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKArcMeterWidget *widget = TTKObject_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKObjectCast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -113,7 +113,7 @@ void TTKArcMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool v
 
 void TTKArcMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKArcMeterWidget *widget = TTKObject_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKObjectCast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -138,7 +138,7 @@ void TTKArcMeterWidgetProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKArcMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKArcMeterWidget *widget = TTKObject_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKObjectCast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -159,16 +159,16 @@ void TTKArcMeterWidgetProperty::doublePropertyChanged(QtProperty *property, doub
 
 void TTKArcMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKArcMeterWidget *widget = TTKObject_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKObjectCast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(TTKStatic_cast(TTKArcMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStaticCast(TTKArcMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKArcMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKArcMeterWidget *widget = TTKObject_cast(TTKArcMeterWidget*, m_item);
+    TTKArcMeterWidget *widget = TTKObjectCast(TTKArcMeterWidget*, m_item);
     if(property->propertyName() == "ArcColor")
     {
         widget->setArcColor(value);

@@ -10,7 +10,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKWaveProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKWaveProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -57,7 +57,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PercentStyleRect" << "PercentStyleCircle" << "PercentStyleEllipse";
     m_enumManager->setEnumNames(percentStyleItem, enumNames);
-    m_enumManager->setValue(percentStyleItem, TTKStatic_cast(int, TTKWaveProgressWidget::PercentStyle::Circle));
+    m_enumManager->setValue(percentStyleItem, TTKStaticCast(int, TTKWaveProgressWidget::PercentStyle::Circle));
     objectItem->addSubProperty(percentStyleItem);
     //
     m_browser->addProperty(objectItem);
@@ -65,7 +65,7 @@ TTKWaveProgressWidgetProperty::TTKWaveProgressWidgetProperty(QWidget *parent)
 
 void TTKWaveProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObjectCast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -90,7 +90,7 @@ void TTKWaveProgressWidgetProperty::intPropertyChanged(QtProperty *property, int
 
 void TTKWaveProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObjectCast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "WaterHeight")
     {
         widget->setWaterHeight(value);
@@ -103,16 +103,16 @@ void TTKWaveProgressWidgetProperty::doublePropertyChanged(QtProperty *property, 
 
 void TTKWaveProgressWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObjectCast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "PercentStyle")
     {
-        widget->setPointerStyle(TTKStatic_cast(TTKWaveProgressWidget::PercentStyle, value));
+        widget->setPointerStyle(TTKStaticCast(TTKWaveProgressWidget::PercentStyle, value));
     }
 }
 
 void TTKWaveProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKWaveProgressWidget *widget = TTKObject_cast(TTKWaveProgressWidget*, m_item);
+    TTKWaveProgressWidget *widget = TTKObjectCast(TTKWaveProgressWidget*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

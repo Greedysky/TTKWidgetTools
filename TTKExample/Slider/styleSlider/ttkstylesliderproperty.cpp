@@ -10,7 +10,7 @@ TTKStyleSliderProperty::TTKStyleSliderProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKStyleSlider*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKStyleSlider*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -40,7 +40,7 @@ TTKStyleSliderProperty::TTKStyleSliderProperty(QWidget *parent)
 
 void TTKStyleSliderProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKStyleSlider *widget = TTKObject_cast(TTKStyleSlider*, m_item);
+    TTKStyleSlider *widget = TTKObjectCast(TTKStyleSlider*, m_item);
     if(property->propertyName() == "Direction")
     {
         Qt::Orientation orientation(Qt::Horizontal);
@@ -55,7 +55,7 @@ void TTKStyleSliderProperty::enumPropertyChanged(QtProperty *property, int value
 
 void TTKStyleSliderProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKStyleSlider *widget = TTKObject_cast(TTKStyleSlider*, m_item);
+    TTKStyleSlider *widget = TTKObjectCast(TTKStyleSlider*, m_item);
     if(property->propertyName() == "HandleColor")
     {
         widget->setHandleColor(value);

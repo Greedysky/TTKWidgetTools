@@ -10,7 +10,7 @@ TTKColorButtonWidgetProperty::TTKColorButtonWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKColorButtonWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKColorButtonWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -45,7 +45,7 @@ TTKColorButtonWidgetProperty::TTKColorButtonWidgetProperty(QWidget *parent)
 
 void TTKColorButtonWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKColorButtonWidget *widget = TTKObject_cast(TTKColorButtonWidget*, m_item);
+    TTKColorButtonWidget *widget = TTKObjectCast(TTKColorButtonWidget*, m_item);
     if(property->propertyName() == "Space")
     {
         widget->setSpace(value);
@@ -66,7 +66,7 @@ void TTKColorButtonWidgetProperty::intPropertyChanged(QtProperty *property, int 
 
 void TTKColorButtonWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKColorButtonWidget *widget = TTKObject_cast(TTKColorButtonWidget*, m_item);
+    TTKColorButtonWidget *widget = TTKObjectCast(TTKColorButtonWidget*, m_item);
     if(property->propertyName() == "BorderColor")
     {
         widget->setBorderColor(value);

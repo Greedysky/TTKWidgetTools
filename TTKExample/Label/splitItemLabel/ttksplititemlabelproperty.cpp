@@ -10,7 +10,7 @@ TTKSplitItemLabelProperty::TTKSplitItemLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSplitItemLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKSplitItemLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -29,7 +29,7 @@ TTKSplitItemLabelProperty::TTKSplitItemLabelProperty(QWidget *parent)
 
 void TTKSplitItemLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKSplitItemLabel *widget = TTKObject_cast(TTKSplitItemLabel*, m_item);
+    TTKSplitItemLabel *widget = TTKObjectCast(TTKSplitItemLabel*, m_item);
     if(property->propertyName() == "Split")
     {
         widget->setSplitString(value);

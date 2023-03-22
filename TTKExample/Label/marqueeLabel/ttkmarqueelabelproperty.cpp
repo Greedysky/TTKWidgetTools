@@ -10,7 +10,7 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKMarqueeLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKMarqueeLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -34,7 +34,7 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "MoveStyleLeftAndRight" << "MoveStyleLeftToRight" << "MoveStyleRightToLeft";
     m_enumManager->setEnumNames(moveStyleItem, enumNames);
-    m_enumManager->setValue(moveStyleItem, TTKStatic_cast(int, TTKMarqueeLabel::MoveStyle::LeftAndRight));
+    m_enumManager->setValue(moveStyleItem, TTKStaticCast(int, TTKMarqueeLabel::MoveStyle::LeftAndRight));
     objectItem->addSubProperty(moveStyleItem);
     //
     QtProperty *foregroundColorItem = m_colorManager->addProperty("ForegroundColor");
@@ -54,7 +54,7 @@ TTKMarqueeLabelProperty::TTKMarqueeLabelProperty(QWidget *parent)
 
 void TTKMarqueeLabelProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKObjectCast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "MouseHoverStop")
     {
         widget->setMouseHoverStop(value);
@@ -63,7 +63,7 @@ void TTKMarqueeLabelProperty::boolPropertyChanged(QtProperty *property, bool val
 
 void TTKMarqueeLabelProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKObjectCast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "Step")
     {
         widget->setStep(value);
@@ -76,7 +76,7 @@ void TTKMarqueeLabelProperty::intPropertyChanged(QtProperty *property, int value
 
 void TTKMarqueeLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKObjectCast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -85,16 +85,16 @@ void TTKMarqueeLabelProperty::stringPropertyChanged(QtProperty *property, const 
 
 void TTKMarqueeLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKObjectCast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "MoveStyle")
     {
-        widget->setMoveStyle(TTKStatic_cast(TTKMarqueeLabel::MoveStyle, value));
+        widget->setMoveStyle(TTKStaticCast(TTKMarqueeLabel::MoveStyle, value));
     }
 }
 
 void TTKMarqueeLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKMarqueeLabel *widget = TTKObject_cast(TTKMarqueeLabel*, m_item);
+    TTKMarqueeLabel *widget = TTKObjectCast(TTKMarqueeLabel*, m_item);
     if(property->propertyName() == "ForegroundColor")
     {
         widget->setForegroundColor(value);

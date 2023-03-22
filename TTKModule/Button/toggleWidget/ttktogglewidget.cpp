@@ -92,7 +92,7 @@ void TTKToggleThumb::paintEvent(QPaintEvent *event)
 void TTKToggleThumb::updateOffset()
 {
     const QSize s(Qt::Horizontal == m_toggle->orientation() ? size() : QSize(height(), width()));
-    m_offset = m_shift * TTKStatic_cast(qreal, s.width() - s.height());
+    m_offset = m_shift * TTKStaticCast(qreal, s.width() - s.height());
     update();
 }
 

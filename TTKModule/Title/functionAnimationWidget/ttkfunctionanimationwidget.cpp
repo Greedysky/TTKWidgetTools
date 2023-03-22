@@ -126,7 +126,7 @@ TTKOptionAnimationHWidget::TTKOptionAnimationHWidget(QWidget *parent)
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
     m_showLine = false;
 
-    QHBoxLayout *ly = TTKObject_cast(QHBoxLayout*, layout());
+    QHBoxLayout *ly = TTKObjectCast(QHBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {
@@ -150,7 +150,7 @@ TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
     m_pix.fill(QColor(255, 64, 129));
     m_showLine = false;
 
-    QHBoxLayout *ly = TTKObject_cast(QHBoxLayout*, layout());
+    QHBoxLayout *ly = TTKObjectCast(QHBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {
@@ -181,7 +181,7 @@ TTKSkinAnimationHWidget::TTKSkinAnimationHWidget(QWidget *parent)
 {
     m_pix = QPixmap(":/res/bottom");
 
-    QHBoxLayout *ly = TTKObject_cast(QHBoxLayout*, layout());
+    QHBoxLayout *ly = TTKObjectCast(QHBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {
@@ -261,7 +261,7 @@ TTKOptionAnimationVWidget::TTKOptionAnimationVWidget(QWidget *parent)
     m_pix.fill(QColor(0x80, 0xB7, 0xF1));
     m_showLine = false;
 
-    QVBoxLayout *ly = TTKObject_cast(QVBoxLayout*, layout());
+    QVBoxLayout *ly = TTKObjectCast(QVBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {
@@ -285,7 +285,7 @@ TTKTableAnimationVWidget::TTKTableAnimationVWidget(QWidget *parent)
     m_pix.fill(QColor(255, 64, 129));
     m_showLine = false;
 
-    QVBoxLayout *ly = TTKObject_cast(QVBoxLayout*, layout());
+    QVBoxLayout *ly = TTKObjectCast(QVBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {
@@ -316,7 +316,7 @@ TTKSkinAnimationVWidget::TTKSkinAnimationVWidget(QWidget *parent)
 {
     m_pix = QPixmap(":/res/left");
 
-    QVBoxLayout *ly = TTKObject_cast(QVBoxLayout*, layout());
+    QVBoxLayout *ly = TTKObjectCast(QVBoxLayout*, layout());
 
     for(int i = 0; i < 3; ++i)
     {

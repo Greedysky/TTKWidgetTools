@@ -11,7 +11,7 @@ TTKAnimationStackedWidgetProperty::TTKAnimationStackedWidgetProperty(QWidget *pa
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKAnimationStackedWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKAnimationStackedWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -36,14 +36,14 @@ TTKAnimationStackedWidgetProperty::TTKAnimationStackedWidgetProperty(QWidget *pa
     QPushButton *w2 = new QPushButton(m_item);
     w2->setStyleSheet("border:none; background:yellow");
 
-    TTKAnimationStackedWidget *widget = TTKObject_cast(TTKAnimationStackedWidget*, m_item);
+    TTKAnimationStackedWidget *widget = TTKObjectCast(TTKAnimationStackedWidget*, m_item);
     widget->addWidget(w1);
     widget->addWidget(w2);
 }
 
 void TTKAnimationStackedWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKAnimationStackedWidget *widget = TTKObject_cast(TTKAnimationStackedWidget*, m_item);
+    TTKAnimationStackedWidget *widget = TTKObjectCast(TTKAnimationStackedWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         widget->start(value ? 0 : 1);
@@ -52,9 +52,9 @@ void TTKAnimationStackedWidgetProperty::boolPropertyChanged(QtProperty *property
 
 void TTKAnimationStackedWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKAnimationStackedWidget *widget = TTKObject_cast(TTKAnimationStackedWidget*, m_item);
+    TTKAnimationStackedWidget *widget = TTKObjectCast(TTKAnimationStackedWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLength(value < 2 ? 200 : 100, TTKStatic_cast(TTKAnimationStackedWidget::Module, value));
+        widget->setLength(value < 2 ? 200 : 100, TTKStaticCast(TTKAnimationStackedWidget::Module, value));
     }
 }

@@ -10,7 +10,7 @@ TTKRingProgressWidgetProperty::TTKRingProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKRingProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKRingProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -123,7 +123,7 @@ TTKRingProgressWidgetProperty::TTKRingProgressWidgetProperty(QWidget *parent)
 
 void TTKRingProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKRingProgressWidget *widget = TTKObject_cast(TTKRingProgressWidget*, m_item);
+    TTKRingProgressWidget *widget = TTKObjectCast(TTKRingProgressWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -144,7 +144,7 @@ void TTKRingProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bo
 
 void TTKRingProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKRingProgressWidget *widget = TTKObject_cast(TTKRingProgressWidget*, m_item);
+    TTKRingProgressWidget *widget = TTKObjectCast(TTKRingProgressWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -177,7 +177,7 @@ void TTKRingProgressWidgetProperty::intPropertyChanged(QtProperty *property, int
 
 void TTKRingProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKRingProgressWidget *widget = TTKObject_cast(TTKRingProgressWidget*, m_item);
+    TTKRingProgressWidget *widget = TTKObjectCast(TTKRingProgressWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -198,7 +198,7 @@ void TTKRingProgressWidgetProperty::doublePropertyChanged(QtProperty *property, 
 
 void TTKRingProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRingProgressWidget *widget = TTKObject_cast(TTKRingProgressWidget*, m_item);
+    TTKRingProgressWidget *widget = TTKObjectCast(TTKRingProgressWidget*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

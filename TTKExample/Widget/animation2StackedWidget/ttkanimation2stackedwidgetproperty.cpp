@@ -11,7 +11,7 @@ TTKAnimation2StackedWidgetProperty::TTKAnimation2StackedWidgetProperty(QWidget *
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKAnimation2StackedWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKAnimation2StackedWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -36,14 +36,14 @@ TTKAnimation2StackedWidgetProperty::TTKAnimation2StackedWidgetProperty(QWidget *
     QPushButton *w2 = new QPushButton(m_item);
     w2->setStyleSheet("border:none; background:yellow");
 
-    TTKAnimation2StackedWidget *widget = TTKObject_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKObjectCast(TTKAnimation2StackedWidget*, m_item);
     widget->addWidget(w1);
     widget->addWidget(w2);
 }
 
 void TTKAnimation2StackedWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKAnimation2StackedWidget *widget = TTKObject_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKObjectCast(TTKAnimation2StackedWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         widget->start(value ? 0 : 1);
@@ -52,9 +52,9 @@ void TTKAnimation2StackedWidgetProperty::boolPropertyChanged(QtProperty *propert
 
 void TTKAnimation2StackedWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKAnimation2StackedWidget *widget = TTKObject_cast(TTKAnimation2StackedWidget*, m_item);
+    TTKAnimation2StackedWidget *widget = TTKObjectCast(TTKAnimation2StackedWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLength(200, TTKStatic_cast(TTKAnimation2StackedWidget::Module, value + 4));
+        widget->setLength(200, TTKStaticCast(TTKAnimation2StackedWidget::Module, value + 4));
     }
 }

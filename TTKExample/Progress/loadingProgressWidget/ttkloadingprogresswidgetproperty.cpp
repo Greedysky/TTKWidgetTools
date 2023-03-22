@@ -10,7 +10,7 @@ TTKLoadingProgressWidgetProperty::TTKLoadingProgressWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLoadingProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKLoadingProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -45,7 +45,7 @@ TTKLoadingProgressWidgetProperty::TTKLoadingProgressWidgetProperty(QWidget *pare
 
 void TTKLoadingProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKLoadingProgressWidget *widget = TTKObject_cast(TTKLoadingProgressWidget*, m_item);
+    TTKLoadingProgressWidget *widget = TTKObjectCast(TTKLoadingProgressWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         if(value)
@@ -61,7 +61,7 @@ void TTKLoadingProgressWidgetProperty::boolPropertyChanged(QtProperty *property,
 
 void TTKLoadingProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKLoadingProgressWidget *widget = TTKObject_cast(TTKLoadingProgressWidget*, m_item);
+    TTKLoadingProgressWidget *widget = TTKObjectCast(TTKLoadingProgressWidget*, m_item);
     if(property->propertyName() == "DotCount")
     {
         widget->setDotCount(value);
@@ -70,7 +70,7 @@ void TTKLoadingProgressWidgetProperty::intPropertyChanged(QtProperty *property, 
 
 void TTKLoadingProgressWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKLoadingProgressWidget *widget = TTKObject_cast(TTKLoadingProgressWidget*, m_item);
+    TTKLoadingProgressWidget *widget = TTKObjectCast(TTKLoadingProgressWidget*, m_item);
     if(property->propertyName() == "MaxDiameter")
     {
         widget->setMaxDiameter(value);
@@ -83,7 +83,7 @@ void TTKLoadingProgressWidgetProperty::doublePropertyChanged(QtProperty *propert
 
 void TTKLoadingProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLoadingProgressWidget *widget = TTKObject_cast(TTKLoadingProgressWidget*, m_item);
+    TTKLoadingProgressWidget *widget = TTKObjectCast(TTKLoadingProgressWidget*, m_item);
     if(property->propertyName() == "DotColor")
     {
         widget->setDotColor(value);

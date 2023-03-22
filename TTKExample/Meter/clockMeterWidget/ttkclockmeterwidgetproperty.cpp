@@ -10,7 +10,7 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKClockMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKClockMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -20,7 +20,7 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "SecondStyleNormal" << "SecondStyleSpring" << "SecondStyleContinue" << "SecondStyleHide";
     m_enumManager->setEnumNames(secondStyletem, enumNames);
-    m_enumManager->setValue(secondStyletem, TTKStatic_cast(int, TTKClockMeterWidget::SecondStyle::Normal));
+    m_enumManager->setValue(secondStyletem, TTKStaticCast(int, TTKClockMeterWidget::SecondStyle::Normal));
     objectItem->addSubProperty(secondStyletem);
     //
     QtProperty *crownColorStartItem = m_colorManager->addProperty("CrownColorStart");
@@ -56,16 +56,16 @@ TTKClockMeterWidgetProperty::TTKClockMeterWidgetProperty(QWidget *parent)
 
 void TTKClockMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKClockMeterWidget *widget = TTKObject_cast(TTKClockMeterWidget*, m_item);
+    TTKClockMeterWidget *widget = TTKObjectCast(TTKClockMeterWidget*, m_item);
     if(property->propertyName() == "SecondStyle")
     {
-        widget->setSecondStyle(TTKStatic_cast(TTKClockMeterWidget::SecondStyle, value));
+        widget->setSecondStyle(TTKStaticCast(TTKClockMeterWidget::SecondStyle, value));
     }
 }
 
 void TTKClockMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKClockMeterWidget *widget = TTKObject_cast(TTKClockMeterWidget*, m_item);
+    TTKClockMeterWidget *widget = TTKObjectCast(TTKClockMeterWidget*, m_item);
     if(property->propertyName() == "CrownColorStart")
     {
         widget->setCrownColorStart(value);

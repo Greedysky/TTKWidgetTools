@@ -10,7 +10,7 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCarMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKCarMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -76,14 +76,14 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PieStyleThree" << "PieStyleCurrent";
     m_enumManager->setEnumNames(pieStyleItem, enumNames);
-    m_enumManager->setValue(pieStyleItem, TTKStatic_cast(int, TTKCarMeterWidget::PieStyle::Three));
+    m_enumManager->setValue(pieStyleItem, TTKStaticCast(int, TTKCarMeterWidget::PieStyle::Three));
     objectItem->addSubProperty(pieStyleItem);
     //
     QtProperty *pointerStyleItem = m_enumManager->addProperty("PointerStyle");
     enumNames.clear();
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKCarMeterWidget::PointerStyle::Indicator));
+    m_enumManager->setValue(pointerStyleItem, TTKStaticCast(int, TTKCarMeterWidget::PointerStyle::Indicator));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *outerCircleColorItem = m_colorManager->addProperty("OuterCircleColor");
@@ -131,7 +131,7 @@ TTKCarMeterWidgetProperty::TTKCarMeterWidgetProperty(QWidget *parent)
 
 void TTKCarMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObjectCast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "Animation")
     {
         widget->setAnimation(value);
@@ -144,7 +144,7 @@ void TTKCarMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool v
 
 void TTKCarMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObjectCast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -169,7 +169,7 @@ void TTKCarMeterWidgetProperty::intPropertyChanged(QtProperty *property, int val
 
 void TTKCarMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObjectCast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -190,20 +190,20 @@ void TTKCarMeterWidgetProperty::doublePropertyChanged(QtProperty *property, doub
 
 void TTKCarMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObjectCast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "PieStyle")
     {
-        widget->setPieStyle(TTKStatic_cast(TTKCarMeterWidget::PieStyle, value));
+        widget->setPieStyle(TTKStaticCast(TTKCarMeterWidget::PieStyle, value));
     }
     else if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(TTKStatic_cast(TTKCarMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStaticCast(TTKCarMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKCarMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCarMeterWidget *widget = TTKObject_cast(TTKCarMeterWidget*, m_item);
+    TTKCarMeterWidget *widget = TTKObjectCast(TTKCarMeterWidget*, m_item);
     if(property->propertyName() == "OverlayColor")
     {
         widget->setOverlayColor(value);

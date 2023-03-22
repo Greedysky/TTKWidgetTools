@@ -15,7 +15,7 @@ TTKNotifyWindowProperty::TTKNotifyWindowProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKNotifyManager*, m_manager)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKNotifyManager*, m_manager)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -48,7 +48,7 @@ TTKNotifyWindowProperty::TTKNotifyWindowProperty(QWidget *parent)
 
 void TTKNotifyWindowProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKNotifyManager *widget = TTKObject_cast(TTKNotifyManager*, m_manager);
+    TTKNotifyManager *widget = TTKObjectCast(TTKNotifyManager*, m_manager);
     if(property->propertyName() == "MaxCount")
     {
         widget->setMaxCount(value);
@@ -81,6 +81,6 @@ void TTKNotifyWindowProperty::pixmapPropertyChanged(QtProperty *property, const 
 
 void TTKNotifyWindowProperty::showWidget()
 {
-    TTKNotifyManager *manager = TTKObject_cast(TTKNotifyManager*, m_manager);
+    TTKNotifyManager *manager = TTKObjectCast(TTKNotifyManager*, m_manager);
     manager->notify(m_title, m_body, m_icon, "https://github.com/Greedysky/TTKWidgetTools");
 }

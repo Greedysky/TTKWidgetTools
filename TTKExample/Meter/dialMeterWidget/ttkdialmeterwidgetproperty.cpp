@@ -10,7 +10,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKDialMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKDialMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -63,7 +63,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "PointerStyleCircle" << "PointerStyleIndicator" << "PointerStyleIndicatorR" << "PointerStyleTriangle";
     m_enumManager->setEnumNames(pointerStyleItem, enumNames);
-    m_enumManager->setValue(pointerStyleItem, TTKStatic_cast(int, TTKDialMeterWidget::PointerStyle::Circle));
+    m_enumManager->setValue(pointerStyleItem, TTKStaticCast(int, TTKDialMeterWidget::PointerStyle::Circle));
     objectItem->addSubProperty(pointerStyleItem);
     //
     QtProperty *darkColorItem = m_colorManager->addProperty("DarkColor");
@@ -83,7 +83,7 @@ TTKDialMeterWidgetProperty::TTKDialMeterWidgetProperty(QWidget *parent)
 
 void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObjectCast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "ShowValue")
     {
         widget->setShowValue(value);
@@ -92,7 +92,7 @@ void TTKDialMeterWidgetProperty::boolPropertyChanged(QtProperty *property, bool 
 
 void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObjectCast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -117,7 +117,7 @@ void TTKDialMeterWidgetProperty::intPropertyChanged(QtProperty *property, int va
 
 void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObjectCast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -134,16 +134,16 @@ void TTKDialMeterWidgetProperty::doublePropertyChanged(QtProperty *property, dou
 
 void TTKDialMeterWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObjectCast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "PointerStyle")
     {
-        widget->setPointerStyle(TTKStatic_cast(TTKDialMeterWidget::PointerStyle, value));
+        widget->setPointerStyle(TTKStaticCast(TTKDialMeterWidget::PointerStyle, value));
     }
 }
 
 void TTKDialMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKDialMeterWidget *widget = TTKObject_cast(TTKDialMeterWidget*, m_item);
+    TTKDialMeterWidget *widget = TTKObjectCast(TTKDialMeterWidget*, m_item);
     if(property->propertyName() == "DarkColor")
     {
         widget->setDarkColor(value);

@@ -10,7 +10,7 @@ TTKLayoutAnimationWidgetProperty::TTKLayoutAnimationWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLayoutAnimationWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKLayoutAnimationWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -27,14 +27,14 @@ TTKLayoutAnimationWidgetProperty::TTKLayoutAnimationWidgetProperty(QWidget *pare
     QWidget *w2 = new QWidget(m_item);
     w2->setStyleSheet("border:none; background:yellow");
 
-    TTKLayoutAnimationWidget *widget = TTKObject_cast(TTKLayoutAnimationWidget*, m_item);
+    TTKLayoutAnimationWidget *widget = TTKObjectCast(TTKLayoutAnimationWidget*, m_item);
     widget->addWidget(w1);
     widget->addWidget(w2);
 }
 
 void TTKLayoutAnimationWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKLayoutAnimationWidget *widget = TTKObject_cast(TTKLayoutAnimationWidget*, m_item);
+    TTKLayoutAnimationWidget *widget = TTKObjectCast(TTKLayoutAnimationWidget*, m_item);
     if(property->propertyName() == "Activity")
     {
         if(value)

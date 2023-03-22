@@ -10,7 +10,7 @@ TTKRoundMeterWidgetProperty::TTKRoundMeterWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKRoundMeterWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKRoundMeterWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -80,7 +80,7 @@ TTKRoundMeterWidgetProperty::TTKRoundMeterWidgetProperty(QWidget *parent)
 
 void TTKRoundMeterWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKRoundMeterWidget *widget = TTKObject_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKObjectCast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "Precision")
     {
         widget->setPrecision(value);
@@ -89,7 +89,7 @@ void TTKRoundMeterWidgetProperty::intPropertyChanged(QtProperty *property, int v
 
 void TTKRoundMeterWidgetProperty::doublePropertyChanged(QtProperty *property, double value)
 {
-    TTKRoundMeterWidget *widget = TTKObject_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKObjectCast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "MaxValue")
     {
         widget->setMaxValue(value);
@@ -110,7 +110,7 @@ void TTKRoundMeterWidgetProperty::doublePropertyChanged(QtProperty *property, do
 
 void TTKRoundMeterWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKRoundMeterWidget *widget = TTKObject_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKObjectCast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "Unit")
     {
         widget->setUnit(value);
@@ -119,7 +119,7 @@ void TTKRoundMeterWidgetProperty::stringPropertyChanged(QtProperty *property, co
 
 void TTKRoundMeterWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRoundMeterWidget *widget = TTKObject_cast(TTKRoundMeterWidget*, m_item);
+    TTKRoundMeterWidget *widget = TTKObjectCast(TTKRoundMeterWidget*, m_item);
     if(property->propertyName() == "UsedColor")
     {
         widget->setUsedColor(value);

@@ -10,7 +10,7 @@ TTKLineEditWidgetProperty::TTKLineEditWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLineEditWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKLineEditWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -29,7 +29,7 @@ TTKLineEditWidgetProperty::TTKLineEditWidgetProperty(QWidget *parent)
 
 void TTKLineEditWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKLineEditWidget *widget = TTKObject_cast(TTKLineEditWidget*, m_item);
+    TTKLineEditWidget *widget = TTKObjectCast(TTKLineEditWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -38,7 +38,7 @@ void TTKLineEditWidgetProperty::stringPropertyChanged(QtProperty *property, cons
 
 void TTKLineEditWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLineEditWidget *widget = TTKObject_cast(TTKLineEditWidget*, m_item);
+    TTKLineEditWidget *widget = TTKObjectCast(TTKLineEditWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

@@ -10,7 +10,7 @@ TTKFlatButtonWidgetProperty::TTKFlatButtonWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKFlatButtonWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKFlatButtonWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -51,7 +51,7 @@ TTKFlatButtonWidgetProperty::TTKFlatButtonWidgetProperty(QWidget *parent)
 
 void TTKFlatButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -60,7 +60,7 @@ void TTKFlatButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool
 
 void TTKFlatButtonWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "CornerRadius")
     {
         widget->setCornerRadius(value);
@@ -69,7 +69,7 @@ void TTKFlatButtonWidgetProperty::intPropertyChanged(QtProperty *property, int v
 
 void TTKFlatButtonWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -78,16 +78,16 @@ void TTKFlatButtonWidgetProperty::stringPropertyChanged(QtProperty *property, co
 
 void TTKFlatButtonWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "IconAlignment")
     {
-        widget->setIconAlignment(TTKStatic_cast(TTKFlatButtonWidget::IconAlignment, value));
+        widget->setIconAlignment(TTKStaticCast(TTKFlatButtonWidget::IconAlignment, value));
     }
 }
 
 void TTKFlatButtonWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "ForegroundColor")
     {
         widget->setForegroundColor(value);
@@ -100,7 +100,7 @@ void TTKFlatButtonWidgetProperty::colorPropertyChanged(QtProperty *property, con
 
 void TTKFlatButtonWidgetProperty::pixmapPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKFlatButtonWidget *widget = TTKObject_cast(TTKFlatButtonWidget*, m_item);
+    TTKFlatButtonWidget *widget = TTKObjectCast(TTKFlatButtonWidget*, m_item);
     if(property->propertyName() == "Icon")
     {
         widget->setIcon(QPixmap(value));

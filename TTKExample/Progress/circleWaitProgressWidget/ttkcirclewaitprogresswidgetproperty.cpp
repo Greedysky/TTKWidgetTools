@@ -10,7 +10,7 @@ TTKCircleWaitProgressWidgetProperty::TTKCircleWaitProgressWidgetProperty(QWidget
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCircleWaitProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKCircleWaitProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -34,7 +34,7 @@ TTKCircleWaitProgressWidgetProperty::TTKCircleWaitProgressWidgetProperty(QWidget
 
 void TTKCircleWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKCircleWaitProgressWidget *widget = TTKObject_cast(TTKCircleWaitProgressWidget*, m_item);
+    TTKCircleWaitProgressWidget *widget = TTKObjectCast(TTKCircleWaitProgressWidget*, m_item);
     if(property->propertyName() == "ClockWise")
     {
         widget->setClockWise(value);
@@ -43,7 +43,7 @@ void TTKCircleWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *proper
 
 void TTKCircleWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKCircleWaitProgressWidget *widget = TTKObject_cast(TTKCircleWaitProgressWidget*, m_item);
+    TTKCircleWaitProgressWidget *widget = TTKObjectCast(TTKCircleWaitProgressWidget*, m_item);
     if(property->propertyName() == "RotateDelta")
     {
         widget->setRotateDelta(value);
@@ -52,7 +52,7 @@ void TTKCircleWaitProgressWidgetProperty::intPropertyChanged(QtProperty *propert
 
 void TTKCircleWaitProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCircleWaitProgressWidget *widget = TTKObject_cast(TTKCircleWaitProgressWidget*, m_item);
+    TTKCircleWaitProgressWidget *widget = TTKObjectCast(TTKCircleWaitProgressWidget*, m_item);
     if(property->propertyName() == "Color")
     {
         widget->setColor(value);

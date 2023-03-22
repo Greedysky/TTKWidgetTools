@@ -93,7 +93,7 @@ QStringList TTKNetTraffic::newtworkNames() const
     for(UINT i = 0; i < pTable->dwNumEntries; ++i)
     {
         const MIB_IFROW Row = pTable->table[i];
-        TTKString s(TTKReinterpret_cast(char const*, Row.bDescr));
+        TTKString s(TTKReinterpretCast(char const*, Row.bDescr));
         const QString &qs = QString::fromStdString(s);
         if((Row.dwType == 71 || Row.dwType == 6) && !names.contains(qs))
         {
@@ -184,7 +184,7 @@ void TTKNetTraffic::run()
         for(UINT i = 0; i < pTable->dwNumEntries; ++i)
         {
             const MIB_IFROW& Row = pTable->table[i];
-            const TTKString s(TTKReinterpret_cast(char const*, Row.bDescr));
+            const TTKString s(TTKReinterpretCast(char const*, Row.bDescr));
             if((Row.dwType == 71 || Row.dwType == 6) && m_name == QString::fromStdString(s))
             {
                 dwInOctets += Row.dwInOctets;

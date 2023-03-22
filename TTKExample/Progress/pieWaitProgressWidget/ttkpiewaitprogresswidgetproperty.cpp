@@ -10,7 +10,7 @@ TTKPieWaitProgressWidgetProperty::TTKPieWaitProgressWidgetProperty(QWidget *pare
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKPieWaitProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKPieWaitProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -38,7 +38,7 @@ TTKPieWaitProgressWidgetProperty::TTKPieWaitProgressWidgetProperty(QWidget *pare
 
 void TTKPieWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKPieWaitProgressWidget *widget = TTKObject_cast(TTKPieWaitProgressWidget*, m_item);
+    TTKPieWaitProgressWidget *widget = TTKObjectCast(TTKPieWaitProgressWidget*, m_item);
     if(property->propertyName() == "ClockWise")
     {
         widget->setClockWise(value);
@@ -47,7 +47,7 @@ void TTKPieWaitProgressWidgetProperty::boolPropertyChanged(QtProperty *property,
 
 void TTKPieWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    TTKPieWaitProgressWidget *widget = TTKObject_cast(TTKPieWaitProgressWidget*, m_item);
+    TTKPieWaitProgressWidget *widget = TTKObjectCast(TTKPieWaitProgressWidget*, m_item);
     if(property->propertyName() == "RotateDelta")
     {
         widget->setRotateDelta(value);
@@ -56,7 +56,7 @@ void TTKPieWaitProgressWidgetProperty::intPropertyChanged(QtProperty *property, 
 
 void TTKPieWaitProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKPieWaitProgressWidget *widget = TTKObject_cast(TTKPieWaitProgressWidget*, m_item);
+    TTKPieWaitProgressWidget *widget = TTKObjectCast(TTKPieWaitProgressWidget*, m_item);
     if(property->propertyName() == "ForegroundColor")
     {
         widget->setForegroundColor(value);

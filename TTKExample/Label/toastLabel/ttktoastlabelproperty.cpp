@@ -15,7 +15,7 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKToastLabel2*, m_label)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKToastLabel2*, m_label)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -30,7 +30,7 @@ TTKToastLabelProperty::TTKToastLabelProperty(QWidget *parent)
 
 void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKToastLabel2 *widget = TTKObject_cast(TTKToastLabel2*, m_label);
+    TTKToastLabel2 *widget = TTKObjectCast(TTKToastLabel2*, m_label);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -39,6 +39,6 @@ void TTKToastLabelProperty::stringPropertyChanged(QtProperty *property, const QS
 
 void TTKToastLabelProperty::showWidget()
 {
-    TTKToastLabel2 *widget = TTKObject_cast(TTKToastLabel2*, m_label);
+    TTKToastLabel2 *widget = TTKObjectCast(TTKToastLabel2*, m_label);
     widget->popup(m_containItem);
 }

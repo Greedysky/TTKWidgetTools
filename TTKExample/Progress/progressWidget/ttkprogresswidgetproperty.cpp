@@ -10,7 +10,7 @@ TTKProgressWidgetProperty::TTKProgressWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKProgressWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKProgressWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -29,7 +29,7 @@ TTKProgressWidgetProperty::TTKProgressWidgetProperty(QWidget *parent)
 
 void TTKProgressWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKProgressWidget *widget = TTKObject_cast(TTKProgressWidget*, m_item);
+    TTKProgressWidget *widget = TTKObjectCast(TTKProgressWidget*, m_item);
     if(property->propertyName() == "ProgressColor")
     {
         widget->setProgressColor(value);

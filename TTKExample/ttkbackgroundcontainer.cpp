@@ -28,7 +28,7 @@ void TTKBackgroundContainerItem::addItem(QWidget *item)
 {
     delete m_item;
     m_item = item;
-    TTKObject_cast(QVBoxLayout*, layout())->addWidget(item, 0, Qt::AlignCenter);
+    TTKObjectCast(QVBoxLayout*, layout())->addWidget(item, 0, Qt::AlignCenter);
 
     const QSize &hint = m_item->sizeHint();
     const int width = geometry().width();

@@ -10,13 +10,13 @@ TTKNetTrafficLabelProperty::TTKNetTrafficLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKNetTrafficLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKNetTrafficLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
     objectItem->addSubProperty(geometryItem);
     //
-    cards_ = TTKObject_cast(TTKNetTrafficLabel*, m_item)->newtworkNames();
+    cards_ = TTKObjectCast(TTKNetTrafficLabel*, m_item)->newtworkNames();
     QtProperty *typeItem = m_enumManager->addProperty("NetworkCard");
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";
@@ -28,7 +28,7 @@ TTKNetTrafficLabelProperty::TTKNetTrafficLabelProperty(QWidget *parent)
 
 void TTKNetTrafficLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKNetTrafficLabel *widget = TTKObject_cast(TTKNetTrafficLabel*, m_item);
+    TTKNetTrafficLabel *widget = TTKObjectCast(TTKNetTrafficLabel*, m_item);
     if(property->propertyName() == "NetworkCard")
     {
         if(value < 0 || value >= cards_.count())

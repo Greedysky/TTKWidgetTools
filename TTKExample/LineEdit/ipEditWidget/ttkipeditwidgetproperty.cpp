@@ -10,7 +10,7 @@ TTKIpEditWidgetProperty::TTKIpEditWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKIpEditWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKIpEditWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -25,7 +25,7 @@ TTKIpEditWidgetProperty::TTKIpEditWidgetProperty(QWidget *parent)
 
 void TTKIpEditWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKIpEditWidget *widget = TTKObject_cast(TTKIpEditWidget*, m_item);
+    TTKIpEditWidget *widget = TTKObjectCast(TTKIpEditWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);

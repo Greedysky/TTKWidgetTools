@@ -10,7 +10,7 @@ TTKSmoothMovingTableWidgetProperty::TTKSmoothMovingTableWidgetProperty(QWidget *
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKSmoothMovingTableWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKSmoothMovingTableWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -19,7 +19,7 @@ TTKSmoothMovingTableWidgetProperty::TTKSmoothMovingTableWidgetProperty(QWidget *
     m_browser->addProperty(objectItem);
 
     //
-    TTKSmoothMovingTableWidget *widget = TTKObject_cast(TTKSmoothMovingTableWidget*, m_item);
+    TTKSmoothMovingTableWidget *widget = TTKObjectCast(TTKSmoothMovingTableWidget*, m_item);
     widget->setColumnCount(1);
     widget->setRowCount(500);
     for(int i = 0; i < widget->rowCount(); ++i)

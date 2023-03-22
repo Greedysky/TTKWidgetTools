@@ -32,7 +32,7 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKLedPageLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKLedPageLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -79,7 +79,7 @@ void TTKLedPageLabelProperty::boolPropertyChanged(QtProperty *property, bool val
 
 void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKLedPageLabel *widget = TTKObject_cast(TTKLedPageLabel*, m_item);
+    TTKLedPageLabel *widget = TTKObjectCast(TTKLedPageLabel*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);
@@ -96,6 +96,6 @@ void TTKLedPageLabelProperty::colorPropertyChanged(QtProperty *property, const Q
 
 void TTKLedPageLabelProperty::updateRender()
 {
-    TTKLedPageLabel *widget = TTKObject_cast(TTKLedPageLabel*, m_item);
+    TTKLedPageLabel *widget = TTKObjectCast(TTKLedPageLabel*, m_item);
     widget->setText(QString::number(random(100) + 1));
 }

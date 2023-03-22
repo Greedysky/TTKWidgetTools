@@ -10,7 +10,7 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKCloudPanelLabel*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKCloudPanelLabel*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -20,7 +20,7 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "CloudStyleBlack" << "CloudStyleWhite" << "CloudStyleBlue" << "CloudStylePurple";
     m_enumManager->setEnumNames(cloudStyleItem, enumNames);
-    m_enumManager->setValue(cloudStyleItem, TTKStatic_cast(int, TTKCloudPanelLabel::CloudStyle::Black));
+    m_enumManager->setValue(cloudStyleItem, TTKStaticCast(int, TTKCloudPanelLabel::CloudStyle::Black));
     objectItem->addSubProperty(cloudStyleItem);
     //
     QtProperty *backgroundColorItem = m_colorManager->addProperty("BackgroundColor");
@@ -52,16 +52,16 @@ TTKCloudPanelLabelProperty::TTKCloudPanelLabelProperty(QWidget *parent)
 
 void TTKCloudPanelLabelProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKCloudPanelLabel *widget = TTKObject_cast(TTKCloudPanelLabel*, m_item);
+    TTKCloudPanelLabel *widget = TTKObjectCast(TTKCloudPanelLabel*, m_item);
     if(property->propertyName() == "CloudStyle")
     {
-        widget->setCloudStyle(TTKStatic_cast(TTKCloudPanelLabel::CloudStyle, value));
+        widget->setCloudStyle(TTKStaticCast(TTKCloudPanelLabel::CloudStyle, value));
     }
 }
 
 void TTKCloudPanelLabelProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKCloudPanelLabel *widget = TTKObject_cast(TTKCloudPanelLabel*, m_item);
+    TTKCloudPanelLabel *widget = TTKObjectCast(TTKCloudPanelLabel*, m_item);
     if(property->propertyName() == "BackgroundColor")
     {
         widget->setBackgroundColor(value);

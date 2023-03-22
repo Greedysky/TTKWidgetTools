@@ -10,7 +10,7 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObject_cast(TTKRadioButtonWidget*, m_item)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKRadioButtonWidget*, m_item)->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");
@@ -41,7 +41,7 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
     QStringList enumNames;
     enumNames << "LabelPositionLeft" << "LabelPositionRight";
     m_enumManager->setEnumNames(directionItem, enumNames);
-    m_enumManager->setValue(directionItem, TTKStatic_cast(int, TTKRadioButtonWidget::LabelPosition::Right));
+    m_enumManager->setValue(directionItem, TTKStaticCast(int, TTKRadioButtonWidget::LabelPosition::Right));
     objectItem->addSubProperty(directionItem);
     //
     QtProperty *textItem = m_stringManager->addProperty("Text");
@@ -53,7 +53,7 @@ TTKRadioButtonWidgetProperty::TTKRadioButtonWidgetProperty(QWidget *parent)
 
 void TTKRadioButtonWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    TTKRadioButtonWidget *widget = TTKObject_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKObjectCast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Enable")
     {
         widget->setEnabled(value);
@@ -66,7 +66,7 @@ void TTKRadioButtonWidgetProperty::boolPropertyChanged(QtProperty *property, boo
 
 void TTKRadioButtonWidgetProperty::stringPropertyChanged(QtProperty *property, const QString &value)
 {
-    TTKRadioButtonWidget *widget = TTKObject_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKObjectCast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Text")
     {
         widget->setText(value);
@@ -75,16 +75,16 @@ void TTKRadioButtonWidgetProperty::stringPropertyChanged(QtProperty *property, c
 
 void TTKRadioButtonWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    TTKRadioButtonWidget *widget = TTKObject_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKObjectCast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "Direction")
     {
-        widget->setLabelPosition(TTKStatic_cast(TTKRadioButtonWidget::LabelPosition, value));
+        widget->setLabelPosition(TTKStaticCast(TTKRadioButtonWidget::LabelPosition, value));
     }
 }
 
 void TTKRadioButtonWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    TTKRadioButtonWidget *widget = TTKObject_cast(TTKRadioButtonWidget*, m_item);
+    TTKRadioButtonWidget *widget = TTKObjectCast(TTKRadioButtonWidget*, m_item);
     if(property->propertyName() == "DisabledColor")
     {
         widget->setDisabledColor(value);
