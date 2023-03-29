@@ -1,5 +1,15 @@
 # TTKWidgetTools
-QWidget 控件集合 
+![TTKWidgetTools](https://img.shields.io/badge/Greedysky-TTKWidgetTools-green.svg?style=flat-square)
+![Version](https://img.shields.io/badge/Version-2.6.0.0-blue.svg?style=flat-square)
+![License](https://img.shields.io/badge/License-GPL%20V3-yellowgreen.svg?style=flat-square)
+
+![LOGO](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/logo_banner.png?raw=true)
+
+### **|[About](https://github.com/Greedysky/TTKWidgetTools#usage)|[License](https://github.com/Greedysky/TTKWidgetTools#license)|[Download](https://github.com/Greedysky/TTKWidgetTools#download)|[Features](https://github.com/Greedysky/TTKWidgetTools#features)|[Screenshots](https://github.com/Greedysky/TTKWidgetTools#screenshots)|[Copyright](https://github.com/Greedysky/TTKWidgetTools#copyright)|[Contribute](https://github.com/Greedysky/TTKWidgetTools#how-to-contribute)|**
+
+Usage
+--------
+**TTKTinyTools 是基于 Qt 的自定义控件集合，支持Windows和Linux平台.**
 
 ## CI Status
  * Qt stable version is tested on Qt4.x for windows-mingw 32bit
@@ -17,8 +27,20 @@ QWidget 控件集合
 | Windows  | 5.x MSVC                    | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
 | OS X     | Clang                       | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)       |
 
-Button
-----
+# For Developers
+
+License
+--------
+TTKWidgetTools is free software licensed under the term of [Licence GPL v3](https://github.com/Greedysky/TTKWidgetTools/blob/master/LICENSE). If you use TTKWidgetTools or its constituent libraries, you must adhere to the terms of the license in question.
+
+Download
+--------
+Github: **<u>https://github.com/Greedysky/TTKWidgetTools</u>**
+
+Features
+--------
+### Button
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Button | TTKCheckButtonWidget |   Finish   |
@@ -28,8 +50,8 @@ Button
 | Button | TTKToolMenuWidget |   Finish   |
 | Button | TTKColorButtonWidget |   Finish   |
 
-Label
-----
+### Label
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Label | TTKCircleClickLabel |   Finish   |
@@ -51,15 +73,15 @@ Label
 | Label | TTKCrossLineLabel |   Finish   |
 | Label | TTKNetTrafficLabel |   Finish   |
 
-LineEdit
-----
+### LineEdit
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | LineEdit | TTKIpEditWidget |   Finish   |
 | LineEdit | TTKLineEditWidget |   Finish   |
 
-Meter
-----
+### Meter
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Meter | TTKPaintMeterWidget |   Finish   |
@@ -79,8 +101,8 @@ Meter
 | Meter | TTKClockMeterWidget |   Finish   |
 | Meter | TTKTemperatureMeterWidget |   Finish   |
 
-Progress
-----
+### Progress
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Progress | TTKAnimationProgressWidget |   Finish   |
@@ -100,16 +122,16 @@ Progress
 | Progress | TTKDonutWaitProgressWidget |   Finish   |
 | Progress | TTKZoomWaitProgressWidget |   Finish   |
 
-Slider
-----
+### Slider
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Slider | TTKMovingLabelSlider |   Finish   |
 | Slider | TTKShiningSlider |   Finish   |
 | Slider | TTKStyleSlider |   Finish   |
 
-Title
-----
+### Title
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Title | TTKFunctionAnimationWidget |   Finish   |
@@ -119,8 +141,8 @@ Title
 | Title | TTKFunctionToolboxWidget |   Finish   |
 | Title | TTKFunctionNavigationWidget |   Finish   |
 
-Widget
-----
+### Widget
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Widget | TTKAnimation2StackedWidget |   Finish   |
@@ -136,8 +158,8 @@ Widget
 | Widget | TTKCalendarWidget |   Finish   |
 | Widget | TTKPuzzleWidget |   Finish   |
 
-Window
-----
+### Window
+--------
 | Module | Description       | Status        |
 | :---:    | :---:               | :---:         |
 | Window | TTKColorDialog |   Finish   |
@@ -148,19 +170,18 @@ Window
 | Window | TTKAnSplashScreen |   Finish   |
 | Window | TTKNotifyWindow |   Finish   |
 
-
 Screenshots
-----
-![Screenshots](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/picture.png?raw=true)
+--------
+![Demo](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/picture.png?raw=true)
 
 Copyright
--------
+--------
  * This file is part of the TTK Widget Tools project.
  * Copyright (C) 2015 - 2023 Greedysky Studio.
- * mail: greedysky@163.com.
+ * Mail: greedysky@163.com.
 
 How To Contribute
--------
+--------
  * Fork this project on github and make a branch. Commit in that branch, and push, then create a pull request to be reviewed and merged.
  * Create an issue if you have any problem when using project or you find a bug, etc.
  * What you can do: translation, write document, wiki, find or fix bugs, give your idea for this project etc.
