@@ -9,7 +9,7 @@
 
 Usage
 --------
-**TTKTinyTools 是基于 Qt 的自定义控件集合，支持Windows和Linux平台.**
+**TTKWidgetTools 是基于 Qt 的自定义控件集合，支持Windows和Linux平台.**
 
 ## CI Status
  * Qt stable version is tested on Qt4.x for windows-mingw 32bit
