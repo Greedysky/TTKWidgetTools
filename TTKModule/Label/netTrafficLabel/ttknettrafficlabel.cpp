@@ -89,6 +89,11 @@ QStringList TTKNetTraffic::newtworkNames() const
         pTable = (PMIB_IFTABLE)new BYTE[65535];
     }
 
+    if(!pTable)
+    {
+        return QStringList();
+    }
+
     GetIfTable(pTable, &dwAdapters, TRUE);
     for(UINT i = 0; i < pTable->dwNumEntries; ++i)
     {
