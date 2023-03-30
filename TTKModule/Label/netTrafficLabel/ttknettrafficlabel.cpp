@@ -1,4 +1,5 @@
 #include "ttknettrafficlabel.h"
+#include "ttknumberdefine.h"
 
 #include <QFile>
 #include <QProcess>
@@ -15,15 +16,10 @@
 #  include <arpa/inet.h>
 #endif
 
-#define KB (1024)
-#define MB (1024 * 1024)
-#define GB (1024 * 1024 * 1024)
-
 #define TEMP_FILE_NAME  "net_temp"
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
-    : QThread(parent),
-      m_run(true),
+    : TTKAbstractThread(parent),
       m_process(nullptr)
 {
 #ifdef Q_OS_UNIX
@@ -45,7 +41,7 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
 TTKNetTraffic::~TTKNetTraffic()
 {
     QFile::remove(TEMP_FILE_NAME);
-    stopAndQuitThread();
+    stop();
     if(m_process)
     {
         m_process->kill();
@@ -126,22 +122,6 @@ QStringList TTKNetTraffic::newtworkNames() const
     return names;
 }
 
-void TTKNetTraffic::stopAndQuitThread()
-{
-    if(isRunning())
-    {
-        m_run = false;
-        wait();
-    }
-    quit();
-}
-
-void TTKNetTraffic::start()
-{
-    m_run = true;
-    QThread::start();
-}
-
 void TTKNetTraffic::outputRecieved()
 {
 #ifdef Q_OS_UNIX
@@ -181,7 +161,7 @@ void TTKNetTraffic::run()
     DWORD dwLastIn = 0, dwLastOut = 0;
     DWORD dwBandIn = 0, dwBandOut = 0;
 
-    while(m_run)
+    while(m_running)
     {
         GetIfTable(pTable, &dwAdapters, TRUE);
         DWORD dwInOctets = 0, dwOutOctets = 0;
@@ -228,7 +208,7 @@ TTKNetTrafficLabel::TTKNetTrafficLabel(QWidget *parent)
     m_process = new TTKNetTraffic(this);
     connect(m_process, SIGNAL(networkData(ulong,ulong)), SLOT(setData(ulong,ulong)));
 
-    m_process->setAvailableNewtworkName("wlp2s0");
+    setAvailableNewtworkName("wlp2s0");
 }
 
 TTKNetTrafficLabel::~TTKNetTrafficLabel()
@@ -239,6 +219,8 @@ TTKNetTrafficLabel::~TTKNetTrafficLabel()
 void TTKNetTrafficLabel::setAvailableNewtworkName(const QString &name)
 {
     m_process->setAvailableNewtworkName(name);
+    m_process->stop();
+    m_process->start();
 }
 
 QStringList TTKNetTrafficLabel::newtworkNames() const
@@ -251,23 +233,27 @@ QSize TTKNetTrafficLabel::sizeHint() const
     return QSize(300, 30);
 }
 
-QString TTKNetTrafficLabel::size2Number(ulong size)
+QString TTKNetTrafficLabel::size2Number(qint64 size)
 {
-    if(size < KB)
+    if(size < MH_KB2B)
     {
-        return QString::number(size*1.0, 'f', 2) + "KB";
+        return QString::number(size * 1.0, 'f', 1) + "B/s";
     }
-    else if(KB <= size && size < MB)
+    else if(MH_KB2B <= size && size < MH_MB2B)
     {
-        return QString::number(size*1.0/KB, 'f', 2) + "MB";
+        return QString::number(size * 1.0 / MH_KB2B, 'f', 1) + "KB/s";
     }
-    else if(MB <= size && size < GB)
+    else if(MH_MB2B <= size && size < MH_GB2B)
     {
-        return QString::number(size*1.0/MB, 'f', 2) + "GB";
+        return QString::number(size * 1.0 / MH_MB2B, 'f', 1) + "MB/s";
+    }
+    else if(MH_GB2B <= size && size < MH_TB2B)
+    {
+        return QString::number(size * 1.0 / MH_GB2B, 'f', 1) + "GB/s";
     }
     else
     {
-        return QString("0KB");
+        return QString::number(size * 1.0 / MH_TB2B, 'f', 1) + "TB/s";
     }
 }
 

@@ -20,15 +20,14 @@
  ***************************************************************************/
 
 #include <QLabel>
-#include <QThread>
-#include "ttkglobaldefine.h"
+#include "ttkabstractthread.h"
 
 class QProcess;
 
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTK_MODULE_EXPORT TTKNetTraffic : public QThread
+class TTK_MODULE_EXPORT TTKNetTraffic : public TTKAbstractThread
 {
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKNetTraffic)
@@ -47,14 +46,6 @@ public:
      * Get newtwork names.
      */
     QStringList newtworkNames() const;
-    /*!
-     * Stop and quit current thread.
-     */
-    void stopAndQuitThread();
-    /*!
-     * Strat thread now.
-     */
-    void start();
 
 Q_SIGNALS:
     /*!
@@ -74,9 +65,8 @@ private:
      */
     virtual void run() override final;
 
-    bool m_run;
     QString m_name;
-    QProcess *m_process ;
+    QProcess *m_process;
 
 };
 
@@ -96,7 +86,7 @@ public:
     QStringList newtworkNames() const;
 
     virtual QSize sizeHint() const override final;
-    QString size2Number(ulong size);
+    QString size2Number(qint64 size);
 
 private Q_SLOTS:
     void setData(ulong upload, ulong download);
