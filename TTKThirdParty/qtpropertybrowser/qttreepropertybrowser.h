@@ -82,7 +82,7 @@ public:
     void setRootIsDecorated(bool show);
 
     bool alternatingRowColors() const;
-    void setAlternatingRowColors(bool enable);
+    void setAlternatingRowColors(bool enabled);
 
     bool isHeaderVisible() const;
     void setHeaderVisible(bool visible);

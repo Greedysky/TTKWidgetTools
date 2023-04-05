@@ -37,9 +37,9 @@ void TTKSpeedMeterWidget::setRatio(qreal value)
     update();
 }
 
-void TTKSpeedMeterWidget::setAnimating(bool enable)
+void TTKSpeedMeterWidget::setAnimating(bool enabled)
 {
-    m_bAnimating = enable;
+    m_bAnimating = enabled;
     update();
 }
 

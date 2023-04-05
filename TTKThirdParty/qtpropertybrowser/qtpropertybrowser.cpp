@@ -376,12 +376,12 @@ void QtProperty::setPropertyName(const QString &text)
 
     \sa isEnabled()
 */
-void QtProperty::setEnabled(bool enable)
+void QtProperty::setEnabled(bool enabled)
 {
-    if (d_ptr->m_enabled == enable)
+    if (d_ptr->m_enabled == enabled)
         return;
 
-    d_ptr->m_enabled = enable;
+    d_ptr->m_enabled = enabled;
     propertyChanged();
 }
 

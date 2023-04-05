@@ -717,12 +717,12 @@ void TTKAnimation2StackedWidget::setRevert(bool revert)
     m_revert = revert;
 }
 
-void TTKAnimation2StackedWidget::setFadeEnable(bool enable)
+void TTKAnimation2StackedWidget::setFadeEnabled(bool enabled)
 {
-    m_fade = enable;
+    m_fade = enabled;
 }
 
-void TTKAnimation2StackedWidget::setAnimatEnable(bool animat)
+void TTKAnimation2StackedWidget::setAnimatEnabled(bool animat)
 {
     m_animat = animat;
 }

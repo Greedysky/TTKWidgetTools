@@ -845,9 +845,9 @@ bool QtTreePropertyBrowser::alternatingRowColors() const
     return d_ptr->m_treeWidget->alternatingRowColors();
 }
 
-void QtTreePropertyBrowser::setAlternatingRowColors(bool enable)
+void QtTreePropertyBrowser::setAlternatingRowColors(bool enabled)
 {
-    d_ptr->m_treeWidget->setAlternatingRowColors(enable);
+    d_ptr->m_treeWidget->setAlternatingRowColors(enabled);
     QMapIterator<QTreeWidgetItem *, QtBrowserItem *> it(d_ptr->m_itemToIndex);
 }
 

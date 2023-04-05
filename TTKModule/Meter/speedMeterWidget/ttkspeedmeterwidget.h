@@ -38,7 +38,7 @@ public:
     void setRatio(qreal value);
     qreal ratio() const { return m_ratio;}
 
-    void setAnimating(bool enable);
+    void setAnimating(bool enabled);
     bool isAnimating() const { return m_bAnimating;}
 
     virtual QSize sizeHint() const override final;

@@ -64,8 +64,8 @@ public:
     void setDuration(int duration);
     int duration() const;
 
-    void setFadeEnable(bool enable);
-    void setAnimatEnable(bool animat);
+    void setFadeEnabled(bool enabled);
+    void setAnimatEnabled(bool animat);
 
     void addWidget(QWidget *widget);
 
