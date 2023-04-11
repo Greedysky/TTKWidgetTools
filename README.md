@@ -35,7 +35,9 @@ TTKWidgetTools is free software licensed under the term of [Licence GPL v3](http
 
 Download
 --------
-Github: **<u>https://github.com/Greedysky/TTKWidgetTools</u>**
+Gitee URL: **<u>https://gitee.com/Greedysky/TTKWidgetTools</u>**
+
+Github URL: **<u>https://github.com/Greedysky/TTKWidgetTools</u>**
 
 Features
 --------
