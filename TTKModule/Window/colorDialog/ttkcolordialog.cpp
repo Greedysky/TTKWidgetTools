@@ -1,7 +1,6 @@
 #include "ttkcolordialog.h"
 
 #include <QPainter>
-#include <QToolTip>
 #include <QMouseEvent>
 #include <QPainterPath>
 
