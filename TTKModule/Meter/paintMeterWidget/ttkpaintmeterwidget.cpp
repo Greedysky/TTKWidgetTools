@@ -156,7 +156,7 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
         cosa = cos((double)(startRad + i * deltaRad));
         const double v = i * ((m_maxValue - m_minValue) / m_steps) + m_minValue;
 
-        const QString& str = QString("%1").arg(v, 0, 'f', m_precision);
+        const QString &str = QString("%1").arg(v, 0, 'f', m_precision);
         const QFontMetricsF ftm(font());
         const double w = ftm.size(Qt::TextSingleLine, str).width();
         const double h = ftm.size(Qt::TextSingleLine, str).height();
@@ -183,7 +183,7 @@ void TTKPaintMeterWidget::drawNumericValue(QPainter *painter)
     }
     painter->save();
 
-    const QString& str = QString("%1").arg(m_value, 0, 'f', m_precisionNumeric);
+    const QString &str = QString("%1").arg(m_value, 0, 'f', m_precisionNumeric);
     painter->setPen(!m_thresholdFlag ? Qt::white : Qt::red);
     QFont font = painter->font();
     font.setBold(true);

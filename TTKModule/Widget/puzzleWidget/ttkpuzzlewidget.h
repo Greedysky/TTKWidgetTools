@@ -34,7 +34,7 @@ public:
 
     void setSquareWidth(int squareWidth);
     void setSquareRadius(int squareRadius);
-    void setPixmap(const QString& pixmap);
+    void setPixmap(const QString &pixmap);
 
 public Q_SLOTS:
     void updatePixmap();
@@ -63,7 +63,7 @@ public:
 
     void setSquareWidth(int squareWidth);
     void setSquareRadius(int squareRadius);
-    void setPixmap(const QString& pixmap);
+    void setPixmap(const QString &pixmap);
 
     virtual QSize sizeHint() const override final;
 

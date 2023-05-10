@@ -79,7 +79,7 @@ QSize TTKIpEditWidget::sizeHint() const
     return QSize(165, 25);
 }
 
-void TTKIpEditWidget::editTextChanged(const QString& text)
+void TTKIpEditWidget::editTextChanged(const QString &text)
 {
     QLineEdit* curEdit = qobject_cast<QLineEdit*>(sender());
     if(text.length() == 3)

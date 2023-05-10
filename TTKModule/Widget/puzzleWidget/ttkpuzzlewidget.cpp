@@ -41,7 +41,7 @@ void TTKPuzzleItemWidget::setSquareRadius(int squareRadius)
     update();
 }
 
-void TTKPuzzleItemWidget::setPixmap(const QString& pixmap)
+void TTKPuzzleItemWidget::setPixmap(const QString &pixmap)
 {
     m_pixmap = pixmap;
     QTimer::singleShot(MT_ONCE, this, SLOT(updatePixmap()));
@@ -135,7 +135,7 @@ void TTKPuzzleWidget::setSquareRadius(int squareRadius)
     m_item->setSquareRadius(squareRadius);
 }
 
-void TTKPuzzleWidget::setPixmap(const QString& pixmap)
+void TTKPuzzleWidget::setPixmap(const QString &pixmap)
 {
     m_item->setPixmap(pixmap);
     m_slider->setValue(0);
