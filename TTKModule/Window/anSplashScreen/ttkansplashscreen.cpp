@@ -56,9 +56,6 @@ void TTKAnSplashScreen::initialize()
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    m_w = width();
-    m_h = height();
-
     m_loadTimer = new QTimer(this);
     connect(m_loadTimer, SIGNAL(timeout()), SLOT(update()));
     m_loadTimer->setInterval(5);
@@ -135,6 +132,14 @@ void TTKAnSplashScreen::paintEvent(QPaintEvent *event)
     {
         m_dig = 0;
     }
+}
+
+void TTKAnSplashScreen::resizeEvent(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);
+
+    m_w = width();
+    m_h = height();
 }
 
 void TTKAnSplashScreen::countTimeout()

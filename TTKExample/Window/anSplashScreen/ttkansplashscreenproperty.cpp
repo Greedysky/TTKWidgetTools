@@ -14,7 +14,6 @@ TTKAnSplashScreenProperty::TTKAnSplashScreenProperty(QWidget *parent)
     QWidget *mainWidget = new QWidget(this);
     mainWidget->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     mainWidget->resize(300, 300);
-
     widget->setWidget(mainWidget);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
