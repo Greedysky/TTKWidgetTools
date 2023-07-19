@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QSplashScreen>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QProgressBar;
 

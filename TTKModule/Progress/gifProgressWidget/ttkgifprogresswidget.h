@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QLabel>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QTimer;
 

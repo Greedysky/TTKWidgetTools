@@ -46,7 +46,7 @@
 #include <QWidget>
 #include <QSet>
 #include <QLineEdit>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE

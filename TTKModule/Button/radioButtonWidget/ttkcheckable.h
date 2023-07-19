@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QAbstractButton>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QState;
 class QStateMachine;

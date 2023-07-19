@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QProgressBar>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTKProgressWidget;
 

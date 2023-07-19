@@ -21,7 +21,7 @@
 
 #include <QTimer>
 #include <QWidget>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 struct TTK_MODULE_EXPORT Position
 {

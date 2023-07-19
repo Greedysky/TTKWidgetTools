@@ -21,7 +21,7 @@
 
 #include <QSlider>
 #include <QMouseEvent>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class TTKGifProgressWidget;
 

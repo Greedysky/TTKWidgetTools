@@ -21,7 +21,7 @@
 
 #include <QPushButton>
 #include <QGridLayout>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 /*!
 * @author Greedysky <greedysky@163.com>

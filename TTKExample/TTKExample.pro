@@ -24,6 +24,7 @@ equals(QT_MAJOR_VERSION, 4){ #Qt4
 include($$PWD/TTKExample.pri)
 include($$PWD/../TTKWidgetTools.pri)
 include($$PWD/../TTKUi/TTKUi.pri)
+include($$PWD/../TTKCommon/TTKApplication/TTKApplication.pri)
 
 TARGET = TTKWidgetTools
 
@@ -36,7 +37,7 @@ HEADERS += \
     $$PWD/ttkbackgroundcontainer.h \
     $$PWD/ttkbackgroundwidget.h \
     $$PWD/ttktoolsapplication.h \
-    $$PWD/../TTKCommon/ttkglobaldefine.h
+    $$PWD/../TTKCommon/ttkmoduleexport.h
 
 SOURCES += \
     $$PWD/ttkwidgetproperty.cpp \

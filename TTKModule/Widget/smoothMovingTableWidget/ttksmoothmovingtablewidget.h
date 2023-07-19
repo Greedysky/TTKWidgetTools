@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include <QTableWidget>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 class QPropertyAnimation;
 

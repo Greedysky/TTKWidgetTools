@@ -22,7 +22,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QBoxLayout>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>

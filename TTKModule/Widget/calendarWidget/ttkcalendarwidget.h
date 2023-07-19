@@ -22,7 +22,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QCalendarWidget>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 /*!
  * @author Greedysky <greedysky@163.com>

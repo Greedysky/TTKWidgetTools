@@ -21,7 +21,7 @@
 
 #include <QLabel>
 #include <QTimer>
-#include "ttkglobaldefine.h"
+#include "ttkmoduleexport.h"
 
 typedef struct heatmap_t DataObject;
 typedef struct heatmap_stamp_t DataStamp;
