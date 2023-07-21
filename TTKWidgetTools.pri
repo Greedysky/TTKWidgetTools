@@ -38,8 +38,8 @@ win32{
         CONFIG += c++11
         !contains(QMAKE_TARGET.arch, x86_64){
              #support on windows XP
-             QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
-             QMAKE_LFLAGS_CONSOLE = /SUBSYSTEM:CONSOLE,5.01
+             QMAKE_LFLAGS_WINDOWS += /SUBSYSTEM:WINDOWS,5.01
+             QMAKE_LFLAGS_CONSOLE += /SUBSYSTEM:CONSOLE,5.01
         }
         LIBS += -L$$DESTDIR -lTTKLibrary -lTTKDumper
     }
