@@ -6,16 +6,16 @@
  * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
 
- * You should have received a copy of the GNU General Public License along
+ * You should have received a copy of the GNU Lesser General Public License along
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
@@ -137,22 +137,6 @@
 #define SHL_FILE            TTK_STRCAT(TTK_DOT, SHL_FILE_SUFFIX)
 #define EXE_FILE            TTK_STRCAT(TTK_DOT, EXE_FILE_SUFFIX)
 #define COM_FILE            TTK_STRCAT(TTK_DOT, COM_FILE_SUFFIX)
-
-#define SERVICE_NAME        "TTKService"
-#define APP_NAME            "TTKWidgetTools"
-#define APP_DOT_NAME        TTK_STRCAT(APP_NAME, TTK_DOT)
-#define APP_COME_NAME       TTK_STRCAT(APP_NAME, COM_FILE)
-#ifdef _WIN32
-#  define APP_EXE_NAME      TTK_STRCAT(APP_NAME, EXE_FILE)
-#  define SERVICE_EXE_NAME  TTK_STRCAT(SERVICE_NAME, EXE_FILE)
-#  define APP_SHL_NAME      APP_EXE_NAME
-#  define SERVICE_SHL_NAME  SERVICE_EXE_NAME
-#else
-#  define APP_EXE_NAME      APP_NAME
-#  define SERVICE_EXE_NAME  SERVICE_NAME
-#  define APP_SHL_NAME      TTK_STRCAT(APP_NAME, SHL_FILE)
-#  define SERVICE_SHL_NAME  TTK_STRCAT(SERVICE_NAME, SHL_FILE)
-#endif
 
 
 // C style format

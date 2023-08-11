@@ -6,16 +6,16 @@
  * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
 
- * You should have received a copy of the GNU General Public License along
+ * You should have received a copy of the GNU Lesser General Public License along
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
@@ -31,6 +31,9 @@ class TTK_MODULE_EXPORT TTKConcurrentQueue
 {
     TTK_DECLARE_MODULE(TTKConcurrentQueue)
 public:
+    /*!
+     * Object constructor.
+     */
     TTKConcurrentQueue()
         : m_queue(),
           m_mutex(),
@@ -39,6 +42,9 @@ public:
 
     }
 
+    /*!
+     * Push data into container.
+     */
     inline void push(const T &record)
     {
         std::lock_guard<std::mutex> lock(m_mutex);
@@ -46,6 +52,9 @@ public:
         m_condition.notify_one();
     }
 
+    /*!
+     * Pop data into container.
+     */
     inline bool pop(T &record, bool is_blocked = true)
     {
         // If user wants to retrieve data in non-blocking mode
@@ -71,18 +80,27 @@ public:
         return true;
     }
 
+    /*!
+     * Get container data size.
+     */
     inline size_t size() const
     {
         std::lock_guard<std::mutex> lock(m_mutex);
         return m_queue.size();
     }
 
+    /*!
+     * Check container data is empty or not.
+     */
     inline bool empty() const
     {
         std::lock_guard<std::mutex> lock(m_mutex);
         return m_queue.empty();
     }
 
+    /*!
+     * Clear container data.
+     */
     inline void clear()
     {
         std::queue<T> empty;
@@ -90,9 +108,9 @@ public:
     }
 
 private:
-  std::queue<T> m_queue;
-  mutable std::mutex m_mutex;
-  std::condition_variable m_condition;
+    std::queue<T> m_queue;
+    mutable std::mutex m_mutex;
+    std::condition_variable m_condition;
 
 };
 

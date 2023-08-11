@@ -52,11 +52,16 @@ void TTKGifProgressWidget::setType(Module type)
         case Module::HourglassWhite: setFixedSize(GIF_HOURGLASS_WHITE, GIF_HOURGLASS_WHITE); break;
         case Module::RadioBlue: setFixedSize(GIF_RADIO_BLUE, GIF_RADIO_BLUE); break;
         case Module::CheckBlue: setFixedSize(GIF_CHECK_BLUE, GIF_CHECK_BLUE); break;
-        case Module::Recordred: setFixedSize(GIF_RECORD_RED, GIF_RECORD_RED); break;
+        case Module::RecordRed: setFixedSize(GIF_RECORD_RED, GIF_RECORD_RED); break;
         case Module::CloseWhite: setFixedSize(GIF_CLOSE_WHITE_WIDTH, GIF_CLOSE_WHITE_HEIGHT); break;
         default: break;
     }
     update();
+}
+
+TTKGifProgressWidget::Module TTKGifProgressWidget::type() const
+{
+    return m_type;
 }
 
 void TTKGifProgressWidget::setInterval(int value)
@@ -64,9 +69,19 @@ void TTKGifProgressWidget::setInterval(int value)
     m_timer->setInterval(value);
 }
 
+int TTKGifProgressWidget::interval() const
+{
+    return m_timer->interval();
+}
+
 void TTKGifProgressWidget::setInfinited(bool s)
 {
     m_infinited = s;
+}
+
+bool TTKGifProgressWidget::infinited() const
+{
+    return m_infinited;
 }
 
 void TTKGifProgressWidget::run(bool run)
@@ -188,7 +203,7 @@ void TTKGifProgressWidget::updateRender()
                 update();
                 break;
             }
-        case Module::Recordred:
+        case Module::RecordRed:
             {
                 if(m_index == 5 && infinitedModeCheck())
                 {

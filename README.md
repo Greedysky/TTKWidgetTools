@@ -31,7 +31,7 @@ Usage
 
 License
 --------
-TTKWidgetTools is free software licensed under the term of [Licence GPL v3](https://github.com/Greedysky/TTKWidgetTools/blob/master/LICENSE). If you use TTKWidgetTools or its constituent libraries, you must adhere to the terms of the license in question.
+TTKWidgetTools is free software licensed under the term of [Licence LGPL v3](https://github.com/Greedysky/TTKWidgetTools/blob/master/LICENSE). If you use TTKWidgetTools or its constituent libraries, you must adhere to the terms of the license in question.
 
 Download
 --------

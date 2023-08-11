@@ -6,16 +6,16 @@
  * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
 
- * You should have received a copy of the GNU General Public License along
+ * You should have received a copy of the GNU Lesser General Public License along
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
@@ -48,23 +48,32 @@ template <typename PUB>
 class TTK_MODULE_EXPORT TTKPrivate
 {
 public:
+    /*!
+     * Object constructor.
+     */
     TTKPrivate()
         : m_qptr(nullptr)
     {
 
     }
 
-    virtual ~TTKPrivate()
-    {
+    /*!
+     * Object destructor.
+     */
+    virtual ~TTKPrivate() = default;
 
-    }
-
+    /*!
+     *  Set public pointer.
+     */
     inline void setPublic(PUB* pub)
     {
         m_qptr = pub;
     }
 
 protected:
+    /*!
+     *  Get public pointer.
+     */
     inline PUB *ttk_q() const
     {
         return m_qptr;
@@ -84,6 +93,9 @@ class TTK_MODULE_EXPORT TTKPrivateInterface
 {
     friend class TTKPrivate<PUB>;
 public:
+    /*!
+     * Object constructor.
+     */
     TTKPrivateInterface()
         : m_dptr(nullptr)
     {
@@ -96,22 +108,34 @@ public:
 
     }
 
+    /*!
+     * Object destructor.
+     */
     ~TTKPrivateInterface()
     {
         delete m_dptr;
     }
 
+    /*!
+     *  Set private pointer.
+     */
     inline void setPrivate(PVT* pvt)
     {
         delete m_dptr;
         m_dptr = pvt;
     }
 
+    /*!
+     *  Set public pointer.
+     */
     inline void setPublic(PUB* pub)
     {
         m_dptr->setPublic(pub);
     }
 
+    /*!
+     *  Get private pointer.
+     */
     inline PVT *operator()() const
     {
         return TTKStaticCast(PVT*, m_dptr);

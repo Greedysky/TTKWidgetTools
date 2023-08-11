@@ -6,16 +6,16 @@
  * Copyright (C) 2015 - 2023 Greedysky Studio
 
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * GNU Lesser General Public License for more details.
 
- * You should have received a copy of the GNU General Public License along
+ * You should have received a copy of the GNU Lesser General Public License along
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
@@ -51,9 +51,12 @@ public:
     };
 
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKAbstractItemDelegate(QObject* parent = nullptr);
+    /*!
+     * Object destructor.
+     */
     ~TTKAbstractItemDelegate();
 
     /*!
@@ -91,9 +94,12 @@ class TTK_MODULE_EXPORT TTKCheckBoxItemDelegate : public TTKAbstractItemDelegate
     TTK_DECLARE_MODULE(TTKCheckBoxItemDelegate)
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKCheckBoxItemDelegate(QObject* parent = nullptr);
+    /*!
+     * Object destructor.
+     */
     ~TTKCheckBoxItemDelegate();
 
     /*!
@@ -123,9 +129,12 @@ class TTK_MODULE_EXPORT TTKProgressBarItemDelegate : public TTKAbstractItemDeleg
     TTK_DECLARE_MODULE(TTKProgressBarItemDelegate)
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKProgressBarItemDelegate(QObject* parent = nullptr);
+    /*!
+     * Object destructor.
+     */
     ~TTKProgressBarItemDelegate();
 
     /*!
@@ -148,9 +157,12 @@ class TTK_MODULE_EXPORT TTKLabelItemDelegate : public TTKAbstractItemDelegate
     TTK_DECLARE_MODULE(TTKLabelItemDelegate)
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKLabelItemDelegate(QObject* parent = nullptr);
+    /*!
+     * Object destructor.
+     */
     ~TTKLabelItemDelegate();
 
     /*!
@@ -178,9 +190,12 @@ class TTK_MODULE_EXPORT TTKPushButtonItemDelegate : public TTKAbstractItemDelega
     TTK_DECLARE_MODULE(TTKPushButtonItemDelegate)
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKPushButtonItemDelegate(QObject* parent = nullptr);
+    /*!
+     * Object destructor.
+     */
     ~TTKPushButtonItemDelegate();
 
     /*!

@@ -1,9 +1,10 @@
 #include "ttkrunapplication.h"
 #include "ttktoolsapplication.h"
+#include "ttkobject.h"
 #include "ttkdumper.h"
 #include "ttkglobalhelper.h"
+#include "ttkplatformsystem.h"
 
-#include <QScreen>
 #include <QTextCodec>
 
 #ifdef Q_OS_UNIX
@@ -22,12 +23,9 @@ static void loadAppScaledFactor(int argc, char *argv[])
         QApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::Floor);
 #    endif
 #  elif TTK_QT_VERSION_CHECK(5,6,0)
-      QApplication app(argc, argv);
-      qputenv("QT_DEVICE_PIXEL_RATIO", "auto");
-      const QScreen *screen = QApplication::primaryScreen();
-      const qreal dpi = screen->logicalDotsPerInch() / 96.0;
-      qputenv("QT_SCALE_FACTOR", QByteArray::number(dpi));
-      Q_UNUSED(app);
+      TTKPlatformSystem platform;
+      const float dpi = platform.logicalDotsPerInch() / 96.0;
+      qputenv("QT_SCALE_FACTOR", QByteArray::number(dpi < 1.0 ? 1.0 : dpi));
 #  else
       qputenv("QT_DEVICE_PIXEL_RATIO", "auto");
 #  endif
@@ -42,9 +40,9 @@ int main(int argc, char *argv[])
 
     TTKRunApplication app(argc, argv);
 
-    QCoreApplication::setOrganizationName(APP_NAME);
-    QCoreApplication::setOrganizationDomain(APP_COME_NAME);
-    QCoreApplication::setApplicationName(APP_NAME);
+    QCoreApplication::setOrganizationName(TTK_APP_NAME);
+    QCoreApplication::setOrganizationDomain(TTK_APP_COME_NAME);
+    QCoreApplication::setApplicationName(TTK_APP_NAME);
 
     if(app.isRunning())
     {
