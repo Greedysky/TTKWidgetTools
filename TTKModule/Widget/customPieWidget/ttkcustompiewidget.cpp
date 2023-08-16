@@ -117,11 +117,11 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
         {
             offset = 45;
         }
-        else if (percent >= 30)
+        else if(percent >= 30)
         {
             offset = 55;
         }
-        else if (percent >= 15)
+        else if(percent >= 15)
         {
             offset = 60;
         }

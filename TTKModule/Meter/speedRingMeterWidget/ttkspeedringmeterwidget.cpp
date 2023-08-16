@@ -352,11 +352,11 @@ void TTKSpeedRingMeterWidget::drawScale(QPainter *painter)
             {
                 pen.setColor(m_ringColorStart);
             }
-            else if (index < (indexStart + indexMid))
+            else if(index < (indexStart + indexMid))
             {
                 pen.setColor(m_ringColorMid);
             }
-            else if (index < (indexStart + indexMid + indexEnd))
+            else if(index < (indexStart + indexMid + indexEnd))
             {
                 pen.setColor(m_ringColorEnd);
             }

@@ -5,7 +5,7 @@
 #include <QProcess>
 #include <QApplication>
 #ifdef Q_OS_WIN
-#  ifdef Q_CC_MINGW
+#  ifdef Q_CC_GNU
 #    include <winsock2.h>
 #  endif
 #  include <qt_windows.h>
