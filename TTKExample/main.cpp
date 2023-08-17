@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     TTKDumper dumper;
     dumper.run();
 
-    TTK::setApplicationFont(&app);
+    TTK::setApplicationFont();
 
     TTKToolsApplication w;
     w.show();
