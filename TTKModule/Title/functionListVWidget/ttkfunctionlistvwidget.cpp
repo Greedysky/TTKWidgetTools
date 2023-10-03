@@ -14,7 +14,7 @@ TTKFunctionListVWidget::TTKFunctionListVWidget(QWidget *parent)
     {
         TTKFunctionItemWidget *item = new TTKFunctionItemWidget(this);
         item->setLabelText("Hello World");
-        item->setLabelIcon(QString(), QString());
+        item->setLabelIcon({}, {});
         connect(item, SIGNAL(selectedChanged(TTKFunctionItemWidget*)), SLOT(selectedChanged(TTKFunctionItemWidget*)));
         layout->addWidget(item);
         m_items << item;

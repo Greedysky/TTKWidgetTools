@@ -13,7 +13,7 @@ TTKAnimationStackedWidget::TTKAnimationStackedWidget(QWidget *parent)
       m_previousIndex(0),
       m_type(Module::LeftToRight)
 {
-    m_animation = new QPropertyAnimation(this, QByteArray());
+    m_animation = new QPropertyAnimation(this, {});
     m_animation->setDuration(500);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0);

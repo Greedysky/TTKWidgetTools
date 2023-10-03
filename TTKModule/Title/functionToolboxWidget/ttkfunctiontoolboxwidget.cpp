@@ -313,7 +313,7 @@ QString TTKFunctionToolBoxWidget::title(QWidget *item) const
             }
         }
     }
-    return QString();
+    return {};
 }
 
 void TTKFunctionToolBoxWidget::resizeScrollIndex(int index) const

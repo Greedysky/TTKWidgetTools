@@ -17,7 +17,7 @@ TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
         m_ranges << pix.copy(i * (pix.width() / MAX_SIZE), 0, pix.width() / MAX_SIZE, pix.height());
     }
 
-    m_animation = new QPropertyAnimation(this, QByteArray(), parent);
+    m_animation = new QPropertyAnimation(this, {}, parent);
     m_animation->setStartValue(0);
     m_animation->setEndValue(MAX_SIZE - 1);
     m_animation->setDuration(2000);

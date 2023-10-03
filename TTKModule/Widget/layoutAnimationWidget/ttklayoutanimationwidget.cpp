@@ -22,7 +22,7 @@ TTKLayoutAnimationWidget::TTKLayoutAnimationWidget(QWidget *parent)
     m_widgetLayout->setSpacing(0);
     m_mainWidget->setLayout(m_widgetLayout);
 
-    m_animation = new QPropertyAnimation(m_mainWidget, QByteArray(), this);
+    m_animation = new QPropertyAnimation(m_mainWidget, {}, this);
     m_animation->setDuration(5000);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0.0f);
