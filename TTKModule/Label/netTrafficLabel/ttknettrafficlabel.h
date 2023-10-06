@@ -33,7 +33,7 @@ class TTK_MODULE_EXPORT TTKNetTraffic : public TTKAbstractThread
     TTK_DECLARE_MODULE(TTKNetTraffic)
 public:
     /*!
-     * Object contsructor.
+     * Object constructor.
      */
     explicit TTKNetTraffic(QObject *parent = nullptr);
     ~TTKNetTraffic();
