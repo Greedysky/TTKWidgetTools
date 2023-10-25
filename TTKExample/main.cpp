@@ -5,11 +5,11 @@
 #include "ttkglobalhelper.h"
 #include "ttkplatformsystem.h"
 
-#include <QTextCodec>
-
 #ifdef Q_OS_UNIX
 #  include <malloc.h>
 #endif
+
+#include <QTextCodec>
 
 static void loadAppScaledFactor(int argc, char *argv[])
 {
