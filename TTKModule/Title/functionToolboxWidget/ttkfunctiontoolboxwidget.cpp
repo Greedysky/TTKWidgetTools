@@ -228,9 +228,9 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     }
 
     //hide before widget
-    for(int i = 0; i < m_itemList.count(); ++i)
+    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        m_itemList[i].m_widgetItem->setItemExpand(false);
+        unionItem.m_widgetItem->setItemExpand(false);
     }
 
     // Add item and make sure it stretches the remaining space.
@@ -286,9 +286,9 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
 
 void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 {
-    for(int i = 0; i < m_itemList.count(); ++i)
+    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
+        TTKFunctionToolBoxWidgetItem *it = unionItem.m_widgetItem;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
@@ -302,9 +302,9 @@ void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 
 QString TTKFunctionToolBoxWidget::title(QWidget *item) const
 {
-    for(int i = 0; i < m_itemList.count(); ++i)
+    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
+        TTKFunctionToolBoxWidgetItem *it = unionItem.m_widgetItem;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)

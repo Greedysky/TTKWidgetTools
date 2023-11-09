@@ -22,9 +22,9 @@ TTKFunctionNavigationWidgetProperty::TTKFunctionNavigationWidgetProperty(QWidget
 void TTKFunctionNavigationWidgetProperty::buttonClicked()
 {
     TTKFunctionNavigationWidget *button = TTKObjectCast(TTKFunctionNavigationWidget*, sender());
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        m_buttons[i]->setChecked(m_buttons[i] == button);
+        btn->setChecked(btn == button);
     }
 }
 
@@ -37,9 +37,9 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        layout->addWidget(m_buttons[i]);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -93,41 +93,41 @@ TTKFunctionNavigationAWidgetProperty::TTKFunctionNavigationAWidgetProperty(QWidg
 
 void TTKFunctionNavigationAWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
     }
 }
 
 void TTKFunctionNavigationAWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
         else if(property->propertyName() == "LineSpace")
         {
-            m_buttons[i]->setLineSpace(value);
+            btn->setLineSpace(value);
         }
     }
 }
 
 void TTKFunctionNavigationAWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
@@ -136,19 +136,20 @@ void TTKFunctionNavigationAWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
     }
 }
@@ -162,9 +163,9 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        layout->addWidget(m_buttons[i]);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -255,49 +256,49 @@ TTKFunctionNavigationBWidgetProperty::TTKFunctionNavigationBWidgetProperty(QWidg
 
 void TTKFunctionNavigationBWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
         else if(property->propertyName() == "ShowTriangle")
         {
-            m_buttons[i]->setShowTriangle(value);
+            btn->setShowTriangle(value);
         }
     }
 }
 
 void TTKFunctionNavigationBWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
         else if(property->propertyName() == "LineSpace")
         {
-            m_buttons[i]->setLineSpace(value);
+            btn->setLineSpace(value);
         }
         else if(property->propertyName() == "LineWidth")
         {
-            m_buttons[i]->setLineWidth(value);
+            btn->setLineWidth(value);
         }
     }
 }
 
 void TTKFunctionNavigationBWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
@@ -306,47 +307,48 @@ void TTKFunctionNavigationBWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
         else if(property->propertyName() == "LineColor")
         {
-            m_buttons[i]->setLineColor(value);
+            btn->setLineColor(value);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBackgroundColor(value);
+            btn->setNormalBackgroundColor(value);
         }
         else if(property->propertyName() == "HoverBackgroundColor")
         {
-            m_buttons[i]->setHoverBackgroundColor(value);
+            btn->setHoverBackgroundColor(value);
         }
         else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBackgroundColor(value);
+            btn->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
-            m_buttons[i]->setNormalTextColor(value);
+            btn->setNormalTextColor(value);
         }
         else if(property->propertyName() == "HoverTextColor")
         {
-            m_buttons[i]->setHoverTextColor(value);
+            btn->setHoverTextColor(value);
         }
         else if(property->propertyName() == "CheckTextColor")
         {
-            m_buttons[i]->setCheckTextColor(value);
+            btn->setCheckTextColor(value);
         }
     }
 }
@@ -360,9 +362,9 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        layout->addWidget(m_buttons[i]);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -474,56 +476,56 @@ TTKFunctionNavigationCWidgetProperty::TTKFunctionNavigationCWidgetProperty(QWidg
 
 void TTKFunctionNavigationCWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
         else if(property->propertyName() == "ShowTriangle")
         {
-            m_buttons[i]->setShowTriangle(value);
+            btn->setShowTriangle(value);
         }
     }
 }
 
 void TTKFunctionNavigationCWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
         else if(property->propertyName() == "LineSpace")
         {
-            m_buttons[i]->setLineSpace(value);
+            btn->setLineSpace(value);
         }
         else if(property->propertyName() == "LineWidth")
         {
-            m_buttons[i]->setLineWidth(value);
+            btn->setLineWidth(value);
         }
     }
 }
 
 void TTKFunctionNavigationCWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
 
 void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -536,15 +538,15 @@ void TTKFunctionNavigationCWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = Qt::AlignBottom; break;
                 case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(style);
+            btn->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            btn->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
+            btn->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -553,47 +555,48 @@ void TTKFunctionNavigationCWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
         else if(property->propertyName() == "LineColor")
         {
-            m_buttons[i]->setLineColor(value);
+            btn->setLineColor(value);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBackgroundColor(value);
+            btn->setNormalBackgroundColor(value);
         }
         else if(property->propertyName() == "HoverBackgroundColor")
         {
-            m_buttons[i]->setHoverBackgroundColor(value);
+            btn->setHoverBackgroundColor(value);
         }
         else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBackgroundColor(value);
+            btn->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
-            m_buttons[i]->setNormalTextColor(value);
+            btn->setNormalTextColor(value);
         }
         else if(property->propertyName() == "HoverTextColor")
         {
-            m_buttons[i]->setHoverTextColor(value);
+            btn->setHoverTextColor(value);
         }
         else if(property->propertyName() == "CheckTextColor")
         {
-            m_buttons[i]->setCheckTextColor(value);
+            btn->setCheckTextColor(value);
         }
     }
 }
@@ -607,9 +610,9 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
     layout->setSpacing(2);
     m_item->setLayout(layout);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        layout->addWidget(m_buttons[i]);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -693,56 +696,56 @@ TTKFunctionNavigationDWidgetProperty::TTKFunctionNavigationDWidgetProperty(QWidg
 
 void TTKFunctionNavigationDWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
         else if(property->propertyName() == "ShowTriangle")
         {
-            m_buttons[i]->setShowTriangle(value);
+            btn->setShowTriangle(value);
         }
     }
 }
 
 void TTKFunctionNavigationDWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingRight")
         {
-            m_buttons[i]->setPaddingRight(value);
+            btn->setPaddingRight(value);
         }
         else if(property->propertyName() == "LineSpace")
         {
-            m_buttons[i]->setLineSpace(value);
+            btn->setLineSpace(value);
         }
         else if(property->propertyName() == "LineWidth")
         {
-            m_buttons[i]->setLineWidth(value);
+            btn->setLineWidth(value);
         }
     }
 }
 
 void TTKFunctionNavigationDWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
 
 void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -755,15 +758,15 @@ void TTKFunctionNavigationDWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = Qt::AlignBottom; break;
                 case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(style);
+            btn->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            btn->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
+            btn->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -772,19 +775,20 @@ void TTKFunctionNavigationDWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
     }
 }
@@ -802,11 +806,11 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        m_buttons[i]->setFont(font);
-        m_buttons[i]->setShowLine(false);
-        layout->addWidget(m_buttons[i]);
+        btn->setFont(font);
+        btn->setShowLine(false);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -897,48 +901,48 @@ TTKFunctionNavigationEWidgetProperty::TTKFunctionNavigationEWidgetProperty(QWidg
 
 void TTKFunctionNavigationEWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
         else if(property->propertyName() == "ShowLine")
         {
-            m_buttons[i]->setShowLine(value);
+            btn->setShowLine(value);
         }
     }
 }
 
 void TTKFunctionNavigationEWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
     }
 }
 
 void TTKFunctionNavigationEWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
 
 void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -951,11 +955,11 @@ void TTKFunctionNavigationEWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = Qt::AlignBottom; break;
                 case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(style);
+            btn->setTextAlign(style);
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
+            btn->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -964,43 +968,44 @@ void TTKFunctionNavigationEWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBackgroundColor(value);
+            btn->setNormalBackgroundColor(value);
         }
         else if(property->propertyName() == "HoverBackgroundColor")
         {
-            m_buttons[i]->setHoverBackgroundColor(value);
+            btn->setHoverBackgroundColor(value);
         }
         else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBackgroundColor(value);
+            btn->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
-            m_buttons[i]->setNormalTextColor(value);
+            btn->setNormalTextColor(value);
         }
         else if(property->propertyName() == "HoverTextColor")
         {
-            m_buttons[i]->setHoverTextColor(value);
+            btn->setHoverTextColor(value);
         }
         else if(property->propertyName() == "CheckTextColor")
         {
-            m_buttons[i]->setCheckTextColor(value);
+            btn->setCheckTextColor(value);
         }
     }
 }
@@ -1018,11 +1023,11 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        m_buttons[i]->setFont(font);
-        m_buttons[i]->setShowLine(false);
-        layout->addWidget(m_buttons[i]);
+        btn->setFont(font);
+        btn->setShowLine(false);
+        layout->addWidget(btn);
     }
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
@@ -1113,48 +1118,48 @@ TTKFunctionNavigationFWidgetProperty::TTKFunctionNavigationFWidgetProperty(QWidg
 
 void TTKFunctionNavigationFWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowIcon")
         {
-            m_buttons[i]->setShowIcon(value);
+            btn->setShowIcon(value);
         }
         else if(property->propertyName() == "ShowLine")
         {
-            m_buttons[i]->setShowLine(value);
+            btn->setShowLine(value);
         }
     }
 }
 
 void TTKFunctionNavigationFWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSpace")
         {
-            m_buttons[i]->setIconSpace(value);
+            btn->setIconSpace(value);
         }
         else if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
     }
 }
 
 void TTKFunctionNavigationFWidgetProperty::sizePropertyChanged(QtProperty *property, const QSize &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "IconSize")
         {
-            m_buttons[i]->setIconSize(value);
+            btn->setIconSize(value);
         }
     }
 }
 
 void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -1167,11 +1172,11 @@ void TTKFunctionNavigationFWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = Qt::AlignBottom; break;
                 case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(style);
+            btn->setTextAlign(style);
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
+            btn->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
@@ -1180,43 +1185,44 @@ void TTKFunctionNavigationFWidgetProperty::colorPropertyChanged(QtProperty *prop
 {
     QPixmap pix(1, 1);
     pix.fill(value);
-    for(int i = 0; i < m_buttons.count(); ++i)
+
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalIcon")
         {
-            m_buttons[i]->setIconNormal(pix);
+            btn->setIconNormal(pix);
         }
         else if(property->propertyName() == "HoverIcon")
         {
-            m_buttons[i]->setIconHover(pix);
+            btn->setIconHover(pix);
         }
         else if(property->propertyName() == "CheckIcon")
         {
-            m_buttons[i]->setIconCheck(pix);
+            btn->setIconCheck(pix);
         }
         else if(property->propertyName() == "NormalBackgroundColor")
         {
-            m_buttons[i]->setNormalBackgroundColor(value);
+            btn->setNormalBackgroundColor(value);
         }
         else if(property->propertyName() == "HoverBackgroundColor")
         {
-            m_buttons[i]->setHoverBackgroundColor(value);
+            btn->setHoverBackgroundColor(value);
         }
         else if(property->propertyName() == "CheckBackgroundColor")
         {
-            m_buttons[i]->setCheckBackgroundColor(value);
+            btn->setCheckBackgroundColor(value);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
-            m_buttons[i]->setNormalTextColor(value);
+            btn->setNormalTextColor(value);
         }
         else if(property->propertyName() == "HoverTextColor")
         {
-            m_buttons[i]->setHoverTextColor(value);
+            btn->setHoverTextColor(value);
         }
         else if(property->propertyName() == "CheckTextColor")
         {
-            m_buttons[i]->setCheckTextColor(value);
+            btn->setCheckTextColor(value);
         }
     }
 }
@@ -1234,10 +1240,10 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
     font.setPixelSize(15);
     font.setBold(true);
 
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
-        m_buttons[i]->setFont(font);
-        layout->addWidget(m_buttons[i]);
+        btn->setFont(font);
+        layout->addWidget(btn);
     }
     //
     m_normal = QLinearGradient(0, 0, 0, 30);
@@ -1354,33 +1360,33 @@ TTKFunctionNavigationGWidgetProperty::TTKFunctionNavigationGWidgetProperty(QWidg
 
 void TTKFunctionNavigationGWidgetProperty::boolPropertyChanged(QtProperty *property, bool value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "ShowTriangle")
         {
-            m_buttons[i]->setShowTriangle(value);
+            btn->setShowTriangle(value);
         }
     }
 }
 
 void TTKFunctionNavigationGWidgetProperty::intPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "PaddingLeft")
         {
-            m_buttons[i]->setPaddingLeft(value);
+            btn->setPaddingLeft(value);
         }
         else if(property->propertyName() == "LineSpace")
         {
-            m_buttons[i]->setLineSpace(value);
+            btn->setLineSpace(value);
         }
     }
 }
 
 void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *property, int value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "TextAlign")
         {
@@ -1393,79 +1399,79 @@ void TTKFunctionNavigationGWidgetProperty::enumPropertyChanged(QtProperty *prope
                 case 3: style = Qt::AlignBottom; break;
                 case 4: style = Qt::AlignHCenter; break;
             }
-            m_buttons[i]->setTextAlign(style);
+            btn->setTextAlign(style);
         }
         else if(property->propertyName() == "TrianglePosition")
         {
-            m_buttons[i]->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
+            btn->setTrianglePosition(TTKStaticCast(TTKFunctionNavigationWidget::TrianglePosition, value));
         }
         else if(property->propertyName() == "LinePosition")
         {
-            m_buttons[i]->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
+            btn->setLinePosition(TTKStaticCast(TTKFunctionNavigationWidget::LinePosition, value));
         }
     }
 }
 
 void TTKFunctionNavigationGWidgetProperty::colorPropertyChanged(QtProperty *property, const QColor &value)
 {
-    for(int i = 0; i < m_buttons.count(); ++i)
+    for(TTKFunctionNavigationWidget *btn : qAsConst(m_buttons))
     {
         if(property->propertyName() == "NormalBackgroundBrushR")
         {
             m_normal.setColorAt(0.0, value);
-            m_buttons[i]->setNormalBackgroundBrush(m_normal);
+            btn->setNormalBackgroundBrush(m_normal);
         }
         else if(property->propertyName() == "NormalBackgroundBrushG")
         {
             m_normal.setColorAt(0.5, value);
-            m_buttons[i]->setNormalBackgroundBrush(m_normal);
+            btn->setNormalBackgroundBrush(m_normal);
         }
         else if(property->propertyName() == "NormalBackgroundBrushB")
         {
             m_normal.setColorAt(1.0, value);
-            m_buttons[i]->setNormalBackgroundBrush(m_normal);
+            btn->setNormalBackgroundBrush(m_normal);
         }
         else if(property->propertyName() == "HoverBackgroundBrushR")
         {
             m_hover.setColorAt(0.0, value);
-            m_buttons[i]->setHoverBackgroundBrush(m_hover);
+            btn->setHoverBackgroundBrush(m_hover);
         }
         else if(property->propertyName() == "HoverBackgroundBrushG")
         {
             m_hover.setColorAt(0.5, value);
-            m_buttons[i]->setHoverBackgroundBrush(m_hover);
+            btn->setHoverBackgroundBrush(m_hover);
         }
         else if(property->propertyName() == "HoverBackgroundBrushB")
         {
             m_hover.setColorAt(1.0, value);
-            m_buttons[i]->setHoverBackgroundBrush(m_hover);
+            btn->setHoverBackgroundBrush(m_hover);
         }
         else if(property->propertyName() == "CheckBackgroundBrushR")
         {
             m_check.setColorAt(0.0, value);
-            m_buttons[i]->setCheckBackgroundBrush(m_check);
+            btn->setCheckBackgroundBrush(m_check);
         }
         else if(property->propertyName() == "CheckBackgroundBrushG")
         {
             m_check.setColorAt(0.5, value);
-            m_buttons[i]->setCheckBackgroundBrush(m_check);
+            btn->setCheckBackgroundBrush(m_check);
         }
         else if(property->propertyName() == "CheckBackgroundBrushB")
         {
             m_check.setColorAt(1.0, value);
-            m_buttons[i]->setCheckBackgroundBrush(m_check);
+            btn->setCheckBackgroundBrush(m_check);
         }
         else if(property->propertyName() == "NormalTextColor")
         {
-            m_buttons[i]->setNormalTextColor(value);
+            btn->setNormalTextColor(value);
         }
         else if(property->propertyName() == "HoverTextColor")
         {
-            m_buttons[i]->setHoverTextColor(value);
+            btn->setHoverTextColor(value);
         }
         else if(property->propertyName() == "CheckTextColor")
         {
-            m_buttons[i]->setCheckTextColor(value);
+            btn->setCheckTextColor(value);
         }
     }
 }

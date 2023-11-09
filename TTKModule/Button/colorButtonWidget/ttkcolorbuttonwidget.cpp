@@ -110,13 +110,13 @@ void TTKColorButtonWidget::initBtn()
     int column = 0;
     int index = 0;
 
-    for(int i = 0; i < m_colors.count(); ++i)
+    for(const QString &color : qAsConst(m_colors))
     {
         QPushButton *btn = new QPushButton;
         connect(btn, SIGNAL(pressed()), this, SLOT(btnClicked()));
-        btn->setObjectName("btn" + m_colors.at(i));
+        btn->setObjectName("btn" + color);
         btn->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        btn->setStyleSheet(QString("QPushButton{background:%1;}").arg(m_colors.at(i)));
+        btn->setStyleSheet(QString("QPushButton{background:%1;}").arg(color));
         m_gridLayout->addWidget(btn, row, column);
 
         column++;

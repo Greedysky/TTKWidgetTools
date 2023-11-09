@@ -210,9 +210,9 @@ TTKPictureFlowWidgetState::TTKPictureFlowWidgetState()
 
 TTKPictureFlowWidgetState::~TTKPictureFlowWidgetState()
 {
-    for(int i = 0; i < m_slideImages.count(); ++i)
+    for(QImage *image : qAsConst(m_slideImages))
     {
-        delete m_slideImages[i];
+        delete image;
     }
 }
 
@@ -886,9 +886,9 @@ void TTKPictureFlowWidget::setCenterIndex(int index)
 
 void TTKPictureFlowWidget::clear()
 {
-    for(int i = 0; i < m_state->m_slideImages.count(); ++i)
+    for(QImage *image : qAsConst(m_state->m_slideImages))
     {
-        delete m_state->m_slideImages[i];
+        delete image;
     }
 
     m_state->m_slideImages.resize(0);
