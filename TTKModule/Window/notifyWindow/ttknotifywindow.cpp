@@ -9,11 +9,11 @@
 
 #include <QDesktopServices>
 
-#define RIGHT  10
-#define BOTTOM 10
-#define HEIGHT 60
-#define WIDTH  300
-#define SPACE  20
+static constexpr int RIGHT = 10;
+static constexpr int BOTTOM = 10;
+static constexpr int HEIGHT = 60;
+static constexpr int WIDTH = 300;
+static constexpr int SPACE = 20;
 
 TTKNotify::TTKNotify(int time, QWidget *parent)
     : QWidget(parent),

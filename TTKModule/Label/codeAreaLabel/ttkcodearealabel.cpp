@@ -15,10 +15,10 @@ static int random(int value)
 #endif
 }
 
-#define DEF_CODECOUNT       4
-#define DEF_NOISYPOINTCOUNT 60
-#define DEF_CONVERSEROTATE  10
-#define DEF_CONVERSESCALE   15
+static constexpr int DEF_CODECOUNT = 4;
+static constexpr int DEF_NOISYPOINTCOUNT = 60;
+static constexpr int DEF_CONVERSEROTATE = 10;
+static constexpr int DEF_CONVERSESCALE = 15;
 
 TTKCodeAreaLabel::TTKCodeAreaLabel(QWidget *parent)
     : QLabel(parent),

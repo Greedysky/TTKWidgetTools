@@ -4,8 +4,8 @@
 #include <QPainter>
 #include <QMouseEvent>
 
-#define ITEM_HIGHT      40
-#define ITEM_LEGHT      100
+static constexpr int ITEM_HIGHT = 40;
+static constexpr int ITEM_LEGHT = 100;
 
 TTKFunctionNormalWidget::TTKFunctionNormalWidget(QWidget *parent)
     : QWidget(parent),

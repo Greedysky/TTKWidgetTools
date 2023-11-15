@@ -5,7 +5,7 @@
 #include <QScrollArea>
 #include <QMouseEvent>
 
-#define RENAME_WIDTH    220
+static constexpr int RENAME_WIDTH = 220;
 
 TTKFunctionToolBoxTopWidget::TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent)
     : QWidget(parent),

@@ -3,8 +3,8 @@
 #include <QBoxLayout>
 #include <QMouseEvent>
 
-#define ITEM_ICON_SZIE      25
-#define ITEM_ROW_HEIGHT     40
+static constexpr int ITEM_ICON_SZIE = 25;
+static constexpr int ITEM_ROW_HEIGHT = 40;
 
 TTKFunctionItem::TTKFunctionItem(int index, const QString &path, const QString &text, QWidget *parent)
     : QWidget(parent),

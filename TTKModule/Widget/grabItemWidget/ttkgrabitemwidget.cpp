@@ -4,7 +4,7 @@
 #include <QPainter>
 #include <QMouseEvent>
 
-#define PADDING          6
+static constexpr int PADDING = 6;
 
 TTKGrabItemWidget::TTKGrabItemWidget(QWidget *parent)
     : QWidget(parent),

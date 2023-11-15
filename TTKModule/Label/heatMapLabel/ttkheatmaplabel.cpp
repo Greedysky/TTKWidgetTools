@@ -181,7 +181,7 @@ static const heatmap_colorscheme_t * MappingColorScheme(HeatMapper::ColorScheme 
 ///
 #include <QPainter>
 
-#define DEFAULT_OPACITY 255
+static constexpr int DEFAULT_OPACITY = 255;
 
 HeatMapper::HeatMapper(const QSize &size)
     : HeatMapper(size, 128)

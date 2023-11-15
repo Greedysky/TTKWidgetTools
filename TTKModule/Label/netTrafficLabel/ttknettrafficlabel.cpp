@@ -16,7 +16,7 @@
 #  include <arpa/inet.h>
 #endif
 
-#define TEMP_FILE_NAME  "net_temp"
+static constexpr const char *TEMP_FILE_NAME = "net_temp";
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
     : TTKAbstractThread(parent),

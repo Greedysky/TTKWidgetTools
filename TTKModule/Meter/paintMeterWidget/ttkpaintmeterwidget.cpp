@@ -3,7 +3,7 @@
 #include <cmath>
 #include <QPainter>
 
-#define PI 3.1415926535
+static constexpr double PI = 3.1415926535;
 
 TTKPaintMeterWidget::TTKPaintMeterWidget(QWidget *parent)
     : QWidget(parent),

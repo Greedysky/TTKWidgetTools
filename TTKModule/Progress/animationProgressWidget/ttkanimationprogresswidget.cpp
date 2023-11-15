@@ -3,7 +3,7 @@
 #include <QPainter>
 #include <QPropertyAnimation>
 
-#define MAX_SIZE    30
+static constexpr int MAX_SIZE = 30;
 
 TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
     : QWidget(parent),

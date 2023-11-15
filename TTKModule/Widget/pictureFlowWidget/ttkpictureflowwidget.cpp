@@ -2,10 +2,10 @@
 #include <QKeyEvent>
 #include <QPainter>
 
-#define PFREAL_SHIFT 10
-#define PFREAL_ONE (1 << PFREAL_SHIFT)
-#define IANGLE_MAX 1024
-#define IANGLE_MASK 1023
+static constexpr int PFREAL_SHIFT = 10;
+static constexpr int PFREAL_ONE = (1 << PFREAL_SHIFT);
+static constexpr int IANGLE_MAX = 1024;
+static constexpr int IANGLE_MASK = 1023;
 
 inline long fmul(long a, long b)
 {
@@ -51,6 +51,7 @@ inline long fcos(int iangle)
 {
     return fsin(iangle + (IANGLE_MAX >> 2));
 }
+
 
 QRgb blendColor(QRgb c1, QRgb c2, int blend)
 {

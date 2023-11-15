@@ -3,7 +3,7 @@
 #include <QPainter>
 #include <QPainterPath>
 
-#define ICONPADDING     12
+static constexpr int ICONPADDING = 12;
 
 TTKFlatButtonWidget::TTKFlatButtonWidget(QWidget *parent)
     : QPushButton(parent),

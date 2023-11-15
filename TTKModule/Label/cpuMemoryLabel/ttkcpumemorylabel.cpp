@@ -1,4 +1,5 @@
 #include "ttkcpumemorylabel.h"
+#include "ttknumberdefine.h"
 
 #include <QTimer>
 #include <QProcess>
@@ -9,8 +10,6 @@
 #  endif
 #  include "windows.h"
 #endif
-#define MB (1024 * 1024)
-#define KB (1024)
 
 TTKCPUMemoryLabel::TTKCPUMemoryLabel(QWidget *parent)
     : QLabel(parent),
@@ -109,8 +108,8 @@ void TTKCPUMemoryLabel::memory()
     statex.dwLength = sizeof(statex);
     GlobalMemoryStatusEx(&statex);
     m_memoryPercent = statex.dwMemoryLoad;
-    m_memoryAll = statex.ullTotalPhys / MB;
-    m_memoryFree = statex.ullAvailPhys / MB;
+    m_memoryAll = statex.ullTotalPhys / MH_MB2B;
+    m_memoryFree = statex.ullAvailPhys / MH_MB2B;
     m_memoryUse = m_memoryAll - m_memoryFree;
 
     setData();
@@ -148,25 +147,25 @@ void TTKCPUMemoryLabel::readData()
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryAll = s.left(s.length() - 3).toInt() / KB;
+            m_memoryAll = s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("MemFree"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree = s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree = s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("Buffers"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree += s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree += s.left(s.length() - 3).toInt() / MH_KB2B;
         }
         else if(s.startsWith("Cached"))
         {
             s = s.replace(" ", "");
             s = s.split(":").at(1);
-            m_memoryFree += s.left(s.length() - 3).toInt() / KB;
+            m_memoryFree += s.left(s.length() - 3).toInt() / MH_KB2B;
             m_memoryUse = m_memoryAll - m_memoryFree;
             m_memoryPercent = 100 * m_memoryUse / m_memoryAll;
             break;

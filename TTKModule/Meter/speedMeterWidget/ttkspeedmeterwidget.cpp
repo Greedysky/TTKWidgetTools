@@ -3,10 +3,10 @@
 #include <QTimer>
 #include <QPainter>
 
-#define S_LONG      10
-#define S_SPAOK     7
-#define S_SHORT     5
-#define S_SPACE     3
+static constexpr int S_LONG = 10;
+static constexpr int S_SPAOK = 7;
+static constexpr int S_SHORT = 5;
+static constexpr int S_SPACE = 3;
 
 TTKSpeedMeterWidget::TTKSpeedMeterWidget(QWidget *parent)
     : QWidget(parent)

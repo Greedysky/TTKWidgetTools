@@ -4,10 +4,10 @@
 #include <QPainter>
 #include <QBoxLayout>
 
-#define PIX_HEIGHT          16
-#define PIX_WIDTH           16
-#define ITEM_ICON_SZIE      25
-#define ITEM_SPACE          20
+static constexpr int PIX_HEIGHT = 16;
+static constexpr int PIX_WIDTH = 16;
+static constexpr int ITEM_ICON_SZIE = 25;
+static constexpr int ITEM_SPACE = 20;
 
 TTKBackgroundContainerItem::TTKBackgroundContainerItem(QWidget *parent)
     : TTKGrabItemWidget(parent),
