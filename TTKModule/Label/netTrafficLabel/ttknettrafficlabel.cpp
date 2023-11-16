@@ -235,25 +235,25 @@ QSize TTKNetTrafficLabel::sizeHint() const
 
 QString TTKNetTrafficLabel::size2Number(qint64 size)
 {
-    if(size < MH_KB2B)
+    if(size < TTK_SN_KB2B)
     {
         return QString::number(size * 1.0, 'f', 1) + "B/s";
     }
-    else if(MH_KB2B <= size && size < MH_MB2B)
+    else if(TTK_SN_KB2B <= size && size < TTK_SN_MB2B)
     {
-        return QString::number(size * 1.0 / MH_KB2B, 'f', 1) + "KB/s";
+        return QString::number(size * 1.0 / TTK_SN_KB2B, 'f', 1) + "KB/s";
     }
-    else if(MH_MB2B <= size && size < MH_GB2B)
+    else if(TTK_SN_MB2B <= size && size < TTK_SN_GB2B)
     {
-        return QString::number(size * 1.0 / MH_MB2B, 'f', 1) + "MB/s";
+        return QString::number(size * 1.0 / TTK_SN_MB2B, 'f', 1) + "MB/s";
     }
-    else if(MH_GB2B <= size && size < MH_TB2B)
+    else if(TTK_SN_GB2B <= size && size < TTK_SN_TB2B)
     {
-        return QString::number(size * 1.0 / MH_GB2B, 'f', 1) + "GB/s";
+        return QString::number(size * 1.0 / TTK_SN_GB2B, 'f', 1) + "GB/s";
     }
     else
     {
-        return QString::number(size * 1.0 / MH_TB2B, 'f', 1) + "TB/s";
+        return QString::number(size * 1.0 / TTK_SN_TB2B, 'f', 1) + "TB/s";
     }
 }
 
