@@ -34,11 +34,11 @@ public:
     explicit TTKFunctionToolBoxTopWidget(int index, const QString &text, QWidget *parent = nullptr);
     ~TTKFunctionToolBoxTopWidget();
 
-    inline void setItemIndex(int index) { m_index = index; }
-    inline int itemIndex() const { return m_index; }
+    inline void setIndex(int index) { m_index = index; }
+    inline int index() const { return m_index; }
 
-    void setItemExpand(bool expand);
-    bool isItemExpand() const;
+    void setExpand(bool expand);
+    bool isExpand() const;
 
     void setTitle(const QString &text);
     QString title(bool suffix = false);
@@ -50,7 +50,7 @@ private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
-    bool isItemEnable() const;
+    bool isItemEnabled() const;
 
     int m_index;
     QString m_suffixString;
@@ -79,8 +79,8 @@ public:
     void setTitle(const QString &text);
     QString title() const;
 
-    void setItemExpand(bool expand);
-    bool itemExpand() const;
+    void setExpand(bool expand);
+    bool isExpand() const;
 
     int count() const;
 

@@ -37,12 +37,12 @@ TTKFunctionToolBoxTopWidget::~TTKFunctionToolBoxTopWidget()
     delete m_labelText;
 }
 
-void TTKFunctionToolBoxTopWidget::setItemExpand(bool expand)
+void TTKFunctionToolBoxTopWidget::setExpand(bool expand)
 {
     m_labelIcon->setPixmap(QPixmap(expand ? ":/res/down" : ":/res/up"));
 }
 
-bool TTKFunctionToolBoxTopWidget::isItemExpand() const
+bool TTKFunctionToolBoxTopWidget::isExpand() const
 {
     const QPixmap &pix = QtLablePixmap(m_labelIcon);
     return pix.cacheKey() == QPixmap(":/res/down").cacheKey();
@@ -84,7 +84,7 @@ void TTKFunctionToolBoxTopWidget::paintEvent(QPaintEvent *event)
     painter.drawLine(0, height(), width(), height());
 }
 
-bool TTKFunctionToolBoxTopWidget::isItemEnable() const
+bool TTKFunctionToolBoxTopWidget::isItemEnabled() const
 {
     return true;
 }
@@ -141,22 +141,18 @@ QString TTKFunctionToolBoxWidgetItem::title() const
     return m_topWidget->title();
 }
 
-void TTKFunctionToolBoxWidgetItem::setItemExpand(bool expand)
+void TTKFunctionToolBoxWidgetItem::setExpand(bool expand)
 {
-    m_topWidget->setItemExpand(expand);
+    m_topWidget->setExpand(expand);
     for(QWidget *w : qAsConst(m_itemList))
     {
         w->setVisible(expand);
     }
 }
 
-bool TTKFunctionToolBoxWidgetItem::itemExpand() const
+bool TTKFunctionToolBoxWidgetItem::isExpand() const
 {
-    if(!m_itemList.isEmpty())
-    {
-        return m_itemList.front()->isVisible();
-    }
-    return false;
+    return !m_itemList.isEmpty() ? m_itemList.front()->isVisible() : false;
 }
 
 int TTKFunctionToolBoxWidgetItem::count() const
@@ -230,13 +226,13 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     //hide before widget
     for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        unionItem.m_widgetItem->setItemExpand(false);
+        unionItem.m_widgetItem->setExpand(false);
     }
 
     // Add item and make sure it stretches the remaining space.
     TTKFunctionToolBoxWidgetItem *it = new TTKFunctionToolBoxWidgetItem(m_itemIndexRaise, text, this);
     it->addItem(item);
-    it->setItemExpand(true);
+    it->setExpand(true);
 
     TTKFunctionToolBoxUnionItem widgetItem;
     widgetItem.m_widgetItem = it;
@@ -355,7 +351,7 @@ void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
     m_currentIndex = index;
     for(int i = 0; i < m_itemList.count(); ++i)
     {
-        m_itemList[i].m_widgetItem->setItemExpand( i == index );
+        m_itemList[i].m_widgetItem->setExpand( i == index );
     }
 }
 
@@ -367,14 +363,14 @@ void TTKFunctionToolBoxWidget::mousePressAt(int index)
     {
         for(int i = 0; i < m_itemList.count(); ++i)
         {
-            const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->itemExpand() : false;
-            m_itemList[i].m_widgetItem->setItemExpand(hide);
+            const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->isExpand() : false;
+            m_itemList[i].m_widgetItem->setExpand(hide);
         }
     }
     else
     {
-        const bool hide = !m_itemList[m_currentIndex].m_widgetItem->itemExpand();
-        m_itemList[m_currentIndex].m_widgetItem->setItemExpand(hide);
+        const bool hide = !m_itemList[m_currentIndex].m_widgetItem->isExpand();
+        m_itemList[m_currentIndex].m_widgetItem->setExpand(hide);
     }
 }
 
