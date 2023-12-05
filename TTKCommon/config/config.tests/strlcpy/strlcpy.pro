@@ -16,6 +16,7 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS += config TTKLibrary TTKDumper
+CONFIG -= qt
+CONFIG += console
+
+SOURCES = strlcpy.cpp
