@@ -1,4 +1,5 @@
 #include "ttknotifywindow.h"
+#include "ttknumberdefine.h"
 #include "ttkdesktopwrapper.h"
 
 #include <QUrl>
@@ -120,7 +121,7 @@ void TTKNotify::showGriantChanged()
 {
     QPropertyAnimation *animation = qobject_cast<QPropertyAnimation*>(sender());
     animation->deleteLater();
-    QTimer::singleShot(m_displayTime, this, SLOT(hideGriant()));
+    TTK_SIGNLE_SHOT(m_displayTime, this, hideGriant);
 }
 
 void TTKNotify::hideGriantChanged()
@@ -177,7 +178,7 @@ void TTKNotifyManager::disappeared()
 
     if(m_notifyList.count() == m_maxCount - 1)
     {
-        QTimer::singleShot(300, this, SLOT(showNext()));
+        TTK_SIGNLE_SHOT(300 * TTK_DN_MS, this, showNext);
     }
     else
     {
