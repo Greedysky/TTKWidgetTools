@@ -121,7 +121,7 @@ void TTKNotify::showGriantChanged()
 {
     QPropertyAnimation *animation = qobject_cast<QPropertyAnimation*>(sender());
     animation->deleteLater();
-    TTK_SIGNLE_SHOT(m_displayTime, this, hideGriant);
+    TTK_SIGNLE_SHOT(m_displayTime, this, hideGriant, TTK_SLOT);
 }
 
 void TTKNotify::hideGriantChanged()
@@ -178,7 +178,7 @@ void TTKNotifyManager::disappeared()
 
     if(m_notifyList.count() == m_maxCount - 1)
     {
-        TTK_SIGNLE_SHOT(300 * TTK_DN_MS, this, showNext);
+        TTK_SIGNLE_SHOT(300 * TTK_DN_MS, this, showNext, TTK_SLOT);
     }
     else
     {

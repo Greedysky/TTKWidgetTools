@@ -23,7 +23,7 @@ TTKAbstractAnimationWidget::TTKAbstractAnimationWidget(QWidget *parent)
     connect(m_animation, SIGNAL(finished()), SLOT(finished()));
 
     m_buttonGroup = new QButtonGroup(this);
-    QtButtonGroupConnect(m_buttonGroup, this, switchToSelectedItemStyle);
+    QtButtonGroupConnect(m_buttonGroup, this, switchToSelectedItemStyle, TTK_SLOT);
 }
 
 TTKAbstractAnimationWidget::~TTKAbstractAnimationWidget()
