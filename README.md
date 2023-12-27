@@ -179,7 +179,7 @@ Screenshots
 Copyright
 --------
  * This file is part of the TTK Widget Tools project.
- * Copyright (C) 2015 - 2023 Greedysky Studio.
+ * Copyright (C) 2015 - 2024 Greedysky Studio.
  * Mail: greedysky@163.com.
 
 How To Contribute
