@@ -71,7 +71,7 @@ void TTKPuzzleItemWidget::paintEvent(QPaintEvent *event)
     clippath.addRoundedRect(rect(), 4, 4);
     painter.setClipPath(clippath);
 
-    const QPixmap& pixmap = QPixmap(m_pixmap).scaled(width(), height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    const QPixmap &pixmap = QPixmap(m_pixmap).scaled(width(), height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     painter.drawPixmap(0, 0, width(), height(), pixmap);
 
     QPainterPath cutoutPath;

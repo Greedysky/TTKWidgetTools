@@ -260,7 +260,7 @@ void TTKPictureFlowWidgetState::reset()
     m_rightSlides.resize(6);
     for(int i = 0; i < m_rightSlides.count(); ++i)
     {
-        TTKSlideInfo& si = m_rightSlides[i];
+        TTKSlideInfo &si = m_rightSlides[i];
         si.m_angle = -m_angle;
         si.m_cx = m_offsetX + m_spacing*i*PFREAL_ONE;
         si.m_cy = m_offsetY;
