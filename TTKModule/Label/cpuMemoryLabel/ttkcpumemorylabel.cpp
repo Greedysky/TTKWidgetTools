@@ -8,7 +8,8 @@
 #  ifndef _WIN32_WINNT
 #    define _WIN32_WINNT 0x502
 #  endif
-#  include "windows.h"
+#  define WIN32_LEAN_AND_MEAN
+#  include <qt_windows.h>
 #endif
 
 TTKCPUMemoryLabel::TTKCPUMemoryLabel(QWidget *parent)

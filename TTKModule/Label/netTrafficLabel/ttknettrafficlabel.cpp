@@ -8,8 +8,8 @@
 #  ifdef Q_CC_GNU
 #    include <winsock2.h>
 #  endif
+#  define WIN32_LEAN_AND_MEAN
 #  include <qt_windows.h>
-#  include <cstdio>
 #  include <iphlpapi.h>
 #elif defined Q_OS_UNIX
 #  include <ifaddrs.h>
