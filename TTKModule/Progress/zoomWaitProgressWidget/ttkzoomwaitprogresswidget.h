@@ -52,7 +52,7 @@ private:
     int m_radious;
     int m_minRadious;
 
-    QTimer* m_timer;
+    QTimer *m_timer;
 
 };
 

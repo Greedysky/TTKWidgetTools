@@ -55,7 +55,7 @@ private:
     int m_itemOffset;
     int m_chooseIndex;
 
-    QTimer* m_timer;
+    QTimer *m_timer;
     QVector<QString> m_items;
 
 };

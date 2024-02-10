@@ -48,7 +48,7 @@ private:
     int m_rotateDelta;
     int m_rotateAngle;
 
-    QTimer* m_timer;
+    QTimer *m_timer;
 
 };
 
