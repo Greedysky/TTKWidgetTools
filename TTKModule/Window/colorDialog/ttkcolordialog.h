@@ -32,6 +32,7 @@ public:
     explicit TTKHlPalette(QWidget *parent = nullptr);
 
     QColor color() const;
+    void setColor(const QColor &color);
 
     void initialize();
 
@@ -67,6 +68,7 @@ public:
     explicit TTKHlSaturationPalette(QWidget *parent = nullptr);
 
     double saturation() const;
+    void setSaturation(double dblsaturation);
 
 Q_SIGNALS:
     void saturationChanged(double dblSaturation);
