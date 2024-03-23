@@ -6,7 +6,6 @@
 
 static constexpr int PIX_HEIGHT = 16;
 static constexpr int PIX_WIDTH = 16;
-static constexpr int ITEM_ICON_SZIE = 25;
 static constexpr int ITEM_SPACE = 20;
 
 TTKBackgroundContainerItem::TTKBackgroundContainerItem(QWidget *parent)

@@ -5,7 +5,6 @@
 #include <QMouseEvent>
 
 static constexpr int ITEM_HIGHT = 40;
-static constexpr int ITEM_LEGHT = 100;
 
 TTKFunctionNormalWidget::TTKFunctionNormalWidget(QWidget *parent)
     : QWidget(parent),

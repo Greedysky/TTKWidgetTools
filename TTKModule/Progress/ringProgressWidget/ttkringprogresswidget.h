@@ -1,5 +1,5 @@
 #ifndef TTKRINGPROGRESSWIDGET_H
-#define TTKRINPROGRESSWIDGET_H
+#define TTKRINGPROGRESSWIDGET_H
 
 /***************************************************************************
  * This file is part of the TTK Widget Tools project

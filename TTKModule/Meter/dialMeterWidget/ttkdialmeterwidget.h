@@ -62,7 +62,7 @@ public:
 
     void setPointerStyle(const PointerStyle &pointerStyle);
 
-    virtual QSize sizeHint() const;
+    virtual QSize sizeHint() const override;
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
