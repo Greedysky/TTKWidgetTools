@@ -1,4 +1,4 @@
-#include "ttkrunapplication.h"
+#include "ttkapplication.h"
 #include "ttktoolsapplication.h"
 #include "ttkobject.h"
 #include "ttkdumper.h"
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
     loadAppScaledFactor(argc, argv);
 
-    TTKRunApplication app(argc, argv);
+    TTKApplication app(argc, argv);
 
     QCoreApplication::setOrganizationName(TTK_APP_NAME);
     QCoreApplication::setOrganizationDomain(TTK_APP_COME_NAME);
