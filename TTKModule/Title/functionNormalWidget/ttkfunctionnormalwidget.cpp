@@ -18,7 +18,7 @@ TTKFunctionNormalWidget::TTKFunctionNormalWidget(QWidget *parent)
     setMouseTracking(true);
 
     m_timer = new QTimer(this);
-    m_timer->setInterval(1);
+    m_timer->setInterval(TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateRender()));
 }
 

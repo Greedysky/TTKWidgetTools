@@ -1,5 +1,4 @@
 #include "ttknettrafficlabel.h"
-#include "ttknumberdefine.h"
 
 #include <QFile>
 #include <QProcess>

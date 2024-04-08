@@ -95,11 +95,11 @@ void TTKSpeedMeterWidget::initialize()
     m_units = "km/h";
 
     m_updateTimer = new QTimer(this);
-    m_updateTimer->setInterval(10);
+    m_updateTimer->setInterval(10 * TTK_DN_MS);
     connect(m_updateTimer, SIGNAL(timeout()), SLOT(updateRender()));
 
     m_singleTimer = new QTimer(this);
-    m_singleTimer->setInterval(100);
+    m_singleTimer->setInterval(100 * TTK_DN_MS);
     connect(m_singleTimer, SIGNAL(timeout()), SLOT(update()));
     m_singleTimer->start();
 }

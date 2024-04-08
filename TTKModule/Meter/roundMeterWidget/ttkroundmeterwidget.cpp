@@ -22,7 +22,7 @@ TTKRoundMeterWidget::TTKRoundMeterWidget(QWidget *parent)
       m_valuePercent(0)
 {    
     m_timer = new QTimer(this);
-    m_timer->setInterval(10);
+    m_timer->setInterval(10 * TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateValue()));
 }
 

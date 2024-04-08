@@ -1,5 +1,4 @@
 #include "ttkpuzzlewidget.h"
-#include "ttknumberdefine.h"
 #if TTK_QT_VERSION_CHECK(5,10,0)
 #  include <QRandomGenerator>
 #endif

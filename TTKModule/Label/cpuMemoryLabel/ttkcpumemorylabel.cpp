@@ -1,5 +1,4 @@
 #include "ttkcpumemorylabel.h"
-#include "ttknumberdefine.h"
 
 #include <QTimer>
 #include <QProcess>

@@ -24,7 +24,7 @@ TTKLedPageLabelProperty::TTKLedPageLabelProperty(QWidget *parent)
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
-    m_timer->setInterval(1000);
+    m_timer->setInterval(TTK_DN_S2MS);
     //
     m_item = new TTKLedPageLabel(this);
     //

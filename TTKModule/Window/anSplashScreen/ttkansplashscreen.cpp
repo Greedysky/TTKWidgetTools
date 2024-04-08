@@ -58,11 +58,11 @@ void TTKAnSplashScreen::initialize()
 
     m_loadTimer = new QTimer(this);
     connect(m_loadTimer, SIGNAL(timeout()), SLOT(update()));
-    m_loadTimer->setInterval(5);
+    m_loadTimer->setInterval(5 * TTK_DN_MS);
 
     m_countTimer = new QTimer(this);
     connect(m_countTimer, SIGNAL(timeout()), SLOT(countTimeout()));
-    m_countTimer->setInterval(1000);
+    m_countTimer->setInterval(TTK_DN_S2MS);
 
     m_dig = 0;
     m_count = 6;

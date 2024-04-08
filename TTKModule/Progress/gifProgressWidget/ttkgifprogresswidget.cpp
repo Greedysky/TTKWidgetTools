@@ -24,7 +24,7 @@ TTKGifProgressWidget::TTKGifProgressWidget(QWidget *parent)
     setFixedSize(GIF_CICLE_BLUE, GIF_CICLE_BLUE);
 
     m_timer = new QTimer(this);
-    m_timer->setInterval(100);
+    m_timer->setInterval(100 * TTK_DN_MS);
     connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 }
 

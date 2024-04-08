@@ -1,5 +1,4 @@
 #include "ttknotifywindow.h"
-#include "ttknumberdefine.h"
 #include "ttkdesktopwrapper.h"
 
 #include <QUrl>

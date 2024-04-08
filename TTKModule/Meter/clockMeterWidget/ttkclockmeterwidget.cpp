@@ -16,12 +16,12 @@ TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
       m_pointerSecColor(160, 160, 160)
 {
     m_timer = new QTimer(this);
-    m_timer->setInterval(1000);
+    m_timer->setInterval(TTK_DN_S2MS);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
     m_timer->start();
 
     m_timerSpring = new QTimer(this);
-    m_timerSpring->setInterval(30);
+    m_timerSpring->setInterval(30 * TTK_DN_MS);
     connect(m_timerSpring, SIGNAL(timeout()), this, SLOT(updateSpring()));
     m_angleSpring = 6.0 * (m_sec + m_msec / 1000);
 
@@ -111,11 +111,11 @@ void TTKClockMeterWidget::setSecondStyle(TTKClockMeterWidget::SecondStyle second
 
     if(secondStyle == SecondStyle::Continue)
     {
-        m_timer->setInterval(100);
+        m_timer->setInterval(100 * TTK_DN_MS);
     }
     else
     {
-        m_timer->setInterval(1000);
+        m_timer->setInterval(TTK_DN_S2MS);
     }
 
     updateTime();

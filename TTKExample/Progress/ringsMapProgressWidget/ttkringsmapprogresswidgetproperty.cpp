@@ -26,7 +26,7 @@ TTKRingsMapProgressWidgetProperty::TTKRingsMapProgressWidgetProperty(QWidget *pa
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), SLOT(updateRender()));
 
-    m_timer->setInterval(500);
+    m_timer->setInterval(TTK_DN_S2MS / 2);
     //
     QtProperty *objectItem = m_groupManager->addProperty("QObject");
     //
