@@ -2,19 +2,19 @@
 
 static const QString SliderStyle01 = " \
     QSlider::groove:horizontal{ \
-    height:3px; border-radius:1px;} \
-    QSlider::sub-page:horizontal{ background:%1;} \
-    QSlider::add-page:horizontal{ background:%2;} \
+    height:3px; border-radius:1px; } \
+    QSlider::sub-page:horizontal{ background:%1; } \
+    QSlider::add-page:horizontal{ background:%2; } \
     QSlider::handle:horizontal{ background:%3; \
-    width:9px; margin-top:-3px; margin-bottom:-3px; border-radius:4px;}";
+    width:9px; margin-top:-3px; margin-bottom:-3px; border-radius:4px; }";
 
 static const QString SliderStyle02 = " \
     QSlider::groove:vertical{ \
-    width:3px; border-radius:1px;} \
-    QSlider::sub-page:vertical{ background:%1;} \
-    QSlider::add-page:vertical{ background:%2;} \
+    width:3px; border-radius:1px; } \
+    QSlider::sub-page:vertical{ background:%1; } \
+    QSlider::add-page:vertical{ background:%2; } \
     QSlider::handle:vertical{ background:%3; \
-    height:9px; margin-left:-3px; margin-right:-3px; border-radius:4px;}";
+    height:9px; margin-left:-3px; margin-right:-3px; border-radius:4px; }";
 
 TTKStyleSlider::TTKStyleSlider(QWidget *parent)
     : QSlider(parent),
