@@ -1,5 +1,5 @@
-#ifndef TTKLIBRARYVERSION_H
-#define TTKLIBRARYVERSION_H
+#ifndef TTKLOGOUTPUT_H
+#define TTKLOGOUTPUT_H
 
 /***************************************************************************
  * This file is part of the TTK Library Module project
@@ -19,20 +19,22 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-#include "../ttkversion.h"
+#include "ttkmoduleexport.h"
 
-//update time 2024.04.25
-#define TTK_LIBRARY_MAJOR_VERSION 1
-#define TTK_LIBRARY_MINOR_VERSION 2
-#define TTK_LIBRARY_PATCH_VERSION 10
+/*! @brief The namespace of the log output.
+ * @author Greedysky <greedysky@163.com>
+ */
+namespace TTK
+{
+    /*!
+     * Install log output handler.
+     */
+    TTK_MODULE_EXPORT void installLogHandler();
+    /*!
+     * Remove log output handler.
+     */
+    TTK_MODULE_EXPORT void removeLogHandler();
 
-#define TTK_LIBRARY_VERSION       TTK_VERSION_CHECK(TTK_LIBRARY_MAJOR_VERSION, TTK_LIBRARY_MINOR_VERSION, TTK_LIBRARY_PATCH_VERSION, 0)
-#define TTK_LIBRARY_VERSION_STR   TTK_VERSION_CHECK_STR(TTK_LIBRARY_MAJOR_VERSION, TTK_LIBRARY_MINOR_VERSION, TTK_LIBRARY_PATCH_VERSION, 0)
+}
 
-#undef TTK_RC_FILEVERSION
-#undef TTK_RC_PRODUCTVERSION
-
-#define TTK_RC_FILEVERSION        TTK_LIBRARY_MAJOR_VERSION, TTK_LIBRARY_MINOR_VERSION, TTK_LIBRARY_PATCH_VERSION, 0
-#define TTK_RC_PRODUCTVERSION     TTK_LIBRARY_VERSION_STR
-
-#endif // TTKLIBRARYVERSION_H
+#endif // TTKLOGOUTPUT_H
