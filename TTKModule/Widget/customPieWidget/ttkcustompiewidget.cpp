@@ -108,7 +108,7 @@ void TTKCustomPieWidget::drawPie(QPainter *painter)
         QString strValue = m_datas[i].m_text;
         if(m_showPercent && percent > 7)
         {
-            strValue = QString("%1%2%3%").arg(strValue, strValue.isEmpty() ? "" : "\n", QString::number(percent, 'f', 0));
+            strValue = QString("%1%2%3%").arg(strValue, strValue.isEmpty() ? "" : TTK_LINEFEED, QString::number(percent, 'f', 0));
         }
 
         const int mid = startAngle + arcLength / 2;

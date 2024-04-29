@@ -128,7 +128,7 @@ void TTKCPUMemoryLabel::readData()
         QString s = QLatin1String(m_process->readLine());
         if(s.startsWith("cpu"))
         {
-            const QStringList &list = s.split(" ");
+            const QStringList &list = s.split(TTK_SPACE);
             m_idleNew = list.at(5).toInt();
 
             for(const QString &value : qAsConst(list))
@@ -145,25 +145,25 @@ void TTKCPUMemoryLabel::readData()
         }
         else if(s.startsWith("MemTotal"))
         {
-            s = s.replace(" ", "");
+            s = s.replace(TTK_SPACE, "");
             s = s.split(":").at(1);
             m_memoryAll = s.left(s.length() - 3).toInt() / TTK_SN_KB2B;
         }
         else if(s.startsWith("MemFree"))
         {
-            s = s.replace(" ", "");
+            s = s.replace(TTK_SPACE, "");
             s = s.split(":").at(1);
             m_memoryFree = s.left(s.length() - 3).toInt() / TTK_SN_KB2B;
         }
         else if(s.startsWith("Buffers"))
         {
-            s = s.replace(" ", "");
+            s = s.replace(TTK_SPACE, "");
             s = s.split(":").at(1);
             m_memoryFree += s.left(s.length() - 3).toInt() / TTK_SN_KB2B;
         }
         else if(s.startsWith("Cached"))
         {
-            s = s.replace(" ", "");
+            s = s.replace(TTK_SPACE, "");
             s = s.split(":").at(1);
             m_memoryFree += s.left(s.length() - 3).toInt() / TTK_SN_KB2B;
             m_memoryUse = m_memoryAll - m_memoryFree;
