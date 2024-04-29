@@ -31,7 +31,7 @@ TTKProgressWidget::TTKProgressWidget(QWidget *parent)
     animation->setTargetObject(m_delegate);
     animation->setStartValue(0);
     animation->setEndValue(1);
-    animation->setDuration(1000);
+    animation->setDuration(TTK_DN_S2MS);
     animation->setLoopCount(-1);
     animation->start();
 }

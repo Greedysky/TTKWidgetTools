@@ -56,7 +56,7 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setKeyValueAt(0.6, 20);
     animation->setKeyValueAt(0.7, 20);
     animation->setEndValue(20);
-    animation->setDuration(2050);
+    animation->setDuration(2 * TTK_DN_S2MS);
     group->addAnimation(animation);
 
     animation = new QPropertyAnimation(this);
@@ -68,7 +68,7 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setKeyValueAt(0.6, -7);
     animation->setKeyValueAt(0.7, -7);
     animation->setEndValue(-25);
-    animation->setDuration(2050);
+    animation->setDuration(2 * TTK_DN_S2MS);
     group->addAnimation(animation);
 
     animation = new QPropertyAnimation(this);
@@ -76,7 +76,7 @@ TTKCircularProgressWidget::TTKCircularProgressWidget(QWidget *parent)
     animation->setTargetObject(m_delegate);
     animation->setStartValue(0);
     animation->setEndValue(719);
-    animation->setDuration(2050);
+    animation->setDuration(2 * TTK_DN_S2MS);
     group->addAnimation(animation);
 
     group->start();

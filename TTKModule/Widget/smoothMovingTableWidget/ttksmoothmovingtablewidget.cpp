@@ -31,7 +31,7 @@ void TTKSmoothMovingTableWidget::setMovedScrollBar(QScrollBar *bar)
     m_scrollBar = bar;
     delete m_slowAnimation;
     m_slowAnimation = new QPropertyAnimation(m_scrollBar, "value", this);
-    m_slowAnimation->setDuration(1000);
+    m_slowAnimation->setDuration(TTK_DN_S2MS);
     connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(valueChanged(int)));
 }
 

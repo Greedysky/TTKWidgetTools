@@ -18,7 +18,7 @@ TTKCircleProgressWidget::TTKCircleProgressWidget(QWidget *parent)
     m_infiniteAnimation = new QPropertyAnimation(this, "infiniteAnimationValue");
 
     m_infiniteAnimation->setLoopCount(-1);
-    m_infiniteAnimation->setDuration(1000);
+    m_infiniteAnimation->setDuration(TTK_DN_S2MS);
     m_infiniteAnimation->setStartValue(0.0);
     m_infiniteAnimation->setEndValue(1.0);
     m_infiniteAnimation->start();

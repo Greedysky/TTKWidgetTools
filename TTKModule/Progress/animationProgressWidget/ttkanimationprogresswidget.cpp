@@ -20,7 +20,7 @@ TTKAnimationProgressWidget::TTKAnimationProgressWidget(QWidget *parent)
     m_animation = new QPropertyAnimation(this, {}, parent);
     m_animation->setStartValue(0);
     m_animation->setEndValue(MAX_SIZE - 1);
-    m_animation->setDuration(2000);
+    m_animation->setDuration(2 * TTK_DN_S2MS);
     m_animation->setLoopCount(-1);
     connect(m_animation, SIGNAL(valueChanged(QVariant)), SLOT(valueChanged(QVariant)));
 }

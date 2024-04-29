@@ -55,7 +55,7 @@ void TTKRoundProgressWidget::setRange(float min, float max)
 void TTKRoundProgressWidget::setText(float value)
 {
     QPropertyAnimation* animation = new QPropertyAnimation(this, "m_value");
-    animation->setDuration(500);
+    animation->setDuration(TTK_DN_S2MS /2);
     animation->setStartValue(m_value);
     animation->setEndValue(value);
     animation->setEasingCurve(QEasingCurve::OutQuad);

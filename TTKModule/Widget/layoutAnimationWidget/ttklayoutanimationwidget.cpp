@@ -23,7 +23,7 @@ TTKLayoutAnimationWidget::TTKLayoutAnimationWidget(QWidget *parent)
     m_mainWidget->setLayout(m_widgetLayout);
 
     m_animation = new QPropertyAnimation(m_mainWidget, {}, this);
-    m_animation->setDuration(5000);
+    m_animation->setDuration(5 * TTK_DN_S2MS);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setStartValue(0.0f);
     m_animation->setEndValue(0.0f);

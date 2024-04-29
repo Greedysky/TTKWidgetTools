@@ -12,7 +12,7 @@ TTKLineEditWidget::TTKLineEditWidget(QWidget *parent)
     setStyleSheet("border:none");
 
     m_animation = new QPropertyAnimation(this, {});
-    m_animation->setDuration(1000);
+    m_animation->setDuration(TTK_DN_S2MS);
     m_animation->setEasingCurve(QEasingCurve::InCubic);
     m_animation->setStartValue(0.0f);
     m_animation->setEndValue(0.0f);
