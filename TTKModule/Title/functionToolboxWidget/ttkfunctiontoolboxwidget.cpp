@@ -185,7 +185,7 @@ TTKFunctionToolBoxWidget::TTKFunctionToolBoxWidget(QWidget *parent)
 
     m_contentsWidget = new QWidget(this);
     m_contentsWidget->setObjectName("contentsWidget");
-    m_contentsWidget->setStyleSheet("#contentsWidget{background-color:transparent; }");
+    m_contentsWidget->setStyleSheet(QString("#%1{ background-color:transparent; }").arg(m_contentsWidget->objectName()));
 
     m_layout = new QVBoxLayout(m_contentsWidget);
     m_layout->setContentsMargins(0, 0, 0 ,0);
@@ -379,7 +379,7 @@ void TTKFunctionToolBoxWidget::setTransparent(int alpha)
     const QString &alphaStr = QString("background:rgba(255, 255, 255, %1)").arg(alpha);
     QWidget *view = m_scrollArea->viewport();
     view->setObjectName("viewport");
-    view->setStyleSheet(QString("#viewport{%1}").arg(alphaStr));
+    view->setStyleSheet(QString("#%1{ %2 }").arg(view->objectName(), alphaStr));
 
     m_scrollArea->verticalScrollBar()->setStyleSheet(" \
             QScrollBar{ background:transparent; width:8px; padding-top:0px; padding-bottom:0px; } \

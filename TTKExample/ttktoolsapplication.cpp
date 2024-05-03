@@ -329,7 +329,7 @@ void TTKToolsApplication::createButtonModule()
 #endif
 
     widget->setObjectName("buttonRow");
-    widget->setStyleSheet("#buttonRow{background-color:rgba(255, 0, 0, 50)}");
+    widget->setStyleSheet("#buttonRow{ background-color:rgba(255, 0, 0, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(buttonModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Button");
@@ -360,7 +360,7 @@ void TTKToolsApplication::createLabelModule()
     widget->addItem(":/icon/label", "TTKHeatMapLabelProperty");
 
     widget->setObjectName("labelRow");
-    widget->setStyleSheet("#labelRow{background-color:rgba(255, 126, 0, 50)}");
+    widget->setStyleSheet("#labelRow{ background-color:rgba(255, 126, 0, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(labelModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Label");
@@ -374,7 +374,7 @@ void TTKToolsApplication::createLineEditModule()
     widget->addItem(":/icon/lineedit", "TTKLineEditWidget");
 
     widget->setObjectName("lineEidtRow");
-    widget->setStyleSheet("#lineEidtRow{background-color:rgba(255, 255, 0, 50)}");
+    widget->setStyleSheet("#lineEidtRow{ background-color:rgba(255, 255, 0, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(lineEditModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "LineEdit");
@@ -402,7 +402,7 @@ void TTKToolsApplication::createMeterModule()
     widget->addItem(":/icon/meter", "TTKTemperatureMeterWidget");
 
     widget->setObjectName("meterRow");
-    widget->setStyleSheet("#meterRow{background-color:rgba(0, 255, 0, 50)}");
+    widget->setStyleSheet("#meterRow{ background-color:rgba(0, 255, 0, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(meterModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Meter");
@@ -431,7 +431,7 @@ void TTKToolsApplication::createProgressModule()
     widget->addItem(":/icon/progress", "TTKZoomWaitProgressWidget");
 
     widget->setObjectName("progressRow");
-    widget->setStyleSheet("#progressRow{background-color:rgba(0, 0, 255, 50)}");
+    widget->setStyleSheet("#progressRow{ background-color:rgba(0, 0, 255, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(progressModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Progress");
@@ -446,7 +446,7 @@ void TTKToolsApplication::createSliderModule()
     widget->addItem(":/icon/slider", "TTKStyleSlider");
 
     widget->setObjectName("sliderRow");
-    widget->setStyleSheet("#sliderRow{background-color:rgba(0, 255, 255, 50)}");
+    widget->setStyleSheet("#sliderRow{ background-color:rgba(0, 255, 255, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(sliderModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Silder");
@@ -475,7 +475,7 @@ void TTKToolsApplication::createTitleModule()
     widget->addItem(":/icon/title", "TTKFunctionNavigationGWidget");
 
     widget->setObjectName("titleRow");
-    widget->setStyleSheet("#titleRow{background-color:rgba(255, 0, 255, 50)}");
+    widget->setStyleSheet("#titleRow{ background-color:rgba(255, 0, 255, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(titleModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Title");
@@ -499,7 +499,7 @@ void TTKToolsApplication::createWidgetModule()
     widget->addItem(":/icon/widget", "TTKPuzzleWidget");
 
     widget->setObjectName("widgetRow");
-    widget->setStyleSheet("#widgetRow{background-color:rgba(18, 35, 52, 50)}");
+    widget->setStyleSheet("#widgetRow{ background-color:rgba(18, 35, 52, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(widgetModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Widget");
@@ -518,7 +518,7 @@ void TTKToolsApplication::createWindowModule()
     widget->addItem(":/icon/window", "TTKNotifyWindow");
 
     widget->setObjectName("windowRow");
-    widget->setStyleSheet("#windowRow{background-color:rgba(255, 255, 255, 50)}");
+    widget->setStyleSheet("#windowRow{ background-color:rgba(255, 255, 255, 50) }");
 
     connect(widget, SIGNAL(rowClicked(int)), SLOT(windowModuleChanged(int)));
     ui->functionListWidget->addItem(widget, "Window");

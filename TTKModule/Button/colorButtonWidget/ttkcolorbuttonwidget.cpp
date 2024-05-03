@@ -116,7 +116,7 @@ void TTKColorButtonWidget::initBtn()
         connect(btn, SIGNAL(pressed()), this, SLOT(btnClicked()));
         btn->setObjectName("btn" + color);
         btn->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        btn->setStyleSheet(QString("QPushButton{background:%1;}").arg(color));
+        btn->setStyleSheet(QString("QPushButton{ background:%1 }").arg(color));
         m_gridLayout->addWidget(btn, row, column);
 
         column++;

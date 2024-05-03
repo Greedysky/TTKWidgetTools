@@ -4,8 +4,8 @@
 #include <QProgressBar>
 
 static constexpr const char *PROGRESS_STYLESHEET =
-    "QProgressBar{ color:white;border:none; background:rgb(68,69,73);font:30px; text-align:center;}"
-    "QProgressBar::chunk{background-color: rgb(0, 160, 230);}";
+    "QProgressBar{ color:white; border:none; background:rgb(68,69,73); font:30px; text-align:center; }"
+    "QProgressBar::chunk{ background-color:rgb(0, 160, 230); }";
 
 TTKSplashScreen::TTKSplashScreen()
     : TTKSplashScreen(0)

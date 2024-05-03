@@ -98,7 +98,7 @@ void TTKAnSplashScreen::initialize()
     m_gridLayout->addWidget(m_textLabel, 2, 0, 1, 1);
     setLayout(m_gridLayout);
 
-    setStyleSheet("QLabel{color:rgb(255,255,255);font:75 50pt \"\346\245\267\344\275\223\";background-color:rgb(55,55,55)}");
+    setStyleSheet("QLabel{ color:rgb(255,255,255); font:75 50pt \"\346\245\267\344\275\223\"; background-color:rgb(55,55,55) }");
 
     resize(300, 300);
 }
