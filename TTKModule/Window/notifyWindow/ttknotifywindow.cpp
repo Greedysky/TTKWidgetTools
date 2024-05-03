@@ -55,7 +55,7 @@ TTKNotify::TTKNotify(int time, QWidget *parent)
     m_closeBtn->setObjectName("notify-close-btn");
     m_closeBtn->setFixedSize(24, 24);
     connect(m_closeBtn, SIGNAL(clicked()), SIGNAL(disappeared()));
-    setStyleSheet("#notify-background{ border: 1px solid #ccc; background:white; border-radius:4px; } "
+    setStyleSheet("#notify-background{ border:1px solid #ccc; background:white; border-radius:4px; } "
                   "#notify-title{ font-weight:bold; color:#333; font-size:14px; }"
                   "#notify-body{ color:#444; }"
                   "#notify-close-btn{ border:0; color:#999; }"

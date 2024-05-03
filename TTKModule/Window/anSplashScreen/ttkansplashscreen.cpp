@@ -80,18 +80,18 @@ void TTKAnSplashScreen::initialize()
     m_numLabel->setText(QString::number(m_count));
     m_numLabel->setSizePolicy(sizePolicy);
     m_numLabel->setAlignment(Qt::AlignCenter);
-    m_numLabel->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-                                                "font: 75 50pt \"\346\245\267\344\275\223\";\n"
-                                                "background-color: rgb(55, 55, 55);"));
+    m_numLabel->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255);\n"
+                                                "font:75 50pt \"\346\245\267\344\275\223\";\n"
+                                                "background-color:rgb(55, 55, 55);"));
 
     m_textLabel = new QLabel(this);
     m_textLabel->setText("Loading");
     m_textLabel->setMinimumSize(0,40);
     m_textLabel->setMaximumHeight(40);
     m_textLabel->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
-    m_textLabel->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-                                                 "font: 75 14pt \"\346\245\267\344\275\223\";\n"
-                                                 "background-color: rgb(55, 55, 55);"));
+    m_textLabel->setStyleSheet(QString::fromUtf8("color:rgb(255, 255, 255);\n"
+                                                 "font:75 14pt \"\346\245\267\344\275\223\";\n"
+                                                 "background-color:rgb(55, 55, 55);"));
 
     m_gridLayout->setContentsMargins(70, 70, 70, 70);
     m_gridLayout->addWidget(m_numLabel, 1, 0, 1, 1);
