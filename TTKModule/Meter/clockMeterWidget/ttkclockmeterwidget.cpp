@@ -243,7 +243,7 @@ void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
     {
         const double sina = sin(startRad - i * deltaRad);
         const double cosa = cos(startRad - i * deltaRad);
-        const QString &strValue = QString("%1").arg(i + 1);
+        const QString &strValue = QString::number(i + 1);
         const int textWidth = QtFontWidth(fontMetrics(), strValue);
         const int textHeight = fontMetrics().height();
         const int x = radius * cosa - textWidth / 2.0;
