@@ -71,7 +71,7 @@ void TTKFunctionToolBoxTopWidget::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
     if(event->button() == Qt::LeftButton)
     {
-        Q_EMIT mousePressAt(m_index);
+        Q_EMIT itemIndexChanged(m_index);
     }
 }
 
@@ -95,7 +95,7 @@ TTKFunctionToolBoxWidgetItem::TTKFunctionToolBoxWidgetItem(int index, const QStr
     : QWidget(parent)
 {
     m_topWidget = new TTKFunctionToolBoxTopWidget(index, text, this);
-    connect(m_topWidget, SIGNAL(mousePressAt(int)), parent, SLOT(mousePressAt(int)));
+    connect(m_topWidget, SIGNAL(itemIndexChanged(int)), parent, SLOT(itemIndexChanged(int)));
 
     m_layout = new QVBoxLayout(this);
     m_layout->setContentsMargins(0, 0, 0, 0);
@@ -355,7 +355,7 @@ void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
     }
 }
 
-void TTKFunctionToolBoxWidget::mousePressAt(int index)
+void TTKFunctionToolBoxWidget::itemIndexChanged(int index)
 {
     m_currentIndex = foundMappingIndex(index);
 

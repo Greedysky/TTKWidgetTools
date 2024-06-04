@@ -44,7 +44,7 @@ public:
     QString title(bool suffix = false);
 
 Q_SIGNALS:
-    void mousePressAt(int index);
+    void itemIndexChanged(int index);
 
 private:
     virtual void mousePressEvent(QMouseEvent *event) override final;
@@ -146,7 +146,7 @@ public:
 
 public Q_SLOTS:
     void setCurrentIndex(int index);
-    void mousePressAt(int index);
+    void itemIndexChanged(int index);
     void setTransparent(int alpha);
 
 private:
