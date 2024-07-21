@@ -137,7 +137,7 @@ void TTKFunctionToolBoxWidgetItem::setTitle(const QString &text)
 
 QString TTKFunctionToolBoxWidgetItem::title() const
 {
-    return m_topWidget->title();
+    return m_topWidget->title(false);
 }
 
 void TTKFunctionToolBoxWidgetItem::setExpand(bool expand)
