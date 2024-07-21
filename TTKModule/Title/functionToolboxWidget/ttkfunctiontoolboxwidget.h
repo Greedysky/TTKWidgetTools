@@ -41,7 +41,7 @@ public:
     bool isExpand() const;
 
     void setTitle(const QString &text);
-    QString title(bool suffix = false);
+    QString title(bool suffix);
 
 Q_SIGNALS:
     void itemIndexChanged(int index);
@@ -53,7 +53,6 @@ private:
     bool isItemEnabled() const;
 
     int m_index;
-    QString m_suffixString;
     QLabel *m_labelIcon, *m_labelText;
 
 };
