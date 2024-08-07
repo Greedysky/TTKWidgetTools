@@ -11,8 +11,8 @@ TTKFunctionToolBoxTopWidget::TTKFunctionToolBoxTopWidget(int index, const QStrin
     : QWidget(parent),
       m_index(index)
 {
-    setAcceptDrops(true);
     setFixedHeight(40);
+    setAcceptDrops(true);
 
     QHBoxLayout *topLayout = new QHBoxLayout(this);
     topLayout->setContentsMargins(3, 0, 0, 0);
