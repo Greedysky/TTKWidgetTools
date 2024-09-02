@@ -53,7 +53,7 @@ private:
     bool m_isAnimating;
     int m_currentValue;
     bool m_noAnimationSet;
-    QPixmap m_rendererPixmap;
+    QPixmap m_renderPixmap;
     QPixmap m_currentPixmap, m_previousPixmap;
     QPropertyAnimation *m_animation;
 

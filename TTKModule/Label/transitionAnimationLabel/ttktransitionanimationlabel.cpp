@@ -54,8 +54,8 @@ void TTKTransitionAnimationLabel::setPixmap(const QPixmap &pix)
     const QPixmap &pixmap = QtLablePixmap(this);
     if(m_noAnimationSet || pixmap.isNull())
     {
-        m_rendererPixmap = pix.scaled(sizeHint());
-        QLabel::setPixmap(m_rendererPixmap);
+        m_renderPixmap = pix.scaled(sizeHint());
+        QLabel::setPixmap(m_renderPixmap);
         return;
     }
 
@@ -75,8 +75,8 @@ void TTKTransitionAnimationLabel::animationFinished()
 {
     m_currentValue = 0;
     m_isAnimating = false;
-    m_rendererPixmap = m_currentPixmap;
-    QLabel::setPixmap(m_rendererPixmap);
+    m_renderPixmap = m_currentPixmap;
+    QLabel::setPixmap(m_renderPixmap);
 }
 
 void TTKTransitionAnimationLabel::paintEvent(QPaintEvent *event)
@@ -94,7 +94,7 @@ void TTKTransitionAnimationLabel::paintEvent(QPaintEvent *event)
         paint.setCompositionMode(QPainter::CompositionMode_SourceIn);
         paint.drawPixmap(rect(), m_currentPixmap);
 
-        m_rendererPixmap = pix;
+        m_renderPixmap = pix;
         painter.drawPixmap(rect(), pix);
     }
     else

@@ -70,7 +70,7 @@ void TTKCompassMeterWidget::setPrecision(int precision)
     }
 }
 
-void TTKCompassMeterWidget:: setAnimation(bool animation)
+void TTKCompassMeterWidget::setAnimation(bool animation)
 {
     if(m_animation != animation)
     {
