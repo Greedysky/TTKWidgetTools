@@ -238,7 +238,7 @@ void TTKRoundMeterWidget::drawDial(QPainter *painter)
     pen.setWidthF(lineWidth);
     pen.setCapStyle(Qt::RoundCap);
 
-    const double rotate = (double)(360 - (m_angle * 2)) / 100;
+    const double rotate = (360 - (m_angle * 2)) * 1.0 / 100;
 
     pen.setColor(m_usedColor);
     painter->setPen(pen);

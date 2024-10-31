@@ -24,8 +24,8 @@ void TTKRadiusProgressWidget::paintEvent(QPaintEvent *event)
     const QRect &rect = QRect(0, 0, width(), height() / 2);
     const QRect &textRect = QRect(0, height() / 2, width(), height() / 2);
 
-    const double k = (double)(value() - minimum()) / (maximum()-minimum());
-    const int x = (int)(rect.width() * k);
+    const double k = (value() - minimum()) * 1.0 / (maximum() - minimum());
+    const int x = TTKStaticCast(int, rect.width() * k);
     const QRect &fillRect = rect.adjusted(0, 0, x - rect.width(), 0);
 
     painter.drawPixmap(rect, QPixmap(":/res/lb_rp_back"));

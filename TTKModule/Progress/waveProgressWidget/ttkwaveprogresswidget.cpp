@@ -179,7 +179,7 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
         endY = (h + side) / 2;
     }
 
-    const double percent = 1 - (double)(m_value - m_minValue) / (m_maxValue - m_minValue);
+    const double percent = 1 - (m_value - m_minValue) * 1.0 / (m_maxValue - m_minValue);
     const double W = m_waterDensity * M_PI / endX;
     const double A = endY * m_waterHeight;
     double k = endY * percent;
@@ -203,8 +203,8 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
 
     for(int x = startX; x <= endX; ++x)
     {
-        double waterY1 = (double)(A * sin(W * x + m_offset)) + k;
-        double waterY2 = (double)(A * sin(W * x + m_offset + (endX / 2 * W))) + k;
+        double waterY1 = TTKStaticCast(double, A * sin(W * x + m_offset)) + k;
+        double waterY2 = TTKStaticCast(double, A * sin(W * x + m_offset + (endX / 2 * W))) + k;
 
         if(m_value == m_minValue)
         {

@@ -290,7 +290,7 @@ void TTKBarRulerLabel::drawRuler(QPainter *painter)
             const QPointF rightPot(initX, initY);
             painter->drawLine(leftPot, rightPot);
 
-            const QString &strValue = QString("%1").arg((double)i, 0, 'f', m_precision);
+            const QString &strValue = QString("%1").arg(i * 1.0, 0, 'f', m_precision);
             const int fontWidth = QtFontWidth(fontMetrics(), strValue);
             const int fontHeight = painter->fontMetrics().height();
             const QPointF textPot(initX - fontWidth - 5, initY + fontHeight / 3.0);

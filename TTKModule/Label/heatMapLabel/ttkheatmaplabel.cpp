@@ -255,7 +255,7 @@ QImage HeatMapper::render()
     }
 
     QImage render(m_heatmap->w, m_heatmap->h, QImage::Format_ARGB32);
-    render.loadFromData(&output[0], (int)output.size());
+    render.loadFromData(&output[0], TTKStaticCast(int, output.size()));
 
     if(m_opacity != DEFAULT_OPACITY)
     {

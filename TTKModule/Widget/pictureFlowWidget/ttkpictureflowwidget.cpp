@@ -496,9 +496,10 @@ void TTKPictureFlowWidgetSoftwareRenderer::paint()
         m_surfaceCache.clear();
     }
 
-    if((int)(m_state->m_reflectionEffect) != m_effect)
+    const int effect = TTKStaticCast(int, m_state->m_reflectionEffect);
+    if(effect != m_effect)
     {
-        m_effect = (int)m_state->m_reflectionEffect;
+        m_effect = effect;
         m_surfaceCache.clear();
     }
 
@@ -543,7 +544,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::initialize()
 
 QImage* TTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
 {
-    if(!m_state || slideIndex < 0 || slideIndex >= (int)m_state->m_slideImages.count())
+    if(!m_state || slideIndex < 0 || slideIndex >= TTKStaticCast(int, m_state->m_slideImages.count()))
     {
         return 0;
     }

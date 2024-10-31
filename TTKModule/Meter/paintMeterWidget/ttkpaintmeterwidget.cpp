@@ -152,16 +152,16 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
     double sina, cosa;
     for(int i=0; i <= m_steps; ++i)
     {
-        sina = sin((double)(startRad + i * deltaRad));
-        cosa = cos((double)(startRad + i * deltaRad));
+        sina = sin(TTKStaticCast(double, startRad + i * deltaRad));
+        cosa = cos(TTKStaticCast(double, startRad + i * deltaRad));
         const double v = i * ((m_maxValue - m_minValue) / m_steps) + m_minValue;
 
         const QString &str = QString("%1").arg(v, 0, 'f', m_precision);
         const QFontMetricsF ftm(font());
         const double w = ftm.size(Qt::TextSingleLine, str).width();
         const double h = ftm.size(Qt::TextSingleLine, str).height();
-        const int x = (int)((38 * sina) - (w / 2));
-        const int y = (int)((38 * cosa) + (h / 4));
+        const int x = TTKStaticCast(int, (38 * sina) - (w / 2));
+        const int y = TTKStaticCast(int, (38 * cosa) + (h / 4));
         painter->drawText(x, y, str);
     }
     painter->restore();
@@ -203,7 +203,7 @@ void TTKPaintMeterWidget::drawNeedle(QPainter *painter)
     QPolygon shadow;
     shadow.setPoints(3, -1, 0, 1, 0, 0, 29);
 
-    const int degRotate = (int)(m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue));
+    const int degRotate = TTKStaticCast(int, m_startAngle + (m_endAngle - m_startAngle) / (m_maxValue - m_minValue) * (m_value - m_minValue));
     painter->rotate(-degRotate);
 
     QRadialGradient haloGradient(0, 0, 20, 0, 0);
@@ -243,11 +243,11 @@ void TTKPaintMeterWidget::drawThresholdLine(QPainter *painter)
     pen.setWidth(3);
     pen.setColor(Qt::green);
     painter->setPen(pen);
-    painter->drawArc(-25, -25, 50, 50, (int)m_startAngle * 16, (int)(threshold - m_startAngle) * 16);
+    painter->drawArc(-25, -25, 50, 50, TTKStaticCast(int, m_startAngle) * 16, TTKStaticCast(int, threshold - m_startAngle) * 16);
 
     pen.setColor(Qt::red);
     painter->setPen(pen);
-    painter->drawArc(-25, -25, 50, 50, (int)threshold * 16, (int)(-threshold + m_endAngle) * 16);
+    painter->drawArc(-25, -25, 50, 50, TTKStaticCast(int, threshold) * 16, TTKStaticCast(int, -threshold + m_endAngle) * 16);
     painter->restore();
 }
 
