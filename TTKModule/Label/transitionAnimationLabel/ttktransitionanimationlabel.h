@@ -38,6 +38,8 @@ public:
     void start();
     void stop();
 
+    bool isRunning() const;
+
     virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:

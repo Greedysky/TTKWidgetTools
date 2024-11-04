@@ -33,10 +33,16 @@ void TTKTransitionAnimationLabel::start()
 
 void TTKTransitionAnimationLabel::stop()
 {
-    if(m_animation->state() == QPropertyAnimation::Running)
+    if(isRunning())
     {
         m_animation->stop();
+        animationFinished();
     }
+}
+
+bool TTKTransitionAnimationLabel::isRunning() const
+{
+    return m_animation->state() == QPropertyAnimation::Running;
 }
 
 QSize TTKTransitionAnimationLabel::sizeHint() const
