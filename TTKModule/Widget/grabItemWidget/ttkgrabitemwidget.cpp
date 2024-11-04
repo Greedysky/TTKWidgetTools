@@ -72,20 +72,6 @@ void TTKGrabItemWidget::mousePressEvent(QMouseEvent *event)
     }
 }
 
-void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
-{
-    if(event->button() == Qt::LeftButton)
-    {
-        m_isPressed = false;
-        if(m_direction != Direction::No)
-        {
-            setCursor(QCursor(Qt::SizeAllCursor));
-        }
-
-        Q_EMIT rectChanged();
-    }
-}
-
 void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
 {
     const QPoint &gloPoint = mapToParent(event->pos());
@@ -134,6 +120,20 @@ void TTKGrabItemWidget::mouseMoveEvent(QMouseEvent *event)
         }
     }
     m_currentRect = geometry();
+}
+
+void TTKGrabItemWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+    if(event->button() == Qt::LeftButton)
+    {
+        m_isPressed = false;
+        if(m_direction != Direction::No)
+        {
+            setCursor(QCursor(Qt::SizeAllCursor));
+        }
+
+        Q_EMIT rectChanged();
+    }
 }
 
 void TTKGrabItemWidget::resizeEvent(QResizeEvent *event)

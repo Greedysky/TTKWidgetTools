@@ -58,8 +58,8 @@ protected Q_SLOTS:
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override final;
-    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void mouseMoveEvent(QMouseEvent *event) override final;
+    virtual void mouseReleaseEvent(QMouseEvent *event) override final;
     virtual void resizeEvent(QResizeEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override;
 
