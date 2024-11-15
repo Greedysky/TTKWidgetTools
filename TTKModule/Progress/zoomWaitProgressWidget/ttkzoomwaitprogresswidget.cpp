@@ -11,7 +11,7 @@ TTKZoomWaitProgressWidget::TTKZoomWaitProgressWidget(QWidget *parent)
       m_radious(0),
       m_minRadious(0)
 {
-    m_timer = new QTimer;
+    m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(update()));
 
     m_timer->start(100);
