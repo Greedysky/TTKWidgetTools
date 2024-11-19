@@ -18,8 +18,6 @@
 
 INCLUDEPATH += $$PWD
 
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
-
 HEADERS += \
     $$PWD/qtpropertybrowser.h \
     $$PWD/qtpropertymanager.h \

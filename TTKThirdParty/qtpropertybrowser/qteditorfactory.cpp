@@ -61,7 +61,7 @@
 #include <QPainter>
 #include <QMap>
 
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
 #include <QRegularExpressionValidator>
 #endif
 
@@ -1020,7 +1020,7 @@ void QtLineEditFactoryPrivate::slotRegExpChanged(QtProperty *property,
         const QValidator *oldValidator = editor->validator();
         QValidator *newValidator = 0;
         if (regExp.isValid()) {
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
             newValidator = new QRegularExpressionValidator(QRegularExpression(regExp.pattern()), editor);
 #else
             newValidator = new QRegExpValidator(regExp, editor);
@@ -1147,7 +1147,7 @@ QWidget *QtLineEditFactory::createEditor(QtStringPropertyManager *manager,
     QRegExp regExp = manager->regExp(property);
     if (regExp.isValid()) {
         QValidator *validator = nullptr;
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
         validator = new QRegularExpressionValidator(QRegularExpression(regExp.pattern()), editor);
 #else
         validator = new QRegExpValidator(regExp, editor);
@@ -1749,7 +1749,7 @@ void QtCharEdit::handleKeyEvent(QKeyEvent *e)
     }
 
     const QString text = e->text();
-    if (text.count() != 1)
+    if (text.length() != 1)
         return;
 
     const QChar c = text.at(0);
@@ -2345,7 +2345,7 @@ void QtColorEditWidget::setValue(const QColor &c)
 void QtColorEditWidget::buttonClicked()
 {
     QRgb oldRgba = m_color.rgba();
-#if TTK_QT_VERSION_CHECK(5,12,0)
+#if QT_VERSION >= 0x050C00
     bool ok = true;
     QRgb newRgba = QColorDialog::getColor(oldRgba, this).rgba();
 #else

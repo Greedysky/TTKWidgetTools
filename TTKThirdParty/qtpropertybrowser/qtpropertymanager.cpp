@@ -419,9 +419,9 @@ private:
     QMap<QLocale::Language, QStringList> m_countryEnumNames;
     QMap<int, QLocale::Language> m_indexToLanguage;
     QMap<QLocale::Language, int> m_languageToIndex;
+    QMetaEnum m_policyEnum;
     QMap<int, QMap<int, QLocale::Country> > m_indexToCountry;
     QMap<QLocale::Language, QMap<QLocale::Country, int> > m_countryToIndex;
-    QMetaEnum m_policyEnum;
 };
 
 #if QT_VERSION < 0x040300
@@ -6062,7 +6062,7 @@ void QtFontPropertyManager::setValue(QtProperty *property, const QFont &val)
 
     const QFont oldVal = it.value();
     if (oldVal == val &&
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
         oldVal.resolveMask() == val.resolveMask())
 #else
         oldVal.resolve() == val.resolve())

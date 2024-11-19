@@ -354,17 +354,31 @@ void QtKeySequenceEdit::handleKeyEvent(QKeyEvent *e)
         return;
 
     nextKey |= translateModifiers(e->modifiers(), e->text());
+#if QT_VERSION >= 0x060000
+    QKeyCombination k0 = m_keySequence[0];
+    QKeyCombination k1 = m_keySequence[1];
+    QKeyCombination k2 = m_keySequence[2];
+    QKeyCombination k3 = m_keySequence[3];
+    switch (m_num) {
+        case 0: k1 = QKeyCombination::fromCombined(nextKey); k1 = QKeyCombination::fromCombined(0); k2 = QKeyCombination::fromCombined(0); k3 = QKeyCombination::fromCombined(0); break;
+        case 1: k1 = QKeyCombination::fromCombined(nextKey); k2 = QKeyCombination::fromCombined(0); k3 = QKeyCombination::fromCombined(0); break;
+        case 2: k2 = QKeyCombination::fromCombined(nextKey); k3 = QKeyCombination::fromCombined(0); break;
+        case 3: k3 = QKeyCombination::fromCombined(nextKey); break;
+        default: break;
+    }
+#else
     int k0 = m_keySequence[0];
     int k1 = m_keySequence[1];
     int k2 = m_keySequence[2];
     int k3 = m_keySequence[3];
     switch (m_num) {
-        case 0: k0 = nextKey; k1 = 0; k2 = 0; k3 = 0; break;
-        case 1: k1 = nextKey; k2 = 0; k3 = 0; break;
-        case 2: k2 = nextKey; k3 = 0; break;
-        case 3: k3 = nextKey; break;
-        default: break;
+    case 0: k0 = nextKey; k1 = 0; k2 = 0; k3 = 0; break;
+    case 1: k1 = nextKey; k2 = 0; k3 = 0; break;
+    case 2: k2 = nextKey; k3 = 0; break;
+    case 3: k3 = nextKey; break;
+    default: break;
     }
+#endif
     ++m_num;
     if (m_num > 3)
         m_num = 0;

@@ -590,7 +590,7 @@ void QtVariantPropertyManagerPrivate::slotValueChanged(QtProperty *property, con
 void QtVariantPropertyManagerPrivate::slotValueChanged(QtProperty *property, const QKeySequence &val)
 {
     QVariant v;
-#if TTK_QT_VERSION_CHECK(5,14,0)
+#if QT_VERSION >= 0x050E00
     v.setValue(val);
 #else
     qVariantSetValue(v, val);
@@ -681,7 +681,7 @@ void QtVariantPropertyManagerPrivate::slotEnumIconsChanged(QtProperty *property,
 {
     if (QtVariantProperty *varProp = m_internalToProperty.value(property, 0)) {
         QVariant v;
-#if TTK_QT_VERSION_CHECK(5,14,0)
+#if QT_VERSION >= 0x050E00
         v.setValue(enumIcons);
 #else
         qVariantSetValue(v, enumIcons);
@@ -1024,7 +1024,7 @@ QtVariantPropertyManager::QtVariantPropertyManager(QObject *parent)
     d_ptr->m_typeToPropertyManager[QMetaType::QString] = stringPropertyManager;
     d_ptr->m_typeToValueType[QMetaType::QString] = QMetaType::QString;
     d_ptr->m_typeToAttributeToAttributeType[QMetaType::QString][d_ptr->m_regExpAttribute] =
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
             QMetaType::QRegularExpression;
 #else
             QMetaType::QRegExp;
@@ -1297,7 +1297,7 @@ QtVariantPropertyManager::QtVariantPropertyManager(QObject *parent)
     int groupId = groupTypeId();
     QtGroupPropertyManager *groupPropertyManager = new QtGroupPropertyManager(this);
     d_ptr->m_typeToPropertyManager[groupId] = groupPropertyManager;
-#if TTK_QT_VERSION_CHECK(5,0,0)
+#if QT_VERSION >= 0x050000
     d_ptr->m_typeToValueType[groupId] = QMetaType::UnknownType;
 #else
     d_ptr->m_typeToValueType[groupId] = QMetaType::Void;
@@ -1584,7 +1584,7 @@ QVariant QtVariantPropertyManager::attributeValue(const QtProperty *property, co
             return enumManager->enumNames(internProp);
         if (attribute == d_ptr->m_enumIconsAttribute) {
             QVariant v;
-#if TTK_QT_VERSION_CHECK(5,14,0)
+#if QT_VERSION >= 0x050E00
             v.setValue(enumManager->enumIcons(internProp));
 #else
             qVariantSetValue(v, enumManager->enumIcons(internProp));
@@ -1659,7 +1659,7 @@ void QtVariantPropertyManager::setValue(QtProperty *property, const QVariant &va
     int valType = valueType(property);
 
     if (propType != valType &&
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
             !val.canConvert(QMetaType(valType)))
 #else
             !val.canConvert((QVariant::Type)valType))
@@ -1767,7 +1767,7 @@ void QtVariantPropertyManager::setAttribute(QtProperty *property,
         return;
 
     if (attrType != attributeType(propertyType(property), attribute) &&
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION >= 0x060000
             !value.canConvert(QMetaType(attrType)))
 #else
             !value.canConvert((QVariant::Type)attrType))
