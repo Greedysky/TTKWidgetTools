@@ -2,7 +2,7 @@
 #include "ttktoolsapplication.h"
 #include "ttkobject.h"
 #include "ttkdumper.h"
-#include "ttkglobalhelper.h"
+#include "ttkglobalwrapper.h"
 #include "ttkplatformsystem.h"
 
 #ifdef Q_OS_UNIX
