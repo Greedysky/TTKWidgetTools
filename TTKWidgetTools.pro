@@ -19,3 +19,7 @@
 TEMPLATE = subdirs
 CONFIG += ordered
 SUBDIRS += TTKCommon TTKModule TTKExample
+
+include($$PWD/TTKVersion.pri)
+
+unix:system(sh $$PWD/TTKUtils/resource.sh $$PWD/TTKResource $$OUT_PWD/bin/$$TTK_VERSION)
