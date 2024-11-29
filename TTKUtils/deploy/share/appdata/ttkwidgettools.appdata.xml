@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2015 - 2024 Greedysky Studio -->
+<component type="desktop-application">
+  <id>TTKWidgetTools.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>TTKWidgetTools</name>
+  <pkgname>TTKWidgetTools</pkgname>
+  <summary>The ttk widget tools</summary>
+  <description>
+    <p>
+      TTKWidgetTools QWidget自定义控件集合.
+    </p>
+  </description>
+  <categories>
+    <category>widget</category>
+    <category>Qt</category>
+  </categories>
+  <keywords>
+    <keyword>widget</keyword>
+  </keywords>
+  <url type="homepage">https://github.com/Greedysky/TTKWidgetTools</url>
+  <developer_name>Greedysky Studio</developer_name>
+  <releases>
+    <release version="2.8.0.0" date="2024-03-29" />
+    <release version="2.7.0.0" date="2023-04-14" />
+    <release version="2.6.0.0" date="2023-01-30" />
+    <release version="2.5.0.0" date="2022-11-14" />
+    <release version="2.4.0.0" date="2022-01-29" />
+    <release version="2.3.1.0" date="2021-10-27" />
+    <release version="2.3.0.0" date="2021-06-26" />
+  </releases>
+</component>

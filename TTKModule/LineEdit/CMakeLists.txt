@@ -16,4 +16,14 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-RESOURCES += $$PWD/TTKWidgetTools.qrc
+cmake_minimum_required(VERSION 3.0.0)
+
+set_property(GLOBAL PROPERTY TTK_MODULE_LINEEDIT_HEADER_FILES
+  ${TTK_MODULE_LINEEDIT_DIR}/ipEditWidget/ttkipeditwidget.h
+  ${TTK_MODULE_LINEEDIT_DIR}/lineEditWidget/ttklineeditwidget.h
+)
+
+set_property(GLOBAL PROPERTY TTK_MODULE_LINEEDIT_SOURCE_FILES
+  ${TTK_MODULE_LINEEDIT_DIR}/ipEditWidget/ttkipeditwidget.cpp
+  ${TTK_MODULE_LINEEDIT_DIR}/lineEditWidget/ttklineeditwidget.cpp
+)

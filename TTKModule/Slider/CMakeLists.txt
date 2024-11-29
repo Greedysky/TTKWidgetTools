@@ -16,4 +16,18 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-RESOURCES += $$PWD/TTKWidgetTools.qrc
+cmake_minimum_required(VERSION 3.0.0)
+
+set_property(GLOBAL PROPERTY TTK_MODULE_SLIDER_HEADER_FILES
+  ${TTK_MODULE_SLIDER_DIR}/movingLabelSlider/ttkclickedslider.h
+  ${TTK_MODULE_SLIDER_DIR}/movingLabelSlider/ttkmovinglabelslider.h
+  ${TTK_MODULE_SLIDER_DIR}/shiningSlider/ttkshiningslider.h
+  ${TTK_MODULE_SLIDER_DIR}/styleSlider/ttkstyleslider.h
+)
+
+set_property(GLOBAL PROPERTY TTK_MODULE_SLIDER_SOURCE_FILES
+  ${TTK_MODULE_SLIDER_DIR}/movingLabelSlider/ttkclickedslider.cpp
+  ${TTK_MODULE_SLIDER_DIR}/movingLabelSlider/ttkmovinglabelslider.cpp
+  ${TTK_MODULE_SLIDER_DIR}/shiningSlider/ttkshiningslider.cpp
+  ${TTK_MODULE_SLIDER_DIR}/styleSlider/ttkstyleslider.cpp
+)
