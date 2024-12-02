@@ -4,9 +4,9 @@
 ![License](https://img.shields.io/badge/License-GPL%20V3-yellowgreen.svg?style=flat-square)
 ![License](https://img.shields.io/badge/License-LGPL%20V3-yellow.svg?style=flat-square)
 
-![LOGO](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/logo_banner.png?raw=true)
+![LOGO](TTKResource/logo_banner.png?raw=true)
 
-### **|[About](https://github.com/Greedysky/TTKWidgetTools#usage)|[License](https://github.com/Greedysky/TTKWidgetTools#license)|[Download](https://github.com/Greedysky/TTKWidgetTools#download)|[Features](https://github.com/Greedysky/TTKWidgetTools#features)|[Screenshots](https://github.com/Greedysky/TTKWidgetTools#screenshots)|[Copyright](https://github.com/Greedysky/TTKWidgetTools#copyright)|[Contribute](https://github.com/Greedysky/TTKWidgetTools#how-to-contribute)|**
+### **|[About](#usage)|[License](#license)|[Download](#download)|[Features](#features)|[Screenshots](#screenshots)|[Copyright](#copyright)|[Contribute](#how-to-contribute)|**
 
 Usage
 --------
@@ -33,7 +33,7 @@ Usage
 
 License
 --------
-TTKWidgetTools is free software licensed under the term of [Licence LGPL v3](https://github.com/Greedysky/TTKWidgetTools/blob/master/LICENSE). If you use TTKWidgetTools or its constituent libraries, you must adhere to the terms of the license in question.
+TTKWidgetTools is free software licensed under the term of [Licence LGPL v3](LICENSE). If you use TTKWidgetTools or its constituent libraries, you must adhere to the terms of the license in question.
 
 Download
 --------
@@ -176,7 +176,7 @@ Features
 
 Screenshots
 --------
-![Demo](https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/picture.png?raw=true)
+![Demo](TTKResource/example/Button/checkButtonWidget.png?raw=true)
 
 Copyright
 --------
