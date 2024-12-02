@@ -18,6 +18,8 @@
 
 INCLUDEPATH += $$PWD
 
+win32:LIBS += -lIphlpapi
+
 HEADERS += $$PWD/ttknettrafficlabel.h
 
 SOURCES += $$PWD/ttknettrafficlabel.cpp

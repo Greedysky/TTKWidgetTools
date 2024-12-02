@@ -33,7 +33,6 @@ include($$PWD/TTKVersion.pri)
 DESTDIR = $$OUT_PWD/../bin/$$TTK_VERSION
 
 win32{
-    LIBS += -lIphlpapi
     msvc{
         CONFIG += c++11
         !contains(QMAKE_TARGET.arch, x86_64){

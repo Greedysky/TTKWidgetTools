@@ -109,6 +109,10 @@ endif()
 
 set(QT_LINK_LIBS TTKLibrary)
 
+if(WIN32)
+  list(APPEND QT_LINK_LIBS Iphlpapi)
+endif()
+
 if(TTK_QT_VERSION VERSION_EQUAL "4")
   qt4_wrap_cpp(MOC_FILES ${HEADER_FILES})
   qt4_add_resources(RCC_FILES ${QRC_FILES})
