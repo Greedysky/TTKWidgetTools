@@ -1,6 +1,6 @@
 # ***************************************************************************
 # * This file is part of the TTK Library Module project
-# * Copyright (C) 2015 - 2024 Greedysky Studio
+# * Copyright (C) 2015 - 2025 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
 # * it under the terms of the GNU Lesser General Public License as published by
@@ -114,8 +114,8 @@ elseif(TTK_QT_VERSION VERSION_EQUAL "6")
 endif()
 
 if(TTK_BUILD_SHARED)
-  add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${MOC_FILES} ${HEADER_FILES})
+  add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
 else()
-  add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES}  ${MOC_FILES} ${HEADER_FILES})
+  add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES})
 endif()
 target_link_libraries(${PROJECT_NAME} ${QT_LINK_LIBS})

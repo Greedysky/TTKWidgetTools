@@ -1,6 +1,6 @@
 # ***************************************************************************
 # * This file is part of the TTK Widget Tools project
-# * Copyright (C) 2015 - 2024 Greedysky Studio
+# * Copyright (C) 2015 - 2025 Greedysky Studio
 #
 # * This program is free software; you can redistribute it and/or modify
 # * it under the terms of the GNU Lesser General Public License as published by
@@ -45,3 +45,5 @@ HEADERS += \
     $$PWD/../../TTKModule/Window/anSplashScreen/ttkansplashscreen.h \
     $$PWD/../../TTKModule/Window/notifyWindow/ttknotifywindow.h
 }
+
+HEADERS += $$PWD/ttkwindowinclude.h

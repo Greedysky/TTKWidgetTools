@@ -8,4 +8,4 @@ License: GNU Lesser General Public License Version 3 for TTKCommon modules
          GNU Lesser General Public License Version 3 for other modules
 
 本软件仅供学习交流，不可用于商业用途，否则后果自负
-Copyright(C) 2015 - 2024 Greedysky All Rights Reserved
+Copyright(C) 2015 - 2025 Greedysky All Rights Reserved
