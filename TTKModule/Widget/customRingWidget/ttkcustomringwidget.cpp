@@ -79,7 +79,7 @@ void TTKCustomRingWidget::drawBackground(QPainter *painter)
     painter->save();
     painter->setPen(Qt::NoPen);
     painter->setBrush(m_backgroundColor);
-    painter->drawRoundedRect(this->rect(), 5, 5);
+    painter->drawRoundedRect(rect(), 5, 5);
     painter->restore();
 }
 

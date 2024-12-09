@@ -110,7 +110,7 @@ void TTKNotify::hideGriant()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity", this);
     connect(animation, SIGNAL(finished()), SLOT(hideGriantChanged()));
-    animation->setStartValue(this->windowOpacity());
+    animation->setStartValue(windowOpacity());
     animation->setEndValue(0);
     animation->setDuration(200);
     animation->start();
