@@ -47,9 +47,9 @@ set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Release Debug)
 
 option(TTK_BUILD_SHARED "TTK BUILD SHARED LIBS" ON)
 if(TTK_BUILD_SHARED)
-  message(STATUS "Message TTK build by shared link")
+  message(STATUS "TTK build by shared link")
 else()
-  message(STATUS "Message TTK build by static link")
+  message(STATUS "TTK build by static link")
 endif()
 
 add_definitions(-DQT_NO_DEBUG)
@@ -113,16 +113,16 @@ set(TTK_QT_VERSION "0" CACHE STRING "Select Qt version")
 set_property(CACHE TTK_QT_VERSION PROPERTY STRINGS 4 5 6)
 
 if(NOT (TTK_QT_VERSION STREQUAL "4" OR TTK_QT_VERSION STREQUAL "5" OR TTK_QT_VERSION STREQUAL "6"))
-  message(FATAL_ERROR "Message Expected value for TTK_QT_VERSION is invalid")
+  message(FATAL_ERROR "Expected value for TTK_QT_VERSION is invalid")
 endif()
 
 set(CMAKE_PREFIX_PATH ${QT_INSTALL_DIR} CACHE PATH "Qt install path")
 
 find_program(QT_QMAKE_EXECUTABLE qmake ${QT_INSTALL_BINS})
 if(QT_QMAKE_EXECUTABLE)
-  message(STATUS "Message Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
+  message(STATUS "Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
 else()
-  message(FATAL_ERROR "Message Could NOT find qmake executable")
+  message(FATAL_ERROR "Could NOT find qmake executable")
 endif()
 
 
@@ -132,7 +132,7 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
 
   if(QT4_FOUND)
     if("${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}" VERSION_LESS "${minimum_required_qt_version}")
-      message(FATAL_ERROR "Message error: TTK requires Qt >= ${minimum_required_qt_version} -- you cannot use Qt ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}.")
+      message(FATAL_ERROR "Fatal error: TTK requires Qt >= ${minimum_required_qt_version} -- you cannot use Qt ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}.")
     endif()
 
     set(QT_USE_QTCORE ON)
@@ -146,7 +146,7 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
       get_filename_component(${QT_LIBRARY_DIR} ${QT_QMAKE_EXECUTABLE} PATH)
     endif()
   else()
-    message(FATAL_ERROR "Message error: Qt4 was not found on your system. You probably need to set the QT_QMAKE_EXECUTABLE variable")
+    message(FATAL_ERROR "Fatal error: Qt4 was not found on your system. You probably need to set the QT_QMAKE_EXECUTABLE variable")
   endif()
 elseif(TTK_QT_VERSION VERSION_EQUAL "5")
   find_package(Qt5 COMPONENTS Core Gui Widgets Network Xml REQUIRED)
@@ -160,6 +160,14 @@ endif()
 if(TTK_QT_VERSION VERSION_GREATER "4")
   add_definitions(-DQT_DEPRECATED_WARNINGS)
   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050400)
+endif()
+
+
+find_program(CCACHE_FOUND ccache)
+if(CCACHE_FOUND)
+  message(STATUS "Set up ccache module")
+  set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+  set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
 endif()
 
 
