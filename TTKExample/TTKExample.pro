@@ -36,8 +36,7 @@ HEADERS += \
     $$PWD/ttkfunctionitem.h \
     $$PWD/ttkbackgroundcontainer.h \
     $$PWD/ttkbackgroundwidget.h \
-    $$PWD/ttktoolsapplication.h \
-    $$PWD/../TTKCommon/ttkmoduleexport.h
+    $$PWD/ttktoolsapplication.h
 
 SOURCES += \
     $$PWD/ttkwidgetproperty.cpp \

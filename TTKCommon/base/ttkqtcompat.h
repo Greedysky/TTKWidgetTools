@@ -110,7 +110,7 @@ namespace QtCompat
 #  define QtButtonGroupVoidConnect(p, q, f, s) QObject::connect(p, SIGNAL(buttonClicked(int)), q, s(f()))
 #endif
 
-/// Qt namespace
+/// Qt use namespace
 #if TTK_QT_VERSION_CHECK(5,15,0)
 #  define QtNamespace(p) Qt::p
 #else
