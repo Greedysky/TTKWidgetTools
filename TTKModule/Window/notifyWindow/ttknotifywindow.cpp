@@ -1,5 +1,5 @@
 #include "ttknotifywindow.h"
-#include "ttkdesktopwrapper.h"
+#include "ttkdesktopscreen.h"
 
 #include <QUrl>
 #include <QTimer>
@@ -188,7 +188,7 @@ void TTKNotifyManager::disappeared()
 
 void TTKNotifyManager::rearrange()
 {
-    const QRect &desktopRect = TTKDesktopWrapper::screenGeometry();
+    const QRect &desktopRect = TTKDesktopScreen::screenGeometry();
     const QPoint &bottomRignt = desktopRect.bottomRight();
 
     for(auto itr = m_notifyList.begin(); itr != m_notifyList.end(); ++itr)
@@ -222,7 +222,7 @@ void TTKNotifyManager::showNext()
     notify->setUrl(data.m_url);
     notify->setFixedSize(WIDTH, HEIGHT);
 
-    const QRect &desktopRect = TTKDesktopWrapper::screenGeometry();
+    const QRect &desktopRect = TTKDesktopScreen::screenGeometry();
     const QPoint &bottomRignt = desktopRect.bottomRight();
     const QPoint &pos = bottomRignt - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.count() + 1) - SPACE + BOTTOM);
 
