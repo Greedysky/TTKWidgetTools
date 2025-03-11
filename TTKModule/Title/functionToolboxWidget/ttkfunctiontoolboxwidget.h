@@ -104,7 +104,7 @@ struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
     int m_itemIndex;
     TTKFunctionToolBoxWidgetItem *m_widgetItem;
 
-    TTKFunctionToolBoxUnionItem()
+    TTKFunctionToolBoxUnionItem() noexcept
         : m_itemIndex(-1),
           m_widgetItem(nullptr)
     {
