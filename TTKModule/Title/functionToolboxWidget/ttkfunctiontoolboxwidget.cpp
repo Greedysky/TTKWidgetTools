@@ -208,7 +208,7 @@ TTKFunctionToolBoxWidget::~TTKFunctionToolBoxWidget()
 {
     while(!m_itemList.isEmpty())
     {
-        delete m_itemList.takeLast().m_widgetItem;
+        delete m_itemList.takeLast().m_itemWidget;
     }
     delete m_layout;
     delete m_scrollArea;
@@ -225,7 +225,7 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     //hide before widget
     for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        unionItem.m_widgetItem->setExpand(false);
+        unionItem.m_itemWidget->setExpand(false);
     }
 
     // Add item and make sure it stretches the remaining space.
@@ -234,7 +234,7 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     it->setExpand(true);
 
     TTKFunctionToolBoxUnionItem widgetItem;
-    widgetItem.m_widgetItem = it;
+    widgetItem.m_itemWidget = it;
     widgetItem.m_itemIndex = m_itemIndexRaise++;
     m_itemList.append(widgetItem);
 
@@ -248,13 +248,13 @@ void TTKFunctionToolBoxWidget::removeItem(QWidget *item)
 {
     for(int i = 0; i < m_itemList.count(); ++i)
     {
-        TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_widgetItem;
+        TTKFunctionToolBoxWidgetItem *it = m_itemList[i].m_itemWidget;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
             {
                 m_layout->removeWidget(item);
-                m_itemList.takeAt(i).m_widgetItem->deleteLater();
+                m_itemList.takeAt(i).m_itemWidget->deleteLater();
                 m_currentIndex = 0;
                 return;
             }
@@ -267,7 +267,7 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
     TTKFunctionToolBoxUnionItem widgetItem = m_itemList.takeAt(before);
     m_itemList.insert(after, widgetItem);
 
-    m_layout->removeWidget(widgetItem.m_widgetItem);
+    m_layout->removeWidget(widgetItem.m_itemWidget);
 
     const int count = m_layout->count();
     if(count > 1)
@@ -275,7 +275,7 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
         m_layout->removeItem(m_layout->itemAt(count - 1));
     }
 
-    m_layout->insertWidget(after, widgetItem.m_widgetItem);
+    m_layout->insertWidget(after, widgetItem.m_itemWidget);
     m_layout->addStretch(5);
 }
 
@@ -283,7 +283,7 @@ void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 {
     for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        TTKFunctionToolBoxWidgetItem *it = unionItem.m_widgetItem;
+        TTKFunctionToolBoxWidgetItem *it = unionItem.m_itemWidget;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
@@ -299,7 +299,7 @@ QString TTKFunctionToolBoxWidget::title(QWidget *item) const
 {
     for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_itemList))
     {
-        TTKFunctionToolBoxWidgetItem *it = unionItem.m_widgetItem;
+        TTKFunctionToolBoxWidgetItem *it = unionItem.m_itemWidget;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
@@ -350,7 +350,7 @@ void TTKFunctionToolBoxWidget::setCurrentIndex(int index)
     m_currentIndex = index;
     for(int i = 0; i < m_itemList.count(); ++i)
     {
-        m_itemList[i].m_widgetItem->setExpand( i == index );
+        m_itemList[i].m_itemWidget->setExpand(i == index);
     }
 }
 
@@ -362,14 +362,14 @@ void TTKFunctionToolBoxWidget::itemIndexChanged(int index)
     {
         for(int i = 0; i < m_itemList.count(); ++i)
         {
-            const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_widgetItem->isExpand() : false;
-            m_itemList[i].m_widgetItem->setExpand(hide);
+            const bool hide = (i == m_currentIndex) ? !m_itemList[i].m_itemWidget->isExpand() : false;
+            m_itemList[i].m_itemWidget->setExpand(hide);
         }
     }
     else
     {
-        const bool hide = !m_itemList[m_currentIndex].m_widgetItem->isExpand();
-        m_itemList[m_currentIndex].m_widgetItem->setExpand(hide);
+        const bool hide = !m_itemList[m_currentIndex].m_itemWidget->isExpand();
+        m_itemList[m_currentIndex].m_itemWidget->setExpand(hide);
     }
 }
 
