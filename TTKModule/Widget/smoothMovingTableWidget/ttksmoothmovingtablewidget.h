@@ -40,17 +40,17 @@ public:
     virtual QSize sizeHint() const override final;
 
 public Q_SLOTS:
-    void updateRender();
+    void timeToAnimation();
     void valueChanged(int value);
 
 private:
     virtual void wheelEvent(QWheelEvent *event) override final;
 
-    bool m_isFirstInit;
+    bool m_initialized;
     int m_previousValue, m_deltaValue;
     QScrollBar *m_scrollBar;
     QTimer *m_animationTimer;
-    QPropertyAnimation *m_slowAnimation;
+    QPropertyAnimation *m_moveAnimation;
 
 };
 
