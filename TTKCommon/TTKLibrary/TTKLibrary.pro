@@ -88,6 +88,7 @@ HEADERS += \
     $$PWD/ttkfunctor.h \
     $$PWD/ttkglobalinterface.h \
     $$PWD/ttkitemdelegate.h \
+    $$PWD/ttklexicalcast.h \
     $$PWD/ttklibrary.h \
     $$PWD/ttklibraryversion.h \
     $$PWD/ttklogoutput.h \

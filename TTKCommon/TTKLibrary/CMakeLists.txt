@@ -47,6 +47,7 @@ set(HEADER_FILES
   ttkfunctor.h
   ttkglobalinterface.h
   ttkitemdelegate.h
+  ttklexicalcast.h
   ttklibrary.h
   ttklibraryversion.h
   ttklogoutput.h

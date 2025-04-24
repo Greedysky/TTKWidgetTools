@@ -52,6 +52,7 @@ win32{
             $$PWD/TTKLibrary/ttkfunctor.h \
             $$PWD/TTKLibrary/ttkglobalinterface.h \
             $$PWD/TTKLibrary/ttkitemdelegate.h \
+            $$PWD/TTKLibrary/ttklexicalcast.h \
             $$PWD/TTKLibrary/ttklibrary.h \
             $$PWD/TTKLibrary/ttklibraryversion.h \
             $$PWD/TTKLibrary/ttklogoutput.h \

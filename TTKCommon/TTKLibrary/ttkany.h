@@ -77,7 +77,7 @@ public:
     {
         if(!isSame<T>())
         {
-            throw std::bad_cast();
+            throw bad_any_cast();
         }
 
         auto ptr = TTKDynamicCast(_Derived<T>*, m_ptr.get());
@@ -96,6 +96,16 @@ public:
     {
         other = std::exchange(*this, std::move(other));
     }
+
+private:
+    class bad_any_cast : public std::bad_cast
+    {
+    public:
+        virtual const char *what() const noexcept override final
+        {
+            return "bad any cast";
+        }
+    };
 
 private:
     struct _Base;

@@ -25,14 +25,25 @@
 /*! @brief The class of the string view modules.
  * @author Greedysky <greedysky@163.com>
  */
-class TTKStringView
+template<typename _CharT, typename _Traits = std::char_traits<_CharT>>
+class TTKBaseStringView
 {
 public:
+    using traits_type = _Traits;
+    using value_type = std::basic_string<_CharT>;
+    using pointer = _CharT*;
+    using const_pointer = const _CharT*;
+    using reference = _CharT&;
+    using const_reference = const _CharT&;
+    using const_iterator = const _CharT*;
+    using iterator = const_iterator;
+    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+    using reverse_iterator = const_reverse_iterator;
     using size_type = size_t;
     static constexpr size_type npos = size_type(-1);
 
 public:
-    constexpr TTKStringView() noexcept
+    constexpr TTKBaseStringView() noexcept
         : m_data(nullptr),
           m_length(0)
     {
@@ -40,54 +51,61 @@ public:
     }
 
     template<size_type T>
-    constexpr TTKStringView(const char(&data)[T])
+    constexpr TTKBaseStringView(const _CharT(&data)[T])
         : m_data(data),
           m_length(T - 1)
     {
 
     }
 
-    explicit constexpr TTKStringView(const char *data, const size_type length)
+    explicit constexpr TTKBaseStringView(const _CharT *data, const size_type length)
         : m_data(data),
           m_length(length)
     {
 
     }
 
-    TTKStringView(const char *data)
+    constexpr TTKBaseStringView(const _CharT *data)
         : m_data(data),
-          m_length(std::char_traits<char>::length(data))
+          m_length(traits_type::length(data))
     {
 
     }
 
-    constexpr TTKStringView(const TTKStringView &) noexcept = default;
-    TTKStringView(const std::string &s) noexcept
+    constexpr TTKBaseStringView(const TTKBaseStringView &) noexcept = default;
+    TTKBaseStringView(const value_type &s) noexcept
         : m_data(s.data()),
           m_length(s.length())
     {
 
     }
 
-    inline TTKStringView& operator=(const TTKStringView &sv) noexcept
+    constexpr TTKBaseStringView& operator=(const TTKBaseStringView &sv) noexcept
     {
         m_data = sv.data();
         m_length = sv.size();
         return *this;
     }
 
-    explicit operator std::string() const
+    explicit constexpr operator value_type() const
     {
-        return std::string(m_data, m_length);
+        return value_type(m_data, m_length);
     }
 
-    inline const char *begin() const noexcept { return m_data; }
-    inline const char *end() const noexcept { return m_data + m_length; }
-    inline size_type size() const noexcept { return m_length; }
-    inline bool empty() const noexcept { return m_length == 0; }
-    inline const char& operator[](size_type o) const { return m_data[o]; }
+    constexpr const_iterator begin() const noexcept { return m_data; }
+    constexpr const_iterator end() const noexcept { return m_data + m_length; }
+    constexpr const_iterator cbegin() const noexcept { return m_data; }
+    constexpr const_iterator cend() const noexcept { return m_data + m_length; }
+    constexpr const_reverse_iterator rbegin() const noexcept { return const_reverse_iterator(end()); }
+    constexpr const_reverse_iterator rend() const noexcept{ return const_reverse_iterator(begin()); }
+    constexpr const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(end()); }
+    constexpr const_reverse_iterator crend() const noexcept { return const_reverse_iterator(begin()); }
+    constexpr size_type size() const noexcept { return m_length; }
+    constexpr size_type length() const noexcept { return m_length; }
+    constexpr bool empty() const noexcept { return m_length == 0; }
+    constexpr const _CharT& operator[](size_type o) const { return m_data[o]; }
 
-    inline const char& at(size_type o) const
+    const _CharT& at(size_type o) const
     {
         if(o >= m_length)
         {
@@ -96,21 +114,21 @@ public:
         return m_data[o];
     }
 
-    inline const char& front() const noexcept { return m_data[0]; }
-    inline const char& back() const noexcept { return m_data[m_length - 1]; }
-    inline const char *data() const noexcept { return m_data; }
+    constexpr const _CharT& front() const noexcept { return m_data[0]; }
+    constexpr const _CharT& back() const noexcept { return m_data[m_length - 1]; }
+    constexpr const _CharT *data() const noexcept { return m_data; }
 
-    inline TTKStringView substr(size_type a) const noexcept
+    constexpr TTKBaseStringView substr(size_type a) const noexcept
     {
-        return a >= m_length ? TTKStringView() : TTKStringView(m_data + a, m_length - a);
+        return a >= m_length ? TTKBaseStringView() : TTKBaseStringView(m_data + a, m_length - a);
     }
 
-    inline TTKStringView substr(size_type a, size_type b) const noexcept
+    constexpr TTKBaseStringView substr(size_type a, size_type b) const noexcept
     {
-        return a >= m_length ? TTKStringView() : TTKStringView(m_data + a, a + b > m_length ? m_length - a : b);
+        return a >= m_length ? TTKBaseStringView() : TTKBaseStringView(m_data + a, a + b > m_length ? m_length - a : b);
     }
 
-    inline size_type find(const char c) const noexcept
+    constexpr size_type find(const _CharT c) const noexcept
     {
         size_type l = 0;
         while(l < m_length)
@@ -122,10 +140,10 @@ public:
 
             ++l;
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find(const std::string &c) const noexcept
+    constexpr size_type find(const value_type &c) const noexcept
     {
         size_type l = 0, a = 0;
         while(l < m_length)
@@ -143,10 +161,10 @@ public:
                 return l - c.length();
             }
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find(const TTKStringView &sv) const noexcept
+    constexpr size_type find(const TTKBaseStringView &sv) const noexcept
     {
         size_type l = 0, a = 0;
         while(l < m_length)
@@ -164,10 +182,10 @@ public:
                 return l - sv.size();
             }
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find(const char *c) const noexcept
+    constexpr size_type find(const _CharT *c) const noexcept
     {
         size_type l = 0, sl = strlen(c), a = 0;
         while(l < m_length)
@@ -185,10 +203,10 @@ public:
                 return l - sl;
             }
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find(const char *c, size_type sl) const noexcept
+    constexpr size_type find(const _CharT *c, size_type sl) const noexcept
     {
         size_type l = 0, a = 0;
         while(l < m_length)
@@ -206,10 +224,10 @@ public:
                 return l - sl;
             }
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type rfind(const char c) const noexcept
+    constexpr size_type rfind(const _CharT c) const noexcept
     {
         size_type s = m_length;
         while(0 < s)
@@ -221,10 +239,10 @@ public:
 
             --s;
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    size_type rfind(const char *s) const noexcept
+    constexpr size_type rfind(const _CharT *s) const noexcept
     {
         const size_type m = strlen(s);
         if(m == 1)
@@ -235,7 +253,7 @@ public:
         const size_type n = size();
         if(n < m)
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
         size_type c[256] = { 0 };
@@ -253,7 +271,7 @@ public:
 
             if(j == 0)
             {
-                return TTKStringView::npos;
+                return TTKBaseStringView::npos;
             }
 
             size_type x = c[int(m_data[j - 1])];
@@ -264,14 +282,14 @@ public:
 
             if(j < x)
             {
-                return TTKStringView::npos;
+                return TTKBaseStringView::npos;
             }
 
             j -= x;
         }
     }
 
-    inline size_type find_first_of(const std::string &s, size_type l = 0) const noexcept
+    constexpr size_type find_first_of(const value_type &s, size_type l = 0) const noexcept
     {
         size_type a = 0;
         while(l < m_length)
@@ -289,10 +307,10 @@ public:
             ++l;
             a = 0;
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_of(const char *s, size_type l = 0) const noexcept
+    constexpr size_type find_first_of(const _CharT *s, size_type l = 0) const noexcept
     {
         size_type a = 0;
         while(l < m_length)
@@ -310,10 +328,10 @@ public:
             ++l;
             a = 0;
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_of(char c, size_type l = 0) const noexcept
+    constexpr size_type find_first_of(_CharT c, size_type l = 0) const noexcept
     {
         while(l < m_length)
         {
@@ -324,108 +342,99 @@ public:
 
             ++l;
         }
-        return TTKStringView::npos;
+        return TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_not_of(const std::string &s) const
+    constexpr size_type find_first_not_of(const value_type &s) const
     {
         if(empty())
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
         const size_type r = strspn(data(), s.data());
-        return m_data[r] ? r : TTKStringView::npos;
+        return m_data[r] ? r : TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_not_of(const std::string &s, size_type o) const
+    constexpr size_type find_first_not_of(const value_type &s, size_type o) const
     {
         if(size() <= o)
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
         const size_type r = strspn(data() + o, s.data()) + o;
-        return m_data[r] ? r : TTKStringView::npos;
+        return m_data[r] ? r : TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_not_of(const char *s) const
+    constexpr size_type find_first_not_of(const _CharT *s) const
     {
         if(empty())
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
         const size_type r = strspn(this->data(), s);
-        return m_data[r] ? r : TTKStringView::npos;
+        return m_data[r] ? r : TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_not_of(const char *s, size_type o) const
+    constexpr size_type find_first_not_of(const _CharT *s, size_type o) const
     {
         if(size() <= o)
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
         const size_type r = strspn(this->data() + o, s) + o;
-        return m_data[r] ? r : TTKStringView::npos;
+        return m_data[r] ? r : TTKBaseStringView::npos;
     }
 
-    inline size_type find_first_not_of(char c, size_type o = 0) const
+    constexpr size_type find_first_not_of(_CharT c, size_type o = 0) const
     {
         if(size() <= o)
         {
-            return TTKStringView::npos;
+            return TTKBaseStringView::npos;
         }
 
-        const char s[2] = { c, '\0' };
+        const _CharT s[2] = { c, '\0' };
         const size_type r = strspn(data() + o, s) + o;
-        return m_data[r] ? r : TTKStringView::npos;
+        return m_data[r] ? r : TTKBaseStringView::npos;
     }
 
-    [[nodiscard]] int compare(const TTKStringView &sv) const noexcept
+    [[nodiscard]] constexpr int compare(const TTKBaseStringView &sv) const noexcept
     {
-        const int rc = std::char_traits<char>::compare(m_data, sv.m_data, (std::min)(m_length, sv.m_length));
+        const int rc = traits_type::compare(m_data, sv.m_data, (std::min)(m_length, sv.m_length));
         return rc != 0 ? rc : (m_length == sv.m_length ? 0 : m_length < sv.m_length ? -1 : 1);
     }
 
-    [[nodiscard]] int compare(const char *data) const noexcept
+    [[nodiscard]] constexpr int compare(const _CharT *data) const noexcept
     {
-        const size_type l = std::char_traits<char>::length(data);
-        const int rc = std::char_traits<char>::compare(m_data, data, (std::min)(m_length, l));
+        const size_type l = traits_type::length(data);
+        const int rc = traits_type::compare(m_data, data, (std::min)(m_length, l));
         return rc != 0 ? rc : (m_length == l ? 0 : m_length < l ? -1 : 1);
     }
 
-    [[nodiscard]] int compare(const std::string &s) const noexcept
+    [[nodiscard]] constexpr int compare(const value_type &s) const noexcept
     {
-        const int rc = std::char_traits<char>::compare(m_data, s.data(), (std::min)(m_length, s.length()));
+        const int rc = traits_type::compare(m_data, s.data(), (std::min)(m_length, s.length()));
         return rc != 0 ? rc : (m_length == s.length() ? 0 : m_length < s.length() ? -1 : 1);
     }
 
-    friend std::basic_ostream<char>& operator<<(std::basic_ostream<char> &os, const TTKStringView &sv)
+    friend std::basic_ostream<_CharT>& operator<<(std::basic_ostream<_CharT> &os, const TTKBaseStringView &sv)
     {
         os.write(sv.m_data, sv.m_length);
         return os;
     }
 
-    friend std::string& operator+=(std::string &s, const TTKStringView &sv)
+    friend value_type& operator+=(value_type &s, const TTKBaseStringView &sv)
     {
         s.append(sv.m_data, sv.m_length);
         return s;
     }
 
-private:
-    const char *m_data;
-    size_type m_length;
-
-};
-
-
-namespace TTK
-{
-    static TTKStringView split(const char *&cur, const char *line_end, char split_char)
+    static TTKBaseStringView split(const _CharT *&cur, const _CharT *line_end, _CharT split_char)
     {
-        const char *start = cur;
+        const _CharT *start = cur;
         while(start < (line_end - 1) && *start == split_char)
         {
             ++start;
@@ -438,45 +447,91 @@ namespace TTK
         }
 
         cur = end + 1;
-        return TTKStringView(start, cur - start - (*end == split_char ? 1 : 0));
+        return TTKBaseStringView(start, cur - start - (*end == split_char ? 1 : 0));
     }
-}
 
+    inline value_type& operator<<(value_type &s) { s.append(data(), size()); return s; }
+    // ==
+    inline bool operator==(const TTKBaseStringView &other) noexcept { return compare(other) == 0; }
+    inline bool operator==(const value_type &other) noexcept { return compare(other) == 0; }
+    inline bool operator==(const _CharT *other) noexcept { return compare(other) == 0; }
+    // !=
+    inline bool operator!=(const TTKBaseStringView &other) noexcept { return compare(other) != 0; }
+    inline bool operator!=(const value_type &other) noexcept { return compare(other) != 0; }
+    inline bool operator!=(const _CharT *other) noexcept { return compare(other) != 0; }
+    // <=
+    inline bool operator<=(const TTKBaseStringView &other) noexcept { return compare(other) <= 0; }
+    inline bool operator<=(const value_type &other) noexcept { return compare(other) <= 0; }
+    inline bool operator<=(const _CharT *other) noexcept { return compare(other) <= 0; }
+    // <
+    inline bool operator<(const TTKBaseStringView &other) noexcept { return compare(other) < 0; }
+    inline bool operator<(const value_type &other) noexcept { return compare(other) < 0; }
+    inline bool operator<(const _CharT *other) noexcept { return compare(other) < 0; }
+    // >=
+    inline bool operator>=(const TTKBaseStringView &other) noexcept { return compare(other) >= 0; }
+    inline bool operator>=(const value_type &other) noexcept { return compare(other) >= 0; }
+    inline bool operator>=(const _CharT *other) noexcept { return compare(other) >= 0; }
+    // >
+    inline bool operator>(const TTKBaseStringView &other) noexcept { return compare(other) > 0; }
+    inline bool operator>(const value_type &other) noexcept { return compare(other) > 0; }
+    inline bool operator>(const _CharT *other) noexcept { return compare(other) > 0; }
 
-inline std::string& operator<<(std::string& s, const TTKStringView &sv) { s.append(sv.data(), sv.size()); return s; }
-// ==
-inline bool operator==(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) == 0; }
-inline bool operator==(const TTKStringView &l, const std::string &r) noexcept { return l.compare(r) == 0; }
-inline bool operator==(const std::string &l, const TTKStringView &r) noexcept { return r.compare(l) == 0; }
-inline bool operator==(const TTKStringView &l, const char *r) noexcept { return l.compare(r) == 0; }
-inline bool operator==(const char *l, const TTKStringView &r) noexcept { return r.compare(l) == 0; }
-// !=
-inline bool operator!=(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) != 0; }
-inline bool operator!=(const TTKStringView &l, const std::string &r) noexcept { return l.compare(r) != 0; }
-inline bool operator!=(const std::string &l, const TTKStringView &r) noexcept { return r.compare(l) != 0; }
-inline bool operator!=(const TTKStringView &l, const char *r) noexcept { return l.compare(r) != 0; }
-inline bool operator!=(const char *l, const TTKStringView &r) noexcept { return r.compare(l) != 0; }
-// <=
-inline bool operator<=(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) <= 0; }
-inline bool operator<=(const TTKStringView &l, const std::string &r) noexcept { return l.compare(r) <= 0; }
-inline bool operator<=(const std::string &l, const TTKStringView &r) noexcept { return r.compare(l) >= 0; }
-// <
-inline bool operator<(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) < 0; }
-inline bool operator<(const TTKStringView &l, const std::string &r) noexcept { return l.compare(r) < 0; }
-inline bool operator<(const std::string &l, const TTKStringView &r) noexcept { return r.compare(l) > 0; }
-// >=
-inline bool operator>=(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) >= 0; }
-inline bool operator>=(const TTKStringView &l, const std::string &r) noexcept { return l.compare(r) >= 0; }
-inline bool operator>=(const std::string  &l, const TTKStringView &r) noexcept { return r.compare(l) <= 0; }
-// >
-inline bool operator>(const TTKStringView &l, const TTKStringView &r) noexcept { return l.compare(r) > 0; }
-inline bool operator>(const TTKStringView &l, const std::string&r) noexcept { return l.compare(r) > 0; }
-inline bool operator>(const std::string &l, const TTKStringView &r) noexcept { return r.compare(l) < 0; }
+private:
+    const_pointer m_data;
+    size_type m_length;
+
+};
+
+//
+using TTKStringView = TTKBaseStringView<char>;
+using TTKWStringView = TTKBaseStringView<wchar_t>;
+using TTKU16StringView = TTKBaseStringView<char16_t>;
+using TTKU32StringView = TTKBaseStringView<char32_t>;
+
 //
 template <>
 struct std::hash<TTKStringView>
 {
     [[nodiscard]] size_t operator()(const TTKStringView sv) const noexcept
+    {
+#ifdef _MSVC_LANG
+        return std::_Hash_array_representation(sv.data(), sv.size());
+#else
+        return std::_Hash_impl::hash(sv.data(), sv.size());
+#endif
+    }
+};
+//
+template <>
+struct std::hash<TTKWStringView>
+{
+    [[nodiscard]] size_t operator()(const TTKWStringView sv) const noexcept
+    {
+#ifdef _MSVC_LANG
+        return std::_Hash_array_representation(sv.data(), sv.size());
+#else
+        return std::_Hash_impl::hash(sv.data(), sv.size());
+#endif
+    }
+};
+//
+template <>
+struct std::hash<TTKU16StringView>
+{
+    [[nodiscard]] size_t operator()(const TTKU16StringView sv) const noexcept
+    {
+#ifdef _MSVC_LANG
+        return std::_Hash_array_representation(sv.data(), sv.size());
+#else
+        return std::_Hash_impl::hash(sv.data(), sv.size());
+#endif
+    }
+};
+//
+template <>
+struct std::hash<TTKU32StringView>
+{
+    [[nodiscard]] size_t operator()(const TTKU32StringView sv) const noexcept
     {
 #ifdef _MSVC_LANG
         return std::_Hash_array_representation(sv.data(), sv.size());
@@ -492,6 +547,9 @@ namespace std
 {
 #if !TTK_HAS_CXX17
 using string_view = TTKStringView;
+using wstring_view = TTKWStringView;
+using u16string_view = TTKU16StringView;
+using u32string_view = TTKU32StringView;
 #endif
 }
 
