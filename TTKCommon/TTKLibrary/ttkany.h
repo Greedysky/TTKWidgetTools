@@ -115,6 +115,7 @@ private:
         _Derived(U &&value) noexcept
             : m_value(std::forward<U>(value))
         {
+
         }
 
         virtual _BasePtr clone() const noexcept override final
@@ -206,6 +207,7 @@ namespace TTK
 }
 
 
+// compatiblity for std any
 namespace std
 {
 // Non-member functions [any.nonmembers]
@@ -215,7 +217,6 @@ inline void swap(TTKAny &left, TTKAny &right) noexcept
 }
 
 #if !TTK_HAS_CXX17
-// compatiblity for std any
 using any = TTKAny;
 using namespace TTK;
 #endif
