@@ -13,7 +13,7 @@ execpath="$PWD/../TTKWidgetTools"
 
 echo -n "[Desktop Entry]
 Type=Application
-Version=3.0.0.0
+Version=3.1.0.0
 Name=TTKWidgetTools
 Name[zh_CN]=QWidget自定义控件集合
 Name[zh_TW]=QWidget自定義控件集合

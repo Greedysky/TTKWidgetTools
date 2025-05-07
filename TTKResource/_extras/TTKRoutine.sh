@@ -14,7 +14,7 @@ if [ "${dirpath%$tmp}" != "/" ]; then
   dirpath=$PWD/$dirpath
 fi
 
-export LD_LIBRARY_PATH=$dirpath:$dirpath/lib:$dirpath/3.0.0.0
+export LD_LIBRARY_PATH=$dirpath:$dirpath/lib:$dirpath/3.1.0.0
 export QT_PLUGIN_PATH=$dirpath/plugins:$QT_PLUGIN_PATH
 
 $appname "$@"
