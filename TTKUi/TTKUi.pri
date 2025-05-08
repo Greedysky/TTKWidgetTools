@@ -16,4 +16,4 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-RESOURCES += $$PWD/TTKWidgetTools.qrc
+RESOURCES += $$PWD/TTKModule.qrc

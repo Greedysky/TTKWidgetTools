@@ -176,8 +176,8 @@ set(UI_FILES
 )
 
 set(QRC_FILES
-  ${TTK_UI_DIR}/${PROJECT_NAME}.qrc
   ${TTK_THIRDPARTY_QRC_FILES}
+  ${TTK_UI_DIR}/TTKModule.qrc
   TTKExample.qrc
 )
 

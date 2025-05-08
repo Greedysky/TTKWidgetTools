@@ -14,7 +14,7 @@
    <string>TTKWidgetTools</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../TTKUi/WidgetTools.qrc">
+   <iconset resource="../TTKUi/TTKModule.qrc">
     <normaloff>:/image/lb_app_logo</normaloff>:/image/lb_app_logo</iconset>
   </property>
   <layout class="QVBoxLayout" name="mainWidgetLayout">
@@ -36,7 +36,7 @@
    <item>
     <widget class="QLabel" name="background">
      <property name="pixmap">
-      <pixmap resource="../TTKUi/WidgetTools.qrc">:/image/lb_background</pixmap>
+      <pixmap resource="../TTKUi/TTKModule.qrc">:/image/lb_background</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -102,7 +102,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../TTKUi/WidgetTools.qrc">:/image/lb_app_logo</pixmap>
+            <pixmap resource="../TTKUi/TTKModule.qrc">:/image/lb_app_logo</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -271,7 +271,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../TTKUi/WidgetTools.qrc"/>
+  <include location="../TTKUi/TTKModule.qrc"/>
  </resources>
  <connections/>
 </ui>
