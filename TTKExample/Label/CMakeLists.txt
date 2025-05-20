@@ -28,6 +28,7 @@ set_property(GLOBAL PROPERTY TTK_EXAMPLE_LABEL_INCLUDE_FILES
   ${TTK_MODULE_LABEL_DIR}/cpuMemoryLabel
   ${TTK_MODULE_LABEL_DIR}/crossLineLabel
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel
+  ${TTK_MODULE_LABEL_DIR}/lcdLabel
   ${TTK_MODULE_LABEL_DIR}/ledPageLabel
   ${TTK_MODULE_LABEL_DIR}/lightPointLabel
   ${TTK_MODULE_LABEL_DIR}/marqueeLabel
@@ -51,6 +52,7 @@ set_property(GLOBAL PROPERTY TTK_EXAMPLE_LABEL_HEADER_FILES
   ${TTK_EXAMPLE_LABEL_DIR}/cpuMemoryLabel/ttkcpumemorylabelproperty.h
   ${TTK_EXAMPLE_LABEL_DIR}/crossLineLabel/ttkcrosslinelabelproperty.h
   ${TTK_EXAMPLE_LABEL_DIR}/heatMapLabel/ttkheatmaplabelproperty.h
+  ${TTK_EXAMPLE_LABEL_DIR}/lcdLabel/ttklcdlabelproperty.h
   ${TTK_EXAMPLE_LABEL_DIR}/ledPageLabel/ttkledpagelabelproperty.h
   ${TTK_EXAMPLE_LABEL_DIR}/lightPointLabel/ttklightpointlabelproperty.h
   ${TTK_EXAMPLE_LABEL_DIR}/marqueeLabel/ttkmarqueelabelproperty.h
@@ -73,6 +75,7 @@ set_property(GLOBAL PROPERTY TTK_EXAMPLE_LABEL_SOURCE_FILES
   ${TTK_EXAMPLE_LABEL_DIR}/cpuMemoryLabel/ttkcpumemorylabelproperty.cpp
   ${TTK_EXAMPLE_LABEL_DIR}/crossLineLabel/ttkcrosslinelabelproperty.cpp
   ${TTK_EXAMPLE_LABEL_DIR}/heatMapLabel/ttkheatmaplabelproperty.cpp
+  ${TTK_EXAMPLE_LABEL_DIR}/lcdLabel/ttklcdlabelproperty.cpp
   ${TTK_EXAMPLE_LABEL_DIR}/ledPageLabel/ttkledpagelabelproperty.cpp
   ${TTK_EXAMPLE_LABEL_DIR}/lightPointLabel/ttklightpointlabelproperty.cpp
   ${TTK_EXAMPLE_LABEL_DIR}/marqueeLabel/ttkmarqueelabelproperty.cpp

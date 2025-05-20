@@ -22,13 +22,13 @@ include($$PWD/ipEditWidget/IpEditWidget.pri)
 INCLUDEPATH += \
     $$PWD/ \
     $$PWD/../ \
-    $$PWD/../../TTKModule/LineEdit/lineEditWidget \
-    $$PWD/../../TTKModule/LineEdit/ipEditWidget
+    $$PWD/../../TTKModule/LineEdit/ipEditWidget \
+    $$PWD/../../TTKModule/LineEdit/lineEditWidget
 
 win32:msvc{
 HEADERS += \
-    $$PWD/../../TTKModule/LineEdit/lineEditWidget/ttklineeditwidget.h \
-    $$PWD/../../TTKModule/LineEdit/ipEditWidget/ttkipeditwidget.h
+    $$PWD/../../TTKModule/LineEdit/ipEditWidget/ttkipeditwidget.h \
+    $$PWD/../../TTKModule/LineEdit/lineEditWidget/ttklineeditwidget.h
 }
 
 HEADERS += $$PWD/ttklineeditinclude.h

@@ -16,15 +16,15 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
+include($$PWD/animationStackedWidget/AnimationStackedWidget.pri)
+include($$PWD/animation2StackedWidget/Animation2StackedWidget.pri)
+include($$PWD/calendarWidget/CalendarWidget.pri)
 include($$PWD/colorTableWidget/ColorTableWidget.pri)
+include($$PWD/customPieWidget/CustomPieWidget.pri)
+include($$PWD/customRingWidget/CustomRingWidget.pri)
+include($$PWD/grabItemWidget/GrabItemWidget.pri)
 include($$PWD/layoutAnimationWidget/LayoutAnimationWidget.pri)
 include($$PWD/pictureBannerWidget/PictureBannerWidget.pri)
 include($$PWD/pictureFlowWidget/PictureFlowWidget.pri)
-include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
-include($$PWD/animationStackedWidget/AnimationStackedWidget.pri)
-include($$PWD/animation2StackedWidget/Animation2StackedWidget.pri)
-include($$PWD/grabItemWidget/GrabItemWidget.pri)
-include($$PWD/customPieWidget/CustomPieWidget.pri)
-include($$PWD/customRingWidget/CustomRingWidget.pri)
-include($$PWD/calendarWidget/CalendarWidget.pri)
 include($$PWD/puzzleWidget/PuzzleWidget.pri)
+include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)

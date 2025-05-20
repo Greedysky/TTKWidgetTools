@@ -24,7 +24,7 @@
 #include "functionListHWidget/ttkfunctionlisthwidgetproperty.h"
 #include "functionListVWidget/ttkfunctionlistvwidgetproperty.h"
 #include "functionNavigationWidget/ttkfunctionnavigationwidgetproperty.h"
-#include "functionToolboxWidget/ttkfunctiontoolboxwidgetproperty.h"
 #include "functionNormalWidget/ttkfunctionnormalwidgetproperty.h"
+#include "functionToolboxWidget/ttkfunctiontoolboxwidgetproperty.h"
 
 #endif // TTKTITLEINCLUDE_H

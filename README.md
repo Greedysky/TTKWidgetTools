@@ -76,6 +76,7 @@ Features
 | Label | TTKScanLabel |   Finish   |
 | Label | TTKCrossLineLabel |   Finish   |
 | Label | TTKNetTrafficLabel |   Finish   |
+| Label | TTKLcdLabel |   Finish   |
 
 ### LineEdit
 --------

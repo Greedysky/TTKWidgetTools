@@ -89,23 +89,24 @@ void TTKToolsApplication::labelModuleChanged(int index)
     {
         case 0: w = new TTKCircleClickLabelProperty; break;
         case 1: w = new TTKCodeAreaLabelProperty; break;
-        case 2: w = new TTKLedPageLabelProperty; break;
-        case 3: w = new TTKMarqueeLabelProperty; break;
-        case 4: w = new TTKRoundAnimationLabelProperty; break;
-        case 5: w = new TTKSplitItemLabelProperty; break;
-        case 6: w = new TTKToastLabelProperty; break;
-        case 7: w = new TTKTransitionAnimationLabelProperty; break;
-        case 8: w = new TTKBarRulerLabelProperty; break;
-        case 9: w = new TTKBatteryLabelProperty; break;
-        case 10: w = new TTKCloudPanelLabelProperty; break;
-        case 11: w = new TTKCPUMemoryLabelProperty; break;
-        case 12: w = new TTKAntLineLabelProperty; break;
-        case 13: w = new TTKTileBackgroundLabelProperty; break;
-        case 14: w = new TTKLightPointLabelProperty; break;
-        case 15: w = new TTKScanLabelProperty; break;
-        case 16: w = new TTKCrossLineLabelProperty; break;
-        case 17: w = new TTKNetTrafficLabelProperty; break;
-        case 18: w = new TTKHeatMapLabelProperty; break;
+        case 2: w = new TTKLcdLabelProperty; break;
+        case 3: w = new TTKLedPageLabelProperty; break;
+        case 4: w = new TTKMarqueeLabelProperty; break;
+        case 5: w = new TTKRoundAnimationLabelProperty; break;
+        case 6: w = new TTKSplitItemLabelProperty; break;
+        case 7: w = new TTKToastLabelProperty; break;
+        case 8: w = new TTKTransitionAnimationLabelProperty; break;
+        case 9: w = new TTKBarRulerLabelProperty; break;
+        case 10: w = new TTKBatteryLabelProperty; break;
+        case 11: w = new TTKCloudPanelLabelProperty; break;
+        case 12: w = new TTKCPUMemoryLabelProperty; break;
+        case 13: w = new TTKAntLineLabelProperty; break;
+        case 14: w = new TTKTileBackgroundLabelProperty; break;
+        case 15: w = new TTKLightPointLabelProperty; break;
+        case 16: w = new TTKScanLabelProperty; break;
+        case 17: w = new TTKCrossLineLabelProperty; break;
+        case 18: w = new TTKNetTrafficLabelProperty; break;
+        case 19: w = new TTKHeatMapLabelProperty; break;
         default: break;
     }
 
@@ -341,6 +342,7 @@ void TTKToolsApplication::createLabelModule()
 
     widget->addItem(":/icon/label", "TTKCircleClickLabel");
     widget->addItem(":/icon/label", "TTKCodeAreaLabel");
+    widget->addItem(":/icon/label", "TTKLcdLabel");
     widget->addItem(":/icon/label", "TTKLedPageLabel");
     widget->addItem(":/icon/label", "TTKMarqueeLabel");
     widget->addItem(":/icon/label", "TTKRoundAnimationLabel");

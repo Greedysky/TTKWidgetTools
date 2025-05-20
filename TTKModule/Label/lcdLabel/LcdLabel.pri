@@ -16,10 +16,8 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-include($$PWD/anSplashScreen/AnSplashScreen.pri)
-include($$PWD/colorDialog/ColorDialog.pri)
-include($$PWD/moveDialog/MoveDialog.pri)
-include($$PWD/moveResizeWidget/MoveResizeWidget.pri)
-include($$PWD/moveWidget/MoveWidget.pri)
-include($$PWD/notifyWindow/NotifyWindow.pri)
-include($$PWD/splashScreen/SplashScreen.pri)
+INCLUDEPATH += $$PWD
+
+HEADERS += $$PWD/ttklcdlabel.h
+
+SOURCES += $$PWD/ttklcdlabel.cpp

@@ -21,15 +21,15 @@
 
 #include "animationStackedWidget/ttkanimationstackedwidgetproperty.h"
 #include "animation2StackedWidget/ttkanimation2stackedwidgetproperty.h"
+#include "calendarWidget/ttkcalendarwidgetproperty.h"
 #include "colorTableWidget/ttkcolortablewidgetproperty.h"
+#include "customPieWidget/ttkcustompiewidgetproperty.h"
+#include "customRingWidget/ttkcustomringwidgetproperty.h"
 #include "grabItemWidget/ttkgrabitemwidgetproperty.h"
 #include "layoutAnimationWidget/ttklayoutanimationwidgetproperty.h"
 #include "pictureBannerWidget/ttkpicturebannerwidgetproperty.h"
 #include "pictureFlowWidget/ttkpictureflowwidgetproperty.h"
-#include "smoothMovingTableWidget/ttksmoothmovingtablewidgetproperty.h"
-#include "customPieWidget/ttkcustompiewidgetproperty.h"
-#include "customRingWidget/ttkcustomringwidgetproperty.h"
-#include "calendarWidget/ttkcalendarwidgetproperty.h"
 #include "puzzleWidget/ttkpuzzlewidgetproperty.h"
+#include "smoothMovingTableWidget/ttksmoothmovingtablewidgetproperty.h"
 
 #endif // TTKWIDGETINCLUDE_H

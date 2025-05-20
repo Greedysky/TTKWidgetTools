@@ -19,12 +19,12 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
+#include "anSplashScreen/ttkansplashscreenproperty.h"
 #include "colorDialog/ttkcolordialogproperty.h"
 #include "moveDialog/ttkmovedialogproperty.h"
 #include "moveResizeWidget/ttkmoveresizewidgetproperty.h"
 #include "moveWidget/ttkmovewidgetproperty.h"
-#include "splashScreen/ttksplashscreenproperty.h"
-#include "anSplashScreen/ttkansplashscreenproperty.h"
 #include "notifyWindow/ttknotifywindowproperty.h"
+#include "splashScreen/ttksplashscreenproperty.h"
 
 #endif // TTKWINDOWINCLUDE_H

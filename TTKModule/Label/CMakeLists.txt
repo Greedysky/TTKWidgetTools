@@ -63,6 +63,7 @@ set_property(GLOBAL PROPERTY TTK_MODULE_LABEL_HEADER_FILES
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlGnBu.h
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlOrBr.h
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlOrRd.h
+  ${TTK_MODULE_LABEL_DIR}/lcdLabel/ttklcdlabel.h
   ${TTK_MODULE_LABEL_DIR}/ledPageLabel/ttkledpagelabel.h
   ${TTK_MODULE_LABEL_DIR}/lightPointLabel/ttklightpointlabel.h
   ${TTK_MODULE_LABEL_DIR}/marqueeLabel/ttkmarqueelabel.h
@@ -115,6 +116,7 @@ set_property(GLOBAL PROPERTY TTK_MODULE_LABEL_SOURCE_FILES
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlGnBu.c
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlOrBr.c
   ${TTK_MODULE_LABEL_DIR}/heatMapLabel/heatmap/colorschemes/YlOrRd.c
+  ${TTK_MODULE_LABEL_DIR}/lcdLabel/ttklcdlabel.cpp
   ${TTK_MODULE_LABEL_DIR}/ledPageLabel/ttkledpagelabel.cpp
   ${TTK_MODULE_LABEL_DIR}/lightPointLabel/ttklightpointlabel.cpp
   ${TTK_MODULE_LABEL_DIR}/marqueeLabel/ttkmarqueelabel.cpp

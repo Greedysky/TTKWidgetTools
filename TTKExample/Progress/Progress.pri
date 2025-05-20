@@ -20,18 +20,18 @@ include($$PWD/animationProgressWidget/AnimationProgressWidget.pri)
 include($$PWD/circleProgressWidget/CircleProgressWidget.pri)
 include($$PWD/circleWaitProgressWidget/CircleWaitProgressWidget.pri)
 include($$PWD/circularProgressWidget/CircularProgressWidget.pri)
+include($$PWD/donutWaitProgressWidget/DonutWaitProgressWidget.pri)
 include($$PWD/gifProgressWidget/GifProgressWidget.pri)
 include($$PWD/loadingProgressWidget/LoadingProgressWidget.pri)
+include($$PWD/lineWaitProgressWidget/LineWaitProgressWidget.pri)
+include($$PWD/pieWaitProgressWidget/PieWaitProgressWidget.pri)
 include($$PWD/progressWidget/ProgressWidget.pri)
 include($$PWD/radiusProgressWidget/RadiusProgressWidget.pri)
-include($$PWD/ringsMapProgressWidget/RingsMapProgressWidget.pri)
 include($$PWD/ringProgressWidget/RingProgressWidget.pri)
+include($$PWD/ringsMapProgressWidget/RingsMapProgressWidget.pri)
 include($$PWD/ringsProgressWidget/RingsProgressWidget.pri)
 include($$PWD/roundProgressWidget/RoundProgressWidget.pri)
 include($$PWD/waveProgressWidget/WaveProgressWidget.pri)
-include($$PWD/pieWaitProgressWidget/PieWaitProgressWidget.pri)
-include($$PWD/lineWaitProgressWidget/LineWaitProgressWidget.pri)
-include($$PWD/donutWaitProgressWidget/DonutWaitProgressWidget.pri)
 include($$PWD/zoomWaitProgressWidget/ZoomWaitProgressWidget.pri)
 
 INCLUDEPATH += \
@@ -41,18 +41,18 @@ INCLUDEPATH += \
     $$PWD/../../TTKModule/Progress/circleProgressWidget \
     $$PWD/../../TTKModule/Progress/circleWaitProgressWidget \
     $$PWD/../../TTKModule/Progress/circularProgressWidget \
+    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget \
     $$PWD/../../TTKModule/Progress/gifProgressWidget \
     $$PWD/../../TTKModule/Progress/loadingProgressWidget \
+    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget \
+    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget \
     $$PWD/../../TTKModule/Progress/progressWidget \
     $$PWD/../../TTKModule/Progress/radiusProgressWidget \
-    $$PWD/../../TTKModule/Progress/ringsMapProgressWidget \
     $$PWD/../../TTKModule/Progress/ringProgressWidget \
+    $$PWD/../../TTKModule/Progress/ringsMapProgressWidget \
     $$PWD/../../TTKModule/Progress/ringsProgressWidget \
     $$PWD/../../TTKModule/Progress/roundProgressWidget \
     $$PWD/../../TTKModule/Progress/waveProgressWidget \
-    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget \
-    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget \
-    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget \
     $$PWD/../../TTKModule/Progress/zoomWaitProgressWidget
 
 win32:msvc{
@@ -61,18 +61,18 @@ HEADERS += \
     $$PWD/../../TTKModule/Progress/circleProgressWidget/ttkcircleprogresswidget.h \
     $$PWD/../../TTKModule/Progress/circleWaitProgressWidget/ttkcirclewaitprogresswidget.h \
     $$PWD/../../TTKModule/Progress/circularProgressWidget/ttkcircularprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget/ttkdonutwaitprogresswidget.h \
     $$PWD/../../TTKModule/Progress/gifProgressWidget/ttkgifprogresswidget.h \
     $$PWD/../../TTKModule/Progress/loadingProgressWidget/ttkloadingprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget/ttklinewaitprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget/ttkpiewaitprogresswidget.h \
     $$PWD/../../TTKModule/Progress/progressWidget/ttkprogresswidget.h \
     $$PWD/../../TTKModule/Progress/radiusProgressWidget/ttkradiusprogresswidget.h \
-    $$PWD/../../TTKModule/Progress/ringsMapProgressWidget/ttkringsmapprogresswidget.h \
     $$PWD/../../TTKModule/Progress/ringProgressWidget/ttkringprogresswidget.h \
+    $$PWD/../../TTKModule/Progress/ringsMapProgressWidget/ttkringsmapprogresswidget.h \
     $$PWD/../../TTKModule/Progress/ringsProgressWidget/ttkringsprogresswidget.h \
     $$PWD/../../TTKModule/Progress/roundProgressWidget/ttkroundprogresswidget.h \
     $$PWD/../../TTKModule/Progress/waveProgressWidget/ttkwaveprogresswidget.h \
-    $$PWD/../../TTKModule/Progress/pieWaitProgressWidget/ttkpiewaitprogresswidget.h \
-    $$PWD/../../TTKModule/Progress/lineWaitProgressWidget/ttklinewaitprogresswidget.h \
-    $$PWD/../../TTKModule/Progress/donutWaitProgressWidget/ttkdonutwaitprogresswidget.h \
     $$PWD/../../TTKModule/Progress/zoomWaitProgressWidget/ttkzoomwaitprogresswidget.h
 }
 

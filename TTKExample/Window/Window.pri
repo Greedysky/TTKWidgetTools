@@ -16,34 +16,34 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
+include($$PWD/anSplashScreen/AnSplashScreen.pri)
 include($$PWD/colorDialog/ColorDialog.pri)
 include($$PWD/moveDialog/MoveDialog.pri)
 include($$PWD/moveWidget/MoveWidget.pri)
 include($$PWD/moveResizeWidget/MoveResizeWidget.pri)
-include($$PWD/splashScreen/SplashScreen.pri)
-include($$PWD/anSplashScreen/AnSplashScreen.pri)
 include($$PWD/notifyWindow/NotifyWindow.pri)
+include($$PWD/splashScreen/SplashScreen.pri)
 
 INCLUDEPATH += \
     $$PWD/ \
     $$PWD/../ \
+    $$PWD/../../TTKModule/Window/anSplashScreen \
     $$PWD/../../TTKModule/Window/colorDialog \
     $$PWD/../../TTKModule/Window/moveDialog \
     $$PWD/../../TTKModule/Window/moveWidget \
     $$PWD/../../TTKModule/Window/moveResizeWidget \
-    $$PWD/../../TTKModule/Window/splashScreen \
-    $$PWD/../../TTKModule/Window/anSplashScreen \
-    $$PWD/../../TTKModule/Window/notifyWindow
+    $$PWD/../../TTKModule/Window/notifyWindow \
+    $$PWD/../../TTKModule/Window/splashScreen
 
 win32:msvc{
 HEADERS += \
+    $$PWD/../../TTKModule/Window/anSplashScreen/ttkansplashscreen.h \
     $$PWD/../../TTKModule/Window/colorDialog/ttkcolordialog.h \
     $$PWD/../../TTKModule/Window/moveDialog/ttkmovedialog.h \
     $$PWD/../../TTKModule/Window/moveWidget/ttkmovewidget.h \
     $$PWD/../../TTKModule/Window/moveResizeWidget/ttkmoveresizewidget.h \
-    $$PWD/../../TTKModule/Window/splashScreen/ttksplashscreen.h \
-    $$PWD/../../TTKModule/Window/anSplashScreen/ttkansplashscreen.h \
-    $$PWD/../../TTKModule/Window/notifyWindow/ttknotifywindow.h
+    $$PWD/../../TTKModule/Window/notifyWindow/ttknotifywindow.h \
+    $$PWD/../../TTKModule/Window/splashScreen/ttksplashscreen.h
 }
 
 HEADERS += $$PWD/ttkwindowinclude.h
