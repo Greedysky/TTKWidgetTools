@@ -59,6 +59,7 @@ private:
     QColor m_textColor;
     QColor m_pixelColor;
     QColor m_backgroundColor;
+
 };
 
 #endif // TTKLCDLABEL_H

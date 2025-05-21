@@ -72,7 +72,7 @@ HEADERS += \
     $$PWD/../../TTKModule/Label/cpuMemoryLabel/ttkcpumemorylabel.h \
     $$PWD/../../TTKModule/Label/crossLineLabel/ttkcrosslinelabel.h \
     $$PWD/../../TTKModule/Label/heatMapLabel/ttkheatmaplabel.h \
-    $$PWD/../../TTKModule/Label/lcdLabel/ttklcdlabelproperty.h \
+    $$PWD/../../TTKModule/Label/lcdLabel/ttklcdlabel.h \
     $$PWD/../../TTKModule/Label/ledPageLabel/ttkledpagelabel.h \
     $$PWD/../../TTKModule/Label/lightPointLabel/ttklightpointlabel.h \
     $$PWD/../../TTKModule/Label/marqueeLabel/ttkmarqueelabel.h \
