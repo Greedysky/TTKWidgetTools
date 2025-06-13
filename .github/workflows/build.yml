@@ -15,4 +15,3 @@ jobs:
   linux:
     uses: ./.github/workflows/linux.yml
     secrets: inherit
-

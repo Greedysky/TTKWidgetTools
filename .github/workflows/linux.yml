@@ -50,7 +50,7 @@ jobs:
           make && make install
         working-directory: ${{runner.workspace}}/build
 
-      - name: Build Package
+      - name: Build package
         run: |
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
@@ -62,4 +62,3 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
           files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
-
