@@ -1,0 +1,65 @@
+# This is a basic workflow to help you get started with Actions
+
+name: linux
+
+on:
+  workflow_call:
+
+env:
+  TTK_MODULE: TTKWidgetTools
+  TTK_VERSTION: 3.1.0.0
+
+# A workflow run is made up of one or more jobs that can run sequentially or in
+# parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_linux:
+    name: Build on linux
+    strategy:
+      matrix:
+        qt_version: [5.9.9]
+        os: [ubuntu-22.04]
+
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Qt
+        uses: actions/cache@v4
+        with:
+          path: ${{runner.workspace}}/Qt
+          key: ${{runner.os}}-QtCache-${{matrix.qt_version}}
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{matrix.qt_version}}
+          target: desktop
+          cache: 'true'
+
+      - name: Create build dir
+        run: mkdir build
+        working-directory: ${{runner.workspace}}
+
+      - name: Build project
+        run: |
+          sudo apt install p7zip-full rename
+          qmake -v
+          cmake --version
+          cmake ${GITHUB_WORKSPACE} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
+          make && make install
+        working-directory: ${{runner.workspace}}/build
+
+      - name: Build Package
+        run: |
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
+        working-directory: ${{runner.workspace}}/install
+
+      - name: Archive artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{env.TTK_VERSTION}}
+          token: ${{secrets.GITHUB_TOKEN}}
+          generate_release_notes: false
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
+
