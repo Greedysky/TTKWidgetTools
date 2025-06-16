@@ -22,7 +22,7 @@ Architecture: amd64
 Installed-Size: $(du -s ${packname} | sed -e 's/[ \t].*//')
 Maintainer: Greedysky <greedysky@163.com>
 Homepage: https://github.com/Greedysky/${packname}
-Description: Qt自定义控件集合
+Description: TTK Qt自定义控件集合
  TTKWidgetTools 是基于 Qt 的自定义控件集合，支持Windows和Linux平台.\n" > ${datapath}/control
 
 # create postinst file
