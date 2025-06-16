@@ -1,23 +1,26 @@
 #!/bin/sh
 
-curpath=$PWD/deploy
-if [ $# -eq 0 ]; then
-  curpath=$PWD
+dirpath=`dirname $0`
+tmp="${dirpath#?}"
+
+if [ "${dirpath%${tmp}}" != "/" ]; then
+  dirpath=$PWD/${dirpath}
 fi
 
-path=$curpath/share/applications
-if [ ! -d $path ]; then
-  mkdir $path
+deskpath=${dirpath}/share/applications
+if [ ! -d ${deskpath} ]; then
+  mkdir -p ${deskpath}
 fi
 
-packpath=$path/TTKWidgetTools.desktop
+packvern=3.1.0.0
+packpath=${deskpath}/TTKWidgetTools.desktop
 userpath=~/.local/share/applications
-iconpath="$curpath/share/pixmaps/ttkwidgettools.png"
-execpath="$curpath/../TTKWidgetTools"
+iconpath="${dirpath}/share/pixmaps/ttkwidgettools.png"
+execpath="${dirpath}/../${packvern}/TTKWidgetTools"
 
 echo -n "[Desktop Entry]
 Type=Application
-Version=3.1.0.0
+Version=${packvern}
 Name=TTKWidgetTools
 Name[zh_CN]=QWidget自定义控件集合
 Name[zh_TW]=QWidget自定義控件集合
@@ -27,13 +30,13 @@ GenericName[zh_TW]=QWidget自定義控件集合
 Comment=TTKWidgetTools
 Comment[zh_CN]=QWidget自定义控件集合
 Comment[zh_TW]=QWidget自定義控件集合
-Icon=$iconpath
-Exec=$execpath
+Icon=${iconpath}
+Exec=${execpath}
 Terminal=false
 Keywords=widget;
 Categories=widget;Qt;
 MimeType=
-X-KDE-StartupNotify=false\n" > $packpath
+X-KDE-StartupNotify=false\n" > ${packpath}
 
-cp -rv $packpath $userpath
-chmod +x $userpath
+cp -rv ${packpath} ${userpath}
+chmod +x ${userpath}
