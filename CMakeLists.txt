@@ -191,9 +191,7 @@ install(FILES "${TTK_BASE_DIR}/ChangeLog"
               "${TTK_UTILS_DIR}/resource/LICENSE.QT-LICENSE-AGREEMENT"
         DESTINATION "${TTK_INSTALL_DIR}/doc")
 install(FILES "${TTK_UTILS_DIR}/resource/README.txt" DESTINATION "${TTK_INSTALL_DIR}")
-if(WIN32)
-  install(FILES "${TTK_UTILS_DIR}/resource/qicon.dll" DESTINATION "${TTK_INSTALL_DIR}")
-else()
+if(UNIX)
   install(DIRECTORY "${TTK_UTILS_DIR}/deploy" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/install.sh" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/deploy/share/appdata/ttkwidgettools.appdata.xml" DESTINATION "${TTK_INSTALL_DIR}/share/metainfo")
