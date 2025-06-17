@@ -10,7 +10,7 @@ env:
   TTK_VERSTION: 3.1.0.0
 
 jobs:
-  build_linux:
+  build:
     name: Build on linux
     strategy:
       matrix:
