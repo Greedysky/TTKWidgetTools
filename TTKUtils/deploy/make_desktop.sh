@@ -23,7 +23,7 @@ packvern=3.1.0.0
 packpath=${deskpath}/TTKWidgetTools.desktop
 userpath=${homepath}/.local/share/applications
 iconpath="${dirpath}/share/pixmaps/ttkwidgettools.png"
-execpath="${dirpath}/../${packvern}/TTKWidgetTools"
+execpath="${dirpath}/../${packvern}/TTKWidgetTools.sh"
 
 echo -n "[Desktop Entry]
 Type=Application
