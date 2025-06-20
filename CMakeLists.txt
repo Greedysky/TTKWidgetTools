@@ -194,6 +194,7 @@ install(FILES "${TTK_UTILS_DIR}/resource/README.txt" DESTINATION "${TTK_INSTALL_
 if(UNIX)
   install(DIRECTORY "${TTK_UTILS_DIR}/deploy" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/install.sh" DESTINATION "${TTK_INSTALL_DIR}")
+  install(FILES "${TTK_UTILS_DIR}/uninstall.sh" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/deploy/share/appdata/ttkwidgettools.appdata.xml" DESTINATION "${TTK_INSTALL_DIR}/share/metainfo")
 endif()
 # copy run resource
