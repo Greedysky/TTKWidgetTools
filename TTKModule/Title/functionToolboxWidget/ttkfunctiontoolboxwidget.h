@@ -88,7 +88,7 @@ private:
     virtual void contextMenuEvent(QContextMenuEvent *event) override final;
 
     QVBoxLayout *m_layout;
-    QWidgetList m_itemList;
+    QWidgetList m_items;
     TTKFunctionToolBoxTopWidget *m_topWidget;
 
 };
@@ -159,7 +159,7 @@ private:
     QVBoxLayout *m_layout;
     QScrollArea *m_scrollArea;
     QWidget *m_contentsWidget;
-    QList<TTKFunctionToolBoxUnionItem> m_itemList;
+    QList<TTKFunctionToolBoxUnionItem> m_items;
 
 };
 
