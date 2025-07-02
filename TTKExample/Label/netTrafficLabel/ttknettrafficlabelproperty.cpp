@@ -35,6 +35,6 @@ void TTKNetTrafficLabelProperty::enumPropertyChanged(QtProperty *property, int v
         {
             return;
         }
-        widget->setAvailableNewtworkName(cards_[value]);
+        widget->setNewtworkName(cards_[value]);
     }
 }

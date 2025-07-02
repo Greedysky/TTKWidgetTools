@@ -89,7 +89,7 @@ void TTKCPUMemoryLabel::cpu()
 
     preidleTime = idleTime;
     prekernelTime = kernelTime;
-    preuserTime = userTime ;
+    preuserTime = userTime;
 
     setData();
 #else

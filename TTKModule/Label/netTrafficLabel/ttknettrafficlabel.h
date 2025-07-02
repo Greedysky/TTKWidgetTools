@@ -39,9 +39,14 @@ public:
     ~TTKNetTraffic();
 
     /*!
-     * Set available newtwork name.
+     * Set newtwork name.
      */
-    void setAvailableNewtworkName(const QString &name);
+    void setNewtworkName(const QString &name);
+
+    /*!
+     * Get current newtwork name.
+     */
+    QString currentNewtworkName() const;
     /*!
      * Get newtwork names.
      */
@@ -82,7 +87,7 @@ public:
     explicit TTKNetTrafficLabel(QWidget *parent = nullptr);
     ~TTKNetTrafficLabel();
 
-    void setAvailableNewtworkName(const QString &name);
+    void setNewtworkName(const QString &name);
     QStringList newtworkNames() const;
 
     virtual QSize sizeHint() const override final;

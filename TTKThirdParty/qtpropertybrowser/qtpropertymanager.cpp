@@ -1554,7 +1554,7 @@ void QtStringPropertyManager::setRegExp(QtProperty *property, const QRegExp &reg
     if (it == d_ptr->m_values.end())
         return;
 
-    QtStringPropertyManagerPrivate::Data data = it.value() ;
+    QtStringPropertyManagerPrivate::Data data = it.value();
 
     if (data.regExp == regExp)
         return;

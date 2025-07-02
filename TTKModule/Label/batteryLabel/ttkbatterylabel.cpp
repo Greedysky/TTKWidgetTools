@@ -79,7 +79,7 @@ void TTKBatteryLabel::setValue(double value)
     }
     else
     {
-        return ;
+        return;
     }
 
     m_timer->start();

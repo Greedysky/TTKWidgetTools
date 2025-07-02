@@ -15,12 +15,13 @@
 #  include <arpa/inet.h>
 #endif
 
-static constexpr const char *TEMP_FILE_NAME = "net_temp";
+static constexpr const char *TEMP_FILE_NAME = "net_traffic";
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
     : TTKAbstractThread(parent),
       m_process(nullptr)
 {
+    TTK_INFO_STREAM("Available newtwork names:" << newtworkNames());
 #ifdef Q_OS_UNIX
     QFile openFile(":/net/res_traffic");
     if(openFile.open(QIODevice::ReadOnly))
@@ -48,9 +49,10 @@ TTKNetTraffic::~TTKNetTraffic()
     delete m_process;
 }
 
-void TTKNetTraffic::setAvailableNewtworkName(const QString &name)
+void TTKNetTraffic::setNewtworkName(const QString &name)
 {
     m_name = name;
+    TTK_INFO_STREAM("Current newtwork name:" << name);
 #ifdef Q_OS_UNIX
     if(m_name.isEmpty())
     {
@@ -61,10 +63,30 @@ void TTKNetTraffic::setAvailableNewtworkName(const QString &name)
     m_process = new QProcess(this);
     m_process->setProcessChannelMode(QProcess::MergedChannels);
     connect(m_process, SIGNAL(readyReadStandardOutput()), SLOT(outputRecieved()));
+
     QStringList arguments;
     arguments << name << "1";
     m_process->start(qApp->applicationDirPath() + TTK_SEPARATOR + TEMP_FILE_NAME, arguments);
 #endif
+}
+
+QString TTKNetTraffic::currentNewtworkName() const
+{
+#ifdef Q_OS_UNIX
+    QProcess process;
+    process.start("/bin/bash", {"-c", "ip route"});
+    if(process.waitForFinished(3 * TTK_DN_S2MS))
+    {
+        const QString data(process.readAll());
+        QRegExp regx(" dev (\\w+) ");
+        regx.setMinimal(true);
+        if(regx.indexIn(data) != -1)
+        {
+            return regx.cap(1);
+        }
+    }
+#endif
+    return newtworkNames().back();
 }
 
 QStringList TTKNetTraffic::newtworkNames() const
@@ -92,10 +114,10 @@ QStringList TTKNetTraffic::newtworkNames() const
     GetIfTable(pTable, &dwAdapters, TRUE);
     for(UINT i = 0; i < pTable->dwNumEntries; ++i)
     {
-        const MIB_IFROW Row = pTable->table[i];
-        TTKString s(TTKReinterpretCast(char const*, Row.bDescr));
+        const MIB_IFROW &row = pTable->table[i];
+        TTKString s(TTKReinterpretCast(char const*, row.bDescr));
         const QString &qs = QString::fromStdString(s);
-        if((Row.dwType == 71 || Row.dwType == 6) && !names.contains(qs))
+        if((row.dwType == 71 || row.dwType == 6) && !names.contains(qs))
         {
             names << qs;
         }
@@ -167,12 +189,12 @@ void TTKNetTraffic::run()
 
         for(UINT i = 0; i < pTable->dwNumEntries; ++i)
         {
-            const MIB_IFROW& Row = pTable->table[i];
-            const TTKString s(TTKReinterpretCast(char const*, Row.bDescr));
-            if((Row.dwType == 71 || Row.dwType == 6) && m_name == QString::fromStdString(s))
+            const MIB_IFROW &row = pTable->table[i];
+            const TTKString s(TTKReinterpretCast(char const*, row.bDescr));
+            if((row.dwType == 71 || row.dwType == 6) && m_name == QString::fromStdString(s))
             {
-                dwInOctets += Row.dwInOctets;
-                dwOutOctets += Row.dwOutOctets;
+                dwInOctets += row.dwInOctets;
+                dwOutOctets += row.dwOutOctets;
             }
         }
 
@@ -206,8 +228,6 @@ TTKNetTrafficLabel::TTKNetTrafficLabel(QWidget *parent)
 {
     m_process = new TTKNetTraffic(this);
     connect(m_process, SIGNAL(networkData(ulong,ulong)), SLOT(setData(ulong,ulong)));
-
-    setAvailableNewtworkName("wlp2s0");
 }
 
 TTKNetTrafficLabel::~TTKNetTrafficLabel()
@@ -215,9 +235,9 @@ TTKNetTrafficLabel::~TTKNetTrafficLabel()
     delete m_process;
 }
 
-void TTKNetTrafficLabel::setAvailableNewtworkName(const QString &name)
+void TTKNetTrafficLabel::setNewtworkName(const QString &name)
 {
-    m_process->setAvailableNewtworkName(name);
+    m_process->setNewtworkName(name);
     m_process->stop();
     m_process->start();
 }

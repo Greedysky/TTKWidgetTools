@@ -58,7 +58,7 @@ void TTKTimeMeterWidget::drawScale(QPainter *painter)
     const int steps = (m_scaleMajor * m_scaleMinor);
     const double angleStep = (360.0 - m_startAngle - m_endAngle) / steps;
 
-    QPen pen ;
+    QPen pen;
     pen.setColor(Qt::green);
     for(int i = 0; i <= steps; ++i)
     {

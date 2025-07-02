@@ -4395,7 +4395,7 @@ static unsigned readChunk_zTXt(LodePNGInfo* info, const LodePNGDecompressSetting
 
   while(!error) /*not really a while loop, only used to break on error*/
   {
-    for(length = 0; length < chunkLength && data[length] != 0; length++) ;
+    for(length = 0; length < chunkLength && data[length] != 0; length++);
     if(length + 2 >= chunkLength) CERROR_BREAK(error, 75); /*no null termination, corrupt?*/
     if(length < 1 || length > 79) CERROR_BREAK(error, 89); /*keyword too short or long*/
 
@@ -4448,7 +4448,7 @@ static unsigned readChunk_iTXt(LodePNGInfo* info, const LodePNGDecompressSetting
     if(chunkLength < 5) CERROR_BREAK(error, 30); /*iTXt chunk too short*/
 
     /*read the key*/
-    for(length = 0; length < chunkLength && data[length] != 0; length++) ;
+    for(length = 0; length < chunkLength && data[length] != 0; length++);
     if(length + 3 >= chunkLength) CERROR_BREAK(error, 75); /*no null termination char, corrupt?*/
     if(length < 1 || length > 79) CERROR_BREAK(error, 89); /*keyword too short or long*/
 
