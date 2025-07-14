@@ -33,23 +33,31 @@ set(CMAKE_AUTOUIC OFF)
 set(CMAKE_AUTOMOC OFF)
 # Turn off automatic invocation of the RCC
 set(CMAKE_AUTORCC OFF)
-# Add a compiler flag
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3 -pthread -Wall")
-# clang: error: unsupported option '-fopenmp'
-if(NOT (("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang") OR ("${CMAKE_C_COMPILER_ID}" STREQUAL "AppleClang")))
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
-endif()
-if(WIN32)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows")
-  # Fix "command line is too long" on Windows
-  string(APPEND CMAKE_RC_FLAGS " --use-temp-file")
-endif()
 
 # Build Type
 if(NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
   set(CMAKE_BUILD_TYPE "Release" CACHE STRING "" FORCE)
 endif()
 set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Release Debug)
+
+# Add a compiler flag
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O0 -pthread -Wall -pedantic")
+else()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3 -pthread -Wall")
+  add_definitions(-DQT_NO_DEBUG)
+endif()
+
+# clang: error: unsupported option '-fopenmp'
+if(NOT ("${CMAKE_C_COMPILER_ID}" MATCHES "Clang"))
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
+endif()
+
+if(WIN32)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows")
+  # Fix "command line is too long" on Windows
+  string(APPEND CMAKE_RC_FLAGS " --use-temp-file")
+endif()
 
 option(TTK_BUILD_SHARED "TTK BUILD SHARED LIBS" ON)
 if(TTK_BUILD_SHARED)
@@ -58,7 +66,6 @@ else()
   message(STATUS "TTK build by static link")
 endif()
 
-add_definitions(-DQT_NO_DEBUG)
 add_definitions(-DQT_THREAD)
 add_definitions(-DTTK_LIBRARY)
 
