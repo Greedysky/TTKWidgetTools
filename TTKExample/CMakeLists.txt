@@ -99,7 +99,6 @@ set(TTK_EXAMPLE_SOURCE_FILES
 
 
 include_directories(${TTK_COMMON_APP_DIR})
-include_directories(${TTK_COMMON_DUMPER_DIR})
 
 set(TTKAPPLICATION_HEADER_FILES
   ${TTK_COMMON_APP_DIR}/ttklocalpeer.h
@@ -187,7 +186,7 @@ if(WIN32)
   list(APPEND SOURCE_FILES TTKExample.rc)
 endif()
 
-set(QT_LINK_LIBS TTKCore TTKDumper)
+set(QT_LINK_LIBS TTKCore)
 
 if(TTK_QT_VERSION VERSION_EQUAL "4")
   qt4_wrap_ui(UIC_FILES ${UI_FILES})
