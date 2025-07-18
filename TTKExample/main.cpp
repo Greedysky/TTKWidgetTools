@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 #endif
 
     TTKDumper dumper;
-    dumper.run();
+    dumper.execute();
 
     TTK::setApplicationFont();
 

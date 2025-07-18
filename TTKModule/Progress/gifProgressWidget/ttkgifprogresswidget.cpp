@@ -84,7 +84,7 @@ bool TTKGifProgressWidget::infinited() const
     return m_infinited;
 }
 
-void TTKGifProgressWidget::run(bool run)
+void TTKGifProgressWidget::execute(bool run)
 {
     if(run)
     {
