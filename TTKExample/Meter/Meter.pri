@@ -34,7 +34,7 @@ include($$PWD/temperatureMeterWidget/TemperatureMeterWidget.pri)
 include($$PWD/timeMeterWidget/TimeMeterWidget.pri)
 
 INCLUDEPATH += \
-    $$PWD/ \
+    $$PWD \
     $$PWD/../ \
     $$PWD/../../TTKModule/Meter/arcMeterWidget \
     $$PWD/../../TTKModule/Meter/carMeterWidget \

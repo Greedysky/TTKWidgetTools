@@ -30,7 +30,7 @@ include($$PWD/puzzleWidget/PuzzleWidget.pri)
 include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
 
 INCLUDEPATH += \
-    $$PWD/ \
+    $$PWD \
     $$PWD/../ \
     $$PWD/../../TTKModule/Widget/animationStackedWidget \
     $$PWD/../../TTKModule/Widget/animation2StackedWidget \

@@ -38,7 +38,7 @@ include($$PWD/toastLabel/ToastLabel.pri)
 include($$PWD/transitionAnimationLabel/TransitionAnimationLabel.pri)
 
 INCLUDEPATH += \
-    $$PWD/ \
+    $$PWD \
     $$PWD/../ \
     $$PWD/../../TTKModule/Label/antLineLabel \
     $$PWD/../../TTKModule/Label/barRulerLabel \
