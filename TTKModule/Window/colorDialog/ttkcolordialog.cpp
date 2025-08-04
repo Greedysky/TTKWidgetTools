@@ -119,8 +119,8 @@ void TTKHlPalette::mouseMoveEvent(QMouseEvent *event)
 
 void TTKHlPalette::calculateColor()
 {
-    m_ptfVernierPercentPos.setX(m_ptVernierPos.x()/double(rect().right()));
-    m_ptfVernierPercentPos.setY(m_ptVernierPos.y()/double(rect().bottom()));
+    m_ptfVernierPercentPos.setX(m_ptVernierPos.x() / double(rect().right()));
+    m_ptfVernierPercentPos.setY(m_ptVernierPos.y() / double(rect().bottom()));
     m_color.setHslF(m_ptfVernierPercentPos.rx(), m_dblSaturation, 1 - m_ptfVernierPercentPos.ry());
     Q_EMIT colorChanged(m_color);
 }

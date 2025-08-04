@@ -60,7 +60,7 @@ QString TTKFunctionToolBoxTopWidget::title(bool suffix)
     if(!suffix)
     {
         const int index = text.lastIndexOf("[");
-        text = text.left( index );
+        text = text.left(index);
     }
     return text;
 }
