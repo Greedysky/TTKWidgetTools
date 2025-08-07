@@ -46,4 +46,5 @@ MimeType=
 X-KDE-StartupNotify=false\n" > ${packpath}
 
 cp -rv ${packpath} ${userpath}
+rm -R ${deskpath}
 chmod +x ${userpath}

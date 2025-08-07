@@ -60,7 +60,7 @@ if(WIN32)
   string(APPEND CMAKE_RC_FLAGS " --use-temp-file")
 endif()
 
-option(TTK_BUILD_SHARED "TTK BUILD SHARED LIBS" ON)
+option(TTK_BUILD_SHARED "TTK build shared library" ON)
 if(TTK_BUILD_SHARED)
   message(STATUS "TTK build by shared link")
 else()
