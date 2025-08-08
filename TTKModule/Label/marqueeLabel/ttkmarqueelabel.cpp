@@ -71,12 +71,12 @@ void TTKMarqueeLabel::setStep(int step)
     }
 }
 
-void TTKMarqueeLabel::setInterval(int interval)
+void TTKMarqueeLabel::setInterval(int msec)
 {
-    if(m_interval != interval)
+    if(m_interval != msec)
     {
-        m_interval = interval;
-        m_timer->setInterval(interval);
+        m_interval = msec;
+        m_timer->setInterval(msec);
     }
 }
 

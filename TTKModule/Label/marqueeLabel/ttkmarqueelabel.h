@@ -43,7 +43,7 @@ public:
 
     void setText(const QString &text);
     void setStep(int step);
-    void setInterval(int interval);
+    void setInterval(int msec);
 
     void setMouseHoverStop(bool mouseHoverStop);
 

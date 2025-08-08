@@ -35,7 +35,7 @@ public:
     ~TTKLightPointLabel();
 
     void setStep(int step);
-    void setInterval(int interval);
+    void setInterval(int msec);
     void setBackgroundColor(const QColor &backgroundColor);
 
     virtual QSize sizeHint() const override final;

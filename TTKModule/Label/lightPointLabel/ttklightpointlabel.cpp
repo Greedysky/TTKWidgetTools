@@ -33,12 +33,12 @@ void TTKLightPointLabel::setStep(int step)
     }
 }
 
-void TTKLightPointLabel::setInterval(int interval)
+void TTKLightPointLabel::setInterval(int msec)
 {
-    if(m_interval != interval)
+    if(m_interval != msec)
     {
-        m_interval = interval;
-        m_timer->setInterval(interval);
+        m_interval = msec;
+        m_timer->setInterval(msec);
         update();
     }
 }

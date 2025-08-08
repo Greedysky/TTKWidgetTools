@@ -64,9 +64,9 @@ TTKGifProgressWidget::Module TTKGifProgressWidget::type() const
     return m_type;
 }
 
-void TTKGifProgressWidget::setInterval(int value)
+void TTKGifProgressWidget::setInterval(int msec)
 {
-    m_timer->setInterval(value);
+    m_timer->setInterval(msec);
 }
 
 int TTKGifProgressWidget::interval() const

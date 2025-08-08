@@ -21,9 +21,9 @@ void TTKRoundAnimationLabel::setPixmap(const QPixmap &pix)
     update();
 }
 
-void TTKRoundAnimationLabel::setInterval(int value)
+void TTKRoundAnimationLabel::setInterval(int msec)
 {
-    m_timer.setInterval(value);
+    m_timer.setInterval(msec);
 }
 
 void TTKRoundAnimationLabel::start()

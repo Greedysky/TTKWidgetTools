@@ -35,7 +35,7 @@ public:
     ~TTKRoundAnimationLabel();
 
     void setPixmap(const QPixmap &pix);
-    void setInterval(int value);
+    void setInterval(int msec);
 
     virtual QSize sizeHint() const override final;
 
