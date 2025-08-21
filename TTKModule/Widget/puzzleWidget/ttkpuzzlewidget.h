@@ -28,7 +28,6 @@
 class TTK_MODULE_EXPORT TTKPuzzleItemWidget : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKPuzzleItemWidget)
 public:
     explicit TTKPuzzleItemWidget(QWidget *parent = nullptr);
 

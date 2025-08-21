@@ -15,7 +15,7 @@ TTKMoveDialogProperty::TTKMoveDialogProperty(QWidget *parent)
     //
     QtProperty *classNameItem = m_stringManager->addProperty("ClassName");
     objectItem->addSubProperty(classNameItem);
-    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKMoveDialog*, m_label)->className());
+    m_stringManager->setValue(classNameItem, TTKObjectCast(TTKMoveDialog*, m_label)->metaObject()->className());
     m_stringManager->setReadOnly(classNameItem, true);
     //
     QtProperty *geometryItem = m_rectManager->addProperty("Geometry");

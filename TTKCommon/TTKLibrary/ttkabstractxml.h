@@ -104,7 +104,6 @@ private:
  */
 class TTK_MODULE_EXPORT TTKAbstractXml
 {
-    TTK_DECLARE_MODULE(TTKAbstractXml)
 public:
     /*!
      * Object constructor.
@@ -226,7 +225,7 @@ public:
     QDomElement writeDomMultiElement(QDomElement &element, const QString &node, const TTKXmlAttrList &attrs, const QString &text) const;
 
     /*!
-     * Write xml element node by node name.
+     * Find element nodes by element node.
      */
     QDomNodeList findDomNodes(const QString &node) const;
 

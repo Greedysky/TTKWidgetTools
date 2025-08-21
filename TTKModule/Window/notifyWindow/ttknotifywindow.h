@@ -30,7 +30,6 @@
 class TTK_MODULE_EXPORT TTKNotify : public QWidget
 {
     Q_OBJECT
-    TTK_DECLARE_MODULE(TTKNotify)
 public:
     explicit TTKNotify(int time, QWidget *parent = nullptr);
 
