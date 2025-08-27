@@ -179,6 +179,8 @@ Screenshots
 --------
 ![Demo](TTKResource/example/Button/checkButtonWidget.png?raw=true)
 
+[Here's more screenshots](TTKResource/example)
+
 Copyright
 --------
  * This file is part of the TTK Widget Tools project.
