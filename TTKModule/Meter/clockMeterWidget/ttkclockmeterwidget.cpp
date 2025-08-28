@@ -1,5 +1,6 @@
 #include "ttkclockmeterwidget.h"
-#include "qmath.h"
+
+#include <qmath.h>
 
 #include <QTime>
 #include <QTimer>

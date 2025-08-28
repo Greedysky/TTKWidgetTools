@@ -1,6 +1,6 @@
 #include "ttkfunctionanimationwidget.h"
 
-#include "qmath.h"
+#include <qmath.h>
 
 #include <QPainter>
 #include <QBoxLayout>
