@@ -188,15 +188,15 @@ void TTKNotifyManager::disappeared()
 
 void TTKNotifyManager::rearrange()
 {
-    const QRect &desktopRect = TTKDesktopScreen::screenGeometry();
-    const QPoint &bottomRignt = desktopRect.bottomRight();
+    const QRect &rect = TTKDesktopScreen::currentGeometry();
+    const QPoint &bottomRight = rect.bottomRight();
 
     for(auto itr = m_notifyList.begin(); itr != m_notifyList.end(); ++itr)
     {
         TTKNotify *notify = *itr;
         const int index = m_notifyList.indexOf(notify);
 
-        const QPoint &pos = bottomRignt - QPoint(WIDTH + RIGHT, (HEIGHT + SPACE) * (index + 1) - SPACE + BOTTOM);
+        const QPoint &pos = bottomRight - QPoint(WIDTH + RIGHT, (HEIGHT + SPACE) * (index + 1) - SPACE + BOTTOM);
         QPropertyAnimation *animation = new QPropertyAnimation(notify, "pos", this);
         connect(animation, SIGNAL(finished()), animation, SLOT(deleteLater()));
         animation->setStartValue(notify->pos());
@@ -222,9 +222,9 @@ void TTKNotifyManager::showNext()
     notify->setUrl(data.m_url);
     notify->setFixedSize(WIDTH, HEIGHT);
 
-    const QRect &desktopRect = TTKDesktopScreen::screenGeometry();
-    const QPoint &bottomRignt = desktopRect.bottomRight();
-    const QPoint &pos = bottomRignt - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.count() + 1) - SPACE + BOTTOM);
+    const QRect &rect = TTKDesktopScreen::currentGeometry();
+    const QPoint &bottomRight = rect.bottomRight();
+    const QPoint &pos = bottomRight - QPoint(notify->width() + RIGHT, (HEIGHT + SPACE) * (m_notifyList.count() + 1) - SPACE + BOTTOM);
 
     notify->move(pos);
     notify->showGriant();
