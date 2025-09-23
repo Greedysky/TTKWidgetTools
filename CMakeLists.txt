@@ -61,7 +61,16 @@ if(WIN32)
 endif()
 
 option(TTK_INSTALL_CTL "TTK install common tools library" OFF)
+message(STATUS "TTK install common tools library is " ${TTK_INSTALL_CTL})
+
 option(TTK_INSTALL_CML "TTK install core module library" OFF)
+message(STATUS "TTK install core module library is " ${TTK_INSTALL_CML})
+
+if(TTK_INSTALL_CML)
+  set(TTK_INSTALL_CTL ON)
+  message(STATUS "TTK auto enable CTL before CML option on")
+endif()
+
 option(TTK_BUILD_SHARED "TTK build shared library" ON)
 if(TTK_BUILD_SHARED)
   message(STATUS "TTK build by shared link")

@@ -150,11 +150,11 @@ if(TTK_INSTALL_CML)
 
   install(FILES ${HEADER_FILES} DESTINATION "${TTK_INSTALL_DIR}/${PROJECT_NAME}/include")
   install(FILES ${LIBRARY_OUTPUT_PATH}/${TTK_CML_MODULE} DESTINATION ${TTK_CML_PATH})
-  # configure ttkconfig file
-  install(FILES ${TTK_GENERATE_DIR}/ttkcore.pc DESTINATION ${TTK_CML_PATH}/pkgconfig)
-  install(FILES ${TTK_GENERATE_DIR}/ttkcoreConfig.cmake DESTINATION ${TTK_CML_PATH}/cmake)
+  # configure ttk config file
+  install(FILES ${TTK_GENERATE_DIR}/${PROJECT_NAME}.pc DESTINATION ${TTK_CML_PATH}/pkgconfig)
+  install(FILES ${TTK_GENERATE_DIR}/${PROJECT_NAME}Config.cmake DESTINATION ${TTK_CML_PATH}/cmake/${PROJECT_NAME})
 endif()
 
 # configure CML files
-configure_file(${TTK_UTILS_DIR}/cmake/ttkcore.pc.in ${TTK_GENERATE_DIR}/ttkcore.pc @ONLY)
-configure_file(${TTK_UTILS_DIR}/cmake/ttkcoreConfig.cmake.in ${TTK_GENERATE_DIR}/ttkcoreConfig.cmake @ONLY)
+configure_file(${TTK_UTILS_DIR}/cmake/${PROJECT_NAME}.pc.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}.pc @ONLY)
+configure_file(${TTK_UTILS_DIR}/cmake/${PROJECT_NAME}Config.cmake.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}Config.cmake @ONLY)

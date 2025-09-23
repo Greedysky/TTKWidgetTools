@@ -3,8 +3,8 @@ exec_prefix=${prefix}/bin
 libdir=${prefix}/lib
 includedir=${prefix}/include
 
-Name: TTKWidgetTools
+Name: TTKCore
 Description: TTK widget tools core library
 Version: @TTK_VERSION@
-Libs: -L${libdir} -lTTKCore
+Libs: -L${libdir} -lTTKCore -lTTKLibrary
 Cflags: -I${includedir}
