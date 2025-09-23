@@ -61,6 +61,7 @@ if(WIN32)
 endif()
 
 option(TTK_INSTALL_CTL "TTK install common tools library" OFF)
+option(TTK_INSTALL_CML "TTK install core module library" OFF)
 option(TTK_BUILD_SHARED "TTK build shared library" ON)
 if(TTK_BUILD_SHARED)
   message(STATUS "TTK build by shared link")

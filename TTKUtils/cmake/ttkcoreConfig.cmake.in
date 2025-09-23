@@ -1,0 +1,18 @@
+# - Config file for the TTKWidgetTools package
+# It defines the following variables
+#  TTK_INCLUDE_DIRS - include directories for TTKWidgetTools
+#  TTK_LIBRARY_PATH - libraries to link directory
+#  TTK_LIBRARIES    - libraries to link against
+#  TTK_EXECUTABLE   - the main executable
+
+# - Config file for the project package
+# In Binary dir
+if(EXISTS "@PROJECT_BINARY_DIR@/CMakeCache.txt")
+    set(TTK_INCLUDE_DIRS   @TTK_MODULE_BUTTON_DIR@ @TTK_MODULE_LABEL_DIR@ @TTK_MODULE_LINEEDIT_DIR@ @TTK_MODULE_METER_DIR@ @TTK_MODULE_PROGRESS_DIR@ @TTK_MODULE_SLIDER_DIR@ @TTK_MODULE_TITLE_DIR@ @TTK_MODULE_WIDGET_DIR@ @TTK_MODULE_WINDOW_DIR@)
+    set(TTK_LIBRARY_PATH   @LIBRARY_OUTPUT_PATH@)
+    set(TTK_LIBRARIES      @LIBRARY_OUTPUT_PATH@/@TTK_CML_MODULE@)
+else() 
+    set(TTK_INCLUDE_DIRS   @TTK_INSTALL_DIR@/@PROJECT_NAME@/include)
+    set(TTK_LIBRARY_PATH   @TTK_INSTALL_DIR@/@PROJECT_NAME@/lib)
+    set(TTK_LIBRARIES      @TTK_CML_PATH@/@TTK_CML_MODULE@)
+endif()

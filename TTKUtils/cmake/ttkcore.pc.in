@@ -1,0 +1,10 @@
+prefix=@TTK_INSTALL_DIR@/@PROJECT_NAME@
+exec_prefix=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: TTKWidgetTools
+Description: TTK widget tools core library
+Version: @TTK_VERSION@
+Libs: -L${libdir} -lTTKCore
+Cflags: -I${includedir}

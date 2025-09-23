@@ -136,3 +136,25 @@ else()
   add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${MOC_FILES} ${RCC_FILES})
 endif()
 target_link_libraries(${PROJECT_NAME} ${QT_LINK_LIBS})
+
+# install CML module
+if(TTK_INSTALL_CML)
+  set(TTK_CML_PATH "${TTK_INSTALL_DIR}/${PROJECT_NAME}/lib")
+  if(WIN32)
+    set(TTK_CML_MODULE "lib${PROJECT_NAME}.a")
+  elseif(APPLE)
+    set(TTK_CML_MODULE "lib${PROJECT_NAME}.dylib")
+  else()
+    set(TTK_CML_MODULE "lib${PROJECT_NAME}.so")
+  endif()
+
+  install(FILES ${HEADER_FILES} DESTINATION "${TTK_INSTALL_DIR}/${PROJECT_NAME}/include")
+  install(FILES ${LIBRARY_OUTPUT_PATH}/${TTK_CML_MODULE} DESTINATION ${TTK_CML_PATH})
+  # configure ttkconfig file
+  install(FILES ${TTK_GENERATE_DIR}/ttkcore.pc DESTINATION ${TTK_CML_PATH}/pkgconfig)
+  install(FILES ${TTK_GENERATE_DIR}/ttkcoreConfig.cmake DESTINATION ${TTK_CML_PATH}/cmake)
+endif()
+
+# configure CML files
+configure_file(${TTK_UTILS_DIR}/cmake/ttkcore.pc.in ${TTK_GENERATE_DIR}/ttkcore.pc @ONLY)
+configure_file(${TTK_UTILS_DIR}/cmake/ttkcoreConfig.cmake.in ${TTK_GENERATE_DIR}/ttkcoreConfig.cmake @ONLY)
