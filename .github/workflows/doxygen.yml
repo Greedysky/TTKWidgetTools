@@ -19,7 +19,7 @@ jobs:
       - name: Build package
         run: |
           sudo apt install graphviz doxygen
-          cd ${GITHUB_WORKSPACE}
+          cd ${{github.workspace}}
           doxygen Doxyfile
           echo -n '<!DOCTYPE html>
           <html>

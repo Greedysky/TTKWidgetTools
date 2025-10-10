@@ -45,7 +45,7 @@ jobs:
         run: |
           qmake -v
           cmake --version
-          cmake %GITHUB_WORKSPACE% -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
+          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
           make && make install
         working-directory: ${{runner.workspace}}/build
 
