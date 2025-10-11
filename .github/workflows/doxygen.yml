@@ -21,12 +21,14 @@ jobs:
           sudo apt install graphviz doxygen
           cd ${{github.workspace}}
           doxygen Doxyfile
+          # add main html page
           echo -n '<!DOCTYPE html>
           <html>
             <body>
               <script>window.location.href="html/index.html"</script>
             </body>
           </html>' > TTKDocs/main.html
+          # add package
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-document.7z TTKDocs
         working-directory: ${{runner.workspace}}
 
