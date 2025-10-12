@@ -51,6 +51,10 @@ jobs:
 
       - name: Build package
         run: |
+          # add dependency for openssl
+          curl -O https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -L ${{runner.workspace}}/install/openssl.7z
+          7z x openssl.7z
+          cp 64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
           cp ${{runner.workspace}}/Qt/${{matrix.qt_version}}/mingw81_64/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
