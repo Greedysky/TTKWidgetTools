@@ -16,7 +16,7 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.18.0)
 
 set_property(GLOBAL PROPERTY TTK_EXAMPLE_WIDGET_INCLUDE_FILES
   ${TTK_MODULE_WIDGET_DIR}/animation2StackedWidget
