@@ -147,7 +147,7 @@ endif()
 
 set(CMAKE_PREFIX_PATH ${QT_INSTALL_DIR} CACHE PATH "Qt install path")
 
-find_program(QT_QMAKE_EXECUTABLE qmake ${QT_INSTALL_BINS})
+find_program(QT_QMAKE_EXECUTABLE qmake)
 if(QT_QMAKE_EXECUTABLE)
   message(STATUS "Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
 else()
@@ -161,7 +161,7 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
 
   if(QT4_FOUND)
     if("${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}" VERSION_LESS "${minimum_required_qt_version}")
-      message(FATAL_ERROR "Fatal error: TTK requires Qt >= ${minimum_required_qt_version} -- you cannot use Qt ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}.")
+      message(FATAL_ERROR "Fatal error: TTK requires Qt >= ${minimum_required_qt_version} -- you cannot use Qt ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
     endif()
 
     set(QT_USE_QTCORE ON)
@@ -170,10 +170,6 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
     set(QT_USE_QTXML ON)
 
     include(${QT_USE_FILE})
-
-    if(WIN32)
-      get_filename_component(${QT_LIBRARY_DIR} ${QT_QMAKE_EXECUTABLE} PATH)
-    endif()
   else()
     message(FATAL_ERROR "Fatal error: Qt4 was not found on your system. You probably need to set the QT_QMAKE_EXECUTABLE variable")
   endif()
@@ -185,11 +181,35 @@ elseif(TTK_QT_VERSION VERSION_EQUAL "6")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
 
+function(query_qt_env VAR RESULT)
+  exec_program(${QT_QMAKE_EXECUTABLE} ARGS "-query ${VAR}" RETURN_VALUE return_code OUTPUT_VARIABLE output)
+  if(NOT return_code)
+    file(TO_CMAKE_PATH "${output}" output)
+    set(${RESULT} ${output} PARENT_SCOPE)
+  endif()
+endfunction()
 
 if(TTK_QT_VERSION VERSION_GREATER "4")
+  query_qt_env(QT_INSTALL_BINS QT_BINARY_DIR)
+  query_qt_env(QT_INSTALL_LIBS QT_LIBRARY_DIR)
+  query_qt_env(QT_INSTALL_HEADERS QT_INCLUDE_DIR)
+  query_qt_env(QT_INSTALL_PLUGINS QT_PLUGINS_DIR)
+
   add_definitions(-DQT_DEPRECATED_WARNINGS)
   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050400)
 endif()
+
+set(QT_INSTALL_LIBS ${QT_LIBRARY_DIR})
+set(QT_INSTALL_BINS ${QT_BINARY_DIR})
+get_filename_component(QT_INSTAL_DIR "${QT_INSTALL_LIBS}/../.." ABSOLUTE)
+
+message(STATUS "Found QT_BINARY_DIR: " ${QT_BINARY_DIR})
+message(STATUS "Found QT_LIBRARY_DIR: " ${QT_LIBRARY_DIR})
+message(STATUS "Found QT_INCLUDE_DIR: " ${QT_INCLUDE_DIR})
+message(STATUS "Found QT_PLUGINS_DIR: " ${QT_PLUGINS_DIR})
+message(STATUS "Found QT_INSTAL_DIR: " ${QT_INSTAL_DIR})
+message(STATUS "Found QT_INSTALL_LIBS: " ${QT_INSTALL_LIBS})
+message(STATUS "Found QT_INSTALL_BINS: " ${QT_INSTALL_BINS})
 
 
 find_program(CCACHE_FOUND ccache)
