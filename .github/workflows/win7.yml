@@ -46,7 +46,7 @@ jobs:
           qmake -v
           cmake --version
           cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
-          make && make install
+          make -j2 && make install
         working-directory: ${{runner.workspace}}/build
 
       - name: Build package
