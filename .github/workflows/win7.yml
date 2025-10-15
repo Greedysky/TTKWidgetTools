@@ -58,6 +58,8 @@ jobs:
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
           cp ${{runner.workspace}}/Qt/${{matrix.qt_version}}/mingw81_64/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          # remove usless library dependency
+          Get-ChildItem -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win7-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
