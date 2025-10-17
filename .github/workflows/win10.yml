@@ -53,7 +53,7 @@ jobs:
       - name: Build package
         run: |
           # add dependency for openssl
-          curl -O https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -L ${{runner.workspace}}/install/openssl.7z
+          curl -O https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -L openssl.7z
           7z x openssl.7z
           cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # add dependency libraries and so on
