@@ -10,11 +10,20 @@ env:
 
 jobs:
   build:
-    name: Build on win64 Qt5
+    name: Build on Qt5
     strategy:
       matrix:
-        qt_version: [5.15.2]
         os: [windows-2022]
+        arch: [32, 64]
+        include:
+        - arch: 32
+          target: x86
+        - arch: 64
+          target: x64
+
+    env:
+      QT_VERSION: 5.15.2
+      MINGW_PATH: D:\a\TTKWidgetTools\mingw\bin
 
     runs-on: ${{matrix.os}}
     steps:
@@ -24,16 +33,42 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{runner.workspace}}/Qt
-          key: ${{runner.os}}-QtCache-${{matrix.qt_version}}
+          key: ${{runner.os}}-QtCache-${{env.QT_VERSION}}
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: ${{matrix.qt_version}}
+          version: ${{env.QT_VERSION}}
           host: windows
-          arch: win64_mingw81
+          arch: win${{matrix.arch}}_mingw81
           target: desktop
           cache: 'true'
+
+      - name: Fix QTBUG-90395 for Qt5.15.2
+        shell: bash
+        run: |
+          # fix missing <limits> include
+          # see QTBUG-89977 https://bugreports.qt.io/browse/QTBUG-89977
+          # see QTBUG-90395 https://bugreports.qt.io/browse/QTBUG-90395
+          # see QTBUG-93452 https://bugreports.qt.io/browse/QTBUG-93452
+          # see here https://codereview.qt-project.org/c/qt/qtbase/+/330713
+          sed -i "46i\#include <limits>" "${{env.QT_ROOT_DIR}}\include\QtCore\qfloat16.h"
+        working-directory: ${{runner.workspace}}
+
+      - name: Install MinGW 8.1.0
+        run: |
+          if(${{matrix.arch}} -eq 32)
+          {
+            curl -L https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw81/qt.tools.win32_mingw810/8.1.0-1-202411201005i686-8.1.0-gdb-11.2.0-release-posix-dwarf-rt_v6-rev0.7z -o 8.1.0-mingw.7z
+          }
+          else
+          {
+            curl -L https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw81/qt.tools.win64_mingw810/8.1.0-1-202411201005x86_64-8.1.0-gdb-11.2.0-release-posix-seh-rt_v6-rev0.7z -o 8.1.0-mingw.7z
+          }
+          7z x 8.1.0-mingw.7z -omingw
+          # remove default installed mingw64
+          mv C:\mingw64 C:\mingw64_usless
+        working-directory: ${{runner.workspace}}
 
       - name: Create build dir
         shell: bash
@@ -41,12 +76,13 @@ jobs:
         working-directory: ${{runner.workspace}}
 
       - name: Build project
-        shell: cmd
         run: |
           qmake -v
           cmake --version
-          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
-          make -j2 && make install
+          $envPath = "${{env.MINGW_PATH}};" + [Environment]::GetEnvironmentVariable("PATH", [System.EnvironmentVariableTarget]::Machine)
+          [Environment]::SetEnvironmentVariable("PATH", $envPath, [System.EnvironmentVariableTarget]::Process)
+          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -DTTK_QT_VERSION=5
+          mingw32-make -j2 && mingw32-make install
         working-directory: ${{runner.workspace}}/build
 
       - name: Build package
@@ -54,14 +90,14 @@ jobs:
           # add dependency for openssl
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
           7z x openssl.7z
-          cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cp win${{matrix.arch}}/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
-          cp ${{runner.workspace}}/Qt/${{matrix.qt_version}}/mingw81_64/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw81_${{matrix.arch}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # remove usless library dependency
           Get-ChildItem -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win7-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win7-${{matrix.target}}.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
@@ -70,4 +106,4 @@ jobs:
           tag_name: ${{env.TTK_VERSTION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win7-x64.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win7-${{matrix.target}}.7z

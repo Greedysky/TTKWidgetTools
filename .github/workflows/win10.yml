@@ -10,11 +10,13 @@ env:
 
 jobs:
   build:
-    name: Build on win64 Qt6
+    name: Build on Qt6
     strategy:
       matrix:
-        qt_version: [6.5.3]
         os: [windows-2022]
+
+    env:
+      QT_VERSION: 6.5.3
 
     runs-on: ${{matrix.os}}
     steps:
@@ -24,12 +26,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{runner.workspace}}/Qt
-          key: ${{runner.os}}-QtCache-${{matrix.qt_version}}
+          key: ${{runner.os}}-QtCache-${{env.QT_VERSION}}
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: ${{matrix.qt_version}}
+          version: ${{env.QT_VERSION}}
           host: windows
           arch: win64_mingw
           target: desktop
@@ -46,7 +48,7 @@ jobs:
         run: |
           qmake -v
           cmake --version
-          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=6
+          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -DTTK_QT_VERSION=6
           make -j2 && make install
         working-directory: ${{runner.workspace}}/build
 
@@ -58,8 +60,8 @@ jobs:
           cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
-          cp ${{runner.workspace}}/Qt/${{matrix.qt_version}}/mingw_64/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
-          cp ${{runner.workspace}}/Qt/${{matrix.qt_version}}/mingw_64/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # remove usless library dependency
           Get-ChildItem -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
