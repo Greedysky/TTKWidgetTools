@@ -44,7 +44,7 @@ jobs:
           target: desktop
           cache: 'true'
 
-      - name: Fix QTBUG-90395 for Qt5.15.2
+      - name: Add patch for Qt5.15.2
         shell: bash
         run: |
           # fix missing <limits> include
