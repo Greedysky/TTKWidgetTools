@@ -18,6 +18,7 @@ Usage
  * Qt stable version is tested on Qt5.x for windows-msvc 32bit
  * Qt stable version is tested on Qt5.x for windows-msvc 64bit
  * Qt stable version is tested on Qt5.x for windows-mingw 32bit
+ * Qt stable version is tested on Qt5.x for windows-mingw 64bit
  * Qt stable version is tested on Qt5.x for ubuntu-linux-gcc 64bit
  * Qt stable version is tested on Qt6.x for windows-mingw 64bit
  * Qt stable version is tested on Qt6.x for ubuntu-linux-gcc 64bit
