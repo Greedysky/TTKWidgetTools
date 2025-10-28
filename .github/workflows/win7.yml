@@ -23,7 +23,7 @@ jobs:
 
     env:
       QT_VERSION: 5.15.2
-      MINGW_PATH: D:\a\TTKWidgetTools\mingw\bin
+      MINGW_PATH: D:/a/TTKWidgetTools/mingw/bin
 
     runs-on: ${{matrix.os}}
     steps:
