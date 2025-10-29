@@ -1,0 +1,79 @@
+# Author: Greedysky <greedysky@163.com>
+
+name: winXP
+
+on: workflow_call
+
+env:
+  TTK_MODULE: TTKWidgetTools
+  TTK_VERSTION: 3.1.0.0
+
+jobs:
+  build:
+    name: Build on Qt4
+    strategy:
+      matrix:
+        os: [windows-2022]
+
+    env:
+      QT_VERSION: 4.8.7
+      QT_ROOT_DIR: D:/a/TTKWidgetTools/Qt/4.8.7
+      QT_BIN_DIR: D:/a/TTKWidgetTools/Qt/4.8.7/bin
+      QT_PLUGIN_PATH: D:/a/TTKWidgetTools/Qt/4.8.7/plugins
+      MINGW_PATH: D:/a/TTKWidgetTools/mingw/Tools/mingw492_32/bin
+
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Qt
+        uses: actions/cache@v4
+        with:
+          path: ${{runner.workspace}}/Qt
+          key: ${{runner.os}}-QtCache-${{env.QT_VERSION}}
+
+      - name: Install Qt4 and MinGW 4.9.2
+        run: |
+          curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/Qt4.7z -o Qt4.7z
+          7z x Qt4.7z -oQt
+          curl -L https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw/qt.tools.win32_mingw492/4.9.2-1i686-4.9.2-release-posix-dwarf-rt_v3-rev1.7z -o 4.9.2-mingw.7z
+          7z x 4.9.2-mingw.7z -omingw
+          # remove default installed mingw64
+          mv C:\mingw64 C:\mingw64_usless
+        working-directory: ${{runner.workspace}}
+
+      - name: Create build dir
+        shell: bash
+        run: mkdir build
+        working-directory: ${{runner.workspace}}
+
+      - name: Build project
+        run: |
+          $envPath = "${{env.MINGW_PATH}};${{env.QT_BIN_DIR}};" + [Environment]::GetEnvironmentVariable("PATH", [System.EnvironmentVariableTarget]::Machine)
+          [Environment]::SetEnvironmentVariable("PATH", $envPath, [System.EnvironmentVariableTarget]::Process)
+          qmake -v
+          cmake --version
+          cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -DTTK_QT_VERSION=4 -DQT_MOC_EXECUTABLE=${{env.QT_BIN_DIR}}/moc.exe -DQT_RCC_EXECUTABLE=${{env.QT_BIN_DIR}}/rcc.exe -DQT_UIC_EXECUTABLE=${{env.QT_BIN_DIR}}/uic.exe
+          mingw32-make -j2 && mingw32-make install
+        working-directory: ${{runner.workspace}}/build
+
+      - name: Build package
+        run: |
+          # add dependency for openssl
+          curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
+          7z x openssl.7z
+          cp win32/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          # add dependency libraries and so on
+          # remove usless library dependency
+          ls -Filter "*.a" -Recurse | Remove-Item -Force
+          # add portable binary package
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-winXP-x86.7z ${{env.TTK_MODULE}}
+        working-directory: ${{runner.workspace}}/install
+
+      - name: Archive artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{env.TTK_VERSTION}}
+          token: ${{secrets.GITHUB_TOKEN}}
+          generate_release_notes: false
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-winXP-x86.7z

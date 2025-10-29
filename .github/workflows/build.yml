@@ -13,6 +13,10 @@ jobs:
     uses: ./.github/workflows/linux.yml
     secrets: inherit
 
+  winXP:
+    uses: ./.github/workflows/winXP.yml
+    secrets: inherit
+
   win7:
     uses: ./.github/workflows/win7.yml
     secrets: inherit
