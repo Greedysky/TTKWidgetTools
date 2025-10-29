@@ -40,6 +40,8 @@ jobs:
           7z x 4.9.2-mingw.7z -omingw
           # remove default installed mingw64
           mv C:\mingw64 C:\mingw64_usless
+          # set environment variable
+          echo "${{env.MINGW_PATH}};${{env.QT_BIN_DIR}};" >> $env:GITHUB_PATH
         working-directory: ${{runner.workspace}}
 
       - name: Create build dir
@@ -49,8 +51,6 @@ jobs:
 
       - name: Build project
         run: |
-          $envPath = "${{env.MINGW_PATH}};${{env.QT_BIN_DIR}};" + [Environment]::GetEnvironmentVariable("PATH", [System.EnvironmentVariableTarget]::Machine)
-          [Environment]::SetEnvironmentVariable("PATH", $envPath, [System.EnvironmentVariableTarget]::Process)
           qmake -v
           cmake --version
           cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -DTTK_QT_VERSION=4 -DQT_MOC_EXECUTABLE=${{env.QT_BIN_DIR}}/moc.exe -DQT_RCC_EXECUTABLE=${{env.QT_BIN_DIR}}/rcc.exe -DQT_UIC_EXECUTABLE=${{env.QT_BIN_DIR}}/uic.exe

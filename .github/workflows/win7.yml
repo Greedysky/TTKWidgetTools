@@ -52,7 +52,7 @@ jobs:
           # see QTBUG-90395 https://bugreports.qt.io/browse/QTBUG-90395
           # see QTBUG-93452 https://bugreports.qt.io/browse/QTBUG-93452
           # see here https://codereview.qt-project.org/c/qt/qtbase/+/330713
-          sed -i "46i\#include <limits>" "${{env.QT_ROOT_DIR}}\include\QtCore\qfloat16.h"
+          sed -i "46i#include <limits>" "${{env.QT_ROOT_DIR}}\include\QtCore\qfloat16.h"
         working-directory: ${{runner.workspace}}
 
       - name: Install MinGW 8.1.0
@@ -68,6 +68,8 @@ jobs:
           7z x 8.1.0-mingw.7z -omingw
           # remove default installed mingw64
           mv C:\mingw64 C:\mingw64_usless
+          # set environment variable
+          echo "${{env.MINGW_PATH}};" >> $env:GITHUB_PATH
         working-directory: ${{runner.workspace}}
 
       - name: Create build dir
@@ -79,8 +81,6 @@ jobs:
         run: |
           qmake -v
           cmake --version
-          $envPath = "${{env.MINGW_PATH}};" + [Environment]::GetEnvironmentVariable("PATH", [System.EnvironmentVariableTarget]::Machine)
-          [Environment]::SetEnvironmentVariable("PATH", $envPath, [System.EnvironmentVariableTarget]::Process)
           cmake ${{github.workspace}} -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DCMAKE_PREFIX_PATH=${{env.QT_ROOT_DIR}} -DTTK_QT_VERSION=5
           mingw32-make -j2 && mingw32-make install
         working-directory: ${{runner.workspace}}/build
@@ -93,13 +93,6 @@ jobs:
           cp win${{matrix.arch}}/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
-          if(${{matrix.arch}} -eq 32)
-          {
-            cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
-            cp ${{env.MINGW_PATH}}/libstdc++-6.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}} -Force
-            cp ${{env.MINGW_PATH}}/libwinpthread-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}} -Force
-            rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/libgcc_s_seh-1.dll
-          }
           cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw81_${{matrix.arch}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           # remove usless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
