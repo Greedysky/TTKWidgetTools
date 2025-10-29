@@ -1,6 +1,5 @@
 #include "ttkprogressmeterwidget.h"
 
-#include <qmath.h>
 #include <QTimer>
 #include <QPainter>
 

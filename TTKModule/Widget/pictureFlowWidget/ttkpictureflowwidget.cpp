@@ -221,7 +221,7 @@ void TTKPictureFlowWidgetState::reposition()
 {
     m_angle = 70 * IANGLE_MAX / 360;
 
-    m_offsetX = m_slideWidth / 2 * (PFREAL_ONE-fcos(m_angle));
+    m_offsetX = m_slideWidth / 2 * (PFREAL_ONE - fcos(m_angle));
     m_offsetY = m_slideWidth / 2 * fsin(m_angle);
     m_offsetX += m_slideWidth * PFREAL_ONE;
     m_offsetY += m_slideWidth * PFREAL_ONE / 4;
@@ -327,8 +327,8 @@ void TTKPictureFlowWidgetAnimator::update()
     }
 
     fi = qMin(fi, max);
-    const int ia = IANGLE_MAX * (fi-max/2) / (max*2);
-    speed = 512 + 16384 * (PFREAL_ONE+fsin(ia))/PFREAL_ONE;
+    const int ia = IANGLE_MAX * (fi - max / 2) / (max * 2);
+    speed = 512 + 16384 * (PFREAL_ONE + fsin(ia)) / PFREAL_ONE;
 
     m_frame += speed*m_step;
 

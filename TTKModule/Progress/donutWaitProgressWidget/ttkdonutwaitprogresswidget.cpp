@@ -98,7 +98,7 @@ void TTKDonutWaitProgressWidget::drawDonutWait(QPainter *painter)
     font.setBold(true);
     painter->setFont(font);
     painter->setPen(m_foregroundColor);
-    painter->drawText(inRect, Qt::AlignCenter, QString::number(qAbs(1.0 * m_rotateAngle / 360 * 100), 'f', 0) + "%");
+    painter->drawText(inRect, Qt::AlignCenter, QString::number(std::abs(1.0 * m_rotateAngle / 360 * 100), 'f', 0) + "%");
 
     painter->restore();
 }

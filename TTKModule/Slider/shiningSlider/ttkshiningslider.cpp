@@ -1,7 +1,7 @@
 #include "ttkshiningslider.h"
 #include "ttkgifprogresswidget.h"
 
-#include <qmath.h>
+#include <cmath>
 
 TTKShiningSlider::TTKShiningSlider(QWidget *parent)
     : QWidget(parent)
@@ -77,7 +77,7 @@ void TTKShiningSlider::sliderMovedAt(int pos) const
     if(max > 0)
     {
         float delta = m_slider->width() * (-0.015 / 800) + 0.0275;
-        m_label->move(ceil(qint64(pos) * m_slider->width() * (1.0 - delta) / max) - 1, 5);
+        m_label->move(std::ceil(qint64(pos) * m_slider->width() * (1.0 - delta) / max) - 1, 5);
     }
 }
 

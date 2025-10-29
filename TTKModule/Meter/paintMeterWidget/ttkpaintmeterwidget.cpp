@@ -152,8 +152,8 @@ void TTKPaintMeterWidget::drawScale(QPainter *painter)
     double sina, cosa;
     for(int i=0; i <= m_steps; ++i)
     {
-        sina = sin(TTKStaticCast(double, startRad + i * deltaRad));
-        cosa = cos(TTKStaticCast(double, startRad + i * deltaRad));
+        sina = std::sin(TTKStaticCast(double, startRad + i * deltaRad));
+        cosa = std::cos(TTKStaticCast(double, startRad + i * deltaRad));
         const double v = i * ((m_maxValue - m_minValue) / m_steps) + m_minValue;
 
         const QString &str = QString("%1").arg(v, 0, 'f', m_precision);

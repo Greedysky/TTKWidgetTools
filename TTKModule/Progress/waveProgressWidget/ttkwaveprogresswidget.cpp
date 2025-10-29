@@ -1,9 +1,9 @@
 #include "ttkwaveprogresswidget.h"
 
 #include <QTimer>
-#include <qmath.h>
 #include <QPainter>
 #include <QPainterPath>
+#include <qmath.h>
 
 TTKWaveProgressWidget::TTKWaveProgressWidget(QWidget *parent)
     : QWidget(parent),
@@ -203,8 +203,8 @@ void TTKWaveProgressWidget::drawValue(QPainter *painter)
 
     for(int x = startX; x <= endX; ++x)
     {
-        double waterY1 = TTKStaticCast(double, A * sin(W * x + m_offset)) + k;
-        double waterY2 = TTKStaticCast(double, A * sin(W * x + m_offset + (endX / 2 * W))) + k;
+        double waterY1 = TTKStaticCast(double, A * std::sin(W * x + m_offset)) + k;
+        double waterY2 = TTKStaticCast(double, A * std::sin(W * x + m_offset + (endX / 2 * W))) + k;
 
         if(m_value == m_minValue)
         {

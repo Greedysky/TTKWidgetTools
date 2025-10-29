@@ -1,9 +1,9 @@
 #include "ttkcarmeterwidget.h"
 
-#include <qmath.h>
 #include <QTimer>
 #include <QPainter>
 #include <QPainterPath>
+#include <qmath.h>
 
 TTKCarMeterWidget::TTKCarMeterWidget(QWidget *parent)
     : QWidget(parent),
@@ -488,8 +488,8 @@ void TTKCarMeterWidget::drawScaleNum(QPainter *painter)
 
     for(int i = 0; i <= m_scaleMajor; ++i)
     {
-        const double sina = qSin(startRad - i * deltaRad);
-        const double cosa = qCos(startRad - i * deltaRad);
+        const double sina = std::sin(startRad - i * deltaRad);
+        const double cosa = std::cos(startRad - i * deltaRad);
         const double value = 1.0 * i * ((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         const QString &strValue = QString("%1").arg(value, 0, 'f', m_precision);
         const int textWidth = QtFontWidth(fontMetrics(), strValue);

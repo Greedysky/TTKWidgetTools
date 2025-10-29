@@ -1,6 +1,6 @@
 #include "ttktimemeterwidget.h"
 
-#include <qmath.h>
+#include <cmath>
 #include <QTimer>
 #include <QPainter>
 
@@ -95,8 +95,8 @@ void TTKTimeMeterWidget::drawScaleNum(QPainter *painter)
 
     for(int i = 0; i <= m_scaleMajor; ++i)
     {
-        sina = sin(startRad - i * deltaRad);
-        cosa = cos(startRad - i * deltaRad);
+        sina = std::sin(startRad - i * deltaRad);
+        cosa = std::cos(startRad - i * deltaRad);
 
         v = 1.0 * i *((m_maxValue - m_minValue) / m_scaleMajor) + m_minValue;
         str = QString::number(v);

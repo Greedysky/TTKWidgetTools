@@ -1,6 +1,5 @@
 #include "ttktemperaturemeterwidget.h"
 
-#include <qmath.h>
 #include <QTimer>
 #include <QPainter>
 

@@ -1,10 +1,9 @@
 #include "ttkclockmeterwidget.h"
 
-#include <qmath.h>
-
 #include <QTime>
 #include <QTimer>
 #include <QPainter>
+#include <qmath.h>
 
 TTKClockMeterWidget::TTKClockMeterWidget(QWidget *parent)
     : QWidget(parent),
@@ -242,8 +241,8 @@ void TTKClockMeterWidget::drawScaleNum(QPainter *painter)
 
     for(int i = 0; i < 12; ++i)
     {
-        const double sina = sin(startRad - i * deltaRad);
-        const double cosa = cos(startRad - i * deltaRad);
+        const double sina = std::sin(startRad - i * deltaRad);
+        const double cosa = std::cos(startRad - i * deltaRad);
         const QString &strValue = QString::number(i + 1);
         const int textWidth = QtFontWidth(fontMetrics(), strValue);
         const int textHeight = fontMetrics().height();

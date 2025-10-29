@@ -1,6 +1,5 @@
 #include "ttkminimeterwidget.h"
 
-#include <qmath.h>
 #include <QPainter>
 
 TTKMiniMeterWidget::TTKMiniMeterWidget(QWidget *parent)

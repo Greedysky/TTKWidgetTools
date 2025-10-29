@@ -96,19 +96,19 @@ void TTKZoomWaitProgressWidget::fixRadious(int max)
     if(m_radious < m_minRadious)
     {
         m_radious = m_minRadious;
-        m_zoomDelta = qAbs(m_zoomDelta);
+        m_zoomDelta = std::abs(m_zoomDelta);
     }
     else if(m_radious > max)
     {
         if(m_zoomOut)
         {
             m_radious = max;
-            m_zoomDelta = -qAbs(m_zoomDelta);
+            m_zoomDelta = -std::abs(m_zoomDelta);
         }
         else
         {
             m_radious = m_minRadious;
-            m_zoomDelta = qAbs(m_zoomDelta);
+            m_zoomDelta = std::abs(m_zoomDelta);
         }
     }
 }

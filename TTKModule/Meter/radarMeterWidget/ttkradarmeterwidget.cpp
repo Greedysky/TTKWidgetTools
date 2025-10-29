@@ -41,8 +41,8 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
     painter.drawEllipse(m_drawArea.center(), len/3, len/3);
     painter.drawEllipse(m_drawArea.center(), len/6, len/6);
 
-    const qreal x = m_drawArea.center().x() + (qreal)len/2 * cos(-m_pieRotate*3.14159/180);
-    const qreal y = m_drawArea.center().y() + (qreal)len/2 * sin(-m_pieRotate*3.14159/180);
+    const qreal x = m_drawArea.center().x() + (qreal)len/2 * std::cos(-m_pieRotate*3.14159/180);
+    const qreal y = m_drawArea.center().y() + (qreal)len/2 * std::sin(-m_pieRotate*3.14159/180);
     painter.setPen(QPen(Qt::white));
     painter.drawLine(m_drawArea.center(),QPointF(x,y));
 

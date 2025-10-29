@@ -1,6 +1,5 @@
 #include "ttkgrabitemwidget.h"
 
-#include <qmath.h>
 #include <QPainter>
 #include <QMouseEvent>
 
@@ -51,8 +50,8 @@ void TTKGrabItemWidget::onMouseChange(int x, int y)
 
     const int rx = (x >= pt.x()) ? pt.x() : x;
     const int ry = (y >= pt.y()) ? pt.y() : y;
-    const int rw = abs(x - pt.x());
-    const int rh = abs(y - pt.y());
+    const int rw = std::abs(x - pt.x());
+    const int rh = std::abs(y - pt.y());
 
     m_currentRect = QRect(rx, ry, rw, rh);
     setGeometry(m_currentRect);

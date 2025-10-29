@@ -236,7 +236,7 @@ void TTKAnimation2StackedWidget::renderPreviousWidget(QPainter *painter, QTransf
         case Module::HorizontalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
-                    if(degree <= qAbs(90))
+                    if(degree <= std::abs(90))
                     {
                         if(m_fade)
                         {
@@ -456,7 +456,7 @@ void TTKAnimation2StackedWidget::renderCurrentWidget(QPainter *painter, QTransfo
         case Module::HorizontalFlipRotate:
                 {
                     const float degree = ((m_currentValue - m_startValue) / m_rangeValue) * 180;
-                    if(degree > qAbs(90))
+                    if(degree > std::abs(90))
                     {
                         if(m_fade)
                         {

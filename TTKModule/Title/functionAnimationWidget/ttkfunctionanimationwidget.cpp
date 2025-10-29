@@ -1,7 +1,5 @@
 #include "ttkfunctionanimationwidget.h"
 
-#include <qmath.h>
-
 #include <QPainter>
 #include <QBoxLayout>
 #include <QToolButton>

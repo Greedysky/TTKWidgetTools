@@ -85,7 +85,7 @@ void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
     {
         m_ranges << m_maxDiameter / 2 - i * gap;
         const float radian = -angleGap * i * M_PI / 180.0;
-        m_dots.append({half + centerDistance * qCos(radian), half - centerDistance * qSin(radian)});
+        m_dots.append({half + centerDistance * std::cos(radian), half - centerDistance * std::sin(radian)});
     }
 }
 

@@ -1,6 +1,5 @@
 #include "ttkroundprogresswidget.h"
 
-#include <qmath.h>
 #include <QPainter>
 #include <QPropertyAnimation>
 
