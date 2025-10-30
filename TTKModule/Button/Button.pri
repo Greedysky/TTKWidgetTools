@@ -16,8 +16,12 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-greaterThan(QT_MAJOR_VERSION, 5):greaterThan(QT_MINOR_VERSION, 0){
-    QT += statemachine
+greaterThan(QT_MAJOR_VERSION, 5){
+    equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
+        message(Qt6.0.x not support state machine module)
+    }else{
+        QT += statemachine
+    }
 }
 
 equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
