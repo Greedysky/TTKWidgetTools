@@ -36,10 +36,11 @@ jobs:
         run: |
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/Qt4.7z -o Qt4.7z
           7z x Qt4.7z -oQt
+          "[Paths]`nPrefix = ${{env.QT_ROOT_DIR}}" > ${{env.QT_BIN_DIR}}/qt.conf
           curl -L https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw/qt.tools.win32_mingw492/4.9.2-1i686-4.9.2-release-posix-dwarf-rt_v3-rev1.7z -o 4.9.2-mingw.7z
           7z x 4.9.2-mingw.7z -omingw
           # remove default installed mingw64
-          mv C:\mingw64 C:\mingw64_usless
+          mv C:\mingw64 C:\mingw64_useless
           # set environment variable
           echo "${{env.MINGW_PATH}};${{env.QT_BIN_DIR}};" >> $env:GITHUB_PATH
         working-directory: ${{runner.workspace}}
@@ -75,7 +76,7 @@ jobs:
           cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           cp ${{env.MINGW_PATH}}/libstdc++-6.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
           cp ${{env.MINGW_PATH}}/libwinpthread-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
-          # remove usless library dependency
+          # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-winXP-x86.7z ${{env.TTK_MODULE}}

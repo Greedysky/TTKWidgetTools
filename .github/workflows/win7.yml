@@ -69,7 +69,7 @@ jobs:
           }
           7z x 8.1.0-mingw.7z -omingw
           # remove default installed mingw64
-          mv C:\mingw64 C:\mingw64_usless
+          mv C:\mingw64 C:\mingw64_useless
           # set environment variable
           echo "${{env.MINGW_PATH}};" >> $env:GITHUB_PATH
         working-directory: ${{runner.workspace}}
@@ -96,7 +96,7 @@ jobs:
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
           cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw81_${{matrix.arch}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
-          # remove usless library dependency
+          # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/D3D*.dll
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/opengl32sw.dll
