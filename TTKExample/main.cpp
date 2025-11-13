@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    TTK::loadApplicationScaleFactor();
+    TTK::initialize(TTK::Attribute::All);
 
     TTKApplication app(argc, argv);
     TTKInitialization ttk;
