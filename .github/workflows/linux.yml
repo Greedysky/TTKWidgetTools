@@ -72,10 +72,36 @@ jobs:
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
+      - name: Build appimage package
+        run: |
+          mv ${{env.TTK_MODULE}} usr
+          mkdir ${{env.TTK_MODULE}}
+          mv usr ${{env.TTK_MODULE}}
+          cd ${{env.TTK_MODULE}}
+          mv usr/doc usr/README.txt .
+          # create hack module
+          echo -n '#!/bin/sh
+           dirpath=`dirname $0`
+           tmp="${dirpath#?}"
+           if [ "${dirpath%${tmp}}" != "/" ]; then
+            dirpath=$PWD/${dirpath}
+           fi
+           sh ${dirpath}/usr/${{env.TTK_VERSTION}}/TTKWidgetTools.sh' > ${{env.TTK_MODULE}}
+          chmod +x ${{env.TTK_MODULE}}
+          ln -s ${{env.TTK_MODULE}} AppRun
+          cp usr/deploy/share/pixmaps/ttkwidgettools.png logo.png
+          sh usr/deploy/make_desktop_raw.sh ${{env.TTK_MODULE}}.desktop logo ${{env.TTK_MODULE}}
+          cd ..
+          linuxdeploy-plugin-appimage-x86_64.AppImage --appdir=${{env.TTK_MODULE}}
+          mv ${{env.TTK_MODULE}}*.AppImage ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.AppImage
+        working-directory: ${{runner.workspace}}/install
+
       - name: Archive artifacts
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{env.TTK_VERSTION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
+          files: |
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.AppImage

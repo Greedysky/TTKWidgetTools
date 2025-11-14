@@ -14,31 +14,12 @@ else
   homepath=/home/${username}
 fi
 
-packvern=3.1.0.0
 packpath=${dirpath}/TTKWidgetTools.desktop
 userpath=${homepath}/.local/share/applications
 iconpath="${dirpath}/share/pixmaps/ttkwidgettools.png"
-execpath="${dirpath}/../${packvern}/TTKWidgetTools.sh"
+execpath="${dirpath}/../3.1.0.0/TTKWidgetTools.sh"
 
-echo -n "[Desktop Entry]
-Type=Application
-Version=${packvern}
-Name=TTKWidgetTools
-Name[zh_CN]=TTK控件集合
-Name[zh_TW]=TTK控件集合
-GenericName=TTKWidgetTools
-GenericName[zh_CN]=TTK控件集合
-GenericName[zh_TW]=TTK控件集合
-Comment=TTKWidgetTools
-Comment[zh_CN]=QWidget自定义控件集合
-Comment[zh_TW]=QWidget自定義控件集合
-Icon=${iconpath}
-Exec=${execpath}
-Terminal=false
-Keywords=widget;
-Categories=widget;Qt;
-MimeType=
-X-KDE-StartupNotify=false\n" > ${packpath}
+sh ${dirpath}/make_desktop_raw.sh ${packpath} ${iconpath} ${execpath}
 
 mv -fv ${packpath} ${userpath}
 chmod +x ${userpath}
