@@ -156,5 +156,5 @@ if(TTK_INSTALL_CML)
 endif()
 
 # configure CML files
-configure_file(${TTK_UTILS_DIR}/cmake/${PROJECT_NAME}.pc.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}.pc @ONLY)
-configure_file(${TTK_UTILS_DIR}/cmake/${PROJECT_NAME}Config.cmake.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}Config.cmake @ONLY)
+configure_file(${TTK_MODULE_DIR}/cmake/${PROJECT_NAME}.pc.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}.pc @ONLY)
+configure_file(${TTK_MODULE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in ${TTK_GENERATE_DIR}/${PROJECT_NAME}Config.cmake @ONLY)
