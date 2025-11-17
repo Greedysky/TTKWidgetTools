@@ -1,8 +1,7 @@
 #include "ttknettrafficlabel.h"
 
-#include <QFile>
+#include <QDir>
 #include <QProcess>
-#include <QApplication>
 #ifdef Q_OS_WIN
 #  ifdef Q_CC_GNU
 #    include <winsock2.h>
@@ -15,7 +14,7 @@
 #  include <arpa/inet.h>
 #endif
 
-static constexpr const char *TEMP_FILE_NAME = "net_traffic";
+#define RESOURCE_PATH  QDir::tempPath() + "/traffic.tkx"
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
     : TTKAbstractThread(parent),
@@ -26,12 +25,12 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
     QFile openFile(":/net/res_traffic");
     if(openFile.open(QIODevice::ReadOnly))
     {
-        QFile file(TEMP_FILE_NAME);
+        QFile file(RESOURCE_PATH);
         if(file.open(QIODevice::WriteOnly))
         {
             file.write(openFile.readAll());
             file.close();
-            QProcess::execute("chmod", {"+x", TEMP_FILE_NAME});
+            QProcess::execute("chmod", {"+x", RESOURCE_PATH});
         }
         openFile.close();
     }
@@ -40,7 +39,7 @@ TTKNetTraffic::TTKNetTraffic(QObject *parent)
 
 TTKNetTraffic::~TTKNetTraffic()
 {
-    QFile::remove(TEMP_FILE_NAME);
+    QFile::remove(RESOURCE_PATH);
     stop();
     if(m_process)
     {
@@ -66,7 +65,7 @@ void TTKNetTraffic::setNewtworkName(const QString &name)
 
     QStringList arguments;
     arguments << name << "1";
-    m_process->start(qApp->applicationDirPath() + TTK_SEPARATOR + TEMP_FILE_NAME, arguments);
+    m_process->start(RESOURCE_PATH, arguments);
 #endif
 }
 
