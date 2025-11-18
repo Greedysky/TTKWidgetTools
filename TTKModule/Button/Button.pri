@@ -18,14 +18,14 @@
 
 greaterThan(QT_MAJOR_VERSION, 5){
     equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
-        message(Qt6.0.x not support state machine module)
+        message("Qt6.0.x not support state machine module")
     }else{
         QT += statemachine
     }
 }
 
 equals(QT_MAJOR_VERSION, 6):equals(QT_MINOR_VERSION, 0){
-    message(Qt6.0.x not support state machine)
+    message("Qt6.0.x not support state machine")
 }else{
     include($$PWD/checkButtonWidget/CheckButtonWidget.pri)
     include($$PWD/radioButtonWidget/RadioButtonWidget.pri)
