@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2015 - 2025 Greedysky Studio -->
 <component type="desktop-application">
-  <id>TTKWidgetTools.desktop</id>
+  <id>com.greedysky.TTKWidgetTools</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <name>TTKWidgetTools</name>
-  <pkgname>TTKWidgetTools</pkgname>
   <summary>The ttk widget tools</summary>
   <description>
     <p>
@@ -22,7 +21,9 @@
   <url type="bugtracker">https://github.com/Greedysky/TTKWidgetTools/issues</url>
   <url type="help">https://github.com/Greedysky/TTKWidgetTools</url>
   <url type="homepage">https://github.com/Greedysky/TTKWidgetTools</url>
+  <content_rating type="oars-1.1" />
   <developer_name>Greedysky Studio</developer_name>
+  <launchable type="desktop-id">TTKWidgetTools.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image type="source">https://github.com/Greedysky/TTKWidgetTools/blob/master/TTKResource/example/Button/checkButtonWidget.png?raw=true</image>

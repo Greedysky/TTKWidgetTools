@@ -6,7 +6,7 @@ on: workflow_call
 
 env:
   TTK_MODULE: TTKWidgetTools
-  TTK_VERSTION: 3.1.0.0
+  TTK_VERSION: 3.1.0.0
 
 jobs:
   build:
@@ -56,24 +56,24 @@ jobs:
           # add dependency for openssl
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
           7z x openssl.7z
-          cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
-          windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.exe
-          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
-          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
+          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
-          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/D3D*.dll
-          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/opengl32sw.dll
-          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}/translations -Recurse
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/D3D*.dll
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/opengl32sw.dll
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/translations -Recurse
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win10-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{env.TTK_VERSTION}}
+          tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-win10-x64.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-x64.7z

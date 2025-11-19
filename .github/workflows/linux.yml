@@ -6,7 +6,7 @@ on: workflow_call
 
 env:
   TTK_MODULE: TTKWidgetTools
-  TTK_VERSTION: 3.1.0.0
+  TTK_VERSION: 3.1.0.0
 
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
 
       - name: Build package
         run: |
-          cd ${{env.TTK_MODULE}}/${{env.TTK_VERSTION}}
+          cd ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           linuxdeploy-x86_64.AppImage --executable=${{env.TTK_MODULE}} --appdir=image --plugin=qt
           rm image/usr/lib/libTTK*.so
@@ -69,7 +69,7 @@ jobs:
           7z x openssl.7z
           cp linux64/* ${{env.TTK_MODULE}}/lib
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Build appimage package
@@ -87,7 +87,7 @@ jobs:
            if [ "${dirpath%${tmp}}" != "/" ]; then
             dirpath=$PWD/${dirpath}
            fi
-           sh ${dirpath}/usr/${{env.TTK_VERSTION}}/${{env.TTK_MODULE}}.sh' > ${{env.TTK_MODULE}}
+           sh ${dirpath}/usr/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.sh' > ${{env.TTK_MODULE}}
           chmod +x ${{env.TTK_MODULE}}
           # add dependency files
           ln -s ${{env.TTK_MODULE}} AppRun
@@ -96,15 +96,15 @@ jobs:
           cd ..
           # add appimage binary package
           linuxdeploy-plugin-appimage-x86_64.AppImage --appdir=${{env.TTK_MODULE}}
-          mv ${{env.TTK_MODULE}}*.AppImage ${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.AppImage
+          mv ${{env.TTK_MODULE}}*.AppImage ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.AppImage
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{env.TTK_VERSTION}}
+          tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
           files: |
-            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.7z
-            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSTION}}-linux-x64.AppImage
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.AppImage
