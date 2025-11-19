@@ -10,6 +10,7 @@
 #  include <qt_windows.h>
 #  include <iphlpapi.h>
 #elif defined Q_OS_UNIX
+#  include <QRegExp>
 #  include <ifaddrs.h>
 #  include <arpa/inet.h>
 #endif

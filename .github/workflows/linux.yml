@@ -10,13 +10,24 @@ env:
 
 jobs:
   build:
-    name: Build on Qt5
+    name: Build on Qt${{matrix.qt_major}}(${{matrix.os}})
     strategy:
       matrix:
+        qt: [qt5, qt6]
         os: [ubuntu-22.04]
+        include:
+          - qt: qt5
+            qt_major: 5
+            qt_version: 5.9.9
+            qt_modules:
+
+          - qt: qt6
+            qt_major: 6
+            qt_version: 6.5.3
+            qt_modules: qt5compat qtscxml
 
     env:
-      QT_VERSION: 5.9.9
+      QT_VERSION: ${{matrix.qt_version}}
 
     runs-on: ${{matrix.os}}
     steps:
@@ -33,6 +44,7 @@ jobs:
         with:
           version: ${{env.QT_VERSION}}
           target: desktop
+          modules: ${{matrix.qt_modules}}
           cache: 'true'
 
       - name: Install linuxdeploy
@@ -51,7 +63,7 @@ jobs:
         run: |
           qmake -v
           cmake --version
-          cmake ${{github.workspace}} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=5
+          cmake ${{github.workspace}} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=${{matrix.qt_major}}
           make -j2 && make install
         working-directory: ${{runner.workspace}}/build
 
@@ -69,7 +81,7 @@ jobs:
           7z x openssl.7z
           cp linux64/* ${{env.TTK_MODULE}}/lib
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-${{matrix.qt}}-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Build appimage package
@@ -96,7 +108,7 @@ jobs:
           cd ..
           # add appimage binary package
           linuxdeploy-plugin-appimage-x86_64.AppImage --appdir=${{env.TTK_MODULE}}
-          mv ${{env.TTK_MODULE}}*.AppImage ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.AppImage
+          mv ${{env.TTK_MODULE}}*.AppImage ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-${{matrix.qt}}-x64.AppImage
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
@@ -106,5 +118,5 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
           files: |
-            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.7z
-            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-x64.AppImage
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-${{matrix.qt}}-x64.7z
+            ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-${{matrix.qt}}-x64.AppImage
