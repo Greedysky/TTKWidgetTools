@@ -1,6 +1,6 @@
 # Author: Greedysky <greedysky@163.com>
 
-name: winXP
+name: winXP-mingw
 
 on: workflow_call
 
@@ -44,7 +44,6 @@ jobs:
         working-directory: ${{runner.workspace}}
 
       - name: Create build dir
-        shell: bash
         run: mkdir build
         working-directory: ${{runner.workspace}}
 
@@ -77,7 +76,7 @@ jobs:
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-winXP-x86.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-winXP-mingw-x86.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
@@ -86,4 +85,4 @@ jobs:
           tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-winXP-x86.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-winXP-mingw-x86.7z

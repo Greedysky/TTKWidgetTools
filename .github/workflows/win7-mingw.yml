@@ -1,6 +1,6 @@
 # Author: Greedysky <greedysky@163.com>
 
-name: win7
+name: win7-mingw
 
 on: workflow_call
 
@@ -54,7 +54,6 @@ jobs:
         working-directory: ${{runner.workspace}}
 
       - name: Create build dir
-        shell: bash
         run: mkdir build
         working-directory: ${{runner.workspace}}
 
@@ -79,7 +78,7 @@ jobs:
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/translations -Recurse
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win7-${{matrix.target}}.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win7-mingw-${{matrix.target}}.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
@@ -88,4 +87,4 @@ jobs:
           tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win7-${{matrix.target}}.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win7-mingw-${{matrix.target}}.7z

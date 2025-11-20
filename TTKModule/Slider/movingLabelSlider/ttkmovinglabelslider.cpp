@@ -49,7 +49,7 @@ void TTKMovingLabelSlider::mousePressEvent(QMouseEvent *event)
 void TTKMovingLabelSlider::mouseMoveEvent(QMouseEvent *event)
 {
     TTKClickedSlider::mouseMoveEvent(event);
-    if(m_mousePress)
+    if(m_mousePressed)
     {
         m_isMoving = true;
         Q_EMIT sliderMoved( m_value );

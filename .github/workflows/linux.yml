@@ -33,12 +33,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Cache Qt
-        uses: actions/cache@v4
-        with:
-          path: ${{runner.workspace}}/Qt
-          key: ${{runner.os}}-QtCache-${{env.QT_VERSION}}
-
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:

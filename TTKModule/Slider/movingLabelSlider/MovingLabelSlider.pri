@@ -19,9 +19,7 @@
 INCLUDEPATH += $$PWD
 
 HEADERS += \
-    $$PWD/ttkclickedslider.h \
     $$PWD/ttkmovinglabelslider.h
 
 SOURCES += \
-    $$PWD/ttkclickedslider.cpp \
     $$PWD/ttkmovinglabelslider.cpp

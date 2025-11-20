@@ -1,6 +1,6 @@
 # Author: Greedysky <greedysky@163.com>
 
-name: win10
+name: win10-mingw
 
 on: workflow_call
 
@@ -22,12 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Cache Qt
-        uses: actions/cache@v4
-        with:
-          path: ${{runner.workspace}}/Qt
-          key: ${{runner.os}}-QtCache-${{env.QT_VERSION}}
-
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
@@ -39,7 +33,6 @@ jobs:
           cache: 'true'
 
       - name: Create build dir
-        shell: bash
         run: mkdir build
         working-directory: ${{runner.workspace}}
 
@@ -59,15 +52,15 @@ jobs:
           cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
-          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
-          cp ${{runner.workspace}}/Qt/${{env.QT_VERSION}}/mingw_64/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.QT_ROOT_DIR}}/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.QT_ROOT_DIR}}/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/D3D*.dll
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/opengl32sw.dll
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/translations -Recurse
           # add portable binary package
-          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-x64.7z ${{env.TTK_MODULE}}
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-mingw-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install
 
       - name: Archive artifacts
@@ -76,4 +69,4 @@ jobs:
           tag_name: ${{env.TTK_VERSION}}
           token: ${{secrets.GITHUB_TOKEN}}
           generate_release_notes: false
-          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-x64.7z
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-mingw-x64.7z
