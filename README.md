@@ -20,6 +20,7 @@ Usage
  * Qt stable version is tested on Qt5.x for windows-mingw 32bit
  * Qt stable version is tested on Qt5.x for windows-mingw 64bit
  * Qt stable version is tested on Qt5.x for ubuntu-linux-gcc 64bit
+ * Qt stable version is tested on Qt6.x for windows-msvc 64bit
  * Qt stable version is tested on Qt6.x for windows-mingw 64bit
  * Qt stable version is tested on Qt6.x for ubuntu-linux-gcc 64bit
 
@@ -27,7 +28,7 @@ Usage
 | :---:    | :---:                       | :---:                                                                  |
 | Linux    | 4.x GCC & 5.x GCC & 6.x GCC | ![Linux](https://img.shields.io/badge/build-passing-brightgreen.svg)   |
 | Windows  | 4.x GCC & 5.x GCC & 6.x GCC | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
-| Windows  | 5.x MSVC                    | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
+| Windows  | 5.x MSVC & 6.x MSVC         | ![Windows](https://img.shields.io/badge/build-passing-brightgreen.svg) |
 | OS X     | Clang                       | ![OSX](https://img.shields.io/badge/build-unknown-lightgrey.svg)       |
 
 # For Developers

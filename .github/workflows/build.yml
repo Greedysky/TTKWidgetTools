@@ -29,6 +29,10 @@ jobs:
     uses: ./.github/workflows/win10-mingw.yml
     secrets: inherit
 
+  win10-msvc:
+    uses: ./.github/workflows/win10-msvc.yml
+    secrets: inherit
+
   doxygen:
     uses: ./.github/workflows/doxygen.yml
     secrets: inherit

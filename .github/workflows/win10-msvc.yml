@@ -1,0 +1,85 @@
+# Author: Greedysky <greedysky@163.com>
+
+name: win10-msvc
+
+on: workflow_call
+
+env:
+  TTK_MODULE: TTKWidgetTools
+  TTK_VERSION: 3.1.0.0
+
+jobs:
+  build:
+    name: Build on Qt6
+    strategy:
+      matrix:
+        os: [windows-2022]
+
+    env:
+      QT_VERSION: 6.5.3
+
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{env.QT_VERSION}}
+          host: windows
+          arch: win64_msvc2019_64
+          target: desktop
+          modules: qt5compat qtscxml
+          cache: 'true'
+
+      - name: Create build dir
+        run: mkdir build
+        working-directory: ${{runner.workspace}}
+
+      - name: Build project with cmake
+        shell: cmd
+        run: |
+          qmake -v
+          cmake --version
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+          cmake ${{github.workspace}} -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{runner.workspace}}/install -DTTK_QT_VERSION=6
+          set CL=/MP4
+          nmake && nmake install
+        working-directory: ${{runner.workspace}}/build
+
+      - name: Build project with qmake
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+          qmake "CONFIG+=release" .
+          set CL=/MP4
+          nmake
+        working-directory: ${{github.workspace}}
+
+      - name: Build package
+        run: |
+          # add dependency for openssl
+          curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
+          7z x openssl.7z
+          cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          # add dependency libraries and so on
+          windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
+          cp ${{env.QT_ROOT_DIR}}/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.QT_ROOT_DIR}}/bin/Qt6StateMachine.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          # remove useless library dependency
+          ls -Filter "*.lib" -Recurse | Remove-Item -Force
+          ls -Filter "*.exp" -Recurse | Remove-Item -Force
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/D3D*.dll
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/opengl32sw.dll
+          rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/translations -Recurse
+          # add portable binary package
+          7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-msvc-x64.7z ${{env.TTK_MODULE}}
+        working-directory: ${{runner.workspace}}/install
+
+      - name: Archive artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{env.TTK_VERSION}}
+          token: ${{secrets.GITHUB_TOKEN}}
+          generate_release_notes: false
+          files: ${{runner.workspace}}/install/${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-win10-msvc-x64.7z
