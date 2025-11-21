@@ -73,7 +73,8 @@ void TTKToggleThumb::paintEvent(QPaintEvent *event)
     {
         s = height() - 10;
         r = QRectF(5 + m_offset, 5, s, s);
-    }else
+    }
+    else
     {
         s = width() - 10;
         r = QRectF(5, 5 + m_offset, s, s);
