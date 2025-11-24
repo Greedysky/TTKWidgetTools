@@ -10,9 +10,9 @@
 #  include <qt_windows.h>
 #  include <iphlpapi.h>
 #elif defined Q_OS_UNIX
-#  include <QRegExp>
 #  include <ifaddrs.h>
 #  include <arpa/inet.h>
+#  include "ttkregularexpression.h"
 #endif
 
 #define RESOURCE_PATH  QDir::tempPath() + "/traffic.tkx"
@@ -78,11 +78,11 @@ QString TTKNetTraffic::currentNewtworkName() const
     if(process.waitForFinished(3 * TTK_DN_S2MS))
     {
         const QString data(process.readAll());
-        QRegExp regx(" dev (\\w+) ");
-        regx.setMinimal(true);
-        if(regx.indexIn(data) != -1)
+        TTKRegularExpression regx(" dev (\\w+) ");
+        regx.setGreedinessOption(true);
+        if(regx.match(data) != -1)
         {
-            return regx.cap(1);
+            return regx.captured(1);
         }
     }
 #endif

@@ -1,10 +1,11 @@
 #include "ttkipeditwidget.h"
+#include "ttkregularexpression.h"
 
 #include <QPainter>
 #include <QApplication>
 #include <QKeyEvent>
 #include <QClipboard>
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if TTK_QT_VERSION_CHECK(5,1,0)
 #  include <QRegularExpressionValidator>
 #else
 #  include <QRegExpValidator>
@@ -55,13 +56,8 @@ QString TTKIpEditWidget::text() const
 void TTKIpEditWidget::setText(const QString &text)
 {
     const QString pattern("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
-#if TTK_QT_VERSION_CHECK(6,0,0)
-    const QRegularExpression regx(pattern);
-    if(!regx.match(text).hasMatch())
-#else
-    const QRegExp regx(pattern);
-    if(!regx.exactMatch(text))
-#endif
+    TTKRegularExpression regx(pattern);
+    if(!regx.hasMatch(text))
     {
         return;
     }
@@ -143,7 +139,7 @@ void TTKIpEditWidget::initialize(QLineEdit *edit)
     edit->installEventFilter(this);
 
     const QString regx("^(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
-#if TTK_QT_VERSION_CHECK(6,0,0)
+#if TTK_QT_VERSION_CHECK(5,1,0)
     QRegularExpressionValidator *validator = new QRegularExpressionValidator(QRegularExpression(regx), this);
 #else
     QRegExpValidator *validator = new QRegExpValidator(QRegExp(regx), this);

@@ -42,9 +42,15 @@
 #ifndef QTPROPERTYBROWSER_H
 #define QTPROPERTYBROWSER_H
 
-#include <QRegExp>
-#include <QWidget>
 #include <QSet>
+#include <QWidget>
+#if QT_VERSION >= 0x050000
+#  include <QRegularExpression>
+using RegularExpression = QRegularExpression;
+#else
+#  include <QRegExp>
+using RegularExpression = QRegExp;
+#endif
 #include <QLineEdit>
 #include "ttkmoduleexport.h"
 

@@ -33,7 +33,7 @@ int TTKRegularExpression::match(const QString &str, int pos)
 {
 #if TTK_QT_VERSION_CHECK(5,0,0)
     m_match = m_regular.match(str, pos);
-    return m_match.capturedEnd();
+    return m_match.capturedStart();
 #else
     return m_regular.indexIn(str, pos);
 #endif
