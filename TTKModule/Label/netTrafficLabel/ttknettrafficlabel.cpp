@@ -78,7 +78,7 @@ QString TTKNetTraffic::currentNewtworkName() const
     if(process.waitForFinished(3 * TTK_DN_S2MS))
     {
         const QString data(process.readAll());
-        TTKRegularExpression regx(" dev (\\w+) ");
+        static TTKRegularExpression regx(" dev (\\w+) ");
         regx.setGreediness(false);
         if(regx.match(data) != -1)
         {

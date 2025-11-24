@@ -1022,6 +1022,8 @@ void QtLineEditFactoryPrivate::slotRegExpChanged(QtProperty *property,
         if (regExp.isValid()) {
 #if QT_VERSION >= 0x050100
             newValidator = new QRegularExpressionValidator(regExp, editor);
+#elif QT_VERSION >= 0x05000
+            newValidator = new QRegExpValidator(QRegExp(regExp.pattern()), editor);
 #else
             newValidator = new QRegExpValidator(regExp, editor);
 #endif
@@ -1149,6 +1151,8 @@ QWidget *QtLineEditFactory::createEditor(QtStringPropertyManager *manager,
         QValidator *validator = nullptr;
 #if QT_VERSION >= 0x050100
         validator = new QRegularExpressionValidator(regExp, editor);
+#elif QT_VERSION >= 0x05000
+        validator = new QRegExpValidator(QRegExp(regExp.pattern()), editor);
 #else
         validator = new QRegExpValidator(regExp, editor);
 #endif

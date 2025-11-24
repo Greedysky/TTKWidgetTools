@@ -20,7 +20,7 @@ void TTKColorTableWidget::initialize()
             QListWidgetItem *it = new QListWidgetItem(this);
             it->setText(item);
 
-            TTKRegularExpression regx("RGB\\[(\\d+),(\\d+),(\\d+)\\]");
+            static TTKRegularExpression regx("RGB\\[(\\d+),(\\d+),(\\d+)\\]");
             int pos = 0;
             do
             {

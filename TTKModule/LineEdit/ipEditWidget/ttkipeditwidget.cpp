@@ -55,8 +55,7 @@ QString TTKIpEditWidget::text() const
 
 void TTKIpEditWidget::setText(const QString &text)
 {
-    const QString pattern("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
-    TTKRegularExpression regx(pattern);
+    static TTKRegularExpression regx("^((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)$");
     if(!regx.hasMatch(text))
     {
         return;

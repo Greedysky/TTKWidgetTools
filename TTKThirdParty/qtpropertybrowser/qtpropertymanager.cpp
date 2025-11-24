@@ -1541,7 +1541,7 @@ void QtStringPropertyManager::setValue(QtProperty *property, const QString &val)
     if (data.val == val)
         return;
 
-#if QT_VERSION >= 0x050100
+#if QT_VERSION >= 0x050000
     if (data.regExp.isValid() && !data.regExp.match(val).hasMatch())
 #else
     if (data.regExp.isValid() && !data.regExp.exactMatch(val))
