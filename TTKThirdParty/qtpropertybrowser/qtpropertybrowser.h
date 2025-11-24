@@ -43,7 +43,6 @@
 #define QTPROPERTYBROWSER_H
 
 #include <QSet>
-#include <QWidget>
 #if QT_VERSION >= 0x050000
 #  include <QRegularExpression>
 using RegularExpression = QRegularExpression;

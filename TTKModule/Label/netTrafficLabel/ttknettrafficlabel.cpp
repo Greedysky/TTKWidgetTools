@@ -79,7 +79,7 @@ QString TTKNetTraffic::currentNewtworkName() const
     {
         const QString data(process.readAll());
         TTKRegularExpression regx(" dev (\\w+) ");
-        regx.setGreedinessOption(true);
+        regx.setGreediness(false);
         if(regx.match(data) != -1)
         {
             return regx.captured(1);
