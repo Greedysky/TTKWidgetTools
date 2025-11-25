@@ -18,12 +18,12 @@ jobs:
         include:
           - qt: qt5
             qt_major: 5
-            qt_version: 5.9.9
+            qt_version: 5.15.2
             qt_modules:
 
           - qt: qt6
             qt_major: 6
-            qt_version: 6.5.3
+            qt_version: 6.9.3
             qt_modules: qtscxml
 
     env:
@@ -40,6 +40,18 @@ jobs:
           target: desktop
           modules: ${{matrix.qt_modules}}
           cache: 'true'
+
+      - name: Add patch for Qt5.15.2
+        if: env.QT_VERSION == '5.15.2'
+        shell: bash
+        run: |
+          # fix missing <limits> include
+          # see QTBUG-89977 https://bugreports.qt.io/browse/QTBUG-89977
+          # see QTBUG-90395 https://bugreports.qt.io/browse/QTBUG-90395
+          # see QTBUG-93452 https://bugreports.qt.io/browse/QTBUG-93452
+          # see here https://codereview.qt-project.org/c/qt/qtbase/+/330713
+          sed -i "46i#include <limits>" "${{env.QT_ROOT_DIR}}/include/QtCore/qfloat16.h"
+        working-directory: ${{runner.workspace}}
 
       - name: Install linuxdeploy
         uses: miurahr/install-linuxdeploy-action@v1
@@ -73,7 +85,7 @@ jobs:
           # add dependency for openssl
           wget https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z
           7z x openssl.7z
-          cp linux64/* ${{env.TTK_MODULE}}/lib
+          cp linux64/v3/* ${{env.TTK_MODULE}}/lib
           # add portable binary package
           7z a ${{env.TTK_MODULE}}-${{env.TTK_VERSION}}-linux-${{matrix.qt}}-x64.7z ${{env.TTK_MODULE}}
         working-directory: ${{runner.workspace}}/install

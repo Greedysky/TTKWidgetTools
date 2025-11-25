@@ -16,7 +16,7 @@ jobs:
         os: [windows-2022]
 
     env:
-      QT_VERSION: 6.5.3
+      QT_VERSION: 6.9.3
 
     runs-on: ${{matrix.os}}
     steps:
@@ -49,7 +49,7 @@ jobs:
           # add dependency for openssl
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
           7z x openssl.7z
-          cp win64/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp win64/v1/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
           cp ${{env.QT_ROOT_DIR}}/bin/Qt6Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}

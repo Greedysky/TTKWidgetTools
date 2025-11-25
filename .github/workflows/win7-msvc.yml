@@ -40,6 +40,18 @@ jobs:
           target: desktop
           cache: 'true'
 
+      - name: Add patch for Qt5.15.2
+        if: env.QT_VERSION == '5.15.2'
+        shell: bash
+        run: |
+          # fix missing <limits> include
+          # see QTBUG-89977 https://bugreports.qt.io/browse/QTBUG-89977
+          # see QTBUG-90395 https://bugreports.qt.io/browse/QTBUG-90395
+          # see QTBUG-93452 https://bugreports.qt.io/browse/QTBUG-93452
+          # see here https://codereview.qt-project.org/c/qt/qtbase/+/330713
+          sed -i "46i#include <limits>" "${{env.QT_ROOT_DIR}}\include\QtCore\qfloat16.h"
+        working-directory: ${{runner.workspace}}
+
       - name: Create build dir
         run: mkdir build
         working-directory: ${{runner.workspace}}
@@ -69,7 +81,7 @@ jobs:
           # add dependency for openssl
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
           7z x openssl.7z
-          cp win${{matrix.arch}}/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp win${{matrix.arch}}/v1/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
           cp ${{env.QT_ROOT_DIR}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}

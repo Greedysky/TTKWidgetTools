@@ -60,7 +60,7 @@ jobs:
           # add dependency for openssl
           curl -L https://github.com/Greedysky/Resource/releases/download/1.0.0.0/openssl.7z -o openssl.7z
           7z x openssl.7z
-          cp win32.old/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp win32/v0/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           cp ${{env.QT_ROOT_DIR}}/plugins/bearer ${{env.TTK_MODULE}}/${{env.TTK_VERSION}} -Recurse -Container -Force
           cp ${{env.QT_ROOT_DIR}}/plugins/iconengines ${{env.TTK_MODULE}}/${{env.TTK_VERSION}} -Recurse -Container -Force
@@ -70,9 +70,9 @@ jobs:
           cp ${{env.QT_BIN_DIR}}/QtNetwork4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.QT_BIN_DIR}}/QtSvg4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.QT_BIN_DIR}}/QtXml4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
-          cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.MINGW_PATH}}/libstdc++-6.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.MINGW_PATH}}/libwinpthread-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           # add portable binary package
