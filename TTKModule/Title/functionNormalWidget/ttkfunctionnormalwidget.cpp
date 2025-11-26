@@ -35,11 +35,11 @@ void TTKFunctionNormalWidget::paintEvent(QPaintEvent *event)
 void TTKFunctionNormalWidget::mouseMoveEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    if(QtMouseX(event) < m_width && QtMouseY(event))
+    if(QtPositionX(event) < m_width && QtPositionY(event))
     {
-        if(QtMouseY(event) <= m_items.count() * ITEM_HIGHT)
+        if(QtPositionY(event) <= m_items.count() * ITEM_HIGHT)
         {
-            m_backGroundColor = QtMouseY(event) / ITEM_HIGHT;
+            m_backGroundColor = QtPositionY(event) / ITEM_HIGHT;
             update();
         }
     }
@@ -50,11 +50,11 @@ void TTKFunctionNormalWidget::mousePressEvent(QMouseEvent *event)
     Q_UNUSED(event);
     if(event->button() == Qt::LeftButton)
     {
-        if(QtMouseX(event) < m_width && QtMouseY(event))
+        if(QtPositionX(event) < m_width && QtPositionY(event))
         {
-            if(QtMouseY(event) <= m_items.count() * ITEM_HIGHT)
+            if(QtPositionY(event) <= m_items.count() * ITEM_HIGHT)
             {
-                m_newChooseBackGround = QtMouseY(event) / ITEM_HIGHT;
+                m_newChooseBackGround = QtPositionY(event) / ITEM_HIGHT;
                 m_timer->start();
             }
         }

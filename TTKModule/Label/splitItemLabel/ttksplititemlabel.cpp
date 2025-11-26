@@ -57,7 +57,7 @@ void TTKSplitItemLabel::mouseMoveEvent(QMouseEvent *event)
     for(const QString &var : qAsConst(data))
     {
         const int fs = QtFontWidth(ftm, var.trimmed());
-        if(offset <= QtMouseX(event) && QtMouseX(event) <= offset + fs)
+        if(offset <= QtPositionX(event) && QtPositionX(event) <= offset + fs)
         {
             setCursor(QCursor(Qt::PointingHandCursor));
             m_lineGeometry = QRectF(offset, height() - 3, fs, 0.5);

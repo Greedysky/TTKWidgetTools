@@ -27,7 +27,6 @@ jobs:
     env:
       QT_VERSION: 5.15.18
       QT_ROOT_DIR: D:/a/TTKWidgetTools/Qt/5.15.18/mingw810_${{matrix.arch}}
-      QT_BIN_DIR: D:/a/TTKWidgetTools/Qt/5.15.18/mingw810_${{matrix.arch}}/bin
       MINGW_PATH: D:/a/TTKWidgetTools/mingw/bin
 
     runs-on: ${{matrix.os}}
@@ -40,7 +39,7 @@ jobs:
           7z x Qt.7z -oQt
           mv Qt/5.15.18-shared Qt/5.15.18
           # set environment variable
-          echo "${{env.QT_BIN_DIR}};" >> $env:GITHUB_PATH
+          echo "${{env.QT_ROOT_DIR}}/bin;" >> $env:GITHUB_PATH
         working-directory: ${{runner.workspace}}
 
       - name: Install MinGW810_${{matrix.arch}}
@@ -73,7 +72,7 @@ jobs:
           cp win${{matrix.arch}}/v1/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
           windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
-          cp ${{env.QT_BIN_DIR}}/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.QT_ROOT_DIR}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force
           rm ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/translations -Recurse

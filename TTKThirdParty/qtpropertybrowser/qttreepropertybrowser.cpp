@@ -205,11 +205,11 @@ void QtPropertyEditorView::mousePressEvent(QMouseEvent *event)
 
     if (item) {
         if ((item != m_editorPrivate->editedItem()) && (event->button() == Qt::LeftButton)
-                && (header()->logicalIndexAt(QtMouseX(event)) == 1)
+                && (header()->logicalIndexAt(QtPositionX(event)) == 1)
                 && ((item->flags() & (Qt::ItemIsEditable | Qt::ItemIsEnabled)) == (Qt::ItemIsEditable | Qt::ItemIsEnabled))) {
             editItem(item, 1);
         } else if (!m_editorPrivate->hasValue(item) && m_editorPrivate->markPropertiesWithoutValue() && !rootIsDecorated()) {
-            if (QtMouseX(event) + header()->offset() < 20)
+            if (QtPositionX(event) + header()->offset() < 20)
                 item->setExpanded(!item->isExpanded());
         }
     }
