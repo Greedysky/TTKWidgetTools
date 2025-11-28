@@ -16,10 +16,13 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS += TTKCommon TTKModule TTKExample TTKRun
+TEMPLATE = app
 
-include($$PWD/TTKVersion.pri)
+DESTDIR = $$OUT_PWD/../../bin
+TARGET = TTKWidgetTools
 
-unix:system(sh $$PWD/TTKUtils/resource.sh $$PWD/TTKResource $$OUT_PWD/bin/$$TTK_VERSION)
+include($$PWD/../../TTKCommon/TTKRun/TTKRun.pri)
+
+SOURCES += $$PWD/ttkrunmain.cpp
+
+win32:RC_FILE = $$PWD/TTKApp.rc

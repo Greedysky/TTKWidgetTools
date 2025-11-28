@@ -16,10 +16,6 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS += TTKCommon TTKModule TTKExample TTKRun
+cmake_minimum_required(VERSION 3.18.0)
 
-include($$PWD/TTKVersion.pri)
-
-unix:system(sh $$PWD/TTKUtils/resource.sh $$PWD/TTKResource $$OUT_PWD/bin/$$TTK_VERSION)
+add_subdirectory(TTKApp)

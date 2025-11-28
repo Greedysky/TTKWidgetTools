@@ -26,7 +26,7 @@ include($$PWD/../TTKWidgetTools.pri)
 include($$PWD/../TTKUi/TTKUi.pri)
 include($$PWD/../TTKCommon/TTKApplication/TTKApplication.pri)
 
-TARGET = TTKWidgetTools
+TARGET = TTKService
 
 LIBS += -L$$DESTDIR -lTTKCore
 

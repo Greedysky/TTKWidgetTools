@@ -77,7 +77,7 @@ jobs:
         run: |
           cd ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
-          linuxdeploy-x86_64.AppImage --executable=${{env.TTK_MODULE}} --appdir=image --plugin=qt
+          linuxdeploy-x86_64.AppImage --executable=TTKService --appdir=image --plugin=qt
           rm image/usr/lib/libTTK*.so
           mv image/usr/lib image/usr/plugins image/usr/bin/qt.conf ..
           rm -rf image

@@ -18,7 +18,7 @@
 
 cmake_minimum_required(VERSION 3.18.0)
 
-project(TTKWidgetTools)
+project(TTKService)
 
 add_subdirectory(Button)
 add_subdirectory(Label)

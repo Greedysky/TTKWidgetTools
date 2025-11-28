@@ -71,7 +71,10 @@ jobs:
           7z x openssl.7z
           cp win${{matrix.arch}}/v1/*.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # add dependency libraries and so on
-          windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{env.TTK_MODULE}}.exe
+          windeployqt ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/TTKService.exe
+          cp ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/libstdc++-6.dll ${{env.TTK_MODULE}}
+          cp ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/libwinpthread-1.dll ${{env.TTK_MODULE}}
+          cp ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}/${{matrix.collection}}.dll ${{env.TTK_MODULE}}
           cp ${{env.QT_ROOT_DIR}}/bin/Qt5Xml.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           # remove useless library dependency
           ls -Filter "*.a" -Recurse | Remove-Item -Force

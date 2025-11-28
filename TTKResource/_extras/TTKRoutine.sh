@@ -14,8 +14,6 @@ if [ "${dirpath%${tmp}}" != "/" ]; then
   dirpath=$PWD/${dirpath}
 fi
 
-dirpath=${dirpath}/../
-
 case "$(uname)" in
   Darwin)
     export DYLD_LIBRARY_PATH="${dirpath}:${dirpath}/lib:${dirpath}/3.1.0.0:$DYLD_LIBRARY_PATH"

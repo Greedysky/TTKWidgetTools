@@ -16,10 +16,27 @@
 # * with this program; If not, see <http://www.gnu.org/licenses/>.
 # ***************************************************************************
 
-TEMPLATE = subdirs
-CONFIG += ordered
-SUBDIRS += TTKCommon TTKModule TTKExample TTKRun
+cmake_minimum_required(VERSION 3.18.0)
 
-include($$PWD/TTKVersion.pri)
+project(TTKWidgetTools)
 
-unix:system(sh $$PWD/TTKUtils/resource.sh $$PWD/TTKResource $$OUT_PWD/bin/$$TTK_VERSION)
+set(LIBRARY_OUTPUT_PATH ${TTK_BUILD_DIR})
+set(EXECUTABLE_OUTPUT_PATH ${TTK_BUILD_DIR})
+
+include_directories(${TTK_COMMON_DIR})
+include_directories(${TTK_COMMON_RUN_DIR})
+
+set(HEADER_FILES
+  ${TTK_COMMON_RUN_DIR}/ttkrunobject.h
+)
+
+set(SOURCE_FILES
+  ${TTK_COMMON_RUN_DIR}/ttkrunobject.cpp
+  ttkrunmain.cpp
+)
+
+if(WIN32)
+  list(APPEND SOURCE_FILES TTKApp.rc)
+endif()
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})

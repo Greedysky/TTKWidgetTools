@@ -17,7 +17,7 @@ fi
 packpath=${dirpath}/TTKWidgetTools.desktop
 userpath=${homepath}/.local/share/applications
 iconpath="${dirpath}/share/pixmaps/ttkwidgettools.png"
-execpath="${dirpath}/../3.1.0.0/TTKWidgetTools.sh"
+execpath="${dirpath}/../TTKWidgetTools"
 
 sh ${dirpath}/make_desktop_raw.sh ${packpath} ${iconpath} ${execpath}
 

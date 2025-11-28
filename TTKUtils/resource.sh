@@ -7,11 +7,13 @@ output="$2"
 mkdir -p "${output}"
 
 #copy
-cp -rv "${source}/TTKWidgetTools.sh" "${output}/TTKWidgetTools.sh"
-cp -rv "${source}/TTKRoutine.sh" "${output}/TTKRoutine.sh"
+cp -rv "${source}/TTKWidgetTools.sh" "${output}/../TTKWidgetTools.sh"
+cp -rv "${source}/TTKRoutine.sh" "${output}/../TTKRoutine.sh"
+cp -rv "${source}/TTKService.sh" "${output}/TTKService.sh"
 cp -rv "${source}/TTKRoutineCopy.sh" "${output}/TTKRoutineCopy.sh"
 
 #chmod
-chmod +x "${output}/TTKWidgetTools.sh"
-chmod +x "${output}/TTKRoutine.sh"
+chmod +x "${output}/../TTKWidgetTools.sh"
+chmod +x "${output}/../TTKRoutine.sh"
+chmod +x "${output}/TTKService.sh"
 chmod +x "${output}/TTKRoutineCopy.sh"

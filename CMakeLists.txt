@@ -229,6 +229,7 @@ endif()
 add_subdirectory(TTKCommon)
 add_subdirectory(TTKModule)
 add_subdirectory(TTKExample)
+add_subdirectory(TTKRun)
 
 
 install(DIRECTORY "${TTK_BUILD_DIR}/" DESTINATION "${TTK_INSTALL_DIR}" USE_SOURCE_PERMISSIONS)
@@ -240,7 +241,9 @@ install(FILES "${TTK_BASE_DIR}/ChangeLog"
         DESTINATION "${TTK_INSTALL_DIR}/doc")
 install(FILES "${TTK_UTILS_DIR}/resource/README.txt" DESTINATION "${TTK_INSTALL_DIR}")
 # copy resource
-if(UNIX)
+if(WIN32)
+  install(FILES "${TTK_UTILS_DIR}/resource/qicon.dll" DESTINATION "${TTK_INSTALL_DIR}")
+else()
   install(DIRECTORY "${TTK_UTILS_DIR}/deploy" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/install.sh" DESTINATION "${TTK_INSTALL_DIR}")
   install(FILES "${TTK_UTILS_DIR}/uninstall.sh" DESTINATION "${TTK_INSTALL_DIR}")

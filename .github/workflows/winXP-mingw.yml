@@ -69,6 +69,9 @@ jobs:
           cp ${{env.QT_ROOT_DIR}}/bin/QtNetwork4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.QT_ROOT_DIR}}/bin/QtSvg4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.QT_ROOT_DIR}}/bin/QtXml4.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
+          cp ${{env.MINGW_PATH}}/libstdc++-6.dll ${{env.TTK_MODULE}}
+          cp ${{env.MINGW_PATH}}/libwinpthread-1.dll ${{env.TTK_MODULE}}
+          cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}
           cp ${{env.MINGW_PATH}}/libstdc++-6.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.MINGW_PATH}}/libwinpthread-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
           cp ${{env.MINGW_PATH}}/libgcc_s_dw2-1.dll ${{env.TTK_MODULE}}/${{env.TTK_VERSION}}
