@@ -150,13 +150,18 @@ endif()
 
 set(CMAKE_PREFIX_PATH ${QT_INSTALL_DIR} CACHE PATH "Qt install path")
 
+
 find_program(QT_QMAKE_EXECUTABLE qmake)
 if(QT_QMAKE_EXECUTABLE)
   message(STATUS "Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
 else()
-  message(FATAL_ERROR "Could not find qmake executable")
+  find_program(QT_QMAKE_EXECUTABLE qmake-qt${TTK_QT_VERSION})
+  if(QT_QMAKE_EXECUTABLE)
+    message(STATUS "Found qmake executable: " ${QT_QMAKE_EXECUTABLE})
+  else()
+    message(FATAL_ERROR "Could not find qmake executable")
+  endif()
 endif()
-
 
 if(TTK_QT_VERSION VERSION_EQUAL "4")
   set(minimum_required_qt_version "4.8")
