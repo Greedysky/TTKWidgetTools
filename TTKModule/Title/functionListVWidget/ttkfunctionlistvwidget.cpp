@@ -20,7 +20,7 @@ TTKFunctionListVWidget::TTKFunctionListVWidget(QWidget *parent)
         m_items << item;
     }
 
-    m_items.front()->setSelectedMode(true);
+    m_items.first()->setSelectedMode(true);
 
     layout->addStretch(1);
     setLayout(layout);

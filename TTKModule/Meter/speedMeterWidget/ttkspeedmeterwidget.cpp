@@ -288,9 +288,9 @@ void TTKSpeedMeterWidget::drawIndicator(QPainter *painter)
 
     painter->setBrush(indicatorGradient);
     QVector<QPointF> potVec;
-    potVec.push_back(topPot);
-    potVec.push_back(bottomLeftPot);
-    potVec.push_back(bottomRightPot);
+    potVec.append(topPot);
+    potVec.append(bottomLeftPot);
+    potVec.append(bottomRightPot);
 
     painter->drawPolygon(potVec);
     painter->restore();

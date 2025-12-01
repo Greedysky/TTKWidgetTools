@@ -151,7 +151,7 @@ void TTKFunctionToolBoxWidgetItem::setExpand(bool expand)
 
 bool TTKFunctionToolBoxWidgetItem::isExpand() const
 {
-    return !m_items.isEmpty() ? m_items.front()->isVisible() : false;
+    return !m_items.isEmpty() ? m_items.first()->isVisible() : false;
 }
 
 int TTKFunctionToolBoxWidgetItem::count() const

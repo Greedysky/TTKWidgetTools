@@ -86,7 +86,7 @@ QString TTKNetTraffic::currentNewtworkName() const
         }
     }
 #endif
-    return newtworkNames().back();
+    return newtworkNames().last();
 }
 
 QStringList TTKNetTraffic::newtworkNames() const

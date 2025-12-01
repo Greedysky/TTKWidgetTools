@@ -140,15 +140,15 @@ void TTKGrabItemWidget::resizeEvent(QResizeEvent *event)
     QWidget::resizeEvent(event);
 
     m_listMarker.clear();
-    m_listMarker.push_back(QPoint(0, 0));
-    m_listMarker.push_back(QPoint(width(), 0));
-    m_listMarker.push_back(QPoint(0, height()));
-    m_listMarker.push_back(QPoint(width(), height()));
+    m_listMarker.append(QPoint(0, 0));
+    m_listMarker.append(QPoint(width(), 0));
+    m_listMarker.append(QPoint(0, height()));
+    m_listMarker.append(QPoint(width(), height()));
 
-    m_listMarker.push_back(QPoint((width() >> 1), 0));
-    m_listMarker.push_back(QPoint((width() >> 1), height()));
-    m_listMarker.push_back(QPoint(0, (height() >> 1)));
-    m_listMarker.push_back(QPoint(width(), (height() >> 1)));
+    m_listMarker.append(QPoint((width() >> 1), 0));
+    m_listMarker.append(QPoint((width() >> 1), height()));
+    m_listMarker.append(QPoint(0, (height() >> 1)));
+    m_listMarker.append(QPoint(width(), (height() >> 1)));
 }
 
 void TTKGrabItemWidget::paintEvent(QPaintEvent *event)

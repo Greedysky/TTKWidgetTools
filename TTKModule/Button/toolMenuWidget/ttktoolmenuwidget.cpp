@@ -71,7 +71,7 @@ void TTKToolMenuWidget::initialize()
 {
     setTranslucentBackground();
     m_containWidget->setFixedSize(140, 100);
-    m_menu->removeAction(m_menu->actions().front());
+    m_menu->removeAction(m_menu->actions().first());
 
     m_menu->addAction("One");
     m_menu->addAction("Two");

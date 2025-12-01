@@ -411,7 +411,7 @@ void QtProperty::addSubProperty(QtProperty *property)
 {
     QtProperty *after = 0;
     if (d_ptr->m_subItems.count() > 0)
-        after = d_ptr->m_subItems.back();
+        after = d_ptr->m_subItems.last();
     insertSubProperty(property, after);
 }
 
@@ -441,7 +441,7 @@ void QtProperty::insertSubProperty(QtProperty *property,
     QList<QtProperty *> pendingList = property->subProperties();
     QMap<QtProperty *, bool> visited;
     while (!pendingList.isEmpty()) {
-        QtProperty *i = pendingList.front();
+        QtProperty *i = pendingList.first();
         if (i == this)
             return;
         pendingList.removeFirst();
@@ -1824,7 +1824,7 @@ QtBrowserItem *QtAbstractPropertyBrowser::addProperty(QtProperty *property)
 {
     QtProperty *afterProperty = 0;
     if (d_ptr->m_subItems.count() > 0)
-        afterProperty = d_ptr->m_subItems.back();
+        afterProperty = d_ptr->m_subItems.last();
     return insertProperty(property, afterProperty);
 }
 

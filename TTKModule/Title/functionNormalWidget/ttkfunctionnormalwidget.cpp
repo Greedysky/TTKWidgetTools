@@ -70,7 +70,7 @@ void TTKFunctionNormalWidget::setSize(qreal w, qreal h)
 
 void TTKFunctionNormalWidget::addItem(const QString &text)
 {
-    m_items.push_back(text);
+    m_items.append(text);
 }
 
 void TTKFunctionNormalWidget::drawItem(QPainter *painter)

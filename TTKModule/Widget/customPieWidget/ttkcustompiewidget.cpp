@@ -56,7 +56,7 @@ void TTKCustomPieWidget::setDataPie(const PieDataList &datas)
 
 void TTKCustomPieWidget::appendPie(const QString &label, double value, const QColor &color)
 {
-    m_datas.push_back({color, label, value});
+    m_datas.append({color, label, value});
 }
 
 QSize TTKCustomPieWidget::sizeHint() const
