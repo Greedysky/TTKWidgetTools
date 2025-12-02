@@ -19,14 +19,14 @@
  * with this program; If not, see <http://www.gnu.org/licenses/>.
  ***************************************************************************/
 
-//update time 2025.05.05
+//update time 2025.12.02
 #define TTK_MAJOR_VERSION 3
-#define TTK_MINOR_VERSION 1
+#define TTK_MINOR_VERSION 2
 #define TTK_PATCH_VERSION 0
 
 #define TTK_VERSION             TTK_VERSION_CHECK(TTK_MAJOR_VERSION, TTK_MINOR_VERSION, TTK_PATCH_VERSION, 0)
 #define TTK_VERSION_STR         TTK_VERSION_CHECK_STR(TTK_MAJOR_VERSION, TTK_MINOR_VERSION, TTK_PATCH_VERSION, 0)
-#define TTK_VERSION_TIME_STR    "(2025/05/05)"
+#define TTK_VERSION_TIME_STR    "(2025/12/02)"
 
 #define TTK_RC_FILEVERSION      TTK_MAJOR_VERSION, TTK_MINOR_VERSION, TTK_PATCH_VERSION, 0
 #define TTK_RC_PRODUCTVERSION   TTK_VERSION_STR

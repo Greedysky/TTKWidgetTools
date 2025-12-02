@@ -6,7 +6,7 @@ on: workflow_call
 
 env:
   TTK_MODULE: TTKWidgetTools
-  TTK_VERSION: 3.1.0.0
+  TTK_VERSION: 3.2.0.0
 
 jobs:
   build:

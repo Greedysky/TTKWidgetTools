@@ -1,7 +1,7 @@
 #!/bin/sh
 
 packname=TTKWidgetTools
-packvern=3.1.0.0
+packvern=3.2.0.0
 rootpath=data/opt
 datapath=data/DEBIAN
 
