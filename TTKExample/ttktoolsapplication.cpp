@@ -1,5 +1,6 @@
 #include "ttktoolsapplication.h"
 #include "ui_ttktoolsapplication.h"
+#include "ttkdesktopscreen.h"
 #include "ttkfunctionitem.h"
 //
 #include "ttkbuttoninclude.h"
@@ -49,6 +50,8 @@ TTKToolsApplication::TTKToolsApplication(QWidget *parent)
     ui->windowClose->setStyleSheet(BtnTClose);
     ui->windowClose->setCursor(QCursor(Qt::PointingHandCursor));
     connect(ui->windowClose, SIGNAL(clicked()), SLOT(close()));
+
+    TTKDesktopScreen::centerWidget(this);
 }
 
 TTKToolsApplication::~TTKToolsApplication()
