@@ -30,7 +30,7 @@ include($$PWD/toolMenuWidget/ToolMenuWidget.pri)
 
 INCLUDEPATH += \
     $$PWD \
-    $$PWD/../ \
+    $$PWD/.. \
     $$PWD/../../TTKModule/Button/checkButtonWidget \
     $$PWD/../../TTKModule/Button/colorButtonWidget \
     $$PWD/../../TTKModule/Button/flatButtonWidget \

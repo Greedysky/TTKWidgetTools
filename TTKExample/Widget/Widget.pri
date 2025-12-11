@@ -31,7 +31,7 @@ include($$PWD/smoothMovingTableWidget/SmoothMovingTableWidget.pri)
 
 INCLUDEPATH += \
     $$PWD \
-    $$PWD/../ \
+    $$PWD/.. \
     $$PWD/../../TTKModule/Widget/animationStackedWidget \
     $$PWD/../../TTKModule/Widget/animation2StackedWidget \
     $$PWD/../../TTKModule/Widget/calendarWidget \

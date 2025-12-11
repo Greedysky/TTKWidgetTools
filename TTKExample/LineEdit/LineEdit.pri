@@ -21,7 +21,7 @@ include($$PWD/ipEditWidget/IpEditWidget.pri)
 
 INCLUDEPATH += \
     $$PWD \
-    $$PWD/../ \
+    $$PWD/.. \
     $$PWD/../../TTKModule/LineEdit/ipEditWidget \
     $$PWD/../../TTKModule/LineEdit/lineEditWidget
 

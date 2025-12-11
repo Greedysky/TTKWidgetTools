@@ -36,7 +36,7 @@ include($$PWD/zoomWaitProgressWidget/ZoomWaitProgressWidget.pri)
 
 INCLUDEPATH += \
     $$PWD \
-    $$PWD/../ \
+    $$PWD/.. \
     $$PWD/../../TTKModule/Progress/animationProgressWidget \
     $$PWD/../../TTKModule/Progress/circleProgressWidget \
     $$PWD/../../TTKModule/Progress/circleWaitProgressWidget \
