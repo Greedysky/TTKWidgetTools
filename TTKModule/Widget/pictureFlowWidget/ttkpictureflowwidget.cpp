@@ -768,9 +768,9 @@ TTKPictureFlowWidget::TTKPictureFlowWidget(QWidget* parent)
     : QWidget(parent),
       m_useResize(false)
 {
-    setAttribute(Qt::WA_StaticContents, true);
-    setAttribute(Qt::WA_OpaquePaintEvent, true);
-    setAttribute(Qt::WA_NoSystemBackground, true);
+    setAttribute(Qt::WA_StaticContents);
+    setAttribute(Qt::WA_OpaquePaintEvent);
+    setAttribute(Qt::WA_NoSystemBackground);
 
     m_state = new TTKPictureFlowWidgetState;
     m_state->reset();

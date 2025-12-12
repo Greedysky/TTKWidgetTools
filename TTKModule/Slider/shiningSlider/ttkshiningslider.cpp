@@ -8,7 +8,7 @@ TTKShiningSlider::TTKShiningSlider(QWidget *parent)
 {
     m_label = new TTKGifProgressWidget(this);
     m_label->setType(TTKGifProgressWidget::Module::RecordRed);
-    m_label->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    m_label->setAttribute(Qt::WA_TransparentForMouseEvents);
     m_label->move(15, 5);
     m_label->hide();
 
