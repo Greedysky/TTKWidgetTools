@@ -290,7 +290,7 @@ int QtPropertyEditorDelegate::indentation(const QModelIndex &index) const
 
 void QtPropertyEditorDelegate::slotEditorDestroyed(QObject *object)
 {
-    if (QWidget *w = qobject_cast<QWidget *>(object)) {
+    if (QWidget *w = qobject_cast<QWidget*>(object)) {
         const EditorToPropertyMap::iterator it = m_editorToProperty.find(w);
         if (it != m_editorToProperty.end()) {
             m_propertyToEditor.remove(it.value());
@@ -319,7 +319,7 @@ QWidget *QtPropertyEditorDelegate::createEditor(QWidget *parent,
             QWidget *editor = m_editorPrivate->createEditor(property, parent);
             if (editor) {
                 editor->setAutoFillBackground(true);
-                editor->installEventFilter(const_cast<QtPropertyEditorDelegate *>(this));
+                editor->installEventFilter(const_cast<QtPropertyEditorDelegate*>(this));
                 connect(editor, SIGNAL(destroyed(QObject *)), this, SLOT(slotEditorDestroyed(QObject *)));
                 m_propertyToEditor[property] = editor;
                 m_editorToProperty[editor] = property;
@@ -425,7 +425,7 @@ QSize QtPropertyEditorDelegate::sizeHint(const QStyleOptionViewItem &option,
 bool QtPropertyEditorDelegate::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusOut) {
-        QFocusEvent *fe = static_cast<QFocusEvent *>(event);
+        QFocusEvent *fe = static_cast<QFocusEvent*>(event);
         if (fe->reason() == Qt::ActiveWindowFocusReason)
             return false;
     }

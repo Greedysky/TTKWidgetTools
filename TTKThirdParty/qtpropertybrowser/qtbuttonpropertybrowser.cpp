@@ -157,7 +157,7 @@ void QtButtonPropertyBrowserPrivate::init(QWidget *parent)
 
 void QtButtonPropertyBrowserPrivate::slotEditorDestroyed()
 {
-    QWidget *editor = qobject_cast<QWidget *>(q_ptr->sender());
+    QWidget *editor = qobject_cast<QWidget*>(q_ptr->sender());
     if (!editor)
         return;
     if (!m_widgetToItem.contains(editor))

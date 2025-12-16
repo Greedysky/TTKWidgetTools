@@ -1699,7 +1699,7 @@ QtCharEdit::QtCharEdit(QWidget *parent)
 bool QtCharEdit::eventFilter(QObject *o, QEvent *e)
 {
     if (o == m_lineEdit && e->type() == QEvent::ContextMenu) {
-        QContextMenuEvent *c = static_cast<QContextMenuEvent *>(e);
+        QContextMenuEvent *c = static_cast<QContextMenuEvent*>(e);
         QMenu *menu = m_lineEdit->createStandardContextMenu();
         QList<QAction *> actions = menu->actions();
         QListIterator<QAction *> itAction(actions);

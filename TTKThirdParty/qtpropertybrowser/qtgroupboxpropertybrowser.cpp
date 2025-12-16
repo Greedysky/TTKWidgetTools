@@ -108,7 +108,7 @@ void QtGroupBoxPropertyBrowserPrivate::init(QWidget *parent)
 
 void QtGroupBoxPropertyBrowserPrivate::slotEditorDestroyed()
 {
-    QWidget *editor = qobject_cast<QWidget *>(q_ptr->sender());
+    QWidget *editor = qobject_cast<QWidget*>(q_ptr->sender());
     if (!editor)
         return;
     if (!m_widgetToItem.contains(editor))

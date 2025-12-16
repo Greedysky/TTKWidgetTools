@@ -39,7 +39,7 @@ QSize TTKCalendarWidget::sizeHint() const
 
 void TTKCalendarWidget::buttonClicked()
 {
-    QPushButton *senderButton = qobject_cast<QPushButton *>(sender());
+    QPushButton *senderButton = qobject_cast<QPushButton*>(sender());
     if(senderButton == m_leftYearButton)
     {
         showPreviousYear();
@@ -178,7 +178,7 @@ void TTKCalendarWidget::initTopWidget()
     hboxLayout->addWidget(m_rightYearButton);
     topWidget->setLayout(hboxLayout);
 
-    QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout *>(layout());
+    QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout*>(layout());
     vBodyLayout->insertWidget(0, topWidget);
 
     connect(m_leftYearButton,   SIGNAL(clicked()), this, SLOT(buttonClicked()));
@@ -195,6 +195,6 @@ void TTKCalendarWidget::initBottomWidget()
     bottomWidget->setFixedHeight(20);
     bottomWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
-    QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout *>(layout());
+    QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout*>(layout());
     vBodyLayout->addWidget(bottomWidget);
 }

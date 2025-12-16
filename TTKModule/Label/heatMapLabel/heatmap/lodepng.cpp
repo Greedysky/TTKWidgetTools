@@ -979,7 +979,7 @@ static unsigned getTreeInflateDynamic(HuffmanTree* tree_ll, HuffmanTree* tree_d,
   if((*bp) >> 3 >= inlength - 2) return 49; /*error: the bit pointer is or will go past the memory*/
 
   /*number of literal/length codes + 257. Unlike the spec, the value 257 is added to it here already*/
-  HLIT =  readBitsFromStream(bp, in, 5) + 257;
+  HLIT = readBitsFromStream(bp, in, 5) + 257;
   /*number of distance codes. Unlike the spec, the value 1 is added to it here already*/
   HDIST = readBitsFromStream(bp, in, 5) + 1;
   /*number of code length codes. Unlike the spec, the value 4 is added to it here already*/

@@ -5479,7 +5479,7 @@ void QtFlagPropertyManager::initializeProperty(QtProperty *property)
 {
     d_ptr->m_values[property] = QtFlagPropertyManagerPrivate::Data();
 
-    d_ptr->m_propertyToFlags[property] = QList<QtProperty *>();
+    d_ptr->m_propertyToFlags[property] = QList<QtProperty*>();
 }
 
 /*!
