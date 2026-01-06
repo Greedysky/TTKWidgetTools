@@ -40,7 +40,8 @@ public:
     explicit TTKAnimationStackedWidget(QWidget *parent = nullptr);
     ~TTKAnimationStackedWidget();
 
-    void start(int index);
+    void start(int current);
+    void start(int previous, int current);
     void setLength(int length, Module type);
 
     void setDuration(int duration);
@@ -55,8 +56,8 @@ private Q_SLOTS:
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
 
-    void renderPreviousWidget(QPainter *painter, QTransform &transform);
-    void renderCurrentWidget(QPainter *painter, QTransform &transform);
+    void renderPreviousWidget(QPainter *painter);
+    void renderCurrentWidget(QPainter *painter);
 
     bool m_isAnimating;
     float m_currentValue;
