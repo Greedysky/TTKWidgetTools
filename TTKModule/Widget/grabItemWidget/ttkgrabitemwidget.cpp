@@ -156,6 +156,8 @@ void TTKGrabItemWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
+
     QPen pen(QColor(0, 174, 255), 2);
     painter.setPen(pen);
     painter.drawRect(rect());

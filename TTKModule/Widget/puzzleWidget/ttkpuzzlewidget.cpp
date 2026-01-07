@@ -51,7 +51,8 @@ void TTKPuzzleItemWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+
     QPainterPath clippath;
     clippath.addRoundedRect(rect(), 4, 4);
     painter.setClipPath(clippath);
@@ -78,7 +79,7 @@ void TTKPuzzleItemWidget::paintEvent(QPaintEvent *event)
     puzzlePixmap.fill(Qt::transparent);
 
     QPainter puzzlePainter(&puzzlePixmap);
-    puzzlePainter.setRenderHints(QPainter::Antialiasing);
+    puzzlePainter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     puzzlePainter.setClipPath(cutoutPath);
     puzzlePainter.setPen(QPen(QColor(80, 80, 80), 2));
     puzzlePainter.setBrush(QColor(200, 200, 200, 100));

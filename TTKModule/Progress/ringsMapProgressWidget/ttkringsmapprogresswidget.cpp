@@ -29,7 +29,7 @@ void TTKRingsMapProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    painter.setRenderHints(QPainter::Antialiasing |QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
 
     m_angle = 360 * m_value / 100;
 

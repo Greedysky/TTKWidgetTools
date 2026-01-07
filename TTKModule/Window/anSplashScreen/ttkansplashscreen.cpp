@@ -118,7 +118,7 @@ void TTKAnSplashScreen::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
     QPixmap pix;
     pix.load(":/res/lb_loading");

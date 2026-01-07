@@ -130,7 +130,7 @@ void TTKAntLineLabel::paintEvent(QPaintEvent *event)
     const int side = std::min(w, h);
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     QPen pen;
     pen.setWidth(m_lineWidth);

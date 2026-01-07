@@ -178,6 +178,7 @@ void TTKCircleProgressWidget::paintEvent(QPaintEvent *event)
     }
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawPixmap(0.5 * (width() - pix.width()), 0.5 * (height() - pix.height()), pix);
 }
 

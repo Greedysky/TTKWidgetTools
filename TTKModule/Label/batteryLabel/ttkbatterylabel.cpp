@@ -190,7 +190,7 @@ void TTKBatteryLabel::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     drawBorder(&painter);
     drawBackground(&painter);

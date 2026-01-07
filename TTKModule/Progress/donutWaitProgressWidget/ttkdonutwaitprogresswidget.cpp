@@ -62,7 +62,7 @@ void TTKDonutWaitProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter.translate(width() / 2, height() / 2);
 
     const int side = qMin(width(), height());

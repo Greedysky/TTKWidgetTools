@@ -28,7 +28,7 @@ void TTKRingsProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     m_angle = 360 * m_value / 100;
 

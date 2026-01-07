@@ -26,6 +26,7 @@ void TTKFunctionNormalWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     drawListWidget(&painter);
     drawChooseItem(&painter);
@@ -130,7 +131,6 @@ void TTKFunctionNormalWidget::drawListWidget(QPainter* painter)
 {
     QPen pen(Qt::NoPen);
     painter->setPen(pen);
-    painter->setRenderHint(QPainter::Antialiasing);
 
     QLinearGradient linerGradient(QPointF(0, 0), QPointF(0, m_height));
     linerGradient.setColorAt(0.0, QColor(30, 30, 39));

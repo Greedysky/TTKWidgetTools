@@ -192,13 +192,13 @@ QPixmap QtPropertyBrowserUtils::fontValuePixmap(const QFont &font)
     QFont f = font;
     QImage img(16, 16, QImage::Format_ARGB32_Premultiplied);
     img.fill(0);
-    QPainter p(&img);
-    p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    QPainter painter(&img);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     f.setPointSize(13);
-    p.setFont(f);
+    painter.setFont(f);
     QTextOption t;
     t.setAlignment(Qt::AlignCenter);
-    p.drawText(QRect(0, 0, 16, 16), QString(QLatin1Char('A')), t);
+    painter.drawText(QRect(0, 0, 16, 16), QString(QLatin1Char('A')), t);
     return QPixmap::fromImage(img);
 }
 
@@ -285,8 +285,8 @@ void QtBoolEdit::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 
@@ -445,8 +445,8 @@ void QtKeySequenceEdit::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 bool QtKeySequenceEdit::event(QEvent *e)

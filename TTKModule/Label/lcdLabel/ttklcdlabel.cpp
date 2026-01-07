@@ -59,8 +59,7 @@ void TTKLcdLabel::paintEvent(QPaintEvent *event)
     QLabel::paintEvent(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(0, 0, generateBackgroundDotMatrixImage());
 
     if(m_textImage.isNull())
@@ -98,7 +97,7 @@ QImage TTKLcdLabel::generateDotMatrix(const QString &text)
     image.fill(Qt::transparent);
 
     QPainter painter(&image);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::TextAntialiasing);
     painter.setFont(font);
     painter.setPen(Qt::white);
     painter.drawText(image.rect(), Qt::AlignLeft | Qt::AlignVCenter, text);

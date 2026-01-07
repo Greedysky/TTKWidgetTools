@@ -58,7 +58,7 @@ void TTKCustomRingWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     const QRect rect(0, 0, width(), height());
     const int side = qMin(rect.width(), rect.height());

@@ -75,7 +75,7 @@ void TTKLedPageLabel::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     drawBackground(&painter);
     drawText(&painter);

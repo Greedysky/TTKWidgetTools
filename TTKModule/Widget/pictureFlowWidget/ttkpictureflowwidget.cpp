@@ -509,6 +509,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::paint()
     }
 
     QPainter painter(m_widget);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(QPoint(0, 0), m_buffer);
 }
 
@@ -564,6 +565,7 @@ QImage* TTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
             QImage img = QImage(sw, sh, QImage::Format_RGB32);
 
             QPainter painter(&img);
+            painter.setRenderHint(QPainter::Antialiasing);
             const QPoint p1(sw*4/10, 0);
             const QPoint p2(sw*6/10, sh);
             QLinearGradient linearGrad(p1, p2);

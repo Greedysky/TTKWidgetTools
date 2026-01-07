@@ -70,6 +70,7 @@ void TTKPieWaitProgressWidget::paintEvent(QPaintEvent *event)
 
     painter.rotate(m_rotateAngle);
     drawPieWait(&painter);
+
     m_rotateAngle += m_clockWise ? m_rotateDelta : -m_rotateDelta;
     m_rotateAngle %= 360;
 }

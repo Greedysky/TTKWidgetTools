@@ -55,7 +55,7 @@ void TTKAnimationProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::SmoothPixmapTransform);
+    painter.setRenderHints(QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
 
     const int side = std::min(width(), height());
     painter.drawPixmap(QRect(0, 0, side, side), m_ranges.at(m_index));

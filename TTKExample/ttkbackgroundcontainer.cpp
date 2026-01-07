@@ -145,8 +145,8 @@ void TTKBackgroundContainerItem::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 
     QPainter painter(this);
-    QPen pen(QColor(255, 0, 0), 15);
-    painter.setPen(pen);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(QPen(QColor(255, 0, 0), 15));
     painter.drawPoints(m_listMarker);
 }
 
@@ -175,6 +175,7 @@ void TTKBackgroundContainer::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
     QPainter painter(this);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
     QPixmap pix(":/image/lb_transparent");
     for(int i = 0; i <= std::ceil(width() / PIX_WIDTH); ++i)

@@ -263,6 +263,7 @@ QImage HeatMapper::render()
         image.fill(Qt::transparent);
 
         QPainter painter(&image);
+        painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
         painter.setCompositionMode(QPainter::CompositionMode_Source);
         painter.drawImage(0, 0, render);
         painter.setCompositionMode(QPainter::CompositionMode_DestinationIn);
@@ -341,9 +342,10 @@ void TTKHeatMapLabel::paintEvent(QPaintEvent *event)
 {
     QLabel::paintEvent(event);
 
-    QPainter painter(this);
     if(!m_image.isNull())
     {
+        QPainter painter(this);
+        painter.setRenderHint(QPainter::SmoothPixmapTransform);
         painter.drawImage(0, 0, m_image);
     }
 }

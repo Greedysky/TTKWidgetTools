@@ -51,7 +51,7 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
     Q_UNUSED(event)
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.setOpacity(m_opacity);
 
     QPixmap pix = icon().pixmap(24, 24);
@@ -74,6 +74,7 @@ void TTKCheckableIcon::paintEvent(QPaintEvent *event)
         painter.setTransform(t);
 
         QPainter icon(&pix);
+        icon.setRenderHint(QPainter::Antialiasing);
         icon.setCompositionMode(QPainter::CompositionMode_SourceIn);
         icon.fillRect(pix.rect(), color());
         painter.drawPixmap(0, 0, pix);
@@ -290,6 +291,7 @@ void TTKCheckable::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
+    painter.setRenderHint(QPainter::TextAntialiasing);
 
     QPen pen;
     pen.setColor(isEnabled() ? textColor() : disabledColor());

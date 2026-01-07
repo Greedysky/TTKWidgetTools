@@ -73,8 +73,10 @@ void TTKSpeedMeterWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing|QPainter::TextAntialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+
     resetVariables();
+
     drawOuterCircle(&painter);
     drawInnerCircle(&painter);
     drawColorPie(&painter);

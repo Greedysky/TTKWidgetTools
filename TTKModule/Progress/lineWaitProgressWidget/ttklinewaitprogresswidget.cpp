@@ -60,6 +60,7 @@ void TTKLineWaitProgressWidget::paintEvent(QPaintEvent *event)
 
     painter.rotate(m_rotateAngle);
     drawLineWait(&painter);
+
     m_rotateAngle += m_clockWise ? m_rotateDelta : -m_rotateDelta;
     m_rotateAngle %= 360;
 }

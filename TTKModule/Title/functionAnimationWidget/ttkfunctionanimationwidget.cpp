@@ -166,7 +166,7 @@ TTKTableAnimationHWidget::TTKTableAnimationHWidget(QWidget *parent)
 void TTKTableAnimationHWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(0, 188, 212));
 
     TTKAbstractAnimationHWidget::paintEvent(event);
@@ -301,7 +301,7 @@ TTKTableAnimationVWidget::TTKTableAnimationVWidget(QWidget *parent)
 void TTKTableAnimationVWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(0, 188, 212));
 
     TTKAbstractAnimationVWidget::paintEvent(event);

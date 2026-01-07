@@ -234,6 +234,7 @@ void TTKGifProgressWidget::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawPixmap(0, 0, m_renderer);
 }
 

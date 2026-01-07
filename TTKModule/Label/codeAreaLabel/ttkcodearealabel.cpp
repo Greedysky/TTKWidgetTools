@@ -74,7 +74,7 @@ void TTKCodeAreaLabel::paintEvent(QPaintEvent *event)
 {
     QLabel::paintEvent(event);
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(rect(), QBrush(Qt::white));
 
     painter.translate(0, 0);

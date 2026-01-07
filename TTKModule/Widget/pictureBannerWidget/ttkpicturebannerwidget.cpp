@@ -102,6 +102,7 @@ void TTKPictureBannerIndicator::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
     painter.setBrush(QBrush(m_selected ? QColor(200, 200, 200) : QColor(220, 0, 0)));
     painter.drawRect(rect());
@@ -137,6 +138,7 @@ void TTKPictureBannerPage::paintEvent(QPaintEvent *event)
     if(!m_bActive)
     {
         QPainter painter(this);
+        painter.setRenderHint(QPainter::Antialiasing);
         painter.setPen(Qt::NoPen);
         painter.setBrush(QColor(10,10,10, 100));
         painter.drawRect(rect());

@@ -99,6 +99,8 @@ void TTKLayoutAnimationWidget::paintEvent(QPaintEvent *event)
     if(m_isAnimating)
     {
         QPainter painter(this);
+        painter.setRenderHint(QPainter::SmoothPixmapTransform);
+
         QPixmap pix(size());
         pix.fill(Qt::transparent);
         m_mainWidget->setAttribute(Qt::WA_TranslucentBackground, true);

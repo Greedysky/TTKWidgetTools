@@ -11,7 +11,7 @@ void TTKBackgroundWidget::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
     QPainter painter(this);
-
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.setOpacity(0.5);
     painter.fillRect(rect(), Qt::white);
 }

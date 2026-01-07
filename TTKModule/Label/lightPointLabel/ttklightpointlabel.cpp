@@ -66,7 +66,7 @@ void TTKLightPointLabel::paintEvent(QPaintEvent *event)
     const int side = std::min(w, h);
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.translate(w / 2, h / 2);
     painter.scale(side / 200.0, side / 200.0);
 

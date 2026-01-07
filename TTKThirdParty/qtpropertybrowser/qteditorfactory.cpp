@@ -1813,8 +1813,8 @@ void QtCharEdit::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 bool QtCharEdit::event(QEvent *e)
@@ -2390,8 +2390,8 @@ void QtColorEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 // QtColorEditorFactoryPrivate
@@ -2597,8 +2597,8 @@ void QtPixmapEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 // QtPixmapEditorFactory
@@ -2823,8 +2823,8 @@ void QtFontEditWidget::paintEvent(QPaintEvent *)
 {
     QStyleOption opt;
     opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 // QtFontEditorFactoryPrivate

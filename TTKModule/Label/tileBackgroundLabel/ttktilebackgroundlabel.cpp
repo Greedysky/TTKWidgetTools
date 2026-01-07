@@ -52,6 +52,7 @@ void TTKTileBackgroundLabel::paintEvent(QPaintEvent *event)
     }
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawTiledPixmap(rect(), m_pix);
 }
 
@@ -60,6 +61,7 @@ void TTKTileBackgroundLabel::drawBackground()
     m_pix.fill(m_backgroundColor);
 
     QPainter painter(&m_pix);
+    painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(0, 0, 32, 32, m_foregroundColor);
     painter.fillRect(32, 32, 32, 32, m_foregroundColor);
     update();

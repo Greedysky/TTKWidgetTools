@@ -449,24 +449,23 @@ static QIcon drawIndicatorIcon(const QPalette &palette, QStyle *style)
     QPixmap pix(14, 14);
     pix.fill(Qt::transparent);
     QStyleOption branchOption;
-    QRect r(QPoint(0, 0), pix.size());
     branchOption.rect = QRect(2, 2, 9, 9); // ### hardcoded in qcommonstyle.cpp
     branchOption.palette = palette;
     branchOption.state = QStyle::State_Children;
 
-    QPainter p;
+    QPainter painter;
     // Draw closed state
-    p.begin(&pix);
-    style->drawPrimitive(QStyle::PE_IndicatorBranch, &branchOption, &p);
-    p.end();
+    painter.begin(&pix);
+    style->drawPrimitive(QStyle::PE_IndicatorBranch, &branchOption, &painter);
+    painter.end();
     QIcon rc = pix;
     rc.addPixmap(pix, QIcon::Selected, QIcon::Off);
     // Draw opened state
     branchOption.state |= QStyle::State_Open;
     pix.fill(Qt::transparent);
-    p.begin(&pix);
-    style->drawPrimitive(QStyle::PE_IndicatorBranch, &branchOption, &p);
-    p.end();
+    painter.begin(&pix);
+    style->drawPrimitive(QStyle::PE_IndicatorBranch, &branchOption, &painter);
+    painter.end();
 
     rc.addPixmap(pix, QIcon::Normal, QIcon::On);
     rc.addPixmap(pix, QIcon::Selected, QIcon::On);

@@ -105,6 +105,7 @@ void TTKAnimationStackedWidget::paintEvent(QPaintEvent *event)
     if(m_isAnimating)
     {
         QPainter painter(this);
+        painter.setRenderHint(QPainter::SmoothPixmapTransform);
         renderPreviousWidget(&painter);
         renderCurrentWidget(&painter);
     }

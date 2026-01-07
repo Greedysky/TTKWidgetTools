@@ -65,6 +65,8 @@ void TTKFunctionItemWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 
     QPainter painter(this);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+
     if(m_selectedOn)
     {
         painter.fillRect(rect(), QColor(0, 0, 0, 100));
