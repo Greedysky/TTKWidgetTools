@@ -141,7 +141,7 @@ void TTKWaveProgressWidget::paintEvent(QPaintEvent *event)
 
     drawValue(&painter);
 
-    painter.setPen(QColor(255,255,255));
+    painter.setPen(QColor(255, 255, 255));
     QFont font;
     font.setFamily("Microsoft YaHei");
     font.setPointSize(40);

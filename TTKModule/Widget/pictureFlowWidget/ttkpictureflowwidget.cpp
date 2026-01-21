@@ -566,15 +566,15 @@ QImage* TTKPictureFlowWidgetSoftwareRenderer::surface(int slideIndex)
 
             QPainter painter(&img);
             painter.setRenderHint(QPainter::Antialiasing);
-            const QPoint p1(sw*4/10, 0);
-            const QPoint p2(sw*6/10, sh);
+            const QPoint p1(sw * 4 / 10, 0);
+            const QPoint p2(sw * 6 / 10, sh);
             QLinearGradient linearGrad(p1, p2);
             linearGrad.setColorAt(0, Qt::black);
             linearGrad.setColorAt(1, Qt::white);
             painter.setBrush(linearGrad);
             painter.fillRect(0, 0, sw, sh, QBrush(linearGrad));
 
-            painter.setPen(QPen(QColor(64,64,64), 4));
+            painter.setPen(QPen(QColor(64, 64, 64), 4));
             painter.setBrush(QBrush());
             painter.drawRect(2, 2, sw-3, sh-3);
 
