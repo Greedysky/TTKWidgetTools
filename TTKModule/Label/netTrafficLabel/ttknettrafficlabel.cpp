@@ -15,7 +15,7 @@
 #  include "ttkregularexpression.h"
 #endif
 
-#define RESOURCE_PATH  QDir::tempPath() + "/traffic.tkx"
+#define RESOURCE_PATH  QDir::tempPath() + TTK_SEPARATOR + "traffic.tkx"
 
 TTKNetTraffic::TTKNetTraffic(QObject *parent)
     : TTKAbstractThread(parent),
