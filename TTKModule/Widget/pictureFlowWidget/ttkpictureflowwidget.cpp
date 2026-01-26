@@ -55,9 +55,9 @@ inline long fcos(int iangle)
 
 QRgb blendColor(QRgb c1, QRgb c2, int blend)
 {
-    const int r = qRed(c1) * blend/256 + qRed(c2)*(256-blend) / 256;
-    const int g = qGreen(c1) * blend/256 + qGreen(c2)*(256-blend) / 256;
-    const int b = qBlue(c1) * blend/256 + qBlue(c2)*(256-blend) / 256;
+    const int r = qRed(c1) * blend / 256 + qRed(c2)*(256-blend) / 256;
+    const int g = qGreen(c1) * blend / 256 + qGreen(c2)*(256-blend) / 256;
+    const int b = qBlue(c1) * blend / 256 + qBlue(c2)*(256-blend) / 256;
     return qRgb(r, g, b);
 }
 
@@ -97,7 +97,7 @@ QImage *prepareSurface(const QImage *slideImage, int w, int h, QRgb bgcolor,
 
         if(reflectionEffect == ReflectionEffect::Blurred)
         {
-            QRect rect(hs/2, 0, hs/2, w);
+            QRect rect(hs / 2, 0, hs / 2, w);
             rect &= result->rect();
 
             const int r1 = rect.top();
@@ -264,15 +264,15 @@ void TTKPictureFlowWidgetState::reset()
         si.m_angle = -m_angle;
         si.m_cx = m_offsetX + m_spacing*i*PFREAL_ONE;
         si.m_cy = m_offsetY;
-        si.m_slideIndex = m_centerIndex+1+i;
+        si.m_slideIndex = m_centerIndex + i + 1;
         si.m_blend = 256;
 
-        if(i == m_rightSlides.count()-2)
+        if(i == m_rightSlides.count() - 2)
         {
             si.m_blend = 128;
         }
 
-        if(i == m_rightSlides.count()-1)
+        if(i == m_rightSlides.count() - 1)
         {
             si.m_blend = 0;
         }
@@ -419,39 +419,39 @@ void TTKPictureFlowWidgetAnimator::update()
     for(int index = 0; index < nleft; ++index)
     {
         int blend = 256;
-        if(index == nleft-1)
+        if(index == nleft - 1)
         {
-            blend = (m_step > 0) ? 0 : 128-fade/2;
+            blend = (m_step > 0) ? 0 : 128 - fade / 2;
         }
 
-        if(index == nleft-2)
+        if(index == nleft - 2)
         {
-            blend = (m_step > 0) ? 128-fade/2 : 256-fade/2;
+            blend = (m_step > 0) ? 128 - fade / 2 : 256 - fade / 2;
         }
 
-        if(index == nleft-3)
+        if(index == nleft - 3)
         {
-            blend = (m_step > 0) ? 256-fade/2 : 256;
+            blend = (m_step > 0) ? 256 - fade / 2 : 256;
         }
         m_state->m_leftSlides[index].m_blend = blend;
     }
 
     for(int index = 0; index < nright; ++index)
     {
-        int blend = (index < nright-2) ? 256 : 128;
-        if(index == nright-1)
+        int blend = (index < nright - 2) ? 256 : 128;
+        if(index == nright - 1)
         {
-            blend = (m_step > 0) ? fade/2 : 0;
+            blend = (m_step > 0) ? fade / 2 : 0;
         }
 
-        if(index == nright-2)
+        if(index == nright - 2)
         {
-            blend = (m_step > 0) ? 128+fade/2 : fade/2;
+            blend = (m_step > 0) ? 128 + fade / 2 : fade / 2;
         }
 
-        if(index == nright-3)
+        if(index == nright - 3)
         {
-            blend = (m_step > 0) ? 256 : 128+fade/2;
+            blend = (m_step > 0) ? 256 : 128 + fade / 2;
         }
         m_state->m_rightSlides[index].m_blend = blend;
     }
@@ -526,18 +526,18 @@ void TTKPictureFlowWidgetSoftwareRenderer::initialize()
     m_size = m_widget->size();
     const int ww = m_size.width();
     const int wh = m_size.height();
-    const int w = (ww+1) / 2;
-    const int h = (wh+1) / 2;
+    const int w = (ww + 1) / 2;
+    const int h = (wh + 1) / 2;
 
     m_buffer = QImage(ww, wh, QImage::Format_RGB32);
     m_buffer.fill(m_bgcolor);
-    m_rays.resize(w*2);
+    m_rays.resize(w * 2);
 
     for(int i = 0; i < w; ++i)
     {
         const long gg = ((PFREAL_ONE >> 1) + i * PFREAL_ONE) / (2 * h);
-        m_rays[w-i-1] = -gg;
-        m_rays[w+i] = gg;
+        m_rays[w - i - 1] = -gg;
+        m_rays[w + i] = gg;
     }
 
     m_dirty = true;
@@ -631,11 +631,11 @@ QRect TTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slid
     const int distance = h * 100 / zoom;
     const long sdx = fcos(slide.m_angle);
     const long sdy = fsin(slide.m_angle);
-    const long xs = slide.m_cx - m_state->m_slideWidth * sdx/2;
-    const long ys = slide.m_cy - m_state->m_slideWidth * sdy/2;
+    const long xs = slide.m_cx - m_state->m_slideWidth * sdx / 2;
+    const long ys = slide.m_cy - m_state->m_slideWidth * sdy / 2;
     long dist = distance * PFREAL_ONE;
 
-    const int xi = qMax((long)0, ((w*PFREAL_ONE/2) + fdiv(xs*h, dist+ys)) >> PFREAL_SHIFT);
+    const int xi = qMax((long)0, ((w * PFREAL_ONE / 2) + fdiv(xs * h, dist + ys)) >> PFREAL_SHIFT);
     if(xi >= w)
     {
         return rect;
@@ -662,7 +662,7 @@ QRect TTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slid
         const long hitx = fmul(dist, m_rays[x]);
         const long hitdist = fdiv(hitx - slide.m_cx, sdx);
 
-        int column = sw/2 + (hitdist >> PFREAL_SHIFT);
+        int column = sw / 2 + (hitdist >> PFREAL_SHIFT);
         if(column >= sw)
         {
             break;
@@ -680,16 +680,16 @@ QRect TTKPictureFlowWidgetSoftwareRenderer::renderSlide(const TTKSlideInfo &slid
         }
         flag = true;
 
-        int y1 = h/2;
-        int y2 = y1+ 1;
+        int y1 = h / 2;
+        int y2 = y1 + 1;
         QRgb* pixel1 = (QRgb*)(m_buffer.scanLine(y1)) + x;
         QRgb* pixel2 = (QRgb*)(m_buffer.scanLine(y2)) + x;
         const QRgb pixelstep = pixel2 - pixel1;
 
-        const int center = (sh/2);
+        const int center = (sh / 2);
         const int dy = dist / h;
-        int p1 = center*PFREAL_ONE - dy/2;
-        int p2 = center*PFREAL_ONE + dy/2;
+        int p1 = center*PFREAL_ONE - dy / 2;
+        int p2 = center*PFREAL_ONE + dy / 2;
 
         const QRgb *ptr = (const QRgb*)(src->scanLine(column));
         if(blend == 256)
@@ -740,7 +740,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::renderSlides()
 
     for(int index = 0; index < nleft; ++index)
     {
-        const QRect &rs = renderSlide(m_state->m_leftSlides[index], 0, c1-1);
+        const QRect &rs = renderSlide(m_state->m_leftSlides[index], 0, c1 - 1);
         if(!rs.isEmpty())
         {
             c1 = rs.left();
@@ -749,7 +749,7 @@ void TTKPictureFlowWidgetSoftwareRenderer::renderSlides()
 
     for(int index = 0; index < nright; ++index)
     {
-        const QRect &rs = renderSlide(m_state->m_rightSlides[index], c2+1, m_buffer.width());
+        const QRect &rs = renderSlide(m_state->m_rightSlides[index], c2 + 1, m_buffer.width());
         if(!rs.isEmpty())
         {
             c2 = rs.right();
@@ -988,7 +988,7 @@ void TTKPictureFlowWidget::keyPressEvent(QKeyEvent *event)
     {
         if(event->modifiers() == Qt::ControlModifier)
         {
-            showSlide(centerIndex()+10);
+            showSlide(centerIndex() + 10);
         }
         else
         {

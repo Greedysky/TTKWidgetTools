@@ -188,7 +188,7 @@ void TTKHlSaturationPalette::paintEvent(QPaintEvent *event)
 
     painter.fillRect(rect(), linearGradient);
 
-    const QPointF ptfCenter(m_dblVernierX, ntBottm/2.0);
+    const QPointF ptfCenter(m_dblVernierX, ntBottm / 2.0);
     painter.setPen(QPen(Qt::black, 2));
     painter.drawEllipse(ptfCenter, 5, 5);
 

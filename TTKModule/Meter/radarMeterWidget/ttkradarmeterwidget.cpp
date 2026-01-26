@@ -35,14 +35,14 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
 
     const int len = m_drawArea.width();
     painter.setPen(QPen(Qt::white));
-    painter.drawLine(m_drawArea.topLeft() + QPoint(0, len/2), m_drawArea.topRight() + QPoint(0, len/2));
-    painter.drawLine(m_drawArea.topLeft() + QPoint(len/2, 0), m_drawArea.bottomLeft() + QPoint(len/2, 0));
-    painter.drawEllipse(m_drawArea.center(), len/2, len/2);
-    painter.drawEllipse(m_drawArea.center(), len/3, len/3);
-    painter.drawEllipse(m_drawArea.center(), len/6, len/6);
+    painter.drawLine(m_drawArea.topLeft() + QPoint(0, len / 2), m_drawArea.topRight() + QPoint(0, len / 2));
+    painter.drawLine(m_drawArea.topLeft() + QPoint(len / 2, 0), m_drawArea.bottomLeft() + QPoint(len / 2, 0));
+    painter.drawEllipse(m_drawArea.center(), len / 2, len / 2);
+    painter.drawEllipse(m_drawArea.center(), len / 3, len / 3);
+    painter.drawEllipse(m_drawArea.center(), len / 6, len / 6);
 
-    const qreal x = m_drawArea.center().x() + (qreal)len/2 * std::cos(-m_pieRotate*3.14159/180);
-    const qreal y = m_drawArea.center().y() + (qreal)len/2 * std::sin(-m_pieRotate*3.14159/180);
+    const qreal x = m_drawArea.center().x() + (qreal)len / 2 * std::cos(-m_pieRotate * 3.14159 / 180);
+    const qreal y = m_drawArea.center().y() + (qreal)len / 2 * std::sin(-m_pieRotate * 3.14159 / 180);
     painter.setPen(QPen(Qt::white));
     painter.drawLine(m_drawArea.center(),QPointF(x,y));
 
@@ -53,7 +53,7 @@ void TTKRadarMeterWidget::paintEvent(QPaintEvent *event)
     gradient.setColorAt(0.8, QColor(255, 255, 255, 0));
     painter.setBrush(QBrush(gradient));
     painter.setPen(Qt::NoPen);
-    painter.drawPie(m_drawArea, m_pieRotate*16, 90*16);
+    painter.drawPie(m_drawArea, m_pieRotate * 16, 90 * 16);
 
     for(int i = 0; i < m_points.count(); ++i)
     {

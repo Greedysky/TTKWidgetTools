@@ -45,7 +45,7 @@ QSize TTKAnimationProgressWidget::sizeHint() const
 void TTKAnimationProgressWidget::valueChanged(const QVariant &value)
 {
     m_index = value.toInt();
-    m_value = m_index*100 / MAX_SIZE;
+    m_value = m_index * 100 / MAX_SIZE;
 
     update();
 }
