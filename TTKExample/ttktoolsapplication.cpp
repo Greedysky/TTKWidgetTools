@@ -177,7 +177,6 @@ void TTKToolsApplication::progressModuleChanged(int index)
     TTKWidgetProperty *w = nullptr;
     switch(index)
     {
-
         case 0: w = new TTKAnimationProgressWidgetProperty; break;
         case 1: w = new TTKCircleProgressWidgetProperty; break;
         case 2: w = new TTKCircleWaitProgressWidgetProperty; break;

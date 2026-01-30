@@ -24,7 +24,7 @@ TTKColorButtonWidget::TTKColorButtonWidget(QWidget *parent)
 
     setLayout(m_gridLayout);
     initStyle();
-    initBtn();
+    createButtons();
 }
 
 QSize TTKColorButtonWidget::sizeHint() const
@@ -37,7 +37,7 @@ void TTKColorButtonWidget::setColors(const QStringList &colors)
     if(m_colors != colors)
     {
         m_colors = colors;
-        initBtn();
+        createButtons();
     }
 }
 
@@ -55,7 +55,7 @@ void TTKColorButtonWidget::setColumnCount(int columnCount)
     if(m_columnCount != columnCount)
     {
         m_columnCount = columnCount;
-        initBtn();
+        createButtons();
     }
 }
 
@@ -101,7 +101,7 @@ void TTKColorButtonWidget::initStyle()
     setStyleSheet(qss);
 }
 
-void TTKColorButtonWidget::initBtn()
+void TTKColorButtonWidget::createButtons()
 {
     qDeleteAll(m_btns);
     m_btns.clear();

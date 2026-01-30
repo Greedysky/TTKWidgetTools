@@ -51,7 +51,7 @@ private Q_SLOTS:
 
 private:
     void initStyle();
-    void initBtn();
+    void createButtons();
 
     QGridLayout *m_gridLayout;
     QList<QPushButton*> m_btns;

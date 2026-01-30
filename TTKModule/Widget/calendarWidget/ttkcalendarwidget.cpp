@@ -29,7 +29,7 @@ private:
 TTKCalendarWidget::TTKCalendarWidget(QWidget *parent)
     : QCalendarWidget(parent)
 {
-    initControl();
+    createControl();
 }
 
 QSize TTKCalendarWidget::sizeHint() const
@@ -63,7 +63,7 @@ void TTKCalendarWidget::setDataLabelTimeText(int year, int month)
     m_dataLabel->setText(QString("%1.%2").arg(year).arg(month));
 }
 
-void TTKCalendarWidget::initControl()
+void TTKCalendarWidget::createControl()
 {
     setFixedSize(sizeHint() - QSize(10, 10));
     setLocale(QLocale(QLocale::Chinese));
@@ -85,8 +85,8 @@ void TTKCalendarWidget::initControl()
     setWeekdayTextFormat(Qt::Thursday, format);
     setWeekdayTextFormat(Qt::Friday,   format);
 
-    initTopWidget();
-    initBottomWidget();
+    createTopWidget();
+    createBottomWidget();
 
     connect(this, SIGNAL(currentPageChanged(int,int)), SLOT(setDataLabelTimeText(int,int)));
 }
@@ -143,13 +143,13 @@ void TTKCalendarWidget::paintCell(QPainter *painter, const QRect &rect, const QD
     }
 }
 
-void TTKCalendarWidget::initTopWidget()
+void TTKCalendarWidget::createTopWidget()
 {
-    QWidget* topWidget = new QWidget(this);
-    topWidget->setFixedHeight(40);
-    topWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    QWidget* widget = new QWidget(this);
+    widget->setFixedHeight(40);
+    widget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
-    QHBoxLayout* hboxLayout = new QHBoxLayout(topWidget);
+    QHBoxLayout* hboxLayout = new QHBoxLayout(widget);
     hboxLayout->setContentsMargins(12, 0, 12, 0);
     hboxLayout->setSpacing(1);
 
@@ -176,10 +176,10 @@ void TTKCalendarWidget::initTopWidget()
     hboxLayout->addStretch();
     hboxLayout->addWidget(m_rightMonthButton);
     hboxLayout->addWidget(m_rightYearButton);
-    topWidget->setLayout(hboxLayout);
+    widget->setLayout(hboxLayout);
 
     QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout*>(layout());
-    vBodyLayout->insertWidget(0, topWidget);
+    vBodyLayout->insertWidget(0, widget);
 
     connect(m_leftYearButton,   SIGNAL(clicked()), this, SLOT(buttonClicked()));
     connect(m_leftMonthButton,  SIGNAL(clicked()), this, SLOT(buttonClicked()));
@@ -189,12 +189,12 @@ void TTKCalendarWidget::initTopWidget()
     setDataLabelTimeText(selectedDate().year(), selectedDate().month());
 }
 
-void TTKCalendarWidget::initBottomWidget()
+void TTKCalendarWidget::createBottomWidget()
 {
-    QWidget* bottomWidget = new QWidget(this);
-    bottomWidget->setFixedHeight(20);
-    bottomWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    QWidget* widget = new QWidget(this);
+    widget->setFixedHeight(20);
+    widget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     QVBoxLayout *vBodyLayout = qobject_cast<QVBoxLayout*>(layout());
-    vBodyLayout->addWidget(bottomWidget);
+    vBodyLayout->addWidget(widget);
 }

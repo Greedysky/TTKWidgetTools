@@ -47,9 +47,9 @@ private:
     virtual void paintCell(QPainter *painter, const QRect &rect, const QDate &date) const override final;
 #endif
 
-    void initControl();
-    void initTopWidget();
-    void initBottomWidget();
+    void createControl();
+    void createTopWidget();
+    void createBottomWidget();
 
     QPushButton *m_leftYearButton, *m_leftMonthButton;
     QPushButton *m_rightYearButton, *m_rightMonthButton;
