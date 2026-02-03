@@ -30,13 +30,13 @@ class TTK_MODULE_EXPORT TTKCustomPieWidget : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKCustomPieWidget)
 public:
-    struct PieData
+    struct Data
     {
         QColor m_color;
         QString m_text;
         double m_value;
     };
-    TTK_DECLARE_LIST(PieData);
+    TTK_DECLARE_LIST(Data);
 
     explicit TTKCustomPieWidget(QWidget *parent = nullptr);
 
@@ -46,7 +46,7 @@ public:
     void setTextColor(const QColor &textColor);
     void setBorderColor(const QColor &borderColor);
 
-    void setDataPie(const PieDataList &datas);
+    void setDataPie(const DataList &datas);
 
     void appendPie(const QString &label, double value, const QColor &color);
 
@@ -67,7 +67,7 @@ private:
 
     QColor m_textColor;
     QColor m_borderColor;
-    PieDataList m_datas;
+    DataList m_datas;
 
 };
 

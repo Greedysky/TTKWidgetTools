@@ -30,13 +30,13 @@ class TTK_MODULE_EXPORT TTKScanLabel : public QWidget
     Q_OBJECT
     TTK_DECLARE_MODULE(TTKScanLabel)
 public:
-    struct RingData 
+    struct Data
     {
         int m_radius;
         float m_width;
         int m_alpha;
     };
-    TTK_DECLARE_LIST(RingData);
+    TTK_DECLARE_LIST(Data);
 
     explicit TTKScanLabel(QWidget *parent = nullptr);
     ~TTKScanLabel();
@@ -81,7 +81,7 @@ private:
     QColor m_scanColor;
     QColor m_ringColor;
 
-    RingDataList m_rings;
+    DataList m_rings;
     QTimer *m_circleTimer;
 };
 

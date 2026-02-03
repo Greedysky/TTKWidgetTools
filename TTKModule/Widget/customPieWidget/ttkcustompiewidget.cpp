@@ -49,7 +49,7 @@ void TTKCustomPieWidget::setBorderColor(const QColor &borderColor)
     }
 }
 
-void TTKCustomPieWidget::setDataPie(const PieDataList &datas)
+void TTKCustomPieWidget::setDataPie(const DataList &datas)
 {
     m_datas = datas;
 }
@@ -153,7 +153,7 @@ void TTKCustomPieWidget::clearPie()
 double TTKCustomPieWidget::sumValue()
 {
     double sum = 0;
-    for(const PieData &data : qAsConst(m_datas))
+    for(const Data &data : qAsConst(m_datas))
     {
         sum += data.m_value;
 
