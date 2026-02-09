@@ -119,20 +119,20 @@ QSize TTKScanLabel::sizeHint() const
 
 void TTKScanLabel::updateRender()
 {
-    for(Data &ring : m_rings)
+    for(Data &data : m_rings)
     {
-        ring.m_radius += 1;
-        ring.m_alpha += 5;
+        data.m_radius += 1;
+        data.m_alpha += 5;
 
-        if(ring.m_alpha < 0)
+        if(data.m_alpha < 0)
         {
-            ring.m_alpha = 0;
+            data.m_alpha = 0;
         }
 
-        ring.m_width -= 0.05f;
-        if(ring.m_width < 0)
+        data.m_width -= 0.05f;
+        if(data.m_width < 0)
         {
-            ring.m_width = 0;
+            data.m_width = 0;
         }
     }
 
