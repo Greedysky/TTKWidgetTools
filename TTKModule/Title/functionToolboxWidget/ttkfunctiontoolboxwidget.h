@@ -99,23 +99,6 @@ class QScrollArea;
 /*!
  * @author Greedysky <greedysky@163.com>
  */
-struct TTK_MODULE_EXPORT TTKFunctionToolBoxUnionItem
-{
-    int m_itemIndex;
-    TTKFunctionToolBoxWidgetItem *m_itemWidget;
-
-    TTKFunctionToolBoxUnionItem() noexcept
-        : m_itemIndex(-1),
-          m_itemWidget(nullptr)
-    {
-
-    }
-};
-
-
-/*!
- * @author Greedysky <greedysky@163.com>
- */
 class TTK_MODULE_EXPORT TTKFunctionToolBoxWidget : public QWidget
 {
     Q_OBJECT
@@ -159,7 +142,14 @@ private:
     QVBoxLayout *m_layout;
     QScrollArea *m_scrollArea;
     QWidget *m_contentsWidget;
-    QList<TTKFunctionToolBoxUnionItem> m_items;
+
+private:
+    struct Data
+    {
+        int m_itemIndex;
+        TTKFunctionToolBoxWidgetItem *m_itemWidget;
+    };
+    QList<Data> m_items;
 
 };
 

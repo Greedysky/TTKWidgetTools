@@ -223,9 +223,9 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     }
 
     //hide before widget
-    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_items))
+    for(const Data &data : qAsConst(m_items))
     {
-        unionItem.m_itemWidget->setExpand(false);
+        data.m_itemWidget->setExpand(false);
     }
 
     // Add item and make sure it stretches the remaining space.
@@ -233,10 +233,10 @@ void TTKFunctionToolBoxWidget::addItem(QWidget *item, const QString &text)
     it->addItem(item);
     it->setExpand(true);
 
-    TTKFunctionToolBoxUnionItem widgetItem;
-    widgetItem.m_itemWidget = it;
-    widgetItem.m_itemIndex = m_itemIndexRaise++;
-    m_items.append(widgetItem);
+    Data data;
+    data.m_itemWidget = it;
+    data.m_itemIndex = m_itemIndexRaise++;
+    m_items.append(data);
 
     m_currentIndex = m_items.count() - 1;
 
@@ -264,10 +264,10 @@ void TTKFunctionToolBoxWidget::removeItem(QWidget *item)
 
 void TTKFunctionToolBoxWidget::swapItem(int before, int after)
 {
-    TTKFunctionToolBoxUnionItem widgetItem = m_items.takeAt(before);
-    m_items.insert(after, widgetItem);
+    Data data = m_items.takeAt(before);
+    m_items.insert(after, data);
 
-    m_layout->removeWidget(widgetItem.m_itemWidget);
+    m_layout->removeWidget(data.m_itemWidget);
 
     const int count = m_layout->count();
     if(count > 1)
@@ -275,15 +275,15 @@ void TTKFunctionToolBoxWidget::swapItem(int before, int after)
         m_layout->removeItem(m_layout->itemAt(count - 1));
     }
 
-    m_layout->insertWidget(after, widgetItem.m_itemWidget);
+    m_layout->insertWidget(after, data.m_itemWidget);
     m_layout->addStretch(5);
 }
 
 void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 {
-    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_items))
+    for(const Data &data : qAsConst(m_items))
     {
-        TTKFunctionToolBoxWidgetItem *it = unionItem.m_itemWidget;
+        TTKFunctionToolBoxWidgetItem *it = data.m_itemWidget;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
@@ -297,9 +297,9 @@ void TTKFunctionToolBoxWidget::setTitle(QWidget *item, const QString &text)
 
 QString TTKFunctionToolBoxWidget::title(QWidget *item) const
 {
-    for(const TTKFunctionToolBoxUnionItem &unionItem : qAsConst(m_items))
+    for(const Data &data : qAsConst(m_items))
     {
-        TTKFunctionToolBoxWidgetItem *it = unionItem.m_itemWidget;
+        TTKFunctionToolBoxWidgetItem *it = data.m_itemWidget;
         for(int j = 0; j < it->count(); ++j)
         {
             if(it->item(j) == item)
