@@ -55,7 +55,7 @@ void TTKLineEditWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(QPen(QBrush(m_color), 1, Qt::SolidLine));
+    painter.setPen(QPen(m_color, 1, Qt::SolidLine));
 
     if(m_isAnimating)
     {

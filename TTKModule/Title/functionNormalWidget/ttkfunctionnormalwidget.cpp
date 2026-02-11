@@ -97,12 +97,12 @@ void TTKFunctionNormalWidget::drawItem(QPainter *painter)
                 m_itemOffset += ITEM_HIGHT;
             }
 
-            painter->setPen(QPen(QBrush("white"), 3));
+            painter->setPen(QPen(Qt::white, 3));
         }
         else
         {
             painter->setFont(QFont("Roboto", 13));
-            painter->setPen(QPen(QBrush("white"), 3));
+            painter->setPen(QPen(Qt::white, 3));
             painter->drawText(QRectF(0, m_itemOffset, m_width, ITEM_HIGHT), m_items[i], Qt::AlignVCenter | Qt::AlignHCenter);
 
             if(i + 1 < m_items.count())

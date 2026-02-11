@@ -89,7 +89,7 @@ void TTKAbstractAnimationHWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
+    painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
 
     m_perValue = m_container[0]->width() + m_container[0]->x();
     int offset = m_perValue - (m_container[0]->width() + m_pix.width()) / 2;
@@ -224,7 +224,7 @@ void TTKAbstractAnimationVWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    painter.setPen(QPen(QBrush(QColor(0, 0, 0)), 0.1, Qt::SolidLine));
+    painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
 
     m_perValue = m_container[0]->height() + m_container[0]->y();
     int offset = m_perValue - (m_container[0]->height() + m_pix.height()) / 2;
