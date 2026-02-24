@@ -100,16 +100,16 @@ void TTKIpEditWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 }
 
-bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
+bool TTKIpEditWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if(isEdit(object))
+    if(isEdit(watched))
     {
         if(event->type() == QEvent::KeyPress)
         {
             QKeyEvent *keyEvent = TTKStaticCast(QKeyEvent*, event);
             if(keyEvent->key() == Qt::Key_Period)
             {
-                QLineEdit *next = nextEdit(qobject_cast<QLineEdit*>(object));
+                QLineEdit *next = nextEdit(qobject_cast<QLineEdit*>(watched));
                 if(next)
                 {
                     next->setFocus();
@@ -128,7 +128,7 @@ bool TTKIpEditWidget::eventFilter(QObject *object, QEvent *event)
         }
     }
 
-    return QWidget::eventFilter(object, event);
+    return QWidget::eventFilter(watched, event);
 }
 
 void TTKIpEditWidget::initialize(QLineEdit *edit)

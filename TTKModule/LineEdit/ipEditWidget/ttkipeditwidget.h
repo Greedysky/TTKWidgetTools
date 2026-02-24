@@ -44,7 +44,7 @@ private Q_SLOTS:
 
 private:
     virtual void paintEvent(QPaintEvent *event) override final;
-    virtual bool eventFilter(QObject *object, QEvent *event) override final;
+    virtual bool eventFilter(QObject *watched, QEvent *event) override final;
 
     void initialize(QLineEdit *edit);
     QLineEdit *nextEdit(QLineEdit *edit);

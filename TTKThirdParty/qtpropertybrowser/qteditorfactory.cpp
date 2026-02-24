@@ -1662,11 +1662,14 @@ public:
     QtCharEdit(QWidget *parent = nullptr);
 
     QChar value() const;
-    bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *watched, QEvent *event);
+
 public Q_SLOTS:
     void setValue(const QChar &value);
+
 Q_SIGNALS:
     void valueChanged(const QChar &value);
+
 protected:
     void focusInEvent(QFocusEvent *e);
     void focusOutEvent(QFocusEvent *e);
@@ -1674,8 +1677,10 @@ protected:
     void keyReleaseEvent(QKeyEvent *e);
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
+
 private Q_SLOTS:
     void slotClearChar();
+
 private:
     void handleKeyEvent(QKeyEvent *e);
 
@@ -1696,10 +1701,10 @@ QtCharEdit::QtCharEdit(QWidget *parent)
     setAttribute(Qt::WA_InputMethodEnabled);
 }
 
-bool QtCharEdit::eventFilter(QObject *o, QEvent *e)
+bool QtCharEdit::eventFilter(QObject *watched, QEvent *event)
 {
-    if (o == m_lineEdit && e->type() == QEvent::ContextMenu) {
-        QContextMenuEvent *c = static_cast<QContextMenuEvent*>(e);
+    if (watched == m_lineEdit && event->type() == QEvent::ContextMenu) {
+        QContextMenuEvent *c = static_cast<QContextMenuEvent*>(event);
         QMenu *menu = m_lineEdit->createStandardContextMenu();
         QList<QAction *> actions = menu->actions();
         QListIterator<QAction *> itAction(actions);
@@ -1722,11 +1727,11 @@ bool QtCharEdit::eventFilter(QObject *o, QEvent *e)
         connect(clearAction, SIGNAL(triggered()), this, SLOT(slotClearChar()));
         menu->exec(c->globalPos());
         delete menu;
-        e->accept();
+        event->accept();
         return true;
     }
 
-    return QWidget::eventFilter(o, e);
+    return QWidget::eventFilter(watched, event);
 }
 
 void QtCharEdit::slotClearChar()
@@ -2291,7 +2296,7 @@ class QtColorEditWidget : public QWidget {
 public:
     QtColorEditWidget(QWidget *parent);
 
-    bool eventFilter(QObject *obj, QEvent *ev);
+    bool eventFilter(QObject *watched, QEvent *event);
 
 public Q_SLOTS:
     void setValue(const QColor &value);
@@ -2362,17 +2367,17 @@ void QtColorEditWidget::buttonClicked()
     }
 }
 
-bool QtColorEditWidget::eventFilter(QObject *obj, QEvent *ev)
+bool QtColorEditWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if (obj == m_button) {
-        switch (ev->type()) {
+    if (watched == m_button) {
+        switch (event->type()) {
         case QEvent::KeyPress:
         case QEvent::KeyRelease: { // Prevent the QToolButton from handling Enter/Escape meant control the delegate
-            switch (static_cast<const QKeyEvent*>(ev)->key()) {
+            switch (static_cast<const QKeyEvent*>(event)->key()) {
             case Qt::Key_Escape:
             case Qt::Key_Enter:
             case Qt::Key_Return:
-                ev->ignore();
+                event->ignore();
                 return true;
             default:
                 break;
@@ -2383,7 +2388,7 @@ bool QtColorEditWidget::eventFilter(QObject *obj, QEvent *ev)
             break;
         }
     }
-    return QWidget::eventFilter(obj, ev);
+    return QWidget::eventFilter(watched, event);
 }
 
 void QtColorEditWidget::paintEvent(QPaintEvent *)
@@ -2505,7 +2510,7 @@ class QtPixmapEditWidget : public QWidget {
 public:
     QtPixmapEditWidget(QWidget *parent);
 
-    bool eventFilter(QObject *obj, QEvent *ev);
+    bool eventFilter(QObject *watched, QEvent *event);
 
 public Q_SLOTS:
     void setValue(const QString &value);
@@ -2569,17 +2574,17 @@ void QtPixmapEditWidget::buttonClicked()
     }
 }
 
-bool QtPixmapEditWidget::eventFilter(QObject *obj, QEvent *ev)
+bool QtPixmapEditWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if (obj == m_button) {
-        switch (ev->type()) {
+    if (watched == m_button) {
+        switch (event->type()) {
         case QEvent::KeyPress:
         case QEvent::KeyRelease: {
-            switch (static_cast<const QKeyEvent*>(ev)->key()) {
+            switch (static_cast<const QKeyEvent*>(event)->key()) {
             case Qt::Key_Escape:
             case Qt::Key_Enter:
             case Qt::Key_Return:
-                ev->ignore();
+                event->ignore();
                 return true;
             default:
                 break;
@@ -2590,7 +2595,7 @@ bool QtPixmapEditWidget::eventFilter(QObject *obj, QEvent *ev)
             break;
         }
     }
-    return QWidget::eventFilter(obj, ev);
+    return QWidget::eventFilter(watched, event);
 }
 
 void QtPixmapEditWidget::paintEvent(QPaintEvent *)
@@ -2716,7 +2721,7 @@ class QtFontEditWidget : public QWidget {
 public:
     QtFontEditWidget(QWidget *parent);
 
-    bool eventFilter(QObject *obj, QEvent *ev);
+    bool eventFilter(QObject *watched, QEvent *event);
 
 public Q_SLOTS:
     void setValue(const QFont &value);
@@ -2795,17 +2800,17 @@ void QtFontEditWidget::buttonClicked()
     }
 }
 
-bool QtFontEditWidget::eventFilter(QObject *obj, QEvent *ev)
+bool QtFontEditWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if (obj == m_button) {
-        switch (ev->type()) {
+    if (watched == m_button) {
+        switch (event->type()) {
         case QEvent::KeyPress:
         case QEvent::KeyRelease: { // Prevent the QToolButton from handling Enter/Escape meant control the delegate
-            switch (static_cast<const QKeyEvent*>(ev)->key()) {
+            switch (static_cast<const QKeyEvent*>(event)->key()) {
             case Qt::Key_Escape:
             case Qt::Key_Enter:
             case Qt::Key_Return:
-                ev->ignore();
+                event->ignore();
                 return true;
             default:
                 break;
@@ -2816,7 +2821,7 @@ bool QtFontEditWidget::eventFilter(QObject *obj, QEvent *ev)
             break;
         }
     }
-    return QWidget::eventFilter(obj, ev);
+    return QWidget::eventFilter(watched, event);
 }
 
 void QtFontEditWidget::paintEvent(QPaintEvent *)

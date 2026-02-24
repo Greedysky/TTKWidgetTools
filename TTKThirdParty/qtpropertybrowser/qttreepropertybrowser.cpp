@@ -243,7 +243,7 @@ public:
 
     void setEditorData(QWidget *, const QModelIndex &) const {}
 
-    bool eventFilter(QObject *object, QEvent *event);
+    bool eventFilter(QObject *watched, QEvent *event);
     void closeEditor(QtProperty *property);
 
     QTreeWidgetItem *editedItem() const { return m_editedItem; }
@@ -422,14 +422,14 @@ QSize QtPropertyEditorDelegate::sizeHint(const QStyleOptionViewItem &option,
     return QItemDelegate::sizeHint(option, index) + QSize(3, 4);
 }
 
-bool QtPropertyEditorDelegate::eventFilter(QObject *object, QEvent *event)
+bool QtPropertyEditorDelegate::eventFilter(QObject *watched, QEvent *event)
 {
     if (event->type() == QEvent::FocusOut) {
         QFocusEvent *fe = static_cast<QFocusEvent*>(event);
         if (fe->reason() == Qt::ActiveWindowFocusReason)
             return false;
     }
-    return QItemDelegate::eventFilter(object, event);
+    return QItemDelegate::eventFilter(watched, event);
 }
 
 //  -------- QtTreePropertyBrowserPrivate implementation

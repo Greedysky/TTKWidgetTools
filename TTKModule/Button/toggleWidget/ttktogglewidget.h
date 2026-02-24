@@ -45,7 +45,7 @@ public:
     inline QColor thumbColor() const { return m_thumbColor; }
 
 private:
-    virtual bool eventFilter(QObject *obj, QEvent *event) override final;
+    virtual bool eventFilter(QObject *watched, QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
     void updateOffset();
@@ -72,7 +72,7 @@ public:
     inline QColor trackColor() const { return m_trackColor; }
 
 private:
-    virtual bool eventFilter(QObject *obj, QEvent *event) override final;
+    virtual bool eventFilter(QObject *watched, QEvent *event) override final;
     virtual void paintEvent(QPaintEvent *event) override final;
 
     TTKToggleWidget *m_toggle;

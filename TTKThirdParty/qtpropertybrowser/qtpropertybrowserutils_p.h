@@ -134,11 +134,14 @@ public:
     QtKeySequenceEdit(QWidget *parent = nullptr);
 
     QKeySequence keySequence() const;
-    bool eventFilter(QObject *o, QEvent *e);
+    bool eventFilter(QObject *watched, QEvent *event);
+
 public Q_SLOTS:
     void setKeySequence(const QKeySequence &sequence);
+
 Q_SIGNALS:
     void keySequenceChanged(const QKeySequence &sequence);
+
 protected:
     void focusInEvent(QFocusEvent *e);
     void focusOutEvent(QFocusEvent *e);
@@ -146,8 +149,10 @@ protected:
     void keyReleaseEvent(QKeyEvent *e);
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
+
 private Q_SLOTS:
     void slotClearShortcut();
+
 private:
     void handleKeyEvent(QKeyEvent *e);
     int translateModifiers(Qt::KeyboardModifiers state, const QString &text) const;

@@ -304,10 +304,10 @@ QtKeySequenceEdit::QtKeySequenceEdit(QWidget *parent)
     setAttribute(Qt::WA_InputMethodEnabled);
 }
 
-bool QtKeySequenceEdit::eventFilter(QObject *o, QEvent *e)
+bool QtKeySequenceEdit::eventFilter(QObject *watched, QEvent *event)
 {
-    if (o == m_lineEdit && e->type() == QEvent::ContextMenu) {
-        QContextMenuEvent *c = static_cast<QContextMenuEvent*>(e);
+    if (watched == m_lineEdit && event->type() == QEvent::ContextMenu) {
+        QContextMenuEvent *c = static_cast<QContextMenuEvent*>(event);
         QMenu *menu = m_lineEdit->createStandardContextMenu();
         const QList<QAction *> actions = menu->actions();
         QListIterator<QAction *> itAction(actions);
@@ -330,11 +330,11 @@ bool QtKeySequenceEdit::eventFilter(QObject *o, QEvent *e)
         connect(clearAction, SIGNAL(triggered()), this, SLOT(slotClearShortcut()));
         menu->exec(c->globalPos());
         delete menu;
-        e->accept();
+        event->accept();
         return true;
     }
 
-    return QWidget::eventFilter(o, e);
+    return QWidget::eventFilter(watched, event);
 }
 
 void QtKeySequenceEdit::slotClearShortcut()

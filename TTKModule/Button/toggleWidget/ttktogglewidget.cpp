@@ -40,7 +40,7 @@ void TTKToggleThumb::setThumbColor(const QColor &color)
     update();
 }
 
-bool TTKToggleThumb::eventFilter(QObject *obj, QEvent *event)
+bool TTKToggleThumb::eventFilter(QObject *watched, QEvent *event)
 {
     const QEvent::Type type = event->type();
     if(QEvent::Resize == type || QEvent::Move == type)
@@ -49,7 +49,7 @@ bool TTKToggleThumb::eventFilter(QObject *obj, QEvent *event)
         updateOffset();
     }
 
-    return QWidget::eventFilter(obj, event);
+    return QWidget::eventFilter(watched, event);
 }
 
 void TTKToggleThumb::paintEvent(QPaintEvent *event)
@@ -112,7 +112,7 @@ void TTKToggleTrack::setTrackColor(const QColor &color)
     update();
 }
 
-bool TTKToggleTrack::eventFilter(QObject *obj, QEvent *event)
+bool TTKToggleTrack::eventFilter(QObject *watched, QEvent *event)
 {
     const QEvent::Type type = event->type();
 
@@ -120,7 +120,7 @@ bool TTKToggleTrack::eventFilter(QObject *obj, QEvent *event)
     {
         setGeometry(m_toggle->rect());
     }
-    return QWidget::eventFilter(obj, event);
+    return QWidget::eventFilter(watched, event);
 }
 
 void TTKToggleTrack::paintEvent(QPaintEvent *event)
