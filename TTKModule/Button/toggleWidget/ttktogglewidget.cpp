@@ -48,7 +48,6 @@ bool TTKToggleThumb::eventFilter(QObject *watched, QEvent *event)
         setGeometry(m_toggle->rect().adjusted(8, 8, -8, -8));
         updateOffset();
     }
-
     return QWidget::eventFilter(watched, event);
 }
 
@@ -115,7 +114,6 @@ void TTKToggleTrack::setTrackColor(const QColor &color)
 bool TTKToggleTrack::eventFilter(QObject *watched, QEvent *event)
 {
     const QEvent::Type type = event->type();
-
     if(QEvent::Resize == type || QEvent::Move == type)
     {
         setGeometry(m_toggle->rect());
