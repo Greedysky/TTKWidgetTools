@@ -7,10 +7,10 @@
 
 TTKAbstractAnimationWidget::TTKAbstractAnimationWidget(QWidget *parent)
     : QWidget(parent),
-      m_curIndex(0),
-      m_preIndex(0),
-      m_x(0),
-      m_perValue(0),
+      m_value(0),
+      m_currentIndex(0),
+      m_previousIndex(0),
+      m_perWidth(0.0f),
       m_isAnimation(true),
       m_showLine(true)
 {
@@ -45,10 +45,11 @@ void TTKAbstractAnimationWidget::paintEvent(QPaintEvent *event)
 void TTKAbstractAnimationWidget::switchToSelectedItemStyle(int index)
 {
     m_isAnimation = true;
-    m_preIndex = m_curIndex;
-    m_curIndex = index;
-    m_animation->setStartValue(m_preIndex*m_perValue);
-    m_animation->setEndValue(index*m_perValue);
+    m_previousIndex = m_currentIndex;
+    m_currentIndex = index;
+
+    m_animation->setStartValue(m_previousIndex * m_perWidth);
+    m_animation->setEndValue(index * m_perWidth);
     m_animation->start();
 
     Q_EMIT buttonClicked(index);
@@ -56,7 +57,7 @@ void TTKAbstractAnimationWidget::switchToSelectedItemStyle(int index)
 
 void TTKAbstractAnimationWidget::animationChanged(const QVariant &value)
 {
-    m_x = value.toInt();
+    m_value = value.toInt();
     update();
 }
 
@@ -91,9 +92,9 @@ void TTKAbstractAnimationHWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
 
-    m_perValue = m_container[0]->width() + m_container[0]->x();
-    int offset = m_perValue - (m_container[0]->width() + m_pix.width()) / 2;
-    offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perValue);
+    m_perWidth = m_container[0]->width() + m_container[0]->x();
+    int offset = m_perWidth - (m_container[0]->width() + m_pix.width()) / 2;
+    offset = m_isAnimation ? (offset + m_value) : (offset + m_currentIndex * m_perWidth);
 
     if(m_alignment == Alignment::Bottom)
     {
@@ -226,9 +227,9 @@ void TTKAbstractAnimationVWidget::paintEvent(QPaintEvent *event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(QPen(Qt::black, 0.1, Qt::SolidLine));
 
-    m_perValue = m_container[0]->height() + m_container[0]->y();
-    int offset = m_perValue - (m_container[0]->height() + m_pix.height()) / 2;
-    offset = m_isAnimation ? (offset + m_x) : (offset + m_curIndex * m_perValue);
+    m_perWidth = m_container[0]->height() + m_container[0]->y();
+    int offset = m_perWidth - (m_container[0]->height() + m_pix.height()) / 2;
+    offset = m_isAnimation ? (offset + m_value) : (offset + m_currentIndex * m_perWidth);
 
     if(m_alignment == Alignment::Left)
     {

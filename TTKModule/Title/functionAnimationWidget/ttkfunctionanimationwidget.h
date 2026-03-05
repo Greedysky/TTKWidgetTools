@@ -58,7 +58,9 @@ protected:
     virtual void paintEvent(QPaintEvent *event) override;
 
     QPixmap m_pix;
-    int m_curIndex, m_preIndex, m_x, m_perValue;
+    int m_value;
+    int m_currentIndex, m_previousIndex;
+    float m_perWidth;
     bool m_isAnimation, m_showLine;
 
     Alignment m_alignment;
