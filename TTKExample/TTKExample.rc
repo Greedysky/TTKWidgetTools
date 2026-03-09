@@ -27,12 +27,12 @@ BEGIN
         BLOCK "080404b0"
             BEGIN
                 VALUE "CompanyName", TTK_RC_COMPANY
-                VALUE "FileDescription", "TTKWidgetTools"
+                VALUE "FileDescription", "TTKService"
                 VALUE "FileVersion", TTK_RC_PRODUCTVERSION
-                VALUE "InternalName", "TTKWidgetTools.exe"
+                VALUE "InternalName", "TTKService.exe"
                 VALUE "LegalCopyright", TTK_RC_COPYRIGHT
-                VALUE "OriginalFilename", "TTKWidgetTools.exe"
-                VALUE "ProductName", "TTKWidgetTools"
+                VALUE "OriginalFilename", "TTKService.exe"
+                VALUE "ProductName", "TTKService"
                 VALUE "ProductVersion", TTK_RC_PRODUCTVERSION
             END
     END
