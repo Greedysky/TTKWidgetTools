@@ -80,10 +80,10 @@ public:
 
     }
 
-    constexpr TTKBaseStringView& operator=(const TTKBaseStringView &sv) noexcept
+    constexpr TTKBaseStringView& operator=(const TTKBaseStringView &other) noexcept
     {
-        m_data = sv.data();
-        m_length = sv.size();
+        m_data = other.data();
+        m_length = other.size();
         return *this;
     }
 

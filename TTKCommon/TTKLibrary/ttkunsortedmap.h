@@ -62,21 +62,21 @@ public:
         insert(first, last);
     }
 
-    _CONSTEXPR_CONTAINER TTKUnsortedMap& operator=(const TTKUnsortedMap &right) noexcept
+    _CONSTEXPR_CONTAINER TTKUnsortedMap& operator=(const TTKUnsortedMap &other) noexcept
     {
-        m_conatiner = right.m_conatiner;
+        m_conatiner = other.m_conatiner;
         return *this;
     }
 
-    _CONSTEXPR_CONTAINER TTKUnsortedMap& operator=(TTKUnsortedMap &&right) noexcept
+    _CONSTEXPR_CONTAINER TTKUnsortedMap& operator=(TTKUnsortedMap &&other) noexcept
     {
-        m_conatiner = std::move(right.m_conatiner);
+        m_conatiner = std::move(other.m_conatiner);
         return *this;
     }
 
-    _CONSTEXPR_CONTAINER void swap(TTKUnsortedMap &right) noexcept
+    _CONSTEXPR_CONTAINER void swap(TTKUnsortedMap &other) noexcept
     {
-        m_conatiner.swap(right.m_conatiner);
+        m_conatiner.swap(other.m_conatiner);
     }
 
 public:

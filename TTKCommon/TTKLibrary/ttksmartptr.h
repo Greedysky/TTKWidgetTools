@@ -104,44 +104,44 @@ public:
     friend class TTKSharedPtr;
 
     template <typename U>
-    TTKSharedPtr(const TTKSharedPtr<U> &p, T* ptr) noexcept
+    TTKSharedPtr(const TTKSharedPtr<U> &other, T* ptr) noexcept
     {
         m_ptr = ptr;
-        m_ref_count = p.m_ref_count;
+        m_ref_count = other.m_ref_count;
         m_ref_count->m_count++;
     }
 
-    TTKSharedPtr(const TTKSharedPtr &p) noexcept
+    TTKSharedPtr(const TTKSharedPtr &other) noexcept
     {
-        m_ptr = p.m_ptr;
-        m_ref_count = p.m_ref_count;
+        m_ptr = other.m_ptr;
+        m_ref_count = other.m_ref_count;
         m_ref_count->m_count++;
     }
 
-    TTKSharedPtr& operator=(const TTKSharedPtr &p) noexcept
+    TTKSharedPtr& operator=(const TTKSharedPtr &other) noexcept
     {
         clean();
-        m_ptr = p.m_ptr;
-        m_ref_count = p.m_ref_count;
+        m_ptr = other.m_ptr;
+        m_ref_count = other.m_ref_count;
         m_ref_count->m_count++;
         return *this;
     }
 
-    TTKSharedPtr(TTKSharedPtr &&p) noexcept
+    TTKSharedPtr(TTKSharedPtr &&other) noexcept
     {
-        m_ptr = p.m_ptr;
-        m_ref_count = p.m_ref_count;
-        p.m_ptr = nullptr;
-        p.m_ref_count = nullptr;
+        m_ptr = other.m_ptr;
+        m_ref_count = other.m_ref_count;
+        other.m_ptr = nullptr;
+        other.m_ref_count = nullptr;
     }
 
-    TTKSharedPtr& operator=(TTKSharedPtr &&p) noexcept
+    TTKSharedPtr& operator=(TTKSharedPtr &&other) noexcept
     {
         clean();
-        m_ptr = p.m_ptr;
-        m_ref_count = p.m_ref_count;
-        p.m_ptr = nullptr;
-        p.m_ref_count = nullptr;
+        m_ptr = other.m_ptr;
+        m_ref_count = other.m_ref_count;
+        other.m_ptr = nullptr;
+        other.m_ref_count = nullptr;
         return *this;
     }
 
@@ -178,31 +178,31 @@ inline TTKSharedPtr<T> make_shared(Args &&...args)
 }
 
 template <typename T, typename U>
-inline TTKSharedPtr<T> static_pointer_cast(const TTKSharedPtr<U> &p) noexcept
+inline TTKSharedPtr<T> static_pointer_cast(const TTKSharedPtr<U> &other) noexcept
 {
-    T* ptr = static_cast<T*>(p.get());
-    return TTKSharedPtr<T>(p, ptr);
+    T* ptr = static_cast<T*>(other.get());
+    return TTKSharedPtr<T>(other, ptr);
 }
 
 template <typename T, typename U>
-inline TTKSharedPtr<T> const_pointer_cast(const TTKSharedPtr<U> &p) noexcept
+inline TTKSharedPtr<T> const_pointer_cast(const TTKSharedPtr<U> &other) noexcept
 {
-    T* ptr = const_cast<T*>(p.get());
-    return TTKSharedPtr<T>(p, ptr);
+    T* ptr = const_cast<T*>(other.get());
+    return TTKSharedPtr<T>(other, ptr);
 }
 
 template <typename T, typename U>
-inline TTKSharedPtr<T> dynamic_pointer_cast(const TTKSharedPtr<U> &p) noexcept
+inline TTKSharedPtr<T> dynamic_pointer_cast(const TTKSharedPtr<U> &other) noexcept
 {
-    T* ptr = dynamic_cast<T*>(p.get());
-    return ptr == nullptr ? TTKSharedPtr<T>() : TTKSharedPtr<T>(p, ptr);
+    T* ptr = dynamic_cast<T*>(other.get());
+    return ptr == nullptr ? TTKSharedPtr<T>() : TTKSharedPtr<T>(other, ptr);
 }
 
 template <typename T, typename U>
-inline TTKSharedPtr<T> reinterpret_pointer_cast(const TTKSharedPtr<U> &p) noexcept
+inline TTKSharedPtr<T> reinterpret_pointer_cast(const TTKSharedPtr<U> &other) noexcept
 {
-    T* ptr = reinterpret_cast<T*>(p.get());
-    return TTKSharedPtr<T>(p, ptr);
+    T* ptr = reinterpret_cast<T*>(other.get());
+    return TTKSharedPtr<T>(other, ptr);
 }
 }
 
