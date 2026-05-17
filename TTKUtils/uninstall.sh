@@ -7,5 +7,6 @@ else
   homepath=/home/${username}
 fi
 
-rm -rf /opt/TTKWidgetTools
+rm -rf /opt/ttk/TTKWidgetTools
 rm -f ${homepath}/.local/share/applications/TTKWidgetTools.desktop
+rm -f ${homepath}/.local/share/metainfo/ttkwidgettools.metainfo.xml

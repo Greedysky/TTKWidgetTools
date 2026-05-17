@@ -2,7 +2,7 @@
 
 packname=TTKWidgetTools
 packvern=3.2.0.0
-rootpath=data/opt
+rootpath=data/opt/ttk
 datapath=data/DEBIAN
 
 fullname=$1
@@ -27,12 +27,12 @@ Description: TTK Qt自定义控件集合
 
 # create postinst file
 echo -n "#!/bin/bash
-sh /opt/${packname}/install.sh\n" > ${datapath}/postinst
+sh /opt/ttk/${packname}/install.sh\n" > ${datapath}/postinst
 chmod +x ${datapath}/postinst
 
 # create prerm file
 echo -n "#!/bin/bash
-sh /opt/${packname}/uninstall.sh\n" > ${datapath}/prerm
+sh /opt/ttk/${packname}/uninstall.sh\n" > ${datapath}/prerm
 chmod +x ${datapath}/prerm
 
 # create data path
