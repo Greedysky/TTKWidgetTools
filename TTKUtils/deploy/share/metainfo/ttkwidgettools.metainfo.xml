@@ -7,9 +7,7 @@
   <name>TTKWidgetTools</name>
   <summary>The ttk widget tools</summary>
   <description>
-    <p>
-      TTKWidgetTools QWidget自定义控件集合.
-    </p>
+    <p>TTKWidgetTools QWidget自定义控件集合.</p>
   </description>
   <categories>
     <category>widget</category>
