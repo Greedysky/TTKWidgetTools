@@ -181,12 +181,20 @@ if(TTK_QT_VERSION VERSION_EQUAL "4")
     set(QT_USE_QTNETWORK ON)
     set(QT_USE_QTXML ON)
 
+    if(UNIX AND NOT APPLE)
+      set(QT_USE_QTDBUS ON)
+    endif()
+
     include(${QT_USE_FILE})
   else()
     message(FATAL_ERROR "Fatal error: Qt4 was not found on your system. You probably need to set the QT_QMAKE_EXECUTABLE variable")
   endif()
 elseif(TTK_QT_VERSION VERSION_EQUAL "5")
   find_package(Qt5 COMPONENTS Core Gui Widgets Network Xml REQUIRED)
+
+  if(UNIX AND NOT APPLE)
+    find_package(Qt5DBus REQUIRED)
+  endif()
 elseif(TTK_QT_VERSION VERSION_EQUAL "6")
   find_package(Qt6 COMPONENTS Core Gui Widgets Network Xml StateMachine REQUIRED)
   # Add a compiler flag
