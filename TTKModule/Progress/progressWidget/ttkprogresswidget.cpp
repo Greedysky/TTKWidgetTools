@@ -67,7 +67,7 @@ void TTKProgressWidget::paintEvent(QPaintEvent *event)
 
     QBrush brush;
     brush.setStyle(Qt::SolidPattern);
-    brush.setColor( backgroundColor() );
+    brush.setColor(backgroundColor());
     painter.setBrush(brush);
     painter.setPen(Qt::NoPen);
 
